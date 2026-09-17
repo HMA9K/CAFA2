@@ -100,6 +100,12 @@ try {
   assert.match(ui.hostText(), /CAFA2 integratietest/);
   assert.equal(ui.state().length, 0);
   assert.equal(ui.$('.exam-clock').hidden, true);
+  assert.equal(ui.$('.exam-dashboard-title h1').textContent, 'Dashboard');
+  assert.equal(ui.$('.exam-meta-strip'), null, 'The screenshot layout has no metric strip.');
+  assert.deepEqual(Array.from(ui.document.querySelectorAll('.exam-section h2'), el => el.textContent), ['Vandaag', 'Volgende 30 dagen']);
+  assert.deepEqual(Array.from(ui.document.querySelectorAll('.exam-table-upcoming th'), el => el.textContent), ['Toetsnaam', 'Code', 'Beschikbaar', 'Deadline', 'Duur', 'Actie']);
+  assert.equal(ui.$('.exam-empty-row').textContent, 'Geen toetsen', 'Empty next-30-days section stays visible.');
+  assert.equal(ui.document.body.classList.contains('exam-dashboard'), true);
 
   ui.route('#welkom/practice');
   assert.match(ui.hostText(), /Geen tijdslimiet/);
@@ -149,6 +155,10 @@ try {
   ui.click('[data-close-info]');
   ui.action('overview');
   assert.equal(ui.document.querySelectorAll('#exam-info-dialog [data-exam-index]').length, 3);
+  assert.equal(ui.document.querySelectorAll('#exam-info-dialog .exam-overview-section').length, 2);
+  assert.equal(ui.$('#exam-info-dialog [data-exam-index="0"] .cafa-overview-title').textContent, 'Uitwerking A');
+  assert.match(ui.$('#exam-info-dialog [data-exam-index="0"]').getAttribute('aria-label'), /beantwoord, gemarkeerd/);
+  assert.equal(ui.$('#exam-info-dialog [aria-current="step"]').dataset.examIndex, '2');
   assert.equal(ui.$('#exam-info-dialog [data-exam-index="0"]').classList.contains('is-answered'), true);
   assert.equal(ui.$('#exam-info-dialog [data-exam-index="0"]').classList.contains('is-marked'), true);
   ui.click('#exam-info-dialog [data-exam-index="0"]');
@@ -189,6 +199,17 @@ try {
   assert.match(reopened.hostText(), /CAFA2 integratietest/);
   assert.match(reopened.hostText(), /Tijd verstreken/);
   assert.match(reopened.hostText(), /2 \/ 3/);
+  assert.deepEqual(Array.from(reopened.document.querySelectorAll('.exam-section h2'), el => el.textContent), ['Geplande inzages', 'Voltooide toetsen']);
+  assert.deepEqual(Array.from(reopened.document.querySelectorAll('.exam-table-completed th'), el => el.textContent), ['Toetsnaam', 'Code', 'Ingeleverd', 'Percentage juist', 'Cijfer', 'Resultaat', 'Actie']);
+  assert.match(reopened.hostText(), /Niet beoordeeld/);
+  const beforeFilters = reopened.saved();
+  reopened.change('[data-completed-type]', 'practice');
+  assert.match(reopened.$('.exam-table-completed').textContent, /Geen voltooide toetsen/);
+  reopened.change('[data-completed-type]', 'exam');
+  assert.match(reopened.$('.exam-table-completed').textContent, /CAFA2 integratietest/);
+  reopened.change('[data-completed-attempts]', 'latest');
+  assert.equal(reopened.$('[data-completed-attempts]').value, 'latest');
+  assert.equal(reopened.saved(), beforeFilters, 'Display filters cannot mutate saved attempts.');
   reopened.action('backup');
   assert.equal(reopened.downloads.length, 1);
   const backupText = await new Promise((resolve, reject) => {
