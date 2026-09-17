@@ -9,6 +9,8 @@ Mobielvriendelijke oefenomgeving met 120 eigen CAFA2-oefenvragen, verdeeld over 
 
 Elk onderwerp bevat 30 vragen. De app ondersteunt oefenen met directe feedback, een tentamenstand, zelf uitwerken, een ingebouwde rekenmachine, vraagmarkeringen, resultaten per onderwerp en export of import van voortgang.
 
+Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en de volledige tentamens van 24 september 2025 en 29 april 2026. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 120 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
+
 ## Privacy en voortgang
 
 Voortgang en scores worden uitsluitend in `localStorage` van de gebruikte browser bewaard. Er worden geen namen gevraagd of opgeslagen. Via de pagina **Voortgang** kan de gebruiker zelf een lokaal resultaatbestand exporteren.
@@ -56,4 +58,4 @@ Het project is volledig statisch. Voor Cloudflare Pages of GitHub Pages is geen 
 
 ## Bronnen
 
-De vragen zijn eigen oefenvarianten op basis van het door de gebruiker aangeleverde CAFA2-studiemateriaal. In de app staat per vraag een specifieke bronverwijzing. Het platform bevat geen letterlijk overgenomen officiële tentamenvragenset.
+De MC-vragen zijn eigen oefenvarianten op basis van het aangeleverde CAFA2-studiemateriaal. Per MC-vraag staat een specifieke bronverwijzing. De volledige tentamens en antwoordmodellen zijn afkomstig uit de door de gebruiker aangeleverde pdf's; bronvermeldingen en eventuele broninconsistenties blijven behouden. Het platform is een oefenomgeving en geen officiële examenafname.
