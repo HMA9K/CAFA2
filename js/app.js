@@ -38,7 +38,7 @@ function refresh(){var cur=current();if(cur)lastCode=cur.code;codes.forEach(func
  all('[data-start="'+c+'"]').forEach(function(el){el.href='#'+c+'-'+(m.current||1);el.textContent=(r.answered||m.started)?'Verder':'Start';});
  all('[data-inline-score="'+c+'"]').forEach(function(el){el.textContent=m.exam&&!m.finished?'Tentamenstand':'Goed: '+r.good+'/'+r.auto;});
  all('[data-return="'+c+'"]').forEach(function(el){el.href='#'+c+'-'+(m.current||1);});
- all('[data-overview-count="'+c+'"]').forEach(function(el){el.textContent='Nog te doen: '+(30-r.answered)+' · gemarkeerd: '+r.marked;});
+ all('[data-overview-count="'+c+'"]').forEach(function(el){el.textContent=r.answered+' van 30 beantwoord · '+(30-r.answered)+' niet beantwoord · '+r.marked+' gemarkeerd';});
  BANKS[c].questions.forEach(function(q){var x=a(c,q.id),el=document.getElementById(c+'-'+q.id);if(!el)return;
  el.classList.toggle('is-exam',m.exam);el.classList.toggle('is-finished',m.finished);
  var cs=$('[data-choice-status]',el);if(cs)cs.textContent=x.choice!==null?'Gekozen: '+String.fromCharCode(65+x.choice):'Nog geen keuze';
@@ -46,7 +46,7 @@ function refresh(){var cur=current();if(cur)lastCode=cur.code;codes.forEach(func
  all('[data-self-note]',el).forEach(function(n){n.textContent=x.firstSelf?'Zelfbeoordeeld: '+(x.firstSelf.correct?'goed':'opnieuw oefenen')+'. Zelfbeoordeling blijft apart van de meerkeuzescore.':'';});
  });
  });
- all('[data-nav]').forEach(function(el){var parts=el.dataset.nav.split('-'),c=parts[0],id=+parts[1],x=a(c,id);el.classList.toggle('answered',isAnswered(x));el.classList.toggle('marked',x.marked);el.classList.toggle('current',!!cur&&cur.code===c&&cur.id===id);el.setAttribute('aria-label','Vraag '+id+': '+status(c,id)+(x.marked?', gemarkeerd':''));var st=$('.ov-status',el);if(st)st.textContent=isAnswered(x)?'Beantwoord':'Niet beantwoord';});
+ all('[data-nav]').forEach(function(el){var parts=el.dataset.nav.split('-'),c=parts[0],id=+parts[1],x=a(c,id),isCurrent=!!cur&&cur.code===c&&cur.id===id;el.classList.toggle('answered',isAnswered(x));el.classList.toggle('marked',x.marked);el.classList.toggle('current',isCurrent);if(isCurrent)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');el.setAttribute('aria-label','Vraag '+id+': '+BANKS[c].questions[id-1].title+'. '+status(c,id)+(x.marked?', gemarkeerd':''));var st=$('.ov-status',el);if(st)st.textContent=isAnswered(x)?'Beantwoord':'Niet beantwoord';});
  var r=metrics(lastCode),m=state.modules[lastCode];all('[data-top-score]').forEach(function(el){el.textContent=cur?(m.exam&&!m.finished?'Tentamenstand':'Goed: '+r.good+' / '+r.auto):'120 vragen';});
 }
 function review(c,id){var x=a(c,id);if(x.choice===null)return false;var m=state.modules[c];if(m.exam&&!m.finished)return false;x.checked=true;if(!x.firstMC)x.firstMC={choice:x.choice,correct:x.choice===BANKS[c].questions[id-1].correct,at:new Date().toISOString()};save();refresh();return true;}

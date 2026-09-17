@@ -32,6 +32,7 @@
   }
   function updateCurrent() {
     var question = currentQuestion();
+    document.body.classList.toggle('practice-surface', !!question);
     syncMark(question);
     var own = question && question.querySelector('.mode-radio[value="own"]:checked');
     if (!own || !window.CafaAnswerEditor) { releaseEditor(); return; }
@@ -56,6 +57,21 @@
 
   Array.prototype.forEach.call(document.querySelectorAll('.question[data-code][data-q]'), function (question) {
     var code = question.dataset.code, id = Number(question.dataset.q);
+    var topic = window.CAFA2_DATA.modules[code];
+    question.classList.add('practice-question-page');
+    var pageTitle = document.createElement('h1');
+    pageTitle.className = 'practice-page-title';
+    pageTitle.textContent = 'CAFA2 oefenvragen · ' + topic.title;
+    var panel = document.createElement('div');
+    panel.className = 'practice-question-frame';
+    var header = question.querySelector('.question-header');
+    var body = question.querySelector('.qbody');
+    question.insertBefore(pageTitle, header);
+    question.insertBefore(panel, header);
+    panel.appendChild(header);
+    panel.appendChild(body);
+    var identityLabel = header.querySelector('.qidentity > span:first-child');
+    if (identityLabel) identityLabel.textContent = 'VRAAG';
     var count = question.querySelector('.question-count');
     if (count) {
       count.classList.add('practice-question-count');
@@ -97,6 +113,36 @@
     if (oldFinish) oldFinish.replaceWith(finish);
     else actions.appendChild(finish);
     syncMark(question);
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.overview-frame'), function (overview) {
+    overview.classList.add('practice-overview-frame');
+    var list = overview.querySelector('.overview-list');
+    if (!list) return;
+    list.classList.add('cafa-overview-list');
+    list.setAttribute('aria-label', 'Alle vragen van dit onderwerp');
+    Array.prototype.forEach.call(list.querySelectorAll('.ov-item[data-nav]'), function (item) {
+      var parts = item.dataset.nav.split('-');
+      var topic = window.CAFA2_DATA.modules[parts[0]];
+      var data = topic.questions[Number(parts[1]) - 1];
+      item.classList.add('cafa-overview-item');
+      item.querySelector('.ov-num').classList.add('cafa-overview-number');
+      var content = document.createElement('span');
+      content.className = 'cafa-overview-content';
+      var title = document.createElement('span');
+      title.className = 'cafa-overview-title';
+      title.textContent = data.title;
+      var meta = document.createElement('span');
+      meta.className = 'cafa-overview-meta';
+      meta.textContent = topic.title + (data.type ? ' · ' + data.type : '');
+      content.appendChild(title);
+      content.appendChild(meta);
+      item.insertBefore(content, item.querySelector('.ov-status'));
+      item.querySelector('.ov-status').classList.add('cafa-overview-state');
+      var mark = item.querySelector('.ov-mark');
+      mark.classList.add('cafa-overview-mark');
+      mark.textContent = 'Gemarkeerd';
+    });
   });
 
   document.addEventListener('change', function (event) {
