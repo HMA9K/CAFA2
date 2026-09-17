@@ -13,7 +13,7 @@ try{
   dom=await JSDOM.fromURL('http://127.0.0.1:'+server.address().port+'/',{resources:'usable',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){w.fetch=(u,o)=>fetch(new URL(u,w.location.href),o);w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.scrollTo=()=>{};w.confirm=()=>true;w.alert=()=>{};w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};}});
   const w=dom.window,pause=()=>new Promise(r=>setTimeout(r,50));
   for(let i=0;i<400&&!w.CafaExams;i++)await pause();
-  assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,120);assert.equal(w.CafaExams.catalog.length,2);assert.equal(w.location.hash,'#dashboard');
+  assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,120);assert.equal(w.CafaExams.catalog.length,5);assert.equal(w.location.hash,'#dashboard');
   assert.ok(w.document.querySelector('#exam-app').textContent.includes('29-04-2026'));
   w.location.hash='#welkom/cafa2-20260429';await pause();
   assert.ok(!w.document.querySelector('#exam-app').textContent.includes('Oostermoer'),'Welcome has no case answers');
@@ -23,5 +23,5 @@ try{
   w.document.querySelector('[data-close-info]').click();
   w.location.hash='#kap-1';await pause();assert.equal(w.document.querySelectorAll('.practice-action').length,480);assert.equal(w.document.querySelector('.exam-clock').hidden,true);
   assert.equal(errors.length,0,errors.join('\n'));
-  console.log('Full site passed: bootstrap, 120 MC, 2 exams, dashboard, +30, sections, MC footer, timer isolation.');
+  console.log('Full site passed: bootstrap, 120 MC, 5 exams, dashboard, +30, sections, MC footer, timer isolation.');
 }finally{if(dom)dom.window.close();await new Promise(resolve=>server.close(resolve));}
