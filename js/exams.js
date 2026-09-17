@@ -13,6 +13,7 @@
     return result.valid;
   });
   var demo = window.CAFA2_EXAM_DEMO;
+  catalog.sort(function(a,b){return b.date.localeCompare(a.date);});
   function esc(value) { return String(value == null ? '' : value).replace(/[&<>"']/g,function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
   function rich(html, plain) { return html ? Editor.sanitize(html) : '<p class="exam-prose">' + esc(plain || '') + '</p>'; }
   function date(value) { return value ? new Date(value.length === 10 ? value + 'T12:00:00' : value).toLocaleDateString('nl-NL',{day:'2-digit',month:'2-digit',year:'numeric'}) : 'Niet vastgelegd'; }

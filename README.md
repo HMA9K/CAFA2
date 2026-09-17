@@ -9,7 +9,7 @@ Mobielvriendelijke oefenomgeving met 120 eigen CAFA2-oefenvragen, verdeeld over 
 
 Elk onderwerp bevat 30 vragen. De app ondersteunt oefenen met directe feedback, een tentamenstand, zelf uitwerken, een ingebouwde rekenmachine, vraagmarkeringen, resultaten per onderwerp en export of import van voortgang.
 
-Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en de volledige tentamens van 24 september 2025 en 29 april 2026. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 120 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
+Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en vijf volledige tentamens: 22 april 2024, 30 september 2024, 17 april 2025, 24 september 2025 en 29 april 2026. Samen bevatten die 131 vragen en 20 casussecties. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 120 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
 
 ## Privacy en voortgang
 

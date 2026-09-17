@@ -2,10 +2,23 @@
 
 ## Opgenomen bronbestanden
 
+- `20240422 Tentamen CAFA2.pdf` en `20240422 Uitwerking tentamen CAFA2.pdf`
+- `20240930 Tentamen CAFA2.pdf` en `20240930 Uitwerking tentamen CAFA2.pdf`
+- `20250417 Tentamen CAFA2.pdf` en `20250417 Uitwerking tentamen CAFA2.pdf`
 - `20250924 Tentamen CAFA2.pdf` en `20250924 Uitwerking tentamen CAFA2 (na normering).pdf`
 - `20260429 Tentamen CAFA2 def 2 (1).pdf` en `20260429 Uitwerking Tentamen CAFA2 (1).pdf`
 
-Beide voorbladen vermelden 180 minuten, 100 punten en een grens van 54/55 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
+Alle vijf voorbladen vermelden 180 minuten, 100 punten en een grens van 54/55 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
+
+| Tentamen | Vragen | Opgaven | Punten |
+|---|---:|---:|---:|
+| 22-04-2024 | 24 | 4 | 100 |
+| 30-09-2024 | 25 | 4 | 100 |
+| 17-04-2025 | 28 | 4 | 100 |
+| 24-09-2025 | 31 | 4 | 100 |
+| 29-04-2026 | 23 | 4 | 100 |
+
+Er zijn 131 tentamenvragen en daarnaast 120 aparte MC-oefenvragen. Bij 24-09-2025 is de doorlopende nummering uit het officiële antwoordmodel gevolgd, met behoud van de papieren bronnummering. In de andere tentamens staat de oorspronkelijke vraagnummering eveneens bij de vraag.
 
 ## Bediening
 
@@ -61,6 +74,7 @@ De optionele DOM-tests gebruiken een geïnstalleerde `jsdom` buiten de statische
 ```bash
 JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/exam-ui.mjs
 JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/answer-editor.mjs
+JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/full-site.mjs
 ```
 
 De gewone `npm test` heeft geen externe dependencies.

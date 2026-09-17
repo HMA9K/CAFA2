@@ -1,5 +1,5 @@
-/* Voeg gecontroleerde tentamens toe volgens docs/tentamens.md.
- * Geen officiële tentamens of verzonnen tentamendata in de catalogus. */
+/* Initialiseer de catalogus. De aparte exam-YYYYMMDD.js-bestanden vullen
+ * deze hierna met gecontroleerde broninhoud; zie docs/tentamens.md. */
 window.CAFA2_EXAMS = [];
 
 /* Alleen een demonstratie van de bediening, geen CAFA2-tentamen. */
