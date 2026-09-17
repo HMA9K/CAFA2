@@ -23,12 +23,24 @@ data/kapitaalbelangen.js
 data/vreemde-valuta.js
 data/consolidatie-nvw.js
 data/consolidatie-hk.js
+fragments/home.html
+fragments/kapitaalbelangen.html
+fragments/vreemde-valuta.html
+fragments/consolidatie-nvw.html
+fragments/consolidatie-hk.html
+fragments/shared.html
+fragments/dialogs.html
+fallback/kapitaalbelangen.html
+fallback/vreemde-valuta.html
+fallback/consolidatie-nvw.html
+fallback/consolidatie-hk.html
+js/bootstrap.js
 js/app.js
 js/calculator.js
 tests/validate.mjs
 ```
 
-De HTML bevat tevens een basisweergave van alle vragen. Daardoor blijven de vragen, antwoordkeuzes, uitwerkingen en navigatie bruikbaar wanneer JavaScript niet wordt uitgevoerd. Automatische scores, lokale opslag, de tentamenstand en de rekenmachine vereisen JavaScript.
+De startpagina laadt de vier onderwerpen uit losse HTML-fragmenten. Voor omgevingen waarin scripts zijn geblokkeerd, bevat de startpagina directe links naar vier zelfstandige basisversies. Daardoor blijven alle vragen, antwoordkeuzes, uitwerkingen en navigatie bereikbaar. Automatische scores, lokale opslag, de tentamenstand en de rekenmachine vereisen JavaScript.
 
 ## Controleren
 
