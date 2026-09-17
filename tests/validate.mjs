@@ -8,32 +8,67 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
 
-const expectedScripts = [
+const dataScripts = [
   'data/config.js',
   'data/kapitaalbelangen.js',
   'data/vreemde-valuta.js',
   'data/consolidatie-nvw.js',
   'data/consolidatie-hk.js',
-  'js/app.js',
-  'js/calculator.js',
+];
+
+const indexScripts = [...dataScripts, 'js/bootstrap.js'];
+const topicFragments = [
+  'fragments/kapitaalbelangen.html',
+  'fragments/vreemde-valuta.html',
+  'fragments/consolidatie-nvw.html',
+  'fragments/consolidatie-hk.html',
+];
+const fallbackPages = [
+  'fallback/kapitaalbelangen.html',
+  'fallback/vreemde-valuta.html',
+  'fallback/consolidatie-nvw.html',
+  'fallback/consolidatie-hk.html',
 ];
 
 const html = read('index.html');
 assert.match(html, /<link rel="stylesheet" href="css\/app\.css">/);
 assert.doesNotMatch(html, /<style>/);
 assert.doesNotMatch(html, /id="bank"/);
-for (const script of expectedScripts) {
+for (const script of indexScripts) {
   assert.match(html, new RegExp(`<script src="${script.replaceAll('.', '\\.')}"`));
 }
+for (const fallbackPage of fallbackPages) {
+  assert.match(html, new RegExp(`href="${fallbackPage.replaceAll('.', '\\.')}"`));
+}
 
-const staticQuestionIds = [...html.matchAll(/<section class="screen question frame" id="([a-z]+)-(\d+)"/g)]
+const staticQuestionHtml = topicFragments.map(read).join('');
+assert.doesNotMatch(staticQuestionHtml, /\{[a-z]+\}/i, 'De vraagfragmenten bevatten een onvervangen placeholder.');
+const staticQuestionIds = [...staticQuestionHtml.matchAll(/<section class="screen question frame" id="([a-z]+)-(\d+)"/g)]
   .map((match) => `${match[1]}-${match[2]}`);
-assert.equal(staticQuestionIds.length, 120, 'De statische HTML moet 120 vragen bevatten.');
+assert.equal(staticQuestionIds.length, 120, 'De vier vraagfragmenten moeten samen 120 vragen bevatten.');
 assert.equal(new Set(staticQuestionIds).size, 120, 'Iedere statische vraag-ID moet uniek zijn.');
+
+fallbackPages.forEach((fallbackPage) => {
+  const fallbackHtml = read(fallbackPage);
+  assert.equal([...fallbackHtml.matchAll(/<section class="screen question frame"/g)].length, 30, `${fallbackPage} moet 30 statische vragen bevatten.`);
+});
+
+function listFiles(directory, prefix = '') {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const relativePath = path.join(prefix, entry.name);
+    const absolutePath = path.join(directory, entry.name);
+    return entry.isDirectory() ? listFiles(absolutePath, relativePath) : [relativePath];
+  });
+}
+
+for (const relativePath of listFiles(root)) {
+  const size = fs.statSync(path.join(root, relativePath)).size;
+  assert.ok(size < 900_000, `${relativePath} is te groot voor betrouwbare publicatie (${size} bytes).`);
+}
 
 const sandbox = { window: {} };
 vm.createContext(sandbox);
-for (const script of expectedScripts.slice(0, 5)) {
+for (const script of dataScripts) {
   new vm.Script(read(script), { filename: script }).runInContext(sandbox);
 }
 
@@ -70,7 +105,7 @@ for (const [code, expectedName] of Object.entries(expectedTopicNames)) {
     assert.equal(question.options.length, 4, `${code}-${question.id}: verwacht vier antwoordopties.`);
     assert.ok(Number.isInteger(question.correct) && question.correct >= 0 && question.correct <= 3);
     assert.ok(question.title && question.task && question.explanation?.length);
-    assert.ok(staticQuestionIds.includes(`${code}-${question.id}`), `${code}-${question.id} ontbreekt in index.html.`);
+    assert.ok(staticQuestionIds.includes(`${code}-${question.id}`), `${code}-${question.id} ontbreekt in de vraagfragmenten.`);
 
     visit(question, (object) => {
       if (!Array.isArray(object.auditExpressions)) return;
@@ -94,5 +129,6 @@ assert.ok(auditedCalculations > 0, 'Er zijn geen controleberekeningen gevonden.'
 
 new vm.Script(read('js/app.js'), { filename: 'js/app.js' });
 new vm.Script(read('js/calculator.js'), { filename: 'js/calculator.js' });
+new vm.Script(read('js/bootstrap.js'), { filename: 'js/bootstrap.js' });
 
 console.log(`CAFA2-validatie geslaagd: ${questionCount} vragen en ${auditedCalculations} controleberekeningen.`);
