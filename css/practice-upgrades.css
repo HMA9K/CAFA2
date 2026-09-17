@@ -1,0 +1,100 @@
+.question-nav.practice-question-nav {
+  padding: 18px 20px calc(18px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid #e8e8e8;
+  box-shadow: none;
+  background: #fff;
+  gap: 12px;
+}
+.practice-question-nav .practice-question-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-left: auto;
+}
+.practice-question-nav .practice-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 5px 9px;
+  border: 2px solid #605363;
+  border-radius: 2px;
+  background: #fff;
+  color: #605363;
+  font: 700 14px/1.25 Arial, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.practice-question-nav .practice-action:hover {
+  color: #443747;
+  background: #f5f2f6;
+}
+.practice-question-nav .practice-action:focus-visible {
+  outline: 3px solid #2085d8;
+  outline-offset: 3px;
+}
+.practice-question-nav .practice-finish {
+  border-color: #008f61;
+  color: #008f61;
+}
+.practice-question-nav .practice-finish:hover {
+  color: #006b48;
+  background: #eef8f3;
+}
+.practice-question-nav .practice-mark.is-marked {
+  color: #fff;
+  background: #605363;
+}
+.practice-question-nav .auto-score-inline {
+  margin-right: 4px;
+}
+.question .practice-question-count {
+  display: inline-flex;
+  gap: 4px;
+  align-items: baseline;
+  font: 400 11px/1.35 Arial, sans-serif;
+  color: #153b59;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.question .practice-question-count span {
+  font-size: 19px;
+  color: #708294;
+  font-weight: 400;
+}
+.question .own-editor.practice-plain-hidden {
+  display: none !important;
+}
+.practice-rich-answer {
+  margin: 7px 0 10px;
+}
+@media (max-width: 700px) {
+  .question-nav.practice-question-nav {
+    padding: 10px 9px calc(10px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+  }
+  .practice-question-nav .practice-question-actions {
+    gap: 7px;
+  }
+  .practice-question-nav .auto-score-inline {
+    display: none;
+  }
+  .practice-question-nav .practice-action {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+}
+@media (max-width: 420px) {
+  .practice-question-nav .practice-question-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+  .practice-question-nav .practice-action {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+}
