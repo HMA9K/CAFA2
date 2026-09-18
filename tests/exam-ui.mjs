@@ -251,8 +251,10 @@ try {
   ui.click('[data-close-info]');
   ui.action('overview');
   assert.equal(ui.document.querySelectorAll('#exam-info-dialog [data-exam-index]').length, 3);
-  assert.equal(ui.document.querySelectorAll('#exam-info-dialog .exam-overview-section').length, 2);
-  assert.equal(ui.$('#exam-info-dialog [data-exam-index="0"] .cafa-overview-title').textContent, 'Uitwerking A');
+  assert.equal(ui.document.querySelectorAll('#exam-info-dialog .compact-overview-divider').length, 1);
+  assert.equal(ui.$('#exam-info-dialog .compact-overview-remaining strong').textContent,'1');
+  assert.equal(ui.$('#exam-info-dialog .compact-overview-range').textContent,'1-3');
+  assert.match(ui.$('#exam-info-dialog [data-exam-index="0"]').getAttribute('aria-label'), /Uitwerking A/);
   assert.match(ui.$('#exam-info-dialog [data-exam-index="0"]').getAttribute('aria-label'), /beantwoord, gemarkeerd/);
   assert.equal(ui.$('#exam-info-dialog [aria-current="step"]').dataset.examIndex, '2');
   assert.equal(ui.$('#exam-info-dialog [data-exam-index="0"]').classList.contains('is-answered'), true);

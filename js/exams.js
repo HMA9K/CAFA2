@@ -170,21 +170,25 @@
     }
     updateSaveStatus();
   }
-  function showModal(title,html) {
+  function showModal(title,html,overviewSize) {
     var old=document.getElementById('exam-info-dialog'); if(old)old.remove();
     var dialog=document.createElement('dialog');dialog.id='exam-info-dialog';dialog.className='exam-dialog exam-info-dialog';dialog.setAttribute('aria-labelledby','exam-info-title');
     dialog.innerHTML='<div class="exam-modal-head"><h2 id="exam-info-title">'+esc(title)+'</h2><button type="button" class="btn" data-close-info aria-label="Venster sluiten">Sluiten ×</button></div><div class="exam-modal-body">'+html+'</div>';
+    if(overviewSize){dialog.classList.add('compact-overview-dialog');dialog.querySelector('[data-close-info]').textContent='×';dialog.insertAdjacentHTML('beforeend','<div class="compact-overview-footer"><span class="compact-overview-range">1-'+overviewSize+'</span><button type="button" class="btn primary" data-close-info>Sluiten</button></div>');}
     document.body.appendChild(dialog);
     if(window.CafaStockTable)window.CafaStockTable.enhance(dialog);
-    dialog.querySelector('[data-close-info]').addEventListener('click',function(){dialog.close();});
+    dialog.querySelectorAll('[data-close-info]').forEach(function(button){button.addEventListener('click',function(){dialog.close();});});
     dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=byId(selectedAttempt);if(attempt&&attempt.status==='active'){attempt.currentIndex=Number(target.dataset.examIndex);save();dialog.close();route();}}});
     dialog.addEventListener('close',function(){dialog.remove();});
     if(dialog.showModal)dialog.showModal();else{dialog.setAttribute('open','');}
   }
   function overview(attempt) {
-    var groups=(attempt.exam.sections||[]).slice();
-    if(!groups.length||attempt.exam.questions.some(function(q){return !q.sectionId;}))groups.push({id:null,title:groups.length?'Overige vragen':'Alle vragen'});
-    showModal('Vragenoverzicht','<p class="cafa-overview-summary">'+Engine.answeredCount(attempt)+' van '+attempt.exam.questions.length+' beantwoord · '+Object.values(attempt.marked).filter(Boolean).length+' gemarkeerd. Klik op een vraag om verder te gaan.</p>'+groups.map(function(section){return '<section class="exam-overview-section"><h3>'+esc(section.title)+'</h3><ol class="cafa-overview-list">'+attempt.exam.questions.map(function(q,i){if((q.sectionId||null)!==section.id)return '';var done=answered(attempt,q),marked=!!attempt.marked[q.id],current=i===attempt.currentIndex;return '<li><button type="button" data-exam-index="'+i+'" class="cafa-overview-item '+(done?'answered is-answered ':'')+(marked?'marked is-marked ':'')+(current?'current is-current':'')+'"'+(current?' aria-current="step"':'')+' aria-label="Vraag '+(i+1)+', '+esc(q.title||section.title)+(done?', beantwoord':', niet beantwoord')+(marked?', gemarkeerd':'')+(current?', huidige vraag':'')+'"><span class="cafa-overview-number">'+(i+1)+'</span><span class="cafa-overview-content"><span class="cafa-overview-title">'+esc(q.title||'Vraag '+(i+1))+'</span><span class="cafa-overview-meta">'+(q.type==='mc'?'Meerkeuzevraag':'Open vraag')+(q.points!==undefined?' · '+q.points+' punten':'')+(current?' · Huidige vraag':'')+'</span></span><span class="cafa-overview-state">'+(done?'Beantwoord':'Niet beantwoord')+'</span><span class="cafa-overview-mark">Gemarkeerd</span></button></li>';}).join('')+'</ol></section>';}).join(''));
+    var questions=attempt.exam.questions,total=questions.length;
+    var html='<div class="compact-overview-body"><div class="compact-overview-remaining">NOG TE DOEN <strong>'+(total-Engine.answeredCount(attempt))+'</strong></div><ol class="compact-overview-grid" style="--overview-columns:'+Math.ceil(total/10)+'">'+questions.map(function(q,i){
+      var done=answered(attempt,q),marked=!!attempt.marked[q.id],current=i===attempt.currentIndex,section=sectionFor(attempt,q),boundary=i>0&&q.sectionId!==questions[i-1].sectionId;
+      return '<li class="'+(boundary?'compact-overview-divider':'')+'">'+(boundary?'<span class="sr-only">'+esc(section?section.title:'Volgende opgave')+'</span>':'')+'<button type="button" data-exam-index="'+i+'" class="compact-overview-item '+(done?'is-answered ':'')+(marked?'is-marked ':'')+'"'+(current?' aria-current="step"':'')+' aria-label="Vraag '+(i+1)+', '+esc(q.title||(section?section.title:''))+(done?', beantwoord':', niet beantwoord')+(marked?', gemarkeerd':'')+(current?', huidige vraag':'')+'"><span class="compact-overview-number">'+(i+1)+'</span><span class="compact-overview-state">'+(done?'Beantwoord':'Niet<br>beantwoord')+'</span>'+(marked?'<span class="compact-overview-flag" aria-hidden="true" title="Gemarkeerd">⚑</span>':'')+'</button></li>';
+    }).join('')+'</ol></div>';
+    showModal('Vraagoverzicht',html,total);
   }
   function invalidateScore(a,q){if(a.scores)delete a.scores[q.id];}
   function scoreFor(a,q){

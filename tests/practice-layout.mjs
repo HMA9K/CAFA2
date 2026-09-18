@@ -56,8 +56,11 @@ try {
   const before = JSON.stringify(w.CafaPractice.getAnswer('kap', 2));
   query('#kap-2 [data-overview]').click();
   assert.equal(query('#overview-dialog').open, true);
-  assert.equal(all('#overview-dialog .cafa-overview-item').length, 30);
-  assert.equal(query('#overview-dialog [data-nav="kap-2"] .cafa-overview-title').textContent, w.CAFA2_DATA.modules.kap.questions[1].title);
+  assert.equal(all('#overview-dialog .compact-overview-item').length, 30);
+  assert(query('#overview-dialog [data-nav="kap-2"]').getAttribute('aria-label').includes(w.CAFA2_DATA.modules.kap.questions[1].title));
+  assert.equal(query('#overview-dialog .compact-overview-range').textContent,'1-30');
+  assert.equal(all('#overview-dialog .compact-overview-divider').length,0);
+  assert.equal(query('#overview-dialog [data-nav="kap-2"] .compact-overview-state').textContent,'Beantwoord');
   query('#overview-dialog [data-nav="kap-13"]').click();
   await new Promise(resolve => setTimeout(resolve, 30));
   assert.equal(query('#overview-dialog').open, false);
