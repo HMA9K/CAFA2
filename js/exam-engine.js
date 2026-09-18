@@ -162,6 +162,9 @@
       startedAt: now,
       deadlineAt: deadlineAt,
       extraMinutes: extraMinutes,
+      untimed: options.untimed === true,
+      pausedAt: null,
+      pausedSeconds: null,
       answers: {},
       currentIndex: 0,
       marked: {},
@@ -173,10 +176,28 @@
 
   function remainingSeconds(attempt, now) {
     if (!isRecord(attempt) || !Number.isFinite(attempt.deadlineAt)) throw new TypeError('De eindtijd ontbreekt.');
+    if (attempt.untimed) return Infinity;
+    if (attempt.pausedAt != null) return Math.max(0, attempt.pausedSeconds || 0);
     return Math.max(0, Math.ceil((attempt.deadlineAt - timestamp(now)) / 1000));
   }
 
+  function pauseAttempt(attempt, now) {
+    var time = timestamp(now);
+    if (attempt.status !== 'active' || attempt.pausedAt != null || remainingSeconds(attempt, time) === 0) return attempt;
+    attempt.pausedSeconds = attempt.untimed ? null : remainingSeconds(attempt, time);
+    attempt.pausedAt = time;
+    return attempt;
+  }
+  function resumeAttempt(attempt, now) {
+    var time = timestamp(now);
+    if (attempt.status !== 'active' || attempt.pausedAt == null) return attempt;
+    if (!attempt.untimed) attempt.deadlineAt = time + attempt.pausedSeconds * 1000;
+    attempt.pausedAt = null; attempt.pausedSeconds = null;
+    return attempt;
+  }
+
   function formatTime(seconds) {
+    if (seconds === Infinity) return 'Zonder tijdslimiet';
     if (!Number.isFinite(seconds)) throw new TypeError('Het aantal seconden moet een getal zijn.');
     var value = Math.max(0, Math.ceil(seconds));
     if (value > 600) return Math.ceil(value / 60) + ' min';
@@ -217,7 +238,7 @@
     return attempt.exam.questions.filter(function (question) {
       var answer = answers[question.id];
       if (!isRecord(answer)) return false;
-      if (question.type === 'open') return hasText(answer.html) || (isRecord(answer.stockCells) && Object.values(answer.stockCells).some(function(value){return typeof value==='string' && value.trim().length>0;}));
+      if (question.type === 'open') return (Array.isArray(answer.journalRows) && answer.journalRows.some(function(row){return Array.isArray(row) && row.some(function(cell){return typeof cell === 'string' && cell.trim().length > 0;});})) || hasText(answer.html) || (isRecord(answer.stockCells) && Object.values(answer.stockCells).some(function(value){return typeof value==='string' && value.trim().length>0;}));
       return question.type === 'mc' && Array.isArray(question.options) && question.options.some(function (option) {
         return option.id === answer.optionId;
       });
@@ -229,6 +250,8 @@
     createAttempt: createAttempt,
     remainingSeconds: remainingSeconds,
     formatTime: formatTime,
+    pauseAttempt: pauseAttempt,
+    resumeAttempt: resumeAttempt,
     finishAttempt: finishAttempt,
     answeredCount: answeredCount
   });

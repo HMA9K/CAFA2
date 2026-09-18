@@ -58,9 +58,16 @@
     var root=document.createElement('div');root.className='exam-document exam-source-document exam-source-'+kind;
     root.innerHTML=html?Editor.sanitize(html):'<p>'+escape(plain)+'</p>';
     var formats=(window.CAFA2_SOURCE_FORMAT||{})[exam.id],runs=formats&&(formats[kind==='solution'?'solution':'exam'])||[];
+    if(kind==='question'){
+      root.querySelectorAll('p').forEach(function(p){
+        if(!/\ba\.\s/.test(p.textContent)||!/\bb\.\s/.test(p.textContent))return;
+        var walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT),nodes=[],node;while((node=walker.nextNode()))nodes.push(node);
+        nodes.forEach(function(n){var parts=n.data.split(/(?=\s+[a-z]\.\s)/);if(parts.length<2)return;var fragment=document.createDocumentFragment();parts.forEach(function(part,i){if(i){var span=document.createElement('span');span.className='exam-question-part';span.textContent=part;fragment.appendChild(span);}else fragment.appendChild(document.createTextNode(part));});n.replaceWith(fragment);});
+      });
+    }
     styledText(root,runs,kind==='solution');tables(root,kind==='solution');
     // Logo is extracted from the supplied cover, not redrawn or substituted.
-    if(formats){var header=document.createElement('div');header.className='exam-source-brand';var logo=document.createElement('img');logo.src='assets/nyenrode-logo.png';logo.alt='Nyenrode Business Universiteit';logo.width=262;logo.height=59;header.appendChild(logo);root.prepend(header);}
+    if(formats && kind==='exam'){var header=document.createElement('div');header.className='exam-source-brand';var logo=document.createElement('img');logo.src='assets/nyenrode-logo.png';logo.alt='Nyenrode Business Universiteit';logo.width=262;logo.height=59;header.appendChild(logo);root.prepend(header);}
     return root.outerHTML;
   }
   window.CafaExamDocument={render:render};
