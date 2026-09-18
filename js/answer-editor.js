@@ -28,6 +28,7 @@
         // Browser-normalized colors contain no URLs or executable expressions.
         if (/^(#[0-9a-f]{3,8}|[a-z]+|rgba?\([\d\s.,%]+\))$/i.test(styles.color)) target.style.color = styles.color;
         if (/^(12|14|16|18|20|24)px$/.test(styles.fontSize)) target.style.fontSize = styles.fontSize;
+        if (node.tagName === 'OL' && /^(a|A|i|I|1)$/.test(node.getAttribute('type') || '')) target.setAttribute('type', node.getAttribute('type'));
         if (node.tagName === 'OL' && /^\d{1,4}$/.test(node.getAttribute('start') || '')) target.setAttribute('start', node.getAttribute('start'));
         if (node.tagName === 'TD' || node.tagName === 'TH') {
           ['colspan', 'rowspan'].forEach(function (attribute) {

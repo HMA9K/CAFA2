@@ -36,11 +36,6 @@
     brand.classList.add('cafa-wordmark');
     brand.setAttribute('aria-label', 'CAFA2 dashboard');
     brand.innerHTML = '<svg viewBox="0 0 38 44" aria-hidden="true"><path fill="currentColor" d="M32 12 26 17C23 10 9 12 9 25c0 13 15 17 21 6l6 4C26 51 2 45 2 25 2 5 23 2 32 12Z"/><path fill="#ff720c" d="M3 5h12v12H3Z"/><path fill="none" stroke="#444159" stroke-width="2.7" d="m5 10 3 3 6-7"/></svg><span>afa2</span><small>OEFENOMGEVING</small>';
-    var dashboardLink = document.createElement('a');
-    dashboardLink.href = '#dashboard';
-    dashboardLink.textContent = 'Dashboard';
-    dashboardLink.className = 'dashboard-link';
-    document.querySelector('.top-controls').prepend(dashboardLink);
     return loadScript('js/app.js');
   }).then(function () {
     return loadScript('js/calculator.js');
