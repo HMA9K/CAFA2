@@ -1,0 +1,10 @@
+.cafa-startup { display:none; max-width:1360px; margin:0 auto; padding:30px 24px; }
+.cafa-starting #app-content,.cafa-start-failed #app-content { display:none!important; }
+.cafa-starting .cafa-startup,.cafa-start-failed .cafa-startup { display:block; }
+.cafa-startup-failure { display:none; }
+.cafa-start-failed .cafa-startup-wait { display:none; }
+.cafa-start-failed .cafa-startup-failure { display:block; }
+.cafa-startup h1 { font-size:22px; }
+.cafa-startup p { color:#62616b; }
+.cafa-startup ul { padding-left:20px; }
+.cafa-startup li { margin:10px 0; }
