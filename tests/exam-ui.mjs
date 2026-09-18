@@ -53,8 +53,8 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
   window.HTMLAnchorElement.prototype.click = function () { /* Backups must never navigate or download during tests. */ };
   window.CafaPractice = { getCompleted: () => practice };
   if (saved !== undefined) window.localStorage.setItem(storageKey, saved);
-  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'data/exams.js']) window.eval(read(script));
-  window.CAFA2_EXAMS = exam ? [exam] : [];
+  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'data/exam-source-format.js', 'js/exam-document.js', 'data/exams.js']) window.eval(read(script));
+  window.CAFA2_EXAMS = exam ? (Array.isArray(exam)?exam:[exam]) : [];
   window.eval(read('js/exams.js'));
   const document = window.document;
   const $ = selector => document.querySelector(selector);
@@ -94,6 +94,43 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
 }
 
 try {
+  // Different exams and repeat attempts remain independent, including expiry.
+  const a=fixture(), b={...fixture(),id:'second-exam',durationMinutes:60};
+  const multi=environment({exam:[a,b]});
+  multi.route('#welkom/'+a.id);multi.action('start');
+  const aId=multi.state()[0].id;multi.type('<p>Antwoord eerste poging</p>');
+  multi.setTime(startTime+60_000);
+  multi.route('#welkom/'+b.id);multi.change('[data-exam-extra]',true);multi.action('start');
+  const bId=multi.state()[1].id;multi.type('<p>Antwoord tweede tentamen</p>');
+  assert.equal(multi.$('[role="timer"]').textContent,'90 min');
+  multi.route('#welkom/'+a.id);assert.ok(multi.$('[data-exam-action="start"]'));
+  multi.action('start');const repeatId=multi.state()[2].id;
+  multi.type('<p>Antwoord herhaalde poging</p>');
+  multi.route('#dashboard');
+  assert.equal(multi.document.querySelectorAll('a[href^="#tentamen/"]').length,6);
+  assert.equal(multi.$('.exam-clock').hidden,true);
+  multi.route('#tentamen/'+bId);multi.action('section');
+  multi.setTime(startTime+15*60_000);
+  assert.equal(multi.state()[0].status,'completed');
+  assert.equal(multi.state()[1].status,'active');
+  assert.equal(multi.state()[2].status,'active');
+  assert.equal(multi.window.location.hash,'#tentamen/'+bId,'Other expiry must not navigate away.');
+  assert.ok(multi.$('#exam-info-dialog'),'Other expiry must not close the current section.');
+  multi.click('[data-close-info]');
+  assert.equal(multi.$('[role="timer"]').textContent,'76 min');
+  assert.match(multi.$('[contenteditable]').textContent,/tweede tentamen/);
+  multi.setTime(startTime+16*60_000);
+  assert.equal(multi.state()[2].status,'completed');
+  assert.equal(multi.state()[1].status,'active');
+  const multiReload=environment({exam:[a,b],saved:multi.saved(),hash:'#tentamen/'+bId,now:startTime+16*60_000});
+  assert.match(multiReload.$('[contenteditable]').textContent,/tweede tentamen/);
+  assert.match(multiReload.state()[0].answers.q1.html,/eerste poging/);
+  assert.match(multiReload.state()[2].answers.q1.html,/herhaalde poging/);
+  multiReload.action('submit');multiReload.click('[data-exam-confirm-submit]');
+  assert.equal(multiReload.state().filter(a=>a.status==='completed').length,3);
+  assert.equal(multiReload.$('.exam-clock').hidden,true);
+  console.log('Parallel attempts: separate answers, durations, repeats, background expiry, selected clock and reload passed.');
+
   const ui = environment();
   assert.equal(ui.$('[data-exam-filter]').value, 'upcoming');
   assert.match(ui.hostText(), /CAFA2 oefenvragen/);
@@ -291,6 +328,32 @@ try {
   console.log('Stock tables: 14 templates, blank/zero status, percentages, navigation, reload, notes and read-only expiry passed.');
 
   for (const run of [ui, reopened, expiredWhileClosed, submit, demo]) assert.deepEqual(run.errors, [], 'No uncaught jsdom errors are permitted.');
+  const formatted=environment({exam:null});
+  for(const name of fs.readdirSync(new URL('../data/',import.meta.url)).filter(n=>/^exam-20/.test(n)))formatted.window.eval(read('data/'+name));
+  const render=formatted.window.CafaExamDocument.render;
+  const sourceText=html=>{const el=formatted.document.createElement('div');el.innerHTML=html;return el.textContent.replace(/\s+/g,' ').trim();};
+  for(const exam of formatted.window.CAFA2_EXAMS){
+    const intro=render(exam,'exam',exam.introductionHtml);
+    assert.match(intro,/nyenrode-logo.png/);
+    for(const section of exam.sections){
+      const rendered=render(exam,'exam',section.contentHtml);
+      assert.equal(sourceText(rendered),sourceText(section.contentHtml),'Case text must not change.');
+    }
+    for(const q of exam.questions){
+      const rendered=render(exam,'question',q.promptHtml,q.prompt);
+      assert.equal(sourceText(rendered),sourceText(q.promptHtml||'<p>'+q.prompt+'</p>'));
+      const model=render(exam,'solution',q.solutionHtml,q.solution);
+      assert.match(model,/exam-source-solution/);
+      // Point marks gain parentheses, but every original amount and word stays.
+      const normalize=t=>t.replace(/[()]/g,'').replace(/\s+/g,'');
+      assert.equal(normalize(sourceText(model)),normalize(sourceText(q.solutionHtml||'<p>'+q.solution+'</p>')));
+    }
+  }
+  assert.match(formatted.window.CafaAnswerEditor.sanitize('<ol type="a"><li>Test</li></ol>'),/type="a"/);
+  const april=formatted.window.CAFA2_EXAMS.find(e=>e.id==='cafa2-20260429');
+  const model=render(april,'solution',april.questions[0].solutionHtml);
+  assert.match(model,/colspan="2"/);assert.match(model,/exam-source-points/);assert.match(model,/exam-source-total/);
+  console.log('Source formatting: 5 covers, 20 sections, 131 questions and models retain all text; logo, letter lists, red grading and reconciliation spans passed.');
   console.log('Exam UI: welcome, untimed MC, +30 minutes, sections, navigation, autosave/reload, timer, expiry, read-only review, completion and backup passed.');
 } finally {
   windows.forEach(window => window.close());
