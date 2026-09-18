@@ -53,7 +53,7 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
   window.HTMLAnchorElement.prototype.click = function () { /* Backups must never navigate or download during tests. */ };
   window.CafaPractice = { getCompleted: () => practice };
   if (saved !== undefined) window.localStorage.setItem(storageKey, saved);
-  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'data/exam-source-format.js', 'js/exam-document.js', 'data/exams.js']) window.eval(read(script));
+  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'js/journal-table.js', 'data/exam-source-format.js', 'js/exam-document.js', 'data/exams.js']) window.eval(read(script));
   window.CAFA2_EXAMS = exam ? (Array.isArray(exam)?exam:[exam]) : [];
   window.eval(read('js/exams.js'));
   const document = window.document;
@@ -94,6 +94,65 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
 }
 
 try {
+  // New practice modes retain time and answers across reloads.
+  const modes=environment();modes.route('#welkom/ui-fixture');modes.action('start');
+  const modeId=modes.state()[0].id;modes.type('<p>Bewaar mijn antwoord</p>');
+  modes.setTime(startTime+60000);modes.action('pause');
+  assert.equal(modes.$('[contenteditable]'),null);
+  assert.equal(modes.$('[role="timer"]').textContent,'Gepauzeerd');
+  modes.setTime(startTime+3600000);assert.equal(modes.state()[0].status,'active');
+  const pausedReload=environment({now:startTime+3600000,saved:modes.saved(),hash:'#tentamen/'+modeId});
+  assert.match(pausedReload.hostText(),/Toets gepauzeerd/);pausedReload.action('resume');
+  assert.equal(pausedReload.$('[role="timer"]').textContent,'14 minuten');
+  assert.match(pausedReload.$('[contenteditable]').textContent,/Bewaar mijn antwoord/);
+  pausedReload.action('check');
+  assert.match(pausedReload.$('#exam-info-dialog .review-sidebar').textContent,/GEHEIM ANTWOORD A/);
+  pausedReload.click('#exam-info-dialog [data-review-panel="score"]');
+  pausedReload.change('#exam-info-dialog [data-self-score]','3.5');
+  assert.equal(pausedReload.state()[0].scores.q1,3.5);
+  const handle=pausedReload.$('#exam-info-dialog .review-resizer');
+  handle.dispatchEvent(new pausedReload.window.KeyboardEvent('keydown',{bubbles:true,key:'ArrowLeft'}));
+  assert.equal(handle.getAttribute('aria-valuenow'),'43');
+  pausedReload.click('[data-close-info]');
+  pausedReload.type('<p>Nieuwe uitwerking</p>');assert.equal(pausedReload.state()[0].scores.q1,undefined,'An edited answer must be assessed again.');
+  modes.route('#welkom/ui-fixture');modes.change('[data-exam-untimed]',true);modes.action('start');
+  const noTime=modes.state()[1];modes.setTime(startTime+999999999);
+  assert.equal(modes.state()[1].status,'active');assert.equal(modes.$('[role="timer"]').textContent,'Zonder tijdslimiet');
+  const untimedReload=environment({now:startTime+999999999,saved:modes.saved(),hash:'#tentamen/'+noTime.id});
+  assert.equal(untimedReload.state()[1].status,'active');
+
+  const journalExam=fixture();journalExam.questions[0].prompt='Geef de journaalposten: a. aankoop; b. verkoop.';
+  journalExam.questions[0].promptHtml='<p>'+journalExam.questions[0].prompt+'</p>';
+  const journalUI=environment({exam:journalExam});journalUI.route('#welkom/ui-fixture');journalUI.action('start');
+  assert.equal(journalUI.document.querySelectorAll('.exam-question-part').length,2);
+  assert.equal(journalUI.document.querySelectorAll('.journal-table th').length,4);
+  const jInput=journalUI.$('[data-journal-row="0"][data-journal-col="0"]');jInput.value='Bank';jInput.dispatchEvent(new journalUI.window.Event('input',{bubbles:true}));
+  journalUI.click('.journal-add');assert.equal(journalUI.document.querySelectorAll('.journal-table tbody tr').length,9);
+  assert.equal(journalUI.state()[0].answers.q1.journalRows[0][0],'Bank');
+  const journalReload=environment({exam:journalExam,saved:journalUI.saved(),hash:journalUI.window.location.hash});
+  assert.equal(journalReload.$('[data-journal-row="0"][data-journal-col="0"]').value,'Bank');
+  journalReload.action('submit');journalReload.click('[data-exam-confirm-submit]');
+  assert.equal(journalReload.$('[data-journal-row]'),null);
+  assert.equal(journalReload.document.querySelectorAll('.result-question').length,3);
+  journalReload.change('[data-self-score][data-question="q1"]','3.5');
+  journalReload.change('[data-self-score][data-question="q3"]','4');
+  assert.match(journalReload.$('.result-summary').textContent,/75%/);
+  const finishedId=journalReload.state()[0].id;
+  journalReload.click('[data-tab="report"]');assert.equal(journalReload.document.querySelectorAll('.score-report tbody tr').length,3);
+  assert.match(journalReload.$('.score-report').textContent,/7,5/);
+  journalReload.route('#inzage/'+finishedId+'/vraag/0');
+  assert.ok(journalReload.$('.review-toolbar'));assert.ok(journalReload.$('.review-sidebar .exam-source-solution'));
+  assert.equal(journalReload.$('.review-toolbar [data-index="-1"]').disabled,true);
+  journalReload.change('[data-review-select]','2');journalReload.route(journalReload.window.location.hash);
+  assert.equal(journalReload.$('[data-review-select]').value,'2');
+  assert.equal(journalReload.$('.review-toolbar [data-index="3"]').disabled,true);
+  assert.equal(journalReload.$('.review-side-content[data-side-panel="model"]').hidden,false);
+  journalReload.$('[data-review-panel="section"]').click();
+  assert.equal(journalReload.$('[data-side-panel="section"]').hidden,false);
+  assert.match(journalReload.$('[data-side-panel="section"]').textContent,/UITSLUITEND CASUS B/);
+  for(const e of [modes,pausedReload,untimedReload,journalUI,journalReload])assert.deepEqual(e.errors,[]);
+  console.log('Practice experience: pause/reload/resume, untimed persistence, journal rows, multipart questions, per-question checks, score invalidation, report totals and review navigation passed.');
+
   // Different exams and repeat attempts remain independent, including expiry.
   const a=fixture(), b={...fixture(),id:'second-exam',durationMinutes:60};
   const multi=environment({exam:[a,b]});
@@ -231,14 +290,14 @@ try {
   assert.match(reopened.hostText(), /GEHEIM ANTWOORD A/);
   assert.match(reopened.hostText(), /GEHEIM ANTWOORD B/);
   assert.match(reopened.hostText(), /Modelbedrag 200/);
-  assert.match(reopened.hostText(), /geen cijfer of slagingsuitslag/);
+  assert.match(reopened.hostText(), /zelfbeoordeling aan de hand van het antwoordmodel/);
   reopened.route('#dashboard/voltooid');
   assert.match(reopened.hostText(), /CAFA2 integratietest/);
   assert.match(reopened.hostText(), /Tijd verstreken/);
   assert.match(reopened.hostText(), /2 \/ 3/);
   assert.deepEqual(Array.from(reopened.document.querySelectorAll('.exam-section h2'), el => el.textContent), ['Geplande inzages', 'Voltooide toetsen']);
   assert.deepEqual(Array.from(reopened.document.querySelectorAll('.exam-table-completed th'), el => el.textContent), ['Toetsnaam', 'Code', 'Ingeleverd', 'Percentage juist', 'Cijfer', 'Resultaat', 'Actie']);
-  assert.match(reopened.hostText(), /Niet beoordeeld/);
+  assert.match(reopened.hostText(), /Nog niet volledig beoordeeld/);
   const beforeFilters = reopened.saved();
   reopened.change('[data-completed-type]', 'practice');
   assert.match(reopened.$('.exam-table-completed').textContent, /Geen voltooide toetsen/);
@@ -341,6 +400,7 @@ try {
     }
     for(const q of exam.questions){
       const rendered=render(exam,'question',q.promptHtml,q.prompt);
+      assert.doesNotMatch(rendered,/nyenrode-logo/);
       assert.equal(sourceText(rendered),sourceText(q.promptHtml||'<p>'+q.prompt+'</p>'));
       const model=render(exam,'solution',q.solutionHtml,q.solution);
       assert.match(model,/exam-source-solution/);

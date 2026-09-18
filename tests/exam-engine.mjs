@@ -117,7 +117,17 @@ for (const [seconds, formatted] of [[7200, '120 min'], [660, '11 min'], [601, '1
 assert.equal(engine.remainingSeconds(attempt, attempt.deadlineAt - 1), 1, 'The last partial second remains visible.');
 assert.equal(engine.remainingSeconds(attempt, attempt.deadlineAt + 60_000), 0);
 assert.equal(engine.formatTime(0.1), '00:01');
-assert.throws(() => engine.formatTime(Infinity));
+assert.equal(engine.formatTime(Infinity), 'Zonder tijdslimiet');
+const untimed=engine.createAttempt(fixture(),{now,untimed:true});
+assert.equal(engine.remainingSeconds(untimed,now+999999999),Infinity);
+assert.throws(()=>engine.finishAttempt(untimed,{now:now+999999999,reason:'timeout'}));
+const paused=engine.createAttempt(fixture(),{now});
+engine.pauseAttempt(paused,now+60000);
+assert.equal(engine.remainingSeconds(paused,now+999999999),7140);
+const reloadPaused=plain(paused);
+engine.resumeAttempt(reloadPaused,now+999999999);
+assert.equal(engine.remainingSeconds(reloadPaused,now+999999999),7140);
+assert.equal(engine.remainingSeconds(reloadPaused,now+999999999+7140000),0);
 assert.throws(() => engine.remainingSeconds({}, now));
 
 const restored = plain(attempt);
