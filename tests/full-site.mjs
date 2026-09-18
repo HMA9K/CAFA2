@@ -7,12 +7,15 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const {JSDOM,VirtualConsole}=await import(process.env.JSDOM_PATH?pathToFileURL(process.env.JSDOM_PATH).href:'jsdom');
 const server=http.createServer((req,res)=>{const name=path.resolve(root,'.'+(req.url==='/'?'/index.html':decodeURIComponent(req.url.split('?')[0])));if(!name.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}try{res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.css')?'text/css':'text/html');res.end(fs.readFileSync(name));}catch(e){res.writeHead(404);res.end();}});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
+const startupChecks=[],errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>errors.push(e.message));
 let dom;
 try{
-  dom=await JSDOM.fromURL('http://127.0.0.1:'+server.address().port+'/',{resources:'usable',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){w.fetch=(u,o)=>fetch(new URL(u,w.location.href),o);w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.scrollTo=()=>{};w.confirm=()=>true;w.alert=()=>{};w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};}});
+  dom=await JSDOM.fromURL('http://127.0.0.1:'+server.address().port+'/',{resources:'usable',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){w.fetch=(u,o)=>{startupChecks.push(w.getComputedStyle(w.document.getElementById('app-content')).display);return fetch(new URL(u,w.location.href),o);};w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.scrollTo=()=>{};w.confirm=()=>true;w.alert=()=>{};w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};}});
   const w=dom.window,pause=()=>new Promise(r=>setTimeout(r,50));
   for(let i=0;i<400&&!w.CafaExams;i++)await pause();
+  assert.ok(startupChecks.length>0);assert.ok(startupChecks.every(display=>display==='none'),'The intermediate topic screen must stay hidden during fragment loading.');
+  assert.equal(w.document.documentElement.classList.contains('cafa-starting'),false);
+  assert.equal(w.document.documentElement.classList.contains('cafa-start-failed'),false);
   assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,120);assert.equal(w.CafaExams.catalog.length,5);assert.equal(w.location.hash,'#dashboard');
   assert.ok(w.document.querySelector('#exam-app').textContent.includes('29-04-2026'));
   const reset=w.document.querySelector('[data-font="0"]');

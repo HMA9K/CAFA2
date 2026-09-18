@@ -46,7 +46,11 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     return loadScript('js/exams.js');
+  }).then(function () {
+    if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
+    if (root.CafaStartup) root.CafaStartup.finish();
   }).catch(function (error) {
+    if (root.CafaStartup) root.CafaStartup.fail();
     var status = document.getElementById('load-status');
     if (status) status.textContent = 'De interactieve versie kon niet laden. Open een onderwerp via een van de knoppen hieronder.';
     if (!status) {
