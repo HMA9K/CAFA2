@@ -9,6 +9,7 @@
     nodes.forEach(function(node){
       var text=node.data,ranges=[];
       runs.forEach(function(run){
+        if(run.text.length<20 && text.trim()!==run.text)return;
         var start=text.indexOf(run.text);
         while(start!==-1){
           if(!ranges.some(function(r){return start<r.end&&start+run.text.length>r.start;}))ranges.push({start:start,end:start+run.text.length,bold:run.bold,red:run.red});
