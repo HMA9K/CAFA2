@@ -38,3 +38,44 @@
 }
 
 .exam-source-solution h4 { font-weight:400; }
+
+/* Header controls match the supplied Cirrus reference. */
+.top-controls { gap:14px; }
+.exam-clock { order:-1; gap:15px; margin:0 22px 0 0; padding:0; border:0; color:#171717; font:14px Arial,sans-serif; }
+.exam-time-badge { display:flex; align-items:center; gap:4px; padding:9px 10px; border:1px solid #e3d8b7; border-radius:2px; background:#f0e7cd; white-space:nowrap; }
+.exam-clock .exam-time-badge span { display:inline; color:#171717; font-size:14px; }
+.exam-clock .exam-time-badge strong { color:#111; font-size:14px; min-width:0; text-align:left; }
+.exam-clock .exam-save-indicator { display:inline-flex; align-items:center; width:20px; height:20px; }
+.exam-save-indicator svg { width:20px; height:20px; }
+.exam-clock.is-urgent .exam-time-badge { background:#fce4bd; border-color:#d49b42; }
+.exam-clock.is-urgent .exam-time-badge strong { color:#8b3300; }
+.enhanced .top-controls .font-group { display:flex!important; align-items:center; gap:0; }
+.top-controls .font-group button { min-width:27px; padding:3px; font-size:18px; }
+.top-controls .font-group button[data-font="-1"] { font-size:16px; }
+.top-controls .font-group button[data-font="1"] { font-size:20px; }
+.top-controls .font-group button[hidden] { display:none!important; }
+.cafa-profile { display:flex; align-items:center; gap:42px; margin-left:30px; color:#f4f4f5; font:700 14px Arial,sans-serif; white-space:nowrap; }
+.cafa-profile svg { width:40px; height:40px; flex:none; }
+@media(max-width:900px) {
+  .top-controls { gap:8px; }
+  .cafa-wordmark small { display:none; }
+  .cafa-profile { gap:12px; margin-left:8px; }
+  .exam-clock { margin-right:4px; gap:8px; }
+}
+@media(max-width:680px) {
+  .bar-inner { flex-wrap:wrap; padding:8px 10px; gap:8px; }
+  .top-controls { flex:1; flex-wrap:wrap; justify-content:flex-end; gap:5px; }
+  .exam-clock { flex-basis:100%; justify-content:flex-end; margin:0; gap:6px; }
+  .exam-time-badge { padding:7px 6px; gap:3px; }
+  .exam-clock .exam-time-badge span,.exam-clock .exam-time-badge strong { font-size:11px; }
+  .exam-clock .exam-save-indicator,.exam-save-indicator svg { width:16px; height:16px; }
+  .cafa-profile { gap:7px; margin-left:5px; font-size:12px; }
+  .cafa-profile svg { width:30px; height:30px; }
+  .top-controls .font-group button { min-width:24px; }
+}
+@media(max-width:380px) {
+  .bar-inner .brand { align-self:flex-start; }
+  .top-controls { flex-basis:100%; }
+}
+.top-controls > [data-calc] { order:-2; }
+@media(max-width:680px) { .top-controls > [data-calc] { order:0; } }
