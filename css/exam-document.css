@@ -1,14 +1,14 @@
 /* Exam documents follow the supplied papers, separately from Cirrus controls. */
 .top-controls .top-score,.top-controls .home-link,.top-controls .dashboard-link { display:none!important; }
-.exam-source-document { font-family:Arial,Helvetica,sans-serif; color:#000; background:#fff; line-height:1.22; overflow-wrap:normal; word-break:normal; max-width:900px; margin:0 auto; padding:10px 0 18px; }
+.exam-source-document { font-family:Arial,Helvetica,sans-serif; color:#000; background:#fff; line-height:1.22; overflow-wrap:normal; word-break:normal; max-width:720px; margin:0 auto; padding:10px 0 18px; }
 .exam-source-document p { margin:0 0 12px; }
 .exam-source-document h2,.exam-source-document h3,.exam-source-document h4 { font-family:inherit; font-size:1em; line-height:1.22; color:#000; font-weight:700; margin:20px 0 14px; }
 .exam-source-document ul,.exam-source-document ol { margin:0 0 16px; padding-left:32px; }
 .exam-source-document li { margin:0 0 3px; }
-.exam-source-document ol[type="a"] { list-style-type:lower-alpha; }
-.exam-source-document ol[type="A"] { list-style-type:upper-alpha; }
-.exam-source-document ol[type="i"] { list-style-type:lower-roman; }
-.exam-source-document ol[type="I"] { list-style-type:upper-roman; }
+.exam-source-document ol[type="a" s] { list-style-type:lower-alpha; }
+.exam-source-document ol[type="A" s] { list-style-type:upper-alpha; }
+.exam-source-document ol[type="i" s] { list-style-type:lower-roman; }
+.exam-source-document ol[type="I" s] { list-style-type:upper-roman; }
 .exam-source-document .exam-source-brand { text-align:center; margin:8px 0 28px; }
 .exam-source-brand img { width:262px; max-width:75%; height:auto; }
 .exam-source-question > p:first-of-type { font-weight:700; }
@@ -28,7 +28,7 @@
 .exam-source-document .stock-matrix th,.exam-source-document .stock-matrix td { border-color:#000; background:#fff; }
 .exam-solution { background:#fff; border:1px solid #b5b5b5; white-space:normal; }
 .exam-solution > summary { color:#000; margin-bottom:16px; }
-.exam-running .exam-question-top { max-width:900px; margin:12px auto 18px; }
+.exam-running .exam-question-top { max-width:720px; margin:12px auto 18px; }
 .exam-running .exam-question-top h2 { color:#000; font-weight:700; }
 .exam-review-case { background:#fff; }
 @media(max-width:680px) {
