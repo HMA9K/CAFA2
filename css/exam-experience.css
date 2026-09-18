@@ -86,3 +86,6 @@
 .review-detail-layout .review-prompt{min-height:180px;max-height:38vh;overflow:auto}
 .review-detail-layout .exam-review-answer{max-height:55vh;overflow:auto}
 @media(max-width:800px){.review-split{grid-template-columns:minmax(0,1fr)}.review-resizer{display:none}.review-sidebar{margin-top:18px}.review-side-content{max-height:none;padding:16px}.review-detail-layout .review-prompt,.review-detail-layout .exam-review-answer{max-height:none}}
+
+.result-group h3{padding-right:7%}
+@media(max-width:800px){.result-group h3{padding-right:8px}}
