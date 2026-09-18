@@ -217,7 +217,7 @@
     return attempt.exam.questions.filter(function (question) {
       var answer = answers[question.id];
       if (!isRecord(answer)) return false;
-      if (question.type === 'open') return hasText(answer.html);
+      if (question.type === 'open') return hasText(answer.html) || (isRecord(answer.stockCells) && Object.values(answer.stockCells).some(function(value){return typeof value==='string' && value.trim().length>0;}));
       return question.type === 'mc' && Array.isArray(question.options) && question.options.some(function (option) {
         return option.id === answer.optionId;
       });

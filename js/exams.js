@@ -134,9 +134,19 @@
     if(q.sourceQuestion)host.querySelector('.exam-question-top').insertAdjacentHTML('afterend','<p class="small">Bronnummering: '+esc(q.sourceQuestion)+'</p>');
     var answerHost=host.querySelector('[data-exam-answer]');
     if(q.type==='open') {
+      var stock=window.CafaStockTable&&window.CafaStockTable.template(q);
+      if(stock){
+        var stockHost=document.createElement('div');answerHost.appendChild(stockHost);
+        window.CafaStockTable.mount(stockHost,stock,answerFor(attempt,q).stockCells,function(cells){
+          if(attempt.status!=='active'||Engine.remainingSeconds(attempt)===0){tick();return;}
+          attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{stockCells:cells});save();
+        });
+        var notes=document.createElement('details');notes.className='stock-notes';notes.open=!!answerFor(attempt,q).html;
+        notes.innerHTML='<summary>Toelichting of berekening toevoegen</summary><div data-stock-notes></div>';answerHost.appendChild(notes);answerHost=notes.querySelector('[data-stock-notes]');
+      }
       editor=Editor.mount(answerHost,{html:answerFor(attempt,q).html||'',label:'Antwoord op vraag '+(i+1),onChange:function(html){
         if(attempt.status!=='active'||Engine.remainingSeconds(attempt)===0){tick();return;}
-        attempt.answers[q.id]={html:html};save();
+        attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{html:html});save();
       }});
     } else {
       answerHost.innerHTML='<fieldset class="exam-options"><legend>Kies één antwoord</legend>'+q.options.map(function(option){return '<label><input type="radio" name="exam-answer" value="'+esc(option.id)+'" '+(answerFor(attempt,q).optionId===option.id?'checked':'')+'><span>'+esc(option.text)+'</span></label>';}).join('')+'</fieldset>';
@@ -148,6 +158,7 @@
     var dialog=document.createElement('dialog');dialog.id='exam-info-dialog';dialog.className='exam-dialog exam-info-dialog';dialog.setAttribute('aria-labelledby','exam-info-title');
     dialog.innerHTML='<div class="exam-modal-head"><h2 id="exam-info-title">'+esc(title)+'</h2><button type="button" class="btn" data-close-info aria-label="Venster sluiten">Sluiten ×</button></div><div class="exam-modal-body">'+html+'</div>';
     document.body.appendChild(dialog);
+    if(window.CafaStockTable)window.CafaStockTable.enhance(dialog);
     dialog.querySelector('[data-close-info]').addEventListener('click',function(){dialog.close();});
     dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=byId(selectedAttempt);if(attempt&&attempt.status==='active'){attempt.currentIndex=Number(target.dataset.examIndex);save();dialog.close();route();}}});
     dialog.addEventListener('close',function(){dialog.remove();});
@@ -166,6 +177,10 @@
       if(q.type==='mc'&&q.correctOptionId)html+='<p>'+(!answer.optionId?'Niet beantwoord.':answer.optionId===q.correctOptionId?'Goed.':'Niet juist.')+' Juiste antwoord: '+esc(q.options.find(function(o){return o.id===q.correctOptionId;}).text)+'</p>';
       html+='<details class="exam-solution"><summary>Oplossing / antwoordmodel</summary><div class="exam-document">'+rich(q.solutionHtml,q.solution||'Er is nog geen antwoordmodel toegevoegd.')+'</div></details></article>';});
     host.innerHTML=html+'</div>';
+    if(window.CafaStockTable)host.querySelectorAll('.exam-review-answer').forEach(function(answerHost,index){
+      var q=attempt.exam.questions[index],schema=window.CafaStockTable.template(q),answer=answerFor(attempt,q);
+      if(schema&&answer.stockCells){answerHost.insertAdjacentHTML('afterbegin',window.CafaStockTable.render(schema,answer.stockCells,true));if(!answer.html){var empty=answerHost.querySelector('em');if(empty)empty.remove();}}
+    });
   }
   function practiceReview(id) {
     var item=window.CafaPractice&&window.CafaPractice.getCompleted().find(function(x){return x.id===id;});if(!item)return missing();
@@ -201,6 +216,7 @@
     if(kind==='tentamen')runner(id);
     if(kind==='inzage')review(id);
     if(kind==='mc-inzage')practiceReview(id);
+    if(window.CafaStockTable)window.CafaStockTable.enhance(host);
     tick();window.scrollTo(0,0);
   }
   host.addEventListener('change',function(e){

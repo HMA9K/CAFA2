@@ -53,7 +53,7 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
   window.HTMLAnchorElement.prototype.click = function () { /* Backups must never navigate or download during tests. */ };
   window.CafaPractice = { getCompleted: () => practice };
   if (saved !== undefined) window.localStorage.setItem(storageKey, saved);
-  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'data/exams.js']) window.eval(read(script));
+  for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'data/exams.js']) window.eval(read(script));
   window.CAFA2_EXAMS = exam ? [exam] : [];
   window.eval(read('js/exams.js'));
   const document = window.document;
@@ -249,6 +249,46 @@ try {
     'The sectionless demonstration must list all its questions.');
   demo.click('[data-close-info]');
   assert.equal(demo.$('[data-exam-action="section"]'), null);
+
+  // All real stock questions use the question's blank table, never the answer key.
+  const content=environment({exam:null});
+  for(const day of ['20240422','20240930','20250417','20250924','20260429'])content.window.eval(read('data/exam-'+day+'.js'));
+  let stockQuestions=0;
+  for(const exam of content.window.CAFA2_EXAMS){
+    const run=environment({exam});run.route('#welkom/'+exam.id);run.action('start');
+    for(const [index,q] of exam.questions.entries()){
+      const schema=run.window.CafaStockTable.template(q);if(!schema)continue;stockQuestions++;
+      run.action('overview');run.click('[data-exam-index="'+index+'"]');
+      assert.equal(run.document.querySelectorAll('[data-exam-answer] .stock-matrix thead th').length,6);
+      assert.equal(run.document.querySelectorAll('[data-exam-answer] .stock-matrix tbody tr').length,schema.rows.length);
+      assert.equal(run.document.querySelectorAll('[data-stock-cell]').length>=15,true);
+      assert.equal(run.window.CafaExamEngine.answeredCount(run.state()[0]),0,'Blank headers must not count as answers.');
+      const input=run.$('[data-stock-cell]');input.value='0';input.dispatchEvent(new run.window.Event('input',{bubbles:true}));
+      assert.equal(run.window.CafaExamEngine.answeredCount(run.state()[0]),1,'An explicit zero is an answer.');
+      input.value='';input.dispatchEvent(new run.window.Event('input',{bubbles:true}));
+      assert.equal(run.window.CafaExamEngine.answeredCount(run.state()[0]),0);
+    }
+    assert.deepEqual(run.errors,[]);run.close();
+  }
+  assert.equal(stockQuestions,14,'Every stock matrix across all five exams must be fillable.');
+  const real=content.window.CAFA2_EXAMS.find(exam=>exam.id==='cafa2-20260429');
+  const stock=environment({exam:real});stock.route('#welkom/'+real.id);stock.action('start');
+  stock.action('overview');stock.click('[data-exam-index="13"]');
+  assert.equal(stock.$('[data-stock-cell="r0-c3"]').value,'','Unknown percentages stay blank.');
+  const cell=stock.$('[data-stock-cell="r1-c1"]');cell.value='320.000,50';cell.dispatchEvent(new stock.window.Event('input',{bubbles:true}));
+  stock.type('<p>Bestaande toelichting behouden</p>');
+  const qid=real.questions[13].id;
+  assert.equal(stock.state()[0].answers[qid].stockCells['r1-c1'],'320.000,50');
+  stock.action('next');stock.action('previous');
+  assert.equal(stock.$('[data-stock-cell="r1-c1"]').value,'320.000,50');
+  assert.match(stock.$('[contenteditable]').textContent,/Bestaande toelichting/);
+  const restored=environment({exam:real,saved:stock.saved(),hash:stock.window.location.hash});
+  assert.equal(restored.$('[data-stock-cell="r1-c1"]').value,'320.000,50','Refresh preserves table cells.');
+  restored.setTime(restored.state()[0].deadlineAt);restored.route(restored.window.location.hash);
+  assert.equal(restored.$('[data-stock-cell]'),null,'Submitted tables are read-only.');
+  assert.match(restored.hostText(),/320\.000,50/);assert.match(restored.hostText(),/Bestaande toelichting/);
+  assert.deepEqual(restored.errors,[]);assert.deepEqual(stock.errors,[]);
+  console.log('Stock tables: 14 templates, blank/zero status, percentages, navigation, reload, notes and read-only expiry passed.');
 
   for (const run of [ui, reopened, expiredWhileClosed, submit, demo]) assert.deepEqual(run.errors, [], 'No uncaught jsdom errors are permitted.');
   console.log('Exam UI: welcome, untimed MC, +30 minutes, sections, navigation, autosave/reload, timer, expiry, read-only review, completion and backup passed.');

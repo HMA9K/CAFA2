@@ -13,8 +13,8 @@
   function q(section, number, sourceQuestion, points, promptHtml, solutionHtml) {
     return { id: 'vraag-' + number, number: number, title: 'Vraag ' + number, sourceQuestion: 'Opgave ' + section + ', vraag ' + sourceQuestion, sectionId: 'opgave-' + section, type: 'open', points: points, prompt: plain(promptHtml), promptHtml: promptHtml, solution: plain(solutionHtml), solutionHtml: solutionHtml };
   }
-  var stockHeads = ['Datum', 'Voorraad', 'Niet-gerealiseerde intercompanywinst in voorraad (100%)', 'Interne correctie (…%)', 'Eliminatie t.l.v. aandeel derden (…%)', 'Eliminatie t.l.v. geconsolideerd resultaat (…%)'];
-  var blankStock = table(stockHeads, [['31-12-2023', '', '', '', '', ''], ['31-12-2024', '', '', '', '', ''], ['Toe/afname', '', '', '', '', '']]) + p('NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen moeten worden ingevuld.');
+  var stockHeads = ['Datum', 'Voorraad', 'Niet-gerealiseerde intercompanywinst in voorraad', 'Interne correctie', 'Eliminatie t.l.v. aandeel derden', 'Eliminatie t.l.v. geconsolideerd resultaat'];
+  var blankStock = table(stockHeads, [['', '', '100%', '…%', '…%', '…%'], ['31-12-2023', '', '', '', '', ''], ['31-12-2024', '', '', '', '', ''], ['Toe/afname', '', '', '', '', '']]) + p('NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen moeten worden ingevuld.');
   var introductionHtml = h('Comptabele Aspecten Financial Accounting 2') +
     table(['Tentamengegevens', ''], [['Datum', '24 september 2025'], ['Beschikbare tijd', '3 uur; 09:30 uur - 12:30 uur'], ['Opgesteld door', 'Kerngroep Comptabele Aspecten Financial Accounting 2']]) +
     p('<strong>Oefenversie van het oorspronkelijke tentamen.</strong> De onderstaande informatie is overgenomen van de eerste drie pagina’s. De regels over identificatie, de tentamenzaal, surveillanten en het inleveren van papier beschrijven de historische afname en gelden niet als toegangsvoorwaarden voor deze oefensite.') +
