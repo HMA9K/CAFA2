@@ -55,6 +55,8 @@
     return saveOK;
   }
   function updateSaveStatus() {
+    var indicator=document.querySelector('.exam-save-indicator');
+    if(indicator){indicator.hidden=!saveOK;}
     host.querySelectorAll('[data-exam-save]').forEach(function (el) {
       el.textContent = saveOK ? 'Opgeslagen op dit apparaat. De klok loopt ook door als je de pagina sluit.' : 'Opslaan lukt niet. Houd deze pagina open en download een back-up van je antwoorden.';
       el.classList.toggle('is-error',!saveOK);
@@ -190,7 +192,7 @@
     host.innerHTML='<a class="exam-back" href="#dashboard/voltooid">‹ Voltooide toetsen</a>'+head(item.title,'Eerdere MC-poging · alleen-lezen')+'<div class="exam-paper"><p>'+item.answered+' van '+item.total+' beantwoord.</p><p>'+item.good+' van '+item.auto+' nagekeken MC-antwoorden goed.</p><p>Zelfbeoordeling: '+item.selfGood+' van '+item.self+' goed. Zelfbeoordeling telt niet mee in de MC-score.</p>'+bank.questions.map(function(q){var a=item.answers[q.id]||{};return '<article class="exam-review-item"><h2>Vraag '+q.id+' · '+esc(q.title)+'</h2><p>'+esc(q.task)+'</p><div class="exam-review-answer">'+(a.choice!==null&&a.choice!==undefined?'<p>Gekozen antwoord: '+String.fromCharCode(65+a.choice)+'</p>':'')+(a.html?Editor.sanitize(a.html):a.text?'<p class="exam-prose">'+esc(a.text)+'</p>':'')+(a.rows&&a.rows.some(function(row){return row.some(Boolean);})?'<table><tbody>'+a.rows.map(function(row){return '<tr>'+row.map(function(cell){return '<td>'+esc(cell)+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table>':'')+(a.firstMC?'<p>Eerste MC-beoordeling: '+(a.firstMC.correct?'goed':'fout')+'</p>':'')+'</div></article>';}).join('')+'<a class="btn" href="#voortgang">Naar MC-voortgang</a></div>';
   }
   function missing() {host.innerHTML=head('Toets niet gevonden','De toets of poging is niet beschikbaar in deze browser.')+'<a class="btn" href="#dashboard">Naar dashboard</a>';}
-  var clock=document.createElement('div');clock.className='exam-clock';clock.hidden=true;clock.innerHTML='<span>Resterende tijd</span><strong role="timer" aria-label="Resterende toetstijd"></strong>';document.querySelector('.top-controls').appendChild(clock);
+  var clock=document.createElement('div');clock.className='exam-clock';clock.hidden=true;clock.innerHTML='<div class="exam-time-badge"><span>Totaal resterende tijd:</span> <strong role="timer" aria-label="Resterende toetstijd"></strong></div><span class="exam-save-indicator" aria-label="Antwoorden opgeslagen" title="Antwoorden opgeslagen op dit apparaat"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#36823d"/><path d="m5 10 3 3 7-7" fill="none" stroke="white" stroke-width="3"/></svg></span>';document.querySelector('.top-controls').prepend(clock);
   function complete(attempt,reason) {
     if(!attempt||attempt.status!=='active')return;
     var finished=Engine.finishAttempt(attempt,{reason:reason});
@@ -207,7 +209,7 @@
     running().filter(function(a){return Engine.remainingSeconds(a)===0;}).forEach(function(a){complete(a,'timeout');});
     var attempt=byId(selectedAttempt);
     clock.hidden=!(attempt&&attempt.status==='active');
-    if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);clock.querySelector('strong').textContent=Engine.formatTime(seconds);clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
+    if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);clock.querySelector('strong').textContent=Engine.formatTime(seconds).replace(/ min$/,' minuten');clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
   }
   function route() {
     dropEditor(); var parts=location.hash.slice(1).split('/'),kind=parts[0],id;

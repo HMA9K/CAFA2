@@ -102,7 +102,7 @@ try {
   multi.setTime(startTime+60_000);
   multi.route('#welkom/'+b.id);multi.change('[data-exam-extra]',true);multi.action('start');
   const bId=multi.state()[1].id;multi.type('<p>Antwoord tweede tentamen</p>');
-  assert.equal(multi.$('[role="timer"]').textContent,'90 min');
+  assert.equal(multi.$('[role="timer"]').textContent,'90 minuten');
   multi.route('#welkom/'+a.id);assert.ok(multi.$('[data-exam-action="start"]'));
   multi.action('start');const repeatId=multi.state()[2].id;
   multi.type('<p>Antwoord herhaalde poging</p>');
@@ -117,7 +117,7 @@ try {
   assert.equal(multi.window.location.hash,'#tentamen/'+bId,'Other expiry must not navigate away.');
   assert.ok(multi.$('#exam-info-dialog'),'Other expiry must not close the current section.');
   multi.click('[data-close-info]');
-  assert.equal(multi.$('[role="timer"]').textContent,'76 min');
+  assert.equal(multi.$('[role="timer"]').textContent,'76 minuten');
   assert.match(multi.$('[contenteditable]').textContent,/tweede tentamen/);
   multi.setTime(startTime+16*60_000);
   assert.equal(multi.state()[2].status,'completed');
@@ -163,7 +163,7 @@ try {
   assert.equal(first.deadlineAt, first.startedAt + 45 * 60_000);
   assert.equal(first.extraMinutes, 30);
   assert.equal(ui.$('.exam-clock').hidden, false);
-  assert.equal(ui.$('[role="timer"]').textContent, '45 min');
+  assert.equal(ui.$('[role="timer"]').textContent, '45 minuten');
   assert.equal(ui.$('[data-exam-extra]'), null, 'Extra time is chosen once, before starting.');
   assert.match(ui.hostText(), /Vraaggegeven A/);
   assert.doesNotMatch(ui.hostText(), /GEHEIM ANTWOORD/, 'No solution may appear during an active exam.');
@@ -211,10 +211,10 @@ try {
   ui.close();
   const reopened = environment({ now: first.startedAt + 10 * 60_000, saved: savedActive, hash: '#tentamen/' + first.id });
   assert.equal(reopened.state()[0].deadlineAt, first.deadlineAt, 'Refreshing must retain the original deadline.');
-  assert.equal(reopened.$('[role="timer"]').textContent, '35 min');
+  assert.equal(reopened.$('[role="timer"]').textContent, '35 minuten');
   assert.match(reopened.$('[contenteditable="true"]').innerHTML, /Mijn uitwerking/);
   reopened.setTime(first.deadlineAt - 601_000);
-  assert.equal(reopened.$('[role="timer"]').textContent, '11 min');
+  assert.equal(reopened.$('[role="timer"]').textContent, '11 minuten');
   reopened.setTime(first.deadlineAt - 600_000);
   assert.equal(reopened.$('[role="timer"]').textContent, '10:00');
   assert.match(reopened.$('#exam-announcement').textContent, /tien minuten/);

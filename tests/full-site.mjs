@@ -15,10 +15,19 @@ try{
   for(let i=0;i<400&&!w.CafaExams;i++)await pause();
   assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,120);assert.equal(w.CafaExams.catalog.length,5);assert.equal(w.location.hash,'#dashboard');
   assert.ok(w.document.querySelector('#exam-app').textContent.includes('29-04-2026'));
+  const reset=w.document.querySelector('[data-font="0"]');
+  assert.equal(reset.hidden,true);assert.equal(w.document.querySelector('.cafa-profile').textContent,'Anoniem');
+  w.document.querySelector('[data-font="1"]').click();assert.equal(reset.hidden,false);
+  reset.click();assert.equal(reset.hidden,true);
+  w.document.querySelector('[data-font="-1"]').click();assert.equal(reset.hidden,false);
+  reset.click();assert.equal(reset.hidden,true);
+
   w.location.hash='#welkom/cafa2-20260429';await pause();
   assert.ok(!w.document.querySelector('#exam-app').textContent.includes('Oostermoer'),'Welcome has no case answers');
   w.document.querySelector('[data-exam-extra]').click();assert.equal(w.document.querySelector('[data-exam-detail-duration]').textContent,'210 minuten');
   w.document.querySelector('[data-exam-action="start"]').click();await pause();assert.equal(w.document.querySelector('.exam-position').textContent,'VRAAG 1 VAN 23');
+  assert.equal(w.document.querySelector('[role="timer"]').textContent,'210 minuten');
+  assert.equal(w.document.querySelector('.exam-time-badge span').textContent,'Totaal resterende tijd:');
   w.document.querySelector('[data-exam-action="section"]').click();assert.ok(w.document.querySelector('#exam-info-dialog').textContent.includes('Dingspel'));assert.ok(!w.document.querySelector('#exam-info-dialog').textContent.includes('Moderna'));
   w.document.querySelector('[data-close-info]').click();
   w.location.hash='#kap-1';await pause();assert.equal(w.document.querySelectorAll('.practice-action').length,480);assert.equal(w.document.querySelector('.exam-clock').hidden,true);

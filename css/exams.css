@@ -138,7 +138,7 @@
   .exam-question-top { align-items:flex-start; }
   .exam-clock { margin-left:3px; padding-left:7px; gap:4px; }
   .exam-clock span { display:none; }
-  .exam-surface .top-score,.exam-running .top-score,.exam-running .font-group,.exam-running .brand small { display:none!important; }
+  .exam-surface .top-score,.exam-running .top-score,.exam-running .brand small { display:none!important; }
   .exam-footer { padding:16px; }
 }
 @media print { .exam-back,.exam-switch,.exam-start-actions,.exam-footer,.exam-clock { display:none!important; } .exam-paper { border:0; } }
