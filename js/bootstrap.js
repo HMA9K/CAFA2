@@ -41,9 +41,9 @@
     document.getElementById('app-content').innerHTML = parts.slice(0, -1).join('');
     document.getElementById('dialog-content').innerHTML = parts[parts.length - 1];
     var brand = document.querySelector('.brand');
-    brand.href = '#dashboard';
+    brand.href = '#start';
     brand.classList.add('cafa-wordmark');
-    brand.setAttribute('aria-label', 'CAFA2 dashboard');
+    brand.setAttribute('aria-label', 'CAFA2 hoofdpagina');
     brand.innerHTML = '<svg viewBox="0 0 38 44" aria-hidden="true"><path fill="currentColor" d="M32 12 26 17C23 10 9 12 9 25c0 13 15 17 21 6l6 4C26 51 2 45 2 25 2 5 23 2 32 12Z"/><path fill="#ff720c" d="M3 5h12v12H3Z"/><path fill="none" stroke="#444159" stroke-width="2.7" d="m5 10 3 3 6-7"/></svg><span>afa2</span><small>OEFENOMGEVING</small>';
     var profile=document.createElement('div');profile.className='cafa-profile';
     profile.innerHTML='<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#f4f4f5"/><circle cx="20" cy="15" r="7" fill="#444159"/><path d="M8 31c1-10 23-10 24 0a17 17 0 0 1-24 0Z" fill="#444159"/></svg><span>Anoniem</span>';
@@ -55,6 +55,8 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     return loadScript('js/exams.js');
+  }).then(function () {
+    return loadScript('js/theory-panels.js?v=20260920-1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260919-1');
   }).then(function () {

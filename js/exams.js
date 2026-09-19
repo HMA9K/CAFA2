@@ -121,7 +121,7 @@
   }
   function welcome(id) {
     if (id==='practice') {
-      host.innerHTML = '<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head('CAFA2 oefenvragen','Welkom bij de oefenomgeving')+'<div class="exam-paper"><h2>Oefen in je eigen tempo</h2><p class="exam-prose">Je kunt kiezen uit vier onderwerpen, met 30 vragen per onderwerp. Je kiest een meerkeuzeantwoord of werkt je antwoord zelf uit met tekst, tabellen en journaalposten. Je oorspronkelijke MC-score blijft bewaard wanneer je een vraag herhaalt.</p><dl class="exam-details"><div><dt>Vragen</dt><dd>120, verdeeld over 4 onderwerpen</dd></div><div><dt>Duur</dt><dd>Geen tijdslimiet</dd></div><div><dt>Nakijken</dt><dd>Per vraag of na voltooien</dd></div><div><dt>Voortgang</dt><dd>Op dit apparaat</dd></div></dl><p>MC-oefenvragen hebben geen aftelklok. De extra-tijdoptie is hier niet van toepassing.</p><div class="exam-start-actions"><a class="btn primary" href="#start">Toets starten</a><span class="small">Kies daarna een onderwerp.</span></div></div>';
+      host.innerHTML = '<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head('CAFA2 oefenvragen','Welkom bij de oefenomgeving')+'<div class="exam-paper"><h2>Oefen in je eigen tempo</h2><p class="exam-prose">Je kunt kiezen uit vier onderwerpen, met 30 vragen per onderwerp. Je kiest een meerkeuzeantwoord of werkt je antwoord zelf uit met tekst, tabellen en journaalposten. Je oorspronkelijke MC-score blijft bewaard wanneer je een vraag herhaalt.</p><dl class="exam-details"><div><dt>Vragen</dt><dd>120, verdeeld over 4 onderwerpen</dd></div><div><dt>Duur</dt><dd>Geen tijdslimiet</dd></div><div><dt>Nakijken</dt><dd>Per vraag of na voltooien</dd></div><div><dt>Voortgang</dt><dd>Op dit apparaat</dd></div></dl><p>MC-oefenvragen hebben geen aftelklok. De extra-tijdoptie is hier niet van toepassing.</p><div class="exam-start-actions"><a class="btn primary" href="#oefenen">Toets starten</a><span class="small">Kies daarna een onderwerp.</span></div></div>';
       return;
     }
     var exam = examById(id); if(!exam) return missing();
@@ -330,7 +330,7 @@
   // Expired attempts are completed even when the learner reopens the dashboard later.
   attempts().filter(function(a){return a.status==='active'&&Engine.remainingSeconds(a)===0;}).forEach(function(a){Object.assign(a,Engine.finishAttempt(a,{reason:'timeout'}));});
   if(!corrupt)save();
-  if(!location.hash)history.replaceState(null,'','#dashboard');
+  if(!location.hash)history.replaceState(null,'','#start');
   route();setInterval(tick,1000);
   window.CafaExams={catalog:catalog,getAttempts:function(){return JSON.parse(JSON.stringify(attempts()));},storageKey:KEY};
 }());
