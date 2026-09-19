@@ -1,0 +1,61 @@
+/* Local feedback, with the existing question cards and scoring left intact. */
+.cafa-check-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 9px 0;
+}
+.cafa-direct-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 35px;
+  font-size: .88rem;
+  color: var(--purple, #444159);
+  cursor: pointer;
+}
+.cafa-direct-check input {
+  appearance: auto;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  flex: none;
+  accent-color: var(--green, #008859);
+  cursor: pointer;
+}
+.cafa-direct-check input:focus-visible {
+  outline: 2px solid var(--purple, #444159);
+  outline-offset: 3px;
+}
+.options:has(> .cafa-answer-slot) { grid-auto-rows: auto; align-items: start; }
+.cafa-answer-slot { min-width: 0; }
+.cafa-answer-slot > .option { height: auto; }
+.single-view .cafa-answer-slot { display: none; }
+.single-view .cafa-answer-slot:has(> .option.is-visible) { display: block; grid-area: 1 / 1; }
+.cafa-inline-feedback {
+  min-width: 0;
+  max-width: 100%;
+  margin: 8px 0 12px;
+  overflow-wrap: anywhere;
+}
+.cafa-inline-feedback .feedback-part:not([hidden]),
+.cafa-inline-feedback .correct-model:not([hidden]) { display: block; }
+.cafa-inline-feedback[hidden],
+.cafa-inline-feedback [hidden],
+.cafa-check-controls[hidden] { display: none !important; }
+.cafa-feedback-verdict { font-weight: 700; font-size: 1.04rem; }
+.cafa-feedback-verdict.is-good { color: var(--green, #008859); }
+.cafa-feedback-verdict.is-bad { color: var(--bad, #b32525); }
+.exam-answer-actions > .cafa-check-controls { margin: 0; }
+.exam-options > .cafa-inline-feedback { grid-column: 1 / -1; }
+#cafa-exam-feedback .exam-document { max-width: 100%; }
+#cafa-exam-feedback .self-score { flex-wrap: wrap; }
+@media (max-width: 540px) {
+  .cafa-check-controls { gap: 6px 10px; }
+  .cafa-inline-feedback { padding: 9px; }
+}
+@media print {
+  .cafa-check-controls { display: none !important; }
+  .single-view .cafa-answer-slot { display: block; grid-area: auto; }
+}

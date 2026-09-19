@@ -15,6 +15,15 @@
       return response.text();
     });
   }
+  function loadStyle(href) {
+    return new Promise(function (resolve, reject) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet'; link.href = href;
+      link.onload = resolve;
+      link.onerror = function () { reject(new Error(href + ' kon niet worden geladen.')); };
+      document.head.appendChild(link);
+    });
+  }
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script');
@@ -46,6 +55,10 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     return loadScript('js/exams.js');
+  }).then(function () {
+    return loadStyle('css/answer-feedback.css?v=20260919-1');
+  }).then(function () {
+    return loadScript('js/answer-feedback.js?v=20260919-1');
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
