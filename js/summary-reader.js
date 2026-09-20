@@ -60,7 +60,7 @@
   var libraries;
   form.addEventListener('submit',async function(e){e.preventDefault();if(!form.reportValidity())return;var button=form.querySelector('button[type=submit]');button.disabled=true;status.textContent='Berekening controleren…';
     try{
-      if(!libraries)libraries=Promise.all([import('./ic-learning-engine.mjs'),import('../content/summary/helpers.mjs')]);
+      if(!libraries)libraries=Promise.all([import('./ic-learning-engine.mjs'),import('../content/summary/helpers.mjs'),import('../content/summary/table-layout.mjs')]);
       var loaded=await libraries,engine=loaded[0],h=loaded[1],input={basis:form.elements.basis.value,direction:form.elements.direction.value};
       ['sellerShare','buyerShare','stock0','stock1','margin','tax','sales'].forEach(function(k){input[k]=Number(form.elements[k].value);});
       ['sellerShare','buyerShare','margin','tax'].forEach(function(k){input[k]/=100;});
@@ -68,7 +68,7 @@
       var html='<h2>'+h.esc(s.variant+' · '+s.input.basis)+'</h2>'+h.note('Uitgangspunt van de boekingsset',h.esc(s.precondition))+h.example('Leeg uitwerksjabloon','<div class="ic-stock-table">'+h.table(s.headers,s.blank)+'</div>')+'<div class="ic-stock-table">'+h.table(s.headers,s.rows,'Ingevulde voorraadtabel; bedragen vóór belasting')+'</div>';
       [['1. Interne correctie bij M',s.internal],['2. Geconsolideerde balans',s.balance],['3. Geconsolideerde W&V',s.income]].forEach(function(part){html+='<h3>'+part[0]+'</h3>';var list=part[1].filter(function(j){return j.rows.length;});html+=list.length?list.map(function(j){return h.journal(j.title,j.rows);}).join(''):'<p>Geen interne IC-winstboeking bij deze grondslag of geen winstmutatie.</p>';});
       html+='<h3>4. Controle</h3>'+h.table(['Controle','Bedrag (€)'],[['Bruto winst uit eindvoorraad',s.controls.stockReduction],['Intern resultaatverschil',s.controls.internalResultChange],['Aanvullend meerderheidsresultaat',s.controls.additionalMajorityResultChange],['Resultaatverschil derden',s.controls.thirdResultChange]])+'<p class="source-note">'+h.esc(s.source)+'</p>';
-      output.innerHTML=html;status.textContent='Bijgewerkt. Alle winstbedragen in de voorraadtabel zijn vóór belasting; de afzonderlijke boekingen bevatten de belastingcorrecties.';status.classList.remove('kernel-error');
+      output.innerHTML=loaded[2].decorateTables(html);status.textContent='Bijgewerkt. Alle winstbedragen in de voorraadtabel zijn vóór belasting; de afzonderlijke boekingen bevatten de belastingcorrecties.';status.classList.remove('kernel-error');
     }catch(error){output.replaceChildren(el('p','Geen nieuwe uitwerking gegenereerd. Pas de invoer aan of raadpleeg de genoemde bronvariant.'));status.textContent=error.message||'De rekentool kon niet worden geladen. De vaste voorbeelden in de hoofdstukken blijven beschikbaar.';status.classList.add('kernel-error');libraries=null;}finally{button.disabled=false;}
   });
 
