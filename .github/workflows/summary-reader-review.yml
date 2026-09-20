@@ -1,0 +1,71 @@
+name: CAFA2 reader review
+on:
+  push:
+    branches: [summary-reader-sra-20260920]
+    paths: [.github/workflows/summary-reader-review.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-summary-reader
+  cancel-in-progress: true
+jobs:
+  build:
+    if: github.ref == 'refs/heads/summary-reader-sra-20260920'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build connected summary
+        run: |
+          node scripts/prepare-summary-reader.mjs
+          node scripts/reader-test-compat.mjs
+          node scripts/build-learning-revision.mjs
+      - name: Verify content preservation and navigation structure
+        run: |
+          npm test
+          node tests/summary-ui.mjs
+          cp samenvatting.html /tmp/reader-first.html
+          node scripts/build-learning-revision.mjs
+          cmp samenvatting.html /tmp/reader-first.html
+          git diff --exit-code -- data fragments fallback index.html js/app.js js/exams.js js/exam-engine.js css/app.css
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare browsers
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium webkit
+      - name: Browser behavior and mobile layout
+        env:
+          TEST_WEBKIT: '1'
+        run: python tests/reader-browser.py
+      - name: Commit tested reader build on the revision branch only
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/summary-reader-sra-20260920'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/build-learning-revision.mjs scripts/build-summary-reader.mjs css/summary-reader.css tests/reader-browser.py tests/revision-browser.py package.json samenvatting.html js/summary-reader.js docs/summary-reader-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build tested seven-chapter CAFA2 reader with expanded syllabus explanations'
+            git push origin HEAD:summary-reader-sra-20260920
+          fi
+      - name: Inspection snapshot
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-reader.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-reader-inspection
+          path: /tmp/cafa2-reader.tar
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-reader-browser-review
+          path: /tmp/cafa2-reader-review/
+          if-no-files-found: ignore
+          retention-days: 7
