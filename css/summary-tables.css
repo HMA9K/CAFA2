@@ -1,4 +1,12 @@
-/* Mobile readability only; desktop and printed tables retain their structure. */
+/* Presentation only. Keep row labels intact at every screen width, including tablets. */
+@media screen {
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] th:first-child {
+    white-space:nowrap;
+    -webkit-hyphens:none;
+    hyphens:none;
+  }
+}
+/* Mobile reflow. Desktop and printed tables retain their structure. */
 @media screen and (max-width:760px) {
   .reader-layout .study-table th,
   .reader-layout .study-table td {
@@ -64,6 +72,7 @@
     padding:8px 10px;
     text-align:left;
     white-space:normal;
+    overflow-wrap:break-word;
   }
   .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody th {
     background:#f0f1f6;
