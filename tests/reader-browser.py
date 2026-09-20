@@ -93,13 +93,36 @@ async def run():
             await page.evaluate("location.hash='dividend'")
             for _ in range(6):await page.locator('[data-font="1"]').click()
             assert not await page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
+            if kind=='chromium':
+                await page.set_viewport_size({'width':1440,'height':1000})
+                await page.goto(base+'/index.html#kap-1',wait_until='networkidle')
+                await page.wait_for_function("!!window.CafaPractice && !document.documentElement.classList.contains('cafa-starting')")
+                checked=0
+                for code in ['kap','val','nvw','hk']:
+                    for number in range(1,31):
+                        qid=f'{code}-{number}'
+                        await page.evaluate('(id)=>location.hash=id',qid)
+                        q=page.locator('#'+qid)
+                        await q.wait_for(state='visible')
+                        assert await q.locator('.theory-panel').get_attribute('data-guidance-id')==qid
+                        assert await q.locator('.learning-pattern p').count()==6
+                        checked+=1
+                report['practice_questions']=checked
+                await page.evaluate("location.hash='kap-1'")
+                await page.locator('#kap-1').wait_for(state='visible')
+                await page.locator('#option-kap-1-0').click()
+                await page.reload(wait_until='networkidle')
+                await page.wait_for_function("!!window.CafaPractice && !document.documentElement.classList.contains('cafa-starting')")
+                assert await page.evaluate("window.CafaPractice.getAnswer('kap',1).choice")==0
+                report['answer_persistence']=True
             report['browsers'].append(kind)
             await context.close()
             if kind=='chromium':
                 nojs=await browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
                 await nojs.route('**/*',lambda r:r.continue_() if r.request.url.startswith(base) else r.abort())
                 p=await nojs.new_page();await p.goto(base+'/samenvatting.html#proportioneel')
-                await p.locator('#bijzondere-consolidatie--proportionele-methode>summary').click()
+                if await p.locator('#bijzondere-consolidatie--proportionele-methode').get_attribute('open') is None:
+                    await p.locator('#bijzondere-consolidatie--proportionele-methode>summary').click()
                 assert await p.locator('#proportioneel').is_visible()
                 assert not await p.evaluate('document.documentElement.scrollWidth>innerWidth+1')
                 report['script_free_reader']=True;await nojs.close()
