@@ -29,7 +29,7 @@ assert.match(summaryJs, /localStorage/);
 assert.match(summaryCss, /@media\(max-width:760px\)/);
 
 assert.match(theoryJs, /q\.guidance/, 'Basisregels volgen de expliciete inhoud per vraag, niet nummerreeksen');
-assert.match(theoryJs, /panel\.open = false/);
+assert.match(theoryJs, /panel\.open\s*=\s*false/);
 assert.match(theoryCss, /grid-template-columns:minmax\(0,1fr\) 300px/);
 assert.match(theoryCss, /@media \(max-width:960px\)/);
 assert.match(theoryCss, /\.theory-panel summary:focus-visible/);

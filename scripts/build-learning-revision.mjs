@@ -1,3 +1,4 @@
+import {visualStyles} from '../content/summary/visuals.mjs';
 import '../content/summary/addenda.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,6 +33,7 @@ function stockCase(v0,v1){return {caption:'Voorraadgegevens en uitwerksjabloon b
 function cases(code,q){
   const id=q.id,out=[];
   if(q.caseTable)out.push({...q.caseTable,caption:'Gegeven casustabel bij deze vraag'});
+  if(code==='kap' && [24,25].includes(id))out.push({caption:'Zelfstandige aandelentabel bij deze vraag',headers:['Aandelensoort','Geplaatst','In bezit van Merwede'],rows:[['Stem- en winstrecht',400,190],['Alleen stemrecht',200,130],['Alleen winstrecht',400,150]],note:'Gewone en uitsluitend winstgerechtigde aandelen hebben in deze casus gelijke winstrechten. Bereken het gevraagde percentage voor deze vraag afzonderlijk.'});
   if(code==='nvw'){
     let values=null;
     if([6,7,9,10].includes(id))values=[150000,240000];if(id===8)values=[240000,150000];
@@ -89,7 +91,7 @@ for(const [code,name] of Object.entries(modules)){
 let index=read('index.html');if(!index.includes('css/learning-content.css'))index=index.replace('</head>','<link rel="stylesheet" href="css/learning-content.css">\n</head>');write('index.html',index);
 let bootstrap=read('js/bootstrap.js').replace(/js\/theory-panels\.js\?v=[\w-]+/g,'js/theory-panels.js?v=20260920-content-v2');write('js/bootstrap.js',bootstrap);
 write('js/theory-panels.js',read('content/summary/theory-runtime.js'));
-write('css/summary.css',read('content/summary/styles.css'));
+write('css/summary.css',read('content/summary/styles.css')+visualStyles);
 write('js/summary.js',read('content/summary/runtime.js'));
 const groupNames={kap:'1. Kapitaalbelangen',val:'2. Vreemde valuta',nvw:'3. Consolidatie NVW en methodiek',hk:'4. Consolidatie HK en eindcontrole'};
 function controls(l){return '<div class="lesson-controls"><button type="button" class="study-button" data-understood="'+esc(l.id)+'" aria-pressed="false">Markeer als begrepen</button><a class="study-button primary" href="index.html#'+(l.group||'kap')+'-1">Oefenvragen bij dit hoofdonderwerp</a><a class="study-button" href="#start">Naar het overzicht</a></div>';}

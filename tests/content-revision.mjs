@@ -34,7 +34,8 @@ for(const [code,name]of Object.entries(modules)){
  for(const q of m.questions){total++;assert.ok(q.task.length>40);assert.ok(q.guidance.rules.length>120);assert.equal(q.guidance.pattern.length,3);assert.ok(ids.has(q.guidance.lesson));assert.ok(!/vorige vraag|eerdere vraag|zie vraag\s+\d|bovenstaande vraag/i.test(q.task));rules.add(q.guidance.rules);if(q.caseTables.length)caseCount++;for(const t of q.caseTables){assert.ok(t.headers.length>=2);assert.ok(t.rows.length);for(const row of t.rows)assert.equal(row.length,t.headers.length);}}
  assert.equal(rules.size,30,'Geen generieke herhaling binnen '+code);
 }
-assert.equal(total,120);assert.ok(caseCount>=45);
+for(const m of Object.values(c.window.CAFA2_DATA.modules))for(const q of m.questions)if(/(?:de|een) (?:casus)?tabel/.test(q.task))assert.ok(q.caseTables.length,'Elke verwijzing naar een gegeven tabel heeft een eigen tabel: '+m.title+' '+q.id);
+assert.equal(total,120);assert.ok(caseCount>=47);
 const summary=read('samenvatting.html');assert.equal((summary.match(/data-lesson=/g)||[]).length,ids.size);assert.equal((summary.match(/data-glossary-entry/g)||[]).length,glossary.length);
 const htmlIds=Array.from(summary.matchAll(/\bid="([^"]+)"/g),m=>m[1]);assert.equal(new Set(htmlIds).size,htmlIds.length,'Geen dubbele HTML-IDs');
 for(const id of ids)assert.ok(summary.includes('id="'+id+'"'));

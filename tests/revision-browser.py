@@ -72,7 +72,7 @@ async def main():
                 overflow = await page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
                 assert not overflow, f'Page overflow {width}px {lesson}'
             report['widths'].append(width)
-        for width, lesson in [(1440,'start'),(1440,'kernschema'),(1440,'downstream-nvw'),(390,'valuta-voorraad')]:
+        for width, lesson in [(1440,'start'),(1440,'streams'),(1440,'kernschema'),(1440,'downstream-nvw'),(390,'valuta-voorraad')]:
             await page.set_viewport_size({'width':width,'height':1000})
             await page.evaluate('(x)=>location.hash=x', lesson)
             await page.locator(f'[data-lesson="{lesson}"]').wait_for(state='visible')
@@ -91,12 +91,26 @@ async def main():
                 panel=q.locator('.theory-panel')
                 assert await panel.count()==1
                 assert await panel.get_attribute('data-guidance-id')==qid
+                assert await panel.get_attribute('open') is None, 'Basisregels moeten bij ieder nieuw bezoek dicht staan: '+qid
                 await panel.evaluate('(x)=>x.open=true')
                 assert len(await panel.locator('.theory-content>p').first.inner_text())>120
                 assert await q.locator('.learning-pattern p').count()==6
                 if number in manifest['modules'][code]['caseTables']:
                     assert await q.locator('.learning-case table').count()>=1
                 report['practice_questions']+=1
+        # Exercise real answer selection in an isolated browser, then navigate and reload.
+        await page.evaluate("location.hash='kap-1'")
+        await page.locator('#kap-1').wait_for(state='visible')
+        await page.locator('#option-kap-1-0').click()
+        await page.evaluate("location.hash='kap-2'")
+        await page.locator('#kap-2').wait_for(state='visible')
+        await page.reload(wait_until='networkidle')
+        await page.wait_for_function("!!window.CafaPractice && !document.documentElement.classList.contains('cafa-starting')")
+        assert await page.evaluate("window.CafaPractice.getAnswer('kap',1).choice") == 0
+        await page.evaluate("location.hash='kap-1'")
+        await page.locator('#kap-1').wait_for(state='visible')
+        assert await page.locator('#a-kap-1-0').is_checked()
+        report['answer_persistence']=True
         for width in [320,390,1024,1440]:
             await page.set_viewport_size({'width':width,'height':1000})
             for qid in ['nvw-6','nvw-25','val-14','hk-24','kap-18']:

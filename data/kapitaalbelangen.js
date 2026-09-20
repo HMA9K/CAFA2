@@ -2923,7 +2923,34 @@ window.CAFA2_DATA.modules["kap"]={
           "Controle: boek het ontvangen bedrag niet nogmaals als opbrengst wanneer het belang tegen NVW wordt gewaardeerd."
         ]
       },
-      "caseTables": []
+      "caseTables": [
+        {
+          "caption": "Zelfstandige aandelentabel bij deze vraag",
+          "headers": [
+            "Aandelensoort",
+            "Geplaatst",
+            "In bezit van Merwede"
+          ],
+          "rows": [
+            [
+              "Stem- en winstrecht",
+              400,
+              190
+            ],
+            [
+              "Alleen stemrecht",
+              200,
+              130
+            ],
+            [
+              "Alleen winstrecht",
+              400,
+              150
+            ]
+          ],
+          "note": "Gewone en uitsluitend winstgerechtigde aandelen hebben in deze casus gelijke winstrechten. Bereken het gevraagde percentage voor deze vraag afzonderlijk."
+        }
+      ]
     },
     {
       "id": 25,
@@ -3014,7 +3041,34 @@ window.CAFA2_DATA.modules["kap"]={
           "Controle: gebruik voor de winstreserves niet het percentage van de stemmen."
         ]
       },
-      "caseTables": []
+      "caseTables": [
+        {
+          "caption": "Zelfstandige aandelentabel bij deze vraag",
+          "headers": [
+            "Aandelensoort",
+            "Geplaatst",
+            "In bezit van Merwede"
+          ],
+          "rows": [
+            [
+              "Stem- en winstrecht",
+              400,
+              190
+            ],
+            [
+              "Alleen stemrecht",
+              200,
+              130
+            ],
+            [
+              "Alleen winstrecht",
+              400,
+              150
+            ]
+          ],
+          "note": "Gewone en uitsluitend winstgerechtigde aandelen hebben in deze casus gelijke winstrechten. Bereken het gevraagde percentage voor deze vraag afzonderlijk."
+        }
+      ]
     },
     {
       "id": 26,
