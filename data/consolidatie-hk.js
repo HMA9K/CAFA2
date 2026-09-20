@@ -1,7 +1,7 @@
-(function (root) {
-  'use strict';
-  if (!root.CAFA2_DATA || !root.CAFA2_DATA.modules) throw new Error('CAFA2-configuratie ontbreekt.');
-  root.CAFA2_DATA.modules.hk = {
+(function(){
+window.CAFA2_DATA=window.CAFA2_DATA||{modules:{}};
+window.CAFA2_DATA.modules=window.CAFA2_DATA.modules||{};
+window.CAFA2_DATA.modules["hk"]={
   "id": "cafa2-verkrijgingsprijs-30-v1",
   "title": "Consolidatie verkrijgingsprijs",
   "subtitle": "Opgave 4 · 30 oefenvragen",
@@ -109,7 +109,7 @@
           "Er is geen dividend gedeclareerd."
         ]
       ],
-      "task": "Wat boekt Haven enkelvoudig uitsluitend vanwege de door Duin behaalde winst?",
+      "task": "Welke journaalpost maakt Haven uitsluitend vanwege Duins behaalde winst in haar enkelvoudige administratie bij waardering tegen verkrijgingsprijs, zonder dividendbesluit of bijzondere waardevermindering?",
       "options": [
         {
           "text": "Resultaat deelneming debet en deelneming credit voor € 120.000.",
@@ -133,7 +133,7 @@
         "Het winstaandeel wordt bij verkrijgingsprijs niet door een enkelvoudige resultaatboeking aan de deelneming toegevoegd.",
         "De volledige baten en lasten van Duin worden wel in de integrale consolidatie betrokken."
       ],
-      "pattern": "Bepaal eerst of de vraag gaat over de enkelvoudige administratie of over consolidatie.",
+      "pattern": "Herken: verkrijgingsprijs en wel winst, maar geen dividendbesluit. Aanpak: beoordeel alleen de gevraagde enkelvoudige gebeurtenis; neem geen NVW-resultaatboeking over. Controle: geen enkelvoudige winstboeking betekent niet dat Duins resultaat ook buiten de consolidatie blijft.",
       "refs": [
         "basis",
         "boit"
@@ -143,7 +143,19 @@
         5,
         13
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Winst bij de dochter is niet automatisch opbrengst bij de moeder",
+        "task": "Welke journaalpost maakt Haven uitsluitend vanwege Duins behaalde winst in haar enkelvoudige administratie bij waardering tegen verkrijgingsprijs, zonder dividendbesluit of bijzondere waardevermindering?",
+        "rules": "Bij verkrijgingsprijs wordt de boekwaarde van een deelneming niet jaarlijks verhoogd met het aandeel in haar winst. Een regulier dividendbesluit kan wel tot opbrengst leiden. De consolidatie is een afzonderlijke bewerking: daar worden Duins baten en lasten integraal opgenomen. Houd daarom enkelvoudige administratie en geconsolideerde jaarrekening uit elkaar.",
+        "pattern": [
+          "Herken: verkrijgingsprijs en wel winst, maar geen dividendbesluit.",
+          "Aanpak: beoordeel alleen de gevraagde enkelvoudige gebeurtenis; neem geen NVW-resultaatboeking over.",
+          "Controle: geen enkelvoudige winstboeking betekent niet dat Duins resultaat ook buiten de consolidatie blijft."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 2,
@@ -165,7 +177,7 @@
           "€ 735.000, inclusief € 90.000 goodwill."
         ]
       ],
-      "task": "Welke journaalpost maakt Haven van de aankoop in haar eigen administratie?",
+      "task": "Welke enkelvoudige aankoopjournaalpost maakt Haven op 1 januari 2023 voor de per bank betaalde 75%-deelneming Duin, bij waardering tegen verkrijgingsprijs?",
       "options": [
         {
           "journal": [
@@ -301,7 +313,7 @@
         "De deelneming wordt voor de volledige koopsom van € 735.000 geactiveerd.",
         "Er wordt enkelvoudig geen aparte post goodwill geboekt."
       ],
-      "pattern": "Verkrijgingsprijs: de koopsom staat in de deelneming; goodwill wordt bij consolidatie uitgesplitst.",
+      "pattern": "Herken: de prijs is inclusief goodwill en de moeder waardeert tegen verkrijgingsprijs. Aanpak: boek de volledige koopsom op deelneming tegenover bank. Controle: tel de genoemde goodwill niet boven op de koopsom en splits haar hier niet af zoals bij NVW.",
       "refs": [
         "balans",
         "orvelde"
@@ -310,7 +322,19 @@
         3,
         6
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Goodwill is bij aankoop in de verkrijgingsprijs begrepen",
+        "task": "Welke enkelvoudige aankoopjournaalpost maakt Haven op 1 januari 2023 voor de per bank betaalde 75%-deelneming Duin, bij waardering tegen verkrijgingsprijs?",
+        "rules": "De volledige betaalde koopsom wordt bij deze grondslag in de post deelneming opgenomen. Goodwill is daarin begrepen en wordt niet daarnaast nogmaals enkelvoudig geactiveerd. Bij consolidatie wordt de goodwill wel afzonderlijk zichtbaar gemaakt. Dezelfde economische aankoop levert daardoor een andere enkelvoudige boeking op dan waardering tegen NVW.",
+        "pattern": [
+          "Herken: de prijs is inclusief goodwill en de moeder waardeert tegen verkrijgingsprijs.",
+          "Aanpak: boek de volledige koopsom op deelneming tegenover bank.",
+          "Controle: tel de genoemde goodwill niet boven op de koopsom en splits haar hier niet af zoals bij NVW."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 3,
@@ -332,7 +356,7 @@
           "Geen; de nettovermogenswaarde is gelijk aan het zichtbare eigen vermogen."
         ]
       ],
-      "task": "Hoeveel goodwill is bij de verwerving betaald?",
+      "task": "Hoeveel consolidatiegoodwill is begrepen in de aankoopprijs van € 735.000 voor 75% van Duin, uitgaande van het gegeven eigen vermogen bij verwerving?",
       "options": [
         {
           "lines": [
@@ -374,7 +398,7 @@
         "Het aandeel in het eigen vermogen is 75% × € 860.000 = € 645.000.",
         "Goodwill: € 735.000 − € 645.000 = € 90.000."
       ],
-      "pattern": "Koopsom van het verworven belang minus het aandeel in het eigen vermogen op de verkrijgingsdatum.",
+      "pattern": "Herken: een koopsom voor 75% en een vermogensbedrag voor de gehele dochter. Aanpak: koopsom minus 75% van het vermogen op aankoopdatum. Controle: gebruik niet het eindvermogen van een later boekjaar voor de oorspronkelijke goodwill.",
       "refs": [
         "balans",
         "hoza"
@@ -384,7 +408,19 @@
         8,
         26
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "goodwill",
+        "title": "Goodwill op het verkrijgingsmoment bepalen",
+        "task": "Hoeveel consolidatiegoodwill is begrepen in de aankoopprijs van € 735.000 voor 75% van Duin, uitgaande van het gegeven eigen vermogen bij verwerving?",
+        "rules": "Goodwill is het verschil tussen de koopsom van het gekochte belang en het overeenkomstige aandeel in de netto-activa op verkrijgingsdatum. In deze casus zijn geen verschillen tussen NVW en zichtbaar eigen vermogen gegeven. Het eigen vermogen moet daarom met het 75%-belang worden vermenigvuldigd; de prijs voor dat belang niet nogmaals.",
+        "pattern": [
+          "Herken: een koopsom voor 75% en een vermogensbedrag voor de gehele dochter.",
+          "Aanpak: koopsom minus 75% van het vermogen op aankoopdatum.",
+          "Controle: gebruik niet het eindvermogen van een later boekjaar voor de oorspronkelijke goodwill."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 4,
@@ -410,7 +446,7 @@
           "Het betreft volledig meegekocht dividend."
         ]
       ],
-      "task": "Welke journaalpost maakt Haven bij ontvangst?",
+      "task": "Welke journaalpost maakt Haven bij ontvangst van haar 75%-aandeel in het expliciet meegekochte dividend over 2022, gedeclareerd en betaald in april 2023?",
       "options": [
         {
           "journal": [
@@ -526,7 +562,7 @@
         "Ontvangen bedrag: 75% × € 40.000 = € 30.000.",
         "Het meegekochte dividend verlaagt de boekwaarde van de deelneming van € 735.000 naar € 705.000."
       ],
-      "pattern": "Onderscheid meegekocht dividend van regulier dividend uit resultaten na verkrijging.",
+      "pattern": "Herken: de koopsom omvatte het recht op deze uitkering uit de aankoopbasis. Aanpak: bereken Havens aandeel en boek bank aan deelneming. Controle: de aankoopprijs neemt met het ontvangen moederbedrag af, niet met het totale dividend van Duin.",
       "refs": [
         "hoza",
         "orvelde",
@@ -537,7 +573,19 @@
         6,
         27
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dividend",
+        "title": "Meegekocht dividend is geen nieuwe winst",
+        "task": "Welke journaalpost maakt Haven bij ontvangst van haar 75%-aandeel in het expliciet meegekochte dividend over 2022, gedeclareerd en betaald in april 2023?",
+        "rules": "Volgens de gebruikte syllabus- en tentamenmethodiek verlaagt meegekocht dividend de verkrijgingsprijs van de deelneming. De ontvangst wordt daarom tegenover deelneming verwerkt en niet tegenover dividendopbrengst. De casus vermeldt expliciet dat de uitkering is meegekocht; alleen een korte periode tussen aankoop en dividend zou daarvoor geen voldoende aanwijzing zijn.",
+        "pattern": [
+          "Herken: de koopsom omvatte het recht op deze uitkering uit de aankoopbasis.",
+          "Aanpak: bereken Havens aandeel en boek bank aan deelneming.",
+          "Controle: de aankoopprijs neemt met het ontvangen moederbedrag af, niet met het totale dividend van Duin."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 5,
@@ -563,7 +611,7 @@
           "Niet van toepassing op deze uitkering."
         ]
       ],
-      "task": "Welke journaalpost maakt Haven in 2024?",
+      "task": "Welke enkelvoudige journaalpost maakt Haven in 2024 bij ontvangst van het reguliere dividend uit de door Duin na de verwerving behaalde winst?",
       "options": [
         {
           "journal": [
@@ -679,7 +727,7 @@
         "75% × € 48.000 = € 36.000 wordt ontvangen.",
         "Bij verkrijgingsprijs is dit een opbrengst in de enkelvoudige winst-en-verliesrekening."
       ],
-      "pattern": "Het soort dividend bepaalt de tegenrekening: deelneming bij meegekocht dividend, opbrengst bij regulier dividend.",
+      "pattern": "Herken: de uitkering komt uit resultaten na aankoop en is uitdrukkelijk niet meegekocht. Aanpak: totaal dividend maal Havens aandeel; boek dit als ontvangst en opbrengst. Controle: verlaag de deelneming niet alsof de uitkering nog onderdeel van de betaalde aankoopbasis was.",
       "refs": [
         "hoza",
         "schier"
@@ -689,7 +737,19 @@
         11,
         13
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dividend",
+        "title": "Dividend uit winst na verwerving",
+        "task": "Welke enkelvoudige journaalpost maakt Haven in 2024 bij ontvangst van het reguliere dividend uit de door Duin na de verwerving behaalde winst?",
+        "rules": "Regulier dividend uit resultaten na verwerving is bij verkrijgingsprijs een opbrengst voor de moeder. Bereken het winstaandeel in de totale uitkering en boek de bankontvangst tegenover opbrengst deelneming. Meegekocht dividend volgt een andere verwerking. De aard van het dividend bepaalt hier dus de tegenrekening.",
+        "pattern": [
+          "Herken: de uitkering komt uit resultaten na aankoop en is uitdrukkelijk niet meegekocht.",
+          "Aanpak: totaal dividend maal Havens aandeel; boek dit als ontvangst en opbrengst.",
+          "Controle: verlaag de deelneming niet alsof de uitkering nog onderdeel van de betaalde aankoopbasis was."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 6,
@@ -723,7 +783,7 @@
           "€ 705.000."
         ]
       ],
-      "task": "Welke eliminatieboeking betreft uitsluitend de deelneming en de activering van goodwill, vóór afschrijving en los van belang derden?",
+      "task": "Welke balanseliminatie verwijdert Duins deelnemingswaarde van € 705.000 en activeert de oorspronkelijke goodwill, vóór goodwillafschrijving en los van belang derden, rekening houdend met het afgeboekte meegekochte dividend?",
       "options": [
         {
           "journal": [
@@ -960,7 +1020,7 @@
         "Overige reserves: 75% × (€ 600.000 − € 40.000) = € 420.000.",
         "Met goodwill € 90.000 bedraagt de eliminatie € 705.000. Afschrijving is een afzonderlijke eliminatie."
       ],
-      "pattern": "Het moederdeel volgt de verkrijgingssituatie, rekening houdend met afgeboekt meegekocht dividend.",
+      "pattern": "Herken: de actuele verkrijgingsprijs is lager dan de aanvankelijke koopsom door meegekocht dividend. Aanpak: corrigeer de bij aankoop aanwezige reserves voor dit dividend en voeg de oorspronkelijke goodwill toe. Controle: de debetbedragen moeten op de huidige deelnemingswaarde aansluiten; verlaag niet de goodwill om een verschil weg te werken.",
       "refs": [
         "hoza",
         "college"
@@ -971,7 +1031,19 @@
         9,
         27
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Deelneming elimineren op de gecorrigeerde verkrijgingsbasis",
+        "task": "Welke balanseliminatie verwijdert Duins deelnemingswaarde van € 705.000 en activeert de oorspronkelijke goodwill, vóór goodwillafschrijving en los van belang derden, rekening houdend met het afgeboekte meegekochte dividend?",
+        "rules": "Het moederdeel van de kapitaaleliminatie volgt de verkrijgingssituatie. Een daarna ontvangen meegekocht dividend verlaagt de relevante aankoopreserves en de enkelvoudige deelnemingswaarde. De oorspronkelijke goodwill verandert daardoor niet. De afschrijving op goodwill en het belang derden op einddatum worden in afzonderlijke balanseliminaties verwerkt.",
+        "pattern": [
+          "Herken: de actuele verkrijgingsprijs is lager dan de aanvankelijke koopsom door meegekocht dividend.",
+          "Aanpak: corrigeer de bij aankoop aanwezige reserves voor dit dividend en voeg de oorspronkelijke goodwill toe.",
+          "Controle: de debetbedragen moeten op de huidige deelnemingswaarde aansluiten; verlaag niet de goodwill om een verschil weg te werken."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 7,
@@ -997,7 +1069,7 @@
           "Niet aan de orde in deze vraag."
         ]
       ],
-      "task": "Welke boeking presenteert het belang derden?",
+      "task": "Welke balanseliminatie presenteert het 25%-belang van derden in Duins volledige eigen vermogen per 31 december 2024, zonder IC- of fair-valuecorrecties?",
       "options": [
         {
           "journal": [
@@ -1213,7 +1285,7 @@
         "Derden houden 25%. Het eigen vermogen ultimo bedraagt € 1.140.000.",
         "25% × € 1.140.000 = € 285.000. De samenstellende vermogensposten worden gedebiteerd."
       ],
-      "pattern": "Derden: einddatum. Deelneming: verkrijgingsdatum.",
+      "pattern": "Herken: gevraagd wordt belang derden op de eindbalans. Aanpak: neem het minderheidspercentage van kapitaal, agio, reserves en resultaat boekjaar op einddatum. Controle: gebruik niet uitsluitend de verkrijgingsreserves en vergeet het lopende jaarresultaat niet.",
       "refs": [
         "balans",
         "hoza",
@@ -1224,7 +1296,19 @@
         12,
         19
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Belang derden wordt op einddatum berekend",
+        "task": "Welke balanseliminatie presenteert het 25%-belang van derden in Duins volledige eigen vermogen per 31 december 2024, zonder IC- of fair-valuecorrecties?",
+        "rules": "Bij de HK-consolidatie worden twee momenten onderscheiden. Het moederdeel van de aankoopeliminatie volgt de verkrijgingsbasis; het belang derden volgt het eigen vermogen op consolidatiedatum. Tot dat eindvermogen behoort ook het resultaat boekjaar. Elimineer het derdenaandeel in de afzonderlijke vermogenscomponenten tegenover de balanspost belang derden.",
+        "pattern": [
+          "Herken: gevraagd wordt belang derden op de eindbalans.",
+          "Aanpak: neem het minderheidspercentage van kapitaal, agio, reserves en resultaat boekjaar op einddatum.",
+          "Controle: gebruik niet uitsluitend de verkrijgingsreserves en vergeet het lopende jaarresultaat niet."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 8,
@@ -1246,7 +1330,7 @@
           "31 december 2024; twee volledige jaren verstreken."
         ]
       ],
-      "task": "Wat is de boekwaarde goodwill op de geconsolideerde balans?",
+      "task": "Hoe hoog is de afzonderlijke consolidatiegoodwill per 31 december 2024 na twee volledige jaren lineaire afschrijving op de op 1 januari 2023 ontstane goodwill?",
       "options": [
         {
           "lines": [
@@ -1288,7 +1372,7 @@
         "Jaarafschrijving: € 90.000 ÷ 5 = € 18.000.",
         "Na twee jaren resteert € 90.000 − € 36.000 = € 54.000."
       ],
-      "pattern": "Goodwill niet nogmaals vermenigvuldigen met het deelnemingspercentage.",
+      "pattern": "Herken: een balanswaarde na twee volledige boekjaren. Aanpak: oorspronkelijke goodwill minus twee jaarafschrijvingen. Controle: een enkele jaarlast is niet hetzelfde als cumulatieve afschrijving; controleer het aantal verstreken jaren.",
       "refs": [
         "orvelde",
         "hoza"
@@ -1299,7 +1383,19 @@
         10,
         26
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Goodwillrestant na twee jaren",
+        "task": "Hoe hoog is de afzonderlijke consolidatiegoodwill per 31 december 2024 na twee volledige jaren lineaire afschrijving op de op 1 januari 2023 ontstane goodwill?",
+        "rules": "Volg de oorspronkelijke goodwill en de in de casus gegeven afschrijvingstermijn. Bereken de cumulatieve afschrijving tot de balansdatum en trek deze van de oorspronkelijke goodwill af. Het goodwillbedrag heeft al betrekking op het verworven belang. Het resterende bedrag wordt dus niet nogmaals met 75% vermenigvuldigd.",
+        "pattern": [
+          "Herken: een balanswaarde na twee volledige boekjaren.",
+          "Aanpak: oorspronkelijke goodwill minus twee jaarafschrijvingen.",
+          "Controle: een enkele jaarlast is niet hetzelfde als cumulatieve afschrijving; controleer het aantal verstreken jaren."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 9,
@@ -1325,7 +1421,7 @@
           "Geen."
         ]
       ],
-      "task": "Welke balanseliminatie verwerkt de afschrijving tot en met eind 2024?",
+      "task": "Welke balanseliminatie verwerkt de goodwillafschrijving tot en met 31 december 2024 wanneer de oorspronkelijke goodwill van € 90.000 al in de consolidatiestaat is geactiveerd en nog niets is afgeschreven?",
       "options": [
         {
           "journal": [
@@ -1451,7 +1547,7 @@
         "De afschrijving over 2023 van € 18.000 wordt ten laste van overige reserves gebracht.",
         "De afschrijving over 2024 van € 18.000 wordt ten laste van resultaat boekjaar gebracht."
       ],
-      "pattern": "Balans: eerdere jaren naar reserves, lopend jaar naar resultaat boekjaar.",
+      "pattern": "Herken: de volledige goodwill staat nog in de balansconsolidatie en er zijn twee jaren verstreken. Aanpak: splits cumulatieve afschrijving in vorig jaar en lopend jaar. Controle: neem in een balanseliminatie geen afschrijvingskostenrekening op en breng niet beide jaren ten laste van het huidige resultaat.",
       "refs": [
         "hoza",
         "college"
@@ -1460,7 +1556,19 @@
         8,
         10
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Cumulatieve afschrijving splitsen naar reserves en boekjaar",
+        "task": "Welke balanseliminatie verwerkt de goodwillafschrijving tot en met 31 december 2024 wanneer de oorspronkelijke goodwill van € 90.000 al in de consolidatiestaat is geactiveerd en nog niets is afgeschreven?",
+        "rules": "De balanseliminatie moet zowel eerdere als lopende afschrijvingen verwerken. Het deel uit eerdere boekjaren komt ten laste van overige reserves; het lopende jaar raakt resultaat boekjaar. De creditboeking verlaagt goodwill met het cumulatieve bedrag. In de afzonderlijke W&V-consolidatie wordt alleen de jaarlast opgenomen.",
+        "pattern": [
+          "Herken: de volledige goodwill staat nog in de balansconsolidatie en er zijn twee jaren verstreken.",
+          "Aanpak: splits cumulatieve afschrijving in vorig jaar en lopend jaar.",
+          "Controle: neem in een balanseliminatie geen afschrijvingskostenrekening op en breng niet beide jaren ten laste van het huidige resultaat."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 10,
@@ -1482,7 +1590,7 @@
           "Geen."
         ]
       ],
-      "task": "Welke eliminatie verwerkt de afschrijving in de winst-en-verliesrekening over 2024?",
+      "task": "Welke afzonderlijke W&V-eliminatie verwerkt de goodwillafschrijving over uitsluitend 2024 volgens de consolidatiestaatmethodiek van de uitwerking?",
       "options": [
         {
           "journal": [
@@ -1598,7 +1706,7 @@
         "De jaarlast is € 90.000 ÷ 5 = € 18.000.",
         "De officiële consolidatiesystematiek debiteert afschrijvingskosten goodwill en crediteert resultaat na belastingen."
       ],
-      "pattern": "Bij consolidatie houden balanseliminaties en resultaateliminaties elk hun eigen rekeningen.",
+      "pattern": "Herken: uitsluitend de W&V van 2024 wordt opgesteld. Aanpak: bereken één jaarafschrijving en gebruik alleen resultaatrekeningen in deze eliminatie. Controle: crediteer hier niet de balanspost goodwill en verwerk geen afschrijving uit eerdere jaren.",
       "refs": [
         "orvelde",
         "basis"
@@ -1608,7 +1716,19 @@
         13,
         26
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Alleen de jaarlast in de W&V-consolidatie",
+        "task": "Welke afzonderlijke W&V-eliminatie verwerkt de goodwillafschrijving over uitsluitend 2024 volgens de consolidatiestaatmethodiek van de uitwerking?",
+        "rules": "In de winst-en-verliesrekeningconsolidatie hoort alleen de afschrijvingslast van het lopende boekjaar. De gebruikte uitwerking debiteert afschrijvingskosten goodwill en crediteert resultaat na belastingen. Dat is een resultaatwerkstaat, niet een gewone gecombineerde balans-en-resultaatjournaalpost. De goodwillbalans wordt via de aparte balanseliminatie aangepast.",
+        "pattern": [
+          "Herken: uitsluitend de W&V van 2024 wordt opgesteld.",
+          "Aanpak: bereken één jaarafschrijving en gebruik alleen resultaatrekeningen in deze eliminatie.",
+          "Controle: crediteer hier niet de balanspost goodwill en verwerk geen afschrijving uit eerdere jaren."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 11,
@@ -1634,7 +1754,7 @@
           "Opbrengst deelneming is met € 36.000 gecrediteerd."
         ]
       ],
-      "task": "Welke eliminatie hoort bij de geconsolideerde winst-en-verliesrekening over 2024?",
+      "task": "Welke W&V-eliminatie verwijdert Havens reeds geboekte reguliere dividendopbrengst van Duin over 2024?",
       "options": [
         {
           "journal": [
@@ -1750,7 +1870,7 @@
         "Haven heeft enkelvoudig € 36.000 dividendopbrengst opgenomen.",
         "Die opbrengst wordt geëlimineerd, omdat de baten en lasten van Duin al integraal worden opgenomen."
       ],
-      "pattern": "Verwijder het geboekte dividend bij de moeder, niet de totale uitkering van de dochter.",
+      "pattern": "Herken: regulier dividend staat al in de enkelvoudige opbrengsten van de moeder. Aanpak: debiteer die opbrengst en gebruik de tegenrekening van de afzonderlijke W&V-consolidatiestaat. Controle: verlaag niet de deelnemingsbalans in een vraag die uitsluitend de W&V-eliminatie vraagt.",
       "refs": [
         "orvelde",
         "boit"
@@ -1760,7 +1880,19 @@
         12,
         13
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "De geboekte dividendopbrengst verwijderen",
+        "task": "Welke W&V-eliminatie verwijdert Havens reeds geboekte reguliere dividendopbrengst van Duin over 2024?",
+        "rules": "De baten en lasten van Duin worden integraal in de geconsolideerde winst-en-verliesrekening opgenomen. Havens afzonderlijk geboekte dividendopbrengst moet daarom worden geëlimineerd om dubbeltelling te voorkomen. Gebruik het bedrag dat Haven daadwerkelijk als opbrengst heeft verwerkt, niet de totale dividenduitkering van Duin.",
+        "pattern": [
+          "Herken: regulier dividend staat al in de enkelvoudige opbrengsten van de moeder.",
+          "Aanpak: debiteer die opbrengst en gebruik de tegenrekening van de afzonderlijke W&V-consolidatiestaat.",
+          "Controle: verlaag niet de deelnemingsbalans in een vraag die uitsluitend de W&V-eliminatie vraagt."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 12,
@@ -1786,7 +1918,7 @@
           "Geen."
         ]
       ],
-      "task": "Welke eliminatie geeft het aandeel derden in de winst weer?",
+      "task": "Welke W&V-eliminatie rekent 25% van Duins resultaat na belastingen toe aan derden, vóór eventuele IC-correcties?",
       "options": [
         {
           "journal": [
@@ -1901,7 +2033,7 @@
       "explanation": [
         "Derden hebben recht op 25% × € 160.000 = € 40.000."
       ],
-      "pattern": "Gebruik het winstpercentage van derden; corrigeer later zo nodig voor hun aandeel in intercompanywinst.",
+      "pattern": "Herken: resultaatverdeling zonder aanvullende IC-mutaties. Aanpak: bereken het minderheidspercentage van het resultaat na belastingen en boek de afzonderlijke toerekening. Controle: gebruik 25%, niet het 75%-moederdeel, en kies aandeel derden in plaats van belang derden.",
       "refs": [
         "orvelde",
         "basis"
@@ -1911,7 +2043,19 @@
         19,
         29
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Aandeel derden is een resultaatpost",
+        "task": "Welke W&V-eliminatie rekent 25% van Duins resultaat na belastingen toe aan derden, vóór eventuele IC-correcties?",
+        "rules": "De geconsolideerde winst-en-verliesrekening bevat bij integrale consolidatie het volledige resultaat van Duin. Het niet aan Haven toekomende gedeelte wordt afzonderlijk gepresenteerd als aandeel derden. Deze rekening verschilt van belang derden op de balans. In deze vraag zijn geen ongerealiseerde winsten gegeven die het aandeel nog wijzigen.",
+        "pattern": [
+          "Herken: resultaatverdeling zonder aanvullende IC-mutaties.",
+          "Aanpak: bereken het minderheidspercentage van het resultaat na belastingen en boek de afzonderlijke toerekening.",
+          "Controle: gebruik 25%, niet het 75%-moederdeel, en kies aandeel derden in plaats van belang derden."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 13,
@@ -1945,7 +2089,7 @@
           "Geen intercompanywinst of overige resultaatverschillen."
         ]
       ],
-      "task": "Wat is het geconsolideerde resultaat na belastingen toekomend aan Haven?",
+      "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, na toevoeging van haar winstaandeel in Duin, eliminatie van ontvangen dividend en goodwillafschrijving?",
       "options": [
         {
           "lines": [
@@ -1987,7 +2131,7 @@
         "Begin bij het resultaat van Haven, tel haar aandeel in de winst van Duin erbij op en verwijder het reeds geboekte dividend.",
         "Trek vervolgens de afschrijving over het lopende jaar af. Het resultaat is € 316.000."
       ],
-      "pattern": "Moederresultaat + winstaandeel dochters − dividendopbrengst − goodwillafschrijving, daarna eventuele intercompanycorrecties.",
+      "pattern": "Herken: moederresultaat inclusief dividend, dochterwinst en afzonderlijke consolidatiegoodwill. Aanpak: moederresultaat plus winstaandeel minus geboekt dividend minus jaarafschrijving goodwill. Controle: het dividend één keer verwijderen; geen afschrijving uit eerdere jaren in de jaarwinst opnemen.",
       "refs": [
         "boit",
         "orvelde",
@@ -1997,7 +2141,19 @@
         20,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaataansluiting",
+        "title": "HK-resultaatbrug zonder intercompanywinst",
+        "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, na toevoeging van haar winstaandeel in Duin, eliminatie van ontvangen dividend en goodwillafschrijving?",
+        "rules": "Bij verkrijgingsprijs bevat Havens resultaat niet automatisch haar aandeel in Duins winst. Voeg dat aandeel toe, maar verwijder het reguliere dividend dat al in het moederresultaat is verwerkt. Trek de goodwillafschrijving van het lopende jaar af. De gegeven dividendopbrengst en goodwillafschrijving zijn al moederbedragen en worden niet nogmaals met 75% vermenigvuldigd.",
+        "pattern": [
+          "Herken: moederresultaat inclusief dividend, dochterwinst en afzonderlijke consolidatiegoodwill.",
+          "Aanpak: moederresultaat plus winstaandeel minus geboekt dividend minus jaarafschrijving goodwill.",
+          "Controle: het dividend één keer verwijderen; geen afschrijving uit eerdere jaren in de jaarwinst opnemen."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 14,
@@ -2023,7 +2179,7 @@
           "Niet aan de orde."
         ]
       ],
-      "task": "Welke intracomptabele correctie maakt Haven voor de ongerealiseerde intercompanywinst bij deze waarderingsgrondslag?",
+      "task": "Welke intracomptabele correctie maakt Haven voor de ongerealiseerde IC-winst bij verkrijgingsprijs, gegeven dat een bijzondere waardevermindering niet aan de orde is?",
       "options": [
         {
           "text": "Geen intracomptabele winstcorrectie; de correctie wordt bij de consolidatie verwerkt.",
@@ -2047,7 +2203,7 @@
         "In opgave Boit, vraag 3, luidt de uitwerking: geen intracomptabele correctie bij verkrijgingsprijs.",
         "De volledige groepscorrectie komt terug in de consolidatie; de verdeling verschilt bij upstream en downstream."
       ],
-      "pattern": "Bij HK eerst vaststellen: interne correctie is niet van toepassing.",
+      "pattern": "Herken: expliciet verkrijgingsprijs, niet de vermogensmutatiemethode. Aanpak: stel eerst vast wat in de enkelvoudige administratie wel en niet wordt verwerkt. Controle: kopieer niet de NVW-boeking via overlopende passiva of resultaat deelneming naar deze HK-vraag.",
       "refs": [
         "boit",
         "up",
@@ -2057,7 +2213,19 @@
         15,
         21
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "streams",
+        "title": "Bij HK ontbreekt de interne NVW-winstcorrectie",
+        "task": "Welke intracomptabele correctie maakt Haven voor de ongerealiseerde IC-winst bij verkrijgingsprijs, gegeven dat een bijzondere waardevermindering niet aan de orde is?",
+        "rules": "In de aangehaalde HK-opgaven wordt geen intracomptabele correctie voor ongerealiseerde IC-winst gemaakt zoals bij NVW. De groepscorrectie vindt bij consolidatie plaats. De verdeling verschilt vervolgens tussen upstream en downstream. De uitgesloten bijzondere waardevermindering is een andere beoordeling en mag niet als vervangende IC-boeking worden ingevoerd.",
+        "pattern": [
+          "Herken: expliciet verkrijgingsprijs, niet de vermogensmutatiemethode.",
+          "Aanpak: stel eerst vast wat in de enkelvoudige administratie wel en niet wordt verwerkt.",
+          "Controle: kopieer niet de NVW-boeking via overlopende passiva of resultaat deelneming naar deze HK-vraag."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 15,
@@ -2091,7 +2259,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke voorraadtabel is juist?",
+      "task": "Welke voorraadtabel hoort bij Duins upstreamlevering aan Haven bij HK en een 75%-belang? Zet de opslag van 25% op kostprijs om naar winst in de onderlinge verkoopprijs en toon alle bedragen vóór belasting.",
       "options": [
         {
           "table": {
@@ -2255,7 +2423,7 @@
         "De ongerealiseerde winst neemt af van € 60.000 naar € 48.000, een mutatie van −€ 12.000.",
         "Het moederdeel bedraagt 75%; derden dragen 25%. Er is geen interne correctie."
       ],
-      "pattern": "Vóór belasting: verdeel upstreamwinst naar het belang in de verkopende dochter.",
+      "pattern": "Herken: de voorraad is tegen onderlinge prijs gegeven, de marge als opslag op kostprijs. Aanpak: herleid eerst de marge en verdeel daarna de volledige winst in 75% meerderheid en 25% derden. Controle: vermenigvuldig de voorraad niet rechtstreeks met 25% en vul geen interne NVW-correctie in.",
       "refs": [
         "hoza",
         "boit"
@@ -2266,7 +2434,66 @@
         17,
         19
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "upstream-hk",
+        "title": "Opslag op kostprijs naar marge in verkoopprijs",
+        "task": "Welke voorraadtabel hoort bij Duins upstreamlevering aan Haven bij HK en een 75%-belang? Zet de opslag van 25% op kostprijs om naar winst in de onderlinge verkoopprijs en toon alle bedragen vóór belasting.",
+        "rules": "Een opslag van 25% op kostprijs betekent dat een verkoopprijs van 125 bestaat uit kostprijs 100 en winst 25. De winst is dus 25/125 van de onderlinge verkoopprijs. Bij HK is de interne correctie niet van toepassing. De upstreamwinst wordt in consolidatie verdeeld tussen het moederdeel en het minderheidsbelang in de verkoper.",
+        "pattern": [
+          "Herken: de voorraad is tegen onderlinge prijs gegeven, de marge als opslag op kostprijs.",
+          "Aanpak: herleid eerst de marge en verdeel daarna de volledige winst in 75% meerderheid en 25% derden.",
+          "Controle: vermenigvuldig de voorraad niet rechtstreeks met 25% en vul geen interne NVW-correctie in."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 16,
@@ -2300,7 +2527,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke balanseliminatie verwijdert uitsluitend de winst in de eindvoorraad? Laat de beginvoorraadcorrectie nog buiten beschouwing.",
+      "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde winst in Havens eindvoorraad, met belasting en het derdenaandeel? Laat de aparte beginvoorraad-invoeging buiten beschouwing.",
       "options": [
         {
           "journal": [
@@ -2497,7 +2724,7 @@
         "Moeder: 75% × € 48.000 = € 36.000 bruto, dus € 28.800 netto en € 7.200 belasting.",
         "Derden: 25% × € 48.000 = € 12.000 bruto, dus € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Balans: eindstand volledig uit voorraad; splits de netto last en belasting per gerechtigde.",
+      "pattern": "Herken: upstream HK en een vraag over alleen de eindvoorraad. Aanpak: neem de eindregel van de casustabel, verdeel de bruto winst naar moeder en derden en splits beide delen in netto en belasting. Controle: gebruik geen beginwinst en leg niet de hele netto correctie bij de moeder.",
       "refs": [
         "hoza",
         "up"
@@ -2507,7 +2734,66 @@
         17,
         22
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "upstream-hk",
+        "title": "De volledige upstream-eindwinst uit voorraad",
+        "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde winst in Havens eindvoorraad, met belasting en het derdenaandeel? Laat de aparte beginvoorraad-invoeging buiten beschouwing.",
+        "rules": "Bij HK is vooraf geen interne winstcorrectie op de deelneming verwerkt. De volledige eindwinst wordt daarom in de consolidatie verdeeld over resultaat boekjaar van de meerderheid, belang derden en belastinglatenties. De voorraad neemt vóór belasting af. De beginvoorraadcorrectie is in deze vraag uitdrukkelijk een aparte vervolgstap.",
+        "pattern": [
+          "Herken: upstream HK en een vraag over alleen de eindvoorraad.",
+          "Aanpak: neem de eindregel van de casustabel, verdeel de bruto winst naar moeder en derden en splits beide delen in netto en belasting.",
+          "Controle: gebruik geen beginwinst en leg niet de hele netto correctie bij de moeder."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 17,
@@ -2541,7 +2827,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke aanvullende balanseliminatie verwerkt het moederdeel van de winst in de beginvoorraad?",
+      "task": "Welke aanvullende balanseliminatie brengt uitsluitend het 75%-moederdeel van de ongerealiseerde winst in de beginvoorraad, na 20% belasting, van overige reserves naar resultaat boekjaar?",
       "options": [
         {
           "journal": [
@@ -2658,7 +2944,7 @@
         "Moederdeel netto: € 60.000 × 75% × 80% = € 36.000.",
         "Overige reserves worden gedebiteerd en resultaat boekjaar wordt gecrediteerd."
       ],
-      "pattern": "Invoegen beginvoorraad is een verschuiving tussen eerdere resultaten en het lopende boekjaar.",
+      "pattern": "Herken: de opdracht vraagt specifiek de beginvoorraad en alleen het moederdeel. Aanpak: beginwinst maal 75% maal één minus het belastingtarief; debiteer reserves en crediteer resultaat boekjaar. Controle: wijzig de voorraad of belastinglatentie niet nogmaals in deze invoegboeking.",
       "refs": [
         "hoza",
         "boit"
@@ -2668,7 +2954,66 @@
         18,
         23
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "upstream-hk",
+        "title": "Het meerderheidsdeel van de beginwinst invoegen",
+        "task": "Welke aanvullende balanseliminatie brengt uitsluitend het 75%-moederdeel van de ongerealiseerde winst in de beginvoorraad, na 20% belasting, van overige reserves naar resultaat boekjaar?",
+        "rules": "De uitvoeging van de eindwinst is apart geregeld. Voor de meerderheidswinst moet de eerder uitgestelde beginwinst nog vanuit overige reserves in resultaat boekjaar worden ingevoegd. Gebruik bij upstream het moederpercentage in de verkoper en neem het netto bedrag. Dit is een verschuiving binnen het eigen vermogen en geen nieuwe voorraadboeking.",
+        "pattern": [
+          "Herken: de opdracht vraagt specifiek de beginvoorraad en alleen het moederdeel.",
+          "Aanpak: beginwinst maal 75% maal één minus het belastingtarief; debiteer reserves en crediteer resultaat boekjaar.",
+          "Controle: wijzig de voorraad of belastinglatentie niet nogmaals in deze invoegboeking."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 18,
@@ -2702,7 +3047,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke winst-en-verliesrekeningeliminatie verwerkt uitsluitend de vrijval van € 12.000 intercompanywinst?",
+      "task": "Welke afzonderlijke W&V-eliminatie verwerkt de vrijval van € 12.000 upstreamwinst, inclusief het aandeel van derden en belasting, nadat de onderlinge omzet al is geëlimineerd?",
       "options": [
         {
           "journal": [
@@ -2898,7 +3243,7 @@
         "Vrijval netto: € 12.000 × 80% = € 9.600. Daarvan komt 75% = € 7.200 aan Haven toe en 25% = € 2.400 aan derden.",
         "Door de afname van ongerealiseerde winst wordt de kostprijs van de omzet voor € 12.000 gecrediteerd."
       ],
-      "pattern": "Winstvrijval verhoogt het resultaat; bij upstream stijgt ook het winstaandeel van derden.",
+      "pattern": "Herken: ongerealiseerde upstreamwinst daalt en de vraag is beperkt tot de winstmutatie. Aanpak: splits de bruto vrijval in moederdeel, derdenaandeel en belasting. Controle: een debitering van kostprijs zou juist winst uitstellen; de vrijval vraagt de omgekeerde richting.",
       "refs": [
         "up",
         "boit",
@@ -2910,7 +3255,66 @@
         20,
         25
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "upstream-hk",
+        "title": "Upstreamvrijval delen met derden",
+        "task": "Welke afzonderlijke W&V-eliminatie verwerkt de vrijval van € 12.000 upstreamwinst, inclusief het aandeel van derden en belasting, nadat de onderlinge omzet al is geëlimineerd?",
+        "rules": "Bij vrijval van ongerealiseerde winst neemt de groepswinst toe en wordt de kostprijs gecrediteerd. Omdat de verkoper een niet-volledig gehouden dochter is, wordt het netto effect verdeeld over moeder en derden. Het belastingeffect wordt afzonderlijk opgenomen. De omzeteliminatie hoeft hier niet opnieuw te worden gemaakt.",
+        "pattern": [
+          "Herken: ongerealiseerde upstreamwinst daalt en de vraag is beperkt tot de winstmutatie.",
+          "Aanpak: splits de bruto vrijval in moederdeel, derdenaandeel en belasting.",
+          "Controle: een debitering van kostprijs zou juist winst uitstellen; de vrijval vraagt de omgekeerde richting."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 19,
@@ -2948,7 +3352,7 @@
           "€ 160.000."
         ]
       ],
-      "task": "Welk aandeel derden komt na verwerking van de intercompanywinst in de geconsolideerde winst-en-verliesrekening?",
+      "task": "Hoe groot is het aandeel derden in Duins resultaat in de geconsolideerde W&V na de vrijval van upstreamwinst, uitgaande van Duins enkelvoudige resultaat van € 160.000?",
       "options": [
         {
           "lines": [
@@ -2990,7 +3394,7 @@
         "Zonder correctie is het aandeel derden 25% × € 160.000 = € 40.000.",
         "Hun aandeel in de vrijval is 25% × € 12.000 × 80% = € 2.400. Totaal € 42.400."
       ],
-      "pattern": "Winst-en-verliesrekening: begin- naar eindstand. Balans: eindstand.",
+      "pattern": "Herken: het definitieve winstaandeel wordt gevraagd na een upstreamafname. Aanpak: gewoon aandeel derden plus 25% van de vrijval na belasting. Controle: trek de vrijval niet af en gebruik de belasting niet opnieuw op het al na belasting gegeven dochterresultaat.",
       "refs": [
         "orvelde",
         "boit"
@@ -3000,7 +3404,66 @@
         18,
         29
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "upstream-hk",
+        "title": "Het definitieve aandeel derden na vrijval",
+        "task": "Hoe groot is het aandeel derden in Duins resultaat in de geconsolideerde W&V na de vrijval van upstreamwinst, uitgaande van Duins enkelvoudige resultaat van € 160.000?",
+        "rules": "Begin met het gewone minderheidsaandeel in Duins resultaat na belastingen. De afname van ongerealiseerde upstreamwinst verhoogt vervolgens de aan die verkoper toegerekende groepswinst. Voeg het derdenaandeel in de netto vrijval toe. Gebruik voor de W&V de verandering van begin- naar eindwinst, niet alleen de winst in de eindvoorraad.",
+        "pattern": [
+          "Herken: het definitieve winstaandeel wordt gevraagd na een upstreamafname.",
+          "Aanpak: gewoon aandeel derden plus 25% van de vrijval na belasting.",
+          "Controle: trek de vrijval niet af en gebruik de belasting niet opnieuw op het al na belasting gegeven dochterresultaat."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 20,
@@ -3046,7 +3509,7 @@
           "€ 18.000; geen belastingeffect."
         ]
       ],
-      "task": "Wat is het geconsolideerde resultaat na belastingen toekomend aan Haven?",
+      "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, inclusief uitsluitend Havens 75%-deel van de netto upstreamvrijval?",
       "options": [
         {
           "lines": [
@@ -3088,7 +3551,7 @@
         "Zonder intercompanycorrectie is het resultaat € 316.000.",
         "Haven krijgt 75% van de netto vrijval van € 9.600, dus € 7.200 erbij. Totaal € 323.200."
       ],
-      "pattern": "Voeg aan de gewone HK-aansluiting alleen het juiste netto moederdeel van de intercompanymutatie toe.",
+      "pattern": "Herken: de gewone HK-resultaatbrug wordt uitgebreid met dalende upstreamwinst. Aanpak: bereken de basisbrug en tel daarna 75% van de netto vrijval erbij op. Controle: tel niet 100% van de vrijval bij Haven op en neem niet uitsluitend het bruto bedrag zonder belasting.",
       "refs": [
         "boit",
         "orvelde"
@@ -3098,7 +3561,66 @@
         18,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaataansluiting",
+        "title": "HK-resultaatbrug met upstreamvrijval",
+        "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, inclusief uitsluitend Havens 75%-deel van de netto upstreamvrijval?",
+        "rules": "Maak eerst de HK-aansluiting: moederresultaat plus aandeel in dochterwinst, minus het al geboekte dividend en de jaarafschrijving goodwill. Verwerk daarna het moederdeel van de upstreamwinstmutatie na belasting. De overige vrijval behoort aan derden en wordt niet in de meerderheidswinst opgenomen.",
+        "pattern": [
+          "Herken: de gewone HK-resultaatbrug wordt uitgebreid met dalende upstreamwinst.",
+          "Aanpak: bereken de basisbrug en tel daarna 75% van de netto vrijval erbij op.",
+          "Controle: tel niet 100% van de vrijval bij Haven op en neem niet uitsluitend het bruto bedrag zonder belasting."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              300000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 21,
@@ -3132,7 +3654,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke voorraadtabel is juist?",
+      "task": "Welke voorraadtabel hoort bij Havens downstreamleveringen aan Duin bij verkrijgingsprijs? Toon begin- en eindwinst en de mutatie, met de juiste verdeling over intern, derden en meerderheidsresultaat.",
       "options": [
         {
           "table": {
@@ -3296,7 +3818,7 @@
         "Winst beginvoorraad: € 36.000. Winst eindvoorraad: € 48.000. Toename € 12.000.",
         "Bij verkrijgingsprijs is geen interne correctie van toepassing. De downstreamwinst komt volledig ten laste van het geconsolideerde resultaat van de moeder."
       ],
-      "pattern": "Downstream HK: 0% intern, 0% derden en 100% ten laste van geconsolideerd resultaat.",
+      "pattern": "Herken: de verkoper is Haven en de deelneming staat tegen verkrijgingsprijs. Aanpak: bereken 100% van de winst en zet intern en derden op niet van toepassing. Controle: pas niet de NVW-verdeling 75% intern en 25% aanvullend toe; bij HK komt de volledige correctie in consolidatie.",
       "refs": [
         "schier",
         "boit",
@@ -3308,7 +3830,66 @@
         22,
         24
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "downstream-hk",
+        "title": "Downstream HK volledig voor de meerderheid",
+        "task": "Welke voorraadtabel hoort bij Havens downstreamleveringen aan Duin bij verkrijgingsprijs? Toon begin- en eindwinst en de mutatie, met de juiste verdeling over intern, derden en meerderheidsresultaat.",
+        "rules": "De moeder heeft de downstreamwinst geboekt. Bij HK bestaat geen interne NVW-correctie en de minderheid in de voorraadkoper draagt niet in die moederwinst mee. De volledige ongerealiseerde winst wordt daarom bij consolidatie ten laste van de meerderheid gecorrigeerd. De voorraadtabel toont de verdeling vóór belasting.",
+        "pattern": [
+          "Herken: de verkoper is Haven en de deelneming staat tegen verkrijgingsprijs.",
+          "Aanpak: bereken 100% van de winst en zet intern en derden op niet van toepassing.",
+          "Controle: pas niet de NVW-verdeling 75% intern en 25% aanvullend toe; bij HK komt de volledige correctie in consolidatie."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              180000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 22,
@@ -3342,7 +3923,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke balanseliminatie verwijdert uitsluitend de winst uit de eindvoorraad?",
+      "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde downstreamwinst uit Duins eindvoorraad, met verwerking van 20% winstbelasting?",
       "options": [
         {
           "journal": [
@@ -3508,7 +4089,7 @@
         "De gehele eindwinst van € 48.000 moet uit de voorraad.",
         "De netto correctie van € 38.400 komt voor rekening van de moeder; € 9.600 wordt als belastinglatentie verwerkt."
       ],
-      "pattern": "De verkoper is de moeder, dus derden delen niet in deze downstreamcorrectie.",
+      "pattern": "Herken: downstream HK, een eindvoorraad en geen intracomptabele winstcorrectie. Aanpak: eindwinst splitsen in netto meerderheidsresultaat en belasting; voorraad voor de bruto eindwinst crediteren. Controle: gebruik geen upstreamverdeling en pas niet slechts 75% toe op de voorraadwinst.",
       "refs": [
         "down",
         "boit"
@@ -3518,7 +4099,66 @@
         21,
         23
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "downstream-hk",
+        "title": "Downstream-eindwinst en latentie",
+        "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde downstreamwinst uit Duins eindvoorraad, met verwerking van 20% winstbelasting?",
+        "rules": "De hele winst van de moeder moet uit de eindvoorraad verdwijnen. Het netto deel komt ten laste van resultaat boekjaar van de meerderheid en het belastingdeel wordt als latentie verwerkt. Er is geen terug te nemen interne overlopende passiefpost en geen correctie op belang derden. De beginwinst wordt zo nodig apart ingevoegd.",
+        "pattern": [
+          "Herken: downstream HK, een eindvoorraad en geen intracomptabele winstcorrectie.",
+          "Aanpak: eindwinst splitsen in netto meerderheidsresultaat en belasting; voorraad voor de bruto eindwinst crediteren.",
+          "Controle: gebruik geen upstreamverdeling en pas niet slechts 75% toe op de voorraadwinst."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              180000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 23,
@@ -3552,7 +4192,7 @@
           "20%. De voorraadtabel toont bedragen vóór belasting."
         ]
       ],
-      "task": "Welke aanvullende balanseliminatie verwerkt de winst in de beginvoorraad?",
+      "task": "Welke aanvullende balanseliminatie brengt de volledige netto downstreamwinst uit de beginvoorraad van overige reserves naar resultaat boekjaar, los van de eindvoorraadcorrectie?",
       "options": [
         {
           "journal": [
@@ -3668,7 +4308,7 @@
         "Netto beginwinst: € 180.000 × 20% × 80% = € 28.800.",
         "De gehele netto beginwinst gaat van overige reserves naar resultaat boekjaar."
       ],
-      "pattern": "Ook bij het invoegen van de beginvoorraad blijft downstream volledig voor rekening van de moeder.",
+      "pattern": "Herken: gevraagde beginvoorraad-invoeging bij een door de moeder gemaakte winst. Aanpak: neem de bruto beginwinst maal één minus het belastingtarief. Controle: resultaat boekjaar wordt gecrediteerd; een extra vermindering met het deelnemingspercentage is onjuist.",
       "refs": [
         "boit",
         "down"
@@ -3678,7 +4318,66 @@
         22,
         24
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "downstream-hk",
+        "title": "De volledige netto beginwinst invoegen",
+        "task": "Welke aanvullende balanseliminatie brengt de volledige netto downstreamwinst uit de beginvoorraad van overige reserves naar resultaat boekjaar, los van de eindvoorraadcorrectie?",
+        "rules": "Bij downstream HK draagt de meerderheid de volledige winstcorrectie. Daarom wordt ook de gehele beginwinst na belasting vanuit de reserves ingevoegd in resultaat boekjaar. Het 75%-belang in de koper beperkt deze boeking niet. Gebruik geen kostprijsrekening in deze afzonderlijke balanseliminatie.",
+        "pattern": [
+          "Herken: gevraagde beginvoorraad-invoeging bij een door de moeder gemaakte winst.",
+          "Aanpak: neem de bruto beginwinst maal één minus het belastingtarief.",
+          "Controle: resultaat boekjaar wordt gecrediteerd; een extra vermindering met het deelnemingspercentage is onjuist."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              180000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 24,
@@ -3716,7 +4415,7 @@
           "€ 900.000 tegen onderlinge verkoopprijs."
         ]
       ],
-      "task": "Welke combinatie van winst-en-verliesrekeningeliminaties is juist?",
+      "task": "Welke twee W&V-eliminaties volgen hier de syllabus-aanpak: het doorgeleverde deel van de interne omzet van € 900.000 en daarnaast de groei van de eindvoorraad tegen onderlinge prijs, inclusief winst en belasting?",
       "options": [
         {
           "journals": [
@@ -4059,7 +4758,7 @@
         "Doorlevering: € 900.000 − € 60.000 = € 840.000.",
         "Voorraadgroei bestaat uit kostprijs € 48.000 en winst € 12.000. De winst wordt gesplitst in € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Bij voorraadgroei: trek de voorraadmutatie eerst af van de onderlinge omzet voor het doorgeleverde deel.",
+      "pattern": "Herken: de opgave vraagt uitdrukkelijk twee delen: doorlevering en voorraadgroei. Aanpak: trek de voorraadtoename van de omzet af; splits de groei daarna in kostprijs en winst. Controle: beide omzetdebetbedragen moeten samen € 900.000 zijn; anders wordt de voorraadgroei dubbel geëlimineerd.",
       "refs": [
         "schier",
         "down"
@@ -4069,7 +4768,66 @@
         23,
         25
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "ic-boekingsmethoden",
+        "title": "Syllabus-aanpak: doorlevering plus voorraadtoename",
+        "task": "Welke twee W&V-eliminaties volgen hier de syllabus-aanpak: het doorgeleverde deel van de interne omzet van € 900.000 en daarnaast de groei van de eindvoorraad tegen onderlinge prijs, inclusief winst en belasting?",
+        "rules": "Bepaal eerst de voorraadtoename tegen de onderlinge verkoopprijs. Het doorgeleverde deel is de interne omzet minus die voorraadtoename. De tweede boeking elimineert de omzet in de voorraadgroei tegenover oorspronkelijke kostprijs, netto meerderheidsresultaat en belasting. Dit is een andere presentatie dan eerst de volledige omzet elimineren en daarna uitsluitend de winstmutatie boeken.",
+        "pattern": [
+          "Herken: de opgave vraagt uitdrukkelijk twee delen: doorlevering en voorraadgroei.",
+          "Aanpak: trek de voorraadtoename van de omzet af; splits de groei daarna in kostprijs en winst.",
+          "Controle: beide omzetdebetbedragen moeten samen € 900.000 zijn; anders wordt de voorraadgroei dubbel geëlimineerd."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              180000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 25,
@@ -4107,7 +4865,7 @@
           "De onderlinge omzet is afzonderlijk geëlimineerd."
         ]
       ],
-      "task": "Welke winst-en-verliesrekeningeliminatie betreft uitsluitend de vrijval van de intercompanywinst?",
+      "task": "Welke W&V-eliminatie verwerkt uitsluitend de vrijval van Havens downstreamwinst in 2025, nadat de onderlinge omzet apart is geëlimineerd?",
       "options": [
         {
           "journal": [
@@ -4273,7 +5031,7 @@
         "Winstvrijval: (€ 240.000 − € 180.000) × 20% = € 12.000.",
         "Deze vrijval komt volledig bij de moeder: € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Bij afname blijft de onderlinge omzeteliminatie apart; de vrijval gaat via een credit op kostprijs.",
+      "pattern": "Herken: de voorraad tegen onderlinge prijs daalt en de omzeteliminatie is al uitgevoerd. Aanpak: bereken de winstvrijval en splits deze in netto resultaat en belasting. Controle: neem niet slechts 75% van de vrijval en voeg geen derdenregel toe.",
       "refs": [
         "boit",
         "down"
@@ -4283,7 +5041,66 @@
         24,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "downstream-hk",
+        "title": "Downstreamvrijval in het volgende jaar",
+        "task": "Welke W&V-eliminatie verwerkt uitsluitend de vrijval van Havens downstreamwinst in 2025, nadat de onderlinge omzet apart is geëlimineerd?",
+        "rules": "De daling van de ongerealiseerde downstreamwinst verhoogt het geconsolideerde resultaat van de meerderheid. De kostprijs wordt voor de bruto vrijval gecrediteerd. Aan debetzijde worden het netto meerderheidsresultaat en het belastingeffect verwerkt. Omdat de moeder de winst maakte, ontstaat geen aandeel derden in deze vrijval.",
+        "pattern": [
+          "Herken: de voorraad tegen onderlinge prijs daalt en de omzeteliminatie is al uitgevoerd.",
+          "Aanpak: bereken de winstvrijval en splits deze in netto resultaat en belasting.",
+          "Controle: neem niet slechts 75% van de vrijval en voeg geen derdenregel toe."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
+          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "headers": [
+            "Datum",
+            "Voorraad",
+            "Niet-gerealiseerde intercompanywinst in voorraad",
+            "Interne correctie",
+            "Eliminatie t.l.v. aandeel derden",
+            "Eliminatie t.l.v. geconsolideerd resultaat"
+          ],
+          "rows": [
+            [
+              "Percentage",
+              "",
+              "100%",
+              "…%",
+              "…%",
+              "…%"
+            ],
+            [
+              "Begin boekjaar",
+              240000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Einde boekjaar",
+              180000,
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Toe-/afname",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 26,
@@ -4313,7 +5130,7 @@
           "Geen fair value-correcties; geen belastingeffect goodwill."
         ]
       ],
-      "task": "Welke combinatie geeft de goodwillafschrijving over 2024 en de goodwill op de balans per 31 december 2024?",
+      "task": "Welke combinatie geeft Kades goodwillafschrijving over 2024 en resterende consolidatiegoodwill per 31 december 2024, met de in deze casus voorgeschreven afschrijving vanaf iedere eigen aankoopdatum?",
       "options": [
         {
           "lines": [
@@ -4366,7 +5183,7 @@
         "Tweede tranche: goodwill € 180.000; in 2024 drie maanden afschrijving, dus € 9.000.",
         "Jaarlast € 27.000. De balans bevat € 36.000 + € 171.000 = € 207.000."
       ],
-      "pattern": "Bereken per aankoop afzonderlijk goodwill, tijdsevenredige jaarlast en resterende looptijd.",
+      "pattern": "Herken: een oude tranche en een extra aankoop op 1 oktober, met een eigen afschrijvingsregel. Aanpak: maak per tranche een goodwillberekening, afschrijving van 2024 en cumulatieve afschrijving. Controle: de oude tranche loopt een volledig jaar mee; de nieuwe tranche niet.",
       "refs": [
         "schier"
       ],
@@ -4375,7 +5192,19 @@
         10,
         27
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "stelselwijziging",
+        "title": "Meerdere aankopen hebben afzonderlijke goodwilllagen",
+        "task": "Welke combinatie geeft Kades goodwillafschrijving over 2024 en resterende consolidatiegoodwill per 31 december 2024, met de in deze casus voorgeschreven afschrijving vanaf iedere eigen aankoopdatum?",
+        "rules": "Bereken goodwill per aankooplaag met de eigen koopsom, het verworven percentage en het vermogen op die datum. Volg vervolgens de in deze vraag expliciet voorgeschreven afschrijving per laag vanaf haar verwerving. Een latere aankoop loopt in het jaar van aankoop slechts tijdsevenredig mee. Voeg de afzonderlijke jaarlasten en resterende boekwaarden pas aan het einde samen.",
+        "pattern": [
+          "Herken: een oude tranche en een extra aankoop op 1 oktober, met een eigen afschrijvingsregel.",
+          "Aanpak: maak per tranche een goodwillberekening, afschrijving van 2024 en cumulatieve afschrijving.",
+          "Controle: de oude tranche loopt een volledig jaar mee; de nieuwe tranche niet."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 27,
@@ -4409,7 +5238,7 @@
           "Verkrijgingsprijs. Boekwaarde eerste tranche € 350.000; tweede tranche € 900.000."
         ]
       ],
-      "task": "Welke eliminaties betreffen uitsluitend de twee aankopen en activering van goodwill? Laat goodwillafschrijving en belang derden buiten beschouwing.",
+      "task": "Welke twee balanseliminaties verwijderen Kades aankooplagen in Zand en activeren de oorspronkelijke goodwill, exclusief goodwillafschrijving en belang derden, met verwerking van het meegekochte dividend op de eerste laag?",
       "options": [
         {
           "journals": [
@@ -4851,7 +5680,7 @@
         "Eerste tranche: 20% × [€ 700.000 + (€ 200.000 − € 100.000)] = € 160.000 overige reserves. Samen met € 100.000 kapitaal en € 90.000 goodwill: € 350.000.",
         "Tweede tranche: € 200.000 kapitaal + € 440.000 reserves + € 80.000 resultaat boekjaar + € 180.000 goodwill = € 900.000."
       ],
-      "pattern": "Elke aankoop houdt een eigen verkrijgingsbasis. Een vóór verkrijging behaalde winst in het lopende boekjaar wordt daar afzonderlijk geëlimineerd.",
+      "pattern": "Herken: twee aankoopdata, verschillende vermogenssamenstellingen en een dividend uit de eerste aankoopbasis. Aanpak: elimineer iedere tranche apart voor haar huidige enkelvoudige boekwaarde. Controle: houd historische goodwill onveranderd bij het verwerken van meegekocht dividend en verplaats winst van het lopende jaar niet naar oude reserves.",
       "refs": [
         "schier",
         "hoza"
@@ -4861,7 +5690,19 @@
         6,
         26
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatie-hk",
+        "title": "Twee kapitaaleliminaties met hun eigen verkrijgingsbasis",
+        "task": "Welke twee balanseliminaties verwijderen Kades aankooplagen in Zand en activeren de oorspronkelijke goodwill, exclusief goodwillafschrijving en belang derden, met verwerking van het meegekochte dividend op de eerste laag?",
+        "rules": "Iedere aankooplaag houdt haar eigen verkrijgingsvermogen. Corrigeer de eerste laag voor het ontvangen meegekochte dividend en de bestemming van de bij die aankoop aanwezige winst. De tweede laag bevat resultaat dat vóór de aankoop in het lopende boekjaar is behaald; dat blijft in deze balanswerkstaat een component resultaat boekjaar. Goodwillafschrijving en derden worden later apart verwerkt.",
+        "pattern": [
+          "Herken: twee aankoopdata, verschillende vermogenssamenstellingen en een dividend uit de eerste aankoopbasis.",
+          "Aanpak: elimineer iedere tranche apart voor haar huidige enkelvoudige boekwaarde.",
+          "Controle: houd historische goodwill onveranderd bij het verwerken van meegekocht dividend en verplaats winst van het lopende jaar niet naar oude reserves."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 28,
@@ -4907,7 +5748,7 @@
           "Geen andere resultaat- of voorraadcorrecties."
         ]
       ],
-      "task": "Hoeveel bedraagt de geconsolideerde voorraad per einde boekjaar?",
+      "task": "Hoeveel bedraagt de geconsolideerde voorraad van Moer, Delta en Eko op einddatum nadat de gegeven upstream- en downstream-eindwinsten volledig zijn verwijderd?",
       "options": [
         {
           "lines": [
@@ -4950,7 +5791,7 @@
         "Volledig te elimineren eindwinsten: € 70.000 + € 60.000 = € 130.000.",
         "De geconsolideerde voorraad bedraagt € 930.000."
       ],
-      "pattern": "Voorraad is altijd een bruto eindstand; percentages voor moeder en derden veranderen de totale voorraadcorrectie niet.",
+      "pattern": "Herken: de vraag vraagt een groepsbalanspost en geeft de interne eindwinsten al. Aanpak: som van de drie voorraden minus beide volledige eindwinsten. Controle: gebruik niet de winstmutaties en vermenigvuldig de eindwinsten niet met deelnemingspercentages.",
       "refs": [
         "boit",
         "up",
@@ -4962,7 +5803,61 @@
         29,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaataansluiting",
+        "title": "Voorraad van de groep vóór belasting corrigeren",
+        "task": "Hoeveel bedraagt de geconsolideerde voorraad van Moer, Delta en Eko op einddatum nadat de gegeven upstream- en downstream-eindwinsten volledig zijn verwijderd?",
+        "rules": "Bij integrale consolidatie worden de volledige eindvoorraden opgeteld. Verwijder daarna de volle ongerealiseerde winst per interne stroom, ongeacht de verdeling tussen moeder en derden. Deze voorraadcorrectie is vóór belasting. Een belastinglatentie en de resultaattoerekening veranderen het bruto uit voorraad te elimineren bedrag niet.",
+        "pattern": [
+          "Herken: de vraag vraagt een groepsbalanspost en geeft de interne eindwinsten al.",
+          "Aanpak: som van de drie voorraden minus beide volledige eindwinsten.",
+          "Controle: gebruik niet de winstmutaties en vermenigvuldig de eindwinsten niet met deelnemingspercentages."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Twee zelfstandige goederenstromen: winstbedragen vóór belasting",
+          "headers": [
+            "Verkoper → koper",
+            "Winst beginvoorraad",
+            "Winst eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Delta → Moer",
+              50000,
+              70000
+            ],
+            [
+              "Moer → Eko",
+              80000,
+              60000
+            ]
+          ]
+        },
+        {
+          "caption": "Gegeven eindvoorraden vóór consolidatie",
+          "headers": [
+            "Maatschappij",
+            "Eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Moer",
+              410000
+            ],
+            [
+              "Delta",
+              260000
+            ],
+            [
+              "Eko",
+              390000
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 29,
@@ -5008,7 +5903,7 @@
           "Geen andere resultaat- of voorraadcorrecties."
         ]
       ],
-      "task": "Wat is het totale aandeel derden in de geconsolideerde winst-en-verliesrekening?",
+      "task": "Hoe groot is het totale aandeel derden in de geconsolideerde W&V van Moer na de gegeven upstreamtoename en downstreamafname, met 20% winstbelasting?",
       "options": [
         {
           "lines": [
@@ -5059,7 +5954,7 @@
         "Het gewone aandeel derden is € 40.000 + € 54.000 = € 94.000. Na correctie resteert € 90.800.",
         "Bij de downstreamlevering door Moer wordt derden niet gecorrigeerd."
       ],
-      "pattern": "Corrigeer derden uitsluitend waar een verkopende dochter de nog ongerealiseerde winst heeft geboekt.",
+      "pattern": "Herken: twee goederenstromen, maar slechts één verkopende dochter. Aanpak: corrigeer het derdenaandeel in Delta voor haar netto winsttoename en laat Eko's gewone derdenaandeel staan. Controle: koppel de derdenregel aan de verkoper, niet aan de onderneming die de voorraad houdt.",
       "refs": [
         "boit",
         "orvelde"
@@ -5070,14 +5965,68 @@
         28,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaataansluiting",
+        "title": "Alleen winst van een verkopende dochter raakt derden",
+        "task": "Hoe groot is het totale aandeel derden in de geconsolideerde W&V van Moer na de gegeven upstreamtoename en downstreamafname, met 20% winstbelasting?",
+        "rules": "Bereken eerst de gewone minderheidsaandelen in Delta's en Eko's resultaten. De upstreamwinst is door Delta gemaakt, zodat de verandering in die winst ook haar derdenaandeel raakt. De downstreamwinst is door Moer gemaakt en heeft geen correctie op Eko's derdenaandeel tot gevolg. Pas belasting alleen toe op de nog vóór belasting gegeven IC-mutatie.",
+        "pattern": [
+          "Herken: twee goederenstromen, maar slechts één verkopende dochter.",
+          "Aanpak: corrigeer het derdenaandeel in Delta voor haar netto winsttoename en laat Eko's gewone derdenaandeel staan.",
+          "Controle: koppel de derdenregel aan de verkoper, niet aan de onderneming die de voorraad houdt."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Twee zelfstandige goederenstromen: winstbedragen vóór belasting",
+          "headers": [
+            "Verkoper → koper",
+            "Winst beginvoorraad",
+            "Winst eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Delta → Moer",
+              50000,
+              70000
+            ],
+            [
+              "Moer → Eko",
+              80000,
+              60000
+            ]
+          ]
+        },
+        {
+          "caption": "Gegeven eindvoorraden vóór consolidatie",
+          "headers": [
+            "Maatschappij",
+            "Eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Moer",
+              410000
+            ],
+            [
+              "Delta",
+              260000
+            ],
+            [
+              "Eko",
+              390000
+            ]
+          ]
+        }
+      ]
     },
     {
       "id": 30,
       "stage": 5,
       "title": "Eindcasus: de volledige resultaataansluiting",
       "type": "Rekenvraag",
-      "intro": "Rond de consolidatie van Moer af met dezelfde complete gegevens.",
+      "intro": "Rond de consolidatie van Moer af met de volledige gegevens en beide casustabellen bij deze vraag.",
       "facts": [
         [
           "Belangen en grondslag",
@@ -5116,7 +6065,7 @@
           "Geen andere resultaat- of voorraadcorrecties."
         ]
       ],
-      "task": "Wat is het geconsolideerde resultaat na belastingen toekomend aan Moer?",
+      "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Moer, inclusief eliminatie van dividend, goodwillafschrijving en de juiste netto moederdelen van beide IC-mutaties?",
       "options": [
         {
           "lines": [
@@ -5170,7 +6119,7 @@
         "De upstreamtoename verlaagt Moers resultaat met € 12.800; de downstreamafname verhoogt het met € 16.000.",
         "Uitkomst: € 683.200. Controle: groepsresultaat vóór toerekening € 774.000 minus derden € 90.800 = € 683.200."
       ],
-      "pattern": "HK-eindpatroon: moeder + winstaandelen − dividend − goodwill ± netto intercompanymutaties voor de moeder.",
+      "pattern": "Herken: de eindcasus combineert de HK-basisbrug met twee tegengestelde IC-mutaties. Aanpak: werk dividend, goodwill, upstream en downstream in afzonderlijke aansluitingsregels uit. Controle: meerderheidsresultaat plus definitief aandeel derden moet hetzelfde groepsresultaat opleveren als een berekening vóór winsttoerekening.",
       "refs": [
         "boit",
         "college",
@@ -5182,10 +6131,64 @@
         28,
         29
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaataansluiting",
+        "title": "De volledige HK-resultaatbrug sluiten",
+        "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Moer, inclusief eliminatie van dividend, goodwillafschrijving en de juiste netto moederdelen van beide IC-mutaties?",
+        "rules": "Voeg bij verkrijgingsprijs de winstaandelen van de dochters aan het moederresultaat toe. Verwijder ontvangen dividend dat daarin al als opbrengst zit en trek de jaarafschrijving van consolidatiegoodwill af. De upstreamtoename raakt het moederdeel in de verkoper; de downstreamafname komt volledig aan de moeder toe. Reken beide IC-mutaties na belasting.",
+        "pattern": [
+          "Herken: de eindcasus combineert de HK-basisbrug met twee tegengestelde IC-mutaties.",
+          "Aanpak: werk dividend, goodwill, upstream en downstream in afzonderlijke aansluitingsregels uit.",
+          "Controle: meerderheidsresultaat plus definitief aandeel derden moet hetzelfde groepsresultaat opleveren als een berekening vóór winsttoerekening."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Twee zelfstandige goederenstromen: winstbedragen vóór belasting",
+          "headers": [
+            "Verkoper → koper",
+            "Winst beginvoorraad",
+            "Winst eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Delta → Moer",
+              50000,
+              70000
+            ],
+            [
+              "Moer → Eko",
+              80000,
+              60000
+            ]
+          ]
+        },
+        {
+          "caption": "Gegeven eindvoorraden vóór consolidatie",
+          "headers": [
+            "Maatschappij",
+            "Eindvoorraad"
+          ],
+          "rows": [
+            [
+              "Moer",
+              410000
+            ],
+            [
+              "Delta",
+              260000
+            ],
+            [
+              "Eko",
+              390000
+            ]
+          ]
+        }
+      ]
     }
   ],
   "code": "hk",
   "opgave": 4
 };
-})(window);
+}());

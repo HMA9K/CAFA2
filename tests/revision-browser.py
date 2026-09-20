@@ -93,7 +93,7 @@ async def main():
                 assert await panel.get_attribute('data-guidance-id')==qid
                 await panel.evaluate('(x)=>x.open=true')
                 assert len(await panel.locator('.theory-content>p').first.inner_text())>120
-                assert await q.locator('.learning-pattern p').count()==3
+                assert await q.locator('.learning-pattern p').count()==6
                 if number in manifest['modules'][code]['caseTables']:
                     assert await q.locator('.learning-case table').count()>=1
                 report['practice_questions']+=1

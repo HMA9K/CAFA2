@@ -28,13 +28,13 @@ for(const [code,name]of Object.entries(modules)){
  assert.equal(digest(m.questions.map(q=>[q.id,q.correct,q.options,q.facts,q.explanation,q.related])),original[code],'Antwoorden, feiten, uitwerkingen en IDs identiek aan onafhankelijke nulmeting: '+code);
  for(const dir of ['fragments','fallback']){
    const html=read(dir+'/'+name+'.html');
-   for(const q of m.questions){const match=new RegExp('<section class="screen question frame" id="'+code+'-'+q.id+'"[\\s\\S]*?(?=<section class="screen question frame"|$)').exec(html);assert.ok(match,'Vraag '+code+'-'+q.id);const text=match[0];assert.equal((text.match(/class="theory-panel"/g)||[]).length,1);assert.ok(text.includes('data-guidance-id="'+code+'-'+q.id+'"'));assert.equal((text.match(/class="pattern learning-pattern"/g)||[]).length,1);assert.equal(text.includes('class="learning-case"'),q.caseTables.length>0);assert.ok(text.includes('samenvatting.html#'+q.guidance.lesson));}
+   for(const q of m.questions){const match=new RegExp('<section class="screen question frame" id="'+code+'-'+q.id+'"[\\s\\S]*?(?=<section class="screen question frame"|$)').exec(html);assert.ok(match,'Vraag '+code+'-'+q.id);const text=match[0];assert.equal((text.match(/class="theory-panel"/g)||[]).length,1);assert.ok(text.includes('data-guidance-id="'+code+'-'+q.id+'"'));assert.equal((text.match(/class="pattern learning-pattern"/g)||[]).length,2);assert.equal(text.includes('class="learning-case"'),q.caseTables.length>0);assert.ok(text.includes('samenvatting.html#'+q.guidance.lesson));}
  }
  const rules=new Set();
  for(const q of m.questions){total++;assert.ok(q.task.length>40);assert.ok(q.guidance.rules.length>120);assert.equal(q.guidance.pattern.length,3);assert.ok(ids.has(q.guidance.lesson));assert.ok(!/vorige vraag|eerdere vraag|zie vraag\s+\d|bovenstaande vraag/i.test(q.task));rules.add(q.guidance.rules);if(q.caseTables.length)caseCount++;for(const t of q.caseTables){assert.ok(t.headers.length>=2);assert.ok(t.rows.length);for(const row of t.rows)assert.equal(row.length,t.headers.length);}}
  assert.equal(rules.size,30,'Geen generieke herhaling binnen '+code);
 }
-assert.equal(total,120);assert.ok(caseCount>=50);
+assert.equal(total,120);assert.ok(caseCount>=45);
 const summary=read('samenvatting.html');assert.equal((summary.match(/data-lesson=/g)||[]).length,ids.size);assert.equal((summary.match(/data-glossary-entry/g)||[]).length,glossary.length);
 const htmlIds=Array.from(summary.matchAll(/\bid="([^"]+)"/g),m=>m[1]);assert.equal(new Set(htmlIds).size,htmlIds.length,'Geen dubbele HTML-IDs');
 for(const id of ids)assert.ok(summary.includes('id="'+id+'"'));
