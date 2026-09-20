@@ -1,0 +1,73 @@
+name: CAFA2 content review
+on:
+  push:
+    branches: [cafa2-inhoud-revisie-20260920]
+    paths: [.github/workflows/content-review.yml, scripts/**, content/**, tests/**, css/learning-content.css, js/ic-learning-engine.mjs]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-content-revision
+  cancel-in-progress: true
+jobs:
+  review:
+    if: github.ref == 'refs/heads/cafa2-inhoud-revisie-20260920'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cafa2-inhoud-revisie-20260920
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build reviewed content and migrate source structure
+        run: |
+          node scripts/prepare-learning-revision.mjs
+          node scripts/build-learning-revision.mjs
+      - name: Existing and new regression checks
+        run: |
+          npm test
+          node tests/summary-ui.mjs
+      - name: Verify reproducible generated output
+        run: |
+          git diff > /tmp/before-build.diff
+          node scripts/build-learning-revision.mjs
+          git diff > /tmp/after-build.diff
+          cmp /tmp/before-build.diff /tmp/after-build.diff
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test runtime
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Real browser, six widths, all questions and script-free fallback
+        run: python tests/revision-browser.py
+      - name: Commit generated output only after passing checks
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-inhoud-revisie-20260920'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/summary/glossary.mjs scripts/build-learning-revision.mjs tests/content-revision.mjs tests/revision-browser.py tests/summary-ui.mjs js/ic-learning-engine.mjs
+          git add index.html samenvatting.html package.json data/kapitaalbelangen.js data/vreemde-valuta.js data/consolidatie-nvw.js data/consolidatie-hk.js fragments/kapitaalbelangen.html fragments/vreemde-valuta.html fragments/consolidatie-nvw.html fragments/consolidatie-hk.html fallback/kapitaalbelangen.html fallback/vreemde-valuta.html fallback/consolidatie-nvw.html fallback/consolidatie-hk.html css/summary.css js/summary.js js/bootstrap.js js/theory-panels.js docs/content-revision-manifest.json docs/CAFA2-INHOUDSREVISIE-20260920.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build source-reviewed CAFA2 summary and all 120 practice enhancements'
+            git push origin HEAD:cafa2-inhoud-revisie-20260920
+          fi
+      - name: Snapshot for visual and content inspection
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-review.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-review-snapshot
+          path: /tmp/cafa2-review.tar
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-browser-review
+          path: /tmp/cafa2-browser-review/
+          if-no-files-found: ignore
+          retention-days: 7

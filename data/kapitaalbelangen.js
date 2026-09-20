@@ -1,7 +1,7 @@
-(function (root) {
-  'use strict';
-  if (!root.CAFA2_DATA || !root.CAFA2_DATA.modules) throw new Error('CAFA2-configuratie ontbreekt.');
-  root.CAFA2_DATA.modules.kap = {
+(function(){
+window.CAFA2_DATA=window.CAFA2_DATA||{modules:{}};
+window.CAFA2_DATA.modules=window.CAFA2_DATA.modules||{};
+window.CAFA2_DATA.modules["kap"]={
   "id": "cafa2-cirrus-kapitaal-30-v1",
   "title": "Kapitaalbelangen",
   "subtitle": "Opgave 1 · 30 oefenvragen",
@@ -141,7 +141,7 @@
       "type": "Theorie",
       "intro": "Een bv neemt een kapitaalbelang in een andere bv.",
       "facts": [],
-      "task": "Welke combinatie bevat de vier kwalitatieve criteria voor een deelneming?",
+      "task": "Welke omschrijving bevat de vier kwalitatieve criteria voor een deelneming volgens artikel 2:24c lid 1 BW?",
       "options": [
         {
           "text": "Kapitaalverschaffing, voor eigen rekening, duurzame verbondenheid en dienstbaarheid aan de eigen werkzaamheid.",
@@ -164,7 +164,7 @@
       "explanation": [
         "De vier criteria staan in art. 2:24c lid 1 BW. Bij een vijfde of meer van het geplaatste kapitaal wordt het bestaan van een deelneming vermoed."
       ],
-      "pattern": "Kwalificeer eerst het belang. Bepaal pas daarna de waarderingsgrondslag.",
+      "pattern": "Herken: de vraag gaat over de aard van het kapitaalbelang, niet over de zeggenschap of de boekwaarde. Aanpak: toets kapitaalverschaffing, eigen rekening, duurzame verbondenheid en dienstbaarheid afzonderlijk. Controle: gebruik artikel 2:24c voor deelneming; artikel 2:24a voor dochtermaatschappij en artikel 2:389 voor waardering.",
       "refs": [
         "qual",
         "montone"
@@ -174,7 +174,19 @@
         3,
         4
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "kwalificatie",
+        "title": "Deelneming: eerst de wettelijke criteria",
+        "task": "Welke omschrijving bevat de vier kwalitatieve criteria voor een deelneming volgens artikel 2:24c lid 1 BW?",
+        "rules": "Beoordeel of voor eigen rekening kapitaal wordt verschaft om duurzaam verbonden te zijn ten dienste van de eigen werkzaamheid. Het wettelijke vermoeden vanaf een vijfde van het geplaatste kapitaal ondersteunt deze beoordeling, maar vervangt de kwalitatieve criteria niet. De kwalificatie deelneming is een andere beslissing dan de waardering tegen nettovermogenswaarde.",
+        "pattern": [
+          "Herken: de vraag gaat over de aard van het kapitaalbelang, niet over de zeggenschap of de boekwaarde.",
+          "Aanpak: toets kapitaalverschaffing, eigen rekening, duurzame verbondenheid en dienstbaarheid afzonderlijk.",
+          "Controle: gebruik artikel 2:24c voor deelneming; artikel 2:24a voor dochtermaatschappij en artikel 2:389 voor waardering."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 2,
@@ -196,7 +208,7 @@
           "Het belang blijft voor langere tijd in bezit."
         ]
       ],
-      "task": "Hoe kwalificeert Merwede dit kapitaalbelang op grond van deze gegevens?",
+      "task": "Hoe kwalificeert Merwede het 15%-kapitaalbelang in Lever op basis van de beschreven samenwerking en het doel van het belang?",
       "options": [
         {
           "text": "Als belegging: onder 20% kan nooit sprake zijn van een deelneming.",
@@ -219,7 +231,7 @@
       "explanation": [
         "De kapitaalverschaffing dient duurzaam de eigen werkzaamheid en geschiedt voor eigen rekening. Een belang onder 20% kan dus een deelneming zijn."
       ],
-      "pattern": "Een klein percentage sluit een deelneming niet uit. Toets de feitelijke verbondenheid.",
+      "pattern": "Herken: het lage percentage staat naast concrete informatie over strategische samenwerking. Aanpak: verbind de feiten over Lever aan de vier wettelijke criteria in plaats van uitsluitend een grenspercentage te noemen. Controle: leid uit de kwalificatie deelneming nog niet automatisch waardering tegen NVW af; daarvoor is invloed van betekenis nodig.",
       "refs": [
         "qual"
       ],
@@ -228,7 +240,19 @@
         3,
         4
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "kwalificatie",
+        "title": "Een belang onder 20% kan een deelneming zijn",
+        "task": "Hoe kwalificeert Merwede het 15%-kapitaalbelang in Lever op basis van de beschreven samenwerking en het doel van het belang?",
+        "rules": "Bij minder dan 20% bestaat niet het wettelijke vermoeden van een deelneming. Een deelneming kan echter wel aanwezig zijn wanneer de vier kwalitatieve criteria van artikel 2:24c lid 1 BW zijn vervuld. Kijk daarom naar de duurzame samenwerking en de betekenis voor de eigen bedrijfsactiviteiten; het percentage alleen geeft geen afdoende antwoord.",
+        "pattern": [
+          "Herken: het lage percentage staat naast concrete informatie over strategische samenwerking.",
+          "Aanpak: verbind de feiten over Lever aan de vier wettelijke criteria in plaats van uitsluitend een grenspercentage te noemen.",
+          "Controle: leid uit de kwalificatie deelneming nog niet automatisch waardering tegen NVW af; daarvoor is invloed van betekenis nodig."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 3,
@@ -246,7 +270,7 @@
           "Geen; de activiteiten houden geen verband met de eigen werkzaamheden."
         ]
       ],
-      "task": "Welke kwalificatie past bij deze gegevens?",
+      "task": "Hoe kwalificeert Merwede het 18%-belang in Tour, gezien het voornemen tot snelle verkoop en het ontbreken van een verbinding met de eigen bedrijfsactiviteiten?",
       "options": [
         {
           "text": "Een kortlopende belegging.",
@@ -269,7 +293,7 @@
       "explanation": [
         "Zowel duurzame verbondenheid als dienstbaarheid aan de eigen werkzaamheid ontbreekt. De officiële Rosen-uitwerking kwalificeert de vergelijkbare situatie als kortlopende belegging."
       ],
-      "pattern": "Een verkoopvoornemen en geen functionele samenwerking geven een ander antwoord dan een duurzame strategische deelneming.",
+      "pattern": "Herken: de casus benadrukt snelle verkoop en geen bedrijfsmatige samenwerking. Aanpak: toets vooral de ontbrekende duurzame en functionele verbondenheid aan artikel 2:24c lid 1 BW. Controle: een percentage onder 20% is niet zelfstandig de reden; een strategisch belang met hetzelfde percentage kan anders kwalificeren.",
       "refs": [
         "qual",
         "rosen"
@@ -278,7 +302,19 @@
         1,
         2
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "kwalificatie",
+        "title": "Tijdelijk aanhouden voor koerswinst",
+        "task": "Hoe kwalificeert Merwede het 18%-belang in Tour, gezien het voornemen tot snelle verkoop en het ontbreken van een verbinding met de eigen bedrijfsactiviteiten?",
+        "rules": "De bedoeling bij het aanhouden van een belang is relevant voor de kwalificatie. Een belang dat uitsluitend tijdelijk voor verkoopwinst wordt gehouden, voldoet niet zonder meer aan duurzame verbondenheid ten dienste van de eigen werkzaamheid. Onderscheid de kwalificatie belegging van de daaropvolgende keuze van waarderingsgrondslag.",
+        "pattern": [
+          "Herken: de casus benadrukt snelle verkoop en geen bedrijfsmatige samenwerking.",
+          "Aanpak: toets vooral de ontbrekende duurzame en functionele verbondenheid aan artikel 2:24c lid 1 BW.",
+          "Controle: een percentage onder 20% is niet zelfstandig de reden; een strategisch belang met hetzelfde percentage kan anders kwalificeren."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 4,
@@ -287,7 +323,7 @@
       "type": "Theorie",
       "intro": "Een deelneming geeft zowel stemrechtloze als stemrechtgevende aandelen uit.",
       "facts": [],
-      "task": "Welke aanwijzing gebruikt art. 2:389 lid 1 BW voor het vermoeden van invloed van betekenis?",
+      "task": "Welk criterium en welk wettelijk vermoeden bepalen volgens artikel 2:389 lid 1 BW of een deelneming volgens de vermogensmutatiemethode wordt verantwoord?",
       "options": [
         {
           "text": "Een vijfde of meer van de winstrechten bezitten.",
@@ -310,7 +346,7 @@
       "explanation": [
         "Het vermoeden in art. 2:389 lid 1 is gebaseerd op stemmen. Art. 2:24c lid 1 gebruikt voor het vermoeden van een deelneming juist het geplaatste kapitaal."
       ],
-      "pattern": "Deelneming: kapitaal. Invloed van betekenis: stemmen. Houd deze twee toetsen uit elkaar.",
+      "pattern": "Herken: de vraag noemt waardering en invloed op het beleid. Aanpak: bepaal de uit te oefenen stemrechten en beoordeel daarna aanwijzingen voor feitelijke invloed. Controle: verwissel 20% van de stemmen niet met 20% van het kapitaal en maak van een vermoeden geen onweerlegbare regel.",
       "refs": [
         "qual",
         "valuation"
@@ -320,7 +356,19 @@
         6,
         23
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "waardering",
+        "title": "Invloed van betekenis gaat over het beleid",
+        "task": "Welk criterium en welk wettelijk vermoeden bepalen volgens artikel 2:389 lid 1 BW of een deelneming volgens de vermogensmutatiemethode wordt verantwoord?",
+        "rules": "Voor de vermogensmutatiemethode moet invloed van betekenis op het zakelijke en financiële beleid bestaan. Vanaf een vijfde van de naar eigen inzicht uit te brengen stemmen wordt die invloed vermoed. Het gaat hier dus om stemrechten, terwijl het vermoeden van een deelneming in artikel 2:24c betrekking heeft op kapitaalverschaffing. Feitelijke invloed blijft beslissend.",
+        "pattern": [
+          "Herken: de vraag noemt waardering en invloed op het beleid.",
+          "Aanpak: bepaal de uit te oefenen stemrechten en beoordeel daarna aanwijzingen voor feitelijke invloed.",
+          "Controle: verwissel 20% van de stemmen niet met 20% van het kapitaal en maak van een vermoeden geen onweerlegbare regel."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 5,
@@ -342,7 +390,7 @@
           "Geen beroep op een andere gegronde reden."
         ]
       ],
-      "task": "Welke verwerking sluit aan op de in de syllabus genoemde uitzondering?",
+      "task": "Welke waarderingsmogelijkheid biedt artikel 2:389 lid 3 BW wanneer invloed van betekenis bestaat, maar onvoldoende gegevens beschikbaar zijn om de nettovermogenswaarde te bepalen?",
       "options": [
         {
           "text": "Uitgaan van een op andere wijze volgens Titel 9 bepaalde waarde, veelal zichtbaar eigen vermogen, en deze muteren met het aandeel in resultaat en uitkeringen.",
@@ -365,7 +413,7 @@
       "explanation": [
         "Art. 2:389 lid 3 geeft de uitzondering bij onvoldoende gegevens. Het is nog steeds een vermogensmutatiemethode."
       ],
-      "pattern": "Onvoldoende gegevens betekent niet automatisch verkrijgingsprijs; herken de uitzondering van lid 3.",
+      "pattern": "Herken: invloed staat vast; alleen de informatie voor herrekening naar moedergrondslagen ontbreekt. Aanpak: onderscheid de hoofdregel van lid 2 en het alternatief van lid 3. Controle: stap niet zonder nadere grond over op verkrijgingsprijs; ook de alternatieve vermogensmutatiemethode verwerkt resultaten en dividend.",
       "refs": [
         "valuation"
       ],
@@ -374,7 +422,19 @@
         11,
         28
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "waardering",
+        "title": "Onvoldoende gegevens voor nettovermogenswaarde",
+        "task": "Welke waarderingsmogelijkheid biedt artikel 2:389 lid 3 BW wanneer invloed van betekenis bestaat, maar onvoldoende gegevens beschikbaar zijn om de nettovermogenswaarde te bepalen?",
+        "rules": "Invloed van betekenis bepaalt eerst dat de vermogensmutatiemethode aan de orde is. Als gegevens voor de nettovermogenswaarde ontbreken, laat artikel 2:389 lid 3 BW een op andere wijze bepaalde waarde toe. In de syllabus wordt dit uitgewerkt met zichtbaar intrinsieke waarde als uitgangspunt, gevolgd door verwerking van het aandeel in resultaat en uitkeringen. Gebrek aan NVW-gegevens is niet hetzelfde als geen invloed van betekenis.",
+        "pattern": [
+          "Herken: invloed staat vast; alleen de informatie voor herrekening naar moedergrondslagen ontbreekt.",
+          "Aanpak: onderscheid de hoofdregel van lid 2 en het alternatief van lid 3.",
+          "Controle: stap niet zonder nadere grond over op verkrijgingsprijs; ook de alternatieve vermogensmutatiemethode verwerkt resultaten en dividend."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 6,
@@ -392,7 +452,7 @@
           "Geen bijzondere rechten."
         ]
       ],
-      "task": "Is Haven op grond van deze gegevens een dochtermaatschappij van Merwede?",
+      "task": "Is Merwede op grond van artikel 2:24a lid 1 onderdeel a BW moedermaatschappij wanneer zij zelf 45% van de stemmen heeft en via een stemrechtovereenkomst nog 5% kan uitoefenen?",
       "options": [
         {
           "text": "Ja, 50% is voldoende voor meerheidszeggenschap.",
@@ -415,7 +475,7 @@
       "explanation": [
         "De uitkomst is precies 50%. De hoofdregel van art. 2:24a lid 1 onder a vereist meer dan 50%. Een andere grond voor een dochterrelatie is niet gegeven."
       ],
-      "pattern": "Tel alle beschikbare stemmen op en vergelijk met meer dan 50%, niet met 50% of meer.",
+      "pattern": "Herken: eigen stemmen worden aangevuld met overgedragen stemmen. Aanpak: tel beide bevoegdheden op en vergelijk de uitkomst strikt met 50%. Controle: controleer apart of de casus benoemingsrechten geeft; vermeng dat criterium niet met het stemrechtencriterium.",
       "refs": [
         "daughter",
         "rosen"
@@ -425,7 +485,19 @@
         8,
         9
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dochter",
+        "title": "Meer dan de helft, niet precies de helft",
+        "task": "Is Merwede op grond van artikel 2:24a lid 1 onderdeel a BW moedermaatschappij wanneer zij zelf 45% van de stemmen heeft en via een stemrechtovereenkomst nog 5% kan uitoefenen?",
+        "rules": "Tel de stemrechten op die de rechtspersoon zelf en via toepasselijke overeenkomsten kan uitoefenen. Voor artikel 2:24a lid 1 onderdeel a BW moet dit meer dan de helft zijn. Precies de helft voldoet niet. Een afzonderlijk recht om de meerderheid van bestuurders of commissarissen te benoemen of ontslaan kan tot een andere beoordeling leiden, maar mag niet zonder casusinformatie worden aangenomen.",
+        "pattern": [
+          "Herken: eigen stemmen worden aangevuld met overgedragen stemmen.",
+          "Aanpak: tel beide bevoegdheden op en vergelijk de uitkomst strikt met 50%.",
+          "Controle: controleer apart of de casus benoemingsrechten geeft; vermeng dat criterium niet met het stemrechtencriterium."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 7,
@@ -451,7 +523,7 @@
           "Elke gewone aandeel geeft één stem; er zijn geen andere stemrechten."
         ]
       ],
-      "task": "Hoeveel procent van de uit te brengen stemmen kan Merwede uitoefenen?",
+      "task": "Welk percentage van de uit te brengen stemmen kan Merwede in Haven uitoefenen, rekening houdend met de 200 door Haven ingekochte eigen aandelen?",
       "options": [
         {
           "expression": "480/(1000-200)*100",
@@ -494,7 +566,7 @@
       "explanation": [
         "Op 800 aandelen kan worden gestemd. Merwede kan 480/800 = 60% uitoefenen, zodat aan het stemrechtcriterium is voldaan."
       ],
-      "pattern": "Pas eerst de noemer aan voor aandelen waarop niet kan worden gestemd.",
+      "pattern": "Herken: de vennootschap heeft een deel van haar eigen aandelen ingekocht. Aanpak: trek de stemloze eigen aandelen af van het totaal voordat je het percentage van Merwede berekent. Controle: wijzig niet automatisch de teller; Merwede houdt nog steeds haar eigen aantal aandelen.",
       "refs": [
         "daughter",
         "west"
@@ -504,7 +576,19 @@
         23,
         25
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dochter",
+        "title": "Eigen aandelen veranderen de stemrechtennoemer",
+        "task": "Welk percentage van de uit te brengen stemmen kan Merwede in Haven uitoefenen, rekening houdend met de 200 door Haven ingekochte eigen aandelen?",
+        "rules": "Voor de stemrechtenverhouding tellen aandelen waarop geen stem kan worden uitgebracht niet mee in de noemer. Bepaal eerst het aantal aandelen met uitoefenbare stemmen en deel daarna de door Merwede uit te oefenen stemmen door dit aantal. Het nominale kapitaalpercentage en het effectieve stemrechtenpercentage kunnen daardoor verschillen.",
+        "pattern": [
+          "Herken: de vennootschap heeft een deel van haar eigen aandelen ingekocht.",
+          "Aanpak: trek de stemloze eigen aandelen af van het totaal voordat je het percentage van Merwede berekent.",
+          "Controle: wijzig niet automatisch de teller; Merwede houdt nog steeds haar eigen aantal aandelen."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 8,
@@ -526,7 +610,7 @@
           "Er bestaat geen stemrecht- of andere dochterrelatie."
         ]
       ],
-      "task": "Welke conclusie is juist voor de moeder-dochterrelatie?",
+      "task": "Voldoet Merwede voor haar verhouding tot Kade aan artikel 2:24a lid 1 onderdeel b BW wanneer zij drie van de vijf bestuurders kan benoemen, maar geen aandeelhouder of lid is?",
       "options": [
         {
           "text": "Wel een dochtermaatschappij, maar alleen wanneer Kade winst maakt.",
@@ -549,7 +633,7 @@
       "explanation": [
         "Art. 2:24a lid 1 onder b vereist zowel lidmaatschap/aandeelhouderschap als de daarin genoemde benoemings- of ontslagmacht. Dit volgt ook uit Westerheuvel/Koekang."
       ],
-      "pattern": "Bij benoemingsrechten controleer je twee voorwaarden, niet slechts de meerderheid.",
+      "pattern": "Herken: de casus geeft benoemingsmacht, maar ontkent het aandeelhouderschap. Aanpak: toets beide voorwaarden van onderdeel b afzonderlijk. Controle: vervang de voorwaarde lid of aandeelhouder niet door een economisch belang dat niet in de casus staat.",
       "refs": [
         "daughter",
         "west"
@@ -559,7 +643,19 @@
         9,
         10
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dochter",
+        "title": "Benoemingsmacht vereist ook lidmaatschap of een aandeel",
+        "task": "Voldoet Merwede voor haar verhouding tot Kade aan artikel 2:24a lid 1 onderdeel b BW wanneer zij drie van de vijf bestuurders kan benoemen, maar geen aandeelhouder of lid is?",
+        "rules": "Bij het criterium van benoemen en ontslaan moeten twee voorwaarden samen worden onderzocht: lid of aandeelhouder zijn én de meerderheid van bestuurders of commissarissen kunnen benoemen of ontslaan. Alleen een contractueel benoemingsrecht is dus niet de volledige toets. Het ontbreken van een dochterrelatie beantwoordt nog niet automatisch een afzonderlijke vraag over centrale leiding of consolidatie.",
+        "pattern": [
+          "Herken: de casus geeft benoemingsmacht, maar ontkent het aandeelhouderschap.",
+          "Aanpak: toets beide voorwaarden van onderdeel b afzonderlijk.",
+          "Controle: vervang de voorwaarde lid of aandeelhouder niet door een economisch belang dat niet in de casus staat."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 9,
@@ -585,7 +681,7 @@
           "Geen ingekochte aandelen en geen stemrechtovereenkomsten."
         ]
       ],
-      "task": "Hoeveel stemrechten in Veer worden aan Merwede toegerekend bij de dochtertoets?",
+      "task": "Kan Merwede alleen of samen met dochtermaatschappij Sluis meer dan de helft van de stemmen in Veer uitoefenen, en kwalificeert Veer daarmee als dochtermaatschappij van Merwede?",
       "options": [
         {
           "expression": "28+.6*27",
@@ -628,7 +724,7 @@
       "explanation": [
         "Sluis is een dochter van Merwede. Daardoor worden haar 27% stemrechten in Veer volledig bij Merwedes 28% opgeteld."
       ],
-      "pattern": "Voor de dochtertoets tel je stemmen via dochters op; bereken geen economisch winstaandeel.",
+      "pattern": "Herken: Merwede heeft een rechtstreeks én een via een dochter gehouden stemrecht in Veer. Aanpak: bewijs eerst de eerste dochterrelatie en tel vervolgens de directe en indirect beschikbare stemmen op. Controle: een vermenigvuldiging van deelnemingspercentages berekent niet de wettelijke zeggenschap in dit schema.",
       "refs": [
         "daughter"
       ],
@@ -637,7 +733,19 @@
         7,
         10
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dochter",
+        "title": "Stemmen via een dochter volledig meetellen",
+        "task": "Kan Merwede alleen of samen met dochtermaatschappij Sluis meer dan de helft van de stemmen in Veer uitoefenen, en kwalificeert Veer daarmee als dochtermaatschappij van Merwede?",
+        "rules": "Stel eerst vast dat Sluis een dochtermaatschappij is. Voor de moeder-dochtertoets worden vervolgens de door Sluis gehouden stemrechten in Veer volledig opgeteld bij de rechtstreeks door Merwede gehouden stemmen. Je vermenigvuldigt deze stemmen niet met het kapitaalbelang van Merwede in Sluis. Een economisch winstaandeel volgt een andere berekening.",
+        "pattern": [
+          "Herken: Merwede heeft een rechtstreeks én een via een dochter gehouden stemrecht in Veer.",
+          "Aanpak: bewijs eerst de eerste dochterrelatie en tel vervolgens de directe en indirect beschikbare stemmen op.",
+          "Controle: een vermenigvuldiging van deelnemingspercentages berekent niet de wettelijke zeggenschap in dit schema."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 10,
@@ -663,7 +771,7 @@
           "Geen vrijstelling wordt toegepast. Delta heeft zelf geen dochters of andere te consolideren maatschappijen."
         ]
       ],
-      "task": "Welke rechtspersonen zijn in beginsel consolidatieplichtig?",
+      "task": "Welke van Polder, Sluis en Delta moeten volgens artikel 2:406 BW een geconsolideerde jaarrekening opstellen, gegeven de groepsverhoudingen en het ontbreken van vrijstellingen?",
       "options": [
         {
           "text": "Polder, Sluis en Delta, uitsluitend omdat zij groepsmaatschappijen zijn.",
@@ -686,7 +794,7 @@
       "explanation": [
         "Polder is het groepshoofd. Sluis is geen groepshoofd, maar heeft in haar groepsdeel een dochtermaatschappij. Dit zijn afzonderlijke gronden voor consolidatieplicht."
       ],
-      "pattern": "Onderzoek groepshoofd en groepsdeel afzonderlijk en beoordeel daarna pas eventuele vrijstellingen.",
+      "pattern": "Herken: onder een groepshoofd staat nog een rechtspersoon met een eigen dochter in de groep. Aanpak: bepaal eerst het groepshoofd en daarna welke tussenhoudster een te consolideren groepsdeel heeft. Controle: een hogere consolidatie neemt de eigen verplichting van een tussenholding niet zonder vrijstellingsvoorwaarden weg.",
       "refs": [
         "group",
         "groepsvraag"
@@ -695,7 +803,19 @@
         8,
         9
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "consolidatieplicht",
+        "title": "Groepshoofd en tussenholding afzonderlijk toetsen",
+        "task": "Welke van Polder, Sluis en Delta moeten volgens artikel 2:406 BW een geconsolideerde jaarrekening opstellen, gegeven de groepsverhoudingen en het ontbreken van vrijstellingen?",
+        "rules": "Het groepshoofd wordt getoetst aan artikel 2:406 lid 1 BW. Een rechtspersoon die niet het groepshoofd is, kan op grond van lid 2 toch consolidatieplichtig zijn voor zijn groepsdeel. Beoordeel daarom iedere rechtspersoon afzonderlijk. Consolidatievrijstellingen zijn een volgende toets en worden hier uitdrukkelijk niet toegepast.",
+        "pattern": [
+          "Herken: onder een groepshoofd staat nog een rechtspersoon met een eigen dochter in de groep.",
+          "Aanpak: bepaal eerst het groepshoofd en daarna welke tussenhoudster een te consolideren groepsdeel heeft.",
+          "Controle: een hogere consolidatie neemt de eigen verplichting van een tussenholding niet zonder vrijstellingsvoorwaarden weg."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 11,
@@ -721,7 +841,7 @@
           "Waardering tegen NVW; goodwill wordt afzonderlijk geactiveerd."
         ]
       ],
-      "task": "Hoeveel goodwill is betaald?",
+      "task": "Hoeveel goodwill betaalt Merwede bij de aankoop van het 75%-belang in Veer op 1 januari, uitgaande van de gegeven totale nettovermogenswaarde?",
       "options": [
         {
           "expression": "500000-.75*600000",
@@ -764,7 +884,7 @@
       "explanation": [
         "Het aandeel in NVW is € 450.000. Het meerdere van de koopprijs, € 50.000, is goodwill."
       ],
-      "pattern": "Koopprijs van het pakket minus aandeel in de herrekende NVW is goodwill.",
+      "pattern": "Herken: een prijs voor 75% wordt naast een waarde van 100% van de vennootschap gezet. Aanpak: vermenigvuldig alleen de totale NVW met het verworven aandeel en trek dit bedrag van de koopsom af. Controle: de deelneming en afzonderlijke goodwill moeten samen aansluiten op de betaalde prijs.",
       "refs": [
         "acquisition"
       ],
@@ -773,7 +893,19 @@
         13,
         14
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "goodwill",
+        "title": "Koopsom vergelijken met het verworven aandeel",
+        "task": "Hoeveel goodwill betaalt Merwede bij de aankoop van het 75%-belang in Veer op 1 januari, uitgaande van de gegeven totale nettovermogenswaarde?",
+        "rules": "Vergelijk de prijs voor het gekochte belang met het overeenkomstige aandeel in de nettovermogenswaarde op verkrijgingsdatum. De koopsom heeft al betrekking op het gekochte percentage en wordt niet nogmaals daarmee vermenigvuldigd. Bij NVW-waardering wordt positieve goodwill afzonderlijk geactiveerd volgens artikel 2:389 lid 7 BW.",
+        "pattern": [
+          "Herken: een prijs voor 75% wordt naast een waarde van 100% van de vennootschap gezet.",
+          "Aanpak: vermenigvuldig alleen de totale NVW met het verworven aandeel en trek dit bedrag van de koopsom af.",
+          "Controle: de deelneming en afzonderlijke goodwill moeten samen aansluiten op de betaalde prijs."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 12,
@@ -807,7 +939,7 @@
           "Buiten beschouwing."
         ]
       ],
-      "task": "Wat is de boekwaarde van de deelneming bij aankoop, exclusief goodwill?",
+      "task": "Voor welk bedrag neemt Merwede het 70%-belang in Riet bij verwerving op als deelneming tegen nettovermogenswaarde, exclusief afzonderlijke goodwill?",
       "options": [
         {
           "expression": "(820000-20000+80000-15000-35000)*.7",
@@ -851,7 +983,7 @@
         "Gecorrigeerd zichtbaar eigen vermogen: € 800.000. Fair value-correcties: + € 80.000 − € 15.000 − € 35.000 = + € 30.000.",
         "100% NVW bedraagt € 830.000; het 70%-belang wordt geactiveerd voor € 581.000."
       ],
-      "pattern": "Houd herstel van een administratieve fout gescheiden van fair value- en grondslagcorrecties.",
+      "pattern": "Herken: de gegevens combineren een gemiste kostenpost met verschillen in gebouwen, voorraad en een voorziening. Aanpak: maak een brug van zichtbaar eigen vermogen naar gecorrigeerd vermogen en vervolgens naar totale NVW. Controle: goodwill hoort niet in de afzonderlijke post deelneming tegen NVW.",
       "refs": [
         "acquisition",
         "olbia"
@@ -861,7 +993,19 @@
         13,
         22
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "fair-value",
+        "title": "Administratiefout vóór de waarderingscorrecties",
+        "task": "Voor welk bedrag neemt Merwede het 70%-belang in Riet bij verwerving op als deelneming tegen nettovermogenswaarde, exclusief afzonderlijke goodwill?",
+        "rules": "Corrigeer eerst het zichtbare eigen vermogen voor de nog te verwerken administratiefout. Breng daarna de verschillen naar reële waarde en moedergrondslagen aan. Hogere activa verhogen de nettovermogenswaarde, extra voorzieningen verlagen die waarde. Pas pas op het aldus aangepaste totale eigen vermogen het deelnemingspercentage toe.",
+        "pattern": [
+          "Herken: de gegevens combineren een gemiste kostenpost met verschillen in gebouwen, voorraad en een voorziening.",
+          "Aanpak: maak een brug van zichtbaar eigen vermogen naar gecorrigeerd vermogen en vervolgens naar totale NVW.",
+          "Controle: goodwill hoort niet in de afzonderlijke post deelneming tegen NVW."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 13,
@@ -883,7 +1027,7 @@
           "NVW; goodwill afzonderlijk activeren."
         ]
       ],
-      "task": "Welke volledige journaalpost maakt Merwede bij de aankoop?",
+      "task": "Welke journaalpost verwerkt Merwede bij aankoop van Riet: de deelneming tegen 70% van de gegeven totale NVW, de afzonderlijke goodwill en de betaling per bank?",
       "options": [
         {
           "journal": [
@@ -1029,7 +1173,7 @@
         "Deelneming: 70% × € 830.000 = € 581.000. Goodwill: € 680.000 − € 581.000 = € 99.000.",
         "De deelneming en goodwill staan debet; de betaling per bank staat credit."
       ],
-      "pattern": "De koopprijs moet aansluiten op deelneming plus afzonderlijke goodwill.",
+      "pattern": "Herken: NVW is expliciet de enkelvoudige waarderingsgrondslag. Aanpak: bereken eerst de deelneming, bepaal daarna goodwill als sluitpost en boek het betaalde totaal credit op bank. Controle: tel de twee debetbedragen op; dit moet exact de koopsom opleveren.",
       "refs": [
         "acquisition",
         "olbia"
@@ -1039,7 +1183,19 @@
         12,
         14
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "goodwill",
+        "title": "De aankoopjournaalpost bij NVW",
+        "task": "Welke journaalpost verwerkt Merwede bij aankoop van Riet: de deelneming tegen 70% van de gegeven totale NVW, de afzonderlijke goodwill en de betaling per bank?",
+        "rules": "In de enkelvoudige aankoopboeking bij NVW worden deelneming en goodwill afzonderlijk gedebiteerd. De deelneming is het verworven aandeel in de aangepaste netto-activa; goodwill is het verschil met de koopsom. De creditboeking volgt de feitelijke tegenprestatie, hier betaling via de bank. Gebruik niet de aankoopboeking die bij verkrijgingsprijs wordt toegepast.",
+        "pattern": [
+          "Herken: NVW is expliciet de enkelvoudige waarderingsgrondslag.",
+          "Aanpak: bereken eerst de deelneming, bepaal daarna goodwill als sluitpost en boek het betaalde totaal credit op bank.",
+          "Controle: tel de twee debetbedragen op; dit moet exact de koopsom opleveren."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 14,
@@ -1069,7 +1225,7 @@
           "€ 620.000. Goodwill wordt geactiveerd."
         ]
       ],
-      "task": "Welke journaalpost verwerkt de gehele aankoop?",
+      "task": "Welke aankoopjournaalpost maakt Merwede voor het 60%-belang in Brug, betaald met nieuw uitgegeven eigen aandelen en de gegeven contante bijbetaling?",
       "options": [
         {
           "journal": [
@@ -1306,7 +1462,7 @@
         "Koopprijs: 180 × € 1.100 + 1.200 × € 250 = € 498.000. Aandeel NVW: 60% × € 620.000 = € 372.000. Goodwill: € 126.000.",
         "Aandelenkapitaal: 180 × € 500 = € 90.000. Agio: 180 × € 600 = € 108.000."
       ],
-      "pattern": "Bereken eerst de totale tegenprestatie tegen reële waarde; splits daarna nominaal kapitaal en agio.",
+      "pattern": "Herken: de ruilverhouding, nominale waarde en beurs- of reële waarde hebben ieder een andere functie. Aanpak: reken aantallen vóór bedragen uit; bepaal daarna tegenprestatie, deelneming en goodwill. Controle: kapitaal plus agio moet gelijk zijn aan de reële waarde van de uitgegeven aandelen, niet aan de hele koopsom inclusief contanten.",
       "refs": [
         "ruil",
         "acquisition"
@@ -1316,7 +1472,19 @@
         13,
         15
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "aandelenruil",
+        "title": "Aandelenruil: waarde van de tegenprestatie",
+        "task": "Welke aankoopjournaalpost maakt Merwede voor het 60%-belang in Brug, betaald met nieuw uitgegeven eigen aandelen en de gegeven contante bijbetaling?",
+        "rules": "Bepaal eerst hoeveel aandelen Brug worden gekocht en hoeveel eigen aandelen daartegenover worden uitgegeven. De reële waarde van de uitgegeven aandelen plus de contante bijbetaling vormt de tegenprestatie. Splits bij Merwede de emissie in nominale waarde van het aandelenkapitaal en agio. De debetzijde volgt de NVW van het belang en eventuele goodwill.",
+        "pattern": [
+          "Herken: de ruilverhouding, nominale waarde en beurs- of reële waarde hebben ieder een andere functie.",
+          "Aanpak: reken aantallen vóór bedragen uit; bepaal daarna tegenprestatie, deelneming en goodwill.",
+          "Controle: kapitaal plus agio moet gelijk zijn aan de reële waarde van de uitgegeven aandelen, niet aan de hele koopsom inclusief contanten."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 15,
@@ -1338,7 +1506,7 @@
           "Over delen van het jaar naar rato van het aantal maanden."
         ]
       ],
-      "task": "Welke goodwillafschrijving wordt over 2025 geboekt?",
+      "task": "Hoeveel goodwillafschrijving verwerkt Merwede in het aankoopjaar wanneer de goodwill op 1 juli ontstaat en volgens de casus in tien jaar lineair wordt afgeschreven?",
       "options": [
         {
           "expression": "126000/11*6/12",
@@ -1381,7 +1549,7 @@
       "explanation": [
         "De volledige jaarlast bedraagt € 12.600. Voor zes maanden is de last € 6.300. Dit is al de goodwill van het verworven pakket."
       ],
-      "pattern": "De goodwill bevat het deelnemingspercentage al; pas alleen de duur en het tijdsevenredige deel toe.",
+      "pattern": "Herken: de aankoop vindt halverwege het boekjaar plaats. Aanpak: bereken eerst een volledig jaar en daarna het aantal maanden sinds 1 juli. Controle: verwar de afschrijving van het boekjaar niet met de totale afschrijving over meerdere jaren.",
       "refs": [
         "amort",
         "mulini"
@@ -1391,7 +1559,19 @@
         28,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "goodwill",
+        "title": "Afschrijving vanaf de verwervingsdatum",
+        "task": "Hoeveel goodwillafschrijving verwerkt Merwede in het aankoopjaar wanneer de goodwill op 1 juli ontstaat en volgens de casus in tien jaar lineair wordt afgeschreven?",
+        "rules": "Volg de in de casus gegeven gebruiksduur en afschrijvingswijze. Bereken de jaarafschrijving op de geactiveerde goodwill en pas deze voor een deel van het jaar tijdsevenredig toe. De goodwill heeft al betrekking op het verworven belang. Vermenigvuldig de afschrijving daarom niet nogmaals met het deelnemingspercentage.",
+        "pattern": [
+          "Herken: de aankoop vindt halverwege het boekjaar plaats.",
+          "Aanpak: bereken eerst een volledig jaar en daarna het aantal maanden sinds 1 juli.",
+          "Controle: verwar de afschrijving van het boekjaar niet met de totale afschrijving over meerdere jaren."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 16,
@@ -1421,7 +1601,7 @@
           "Geen. Goodwillafschrijving blijft buiten deze resultaat-deelnemingberekening."
         ]
       ],
-      "task": "Welk resultaat deelneming verantwoordt Merwede?",
+      "task": "Welk resultaat uit de 80%-deelneming Fenn verantwoordt Merwede over het boekjaar na verwerking van alle gegeven fair-valueverschillen?",
       "options": [
         {
           "expression": "(240000+120000/20+(30000-18000)+40000)*.8",
@@ -1465,7 +1645,7 @@
         "Extra afschrijving: € 6.000 negatief. Het voorraadwaarderingsverschil wordt € 12.000 kleiner en de extra garantievoorziening valt € 40.000 vrij.",
         "Herrekende winst: € 286.000. Resultaat deelneming: 80% × € 286.000 = € 228.800."
       ],
-      "pattern": "Voor de winst gebruik je mutaties in waarderingsverschillen; voor de balans gebruik je eindstanden.",
+      "pattern": "Herken: naast het dochterresultaat staan verschillen op begin- en einddatum. Aanpak: bereken per verschil de invloed op het lopende jaar; een afgenomen extra voorziening leidt hier tot vrijval. Controle: sluit het aangepaste resultaat aan op het verloop van de deelneming en de resterende verschillen op de eindbalans.",
       "refs": [
         "acquisition",
         "olbia"
@@ -1475,7 +1655,19 @@
         22,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaat-deelneming",
+        "title": "Van dochterresultaat naar moedergrondslagen",
+        "task": "Welk resultaat uit de 80%-deelneming Fenn verantwoordt Merwede over het boekjaar na verwerking van alle gegeven fair-valueverschillen?",
+        "rules": "Begin met het resultaat van Fenn volgens haar eigen grondslagen. Verwerk het afschrijvingsverschil op gebouwen en de veranderingen in resterende waarderingsverschillen bij voorraad en voorzieningen. Een eerder bij de verwerving verwerkte last mag niet nogmaals in het resultaat uit deelneming blijven zitten. Pas het winstaandeel pas na deze resultaatcorrecties toe.",
+        "pattern": [
+          "Herken: naast het dochterresultaat staan verschillen op begin- en einddatum.",
+          "Aanpak: bereken per verschil de invloed op het lopende jaar; een afgenomen extra voorziening leidt hier tot vrijval.",
+          "Controle: sluit het aangepaste resultaat aan op het verloop van de deelneming en de resterende verschillen op de eindbalans."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 17,
@@ -1501,7 +1693,7 @@
           "Merwede kan de overige winsten zonder beperkingen laten uitkeren."
         ]
       ],
-      "task": "Welke journaalposten verwerkt Merwede voor resultaat en dividend?",
+      "task": "Welke twee journaalposten maakt Merwede voor haar aandeel in het aangepaste resultaat van Fenn en het gedeclareerde, nog niet betaalde dividend?",
       "options": [
         {
           "journals": [
@@ -1753,7 +1945,7 @@
         "Resultaat: 80% × € 286.000 = € 228.800. Dividendvordering: 80% × € 50.000 = € 40.000.",
         "Het dividend verlaagt de deelneming. De bank muteert pas bij de betaling."
       ],
-      "pattern": "NVW: resultaat verhoogt de deelneming; declaratie verplaatst waarde van deelneming naar dividendvordering.",
+      "pattern": "Herken: resultaat is behaald en dividend is wel vastgesteld maar nog niet ontvangen. Aanpak: boek eerst de resultaatmutatie en vervolgens dividendvordering aan deelneming. Controle: gebruik bank pas bij betaling; door dividend daalt de deelneming, niet het reeds verantwoorde resultaat.",
       "refs": [
         "dividend",
         "montone"
@@ -1763,7 +1955,19 @@
         18,
         19
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dividend",
+        "title": "Resultaat en dividend zijn twee verschillende mutaties",
+        "task": "Welke twee journaalposten maakt Merwede voor haar aandeel in het aangepaste resultaat van Fenn en het gedeclareerde, nog niet betaalde dividend?",
+        "rules": "Bij NVW verhoogt het aandeel in het aangepaste resultaat de post deelneming, tegenover resultaat deelneming. Het gedeclareerde dividend verlaagt de deelneming en schept een vordering zolang nog niet is betaald. Boek hetzelfde dividend niet daarnaast als dividendopbrengst. De casus vermeldt dat geen aanvullende beperking tot vorming van een wettelijke reserve leidt.",
+        "pattern": [
+          "Herken: resultaat is behaald en dividend is wel vastgesteld maar nog niet ontvangen.",
+          "Aanpak: boek eerst de resultaatmutatie en vervolgens dividendvordering aan deelneming.",
+          "Controle: gebruik bank pas bij betaling; door dividend daalt de deelneming, niet het reeds verantwoorde resultaat."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 18,
@@ -1785,7 +1989,7 @@
           "Geen meegekocht dividend en geen bijzondere waardevermindering."
         ]
       ],
-      "task": "Welke journaalpost maakt Merwede bij de declaratie?",
+      "task": "Welke journaalpost maakt Merwede in december voor het gedeclareerde dividend op haar 10%-deelneming Sloot tegen verkrijgingsprijs, wanneer betaling pas in januari volgt?",
       "options": [
         {
           "journal": [
@@ -1900,7 +2104,7 @@
       "explanation": [
         "10% × € 75.000 = € 7.500. Bij verkrijgingsprijs is dit dividend opbrengst, te verwerken zodra het is gedeclareerd."
       ],
-      "pattern": "Verkrijgingsprijs: kijk naar dividenddeclaratie en controleer of dividend is meegekocht.",
+      "pattern": "Herken: verkrijgingsprijs, een dividendbesluit in december en een latere betaaldatum. Aanpak: bereken het dividend waarop Merwede recht heeft en boek dit als vordering en opbrengst. Controle: laat het tijdstip van de bankontvangst niet bepalen in welk boekjaar de gedeclareerde opbrengst thuishoort.",
       "refs": [
         "dividend",
         "flexdiv"
@@ -1909,7 +2113,19 @@
         17,
         19
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dividend",
+        "title": "Regulier dividend bij verkrijgingsprijs",
+        "task": "Welke journaalpost maakt Merwede in december voor het gedeclareerde dividend op haar 10%-deelneming Sloot tegen verkrijgingsprijs, wanneer betaling pas in januari volgt?",
+        "rules": "Bij verkrijgingsprijs worden gewone resultaten van de deelneming niet via vermogensmutaties verwerkt. Regulier dividend wordt als opbrengst verantwoord wanneer het recht daarop ontstaat. Is nog niet betaald, dan staat tegenover de opbrengst een dividendvordering. Deze vraag betreft uitdrukkelijk geen meegekocht dividend.",
+        "pattern": [
+          "Herken: verkrijgingsprijs, een dividendbesluit in december en een latere betaaldatum.",
+          "Aanpak: bereken het dividend waarop Merwede recht heeft en boek dit als vordering en opbrengst.",
+          "Controle: laat het tijdstip van de bankontvangst niet bepalen in welk boekjaar de gedeclareerde opbrengst thuishoort."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 19,
@@ -1931,7 +2147,7 @@
           "Nog niet ontvangen."
         ]
       ],
-      "task": "Welke journaalpost maakt Merwede van de declaratie?",
+      "task": "Welke journaalpost maakt Merwede voor het kort na aankoop gedeclareerde dividend op Sloot, dat volgens de casus volledig in de aankoopprijs is meegekocht?",
       "options": [
         {
           "journal": [
@@ -2047,7 +2263,7 @@
         "Het meegekochte dividend is een terugontvangst van een deel van de aankoopprijs. Daarom wordt € 15.000 op de deelneming gecrediteerd.",
         "De aankoopprijs na declaratie wordt € 210.000 − € 15.000 = € 195.000."
       ],
-      "pattern": "Niet alleen het boekjaar van het dividend is doorslaggevend: lees of het dividend onderdeel was van de aankoopprijs.",
+      "pattern": "Herken: niet alleen de korte tijd na aankoop, maar vooral de expliciete vermelding meegekocht dividend is beslissend. Aanpak: boek dividendvordering aan deelneming voor het verworven aandeel. Controle: behandel een regulier dividend uit na aankoop behaalde winst niet met dezelfde tegenrekening.",
       "refs": [
         "dividend"
       ],
@@ -2055,7 +2271,19 @@
         17,
         18
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "dividend",
+        "title": "Meegekocht dividend verlaagt de verkrijgingsprijs",
+        "task": "Welke journaalpost maakt Merwede voor het kort na aankoop gedeclareerde dividend op Sloot, dat volgens de casus volledig in de aankoopprijs is meegekocht?",
+        "rules": "De casus kwalificeert het dividend expliciet als meegekocht: het bij aankoop betaalde bedrag omvatte het recht op deze uitkering. In de gebruikte syllabusmethodiek wordt dit bedrag daarom op de deelneming afgeboekt en niet als nieuwe dividendopbrengst behandeld. Bereken alleen Merwedes aandeel in het totale dividend. Bij nog niet betalen ontstaat een vordering.",
+        "pattern": [
+          "Herken: niet alleen de korte tijd na aankoop, maar vooral de expliciete vermelding meegekocht dividend is beslissend.",
+          "Aanpak: boek dividendvordering aan deelneming voor het verworven aandeel.",
+          "Controle: behandel een regulier dividend uit na aankoop behaalde winst niet met dezelfde tegenrekening."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 20,
@@ -2081,7 +2309,7 @@
           "Geen rechtstreekse vermogensmutaties, goodwill of andere deelnemingen."
         ]
       ],
-      "task": "Hoe hoog is de wettelijke reserve deelneming ultimo 2025?",
+      "task": "Hoe hoog is de wettelijke reserve deelneming van Merwede voor haar 45%-belang na verwerking van het gegeven resultaat en dividend, wanneer zij verdere uitkeringen niet vrij kan bewerkstelligen?",
       "options": [
         {
           "expression": ".45*480000",
@@ -2124,7 +2352,7 @@
       "explanation": [
         "Aandeel in resultaat: € 216.000. Aandeel in dividend: € 36.000. Het gebonden deel bedraagt € 180.000."
       ],
-      "pattern": "Reserveer het eigen aandeel in niet-vrij beschikbaar resultaat, na het eigen aandeel in gedeclareerde uitkeringen.",
+      "pattern": "Herken: NVW én een beperking op de mogelijkheid tot uitkeren. Aanpak: bereken het aandeel in de winst en verminder dat met het aandeel in de relevante uitkeringen. Controle: de reserve is geen extra kostenpost en verandert niet de totale omvang van het eigen vermogen.",
       "refs": [
         "reserve",
         "rosen"
@@ -2133,7 +2361,19 @@
         21,
         29
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "wettelijke-reserve",
+        "title": "Wettelijke reserve: niet vrij uitkeerbare vermogensgroei",
+        "task": "Hoe hoog is de wettelijke reserve deelneming van Merwede voor haar 45%-belang na verwerking van het gegeven resultaat en dividend, wanneer zij verdere uitkeringen niet vrij kan bewerkstelligen?",
+        "rules": "Artikel 2:389 lid 6 BW ziet op het aandeel in cumulatief positieve resultaten en rechtstreekse vermogensvermeerderingen sinds de eerste vermogensmutatiewaardering. Breng verkregen uitkeringsrechten en vrij te bewerkstelligen uitkeringen in mindering. Werk per deelneming en let erop of bedragen voor de gehele deelneming of al voor het moederdeel zijn gegeven.",
+        "pattern": [
+          "Herken: NVW én een beperking op de mogelijkheid tot uitkeren.",
+          "Aanpak: bereken het aandeel in de winst en verminder dat met het aandeel in de relevante uitkeringen.",
+          "Controle: de reserve is geen extra kostenpost en verandert niet de totale omvang van het eigen vermogen."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 21,
@@ -2151,7 +2391,7 @@
           "Ten laste van de overige reserves."
         ]
       ],
-      "task": "Welke aanvullende journaalpost is juist?",
+      "task": "Welke aanvullende journaalpost vormt de vereiste wettelijke reserve deelneming van € 180.000 wanneer resultaat en dividend al zijn verwerkt en de reserve voordien nihil was?",
       "options": [
         {
           "journal": [
@@ -2266,7 +2506,7 @@
       "explanation": [
         "De vorming is een overboeking binnen het eigen vermogen. De overige reserves dalen en de wettelijke reserve stijgt met hetzelfde bedrag."
       ],
-      "pattern": "Een reserve vormen is geen nieuwe last en geen tweede waardemutatie van de deelneming.",
+      "pattern": "Herken: het vereiste reservebedrag is gegeven en de gewone deelnemingsmutaties zijn al geboekt. Aanpak: debiteer de vrije reserve en crediteer de wettelijke reserve voor de benodigde toename. Controle: totaal eigen vermogen en totaal resultaat blijven door de reservering gelijk.",
       "refs": [
         "reserve",
         "rosen"
@@ -2275,7 +2515,19 @@
         20,
         29
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "wettelijke-reserve",
+        "title": "Reservevorming is een verschuiving binnen het eigen vermogen",
+        "task": "Welke aanvullende journaalpost vormt de vereiste wettelijke reserve deelneming van € 180.000 wanneer resultaat en dividend al zijn verwerkt en de reserve voordien nihil was?",
+        "rules": "De wettelijke reserve deelneming wordt binnen het eigen vermogen afgezonderd. Als de resultaat- en dividendboekingen al zijn gemaakt, moeten die niet opnieuw worden uitgevoerd. Deze vraag vraagt uitsluitend de overheveling van vrije reserves naar de wettelijke reserve. De boekwaarde van de deelneming verandert door deze reserveringsboeking niet.",
+        "pattern": [
+          "Herken: het vereiste reservebedrag is gegeven en de gewone deelnemingsmutaties zijn al geboekt.",
+          "Aanpak: debiteer de vrije reserve en crediteer de wettelijke reserve voor de benodigde toename.",
+          "Controle: totaal eigen vermogen en totaal resultaat blijven door de reservering gelijk."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 22,
@@ -2305,7 +2557,7 @@
           "Nihil; de verschillen in voorraad en garantievoorziening zijn volledig verdwenen."
         ]
       ],
-      "task": "Welke aansluitingsberekening geeft de boekwaarde van de deelneming op 31 december?",
+      "task": "Voor welk bedrag neemt Merwede haar 70%-deelneming Riet op de eindbalans op, rekening houdend met het gecorrigeerde beginvermogen, het jaarresultaat, dividend en het resterende gebouwverschil?",
       "options": [
         {
           "expression": "(800000+120000-20000+76000)*.7-14000",
@@ -2349,7 +2601,7 @@
         "Het eigen vermogen volgens de eigen grondslagen wordt € 900.000. Na toevoeging van € 76.000 resterende meerwaarde is de NVW € 976.000.",
         "70% × € 976.000 = € 683.200. Hetzelfde volgt uit € 581.000 beginwaarde + € 116.200 herrekend resultaataandeel − € 14.000 dividend."
       ],
-      "pattern": "Een balanscontrole gebruikt resterende verschillen. Tel niet nogmaals de jaarmutaties erbij op.",
+      "pattern": "Herken: gevraagd is een stand op de eindbalans, niet alleen het resultaat van het jaar. Aanpak: beginvermogen plus resultaat minus totale uitkering, daarna resterende waarderingsverschillen en het aandeel van Merwede. Controle: dezelfde uitkomst moet volgen uit beginboekwaarde deelneming plus aangepast winstaandeel minus ontvangen dividend.",
       "refs": [
         "acquisition",
         "olbia"
@@ -2359,7 +2611,19 @@
         16,
         30
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaat-deelneming",
+        "title": "Boekwaarde controleren vanuit het eindvermogen",
+        "task": "Voor welk bedrag neemt Merwede haar 70%-deelneming Riet op de eindbalans op, rekening houdend met het gecorrigeerde beginvermogen, het jaarresultaat, dividend en het resterende gebouwverschil?",
+        "rules": "Voor een eindbalanswaarde bepaal je eerst het eigen vermogen van Riet op einddatum. Voeg de op die datum nog resterende waarderingsverschillen naar moedergrondslagen toe. Pas daarna het deelnemingspercentage toe. Gebruik niet de oorspronkelijke fair-valuecorrectie als daarop inmiddels is afgeschreven. Goodwill wordt afzonderlijk gevolgd.",
+        "pattern": [
+          "Herken: gevraagd is een stand op de eindbalans, niet alleen het resultaat van het jaar.",
+          "Aanpak: beginvermogen plus resultaat minus totale uitkering, daarna resterende waarderingsverschillen en het aandeel van Merwede.",
+          "Controle: dezelfde uitkomst moet volgen uit beginboekwaarde deelneming plus aangepast winstaandeel minus ontvangen dividend."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 23,
@@ -2373,7 +2637,7 @@
           "Geen ingekochte eigen aandelen of afwijkende stemrechtovereenkomsten."
         ]
       ],
-      "task": "Welk percentage stemrecht heeft Merwede en wat betekent dat voor de dochtertoets?",
+      "task": "Is Vaart een dochtermaatschappij van Merwede op basis van de aantallen stemgerechtigde aandelen in de tabel? Motiveer de keuze met het effectieve stemrechtenpercentage.",
       "options": [
         {
           "expression": "(190+130)/1000*100",
@@ -2416,7 +2680,7 @@
       "explanation": [
         "Totaal 600 stemmen; Merwede beschikt over 320 stemmen. Het percentage is 53,33%, dus meer dan 50%."
       ],
-      "pattern": "Maak voor elk doel een eigen teller en noemer: stemmen zijn niet hetzelfde als winstrechten.",
+      "pattern": "Herken: de tabel onderscheidt drie aandelensoorten. Aanpak: maak een stemrechtenteller voor Merwede en een stemrechtennoemer voor Vaart. Controle: gebruik voor deze vraag niet de aandelen met uitsluitend winstrecht en niet het totale nominale kapitaal.",
       "refs": [
         "daughter",
         "flexdiv"
@@ -2450,7 +2714,45 @@
             "150"
           ]
         ]
-      }
+      },
+      "guidance": {
+        "lesson": "flex-aandelen",
+        "title": "Aandelen met uitsluitend winstrecht geven geen stemmen",
+        "task": "Is Vaart een dochtermaatschappij van Merwede op basis van de aantallen stemgerechtigde aandelen in de tabel? Motiveer de keuze met het effectieve stemrechtenpercentage.",
+        "rules": "Bij een flex-bv kunnen winst- en stemrechten verschillen. Voor de dochtertoets tel je de aandelen met stemrecht, inclusief aandelen met zowel stem- als winstrecht. Aandelen met uitsluitend winstrecht blijven buiten deze stemmenberekening. De toets is meer dan de helft van de uitoefenbare stemmen.",
+        "pattern": [
+          "Herken: de tabel onderscheidt drie aandelensoorten.",
+          "Aanpak: maak een stemrechtenteller voor Merwede en een stemrechtennoemer voor Vaart.",
+          "Controle: gebruik voor deze vraag niet de aandelen met uitsluitend winstrecht en niet het totale nominale kapitaal."
+        ]
+      },
+      "caseTables": [
+        {
+          "headers": [
+            "Soort aandeel",
+            "Geplaatst",
+            "In bezit"
+          ],
+          "rows": [
+            [
+              "Stem- en winstrecht",
+              "400",
+              "190"
+            ],
+            [
+              "Alleen stemrecht",
+              "200",
+              "130"
+            ],
+            [
+              "Alleen winstrecht",
+              "400",
+              "150"
+            ]
+          ],
+          "caption": "Gegeven casustabel bij deze vraag"
+        }
+      ]
     },
     {
       "id": 24,
@@ -2472,7 +2774,7 @@
           "Nettovermogenswaarde."
         ]
       ],
-      "task": "Welke journaalpost maakt Merwede van het ontvangen dividend?",
+      "task": "Welke journaalpost maakt Merwede bij ontvangst van haar aandeel in Vaarts dividend, berekend volgens de winstrechten in de tabel en bij waardering tegen NVW?",
       "options": [
         {
           "journal": [
@@ -2599,7 +2901,7 @@
       "explanation": [
         "Alleen de 340 winstrechtgevende aandelen van Merwede delen mee in de 800 winstrechtgevende aandelen. Het ontvangen dividend is € 51.000."
       ],
-      "pattern": "Stemrechtloze aandelen kunnen wél dividend krijgen; winstrechtloze aandelen niet.",
+      "pattern": "Herken: de vraag verschuift van zeggenschap naar een uitkering. Aanpak: tel de gewone en uitsluitend winstgerechtigde aandelen van Merwede en deel door alle winstgerechtigde aandelen. Controle: boek het ontvangen bedrag niet nogmaals als opbrengst wanneer het belang tegen NVW wordt gewaardeerd.",
       "refs": [
         "dividend",
         "flexdiv"
@@ -2609,7 +2911,46 @@
         23,
         25
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "flex-aandelen",
+        "title": "Dividend volgt winstrechten",
+        "task": "Welke journaalpost maakt Merwede bij ontvangst van haar aandeel in Vaarts dividend, berekend volgens de winstrechten in de tabel en bij waardering tegen NVW?",
+        "rules": "Bereken een dividenduitkering met de aandelen die winstrecht dragen. Het percentage kan afwijken van het stemrechtenpercentage uit een dochtertoets. Bij NVW komt ontvangen dividend tegenover een afname van de deelneming. Gebruik alleen de in deze vraag beschikbare aandelen- en dividendgegevens.",
+        "pattern": [
+          "Herken: de vraag verschuift van zeggenschap naar een uitkering.",
+          "Aanpak: tel de gewone en uitsluitend winstgerechtigde aandelen van Merwede en deel door alle winstgerechtigde aandelen.",
+          "Controle: boek het ontvangen bedrag niet nogmaals als opbrengst wanneer het belang tegen NVW wordt gewaardeerd."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Zelfstandige aandelentabel bij deze vraag",
+          "headers": [
+            "Aandelensoort",
+            "Geplaatst",
+            "In bezit van Merwede"
+          ],
+          "rows": [
+            [
+              "Stem- en winstrecht",
+              400,
+              190
+            ],
+            [
+              "Alleen stemrecht",
+              200,
+              130
+            ],
+            [
+              "Alleen winstrecht",
+              400,
+              150
+            ]
+          ],
+          "note": "Gewone en uitsluitend winstgerechtigde aandelen hebben in deze casus gelijke winstrechten. Bereken het gevraagde percentage voor deze vraag afzonderlijk."
+        }
+      ]
     },
     {
       "id": 25,
@@ -2635,7 +2976,7 @@
           "Geen; de uitsluitend stemrechtgevende aandelen blijven op nominale waarde."
         ]
       ],
-      "task": "Voor welk bedrag waardeert Merwede het kapitaalbelang in de CAFA2-systematiek?",
+      "task": "Hoe hoog is de boekwaarde van Merwedes belang in Vaart wanneer de nominale kapitaalinbreng per gehouden aandeel en het aandeel in de winstreserves volgens de winstrechten afzonderlijk worden berekend?",
       "options": [
         {
           "expression": "340*100+340/800*200000",
@@ -2679,7 +3020,7 @@
         "Nominaal kapitaal in bezit: 470 × € 100 = € 47.000. Aandeel in reserves en resultaat: 340/800 × € 200.000 = € 85.000.",
         "Totale boekwaarde: € 132.000. Deze splitsing sluit aan op de officiële Ahorn/Finken-uitwerking."
       ],
-      "pattern": "Bij deze flex-bv-waardering: eigen nominale kapitaal plus aandeel in reserves/winst volgens winstrechten.",
+      "pattern": "Herken: alleen-stemrechtaandelen delen niet op dezelfde manier in de winstreserves. Aanpak: bereken eerst het nominale aandeel en voeg daarna het aandeel in de winstreserves toe. Controle: gebruik voor de winstreserves niet het percentage van de stemmen.",
       "refs": [
         "finken",
         "valuation"
@@ -2688,7 +3029,46 @@
         23,
         24
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "flex-aandelen",
+        "title": "Nominaal kapitaal en winstreserves apart verdelen",
+        "task": "Hoe hoog is de boekwaarde van Merwedes belang in Vaart wanneer de nominale kapitaalinbreng per gehouden aandeel en het aandeel in de winstreserves volgens de winstrechten afzonderlijk worden berekend?",
+        "rules": "Volg de rechten van de in de casus onderscheiden aandelen. De kapitaalinbreng hangt samen met het gehouden nominale kapitaal; het aandeel in winstreserves volgt de winstrechten. Eén enkel percentage op het gehele eigen vermogen kan daardoor onjuist zijn. De vraag sluit aan op de afzonderlijke waardering van de aandelensoorten in de genoemde tentamenuitwerking.",
+        "pattern": [
+          "Herken: alleen-stemrechtaandelen delen niet op dezelfde manier in de winstreserves.",
+          "Aanpak: bereken eerst het nominale aandeel en voeg daarna het aandeel in de winstreserves toe.",
+          "Controle: gebruik voor de winstreserves niet het percentage van de stemmen."
+        ]
+      },
+      "caseTables": [
+        {
+          "caption": "Zelfstandige aandelentabel bij deze vraag",
+          "headers": [
+            "Aandelensoort",
+            "Geplaatst",
+            "In bezit van Merwede"
+          ],
+          "rows": [
+            [
+              "Stem- en winstrecht",
+              400,
+              190
+            ],
+            [
+              "Alleen stemrecht",
+              200,
+              130
+            ],
+            [
+              "Alleen winstrecht",
+              400,
+              150
+            ]
+          ],
+          "note": "Gewone en uitsluitend winstgerechtigde aandelen hebben in deze casus gelijke winstrechten. Bereken het gevraagde percentage voor deze vraag afzonderlijk."
+        }
+      ]
     },
     {
       "id": 26,
@@ -2710,7 +3090,7 @@
           "De aandelen worden niet ingetrokken. De inkoop wordt ten laste van overige reserves verwerkt."
         ]
       ],
-      "task": "Welke journaalpost maakt Vaart zelf?",
+      "task": "Welke journaalpost verwerkt Vaart voor de inkoop van eigen aandelen tegen € 210.000 ten laste van de overige reserves, zonder intrekking van de aandelen?",
       "options": [
         {
           "journal": [
@@ -2835,7 +3215,7 @@
       "explanation": [
         "De verkrijgingsprijs van de eigen aandelen komt ten laste van het eigen vermogen. Het aandelenkapitaal blijft hier ongewijzigd."
       ],
-      "pattern": "Maak onderscheid tussen inkoop en intrekking. Beoordeel bovendien vanuit welke vennootschap je boekt.",
+      "pattern": "Herken: eigen aandelen worden ingekocht, maar niet ingetrokken. Aanpak: verwerk de volledige betaalde prijs als afname van overige reserves en bank. Controle: er ontstaat geen deelnemingsactief in de eigen vennootschap en geen afzonderlijk aankoopresultaat.",
       "refs": [
         "eigen",
         "rapallo"
@@ -2844,7 +3224,19 @@
         7,
         27
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "eigen-aandelen",
+        "title": "Eigen aandelen niet activeren",
+        "task": "Welke journaalpost verwerkt Vaart voor de inkoop van eigen aandelen tegen € 210.000 ten laste van de overige reserves, zonder intrekking van de aandelen?",
+        "rules": "Ingekochte eigen aandelen worden niet als actief opgenomen. De verkrijgingsprijs komt ten laste van het eigen vermogen; in deze vraag zijn daarvoor de overige reserves aangewezen. Omdat geen intrekking plaatsvindt, verlaag je het geplaatste kapitaal niet met de nominale waarde. Onderscheid de betaalde prijs van de nominale omvang van de aandelen.",
+        "pattern": [
+          "Herken: eigen aandelen worden ingekocht, maar niet ingetrokken.",
+          "Aanpak: verwerk de volledige betaalde prijs als afname van overige reserves en bank.",
+          "Controle: er ontstaat geen deelnemingsactief in de eigen vennootschap en geen afzonderlijk aankoopresultaat."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 27,
@@ -2870,7 +3262,7 @@
           "Vliet wordt tegen NVW opgenomen."
         ]
       ],
-      "task": "Welke combinatie verwerkt bij Merwede de aankoop én de correctie voor de middellijk ingekochte eigen aandelen?",
+      "task": "Voor welk bedrag blijft Merwedes deelneming Vliet op de balans staan na de aankoopboeking en de expliciet voorgeschreven evenredige correctie van 80% voor de door Vliet gehouden aandelen Merwede?",
       "options": [
         {
           "journals": [
@@ -3162,7 +3554,7 @@
         "De aankoop wordt gesplitst in € 540.000 deelneming en € 60.000 goodwill. De voorgeschreven evenredige correctie is € 72.000.",
         "Resterende boekwaarde deelneming: € 468.000. In het oorspronkelijke Palau-model worden 100% en evenredige correctie beide geaccepteerd; hier is de evenredige variant uitdrukkelijk voorgeschreven."
       ],
-      "pattern": "Controleer of het model 100% of een evenredige correctie vraagt. Pas het gekozen percentage niet stilzwijgend aan.",
+      "pattern": "Herken: de dochter bezit aandelen in de moeder en de correctievariant is expliciet gegeven. Aanpak: begin bij de deelneming exclusief goodwill en trek de voorgeschreven eigen-aandelencorrectie af. Controle: corrigeer niet nogmaals de goodwill en wissel niet ongemerkt tussen een 100%- en 80%-correctie.",
       "refs": [
         "eigen",
         "palau"
@@ -3171,7 +3563,19 @@
         13,
         26
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "eigen-aandelen",
+        "title": "Middellijk eigen aandelen via een dochter",
+        "task": "Voor welk bedrag blijft Merwedes deelneming Vliet op de balans staan na de aankoopboeking en de expliciet voorgeschreven evenredige correctie van 80% voor de door Vliet gehouden aandelen Merwede?",
+        "rules": "Splits eerst de aankoopprijs in deelneming tegen NVW en afzonderlijke goodwill. De door de dochter gehouden aandelen in de moeder leiden vervolgens tot een correctie op het eigen vermogen en de deelneming. De bronuitwerking accepteert verschillende omvangvarianten; deze eigen oefenvraag schrijft daarom uitdrukkelijk de evenredige 80%-variant voor. Volg die variant consequent.",
+        "pattern": [
+          "Herken: de dochter bezit aandelen in de moeder en de correctievariant is expliciet gegeven.",
+          "Aanpak: begin bij de deelneming exclusief goodwill en trek de voorgeschreven eigen-aandelencorrectie af.",
+          "Controle: corrigeer niet nogmaals de goodwill en wissel niet ongemerkt tussen een 100%- en 80%-correctie."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 28,
@@ -3201,7 +3605,7 @@
           "Beide pakketten staan tot de overstap tegen verkrijgingsprijs. Boek de stelselwijziging via overige reserves; er zijn geen andere waarderingsverschillen."
         ]
       ],
-      "task": "Welke journaalposten verwerken de overgang voor beide pakketten?",
+      "task": "Welke aanpassingsjournaalposten zijn nodig bij de overgang van verkrijgingsprijs naar zichtbaar-intrinsieke-waardewaardering per 31 december, afzonderlijk voor het oude 35%-belang en de nieuwe 25%-aankoop?",
       "options": [
         {
           "journals": [
@@ -3494,7 +3898,7 @@
         "Nieuw pakket: goodwill bij aankoop € 650.000 − 25% × € 1.400.000 = € 300.000; resterende goodwill € 270.000.",
         "Deelneming nieuw pakket wordt € 400.000, dus € 250.000 lager. Het verschil van € 20.000 komt in de overige reserves. Totale deelneming na de overgang: € 960.000."
       ],
-      "pattern": "Werk elk aankoopmoment apart uit: actuele deelnemingswaarde, oorspronkelijke goodwill en cumulatieve afschrijving.",
+      "pattern": "Herken: twee aankoopmomenten en een latere wijziging van waarderingsgrondslag. Aanpak: maak twee aansluitingen en voeg de uitkomsten pas daarna samen. Controle: de eindwaarde van de deelneming moet aansluiten op het totale belang in het opgegeven eindvermogen; goodwill staat daarnaast afzonderlijk.",
       "refs": [
         "mulini",
         "valuation",
@@ -3505,7 +3909,19 @@
         14,
         15
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "stelselwijziging",
+        "title": "Overgang naar vermogensmutatiewaardering per aankooplaag",
+        "task": "Welke aanpassingsjournaalposten zijn nodig bij de overgang van verkrijgingsprijs naar zichtbaar-intrinsieke-waardewaardering per 31 december, afzonderlijk voor het oude 35%-belang en de nieuwe 25%-aankoop?",
+        "rules": "Werk iedere verwerving uit vanaf haar eigen aankoopdatum en vermogensbasis. Bepaal de goodwill per aankooplaag, de volgens de casus verstreken afschrijving en het aandeel in het eindvermogen. De overgang wordt in de gebruikte tentamenuitwerking verwerkt met afzonderlijke deelnemings-, goodwill- en reservemutaties. Pas geen nieuwe goodwillberekening toe op basis van alleen het gezamenlijke eindpercentage.",
+        "pattern": [
+          "Herken: twee aankoopmomenten en een latere wijziging van waarderingsgrondslag.",
+          "Aanpak: maak twee aansluitingen en voeg de uitkomsten pas daarna samen.",
+          "Controle: de eindwaarde van de deelneming moet aansluiten op het totale belang in het opgegeven eindvermogen; goodwill staat daarnaast afzonderlijk."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 29,
@@ -3531,7 +3947,7 @@
           "Geen rechtstreekse vermogensmutaties en geen goodwill."
         ]
       ],
-      "task": "Wat is de totale wettelijke reserve deelneming?",
+      "task": "Hoe hoog is Merwedes totale wettelijke reserve deelneming wanneer het cumulatieve resultaat van deelneming A positief is en dat van deelneming B negatief, en verdere uitkeringen niet vrij kunnen worden bewerkstelligd?",
       "options": [
         {
           "expression": "240000-30000",
@@ -3575,7 +3991,7 @@
         "Voor A is € 210.000 gebonden. B heeft cumulatief geen positief resultaat en wordt voor deze berekening niet meegenomen.",
         "Je mag B dus niet met de gebonden winst van A salderen."
       ],
-      "pattern": "Bereken de wettelijke reserve per deelneming voordat je optelt; saldeer geen negatieve cumulatieve resultaten.",
+      "pattern": "Herken: de casus zet een winstgevende en een verliesgevende deelneming naast elkaar. Aanpak: bereken de reserve per belang en tel uitsluitend de positieve vereisten op. Controle: voorkom saldering van het negatieve cumulatieve resultaat van B met de gebonden winst van A.",
       "refs": [
         "reserve"
       ],
@@ -3583,7 +3999,19 @@
         20,
         21
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "wettelijke-reserve",
+        "title": "Negatieve deelnemingen niet salderen",
+        "task": "Hoe hoog is Merwedes totale wettelijke reserve deelneming wanneer het cumulatieve resultaat van deelneming A positief is en dat van deelneming B negatief, en verdere uitkeringen niet vrij kunnen worden bewerkstelligd?",
+        "rules": "De wettelijke reserve wordt per deelneming beoordeeld. Een deelneming waarvan het cumulatieve resultaat sinds de eerste vermogensmutatiewaardering niet positief is, telt voor deze berekening niet mee. Een verlies bij B verlaagt daarom niet zonder meer de voor A vereiste reserve. Trek de relevante uitkeringsrechten af bij de deelneming waarop zij betrekking hebben.",
+        "pattern": [
+          "Herken: de casus zet een winstgevende en een verliesgevende deelneming naast elkaar.",
+          "Aanpak: bereken de reserve per belang en tel uitsluitend de positieve vereisten op.",
+          "Controle: voorkom saldering van het negatieve cumulatieve resultaat van B met de gebonden winst van A."
+        ]
+      },
+      "caseTables": []
     },
     {
       "id": 30,
@@ -3625,7 +4053,7 @@
           "Goodwill in 5 jaar lineair tot nihil. Geen belastingen of andere mutaties."
         ]
       ],
-      "task": "Welke berekening geeft het resultaat deelneming, de deelneming ultimo en de goodwill ultimo?",
+      "task": "Welke combinatie geeft de boekwaarde van Merwedes 75%-deelneming Water en de afzonderlijke goodwill per einde boekjaar, na alle genoemde fouten-, fair-value-, resultaat- en dividendcorrecties?",
       "options": [
         {
           "lines": [
@@ -3735,7 +4163,7 @@
         "Deelneming ultimo: € 690.000 + € 192.000 − € 48.000 = € 834.000. Goodwill ultimo: € 16.000.",
         "Balanscontrole: (gecorrigeerd beginvermogen € 820.000 + winst € 210.000 − dividend € 64.000 + resterende gebouwenmeerwaarde € 152.000 − voorraadverschil € 6.000) × 75% = € 834.000."
       ],
-      "pattern": "Sluit de kring: aankoopwaarde, jaarresultaat en dividend moeten hetzelfde eindbedrag geven als de controle via het herrekende eigen vermogen.",
+      "pattern": "Herken: een eindcasus combineert aankoopcorrecties en latere vrijvallen of afschrijvingen. Aanpak: werk met een aankoopstaat, een resultaatbrug en twee afzonderlijke verloopstaten voor deelneming en goodwill. Controle: het aandeel in het aangepaste eindvermogen en het verloop van de deelnemingsrekening moeten op hetzelfde bedrag uitkomen.",
       "refs": [
         "acquisition",
         "olbia",
@@ -3746,7 +4174,19 @@
         16,
         22
       ],
-      "variant": true
+      "variant": true,
+      "guidance": {
+        "lesson": "resultaat-deelneming",
+        "title": "Aankoop, jaarmutaties en eindbalans aansluiten",
+        "task": "Welke combinatie geeft de boekwaarde van Merwedes 75%-deelneming Water en de afzonderlijke goodwill per einde boekjaar, na alle genoemde fouten-, fair-value-, resultaat- en dividendcorrecties?",
+        "rules": "Scheid drie berekeningen: de nettovermogenswaarde op aankoopdatum, het aangepaste resultaat gedurende het jaar en de resterende verschillen op einddatum. Houd goodwill in een eigen verloopstaat met haar eigen afschrijving. Dividend verlaagt bij NVW de deelneming. Toets de eindwaarde zowel via de mutaties als via het aangepaste eigen vermogen van Water.",
+        "pattern": [
+          "Herken: een eindcasus combineert aankoopcorrecties en latere vrijvallen of afschrijvingen.",
+          "Aanpak: werk met een aankoopstaat, een resultaatbrug en twee afzonderlijke verloopstaten voor deelneming en goodwill.",
+          "Controle: het aandeel in het aangepaste eindvermogen en het verloop van de deelnemingsrekening moeten op hetzelfde bedrag uitkomen."
+        ]
+      },
+      "caseTables": []
     }
   ],
   "notes": [
@@ -3758,4 +4198,4 @@
   "code": "kap",
   "opgave": 1
 };
-})(window);
+}());
