@@ -2,7 +2,7 @@ name: CAFA2 mobile table review
 on:
   push:
     branches: [mobile-table-readability-20260921]
-    paths: [.github/workflows/mobile-table-review.yml]
+    paths: [.github/workflows/mobile-table-review.yml, css/summary-tables.css, content/summary/table-layout.mjs, tests/mobile-table-layout.mjs, tests/mobile-table-browser.py]
   workflow_dispatch:
 permissions:
   contents: write
