@@ -1,0 +1,84 @@
+{
+  "revision": "2026-09-20",
+  "scope": "Alleen eigen oefenvragen en interactieve samenvatting; officiële tentamendata en opslagcodes ongewijzigd.",
+  "modules": {
+    "kap": {
+      "questions": 30,
+      "caseTables": [
+        23,
+        24,
+        25
+      ],
+      "unchangedAnswerAndFactDigest": "3693a48853ec15d2580927c3f079731717eedf613e3a544c8530d4cd0529be71"
+    },
+    "val": {
+      "questions": 30,
+      "caseTables": [
+        13,
+        14,
+        16,
+        17,
+        18,
+        20
+      ],
+      "unchangedAnswerAndFactDigest": "40c3ca4da0c6e749dd238e829d33ea5873797ae8082c0c1681920f2176ec0757"
+    },
+    "nvw": {
+      "questions": 30,
+      "caseTables": [
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "unchangedAnswerAndFactDigest": "db9e5382194a2233854d736e109d995c466727587e039778c8bfcb33be1c2aa3"
+    },
+    "hk": {
+      "questions": 30,
+      "caseTables": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        28,
+        29,
+        30
+      ],
+      "unchangedAnswerAndFactDigest": "1dfd513b2db69c171c12d5a42c620d82287c34ca0ea89e9e45c7e19f6bd98cf7"
+    }
+  },
+  "summary": {
+    "chapters": 40,
+    "pages": 45,
+    "glossary": 81,
+    "sources": 30,
+    "coverageRows": 25
+  }
+}

@@ -22,16 +22,14 @@ assert.match(index, /css\/theory-panels\.css/);
 assert.match(bootstrap, /js\/theory-panels\.js/);
 assert.match(exams, /href="#oefenen">Toets starten/);
 
-assert.equal((summary.match(/data-lesson=/g) || []).length, 12, 'Samenvatting bevat twaalf lessen');
+assert.equal((summary.match(/data-lesson=/g) || []).length, 45, '40 inhoudelijke hoofdstukken en vijf hulpmiddelpagina’s');
 assert.match(summary, /data-route="kernschema"/);
 assert.match(summary, /data-route="bronnen"/);
 assert.match(summaryJs, /localStorage/);
 assert.match(summaryCss, /@media\(max-width:760px\)/);
 
-for (const code of ['kap', 'val', 'nvw', 'hk']) {
-  assert.match(theoryJs, new RegExp(`${code}: \\[`), `Theorie aanwezig voor ${code}`);
-}
-assert.match(theoryJs, /panel\.open = false/);
+assert.match(theoryJs, /q\.guidance/, 'Basisregels volgen de expliciete inhoud per vraag, niet nummerreeksen');
+assert.match(theoryJs, /panel\.open\s*=\s*false/);
 assert.match(theoryCss, /grid-template-columns:minmax\(0,1fr\) 300px/);
 assert.match(theoryCss, /@media \(max-width:960px\)/);
 assert.match(theoryCss, /\.theory-panel summary:focus-visible/);
