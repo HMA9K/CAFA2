@@ -2748,8 +2748,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -2763,35 +2763,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "25%",
+              "75%"
             ],
             [
               "Begin boekjaar",
               300000,
-              "",
-              "",
-              "",
-              ""
+              60000,
+              "n.v.t.",
+              15000,
+              45000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              12000,
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              -3000,
+              -9000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -2968,8 +2969,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -2983,35 +2984,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "25%",
+              "75%"
             ],
             [
               "Begin boekjaar",
               300000,
-              "",
-              "",
-              "",
-              ""
+              60000,
+              "n.v.t.",
+              15000,
+              45000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              12000,
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              -3000,
+              -9000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -3269,8 +3271,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -3284,35 +3286,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "25%",
+              "75%"
             ],
             [
               "Begin boekjaar",
               300000,
-              "",
-              "",
-              "",
-              ""
+              60000,
+              "n.v.t.",
+              15000,
+              45000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              12000,
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              -3000,
+              -9000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -3418,8 +3421,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -3433,35 +3436,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "25%",
+              "75%"
             ],
             [
               "Begin boekjaar",
               300000,
-              "",
-              "",
-              "",
-              ""
+              60000,
+              "n.v.t.",
+              15000,
+              45000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              12000,
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              -3000,
+              -9000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -3575,8 +3579,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -3590,35 +3594,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "25%",
+              "75%"
             ],
             [
               "Begin boekjaar",
               300000,
-              "",
-              "",
-              "",
-              ""
+              60000,
+              "n.v.t.",
+              15000,
+              45000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              12000,
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              -3000,
+              -9000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -4113,8 +4118,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -4128,35 +4133,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "0%",
+              "100%"
             ],
             [
               "Begin boekjaar",
               180000,
-              "",
-              "",
-              "",
-              ""
+              36000,
+              "n.v.t.",
+              "n.v.t.",
+              36000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              "n.v.t.",
+              48000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Toename",
+              60000,
+              12000,
+              "n.v.t.",
+              "n.v.t.",
+              12000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -4332,8 +4338,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -4347,35 +4353,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "0%",
+              "100%"
             ],
             [
               "Begin boekjaar",
               180000,
-              "",
-              "",
-              "",
-              ""
+              36000,
+              "n.v.t.",
+              "n.v.t.",
+              36000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              "n.v.t.",
+              48000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Toename",
+              60000,
+              12000,
+              "n.v.t.",
+              "n.v.t.",
+              12000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -4782,8 +4789,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -4797,35 +4804,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "0%",
+              "100%"
             ],
             [
               "Begin boekjaar",
               180000,
-              "",
-              "",
-              "",
-              ""
+              36000,
+              "n.v.t.",
+              "n.v.t.",
+              36000
             ],
             [
               "Einde boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              "n.v.t.",
+              48000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Toename",
+              60000,
+              12000,
+              "n.v.t.",
+              "n.v.t.",
+              12000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },
@@ -5055,8 +5063,8 @@ window.CAFA2_DATA.modules["hk"]={
       },
       "caseTables": [
         {
-          "caption": "Voorraadgegevens en uitwerksjabloon bij deze vraag",
-          "note": "De voorraadbedragen zijn gegeven tegen de onderlinge verkoopprijs. De lege winst- en correctiekolommen zijn uit te werken; zij bevatten niet het antwoord.",
+          "caption": "Ingevulde voorraadtabel bij deze zelfstandige casus",
+          "note": "Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.",
           "headers": [
             "Datum",
             "Voorraad",
@@ -5070,35 +5078,36 @@ window.CAFA2_DATA.modules["hk"]={
               "Percentage",
               "",
               "100%",
-              "…%",
-              "…%",
-              "…%"
+              "0%",
+              "0%",
+              "100%"
             ],
             [
               "Begin boekjaar",
               240000,
-              "",
-              "",
-              "",
-              ""
+              48000,
+              "n.v.t.",
+              "n.v.t.",
+              48000
             ],
             [
               "Einde boekjaar",
               180000,
-              "",
-              "",
-              "",
-              ""
+              36000,
+              "n.v.t.",
+              "n.v.t.",
+              36000
             ],
             [
-              "Toe-/afname",
-              "",
-              "",
-              "",
-              "",
-              ""
+              "Afname",
+              -60000,
+              -12000,
+              "n.v.t.",
+              "n.v.t.",
+              -12000
             ]
-          ]
+          ],
+          "completed": true
         }
       ]
     },

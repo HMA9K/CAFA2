@@ -55,6 +55,24 @@ function cases(code,q){
     if([16,17,20].includes(id))out.push({caption:'Gegeven afwaarderingscasus',headers:['Aantal','Oude prijs USD','Historische koers','Lagere waarde USD','Koers afwaardering'],rows:[[2000,40,'0,920',30,'0,935']]});
     if(id===18)out.push({caption:'Voorraadpartijen en gedeeltelijke afwaardering',headers:['Partij','Aantal totaal','USD per stuk','Historische koers','Aantal afwaarderen','Lagere waarde USD'],rows:[['A',3000,40,'0,910',1000,28],['B',2000,44,'0,930',0,'Niet van toepassing']],note:'Koers bij afwaardering op 31 december: € 0,940 per USD. Alleen het aangegeven deel van A wordt afgewaardeerd.'});
   }
+  // Given stock tables for journal follow-ups; table-construction tasks stay blank.
+  // These parameters were checked against each existing question's stated facts.
+  if((code==='nvw'||code==='hk') && q.type!=='Voorraadtabel'){
+    const stock=out.find(t=>t.headers.length===6 && t.headers[1]==='Voorraad');
+    if(stock){
+      let settings;
+      if(code==='hk')settings=id<=20?{basis:'HK',direction:'up',sellerShare:.75,margin:.2,tax:.2}:{basis:'HK',direction:'down',buyerShare:.75,margin:.2,tax:.2};
+      else if(id<=10)settings={basis:'NVW',direction:'down',buyerShare:.8,margin:.2,tax:.25};
+      else if(id<=15)settings={basis:'NVW',direction:'up',sellerShare:.75,margin:.25,tax:.25};
+      else if(id<=19)settings={basis:'NVW',direction:'side',sellerShare:.7,buyerShare:.9,margin:.2,tax:.25};
+      else settings={basis:'NVW',direction:'side',sellerShare:.9,buyerShare:.7,margin:.3,tax:.2};
+      const given=icScenario({...settings,stock0:stock.rows[1][1],stock1:stock.rows[2][1]});
+      stock.rows=given.rows.map(r=>r.slice());stock.rows[1][0]='Begin boekjaar';stock.rows[2][0]='Einde boekjaar';
+      stock.caption='Ingevulde voorraadtabel bij deze zelfstandige casus';
+      stock.note='Gebruik deze hulptabel voor de gevraagde boeking of aansluiting. Alle winst- en correctiebedragen zijn vóór belasting; de mutatie is eindstand minus beginstand.';
+      stock.completed=true;
+    }
+  }
   return out;
 }
 function renderCases(q){if(!q.caseTables?.length)return '';return '<section class="learning-case" aria-labelledby="case-'+q._code+'-'+q.id+'"><h3 id="case-'+q._code+'-'+q.id+'">Casustabel bij deze vraag</h3>'+q.caseTables.map(t=>(t.note?'<p class="learning-case-note">'+esc(t.note)+'</p>':'')+table(t.headers,t.rows,t.caption||'Casusgegevens')).join('')+'</section>';}
