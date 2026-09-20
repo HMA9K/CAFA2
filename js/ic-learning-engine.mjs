@@ -26,7 +26,7 @@ export function icScenario(input={}) {
   const rows=[['Percentage','', '100%',percent(i),percent(d),percent(a)],dataRow('31-12-'+(x.year-1),x.stock0,u0),dataRow('31-12-'+x.year,x.stock1,u1),dataRow(du<0?'Afname':du>0?'Toename':'Geen mutatie',dv,du)];
   const blank=[['Percentage','','100%','…%','…%','…%'],['31-12-'+(x.year-1),r(x.stock0),'','','',''],['31-12-'+x.year,r(x.stock1),'','','',''],['Toe-/afname','','','','','']];
   // Signed amounts: positive is debit, negative is credit; negative changes reverse the entry.
-  function journal(title,entries){const v=entries.filter(e=>Math.abs(e[1])>1e-8).map(([label,amount])=>[label,amount>0?r(amount):'',amount<0?r(-amount):'']);const sum=v.reduce((s,row)=>s+(Number(row[1])||0)-(Number(row[2])||0),0);if(Math.abs(sum)>.031)throw Error('Afronding veroorzaakt een niet-sluitende journaalpost. Gebruik minder decimalen in de invoer.');return {title,rows:v};}
+  function journal(title,entries){const v=entries.filter(e=>Math.abs(e[1])>1e-8).map(([label,amount])=>[label,amount>0?r(amount):'',amount<0?r(-amount):'']);const sum=v.reduce((s,row)=>s+(Number(row[1])||0)-(Number(row[2])||0),0);if(Math.abs(sum)>.005)throw Error('Afronding veroorzaakt een niet-sluitende journaalpost. Gebruik minder decimalen in de invoer.');return {title,rows:v};}
   let internal=[];
   if(x.basis==='NVW'&&i&&du){
     if(x.direction==='down'){

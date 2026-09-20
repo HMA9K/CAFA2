@@ -56,7 +56,7 @@
   }).then(function () {
     return loadScript('js/exams.js');
   }).then(function () {
-    return loadScript('js/theory-panels.js?v=20260920-1');
+    return loadScript('js/theory-panels.js?v=20260920-content-v2');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260919-1');
   }).then(function () {
@@ -64,6 +64,14 @@
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
+    // Restore an existing question deep link after asynchronous fragments exist.
+    // Replace the URL without adding a second navigation-history entry.
+    var initialHash = location.hash;
+    if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {
+      history.replaceState(history.state, '', location.pathname + location.search);
+      location.replace(initialHash);
+    }
+
   }).catch(function (error) {
     if (root.CafaStartup) root.CafaStartup.fail();
     var status = document.getElementById('load-status');
