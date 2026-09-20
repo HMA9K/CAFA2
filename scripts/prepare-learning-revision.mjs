@@ -32,4 +32,5 @@ edit('js/bootstrap.js',s=>{
     }
 `);
 });
+await import('./finish-content-review.mjs');
 console.log('Idempotente migratie van de bronstructuur en kwaliteitscontroles gereed.');
