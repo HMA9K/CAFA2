@@ -1,0 +1,144 @@
+import {lesson as L,table as T,journal as J,example as E,note as N,flow as F} from './helpers.mjs';
+export default [
+L('kwalificatie','kap','Deelneming, belegging en groepsmaatschappij','Begin met de aard van het belang. Een deelneming, dochtermaatschappij en groepsmaatschappij zijn verschillende begrippen; de ene kwalificatie vervangt de andere niet.',
+F(['Wie houdt het belang: rechtspersoon, vennootschap of natuurlijk persoon?','Toets deelneming of belegging.','Toets dochtermaatschappij en groep afzonderlijk.','Bepaal daarna waardering en consolidatie.'])+
+T(['Begrip','Toets','Wat volgt daaruit?'],[
+['Deelneming','Kapitaalverschaffing voor eigen rekening; duurzame verbondenheid ten dienste van de eigen werkzaamheid. Bij ten minste 20% van het geplaatste kapitaal wordt een deelneming vermoed.','Waarderingsvraag vervolgens toetsen aan art. 2:389 BW; deelneming betekent niet automatisch NVW.'],
+['Belegging','Het kapitaalbelang voldoet niet aan de kenmerken van een deelneming; beoordeel vooral het doel en de duurzame functionele band.','Geen vermogensmutatiewaardering enkel omdat aandelen worden gehouden.'],
+['Dochtermaatschappij','Meer dan de helft van de stemmen of de in art. 2:24a lid 1 onderdeel b genoemde benoemings- en ontslagmacht.','Relevant voor indirecte belangen en de consolidatiekring, maar niet op zichzelf de waarderingsgrondslag.'],
+['Groepsmaatschappij','Economische eenheid en organisatorische verbondenheid; de syllabus betrekt daarbij centrale leiding.','Relevant voor consolidatieplicht en -kring. Een joint venture is niet uitsluitend door het aandelenpercentage een groepsmaatschappij.']])+
+E('Een 15%-belang tegenover een 30%-belang','<p>Een 15%-belang kan een deelneming zijn wanneer het voor eigen rekening duurzaam wordt gehouden om de eigen activiteiten te ondersteunen. Bij 30% bestaat het wettelijke vermoeden, maar blijven doel en feiten relevant. Toets daarna voor beide belangen afzonderlijk of invloed van betekenis op het zakelijke en financiële beleid bestaat.</p>')+
+N('Twee verschillende 20%-vermoedens','Artikel 2:24c lid 1 ziet op het geplaatste kapitaal. Artikel 2:389 lid 1 ziet op de naar eigen inzicht uit te oefenen stemmen. Een natuurlijk persoon kan geen moedermaatschappij in de zin van artikel 2:24a zijn; een vennootschap kan onder de voorwaarden van artikel 2:24c wel een deelneming hebben.'),
+['S1|§2–4, p. 4–12; art. 2:24a–24c BW','E23O|opgave 1, vraag 1, p. 3: afzonderlijke behandeling v.o.f.','E22A|opgave Rosen, vraag 1–2, p. 2–3']),
+L('dochter','kap','Dochtermaatschappij en indirecte zeggenschap','Bepaal daadwerkelijk uitoefenbare bevoegdheden. Precies 50% is niet meer dan de helft.',
+T(['Toets','Werkwijze','Valkuil'],[
+['Art. 2:24a lid 1 onderdeel a','Tel stemmen van de rechtspersoon en zijn dochtermaatschappijen op, inclusief bevoegdheden uit stemrechtovereenkomsten.','Een belang van 50% voldoet niet aan dit meerderheidscriterium.'],
+['Art. 2:24a lid 1 onderdeel b','Toets lidmaatschap of aandeelhouderschap én het kunnen benoemen of ontslaan van meer dan de helft van bestuurders of commissarissen.','Alleen benoemingsmacht zonder lidmaatschap of aandeel is niet voldoende.'],
+['Art. 2:24a lid 2','Een onder eigen naam optredende vennootschap wordt gelijkgesteld wanneer de rechtspersoon of dochter als vennoot volledig aansprakelijk is voor de schulden.','Een v.o.f. is niet hetzelfde als een rechtspersoon; toets de richting van de relatie.'],
+['Ingekochte eigen aandelen','Bepaal de noemer van de uitoefenbare stemmen zonder aandelen waarop niet mag worden gestemd.','Een kapitaalpercentage kan afwijken van het effectieve stemrechtenpercentage.'],
+['Indirecte stemmen','Stel eerst vast dat de tussenschakel een dochter is; tel haar stemmen in de onderste vennootschap vervolgens volledig mee.','Vermenigvuldigen van percentages berekent een economisch aandeel, niet deze wettelijke zeggenschap.']])+
+E('Stemrechtenberekening met eigen aandelen en een tussenschakel','<p>B heeft 100 aandelen, waarvan 20 door B zelf zijn ingekocht. A bezit 45 aandelen: A oefent 45/80 = 56,25% van de stemmen uit. B is dus op deze grond een dochter van A. Heeft A daarnaast 30% van de stemmen in C en B 25%, dan kan A samen met dochter B 55% in C uitoefenen. Voor de relatie A–C tel je B’s 25% volledig mee.</p>')+
+N('Alleen of samen','De rechtspersoon hoeft niet zelf alle aandelen in de onderste vennootschap te houden. Andersom kan een belang via een tussenschakel die geen dochter is niet zonder meer worden opgeteld in de moeder-dochtertoets. Toets per lijn in het schema.'),
+['S1|§3, p. 5–9; art. 2:24a leden 1–4 en art. 2:24d BW','A1|Westerheuvel, p. 6–7','E25A|vraag 7, p. 4–5']),
+L('flex-aandelen','kap','Flex-bv: stemrechten en winstrechten','Maak voor zeggenschap, dividend en vermogenswaarde afzonderlijke berekeningen wanneer aandelensoorten verschillende rechten hebben.',
+T(['Vraag','Teller','Noemer'],[
+['Dochtermaatschappij?','Door de moeder uit te oefenen stemmen.','Alle uitoefenbare stemmen.'],
+['Aandeel in dividend?','Gehouden aandelen die volgens de casus in deze uitkering delen.','Alle aandelen die volgens de casus in deze uitkering delen.'],
+['Waarde van het belang?','Nominale kapitaalinbreng plus het aandeel in de daarvoor bestemde reserves volgens de rechten.','Niet één universeel stemrechtenpercentage op al het eigen vermogen toepassen.']])+
+E('Uitwerking met drie aandelensoorten',T(['Aandelensoort','Geplaatst','Gehouden door M'],[['Stem- en winstrecht',400,190],['Alleen stemrecht',200,130],['Alleen winstrecht',400,150]])+
+'<p>M heeft 320/600 = 53,33% van de stemmen, maar 340/800 = 42,5% van de winstrechten. Bij een totale uitkering van € 120.000 ontvangt M € 51.000. Bij NVW boekt M bank aan deelneming; bij regulier dividend en verkrijgingsprijs bank aan opbrengst deelneming.</p>'+
+J('M bij NVW',[['1.. Bank',51000,''],['0.. Aan Deelneming','',51000]])+
+'<p>Bij een nominale waarde van € 100 per aandeel en winstreserves van € 200.000 is de in deze variant bedoelde waarde: 470 × € 100 + 42,5% × € 200.000 = € 132.000. De uitsluitend stemgerechtigde aandelen delen in dit voorbeeld niet in de winstreserves.</p>')+
+N('Lees de aandelenrechten','De hier gebruikte verdeling volgt de rechten in de oefenvariant. Neem niet zonder casusgrond aan dat alle soorten dezelfde winst-, terugbetalings- of liquidatierechten hebben.'),
+['S1|§3, p. 5–6; §5, p. 13–19; art. 2:24a en 2:389 BW','E21O|Finken, vraag 6–7, p. 3–4','E23O|Patti, vraag 5–7, p. 5','E25S|Bosa, vraag 7–8, p. 4–5']),
+L('waardering','kap','Welke waarderingsgrondslag hoort bij het belang?','Scheid kwalificatie, invloed en gegevensbeschikbaarheid. Beoordeel niet uitsluitend het aandelenpercentage.',
+F(['Is het een deelneming?','Bestaat invloed van betekenis op zakelijk en financieel beleid?','Zijn voldoende gegevens voor nettovermogenswaarde beschikbaar?','Bestaat een in de bron bedoelde gegronde reden voor afwijking?'])+
+T(['Situatie','Verwerking in het aangeleverde materiaal','Grondslag'],[
+['Deelneming met invloed van betekenis en voldoende gegevens','Vermogensmutatiemethode op basis van nettovermogenswaarde.','Art. 2:389 leden 1–2 BW.'],
+['Invloed van betekenis, maar onvoldoende gegevens voor NVW','Een op andere wijze bepaalde waarde, uitgewerkt als zichtbaar intrinsieke waarde met latere vermogensmutaties.','Art. 2:389 lid 3 BW.'],
+['Geen invloed van betekenis','Verkrijgingsprijs of toepasselijke actuele waarde, overeenkomstig de casus.','Art. 2:384 lid 1 BW; Syllabus §8.'],
+['Gegronde reden om af te wijken','De syllabus behandelt onder meer de internationale groepssituatie; de reden moet worden toegelicht.','Art. 2:389 lid 9 BW.']])+
+'<h3>Nettovermogenswaarde tegenover zichtbaar intrinsieke waarde</h3><p>Bij NVW worden activa, voorzieningen, verplichtingen en resultaat van de deelneming beoordeeld op de grondslagen die bij de deelnemende rechtspersoon gelden, met de in de syllabus behandelde reële-waardeaanpassingen bij verwerving. Bij de alternatieve vermogensmutatiemethode begint de berekening bij een op andere wijze bepaalde waarde. In beide gevallen blijven resultaat, dividend en rechtstreekse vermogensmutaties relevant.</p>'+
+N('Een brongebonden nuance','Sommige tentamenuitwerkingen leiden uit een overheersende andere aandeelhouder af dat feitelijk geen invloed van betekenis bestaat. Maak hiervan geen algemene regel dat een andere aandeelhouder met meer dan 50% iedere invloed uitsluit. Beoordeel de in de casus beschreven feitelijke invloed; de syllabus formuleert een vermoeden, geen automatisch verbod.'),
+['S1|§5.1, p. 13–19 en §8, p. 24–26; art. 2:384 lid 1 en 2:389 leden 1–3 en 9 BW','E25A|Montone, vraag 1–2, p. 2','E24S|Mulini, vraag 1, p. 3']),
+L('fair-value','kap','Aankoopstaat: van zichtbaar vermogen naar NVW','Verwerk een administratiefout eerst in het zichtbare eigen vermogen. Verwar die foutcorrectie niet met een waarderingsverschil dat alleen voor de moeder wordt gevolgd.',
+T(['Stap','Effect','Vervolg na aankoop'],[
+['Administratiefout','Herstel het zichtbare eigen vermogen als de dochter haar administratie daarvoor moet corrigeren.','Voorkom dat de fout in het volgende jaar nogmaals het resultaat uit deelneming raakt.'],
+['Reële waarde activa','Hogere waarde verhoogt NVW; lagere waarde verlaagt NVW.','Volg latere verkoop, afschrijving of afwaardering.'],
+['Voorzieningen en verplichtingen','Een extra benodigde voorziening verlaagt NVW.','Volg het verschil tussen moedergrondslag en dochtergrondslag op begin- en einddatum.'],
+['Aandeel moeder','Vermenigvuldig de totale aangepaste netto-activa met het verworven winstaandeel.','Houd afzonderlijk rekening met bijzondere aandelenrechten.'],
+['Goodwill','Koopsom minus het verworven aandeel in NVW.','Afzonderlijk activeren en afschrijven bij NVW.']])+
+E('Aankoop Riet: fouten en waarderingsverschillen',T(['Aankoopstaat','Bedrag (€)'],[['Zichtbaar eigen vermogen',820000],['Gemiste kostenfactuur',-20000],['Gecorrigeerd zichtbaar eigen vermogen',800000],['Gebouwen: reële waarde hoger',80000],['Voorraad: aanvullende vermindering',-15000],['Extra garantievoorziening',-35000],['Totale nettovermogenswaarde',830000],['Aandeel M: 70%',581000],['Betaalde koopsom',680000],['Afzonderlijke goodwill',99000]])+
+J('Aankoopboeking bij M',[['0.. Deelneming Riet',581000,''],['0.. Goodwill',99000,''],['1.. Aan Bank','',680000]]))+
+N('Controlevraag','Welke verschillen bestaan nog op de eindbalans? Alleen die resterende verschillen horen in een aansluiting op het eindvermogen. Voor de winst-en-verliesrekening is juist de verandering van de verschillen van belang.'),
+['S1|§5.1.2 en §6, p. 15–17 en 20; art. 2:389 leden 2 en 7 BW','E25S|Olbia, vraag 1–3, p. 2–3','E24A|Casalini, vraag 3–6, p. 3–4']),
+L('goodwill','kap','Goodwill: afzonderlijk volgen, niet opnieuw procenteren','Goodwill is het verschil tussen de tegenprestatie en het verworven aandeel in de relevante netto-activa. De gegeven goodwill is doorgaans al het bedrag voor het gekochte belang.',
+T(['Onderdeel','NVW enkelvoudig','Verkrijgingsprijs enkelvoudig'],[
+['Bij aankoop','Deelneming voor aandeel in NVW; goodwill apart.','Deelneming voor de volledige verkrijgingsprijs inclusief goodwill.'],
+['Na aankoop','Afzonderlijke goodwill wordt volgens de casus afgeschreven.','Goodwill komt bij consolidatie afzonderlijk naar voren en wordt daar gevolgd.'],
+['In de consolidatie','Voorkom dubbele activering of dubbele afschrijving.','Splits oorspronkelijke goodwill af; verwerk cumulatieve afschrijving in de balans en de jaarlast in de W&V.']])+
+'<p>Artikel 2:389 lid 7 BW behandelt activering van het verschil. De afschrijving sluit volgens artikel 2:386 lid 3 BW aan op de verwachte gebruiksduur. In de syllabus staat een maximale termijn van tien jaar voor de situatie waarin die gebruiksduur niet op betrouwbare wijze kan worden geschat. Dat is geen opdracht om in iedere casus automatisch tien jaar te nemen: volg een gegeven termijn van bijvoorbeeld vijf jaar.</p>'+
+E('Aankoop op 1 juli, goodwill € 126.000, tien jaar lineair','<p>Een volledig jaar is € 126.000 / 10 = € 12.600. In het aankoopjaar wordt zes maanden afgeschreven: € 6.300. Eindwaarde goodwill: € 119.700.</p>'+
+J('Enkelvoudige afschrijving bij NVW',[['4.. Afschrijvingskosten goodwill',6300,''],['0.. Aan Goodwill','',6300]]))+
+N('Vraag eerst welke laag wordt gevraagd','Een gewone enkelvoudige journaalpost mag kosten en een balansrekening bevatten. De syllabus stelt de geconsolideerde balans en W&V juist in afzonderlijke werkstaten op. Neem daarom niet zonder meer de enkelvoudige boeking over in een vraag die uitsluitend een W&V-eliminatie vraagt.'),
+['S1|§6, p. 20–21; art. 2:389 lid 7 en 2:386 lid 3 BW','S3|§5.1 en §6.1, p. 104–111 en 143–152','C8HK|dia 3 en 5–10']),
+L('aandelenruil','kap','Verwerving via aandelenruil en contanten','De nominale waarde bepaalt het geplaatste kapitaal. De reële waarde van de uitgegeven aandelen bepaalt de waarde van de tegenprestatie.',
+F(['Bereken het gekochte aantal aandelen van de deelneming.','Pas de ruilverhouding toe op het uit te geven aantal eigen aandelen.','Waardeer die aandelen tegen de gegeven reële waarde en tel contanten erbij.','Splits de emissie in nominaal kapitaal en agio.','Boek deelneming en goodwill volgens de gekozen grondslag.'])+
+E('60% van 2.000 aandelen, ruilverhouding 100 tegen 15','<p>M koopt 1.200 aandelen. Daarvoor geeft M 180 eigen aandelen uit. De reële waarde is € 1.100 per eigen aandeel, de nominale waarde € 500. Daarnaast betaalt M € 250 per gekocht aandeel contant. Tegenprestatie: 180 × € 1.100 + 1.200 × € 250 = € 498.000. Bij een totale NVW van de deelneming van € 620.000 is het verworven aandeel € 372.000 en goodwill € 126.000.</p>'+
+J('M waardeert tegen NVW',[['0.. Deelneming',372000,''],['0.. Goodwill',126000,''],['0.. Aan Geplaatst aandelenkapitaal','',90000],['0.. Aan Agio','',108000],['1.. Aan Bank','',300000]]))+
+N('Aantal versus waarde','Controleer telkens of een bijbetaling per gekocht aandeel, per ruilpakket of per uitgegeven aandeel luidt. Die formuleringen leveren verschillende bedragen op.'),
+['S1|§5–6, p. 15–20; art. 2:389 leden 2 en 7 BW','E21O|Ahorn, vraag 1–2, p. 2','E23A|Moneglia, vraag 2–3, p. 4']),
+L('resultaat-deelneming','kap','Resultaat, verloop en aansluiting van de deelneming','Werk in drie staten: resultaatbrug, verloop van de deelneming en aansluiting op het aangepaste eindvermogen. Daarmee controleer je zowel de winst als de balans.',
+T(['Staat','Berekening','Belangrijk verschil'],[
+['Resultaatbrug','Dochterresultaat +/− resultaatcorrecties naar moedergrondslagen; daarna het winstaandeel.','Een afname van een bij aankoop extra gevormde voorziening kan een vrijval opleveren.'],
+['Verloop deelneming','Beginboekwaarde + winstaandeel − dividend +/− rechtstreekse vermogensmutaties en overige voorgeschreven correcties.','Goodwill wordt in een aparte verloopstaat gevolgd.'],
+['Eindvermogensaansluiting','Eigen vermogen dochter op einddatum +/− nog resterende waarderingsverschillen; daarna het aandeel.','Gebruik eindstanden, niet opnieuw de gehele oorspronkelijke aankoopcorrectie.']])+
+E('Fenn: resultaat herrekenen',T(['Resultaatbrug','Bedrag (€)'],[['Resultaat volgens Fenn',240000],['Extra gebouwafschrijving: 120.000 / 20',-6000],['Voorraadverschil van 30.000 naar 18.000: vrijval',12000],['Garantieverschil van 40.000 naar nihil: vrijval',40000],['Resultaat volgens moedergrondslagen',286000],['Aandeel M: 80%',228800]])+
+J('Resultaat en gedeclareerd dividend van totaal € 50.000',[['0.. Deelneming Fenn',228800,''],['9.. Aan Resultaat deelneming','',228800]])+
+J('Dividend nog niet betaald',[['1.. Te vorderen dividend',40000,''],['0.. Aan Deelneming Fenn','',40000]]))+
+'<h3>Rechtstreekse vermogensmutaties</h3><p>Wanneer de deelneming een waardestijging rechtstreeks in een herwaarderingsreserve verwerkt en de gekozen grondslagen dat ook bij M vereisen, neemt M haar aandeel op in deelneming tegenover de passende reserve. Dit is niet hetzelfde als resultaat deelneming. Bij realisatie volgt de in de syllabus beschreven vrijval of reclassificatie van de reserve. Controleer daarnaast of een wettelijke reserve deelneming nodig is.</p>',
+['S1|§5.1.2–5.1.4 en §7, p. 16–24; art. 2:389 leden 2–3 en 6 BW','E24A|vraag 4–6, p. 4','E25S|Olbia, vraag 2–3, p. 2–3']),
+L('dividend','kap','Dividend: NVW, regulier HK en meegekocht HK','Bepaal eerst de waardering en de aard van de uitkering. Het tijdstip waarop het uitkeringsrecht ontstaat, is een andere vraag dan de latere betaling.',
+T(['Situatie','Bij ontstaan van het recht','Bij latere betaling'],[
+['NVW','Te vorderen dividend aan deelneming.','Bank aan te vorderen dividend.'],
+['Verkrijgingsprijs, regulier dividend','Te vorderen dividend aan opbrengst deelneming.','Bank aan te vorderen dividend.'],
+['Verkrijgingsprijs, expliciet meegekocht dividend','Te vorderen dividend aan deelneming: verlaging van de aankoopbasis.','Bank aan te vorderen dividend.'],
+['Winstbestemming bij de dochter','Verplaats het resultaat binnen het eigen vermogen volgens het besluit; een dividendbesluit schept een schuld.','Te betalen dividend aan bank.']])+
+E('Een verlies bestemmen en daarna dividend uit reserves uitkeren','<p>De dochter heeft een verlies van € 50.000 en besluit daarnaast € 30.000 uit overige reserves uit te keren. De moeder houdt 60% en waardeert tegen NVW.</p>'+
+J('Dochter: verliesbestemming',[['0.. Overige reserves',50000,''],['0.. Aan Resultaat boekjaar','',50000]])+
+J('Dochter: dividendbesluit',[['0.. Overige reserves',30000,''],['1.. Aan Te betalen dividend','',30000]])+
+J('Moeder: dividendbesluit',[['1.. Te vorderen dividend',18000,''],['0.. Aan Deelneming','',18000]])+
+'<p>De loutere winst- of verliesbestemming binnen het eigen vermogen van de dochter geeft bij de moeder geen tweede resultaatboeking. Bij een positief resultaat is de richting van de resultaatsbestemming anders dan bij dit verliesvoorbeeld.</p>')+
+N('Niet alleen naar de kalender kijken','De uitkering kort na aankoop bewijst op zichzelf niet dat sprake is van meegekocht dividend. In de oefenvragen wordt de aard van de uitkering daarom expliciet vastgelegd. De bronuitwerkingen gebruiken niet overal identieke casusgegevens; volg het gegeven uitkeringsrecht en de gekozen waardering.'),
+['S1|§5.1.2 en §8.1, p. 17 en 24–25; art. 2:389 lid 2 en 2:384 lid 1 BW','E21O|vraag 4, p. 3','A1|Westerheuvel, vraag 5, p. 7','E23O|Patti, vraag 7, p. 5']),
+L('wettelijke-reserve','kap','Wettelijke reserve deelneming','De reserve bindt niet-vrij-uitkeerbare vermogensgroei die via de vermogensmutatiemethode al bij de moeder is verantwoord. Het is geen tweede last en geen verlaging van de deelneming.',
+T(['Stap','Wat controleer je?'],[
+['1. Grondslag','Artikel 2:389 lid 6 volgt de waardering volgens lid 2 of lid 3; niet de gewone verkrijgingsprijswaardering.'],
+['2. Per deelneming','Bepaal het aandeel in cumulatief positieve resultaten en relevante rechtstreekse vermogensvermeerderingen sinds de eerste waardering.'],
+['3. Verminderingen','Neem verkregen uitkeringsrechten, rechtstreekse vermogensverminderingen en zonder beperkingen te bewerkstelligen uitkeringen in aanmerking.'],
+['4. Geen ongeoorloofde saldering','Deelnemingen met een niet-positief cumulatief resultaat worden niet gebruikt om de gebonden winst van andere deelnemingen te verminderen.'],
+['5. Mutatie boeken','Vergelijk vereist eindsaldo met de bestaande reserve; boek het verschil binnen het eigen vermogen.']])+
+E('45% winstbelang zonder vrije uitkeringsmacht','<p>Het resultaat sinds de eerste waardering is € 480.000 en de relevante dividenduitkering € 80.000. Verdere uitkeringen kunnen niet zonder beperkingen worden bewerkstelligd. Vereiste reserve: 45% × (€ 480.000 − € 80.000) = € 180.000.</p>'+
+J('Beginreserve nihil',[['0.. Overige reserves',180000,''],['0.. Aan Wettelijke reserve deelneming','',180000]]))+
+N('Meerderheidsbelang is geen blanco vrijstelling','Beoordeel de feitelijke uitkeringsmogelijkheden en beperkingen. De syllabus noemt onder meer de uitkeringstoets. Een uitkering in aandelen verlaagt de wettelijke reserve niet zoals een gewone uitkering; voorkom ook dubbele reservering van bedragen die al passend in een andere wettelijke reserve zijn gebonden.'),
+['S1|§7, p. 21–24; art. 2:389 lid 6 BW','E22A|Rosen, vraag 4, p. 3','E25A|vraag 6, p. 4']),
+L('eigen-aandelen','kap','Directe en middellijke inkoop van eigen aandelen','Ingekochte eigen aandelen worden niet als actief gepresenteerd. Scheid de inkoopprijs, het nominale kapitaal en de vraag of aandelen daadwerkelijk worden ingetrokken.',
+T(['Situatie','Verwerking in de behandelde methode'],[
+['Eigen aandelen rechtstreeks ingekocht','Verkrijgingsprijs in mindering op eigen vermogen; geen activering. Bij geen intrekking niet automatisch het geplaatste kapitaal verminderen.'],
+['Dochter houdt aandelen in de moeder','Beoordeel de middellijke inkoop bij de moeder. De uitwerkingen corrigeren eigen vermogen tegenover deelneming volgens de gekozen omvangvariant.'],
+['Aandelen al aanwezig vóór de moeder-dochterrelatie','De syllabus maakt een onderscheid naar het moment waarop die relatie ontstaat en de te gebruiken boekwaarde.'],
+['Dochter koopt eigen aandelen van de moeder terug','Beoordeel verkoopresultaat en nieuw deelnemingspercentage; de resterende boekwaarde moet aansluiten op het aandeel in het gewijzigde vermogen.']])+
+E('Directe inkoop zonder intrekking',J('Inkoop voor € 210.000 ten laste van overige reserves',[['0.. Overige reserves',210000,''],['1.. Aan Bank','',210000]]))+
+E('Middellijk eigen aandelen: expliciet de evenredige variant','<p>M koopt 80% van D voor € 600.000, waarvan € 60.000 goodwill. D bezit aandelen M met een relevante boekwaarde van € 90.000. De vraag schrijft de evenredige variant voor: 80% × € 90.000 = € 72.000.</p>'+
+J('Aankoop bij NVW',[['0.. Deelneming D',540000,''],['0.. Goodwill',60000,''],['1.. Aan Bank','',600000]])+
+J('Middellijke eigen-aandelencorrectie',[['0.. Overige reserves',72000,''],['0.. Aan Deelneming D','',72000]])+
+'<p>De deelneming resteert voor € 468.000. De goodwill blijft afzonderlijk € 60.000 vóór eventuele afschrijving.</p>')+
+N('Bronverschil zichtbaar houden','De Palau-uitwerking accepteert een volledige en een evenredige correctie. Een eigen oefenvraag moet daarom expliciet één variant voorschrijven. De verwijzing naar het niet verminderen van geplaatst kapitaal staat in het aangeleverde BW bij artikel 2:373 lid 2; de syllabus noemt op p. 29 lid 3. Deze nummeringsafwijking wordt niet als andere boekingsregel gebruikt.'),
+['S1|§10, p. 28–30; art. 2:373 lid 2, 2:378 lid 2 en 2:385 lid 5 BW','E25S|Palau, vraag 5–6, p. 3–4','E23A|Rapallo, vraag 7, p. 5']),
+L('stelselwijziging','kap','Waardemutaties, aankooplagen en verkoop','Naast de gewone resultaat- en dividendmutaties behandelt het materiaal actuele waarde, waardevermindering, overgang van waardering en verkoop. Houd de specifieke casusgrondslag zichtbaar.',
+T(['Onderwerp','Aanpak','Controle'],[
+['Actuele waarde zonder vermogensmutatiemethode','Volg de in de syllabus uitgewerkte verwerking van waardestijging via herwaarderingsreserve en waardedaling eerst tegen de aanwezige reserve.','Een daling boven de beschikbare reserve is niet automatisch geheel een reservemutatie.'],
+['Waardevermindering bij verkrijgingsprijs','Vergelijk boekwaarde met de volgens de casus relevante lagere waarde.','Verwar een afwaardering niet met de gewone winst van de deelneming.'],
+['Overgang van verkrijgingsprijs naar vermogensmutatie','Werk per aankooplaag de vermogensbasis, goodwill en verstreken afschrijving uit; boek de voorgeschreven overgangsmutatie.','Eindwaarde deelneming aansluiten op het aandeel in het eindvermogen.'],
+['Verkoop van een deelneming','Actualiseer eerst resultaat, dividend, goodwill en eventueel nog uitgestelde IC-winst volgens de casus; bepaal daarna verkoopresultaat.','Vergelijk opbrengst met de resterende deelneming en afzonderlijke goodwill, niet alleen de oorspronkelijke koopsom.']])+
+E('Actuele waarde: stijging en latere daling','<p>Een belang heeft een verkrijgingsprijs van € 120.000. De actuele waarde stijgt naar € 150.000 en daalt daarna naar € 90.000.</p>'+
+J('Waardestijging',[['0.. Deelneming',30000,''],['0.. Aan Herwaarderingsreserve deelneming','',30000]])+
+J('Latere waardedaling',[['0.. Herwaarderingsreserve deelneming',30000,''],['9.. Waardedaling deelneming',30000,''],['0.. Aan Deelneming','',60000]]))+
+E('Overgang: oud belang en nieuwe aankoop niet samenvoegen','<p>De uitwerking Mulini behandelt een oud 35%-belang en een in het jaar verkregen 25%-belang. Het oude belang wordt afzonderlijk naar het aandeel in het eindvermogen gebracht. Bij de nieuwe aankoop wordt de resterende goodwill afgesplitst en de vermogensmutatie verwerkt. Het totale 60%-belang sluit uiteindelijk aan op 60% van het relevante eindvermogen; goodwill staat daar apart naast. Neem afschrijvingsdata en rekeningkeuzes uit de concrete opgave over.</p>')+
+N('Geen universele overgangsboeking','De bronvoorbeelden verschillen in aankoopmoment, reeds verstreken goodwillduur, meegekocht dividend en gekozen vermogensmutatiegrondslag. Gebruik daarom per laag een aansluiting, niet één onthouden journaalpost voor alle overgangen.'),
+['S1|§8–9, p. 24–27; art. 2:384 en 2:387 BW','A1B|Fort, p. 5; Manting, p. 6; Purmer, p. 7–9','E24S|Mulini, vraag 3–4, p. 4']),
+L('consolidatieplicht','kap','Consolidatieplicht, kring en vrijstellingen','Toets eerst wie moet consolideren, daarna welke financiële gegevens daarin horen en pas vervolgens of een wettelijke uitzondering geldt.',
+T(['Onderdeel','Inhoud van de toets'],[
+['Plicht: art. 2:406 lid 1','Rechtspersoon die alleen of samen met een andere groepsmaatschappij aan het hoofd van de groep staat.'],
+['Plicht: art. 2:406 lid 2','Tussenhoudster met een dochter of andere onder de bepaling vallende rechtspersoon binnen haar groepsdeel.'],
+['Kring','Eigen gegevens, dochtermaatschappijen in de groep, andere groepsmaatschappijen en de in art. 2:406 bedoelde andere rechtspersonen onder overheersende zeggenschap of centrale leiding.'],
+['Art. 2:407 lid 1','Afzonderlijke uitzonderingen voor gezamenlijk te verwaarlozen betekenis, uitsluitend tegen onevenredige kosten of vertraging te verkrijgen gegevens, of een belang dat uitsluitend wordt gehouden om het te vervreemden. Toets de casusvoorwaarde.'],
+['Art. 2:407 lid 2','Vrijstelling voor kleine groepen volgens de wettelijke voorwaarden, waaronder omvang, effectenstatus en tijdig bezwaar door de voorgeschreven minderheid.'],
+['Art. 2:407 lid 3','Bijzondere in de syllabus behandelde situatie van beheer en financiering van belangen die krachtens een samenwerkingsregeling gezamenlijk worden bestuurd.'],
+['Art. 2:408','Tussenhoudstervrijstelling wanneer aan alle voorwaarden voor opname in een grotere consolidatie en de overige formaliteiten is voldaan.'],
+['Art. 2:409','Evenredige opname bij gezamenlijke zeggenschap krachtens samenwerking, mits het wettelijke inzicht daarmee is gediend.']])+
+'<h3>De voorwaarden van artikel 2:408 niet inkorten tot “de moeder consolideert”</h3><p>Controleer het tijdige bezwaar van de voorgeschreven minderheid, opname van het gehele relevante groepsdeel in de grotere consolidatie, de kwaliteit van de verslaggevingsregels en accountantscontrole, de vereiste stukken en taal, tijdige openbaarmaking en vermelding van het gebruik van de vrijstelling. De syllabus noemt voor het bezwaar 10% binnen zes maanden na aanvang van het boekjaar. Zij behandelt ook de uiterste publicatietermijnen en de uitsluiting voor de betrokken beursgenoteerde situatie. Toets deze voorwaarden aan de meegeleverde wettekst, niet aan een algemene aanname over concerns.</p>'+
+E('Groepshoofd P, tussenholding S en werkmaatschappij D','<p>P is groepshoofd en houdt S; S houdt D. Bij een economische en organisatorische eenheid moet P in beginsel de hele groep consolideren. S kan daarnaast voor het eigen groepsdeel consolidatieplichtig zijn. Alleen wanneer de voorwaarden van een toepasselijke vrijstelling zijn vervuld, kan S die eigen consolidatie achterwege laten. Dat P al consolideert is op zichzelf geen volledige motivering.</p>')+
+N('Dochter is niet hetzelfde als consolidatiekring','Let op “in de groep” en op andere rechtspersonen onder overheersende zeggenschap of centrale leiding. Omgekeerd is een joint venture niet alleen vanwege 50% aandelen automatisch een gewone integraal te consolideren dochter. De onderlinge regeling en de wettelijke toets blijven nodig.'),
+['S1|§11, p. 31–37; art. 2:24b en 2:406–409 BW','C3|Unischelp, dia 25–33','E25A|vraag 8, p. 5–6','E24S|vraag 7–8, p. 6'])
+];
