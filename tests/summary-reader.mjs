@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {chapters,topicTitles} from '../content/summary/reader-chapters.mjs';
+const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const html=read('samenvatting.html'),js=read('js/summary-reader.js'),css=read('css/summary-reader.css');
+const manifest=JSON.parse(read('docs/summary-reader-manifest.json'));
+assert.equal(chapters.length,7);assert.equal(manifest.chapters,7);assert.equal(manifest.sections,24);assert.equal(manifest.preservedTopics,40);assert.equal(manifest.views,12);
+assert.ok(manifest.addedExplanationWords>3500,'Doorlopende uitleg toegevoegd; niet alleen bestaande tabellen hergroeperen.');
+const parts=chapters.flatMap(c=>c.sections.flatMap(s=>s.parts));assert.equal(parts.length,40);assert.equal(new Set(parts).size,40);
+for(const c of chapters){assert.ok(c.title.length<40);assert.ok(c.intro.length>=2);for(const s of c.sections){assert.ok(s.text.length>=2);assert.ok(s.parts.length>0);for(const id of s.parts){assert.ok(topicTitles[id]);assert.ok(html.includes('data-lesson="'+id+'"'));}}}
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(ids.length,new Set(ids).size,'Unieke ankers, ook in de twee navigatiemenu’s.');
+for(const x of html.matchAll(/href="#([^"]+)"/g))assert.ok(ids.includes(x[1]),'Alle hoofdstuk-, onderwerp- en bronlinks blijven geldig: '+x[1]);
+assert.equal((html.match(/data-view="/g)||[]).length,12);assert.equal((html.match(/data-chapter="/g)||[]).length,7);
+assert.equal((html.match(/class="reader-section"/g)||[]).length,24);
+assert.ok(!html.includes('id="lesson-picker"'),'Geen lange native keuzelijst op mobiel.');
+assert.ok(html.includes('id="reader-mobile-menu"'));assert.ok(!html.includes('src="js/summary.js'),'Oude en nieuwe routers niet tegelijk laden.');
+assert.ok(js.includes('cafa2-summary-understood-v2'),'Bestaande onderwerpmarkeringen behouden.');
+assert.ok(!js.includes('KERNEL_RUNTIME'));new vm.Script(js);
+assert.ok(css.includes('.reader-layout .study-table-scroll{margin:8px 0 12px'));
+assert.ok(css.includes('.reader-section>summary'));
+assert.ok(html.includes('id="kernel-form"')&&html.includes('id="glossary-search"'));
+assert.ok(html.includes('€ 408.000'),'Doorlopend verwervings-, resultaat- en dividendvoorbeeld uit Deel 1.');
+console.log(`Leesstructuur gevalideerd: 7 hoofdstukken, 24 paragrafen, alle 40 onderwerpankers, ${manifest.addedExplanationWords} woorden nieuwe verbindende uitleg.`);
