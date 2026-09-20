@@ -1,0 +1,43 @@
+name: CAFA2 reader review
+on:
+  push:
+    branches: [summary-reader-sra-20260920]
+    paths: [.github/workflows/summary-reader-review.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build connected summary
+        run: |
+          node scripts/prepare-summary-reader.mjs
+          node scripts/build-learning-revision.mjs
+      - name: Verify content preservation and navigation structure
+        run: |
+          npm test
+          node tests/summary-ui.mjs
+          cp samenvatting.html /tmp/reader-first.html
+          node scripts/build-learning-revision.mjs
+          cmp samenvatting.html /tmp/reader-first.html
+      - name: Read SRA reference without modifying its repository
+        continue-on-error: true
+        run: |
+          curl --fail --location --silent --show-error 'https://raw.githubusercontent.com/HMA9K/SRA/main/SRA%20interactieve%20samenvatting.html' -o /tmp/sra-reference.html
+      - name: Inspection snapshot
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-reader.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-reader-inspection
+          path: |
+            /tmp/cafa2-reader.tar
+            /tmp/sra-reference.html
+          retention-days: 2
