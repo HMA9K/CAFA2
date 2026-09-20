@@ -5,7 +5,9 @@
     "kap": {
       "questions": 30,
       "caseTables": [
-        23
+        23,
+        24,
+        25
       ],
       "unchangedAnswerAndFactDigest": "3693a48853ec15d2580927c3f079731717eedf613e3a544c8530d4cd0529be71"
     },
