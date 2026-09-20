@@ -35,6 +35,12 @@ for(const [code,name]of Object.entries(modules)){
  assert.equal(rules.size,30,'Geen generieke herhaling binnen '+code);
 }
 for(const m of Object.values(c.window.CAFA2_DATA.modules))for(const q of m.questions)if(/(?:de|een) (?:casus)?tabel/.test(q.task))assert.ok(q.caseTables.length,'Elke verwijzing naar een gegeven tabel heeft een eigen tabel: '+m.title+' '+q.id);
+let completedStockCount=0;
+for(const m of Object.values(c.window.CAFA2_DATA.modules))for(const q of m.questions)for(const t of q.caseTables){
+ if(t.completed){completedStockCount++;assert.notEqual(q.type,'Voorraadtabel');for(const row of t.rows.slice(1))assert.ok(Math.abs(row[2]-row.slice(3).reduce((sum,n)=>sum+(Number(n)||0),0))<.005,'Stock allocation reconciles: '+q.id);}
+ if(q.type==='Voorraadtabel')assert.ok(!t.completed,'No solution disclosed for table-construction tasks');
+}
+assert.equal(completedStockCount,23);
 assert.equal(total,120);assert.ok(caseCount>=47);
 const summary=read('samenvatting.html');assert.equal((summary.match(/data-lesson=/g)||[]).length,ids.size);assert.equal((summary.match(/data-glossary-entry/g)||[]).length,glossary.length);
 const htmlIds=Array.from(summary.matchAll(/\bid="([^"]+)"/g),m=>m[1]);assert.equal(new Set(htmlIds).size,htmlIds.length,'Geen dubbele HTML-IDs');
