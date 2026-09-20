@@ -1,0 +1,59 @@
+name: CAFA2 mobile table review
+on:
+  push:
+    branches: [mobile-table-readability-20260921]
+    paths: [.github/workflows/mobile-table-review.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/mobile-table-readability-20260921'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build presentation-only update
+        run: |
+          node scripts/prepare-mobile-tables.mjs
+          node scripts/build-summary-reader.mjs
+          npm test
+          node tests/summary-ui.mjs
+          node tests/mobile-table-layout.mjs
+          cp samenvatting.html /tmp/first-summary.html
+          node scripts/build-summary-reader.mjs
+          cmp samenvatting.html /tmp/first-summary.html
+          git diff --exit-code -- data fragments fallback index.html js/app.js js/exams.js js/exam-engine.js content/summary/kap.mjs content/summary/val.mjs content/summary/cons.mjs content/summary/glossary.mjs content/summary/reader-chapters.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare browsers
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium webkit
+      - name: Check real table readability and existing behavior
+        env:
+          TEST_WEBKIT: '1'
+        run: |
+          python tests/mobile-table-browser.py
+          python tests/reader-browser.py
+      - name: Commit only tested generated files
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/mobile-table-readability-20260921'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/build-summary-reader.mjs content/summary/runtime.js js/summary-reader.js samenvatting.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build mobile-readable tables without changing approved CAFA2 content'
+            git push origin HEAD:mobile-table-readability-20260921
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-table-browser-review
+          path: /tmp/cafa2-mobile-tables/
+          if-no-files-found: ignore
+          retention-days: 7
