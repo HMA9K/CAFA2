@@ -24,14 +24,16 @@ edit('tests/summary-ui.mjs',s=>{
 });
 edit('js/ic-learning-engine.mjs',s=>s.replace('Math.abs(sum)>.031','Math.abs(sum)>.005'));
 edit('js/bootstrap.js',s=>{
- if(s.includes('Retarget a fragment inserted after navigation'))return s;
- return s.replace('function finishBootReady() {',`function finishBootReady() {
-    // Retarget a fragment inserted after navigation: :target is not always updated
-    // when the requested question did not exist in the initial document.
-    var initialHash = location.hash;
-    if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1))) {
-      history.replaceState(history.state, '', location.pathname + location.search);
-      location.replace(initialHash);
-    }`);
+ if(s.includes('Restore an existing question deep link after'))return s;
+ const anchor="      if(root.CafaStartup)root.CafaStartup.finish();\n";
+ if(!s.includes(anchor))throw Error('Het gecontroleerde bootstrap-aansluitpunt ontbreekt.');
+ return s.replace(anchor,anchor+`      // Restore an existing question deep link after asynchronous fragments exist.
+      // Replacing the URL avoids adding an extra navigation-history entry.
+      var initialHash = location.hash;
+      if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {
+        history.replaceState(history.state, '', location.pathname + location.search);
+        location.replace(initialHash);
+      }
+`);
 });
 console.log('Idempotente migratie van de bronstructuur en kwaliteitscontroles gereed.');
