@@ -1,0 +1,144 @@
+/* Presentation only. Keep row labels intact at every screen width, including tablets. */
+@media screen {
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] th:first-child {
+    white-space:nowrap;
+    -webkit-hyphens:none;
+    hyphens:none;
+  }
+}
+/* Mobile reflow. Desktop and printed tables retain their structure. */
+@media screen and (max-width:760px) {
+  .reader-layout .study-table th,
+  .reader-layout .study-table td {
+    -webkit-hyphens:none;
+    hyphens:none;
+    word-break:normal;
+    overflow-wrap:normal;
+  }
+  .reader-layout .study-table [data-cell-value="true"] {
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* The identical table cells are reflowed, not shortened or duplicated. */
+  .reader-layout .study-table-scroll[data-table-kind="prose"] {
+    overflow:visible;
+    border:0;
+    border-radius:0;
+  }
+  .reader-layout .study-table-scroll[data-table-kind="prose"][tabindex]:before { display:none; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] {
+    display:block;
+    width:100%;
+    min-width:0;
+    font-size:max(14px, .9em);
+    line-height:1.5;
+    border:0;
+    background:transparent;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] caption {
+    display:block;
+    padding:8px 0;
+    background:transparent;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] thead {
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody { display:block; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody tr {
+    display:block;
+    margin:0 0 9px;
+    border:1px solid #dedfe7;
+    border-radius:4px;
+    overflow:hidden;
+    background:white;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody tr:last-child { margin-bottom:0; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody th,
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody td {
+    display:block;
+    width:auto;
+    min-width:0;
+    border:0;
+    padding:8px 10px;
+    text-align:left;
+    white-space:normal;
+    overflow-wrap:break-word;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody th {
+    background:#f0f1f6;
+    color:#353247;
+    font-size:1.03em;
+    font-weight:700;
+    border-bottom:1px solid #dedfe7;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody td+td { border-top:1px solid #ececf2; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="prose"] tbody td:before {
+    content:attr(data-label);
+    display:block;
+    font-size:.84em;
+    font-weight:700;
+    color:#686173;
+    margin:0 0 3px;
+  }
+
+  /* Fixed, readable column proportions even in a completely blank stock table. */
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] {
+    width:100%;
+    min-width:68em;
+    table-layout:fixed;
+    font-size:max(13px, .84em);
+    line-height:1.4;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(1) { width:14%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(2) { width:12%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(3) { width:25%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(4) { width:14%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(5) { width:17%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:nth-child(6) { width:18%; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] th,
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] td { padding:7px 8px; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] th:first-child {
+    white-space:nowrap;
+    position:sticky;
+    left:0;
+    z-index:1;
+    background:#fcfcfe;
+    box-shadow:1px 0 0 #707078;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] thead th:first-child {
+    z-index:2;
+    background:#f0f1f6;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] tbody td { white-space:nowrap; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="stock"] tbody tr:last-child th { background:#f2f7f5; }
+  .reader-layout .study-table-scroll[data-table-kind="stock"] {
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+  }
+  .reader-layout .study-table-scroll[data-table-kind="stock"][tabindex]:before {
+    content:'Veeg opzij voor alle kolommen ↔';
+    display:block;
+    font-size:11px;
+    padding:5px 7px;
+    color:#6b6775;
+    background:#f5f7fa;
+  }
+
+  .reader-layout .study-table-scroll .study-table[data-table-kind="journal"] {
+    min-width:24em;
+    font-size:max(13px, .84em);
+    table-layout:auto;
+  }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="journal"] td { white-space:nowrap; }
+  .reader-layout .study-table-scroll .study-table[data-table-kind="journal"] th:first-child { width:60%; }
+}
