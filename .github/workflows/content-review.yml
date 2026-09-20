@@ -1,0 +1,28 @@
+name: CAFA2 content review
+on:
+  push:
+    branches: [cafa2-inhoud-revisie-20260920]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: [kap, val, nvw, hk]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Question inventory
+        run: node scripts/audit-content.mjs ${{ matrix.module }}
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
