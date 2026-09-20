@@ -10,12 +10,7 @@ edit('scripts/build-learning-revision.mjs',s=>{
 });
 edit('content/summary/glossary.mjs',s=>s.replace("'Wisselkoers op de balansdatum.'","'De wisselkoers die geldt op de datum van de balans en voor de daarvoor aangewezen eindstanden wordt gebruikt.'"));
 edit('tests/content-revision.mjs',s=>s.replace('(text.match(/class="pattern learning-pattern"/g)||[]).length,1','(text.match(/class="pattern learning-pattern"/g)||[]).length,2').replace('caseCount>=50','caseCount>=45'));
-edit('tests/revision-browser.py',s=>{
- s=s.replace("await q.locator('.learning-pattern p').count()==3","await q.locator('.learning-pattern p').count()==6");
- const before="        for code in ['kap','val','nvw','hk']:";
- if(!s.includes('PRACTICE BOOT'))s=s.replace(before,"        print('PRACTICE BOOT', await page.evaluate(\"JSON.stringify({url:location.href,body:document.body.className,target:document.querySelector(':target')?.id,errors:[]})\"),flush=True)\n"+before);
- return s;
-});
+edit('tests/revision-browser.py',s=>s.replace("await q.locator('.learning-pattern p').count()==3","await q.locator('.learning-pattern p').count()==6"));
 edit('tests/summary-ui.mjs',s=>{
  s=s.replace("assert.equal((summary.match(/data-lesson=/g) || []).length, 12, 'Samenvatting bevat twaalf lessen');","assert.equal((summary.match(/data-lesson=/g) || []).length, 45, '40 inhoudelijke hoofdstukken en vijf hulpmiddelpagina’s');");
  const begin=s.indexOf("for (const code of ['kap', 'val', 'nvw', 'hk']) {");
@@ -25,15 +20,16 @@ edit('tests/summary-ui.mjs',s=>{
 edit('js/ic-learning-engine.mjs',s=>s.replace('Math.abs(sum)>.031','Math.abs(sum)>.005'));
 edit('js/bootstrap.js',s=>{
  if(s.includes('Restore an existing question deep link after'))return s;
- const anchor="      if(root.CafaStartup)root.CafaStartup.finish();\n";
- if(!s.includes(anchor))throw Error('Het gecontroleerde bootstrap-aansluitpunt ontbreekt.');
- return s.replace(anchor,anchor+`      // Restore an existing question deep link after asynchronous fragments exist.
-      // Replacing the URL avoids adding an extra navigation-history entry.
-      var initialHash = location.hash;
-      if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {
-        history.replaceState(history.state, '', location.pathname + location.search);
-        location.replace(initialHash);
-      }
+ const anchor=/^[ \t]*if\s*\(root\.CafaStartup\)\s*root\.CafaStartup\.finish\(\);[ \t]*$/m;
+ if(!anchor.test(s))throw Error('Het gecontroleerde bootstrap-aansluitpunt ontbreekt.');
+ return s.replace(anchor,match=>match+`
+    // Restore an existing question deep link after asynchronous fragments exist.
+    // Replace the URL without adding a second navigation-history entry.
+    var initialHash = location.hash;
+    if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {
+      history.replaceState(history.state, '', location.pathname + location.search);
+      location.replace(initialHash);
+    }
 `);
 });
 console.log('Idempotente migratie van de bronstructuur en kwaliteitscontroles gereed.');
