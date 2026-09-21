@@ -1,0 +1,27 @@
+name: CAFA2 study upgrade review
+on:
+  push:
+    branches: [cafa2-navigatie-wetboek-20260921]
+    paths: [.github/workflows/study-upgrade-review.yml, scripts/**, content/**, tests/**, js/study-*.js, css/study-*.css, kapitaalbelangen.html]
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-study-upgrade-review
+  cancel-in-progress: true
+jobs:
+  review:
+    if: github.ref == 'refs/heads/cafa2-navigatie-wetboek-20260921'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Snapshot current source tree
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-current-source.tar .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cafa2-current-source
+          path: /tmp/cafa2-current-source.tar
+          retention-days: 2
