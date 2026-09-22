@@ -1,0 +1,90 @@
+name: CAFA2 SRA calculator review
+on:
+  push:
+    branches: [cafa2-rekenmachine-sra-20260922]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-calculator-review
+  cancel-in-progress: true
+jobs:
+  review:
+    if: github.ref == 'refs/heads/cafa2-rekenmachine-sra-20260922'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize locally reviewed calculator changes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,lzma,shutil
+          root=Path('.').resolve();folder=root/'content/calculator-bootstrap'
+          if folder.exists():
+              raw=b''.join(p.read_bytes() for p in sorted(folder.glob('*.part')))
+              assert hashlib.sha256(raw).hexdigest()=='90d75749c46879bd6e4ac98be60881dc83cbc4407fc1d12c90afb7c0f3d7e694'
+              bundle=json.loads(lzma.decompress(raw))
+              for relative,item in bundle.items():
+                  path=root/relative
+                  assert path.resolve().is_relative_to(root) and not relative.startswith(('.git','/'))
+                  if item['base'] is None:
+                      assert not path.exists(),relative
+                  else:
+                      assert hashlib.sha256(path.read_bytes()).hexdigest()==item['base'],relative
+                  if 'text' in item:
+                      text=item['text']
+                  else:
+                      text=path.read_text()
+                      for start,end,replacement in reversed(item['changes']):
+                          text=text[:start]+replacement+text[end:]
+                  assert hashlib.sha256(text.encode()).hexdigest()==item['sha256'],relative
+                  path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
+              shutil.rmtree(folder)
+          PY
+      - name: Install isolated test dependencies
+        run: |
+          python -m pip install -q tinycss2 playwright
+          python -m playwright install --with-deps chromium webkit >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Build and validate unchanged course content
+        run: |
+          npm run build:study
+          npm test
+      - name: Check floating calculator and existing study interactions
+        run: python tests/study-refinement-browser.py
+      - name: Check SRA layout, input, arithmetic, focus and persistence
+        run: python tests/calculator-browser.py
+      - name: Commit only after checks pass
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-rekenmachine-sra-20260922'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content css data docs fallback fragments js scripts tests index.html samenvatting.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Apply verified SRA calculator layout with toolbar opener and retained study progress'
+            git push origin HEAD:cafa2-rekenmachine-sra-20260922
+          fi
+      - name: Capture source for review
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-calculator-source.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-calculator-source
+          path: /tmp/cafa2-calculator-source.tar
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-calculator-review
+          path: |
+            /tmp/cafa2-calculator-review/
+            /tmp/cafa2-refinement-review/
+          if-no-files-found: ignore
+          retention-days: 7

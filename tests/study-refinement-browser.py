@@ -105,10 +105,11 @@ async def run():
     assert await page.locator('.chapter-orientation').count()==7
     assert await page.locator('#kapitaalbelangen .chapter-orientation').is_visible()
     await shot('chapter-orientation')
-    await page.locator('.calculator-fab').click()
+    await page.locator('.calculator-toolbar-trigger').click()
     assert await page.locator('#calculator-dialog').is_visible();assert await page.locator('dialog:modal').count()==0
     await page.locator('[data-calc-key="7"]').click();await page.locator('[data-calc-key="+"]').click();await page.locator('[data-calc-key="5"]').click();await page.locator('[data-calc-key="="]').click()
     assert await page.locator('.calc-output').inner_text()=='12'
+    await page.locator('.calc-extra > summary').click()
     await page.locator('[data-calc-key="M+"]').click()
     pos=await page.locator('#calculator-dialog').bounding_box();handle=page.locator('.calculator-handle');await handle.focus();await page.keyboard.press('ArrowLeft')
     moved=await page.locator('#calculator-dialog').bounding_box();assert moved['x']<pos['x']
@@ -123,11 +124,11 @@ async def run():
     await page.set_viewport_size({'width':320,'height':640});await page.wait_for_timeout(100)
     rect=await page.locator('#calculator-dialog').bounding_box();assert rect['x']>=0 and rect['x']+rect['width']<=321,rect
     assert rect['y']>=0 and rect['y']+rect['height']<=641,rect
-    await shot('calculator-mobile');await page.locator('[data-calc-close]').click();await page.locator('.calculator-fab').click()
+    await shot('calculator-mobile');await page.locator('[data-calc-close]').click();await page.locator('.calculator-toolbar-trigger').click()
     assert await page.locator('.calc-output').inner_text()=='12';await page.locator('[data-calc-close]').click()
     if not OFFLINE:
      await page.goto(base+'/index.html#oefenen',wait_until='networkidle');await page.wait_for_function('!!window.CafaPractice&&!!window.CafaCalculator')
-     await page.locator('.calculator-fab').click();assert await page.locator('.calc-output').inner_text()=='12'
+     await page.locator('.calculator-toolbar-trigger').click();assert await page.locator('.calc-output').inner_text()=='12'
      assert (await page.evaluate('CafaCalculator.getState()'))['memory']==12
      await page.goto(base+'/samenvatting.html#tentamen',wait_until='networkidle')
     else:await view('tentamen')
