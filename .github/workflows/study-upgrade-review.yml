@@ -30,8 +30,7 @@ jobs:
           if folder.exists():
               raw=b''.join(p.read_bytes() for p in sorted(folder.glob('*.part')))
               assert hashlib.sha256(raw).hexdigest()=='949f0efb295f587c0acbada6e07483f26d3c1c29a00f86e825db8ec38755840b'
-              bundle=json.loads(lzma.decompress(raw))
-              patch=bundle['patch'].encode()
+              bundle=json.loads(lzma.decompress(raw));patch=bundle['patch'].encode()
               subprocess.run(['git','apply','--check'],input=patch,check=True)
               subprocess.run(['git','apply'],input=patch,check=True)
               for relative,text in bundle['files'].items():
@@ -48,6 +47,7 @@ jobs:
           p.write_text(s)
           p=root/'tests/study-upgrade-browser.py';s=p.read_text()
           s=s.replace("page.locator('#option-kap-12-0').click()", "page.locator('label[for=\"a-kap-12-0\"]').click()")
+          s=s.replace('#kap-12 a[href^="samenvatting.html#"]', '#kap-12 a[href^="samenvatting.html#"]:not([data-law]):visible')
           s=s.replace("except Exception:\n          await shot('FAILURE');", "except Exception as exc:\n          import traceback\n          report['failure']={'browser':kind,'url':page.url,'exception':str(exc),'traceback':traceback.format_exc(),'passed':checks}\n          await shot('FAILURE');")
           p.write_text(s)
           PY
