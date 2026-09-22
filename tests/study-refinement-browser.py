@@ -37,7 +37,7 @@ async def run():
      await page.evaluate("id=>{document.querySelectorAll('section[data-view],article[data-view]').forEach(x=>x.hidden=x.id!==id);scrollTo(0,0)}",id)
     else:await page.evaluate('(id)=>location.hash=id',id)
     await page.locator('#'+id).wait_for(state='visible');await page.wait_for_timeout(100)
-   async def choice(field,value):await page.locator(f'[data-capital-field="{field}"][data-capital-value="{value}"]').click()
+   async def choice(field,value):await page.locator(f'[data-capital-field="{field}"][data-capital-value="{value}"]').first.click()
    async def stage(id):await page.locator('[data-capital-stage='+id+']').click()
    async def shot(name):await page.screenshot(path=str(OUT/(kind+'-'+name+'.png')),full_page=False)
    try:
@@ -45,9 +45,11 @@ async def run():
     else:await page.goto(base+'/samenvatting.html#kapitaalboom',wait_until='networkidle')
     await view('kapitaalboom')
     assert await page.locator('#kapitaalboom select,#kapitaalboom details').count()==0
-    assert await page.locator('#kapitaalboom .route-stage:visible').count()==1
+    assert await page.locator('#kapitaalboom .route-stage:visible').count()==3
+    assert await page.locator('#kapitaalboom .capital-context').is_visible()
     assert await page.locator('#capital-classify').is_visible()
     await choice('participation','yes');await stage('value')
+    assert await page.locator('#capital-classify').is_visible() and await page.locator('#capital-value').is_visible()
     await choice('influence','yes');await choice('information','yes')
     assert 'Nettovermogenswaarde (NVW)' in await page.locator('#capital-value-result').inner_text()
     await choice('information','no');assert 'Andere vermogensmutatiewaarde' in await page.locator('#capital-value-result').inner_text()
@@ -57,11 +59,15 @@ async def run():
     await stage('classify');await choice('subsidiary','yes');await choice('group','no');await choice('participation','no')
     state=await page.evaluate('CafaCapital.getState()');assert state['subsidiary']=='yes' and state['group']=='no','Independent classifications preserved'
     await stage('value');assert 'Geen deelneming' in await page.locator('#capital-value-result').inner_text()
-    await stage('classify');await choice('holder','person');await stage('value');assert 'Geen waarderingsuitkomst' in await page.locator('#capital-value-result').inner_text()
+    await page.locator('[data-capital-reset]').click();assert await page.locator('[data-capital-field="holder"]').count()==0
+    await choice('target','partnership');assert await page.locator('#capital-qualifications [data-route-question="participation"] [data-capital-field="participation"]').count()==3
+    await stage('value');assert await page.locator('#capital-value-questions [data-route-question="participation"]').is_visible()
+    await choice('participation','yes');assert await page.locator('#capital-value-questions [data-route-question="influence"]').is_visible()
     await page.locator('[data-capital-reset]').click();await stage('consolidate');await choice('head','group')
     assert 'art. 2:406 lid 1' in await page.locator('#capital-consolidation-result').inner_text()
     await choice('head','part');assert 'art. 2:406 lid 2' in await page.locator('#capital-consolidation-result').inner_text()
-    checks.append('All valuation paths update immediately; independent classifications, reset and group-head/part branches')
+    overview=await page.locator('#capital-route-overview').inner_text();assert 'Jouw route in één overzicht' in overview and 'Classificatie' in overview and 'Waardering' in overview and 'Consolidatie' in overview
+    checks.append('All three stages remain visible; valuation paths update immediately; independent classifications, VOF target, live overview, reset and group-head/part branches')
     # The quoted paragraphs must reconstruct the literal source exactly even with highlighting.
     trigger=page.locator('#capital-consolidation-result [data-law="407"]').first
     await trigger.click();await page.locator('#study-law-popover').wait_for(state='visible')

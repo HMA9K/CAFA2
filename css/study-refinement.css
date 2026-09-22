@@ -20,3 +20,38 @@ html[data-study-theme=dark]{--law-highlight:#62501b;--law-highlight-ink:#fff2b5;
 @media print{.route-stage[hidden]{display:block!important}.route-step-navigation{display:none!important}}
 
 :root[data-study-theme="dark"] .route-options button[aria-pressed="true"],:root[data-study-theme="dark"] .route-map button[aria-pressed="true"]>span,:root[data-study-theme="dark"] .route-step,:root[data-study-theme="dark"] .exam-route-tabs button[aria-pressed="true"]{color:#102629}
+
+/* Doorlopende kapitaalroute: geen wizard die eerdere stappen verbergt. */
+.capital-route .capital-context,
+.capital-route .route-stage{display:block!important}
+.capital-route .route-stage{position:relative;padding-left:34px;margin:24px 0 32px}
+.capital-route .route-stage:before{content:'';position:absolute;left:13px;top:31px;bottom:-32px;width:2px;background:var(--route-line)}
+.capital-route #capital-consolidate:before{bottom:0}
+.capital-route .route-stage>h2{margin-left:-34px!important}
+.capital-route .route-map button[aria-pressed=true]{box-shadow:inset 0 -3px 0 var(--study-accent)}
+.capital-route .route-step-navigation{display:none!important}
+.route-fixed-holder{min-width:260px;padding:10px 12px;border:1px solid var(--study-line);border-radius:8px;background:var(--study-wash)}
+.route-fixed-holder strong{display:block;font-size:14px;color:var(--study-ink)}
+.route-fixed-holder small{display:block;margin-top:4px;max-width:360px;font-size:11px;line-height:1.45;color:var(--study-muted)}
+.route-overview{margin:32px 0 24px;padding:20px;border:1px solid var(--study-line);border-radius:12px;background:var(--study-wash)}
+.route-overview header{margin-bottom:14px}
+.route-overview header h2{font-size:22px!important;margin:3px 0!important}
+.route-overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.route-overview-grid article{min-width:0;padding:14px;border:1px solid var(--study-line);border-radius:9px;background:var(--study-surface)}
+.route-overview-grid h3{font-size:15px!important;margin:0 0 9px!important;color:var(--study-ink)!important}
+.route-overview-row{display:grid;grid-template-columns:minmax(110px,.8fr) minmax(0,1.2fr);gap:4px 10px;align-items:start;padding:8px 0;border-top:1px solid var(--study-line);font-size:12px}
+.route-overview-row:first-of-type{border-top:0}
+.route-overview-row>span{color:var(--study-muted)}
+.route-overview-row>strong{color:var(--study-ink);font-size:12px;overflow-wrap:anywhere}
+.route-overview-row .law-rail{grid-column:1/-1;margin:3px 0 0}
+.route-overview-row .law-ref{font-size:10px;padding:3px 5px}
+@media(max-width:760px){
+ .capital-route .route-stage{padding-left:27px;margin:20px 0 27px}
+ .capital-route .route-stage:before{left:10px;top:28px;bottom:-27px}
+ .capital-route .route-stage>h2{margin-left:-27px!important}
+ .route-overview{padding:14px;margin-top:25px}
+ .route-overview-grid{grid-template-columns:1fr}
+ .route-overview-row{grid-template-columns:105px minmax(0,1fr)}
+ .route-fixed-holder{min-width:0;width:100%}
+}
+
