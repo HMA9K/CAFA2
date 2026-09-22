@@ -1153,3 +1153,51 @@ html[data-study-theme=dark] .topic-progress,
 html[data-study-theme=dark] [data-topic-progress],
 html[data-study-theme=dark] .exam-save-status:not(.is-error){color:#a8b8c4}
 
+
+/* Dark-mode contrast pass 2026-09-22: tentamenrunner en antwoordeditor */
+html[data-study-theme=dark] .exam-running .btn:disabled,
+html[data-study-theme=dark] .exam-running button:disabled,
+html[data-study-theme=dark] .exam-footer .btn:disabled,
+html[data-study-theme=dark] .exam-footer button:disabled{
+  color:#7f91a0!important;
+  border-color:#40515d!important;
+  background:#18242b!important;
+  opacity:.72!important;
+}
+html[data-study-theme=dark] .exam-running .btn:not(:disabled),
+html[data-study-theme=dark] .exam-footer .btn:not(:disabled){
+  border-color:#52646f;
+}
+html[data-study-theme=dark] .cafa-answer-editor{
+  --cae-border:#52646f;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolbar{
+  background:#18242b;
+  border-color:#52646f;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button,
+html[data-study-theme=dark] .cafa-answer-editor .cae-select{
+  color:#dce7ee;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button:disabled{
+  color:#80919f;
+  opacity:.72;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolgroup{
+  border-right-color:#52646f;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content{
+  border-color:#60717b;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-footer{
+  color:#b7c6cf;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-count{
+  color:#89dfc3;
+}
+html[data-study-theme=dark] .exam-running .small,
+html[data-study-theme=dark] .exam-running [data-save-status],
+html[data-study-theme=dark] .exam-running .exam-save-status{
+  color:#b6c5ce;
+}
+
