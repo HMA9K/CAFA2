@@ -37,7 +37,7 @@ async def run():
      await page.evaluate("id=>{document.querySelectorAll('section[data-view],article[data-view]').forEach(x=>x.hidden=x.id!==id);scrollTo(0,0)}",id)
     else:await page.evaluate('(id)=>location.hash=id',id)
     await page.locator('#'+id).wait_for(state='visible');await page.wait_for_timeout(100)
-   async def choice(field,value):await page.locator(f'[data-capital-field="{field}"][data-capital-value="{value}"]').click()
+   async def choice(field,value):await page.locator(f'[data-capital-field="{field}"][data-capital-value="{value}"]').first.click()
    async def stage(id):await page.locator('[data-capital-stage='+id+']').click()
    async def shot(name):await page.screenshot(path=str(OUT/(kind+'-'+name+'.png')),full_page=False)
    try:
