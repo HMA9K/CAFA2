@@ -1,0 +1,88 @@
+name: CAFA2 learning explanation review
+on:
+  push:
+    branches: [cafa2-leeruitleg-20260922]
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-leeruitleg-review
+  cancel-in-progress: true
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize the locally reviewed source changes
+        run: |
+          python - <<'PY'
+          import hashlib,json,lzma,pathlib,shutil,subprocess
+          root=pathlib.Path('.').resolve();folder=root/'content/didactic-bootstrap'
+          if folder.exists():
+              raw=b''.join(p.read_bytes() for p in sorted(folder.glob('*.part')))
+              assert hashlib.sha256(raw).hexdigest()=='bd279165d601f508bc7e8b2e07229f8113bdd2ef514faa11ceb90accd0221911'
+              bundle=json.loads(lzma.decompress(raw));patch=bundle['patch'].encode()
+              subprocess.run(['git','apply','--check'],input=patch,check=True)
+              subprocess.run(['git','apply'],input=patch,check=True)
+              for relative,text in bundle['files'].items():
+                  path=root/relative
+                  assert path.resolve().is_relative_to(root) and not relative.startswith(('.git','/'))
+                  path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
+              shutil.rmtree(folder)
+          PY
+      - name: Install isolated test dependencies
+        run: |
+          python -m pip install -q tinycss2 playwright
+          python -m playwright install --with-deps chromium webkit >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Build and verify content, arithmetic and original models
+        run: |
+          npm run build:study
+          npm test
+          sha256sum css/study-dark.css > /tmp/dark-css.sha256
+          python scripts/build-study-dark.py
+          sha256sum --check /tmp/dark-css.sha256
+      - name: New explanations, prior knowledge, exam methods and logo
+        run: python tests/didactic-clarity-browser.py
+      - name: Existing return, answer, progress, restart and timer regressions
+        run: python tests/study-upgrade-browser.py
+      - name: Existing statute, classification and calculator regressions
+        run: python tests/study-refinement-browser.py
+      - name: Preserve the published dark-mode controls
+        run: python tests/dark-contrast-browser.py
+      - name: Save the application only after every check passes
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-leeruitleg-20260922'
+          find tests -type d -name __pycache__ -prune -exec rm -rf {} +
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content css docs fallback index.html js samenvatting.html scripts tests
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build and verify source-based currency explanations, prerequisites, exam methods and shared branding'
+            git push origin HEAD:cafa2-leeruitleg-20260922
+          fi
+      - name: Capture working source and build for review
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-leeruitleg-source.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-leeruitleg-source
+          path: /tmp/cafa2-leeruitleg-source.tar
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-leeruitleg-browser-review
+          path: |
+            /tmp/cafa2-clarity-review/
+            /tmp/cafa2-study-review/
+            /tmp/cafa2-refinement-review/
+            /tmp/cafa2-contrast-review/
+          if-no-files-found: ignore
+          retention-days: 7
