@@ -45,9 +45,11 @@ async def run():
     else:await page.goto(base+'/samenvatting.html#kapitaalboom',wait_until='networkidle')
     await view('kapitaalboom')
     assert await page.locator('#kapitaalboom select,#kapitaalboom details').count()==0
-    assert await page.locator('#kapitaalboom .route-stage:visible').count()==1
+    assert await page.locator('#kapitaalboom .route-stage:visible').count()==3
+    assert await page.locator('#kapitaalboom .capital-context').is_visible()
     assert await page.locator('#capital-classify').is_visible()
     await choice('participation','yes');await stage('value')
+    assert await page.locator('#capital-classify').is_visible() and await page.locator('#capital-value').is_visible()
     await choice('influence','yes');await choice('information','yes')
     assert 'Nettovermogenswaarde (NVW)' in await page.locator('#capital-value-result').inner_text()
     await choice('information','no');assert 'Andere vermogensmutatiewaarde' in await page.locator('#capital-value-result').inner_text()
@@ -64,7 +66,8 @@ async def run():
     await page.locator('[data-capital-reset]').click();await stage('consolidate');await choice('head','group')
     assert 'art. 2:406 lid 1' in await page.locator('#capital-consolidation-result').inner_text()
     await choice('head','part');assert 'art. 2:406 lid 2' in await page.locator('#capital-consolidation-result').inner_text()
-    checks.append('All valuation paths update immediately; independent classifications, reset and group-head/part branches')
+    overview=await page.locator('#capital-route-overview').inner_text();assert 'Jouw route in één overzicht' in overview and 'Classificatie' in overview and 'Waardering' in overview and 'Consolidatie' in overview
+    checks.append('All three stages remain visible; valuation paths update immediately; independent classifications, VOF target, live overview, reset and group-head/part branches')
     # The quoted paragraphs must reconstruct the literal source exactly even with highlighting.
     trigger=page.locator('#capital-consolidation-result [data-law="407"]').first
     await trigger.click();await page.locator('#study-law-popover').wait_for(state='visible')
