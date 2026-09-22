@@ -57,7 +57,10 @@ async def run():
     await stage('classify');await choice('subsidiary','yes');await choice('group','no');await choice('participation','no')
     state=await page.evaluate('CafaCapital.getState()');assert state['subsidiary']=='yes' and state['group']=='no','Independent classifications preserved'
     await stage('value');assert 'Geen deelneming' in await page.locator('#capital-value-result').inner_text()
-    await stage('classify');await choice('holder','person');await stage('value');assert 'Geen waarderingsuitkomst' in await page.locator('#capital-value-result').inner_text()
+    await page.locator('[data-capital-reset]').click();assert await page.locator('[data-capital-field="holder"]').count()==0
+    await choice('target','partnership');assert await page.locator('#capital-qualifications [data-route-question="participation"] [data-capital-field="participation"]').count()==3
+    await stage('value');assert await page.locator('#capital-value-questions [data-route-question="participation"]').is_visible()
+    await choice('participation','yes');assert await page.locator('#capital-value-questions [data-route-question="influence"]').is_visible()
     await page.locator('[data-capital-reset]').click();await stage('consolidate');await choice('head','group')
     assert 'art. 2:406 lid 1' in await page.locator('#capital-consolidation-result').inner_text()
     await choice('head','part');assert 'art. 2:406 lid 2' in await page.locator('#capital-consolidation-result').inner_text()
