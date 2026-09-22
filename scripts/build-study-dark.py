@@ -32,6 +32,11 @@ def color(value,kind):
     return '#'+''.join(f'{round(n*255):02x}' for n in r)+alpha
 
 def paint(value,kind):
+    if kind=='text':
+        # Legacy tokens are used both as fills and text. A dark fill must stay
+        # dark, but its text uses the semantic foreground, even without a hex.
+        value=re.sub(r'var\(\s*--purple(?:\s*,[^()]*)?\s*\)', 'var(--study-ink)', value)
+        value=re.sub(r'var\(\s*--(?:green|green-dark)(?:\s*,[^()]*)?\s*\)', 'var(--study-accent)', value)
     value=re.sub(r'#[0-9a-fA-F]{3,8}\b',lambda m:color(m[0],kind),value)
     value=re.sub(r'\b(white|black)\b',lambda m:color('#ffffff' if m[0]=='white' else '#000000',kind),value)
     # RGB literals are rare here. Preserve alpha where possible.
@@ -64,7 +69,7 @@ def compile_rules(rules):
                     continue
                 if p not in ['color','background','background-color','border','border-color','border-top','border-bottom','border-left','border-right','border-top-color','border-bottom-color','border-left-color','border-right-color','outline','outline-color','box-shadow','text-shadow','fill','stroke','text-decoration-color','caret-color']:continue
                 v=tinycss2.serialize(d.value).strip()
-                if not re.search(r'#[0-9a-fA-F]{3}|\b(?:white|black|rgba?)\b',v):continue
+                if not re.search(r'#[0-9a-fA-F]{3}|\b(?:white|black|rgba?)\b',v) and not (p=='color' and re.search(r'var\(\s*--(?:purple|green|green-dark)(?:\s*[,)]|\s*$)',v)):continue
                 kind='background' if p.startswith('background') else 'border' if p.startswith(('border','outline')) else 'shadow' if 'shadow' in p else 'text'
                 changed=paint(v,kind)
                 decls.append(p+':'+changed+('!important' if d.important else ''))
@@ -114,5 +119,6 @@ html[data-study-theme=dark] .btn.primary,html[data-study-theme=dark] .study-butt
 html[data-study-theme=dark] .study-theme-menu button{color:var(--study-ink);background:var(--study-wash)}
 @media print{html[data-study-theme=dark] body{background:#fff!important;color:#111!important}html[data-study-theme=dark] .reader-layout [data-view]{color:#111!important}}
 ''')
+pieces.append((ROOT/'content/study/dark-contrast.css').read_text())
 (ROOT/'css/study-dark.css').write_text('@media screen {\n'+'\n'.join(pieces)+'\n}\n')
 print('Dark paint rules:',sum(p.count('{') for p in pieces))

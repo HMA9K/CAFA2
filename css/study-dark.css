@@ -17,11 +17,13 @@ html[data-study-theme=dark] .home-sub{color:#adbdc9}
 html[data-study-theme=dark] .topic-card{border:1px solid #3b4a54;background:#152129}
 html[data-study-theme=dark] .topic-n{color:#f0f7fc}
 html[data-study-theme=dark] .topic-description{color:#adbdc9}
-html[data-study-theme=dark] .btn{background:#152129}
+html[data-study-theme=dark] .btn{background:#152129;color:var(--study-ink)}
 html[data-study-theme=dark] .btn.primary{color:#f0f7fc}
+html[data-study-theme=dark] .btn.secondary{color:var(--study-accent)}
 html[data-study-theme=dark] .notice{background:#16242c;border:1px solid #2d5276}
 html[data-study-theme=dark] .subtle{background:#152129}
 html[data-study-theme=dark] .home-options select{background:#152129}
+html[data-study-theme=dark] .home-help summary{color:var(--study-ink)}
 html[data-study-theme=dark] .ov-item{color:#e0ebf2}
 html[data-study-theme=dark] .ov-item:hover{background:#1c2426;border-color:#3b4a54}
 html[data-study-theme=dark] .ov-num{color:#f0f7fc}
@@ -34,9 +36,9 @@ html[data-study-theme=dark] .fact dt{color:#adbdc9}
 html[data-study-theme=dark] .source summary{color:#adbdc9}
 html[data-study-theme=dark] .source-content{background:#152129}
 html[data-study-theme=dark] .source-content strong{color:#adbdc9}
-html[data-study-theme=dark] .mode-switch label{border:1px solid #3b4a54;background:#152129}
+html[data-study-theme=dark] .mode-switch label{border:1px solid #3b4a54;color:var(--study-ink);background:#152129}
 html[data-study-theme=dark] .instruction{color:#adbdc9}
-html[data-study-theme=dark] .views button{background:#152129;border:1px solid #3b4a54}
+html[data-study-theme=dark] .views button{background:#152129;border:1px solid #3b4a54;color:var(--study-ink)}
 html[data-study-theme=dark] .views button.active{color:#f0f7fc}
 html[data-study-theme=dark] .option{border:1px solid #3b4a54;background:#152129}
 html[data-study-theme=dark] .option-header{background:#152129;border-bottom:1px solid #45525e}
@@ -51,9 +53,11 @@ html[data-study-theme=dark] .stock-mobile h4{color:#adbdc9}
 html[data-study-theme=dark] .choice-status{color:#adbdc9}
 html[data-study-theme=dark] .review>summary{color:#f0f7fc}
 html[data-study-theme=dark] .review[open]>summary{background:#0e8159}
+html[data-study-theme=dark] .feedback-part.good b{color:var(--study-accent)}
 html[data-study-theme=dark] .no-choice{color:#adbdc9}
 html[data-study-theme=dark] .model-caption{color:#adbdc9}
 html[data-study-theme=dark] .pattern{background:#172b23}
+html[data-study-theme=dark] .pattern>b{color:var(--study-accent)}
 html[data-study-theme=dark] .related a{border:1px solid #3b4a54;background:#152129;color:#a7d3bf}
 html[data-study-theme=dark] .score-note{color:#adbdc9}
 html[data-study-theme=dark] .own-editor{border:1px solid #3b4a54;background:#152129;color:#e0ebf2}
@@ -63,8 +67,10 @@ html[data-study-theme=dark] .entry-table input{border:1px solid #3b4a54}
 html[data-study-theme=dark] .self-grades span{color:#adbdc9}
 html[data-study-theme=dark] .exam-info{color:#adbdc9}
 html[data-study-theme=dark] .question-nav{background:#152129;box-shadow:0 -2px 6px #01030404}
+html[data-study-theme=dark] .flag-label{color:var(--study-ink)}
 html[data-study-theme=dark] .flagbox:checked~.question-nav .flag-label{color:#ecb68d;background:#2c2116}
 html[data-study-theme=dark] .stat{background:#152129}
+html[data-study-theme=dark] .stat b{color:var(--study-ink)}
 html[data-study-theme=dark] .stat span{color:#adbdc9}
 html[data-study-theme=dark] .result-row{color:#e0ebf2}
 html[data-study-theme=dark] .result-row .result-status{background:#152129}
@@ -751,8 +757,10 @@ html[data-study-theme=dark] .exam-document td,html[data-study-theme=dark] .exam-
 html[data-study-theme=dark] .exam-document th{background:#1e1c27}
 html[data-study-theme=dark] .exam-modal-head{background:#152129}
 html[data-study-theme=dark] .exam-review-case{border:1px solid #3b4a54}
-html[data-study-theme=dark] .exam-switch select{border:1px solid #3b4a54;background:#152129}
-html[data-study-theme=dark] .exam-meta-strip{background:#1e1b28;border:1px solid #494261}
+html[data-study-theme=dark] .exam-review-case summary{color:var(--study-ink)}
+html[data-study-theme=dark] .exam-switch select{border:1px solid #3b4a54;background:#152129;color:var(--study-ink)}
+html[data-study-theme=dark] .exam-meta-strip{background:#1e1b28;border:1px solid #494261;color:var(--study-ink)}
+html[data-study-theme=dark] .exam-meta-strip strong{color:var(--study-accent)}
 html[data-study-theme=dark] .exam-table-wrap{background:#152129}
 html[data-study-theme=dark] .exam-table th{background:#1e1e25;color:#adbdc9}
 html[data-study-theme=dark] .exam-name{color:#e0ebf2}
@@ -769,6 +777,7 @@ html[data-study-theme=dark] .exam-work-head{background:#1e1929}
 html[data-study-theme=dark] .exam-progress button{border:1px solid #3b4a54;color:#adbdc9;background:#152129}
 html[data-study-theme=dark] .exam-progress button.is-answered{background:#172b21;border-color:#396a52;color:#8deccb}
 html[data-study-theme=dark] .exam-progress button.is-marked::after{color:#ecc38d}
+html[data-study-theme=dark] .exam-answer-label{color:var(--study-ink)}
 html[data-study-theme=dark] .exam-options label{border:1px solid #3b4a54;background:#152129}
 html[data-study-theme=dark] .exam-options label:has(input:checked){background:#162c20}
 html[data-study-theme=dark] .exam-save-status.is-error{color:#eb8f8f}
@@ -949,13 +958,16 @@ html[data-study-theme=dark] .exam-results-panel .review-sidebar{border:1px solid
 html[data-study-theme=dark] .exam-results-panel .review-side-tabs{border-bottom:1px solid #45525e}
 html[data-study-theme=dark] .exam-results-panel .review-resizer:hover,html[data-study-theme=dark] .exam-results-panel .review-resizer:focus-visible{background:#172b25}
 /* home.css */
+html[data-study-theme=dark] .cafa-home-eyebrow{color:var(--study-accent)}
+html[data-study-theme=dark] .cafa-home-intro h1{color:var(--study-ink)}
 html[data-study-theme=dark] .cafa-home-choice{background:#152129;border:1px solid #3b4a54;box-shadow:0 2px 8px #01030408}
 html[data-study-theme=dark] .cafa-home-choice:hover{box-shadow:0 7px 22px #01030412}
-html[data-study-theme=dark] .cafa-choice-icon{background:#1d1d25}
-html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon{background:#162c24}
+html[data-study-theme=dark] .cafa-choice-icon{background:#1d1d25;color:var(--study-ink)}
+html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon{background:#162c24;color:var(--study-accent)}
 html[data-study-theme=dark] .cafa-home-choice.exam .cafa-choice-icon{background:#2c1f16;color:#ecb38d}
+html[data-study-theme=dark] .cafa-home-choice h2{color:var(--study-ink)}
 html[data-study-theme=dark] .cafa-choice-count{color:#adbdc9}
-html[data-study-theme=dark] .cafa-choice-action{border-top:1px solid #45455e}
+html[data-study-theme=dark] .cafa-choice-action{border-top:1px solid #45455e;color:var(--study-accent)}
 /* theory-panels.css */
 html[data-study-theme=dark] .theory-panel{border:1px solid #3b4a54;background:#152129;color:#b1aecb}
 html[data-study-theme=dark] .theory-panel summary{background:#1b1b27}
@@ -977,9 +989,9 @@ html[data-study-theme=dark] .question .learning-case .study-table th,html[data-s
 html[data-study-theme=dark] .question .learning-case .study-table thead th{background:#1c1f26;color:#e0ebf2}
 html[data-study-theme=dark] .question .learning-case .study-table tr:last-child{background:#1b2127}
 /* answer-feedback.css */
-html[data-study-theme=dark] .cafa-direct-check{color:var(--purple, #adbdc9)}
+html[data-study-theme=dark] .cafa-direct-check{color:var(--study-ink)}
 html[data-study-theme=dark] .cafa-direct-check input:focus-visible{outline:2px solid var(--purple, #48455e)}
-html[data-study-theme=dark] .cafa-feedback-verdict.is-good{color:var(--green, #8deccb)}
+html[data-study-theme=dark] .cafa-feedback-verdict.is-good{color:var(--study-accent)}
 html[data-study-theme=dark] .cafa-feedback-verdict.is-bad{color:var(--bad, #e89191)}
 /* summary.css */
 html[data-study-theme=dark] a{color:#8decdd}
@@ -994,6 +1006,7 @@ html[data-study-theme=dark] .side-progress{background:#152129}
 html[data-study-theme=dark] .summary-page h1{color:#b5b0c9}
 html[data-study-theme=dark] .summary-page h2{color:#b5b0c9}
 html[data-study-theme=dark] .summary-page h3{color:#adbdc9}
+html[data-study-theme=dark] .summary-kicker{color:var(--study-accent)}
 html[data-study-theme=dark] .summary-lead{color:#adbdc9}
 html[data-study-theme=dark] .study-note{background:#1a2823}
 html[data-study-theme=dark] .study-note strong{color:#94e5d4}
@@ -1010,16 +1023,18 @@ html[data-study-theme=dark] .study-example{border:1px solid #3b4a54}
 html[data-study-theme=dark] .study-example>summary{background:#1b2721;color:#96e4d4}
 html[data-study-theme=dark] .study-example[open]>summary{border-bottom:1px solid #445f55}
 html[data-study-theme=dark] .study-flow li{background:#191929}
+html[data-study-theme=dark] .study-flow li:before{color:var(--study-accent)}
 html[data-study-theme=dark] .study-button{border:1px solid #3b4a54;background:#152129;color:#93e7d0}
 html[data-study-theme=dark] .study-button.primary{color:#f0f7fc}
 html[data-study-theme=dark] .study-button[aria-pressed=true]{background:#182a21}
 html[data-study-theme=dark] .coverage-card{background:#152129}
+html[data-study-theme=dark] .coverage-card .number{color:var(--study-accent)}
 html[data-study-theme=dark] .coverage-card:hover{background:#1b2722;border-color:#406357}
 html[data-study-theme=dark] .coverage-card .weight{background:#1b2720;color:#9edcc4}
 html[data-study-theme=dark] .study-search{border:1px solid #434e60;background:#152129}
 html[data-study-theme=dark] .glossary-tools{background:#152129}
 html[data-study-theme=dark] .glossary-entry .application{color:#adbdc9}
-html[data-study-theme=dark] .source-code{border:1px solid #3f6455}
+html[data-study-theme=dark] .source-code{color:var(--study-accent);border:1px solid #3f6455}
 html[data-study-theme=dark] .kernel-form{background:#191f29}
 html[data-study-theme=dark] .kernel-form label{color:#adbdc9}
 html[data-study-theme=dark] .kernel-form input,html[data-study-theme=dark] .kernel-form select{border:1px solid #45525f;background:#152129}
@@ -1138,66 +1153,105 @@ html[data-study-theme=dark] .btn.primary,html[data-study-theme=dark] .study-butt
 html[data-study-theme=dark] .study-theme-menu button{color:var(--study-ink);background:var(--study-wash)}
 @media print{html[data-study-theme=dark] body{background:#fff!important;color:#111!important}html[data-study-theme=dark] .reader-layout [data-view]{color:#111!important}}
 
+/* Hand-authored semantic colours, included LAST by build-study-dark.py.
+   --purple / --green remain dark fill colours. Never reuse fills as text.
+   Only real disabled/aria-disabled controls get the muted style. */
+html[data-study-theme=dark] {
+  --dm-control-text:#e5edf3;
+  --dm-control-bg:#192a34;
+  --dm-control-border:#718797;
+  --dm-selected-bg:#34475f;
+  --dm-selected-border:#a2b8d3;
+  --dm-muted:#b6c6d2;
+  --dm-disabled-text:#9caeba;
+  --dm-disabled-bg:#18232b;
+  --dm-disabled-border:#526571;
+  --dm-focus:#91d6ff;
 }
-/* Dark-mode contrast pass 2026-09-22: homepage badges and accent text */
+
+/* Preserve the approved homepage, including after a fresh build. */
 html[data-study-theme=dark] .cafa-home-intro h1,
-html[data-study-theme=dark] .cafa-home-choice h2{color:#e1eaf0}
+html[data-study-theme=dark] .cafa-home-choice h2 {color:#e1eaf0}
 html[data-study-theme=dark] .cafa-home-eyebrow,
 html[data-study-theme=dark] .cafa-choice-action,
-html[data-study-theme=dark] .study-home-links a{color:#7ee2c2}
-html[data-study-theme=dark] .cafa-choice-icon{background:#473269;color:#fff;border:1px solid #8f6bc2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
-html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon{background:#145d43;color:#fff;border:1px solid #35a47b}
-html[data-study-theme=dark] .cafa-home-choice.exam .cafa-choice-icon{background:#5b351d;color:#ffe1c8;border:1px solid #b87746}
-html[data-study-theme=dark] .cafa-choice-icon{font-weight:800}
+html[data-study-theme=dark] .study-home-links a {color:#7ee2c2}
+html[data-study-theme=dark] .cafa-choice-icon {background:#473269;color:#fff;border:1px solid #8f6bc2;font-weight:800;box-shadow:inset 0 0 0 1px #ffffff08}
+html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon {background:#145d43;color:#fff;border-color:#35a47b}
+html[data-study-theme=dark] .cafa-home-choice.exam .cafa-choice-icon {background:#5b351d;color:#ffe1c8;border-color:#b87746}
+
+/* Ordinary actions are enabled unless their actual DOM state says otherwise. */
+html[data-study-theme=dark] .btn,
+html[data-study-theme=dark] .views button,
+html[data-study-theme=dark] .mode-switch label,
+html[data-study-theme=dark] .flag-label {border-color:var(--dm-control-border)}
+html[data-study-theme=dark] .btn:not(.primary):not(.secondary),
+html[data-study-theme=dark] .views button,
+html[data-study-theme=dark] .mode-switch label {background-color:var(--dm-control-bg)}
+html[data-study-theme=dark] .btn:not(.primary):not(.secondary):not(:disabled):not([aria-disabled=true]):hover,
+html[data-study-theme=dark] .views button:not(:disabled):hover,
+html[data-study-theme=dark] .mode-switch label:hover {background-color:#293d4b;border-color:#a2b8c7}
+html[data-study-theme=dark] .btn.primary {background:#07674a;color:#fff;border-color:#43b78e}
+html[data-study-theme=dark] .btn.primary:hover:not(:disabled) {background:#0a7756}
+html[data-study-theme=dark] .btn.secondary {color:#98ead0;border-color:#53b899}
+
+/* Unselected is not disabled. Selection uses fill AND a stronger outline. */
+html[data-study-theme=dark] .views button.active,
+html[data-study-theme=dark] .mode-radio[value=mc]:checked ~ .mode-switch label[for^="mc-"],
+html[data-study-theme=dark] .mode-radio[value=own]:checked ~ .mode-switch label[for^="own-"] {
+  background:var(--dm-selected-bg)!important;
+  border-color:var(--dm-selected-border)!important;
+  color:#fff!important;
+  box-shadow:inset 0 -2px 0 var(--dm-selected-border);
+}
+html[data-study-theme=dark] .cafa-direct-check {color:var(--dm-control-text)}
+html[data-study-theme=dark] .cafa-direct-check input {accent-color:#159c79}
 html[data-study-theme=dark] .topic-progress,
 html[data-study-theme=dark] [data-topic-progress],
-html[data-study-theme=dark] .exam-save-status:not(.is-error){color:#a8b8c4}
+html[data-study-theme=dark] .exam-save-status:not(.is-error),
+html[data-study-theme=dark] .cae-status {color:var(--dm-muted)}
+html[data-study-theme=dark] .exam-save-status.is-error {color:#ffb4ae}
 
-
-/* Dark-mode contrast pass 2026-09-22: tentamenrunner en antwoordeditor */
-html[data-study-theme=dark] .exam-running .btn:disabled,
-html[data-study-theme=dark] .exam-running button:disabled,
-html[data-study-theme=dark] .exam-footer .btn:disabled,
-html[data-study-theme=dark] .exam-footer button:disabled{
-  color:#7f91a0!important;
-  border-color:#40515d!important;
-  background:#18242b!important;
-  opacity:.72!important;
-}
-html[data-study-theme=dark] .exam-running .btn:not(:disabled),
-html[data-study-theme=dark] .exam-footer .btn:not(:disabled){
-  border-color:#52646f;
-}
-html[data-study-theme=dark] .cafa-answer-editor{
-  --cae-border:#52646f;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-toolbar{
-  background:#18242b;
-  border-color:#52646f;
-}
+/* Rich answer editor, shared by exercises and exam questions. */
+html[data-study-theme=dark] .cafa-answer-editor {--cae-border:#718797}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolbar {background:#1d2c36;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolgroup {border-right-color:#607888}
 html[data-study-theme=dark] .cafa-answer-editor .cae-button,
-html[data-study-theme=dark] .cafa-answer-editor .cae-select{
-  color:#dce7ee;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-button:disabled{
-  color:#80919f;
-  opacity:.72;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-toolgroup{
-  border-right-color:#52646f;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-content{
-  border-color:#60717b;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-footer{
-  color:#b7c6cf;
-}
-html[data-study-theme=dark] .cafa-answer-editor .cae-count{
-  color:#89dfc3;
-}
-html[data-study-theme=dark] .exam-running .small,
-html[data-study-theme=dark] .exam-running [data-save-status],
-html[data-study-theme=dark] .exam-running .exam-save-status{
-  color:#b6c5ce;
+html[data-study-theme=dark] .cafa-answer-editor .cae-select {color:var(--dm-control-text)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-select {background:#15232d;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button:hover:not(:disabled) {background:#2b4150;border-color:#8aabbd}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button[aria-pressed=true] {background:#224c40;color:#c3ffe4;border-color:#83d6b9}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content {color:#e5edf3;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content:empty:before {color:#b1c1cd}
+html[data-study-theme=dark] .cafa-answer-editor .cae-count {color:#89dfc3}
+html[data-study-theme=dark] .cafa-answer-editor .cae-panel {border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-panel .cae-button {border-color:var(--dm-control-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content td,
+html[data-study-theme=dark] .cafa-answer-editor .cae-content th {border-color:var(--dm-control-border)}
+
+/* Muted, but readable: never reduce the entire disabled control's opacity.
+   A dashed edge and non-interactive cursor distinguish it from enabled controls.
+   No disabled flags, pointer events, tab stops, or application state are changed. */
+html[data-study-theme=dark] button:disabled,
+html[data-study-theme=dark] .btn:disabled,
+html[data-study-theme=dark] select:disabled,
+html[data-study-theme=dark] .cafa-answer-editor .cae-button:disabled,
+html[data-study-theme=dark] :is(button,.btn,select,[role=button])[aria-disabled=true] {
+  color:var(--dm-disabled-text)!important;
+  -webkit-text-fill-color:var(--dm-disabled-text)!important;
+  background:var(--dm-disabled-bg)!important;
+  border-color:var(--dm-disabled-border)!important;
+  border-style:dashed;
+  opacity:1!important;
+  box-shadow:none!important;
+  cursor:not-allowed;
 }
 
+/* A visible focus ring also covers radio labels driven by hidden inputs. */
+html[data-study-theme=dark] :is(button,a,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline:2px solid var(--dm-focus)!important;
+  outline-offset:2px;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content:focus {border-color:var(--dm-focus);box-shadow:inset 0 0 0 1px var(--dm-focus)}
+html[data-study-theme=dark] .mode-switch label:focus-visible {outline:2px solid var(--dm-focus);outline-offset:2px}
+
+}
