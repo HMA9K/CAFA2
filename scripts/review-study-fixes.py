@@ -21,8 +21,8 @@ if 'function settleReadingPosition' not in s:
     }
     events.forEach(function(type) { window.addEventListener(type, stop, {capture: true, passive: true}); });
     apply();
-    // Native fragment positioning in WebKit can happen after the first rendering frames.
-    // Bounded retries stop immediately on a real gesture or another navigation.
+    // WebKit native fragment positioning may run after the first rendering frames.
+    // Bounded retries stop on any reader gesture or another navigation.
     [60, 160, 320].forEach(function(delay) { setTimeout(apply, delay); });
     setTimeout(stop, 400);
   }
@@ -45,7 +45,16 @@ s = p.read_text().replace("page.locator('#option-kap-12-0').click()", "page.loca
 s = s.replace("'#kap-12 a[href^=\"samenvatting.html#\"]'", "'#kap-12 a[href^=\"samenvatting.html#\"]:not([data-law]):visible'")
 for delay in (30, 100):
     s = s.replace(f"await page.emulate_media(color_scheme='light');await page.wait_for_timeout({delay})", "await page.emulate_media(color_scheme='light');await page.wait_for_function(\"document.documentElement.dataset.studyTheme === 'light'\")")
-s = s.replace("page.once('dialog',lambda d:d.accept());await page.locator('[data-reset=kap]:visible').click()", "await page.evaluate('window.__studyBeforeRestart=true')\n          page.once('dialog',lambda d:d.accept())\n          async with page.expect_navigation(wait_until='networkidle'):\n            await page.locator('[data-reset=kap]:visible').click()")
-s = s.replace("await page.wait_for_function('!!window.CafaPractice')", "await page.wait_for_function('!!window.CafaPractice && !window.__studyBeforeRestart && !document.documentElement.classList.contains(\"cafa-starting\")')")
+old = '''          page.once('dialog',lambda d:d.accept())
+          await page.locator('[data-reset=kap]:visible').click();await page.wait_for_load_state('networkidle')
+          await page.wait_for_function('!!window.CafaPractice&&!!window.CafaFeedback')'''
+new = '''          await page.evaluate('window.__studyBeforeRestart=true')
+          page.once('dialog',lambda d:d.accept())
+          await page.locator('[data-reset=kap]:visible').click()
+          await page.wait_for_function('!window.__studyBeforeRestart && !!window.CafaPractice && !!window.CafaFeedback && !document.documentElement.classList.contains("cafa-starting")')
+          await page.wait_for_load_state('networkidle')'''
+if 'window.__studyBeforeRestart=true' not in s:
+    assert s.count(old) == 1, 'Restart test source changed; review before replacing'
+    s = s.replace(old, new)
 s = s.replace("        except Exception:\n          await shot('FAILURE');(OUT/'failed-page.html').write_text(await page.content());raise", "        except Exception as exc:\n          import traceback\n          traceback.print_exc()\n          report['failure']={'browser':kind,'url':page.url,'exception':str(exc),'traceback':traceback.format_exc(),'passed':checks}\n          try:\n            report['failure']['navigation']=await page.evaluate('sessionStorage.getItem(\"cafa2-navigation-v1\")')\n            report['failure']['scroll']=await page.evaluate('({y:scrollY,h:document.documentElement.scrollHeight,body:document.body&&document.body.scrollHeight,viewport:innerHeight})')\n            await shot('FAILURE');(OUT/'failed-page.html').write_text(await page.content())\n          except Exception:\n            pass\n          raise")
 p.write_text(s)
