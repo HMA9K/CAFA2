@@ -30,13 +30,13 @@ for(const p of ['index.html','samenvatting.html',...['kapitaalbelangen','vreemde
 }
 const index=read('index.html');assert.ok(index.indexOf('js/study-shell.js')<index.indexOf('js/bootstrap.js'),'Support ready before async runner');
 const s=read('samenvatting.html');
-for(const id of ['kapitaalboom','wetsartikelen','capital-wizard'])assert.equal((s.match(new RegExp('id="'+id+'"','g'))||[]).length,1,id);
+for(const id of ['kapitaalboom','wetsartikelen','capital-value-result'])assert.equal((s.match(new RegExp('id="'+id+'"','g'))||[]).length,1,id);
 assert.equal((s.match(/class="study-principle"/g)||[]).length,40);
 for(const c of ['kap','val','nvw','hk'])assert.ok(read('fragments/home.html').includes('data-reset="'+c+'" hidden'));
 // Every authored source note has an explicit PDF page, or explicitly names the repository model.
 const sources=JSON.parse(read('content/study/exam-notes.json'));
 for(const [eid,qs] of Object.entries(sources))for(const [q,n] of Object.entries(qs))assert.ok(n.page||n.sourceKind==='repository-model',eid+'/'+q);
-for(const file of ['js/study-theme.js','js/study-shell.js','js/study-wizard.js','js/app.js','js/exams.js','js/answer-feedback.js'])new vm.Script(read(file),{filename:file});
+for(const file of ['js/law-focus.js','js/law-popover.js','js/study-lessons.js','js/study-theme.js','js/study-shell.js','js/study-wizard.js','js/app.js','js/exams.js','js/answer-feedback.js'])new vm.Script(read(file),{filename:file});
 const paths=['samenvatting.html','index.html','data/study-support.js','docs/study-upgrade-manifest.json','fragments/home.html',...['kapitaalbelangen','vreemde-valuta','consolidatie-nvw','consolidatie-hk'].flatMap(x=>['fragments/'+x+'.html','fallback/'+x+'.html'])];
 const digest=()=>paths.map(p=>crypto.createHash('sha256').update(read(p)).digest('hex')).join();
 const before=digest();child.execFileSync(process.execPath,['scripts/build-study-upgrade.mjs']);assert.equal(digest(),before,'Study build is idempotent');

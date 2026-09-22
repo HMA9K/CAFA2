@@ -7,5 +7,10 @@
   "examDataUnchanged": true,
   "defaultTheme": "auto",
   "themePersistence": "browser session",
+  "chapterOrientations": 7,
+  "examRouteExamples": 7,
+  "examRouteSourceCount": 4,
+  "lawPresentation": "non-modal anchored literal source",
+  "capitalRoute": "three click stages with immediate recomputation",
   "sourceVersion": "Aangeleverde studiekopie 01-01-2025"
 }
