@@ -39,3 +39,5 @@ assert.doesNotMatch(read('js/law-popover.js'),/showModal|aria-modal','true/);
 assert.doesNotMatch(read('js/calculator.js'),/eval\(|new Function|showModal/);
 for(const file of ['js/law-popover.js','js/law-focus.js','js/study-lessons.js','js/study-wizard.js','js/calculator.js'])new vm.Script(read(file));
 console.log('Study refinement verified: 7 chapter orientations, 7 traceable cases in 4 exams, literal context highlighting and click-only route.');
+
+await import('./didactic-clarity.mjs');
