@@ -27,6 +27,7 @@ jobs:
           python-version: '3.12'
       - name: Build study application
         run: |
+          python -m pip install -q tinycss2
           npm run build:study
           npm test
       - name: Install browsers
