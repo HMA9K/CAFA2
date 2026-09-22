@@ -1,0 +1,60 @@
+"""Idempotent regression fixes applied during the one-time study source migration."""
+from pathlib import Path
+root = Path(__file__).resolve().parents[1]
+p = root / 'js/study-shell.js'
+s = p.read_text()
+s = s.replace("if (p.question && p.question.kind === 'practice' && !window.CafaPractice) return false;", "if (p.question && p.question.kind === 'practice' && (!window.CafaPractice || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
+s = s.replace("if (p.question && p.question.kind === 'exam' && !window.CafaExams) return false;", "if (p.question && p.question.kind === 'exam' && (!window.CafaExams || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
+s = s.replace("document.querySelector('.question:target, [data-view]:not([hidden])')", "(document.querySelector('.question:target') || document.querySelector('.summary-page[data-view]:not([hidden]),.reader-chapter[data-view]:not([hidden])'))")
+s = s.replace('if(p.detailState){var r=', "if(p.detailState&&!(p.question&&p.question.kind==='practice')){var r=")
+if 'function settleReadingPosition' not in s:
+    helper = '''  function settleReadingPosition(position) {
+    var target = location.pathname + location.hash, interrupted = false;
+    var events = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+    function stop() { interrupted = true; events.forEach(function(type) { window.removeEventListener(type, stop, true); }); }
+    function apply() {
+      if (interrupted || location.pathname + location.hash !== target) return stop();
+      window.scrollTo(0, Number(position.y) || 0);
+      var panes = document.querySelectorAll('.review-side-content, .exam-modal-body, .reader-sidebar');
+      (position.panes || []).forEach(function(pair) { if (panes[pair[0]]) panes[pair[0]].scrollTop = pair[1]; });
+      previous = snapshot();
+    }
+    events.forEach(function(type) { window.addEventListener(type, stop, {capture: true, passive: true}); });
+    apply();
+    // WebKit native fragment positioning may run after the first rendering frames.
+    // Bounded retries stop on any reader gesture or another navigation.
+    [60, 160, 320].forEach(function(delay) { setTimeout(apply, delay); });
+    setTimeout(stop, 400);
+  }
+'''
+    assert '  function applyPending() {' in s
+    s = s.replace('  function applyPending() {', helper + '  function applyPending() {')
+    assert 'window.scrollTo(0,Number(p.y)||0);' in s
+    s = s.replace('window.scrollTo(0,Number(p.y)||0);', 'settleReadingPosition(p);')
+p.write_text(s)
+p = root / 'js/answer-feedback.js'
+s = p.read_text()
+if "'cafa-detail-'" not in s:
+    s = s.replace('function preparePractice(question) {\n    var mcRecord', "function preparePractice(question) {\n    each('details', question, function(d, index) { if (!d.id) d.id = 'cafa-detail-' + question.id + '-' + index; });\n    var mcRecord")
+p.write_text(s)
+p = root / 'js/bootstrap.js'
+s = p.read_text().replace("if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {", "var initialTarget = document.getElementById(initialHash.slice(1));\n    if (initialTarget && initialTarget.classList.contains('screen') && !initialTarget.matches(':target')) {")
+p.write_text(s)
+p = root / 'tests/study-upgrade-browser.py'
+s = p.read_text().replace("page.locator('#option-kap-12-0').click()", "page.locator('label[for=\"a-kap-12-0\"]').click()")
+s = s.replace("'#kap-12 a[href^=\"samenvatting.html#\"]'", "'#kap-12 a[href^=\"samenvatting.html#\"]:not([data-law]):visible'")
+for delay in (30, 100):
+    s = s.replace(f"await page.emulate_media(color_scheme='light');await page.wait_for_timeout({delay})", "await page.emulate_media(color_scheme='light');await page.wait_for_function(\"document.documentElement.dataset.studyTheme === 'light'\")")
+old = '''          page.once('dialog',lambda d:d.accept())
+          await page.locator('[data-reset=kap]:visible').click();await page.wait_for_load_state('networkidle')
+          await page.wait_for_function('!!window.CafaPractice&&!!window.CafaFeedback')'''
+new = '''          await page.evaluate('window.__studyBeforeRestart=true')
+          page.once('dialog',lambda d:d.accept())
+          await page.locator('[data-reset=kap]:visible').click()
+          await page.wait_for_function('!window.__studyBeforeRestart && !!window.CafaPractice && !!window.CafaFeedback && !document.documentElement.classList.contains("cafa-starting")')
+          await page.wait_for_load_state('networkidle')'''
+if 'window.__studyBeforeRestart=true' not in s:
+    assert s.count(old) == 1, 'Restart test source changed; review before replacing'
+    s = s.replace(old, new)
+s = s.replace("        except Exception:\n          await shot('FAILURE');(OUT/'failed-page.html').write_text(await page.content());raise", "        except Exception as exc:\n          import traceback\n          traceback.print_exc()\n          report['failure']={'browser':kind,'url':page.url,'exception':str(exc),'traceback':traceback.format_exc(),'passed':checks}\n          try:\n            report['failure']['navigation']=await page.evaluate('sessionStorage.getItem(\"cafa2-navigation-v1\")')\n            report['failure']['scroll']=await page.evaluate('({y:scrollY,h:document.documentElement.scrollHeight,body:document.body&&document.body.scrollHeight,viewport:innerHeight})')\n            await shot('FAILURE');(OUT/'failed-page.html').write_text(await page.content())\n          except Exception:\n            pass\n          raise")
+p.write_text(s)

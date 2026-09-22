@@ -64,10 +64,12 @@
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
+    window.dispatchEvent(new CustomEvent('cafa:ready'));
     // Restore an existing question deep link after asynchronous fragments exist.
     // Replace the URL without adding a second navigation-history entry.
     var initialHash = location.hash;
-    if (/^#(?:kap|val|nvw|hk)-[0-9]+$/.test(initialHash) && document.getElementById(initialHash.slice(1)) && !document.querySelector('.question:target')) {
+    var initialTarget = document.getElementById(initialHash.slice(1));
+    if (initialTarget && initialTarget.classList.contains('screen') && !initialTarget.matches(':target')) {
       history.replaceState(history.state, '', location.pathname + location.search);
       location.replace(initialHash);
     }
