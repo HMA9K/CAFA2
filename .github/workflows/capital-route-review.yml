@@ -8,6 +8,7 @@ on:
       - 'content/study/capital-flow.mjs'
       - 'js/study-wizard.js'
       - 'tests/study-refinement-browser.py'
+      - 'tests/study-upgrade-browser.py'
 permissions:
   contents: write
 concurrency:
