@@ -1,46 +1,47 @@
 /* Chapter orientation and exam-specific study routes, derived from supplied CAFA2 material. */
 import {esc} from '../summary/helpers.mjs';
+import {renderExamApproach} from './exam-approach.mjs';
 
 export const orientation = {
  'kapitaalbelangen': {
-  need:['Het onderscheid tussen een rechtspersoon, vennootschap en natuurlijk persoon. Dit hoofdstuk licht de gevolgen daarvan toe.','Een <a href="#flex-aandelen">aandeel kan stemrecht én winstrecht geven</a>; die percentages hoeven niet gelijk te zijn.'],
+  need:["Je weet dat een aandeel een belang in het eigen vermogen van een onderneming vertegenwoordigt en dat een aandeelhouder niet hetzelfde is als een schuldeiser.", "Je kunt activa, schulden en eigen vermogen op een balans onderscheiden, en weet dat de winst-en-verliesrekening het resultaat over een periode weergeeft.", "Je kunt een percentage en een verhouding berekenen. De juridische verschillen tussen deelneming, dochter en groep leer je in dit hoofdstuk; die hoef je vooraf nog niet te kennen."],
   learn:['<a href="#kwalificatie">Deelneming en belegging</a>, <a href="#dochter">dochtermaatschappij</a> en <a href="#consolidatieplicht">groepsverband</a> afzonderlijk beoordelen.','Van invloed van betekenis naar de passende <a href="#waardering">waarderingsgrondslag</a> redeneren.'],
   source:'Syllabus Deel 1, p. 4–19; art. 2:24a–24d en 2:389 BW.'
  },
  'verwerking-kapitaalbelangen': {
-  need:['De <a href="#waardering">gekozen waarderingsgrondslag</a> en het belangpercentage van de houder.','Het verband tussen balans, resultaat en een journaalpost, en het onderscheid tussen beginstand en jaarmutatie.'],
+  need:["Je kunt een journaalpost met debet en credit opstellen en het verschil uitleggen tussen een balansrekening en een resultaatrekening.", "Je weet waarom ontvangst niet hetzelfde is als opbrengst: een betaling kan ook een bestaande vordering afwikkelen. Ook kun je een balansverloop maken: beginstand plus mutaties is eindstand.", "Je begrijpt uit <a href=\"#kapitaalbelangen\">hoofdstuk 1</a> het verschil tussen verkrijgingsprijs en nettovermogenswaarde. Je beheerst de basis van afschrijven en bruto/netto rekenen."],
   learn:['De aankoop uitsplitsen in <a href="#fair-value">grondslagverschillen</a> en <a href="#goodwill">goodwill</a>.','De deelnemingswaarde laten aansluiten via <a href="#resultaat-deelneming">resultaat</a>, <a href="#dividend">dividend</a> en overige mutaties.','<a href="#wettelijke-reserve">Wettelijke reserves</a>, eigen aandelen en een <a href="#stelselwijziging">stelselwijziging</a> verwerken.'],
   source:'Syllabus Deel 1, p. 15–30; art. 2:389 leden 2–3 en 6–7 BW.'
  },
  'vreemde-valuta': {
-  need:['Balansposten en resultaten onderscheiden; bij iedere berekening een bedrag, valuta en datum noteren.','Voor de verwerking bij de moeder: het <a href="#resultaat-deelneming">verloop van een deelneming</a> kunnen volgen.'],
+  need:["Je kunt een balans en winst-en-verliesrekening lezen en het verschil uitleggen tussen bezit, een geldvordering en een geldschuld.", "Je kunt met verhoudingen rekenen en een koersnotatie lezen: bij € 0,90 per USD is USD 100 gelijk aan € 90. Staat de koers andersom, dan draai je de berekening om.", "Je beheerst de basis van FIFO, kostprijs van de omzet en afschrijving. Voor de boeking bij de moeder kun je het <a href=\"#verwerking-kapitaalbelangen\">verloop van een deelneming</a> uit hoofdstuk 2 volgen."],
   learn:['<a href="#valuta">Lokale, functionele en presentatievaluta</a> onderscheiden en daaruit de methode afleiden.','Koersen toewijzen aan <a href="#tijdstipmethode">monetaire en niet-monetaire posten</a>, voorraadlagen en waardeverminderingen.','Het verschil tussen <a href="#monetaire-positie">koersresultaat</a> en <a href="#omrekenreserve">omrekeningsreserve</a> verklaren en narekenen.'],
   source:'Syllabus Deel 2, §2–4, p. 4–9; art. 2:384 lid 5 en 2:389 lid 8 BW.'
  },
  'consolidatieproces': {
-  need:['De <a href="#dochter">dochtertoets</a>, <a href="#kwalificatie">deelnemingstoets</a> en het groepsbegrip uit hoofdstuk 1.','Een enkelvoudige balans en winst-en-verliesrekening kunnen lezen.'],
+  need:["Je kunt twee afzonderlijke balansen en winst-en-verliesrekeningen lezen en gelijksoortige posten bij elkaar optellen.", "Je begrijpt dat een vordering bij de ene onderneming een schuld bij de andere kan zijn, en dat dezelfde interne transactie in beide administraties voorkomt.", "Je kent de <a href=\"#kapitaalbelangen\">begrippen deelneming, dochter en groep</a> uit hoofdstuk 1. Consolidatieboekingen zelf zijn nog geen vereiste; die bouw je hier op."],
   learn:['De <a href="#consolidatieplicht">consolidatieplicht en consolidatiekring</a> met de wet onderbouwen.','Begrijpen waarom je eerst gelijksoortige cijfers samenvoegt en vervolgens <a href="#onderlinge-posten">onderlinge verhoudingen elimineert</a>.','<a href="#streams">Downstream, upstream en sidestream</a> herkennen vóór je een correctie berekent.'],
   source:'Syllabus Deel 1, p. 31–37; Deel 3, p. 5–7; art. 2:405–409 BW.'
  },
  'consolidatie-nettovermogenswaarde': {
-  need:['De enkelvoudige <a href="#resultaat-deelneming">NVW-verwerking</a> en de stappen van het <a href="#proces">consolidatieproces</a>.','De <a href="#streams">richting van de levering</a>, begin- en eindvoorraad, interne marge en toepasselijke belasting.'],
+  need:["Je kunt de <a href=\"#resultaat-deelneming\">enkelvoudige NVW-boekingen</a> voor resultaat en dividend uitleggen en weet wat daarvan al in de cijfers van de moeder is verwerkt.", "Je begrijpt het <a href=\"#proces\">consolidatieproces</a> en het verschil tussen een correctie in de administratie van de moeder en een eliminatie op het consolidatiewerkblad.", "Je kunt winst in een voorraad berekenen en een eindstand van een jaarmutatie onderscheiden. Je weet dat een marge op verkoopprijs iets anders is dan een opslag op kostprijs."],
   learn:['De <a href="#voorraadtabel">voorraadtabel</a> gebruiken om de totale IC-winst en de verschillende correcties te scheiden.','De <a href="#downstream-nvw">downstream-</a> en <a href="#upstream-nvw">upstreamcorrectie</a> enkelvoudig én geconsolideerd verwerken.','Eindstanden voor de balans onderscheiden van mutaties voor het resultaat en dubbeltelling voorkomen.'],
   source:'Syllabus Deel 3, §3–4, p. 8–103; art. 2:384 lid 2, 2:389 en 2:405 BW.'
  },
  'consolidatie-verkrijgingsprijs': {
-  need:['De <a href="#waardering">verkrijgingsprijsmethode</a> onderscheiden van NVW.','Het <a href="#consolidatieproces">consolidatieproces</a>, de leveringsrichting en het belang van derden.'],
+  need:["Je weet bij <a href=\"#waardering\">verkrijgingsprijs</a> wat er wel en niet met de boekwaarde gebeurt en hoe regulier dividend in de enkelvoudige jaarrekening wordt verwerkt.", "Je begrijpt het <a href=\"#consolidatieproces\">consolidatieproces</a>, de begrippen eigen vermogen en resultaat en het onderscheid tussen het aandeel van de moeder en dat van derden.", "Je kunt een afschrijving, een voorraadwinst en een mutatie tussen twee balansdata berekenen. NVW-boekingen mag je niet automatisch overnemen; het verschil wordt hier uitgelegd."],
   learn:['Verklaren waarom de correcties bij <a href="#consolidatie-hk">verkrijgingsprijs</a> anders over de werkbladen zijn verdeeld dan bij NVW.','Deelneming, derdenbelang, goodwill, dividend en <a href="#upstream-hk">IC-resultaten</a> in de consolidatie verwerken.','Het groepsresultaat laten aansluiten op het <a href="#resultaataansluiting">meerderheidsresultaat en het resultaat derden</a>.'],
   source:'Syllabus Deel 3, §5–6, p. 104–185; art. 2:405, 2:411 lid 2 en 2:413 BW.'
  },
  'bijzondere-consolidatie': {
-  need:['De basis van <a href="#consolidatie-nettovermogenswaarde">NVW-</a> en <a href="#consolidatie-verkrijgingsprijs">HK-consolidatie</a>.','Interne winst in begin- en eindvoorraad en de afzonderlijke belangen in verkoper en koper.'],
+  need:["Je kunt de basisboekingen voor <a href=\"#consolidatie-nettovermogenswaarde\">NVW-consolidatie</a> en <a href=\"#consolidatie-verkrijgingsprijs\">consolidatie bij verkrijgingsprijs</a> volgen en weet in welke jaarrekening elke boeking thuishoort.", "Je begrijpt dat interne winst pas gerealiseerd is wanneer de groep tegenover derden presteert en dat voorraadwinst op een balansdatum iets anders is dan de resultaatmutatie in een jaar.", "Je kunt afzonderlijke aandelen van moeder en derden berekenen en de boekwaarde en jaarlijkse afschrijving van een materieel vast actief bepalen."],
   learn:['<a href="#proportioneel">Proportionele consolidatie</a> onderscheiden van integrale consolidatie.','Bij <a href="#sidestream">sidestream</a> toenemend en afnemend belang uit elkaar houden.','IC-winst op <a href="#mva">materiële vaste activa</a> en de latere realisatie via afschrijving volgen.'],
   source:'Syllabus Deel 3, §7–8, p. 186–248; art. 2:409 BW.'
  }
 };
 export function orientationHtml(id) {
  const o=orientation[id]; if(!o)throw Error('Geen hoofdstukoriëntatie: '+id);
- return '<div class="chapter-orientation"><section><h2>Dit heb je nodig</h2><ul>'+o.need.map(t=>'<li>'+t+'</li>').join('')+'</ul></section><section><h2>Dit ga je leren</h2><ul>'+o.learn.map(t=>'<li>'+t+'</li>').join('')+'</ul></section><p class="study-note-source">Leeswijzer afgeleid uit '+esc(o.source)+'</p></div>';
+ return '<div class="chapter-orientation"><section><h2>Dit heb je nodig</h2><p class="orientation-caption">Voorkennis: dit begrijp je al vóór je begint.</p><ul>'+o.need.map(t=>'<li>'+t+'</li>').join('')+'</ul></section><section><h2>Dit ga je leren</h2><ul>'+o.learn.map(t=>'<li>'+t+'</li>').join('')+'</ul></section><p class="study-note-source">Voorkennis afgeleid uit het ingangsniveau (Onderwijsprogramma 2026, §2, p. 3) en de opbouw van de leerstof. Leerdoelen: '+esc(o.source)+'</p></div>';
 }
 
 export const examRoutes=[
@@ -73,6 +74,4 @@ export const examRoutes=[
   steps:[['Koppel de uitkering aan de aanschafgegevens.','Vraag 20 boekt de deelneming voor € 2.650.000. Vraag 21 verwerkt niet de volledige ontvangst van € 160.000 als opbrengst.'],['Volg de splitsing in het model.','Het model vermindert Deelneming Armweide met 25% × € 200.000 = € 50.000 en verantwoordt het restant van € 110.000 als Dividendopbrengst.'],['Controleer de ontvangst tegen beide tegenrekeningen.','Bank € 160.000 = Deelneming € 50.000 + Dividendopbrengst € 110.000. De kwalificatie van een uitkering vraagt dus meer dan alleen de naam van de waarderingsmethode.']],
   check:'Het leeradvies is de aankoopvoorwaarden naast de dividendvraag te leggen. De exacte modelbedragen zijn geen algemene formule voor ieder HK-dividend.',lesson:'dividend'}
 ];
-export function examRoutePage(){
- return '<section class="summary-page" data-view="tentamen" data-lesson="tentamen" id="tentamen"><div class="summary-kicker">CAFA2 · Tentamenvragen ontleden</div><h1>Tentamenaanpak met concrete voorbeelden</h1><p class="summary-lead">Begin bij wat de vraag werkelijk verlangt. Hieronder zie je per onderwerp hoe een aangeleverd antwoordmodel van gegevens naar berekening of boeking gaat.</p><p class="exam-route-scope">Deze routes zijn afgeleid leeradvies bij <strong>zeven concrete voorbeelden uit vier aangeleverde uitwerkingen</strong> (22-04-2024, 30-09-2024, 17-04-2025 en 24-09-2025). Ze zijn geen officiële stappenplannen en geen frequentieanalyse of voorspelling van een volgend tentamen. De cijfers en modeluitkomsten worden niet vervangen.</p><div class="exam-route-tabs" role="group" aria-label="Voorbeelden per onderwerp">'+[['all','Alles'],['kap','Kapitaalbelangen'],['val','Vreemde valuta'],['nvw','NVW'],['hk','HK']].map(([id,t])=>'<button type="button" data-exam-route-filter="'+id+'" aria-pressed="'+(id==='all')+'">'+t+'</button>').join('')+'</div><p id="exam-route-count" class="study-note-source" role="status">7 concrete voorbeelden</p>'+examRoutes.map((r,i)=>'<article class="exam-route-card" data-exam-route-topic="'+r.topic+'" id="exam-route-'+r.id+'"><span class="exam-example-label">'+esc(r.label)+' · '+esc(r.date)+'</span><h2>'+esc(r.title)+'</h2><p><strong>Wat wordt gevraagd?</strong> '+esc(r.task)+'</p><ol>'+r.steps.map(([title,text])=>'<li><strong>'+esc(title)+'</strong> '+esc(text)+'</li>').join('')+'</ol><p class="exam-route-check"><strong>Wat neem je hiervan mee?</strong> '+esc(r.check)+'</p><p class="exam-route-source">Bron: Uitwerking tentamen CAFA2 '+esc(r.date)+', vraag '+esc(r.questions)+', p. '+esc(r.pages)+'. '+(r.exam==='cafa2-20250924'?'Versie na normering. ':'')+'<a href="index.html#welkom/'+r.exam+'">Open dit tentamen</a> · <a href="#'+r.lesson+'">Bijbehorende samenvatting</a></p></article>').join('')+'</section>';
-}
+export function examRoutePage(){ return renderExamApproach(examRoutes); }

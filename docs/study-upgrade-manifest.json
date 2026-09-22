@@ -10,6 +10,10 @@
   "chapterOrientations": 7,
   "examRouteExamples": 7,
   "examRouteSourceCount": 4,
+  "examMethodCount": 4,
+  "examMethodSourceCount": 7,
+  "prerequisites": "prior knowledge, not case inputs",
+  "functionalCurrency": "facts, interpretation, weight and conclusion",
   "lawPresentation": "non-modal anchored literal source",
   "capitalRoute": "three click stages with immediate recomputation",
   "sourceVersion": "Aangeleverde studiekopie 01-01-2025"
