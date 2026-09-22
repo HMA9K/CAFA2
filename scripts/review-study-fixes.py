@@ -39,5 +39,6 @@ p.write_text(s)
 p = root / 'tests/study-upgrade-browser.py'
 s = p.read_text().replace("page.locator('#option-kap-12-0').click()", "page.locator('label[for=\"a-kap-12-0\"]').click()")
 s = s.replace("'#kap-12 a[href^=\"samenvatting.html#\"]'", "'#kap-12 a[href^=\"samenvatting.html#\"]:not([data-law]):visible'")
+s = s.replace("await page.emulate_media(color_scheme='light');await page.wait_for_timeout(30)", "await page.emulate_media(color_scheme='light');await page.wait_for_function(\"document.documentElement.dataset.studyTheme === 'light'\")")
 s = s.replace("except Exception:\n          await shot('FAILURE');", "except Exception as exc:\n          import traceback\n          report['failure']={'browser':kind,'url':page.url,'exception':str(exc),'traceback':traceback.format_exc(),'passed':checks,'navigation':await page.evaluate('sessionStorage.getItem(\"cafa2-navigation-v1\")'),'scroll':await page.evaluate('({y:scrollY,h:document.documentElement.scrollHeight,body:document.body.scrollHeight,viewport:innerHeight})')}\n          await shot('FAILURE');")
 p.write_text(s)
