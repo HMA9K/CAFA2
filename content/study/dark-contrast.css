@@ -1,0 +1,100 @@
+/* Hand-authored semantic colours, included LAST by build-study-dark.py.
+   --purple / --green remain dark fill colours. Never reuse fills as text.
+   Only real disabled/aria-disabled controls get the muted style. */
+html[data-study-theme=dark] {
+  --dm-control-text:#e5edf3;
+  --dm-control-bg:#192a34;
+  --dm-control-border:#718797;
+  --dm-selected-bg:#34475f;
+  --dm-selected-border:#a2b8d3;
+  --dm-muted:#b6c6d2;
+  --dm-disabled-text:#9caeba;
+  --dm-disabled-bg:#18232b;
+  --dm-disabled-border:#526571;
+  --dm-focus:#91d6ff;
+}
+
+/* Preserve the approved homepage, including after a fresh build. */
+html[data-study-theme=dark] .cafa-home-intro h1,
+html[data-study-theme=dark] .cafa-home-choice h2 {color:#e1eaf0}
+html[data-study-theme=dark] .cafa-home-eyebrow,
+html[data-study-theme=dark] .cafa-choice-action,
+html[data-study-theme=dark] .study-home-links a {color:#7ee2c2}
+html[data-study-theme=dark] .cafa-choice-icon {background:#473269;color:#fff;border:1px solid #8f6bc2;font-weight:800;box-shadow:inset 0 0 0 1px #ffffff08}
+html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon {background:#145d43;color:#fff;border-color:#35a47b}
+html[data-study-theme=dark] .cafa-home-choice.exam .cafa-choice-icon {background:#5b351d;color:#ffe1c8;border-color:#b87746}
+
+/* Ordinary actions are enabled unless their actual DOM state says otherwise. */
+html[data-study-theme=dark] .btn,
+html[data-study-theme=dark] .views button,
+html[data-study-theme=dark] .mode-switch label,
+html[data-study-theme=dark] .flag-label {border-color:var(--dm-control-border)}
+html[data-study-theme=dark] .btn:not(.primary):not(.secondary),
+html[data-study-theme=dark] .views button,
+html[data-study-theme=dark] .mode-switch label {background-color:var(--dm-control-bg)}
+html[data-study-theme=dark] .btn:not(.primary):not(.secondary):not(:disabled):not([aria-disabled=true]):hover,
+html[data-study-theme=dark] .views button:not(:disabled):hover,
+html[data-study-theme=dark] .mode-switch label:hover {background-color:#293d4b;border-color:#a2b8c7}
+html[data-study-theme=dark] .btn.primary {background:#07674a;color:#fff;border-color:#43b78e}
+html[data-study-theme=dark] .btn.primary:hover:not(:disabled) {background:#0a7756}
+html[data-study-theme=dark] .btn.secondary {color:#98ead0;border-color:#53b899}
+
+/* Unselected is not disabled. Selection uses fill AND a stronger outline. */
+html[data-study-theme=dark] .views button.active,
+html[data-study-theme=dark] .mode-radio[value=mc]:checked ~ .mode-switch label[for^="mc-"],
+html[data-study-theme=dark] .mode-radio[value=own]:checked ~ .mode-switch label[for^="own-"] {
+  background:var(--dm-selected-bg)!important;
+  border-color:var(--dm-selected-border)!important;
+  color:#fff!important;
+  box-shadow:inset 0 -2px 0 var(--dm-selected-border);
+}
+html[data-study-theme=dark] .cafa-direct-check {color:var(--dm-control-text)}
+html[data-study-theme=dark] .cafa-direct-check input {accent-color:#159c79}
+html[data-study-theme=dark] .topic-progress,
+html[data-study-theme=dark] [data-topic-progress],
+html[data-study-theme=dark] .exam-save-status:not(.is-error),
+html[data-study-theme=dark] .cae-status {color:var(--dm-muted)}
+html[data-study-theme=dark] .exam-save-status.is-error {color:#ffb4ae}
+
+/* Rich answer editor, shared by exercises and exam questions. */
+html[data-study-theme=dark] .cafa-answer-editor {--cae-border:#718797}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolbar {background:#1d2c36;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-toolgroup {border-right-color:#607888}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button,
+html[data-study-theme=dark] .cafa-answer-editor .cae-select {color:var(--dm-control-text)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-select {background:#15232d;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button:hover:not(:disabled) {background:#2b4150;border-color:#8aabbd}
+html[data-study-theme=dark] .cafa-answer-editor .cae-button[aria-pressed=true] {background:#224c40;color:#c3ffe4;border-color:#83d6b9}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content {color:#e5edf3;border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content:empty:before {color:#b1c1cd}
+html[data-study-theme=dark] .cafa-answer-editor .cae-count {color:#89dfc3}
+html[data-study-theme=dark] .cafa-answer-editor .cae-panel {border-color:var(--cae-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-panel .cae-button {border-color:var(--dm-control-border)}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content td,
+html[data-study-theme=dark] .cafa-answer-editor .cae-content th {border-color:var(--dm-control-border)}
+
+/* Muted, but readable: never reduce the entire disabled control's opacity.
+   A dashed edge and non-interactive cursor distinguish it from enabled controls.
+   No disabled flags, pointer events, tab stops, or application state are changed. */
+html[data-study-theme=dark] button:disabled,
+html[data-study-theme=dark] .btn:disabled,
+html[data-study-theme=dark] select:disabled,
+html[data-study-theme=dark] .cafa-answer-editor .cae-button:disabled,
+html[data-study-theme=dark] :is(button,.btn,select,[role=button])[aria-disabled=true] {
+  color:var(--dm-disabled-text)!important;
+  -webkit-text-fill-color:var(--dm-disabled-text)!important;
+  background:var(--dm-disabled-bg)!important;
+  border-color:var(--dm-disabled-border)!important;
+  border-style:dashed;
+  opacity:1!important;
+  box-shadow:none!important;
+  cursor:not-allowed;
+}
+
+/* A visible focus ring also covers radio labels driven by hidden inputs. */
+html[data-study-theme=dark] :is(button,a,input,select,textarea,summary,[tabindex]):focus-visible {
+  outline:2px solid var(--dm-focus)!important;
+  outline-offset:2px;
+}
+html[data-study-theme=dark] .cafa-answer-editor .cae-content:focus {border-color:var(--dm-focus);box-shadow:inset 0 0 0 1px var(--dm-focus)}
+html[data-study-theme=dark] .mode-switch label:focus-visible {outline:2px solid var(--dm-focus);outline-offset:2px}
