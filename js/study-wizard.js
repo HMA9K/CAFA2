@@ -4,7 +4,7 @@
  var root=document.getElementById('kapitaalboom');if(!root)return;
  var stage='classify';
  var state={holder:'legal',target:'legal'},key='cafa2-capital-route-v2';
- var allowed={holder:['legal','partnership','person'],target:['legal','partnership'],participation:['yes','no','unknown'],subsidiary:['yes','no','unknown'],group:['yes','no','unknown'],influence:['yes','no','unknown'],information:['yes','no','unknown'],exception:['yes','no'],head:['group','part','none','unknown']};
+ var allowed={holder:['legal'],target:['legal','partnership'],participation:['yes','no','unknown'],subsidiary:['yes','no','unknown'],group:['yes','no','unknown'],influence:['yes','no','unknown'],information:['yes','no','unknown'],exception:['yes','no'],head:['group','part','none','unknown']};
  try{var saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved)Object.keys(allowed).forEach(function(k){if(allowed[k].includes(saved[k]))state[k]=saved[k];});}catch(_){}
  function law(a,p){return window.CafaStudy?window.CafaStudy.lawRail([{article:a,part:p||''}],'samenvatting.html'):'';}
  function opts(field,items){return '<div class="route-options" role="group" aria-label="'+fieldLabel(field)+'">'+items.map(function(x){return '<button type="button" data-capital-field="'+field+'" data-capital-value="'+x[0]+'" aria-pressed="'+(state[field]===x[0])+'">'+x[1]+'</button>';}).join('')+'</div>';}
@@ -26,7 +26,7 @@
   root.querySelector('[data-route-status=consolidate]').textContent=state.head==='group'?'Groepshoofd':state.head==='part'?'Groepsdeel':'Beoordeel afzonderlijk';
  }
  function paint(){
-  var natural=state.holder==='person',vennoot=state.target==='partnership',legal=state.holder==='legal';
+  var natural=false,vennoot=state.target==='partnership',legal=true;
   root.querySelectorAll('.capital-context [data-capital-field]').forEach(function(b){b.setAttribute('aria-pressed',String(state[b.dataset.capitalField]===b.dataset.capitalValue));});
   var q=document.getElementById('capital-qualifications'),v=document.getElementById('capital-value-questions'),vr=document.getElementById('capital-value-result'),c=document.getElementById('capital-consolidation-questions'),cr=document.getElementById('capital-consolidation-result');
   if(natural){
@@ -39,6 +39,9 @@
   // Keep each independent qualification when another changes. Clear only dependent valuation answers.
   var validParticipation=!(vennoot&&!legal),participation=validParticipation?state.participation:null;
   var questions='';
+  if(participation!=='yes'&&participation!=='no'){
+   questions+=question('participation','Deelneming?','Beantwoord hier eerst de deelnemingstoets. Daarna verschijnt direct de passende waarderingsroute.','24c',vennoot?'lid 2':'lid 1',vennoot?'Bij een VOF/CV: toets of de rechtspersoon of haar dochter volledig aansprakelijke vennoot is, of anderszins duurzaam verbonden is ten dienste van de eigen werkzaamheid.':'Vanaf 20% geplaatst kapitaal bestaat een vermoeden; minder dan 20% sluit een deelneming niet uit.');
+  }
   if(participation==='yes'){
    questions+=question('influence','Invloed van betekenis?','Invloed op het zakelijke en financiële beleid?','389','lid 1','Vanaf 20% naar eigen inzicht uit te brengen stemmen wordt deze invloed vermoed.');
    if(state.influence==='yes'){
