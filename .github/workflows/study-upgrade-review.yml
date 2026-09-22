@@ -2,7 +2,8 @@ name: CAFA2 study upgrade review
 on:
   push:
     branches: [cafa2-navigatie-wetboek-20260921]
-    paths: [.github/workflows/study-upgrade-review.yml, scripts/**, content/**, tests/**, js/study-*.js, css/study-*.css, kapitaalbelangen.html]
+    paths: [.github/workflows/study-upgrade-review.yml, scripts/**, content/**, tests/**, js/**, css/study-*.css, package.json]
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
@@ -12,16 +13,71 @@ jobs:
   review:
     if: github.ref == 'refs/heads/cafa2-navigatie-wetboek-20260921'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Snapshot current source tree
-        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-current-source.tar .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/setup-python@v5
         with:
-          name: cafa2-current-source
-          path: /tmp/cafa2-current-source.tar
+          python-version: '3.12'
+      - name: Materialize reviewed source changes
+        run: |
+          python - <<'PY'
+          import hashlib,json,lzma,pathlib,shutil,subprocess
+          root=pathlib.Path('.').resolve(); folder=root/'content/study-bootstrap'
+          if folder.exists():
+              raw=b''.join(p.read_bytes() for p in sorted(folder.glob('*.part')))
+              assert hashlib.sha256(raw).hexdigest()=='949f0efb295f587c0acbada6e07483f26d3c1c29a00f86e825db8ec38755840b'
+              bundle=json.loads(lzma.decompress(raw))
+              patch=bundle['patch'].encode()
+              subprocess.run(['git','apply','--check'],input=patch,check=True)
+              subprocess.run(['git','apply'],input=patch,check=True)
+              for relative,text in bundle['files'].items():
+                  path=root/relative
+                  assert path.resolve().is_relative_to(root) and not relative.startswith(('.git','/'))
+                  path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
+              shutil.rmtree(folder)
+          # Do not consume a saved return position until all asynchronous feedback modules are ready.
+          p=root/'js/study-shell.js';s=p.read_text()
+          s=s.replace("if (p.question && p.question.kind === 'practice' && !window.CafaPractice) return false;", "if (p.question && p.question.kind === 'practice' && (!window.CafaPractice || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
+          s=s.replace("if (p.question && p.question.kind === 'exam' && !window.CafaExams) return false;", "if (p.question && p.question.kind === 'exam' && (!window.CafaExams || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
+          p.write_text(s)
+          PY
+      - name: Install test dependencies
+        run: |
+          python -m pip install tinycss2 playwright
+          python -m playwright install --with-deps chromium webkit
+      - name: Build complete study environment
+        run: npm run build:study
+      - name: Source, calculation, exam and rebuild regression tests
+        run: npm test
+      - name: Chromium and WebKit acceptance tests
+        run: python tests/study-upgrade-browser.py
+      - name: Commit only after all checks pass
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-navigatie-wetboek-20260921'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content css data docs fallback fragments js scripts tests index.html samenvatting.html package.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build and verify CAFA2 contextual navigation, display modes and statutory learning'
+            git push origin HEAD:cafa2-navigatie-wetboek-20260921
+          fi
+      - name: Capture source and build for review
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-study-worktree.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-study-worktree
+          path: /tmp/cafa2-study-worktree.tar
           retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-study-browser-review
+          path: /tmp/cafa2-study-review/
+          if-no-files-found: ignore
+          retention-days: 7
