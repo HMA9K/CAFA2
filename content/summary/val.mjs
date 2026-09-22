@@ -1,4 +1,5 @@
 import {lesson as L,table as T,journal as J,example as E,note as N,flow as F} from './helpers.mjs';
+import {functionalCurrencyHtml} from '../study/functional-currency.mjs';
 export default [
 L('valuta','val','Lokale, functionele en presentatievaluta','Zet bij iedere valutacasus eerst drie labels. Pas daarna zijn koerskeuze en verwerking van het omrekeningsverschil zinvol.',
 T(['Valuta','Betekenis','Voorbeeld'],[
@@ -10,17 +11,7 @@ T(['Valuta','Betekenis','Voorbeeld'],[
 N('Koersnotatie eerst lezen','In de voorbeelden is de koers doorgaans de europrijs van één eenheid vreemde valuta: vreemde-valutabedrag maal koers geeft euro’s. Is een koers andersom gegeven, dan moet de berekeningsrichting worden aangepast. Gebruik nooit automatisch vermenigvuldiging zonder de notatie te lezen.'),
 ['S2|§1–2, p. 4; art. 2:384 lid 5 BW en RJ 122','C3|dia 35–37']),
 L('functionele-valuta','val','De functionele valuta onderbouwen','Geef bij een motiveringsvraag niet alleen een muntnaam. Koppel de concrete casusfeiten aan de primaire en aanvullende factoren.',
-T(['Bron','Factor','Wat onderzoek je in de casus?'],[
-['RJ 122.106','Verkoopprijzen','Welke valuta bepaalt hoofdzakelijk de prijzen en welk land bepaalt via concurrentie en regelgeving het prijsniveau?'],
-['RJ 122.106','Arbeid, materialen en overige kosten','Welke valuta is hoofdzakelijk bepalend voor deze kosten?'],
-['RJ 122.107','Financiering','In welke valuta wordt financiering aangetrokken?'],
-['RJ 122.107','Aangehouden middelen','In welke valuta worden ontvangen middelen gewoonlijk aangehouden?'],
-['RJ 122.108','Zelfstandigheid buitenland','Werkt de buitenlandse activiteit als verlengstuk of met een belangrijke mate van zelfstandigheid?'],
-['RJ 122.108','Transacties met de rechtspersoon','Vormen deze een belangrijk of beperkt deel van de buitenlandse activiteit?'],
-['RJ 122.108','Kasstromen en financierbaarheid','Zijn kasstromen direct beschikbaar voor de moeder en kan de buitenlandse eenheid eigen verplichtingen zonder financiering door de moeder voldoen?'],
-['RJ 122.109','Geen eenduidig beeld','De leiding kiest de valuta die de economische gevolgen getrouw weergeeft, met het grootste gewicht voor de primaire factoren.']])+
-E('Een zelfstandige eenheid tegenover een verkoopkantoor','<p>Een buitenlandse onderneming met lokaal bepaalde prijzen en kosten, eigen financiering en zelfstandig beschikbare kasstromen geeft andere aanwijzingen dan een verkoopkantoor dat door de moeder wordt aangestuurd, in euro’s wordt bevoorraad en ontvangen middelen periodiek afdraagt. Beschrijf per feit welke factor het ondersteunt. “Zelfstandig” of “verlengstuk” is niet de volledige analyse, maar een onderdeel daarvan.</p>')+
-N('Tegenstrijdige aanwijzingen niet verbergen','Een eurofinanciering maakt de euro niet automatisch functioneel als de primaire prijs- en kostenfactoren sterk naar de lokale valuta wijzen. Benoem het conflict en motiveer het gewicht dat de syllabus aan de factoren toekent.'),
+functionalCurrencyHtml,
 ['S2|§3, p. 5–6; RJ 122.106–109','A2B|Boccalupo, vraag 2, p. 4','E24A|Galster, vraag 9, p. 6']),
 L('valuta-methoden','val','Tijdstipmethode tegenover slotkoersmethode','De methode volgt uit de functionele valuta en de omrekening die nodig is. De syllabus behandelt twee hoofdsituaties voor de buitenlandse deelneming en haar moeder.',
 T(['Onderdeel','Tijdstipmethode','Slotkoersmethode'],[
