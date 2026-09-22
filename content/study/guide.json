@@ -1,0 +1,686 @@
+{
+  "kwalificatie": {
+    "refs": [
+      {
+        "article": "24c",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "24b",
+        "part": ""
+      },
+      {
+        "article": "389",
+        "part": "lid 1"
+      }
+    ],
+    "why": "De kwalificatie verklaart welke economische relatie de jaarrekening moet laten zien. Een duurzaam zakelijk samenwerkingsbelang is iets anders dan een aandelenpakket dat alleen voor rendement wordt gehouden; daarom bepaalt het percentage niet zelfstandig de uitkomst.",
+    "method": "Benoem eerst de houder, daarna de wettelijke kenmerken en de concrete casusfeiten. Toets een deelneming, dochtermaatschappij en groepsmaatschappij afzonderlijk. Het vermoeden vanaf 20% geplaatst kapitaal gaat over deelneming; het vermoeden vanaf 20% stemmen gaat over invloed van betekenis.",
+    "practice": "Voor de accountant is deze scheiding relevant omdat een onjuiste kwalificatie kan doorwerken in de balansrubriek, de waarderingsgrondslag en de consolidatiekring."
+  },
+  "dochter": {
+    "refs": [
+      {
+        "article": "24a",
+        "part": "lid 1 t/m 4"
+      },
+      {
+        "article": "24d",
+        "part": ""
+      }
+    ],
+    "why": "De dochtertoets volgt de uitoefenbare bevoegdheden, niet uitsluitend het economisch belang. Zo wordt zeggenschap via dochtermaatschappijen, benoemingsrechten of overeenkomsten niet gemist wanneer het rechtstreekse aandelenpercentage laag lijkt.",
+    "method": "Onderzoek meer dan de helft van de stemmen of, bij lidmaatschap/aandeelhouderschap, benoeming of ontslag van meer dan de helft van bestuurders of commissarissen. Beoordeel daarnaast de gelijkstelling voor de volledig aansprakelijke vennoot. Reken rechten via een maatschappij pas toe nadat haar dochterstatus is vastgesteld.",
+    "practice": "Een accountant moet dus naast het organisatieschema ook de relevante rechten uit de casus kunnen verbinden aan de conclusie. Dochterstatus bewijst op zichzelf nog geen groepsverband."
+  },
+  "flex-aandelen": {
+    "refs": [
+      {
+        "article": "24d",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "24a",
+        "part": "lid 1"
+      },
+      {
+        "article": "24c",
+        "part": "lid 1"
+      },
+      {
+        "article": "389",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Stemrecht, kapitaalverschaffing en winstrecht beantwoorden verschillende vragen. Door voor iedere toets een eigen teller en noemer te gebruiken, voorkom je dat een aandeel zonder stemrecht ten onrechte buiten de vermogens- of dividendberekening blijft.",
+    "method": "Splits de aandelen naar de eraan verbonden rechten. Gebruik de uitoefenbare stemmen bij zeggenschap, het geplaatste kapitaal bij het deelnemingsvermoeden en de winstrechten bij resultaat of dividend. Artikel 2:24d lid 2 noemt uitzonderingen waarbij statutaire stemrechtloze BV-aandelen juist meetellen.",
+    "practice": "Deze uitsplitsing maakt controleerbaar waarom het percentage voor een dochtertoets anders kan zijn dan het percentage waarmee het resultaat wordt toegerekend."
+  },
+  "waardering": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 1, 2, 3 en 9"
+      },
+      {
+        "article": "384",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Bij invloed van betekenis laat een onveranderlijke aankoopprijs de ontwikkeling van het onderliggende vermogen niet zien. De vermogensmutatiemethode volgt die ontwikkeling op vergelijkbare grondslagen, zodat prijs, resultaat en vermogen niet door elkaar worden gebruikt.",
+    "method": "Begin bij artikel 2:389 lid 1. Bij invloed van betekenis is nettovermogenswaarde volgens lid 2 de hoofdregel. Lid 3 is een alternatief binnen de vermogensmutatiemethode bij onvoldoende gegevens; lid 9 verlangt gegronde, toegelichte redenen voor afwijking. Zonder invloed verwijst de syllabus naar artikel 2:384.",
+    "practice": "Het belang voor de accountant is dat een gekozen grondslag inhoudelijk moet volgen uit de omstandigheden, niet uit de gewenste hoogte van het resultaat."
+  },
+  "fair-value": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2 en 7"
+      }
+    ],
+    "why": "Door het vermogen eerst te herrekenen, wordt zichtbaar welk deel van de betaalde prijs wordt vertegenwoordigd door afzonderlijke activa en verplichtingen. Anders zouden stille reserves of extra verplichtingen ten onrechte in goodwill verdwijnen.",
+    "method": "Begin bij het eigen vermogen op verkrijgingsdatum. Tel positieve waarderingscorrecties op, trek negatieve correcties en extra verplichtingen af en verwerk belastingeffecten wanneer de casus dat voorschrijft. Vermenigvuldig pas daarna met het verworven belang en vergelijk met de tegenprestatie.",
+    "practice": "De accountant kan deze overnamebalans later opnieuw gebruiken om de extra afschrijving, vrijval van voorzieningen en aansluiting van de deelnemingswaarde te controleren."
+  },
+  "aandelenruil": {
+    "refs": [
+      {
+        "article": "388",
+        "part": "lid 1"
+      },
+      {
+        "article": "389",
+        "part": "lid 7"
+      },
+      {
+        "article": "373",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Betalen met eigen aandelen verandert de vergoeding voor de deelneming, maar niet de economische aankoop. Het verschil tussen nominale waarde en uitgiftewaarde verklaart het agio; het is geen extra resultaat uit de verwerving.",
+    "method": "Bereken hoeveel eigen aandelen worden uitgegeven, waardeer de tegenprestatie zoals de casus voorschrijft en tel de contante betaling erbij. Splits de creditboeking in geplaatst kapitaal, agio en bank. Bepaal daarna de deelneming en eventuele goodwill volgens de gekozen grondslag.",
+    "practice": "Deze route voorkomt dat de nominale waarde van de uitgegeven aandelen ten onrechte als totale verkrijgingsprijs wordt behandeld."
+  },
+  "goodwill": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 7"
+      },
+      {
+        "article": "365",
+        "part": "lid 1 onder d"
+      },
+      {
+        "article": "386",
+        "part": "lid 3"
+      },
+      {
+        "article": "387",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Goodwill is het betaalde verschil dat na vergelijking met het herrekende nettovermogen resteert. Door dit afzonderlijk te volgen, raakt de deelnemingswaarde niet vermengd met de kosten van toekomstige voordelen waarvoor bij de overname extra is betaald.",
+    "method": "Bereken verkrijgingsprijs minus het aandeel in het herrekende nettovermogen. Onderscheid de betaalde goodwill, de afschrijving van dit jaar en de resterende boekwaarde. Gebruik de casustermijn; de wettelijke grens van tien jaar geldt alleen in de uitzonderingssituatie waarin de gebruiksduur niet betrouwbaar kan worden geschat.",
+    "practice": "Een accountant controleert daardoor zowel de oorspronkelijke berekening als de latere toerekening aan boekjaren; een juist aankoopbedrag betekent nog niet dat de eindboekwaarde juist is."
+  },
+  "resultaat-deelneming": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2 en 3"
+      },
+      {
+        "article": "362",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Het resultaat van de dochter volgens haar eigen administratie is niet steeds het resultaat op de grondslagen van de moeder. Dezelfde waarderingsverschillen die de overnamebalans wijzigen, kunnen later via afschrijving, verkoop of vrijval in de winst doorwerken.",
+    "method": "Start met het gerapporteerde resultaat, bereken het jaareffect van iedere nog aanwezige waarderingscorrectie en pas vervolgens het winstaandeel toe. Bij nettovermogenswaarde verhoogt dit resultaat ook de boekwaarde van de deelneming; een verlies werkt omgekeerd.",
+    "practice": "De aansluiting tussen resultaatcorrecties en resterende balansverschillen biedt de accountant een controle op volledigheid en voorkomt dat de volledige oorspronkelijke correctie ieder jaar opnieuw wordt verwerkt."
+  },
+  "dividend": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2, 3 en 6"
+      },
+      {
+        "article": "362",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Bij nettovermogenswaarde is de winst al als resultaat deelneming verantwoord. Dividend verplaatst vervolgens vermogen van de deelneming naar een vordering of banktegoed bij de moeder; opnieuw een opbrengst boeken zou dezelfde winst dubbel tellen.",
+    "method": "Stel vast welk bedrag aan dividend aan de moeder toekomt en welke waarderingsgrondslag geldt. Bij NVW daalt de deelneming. Bij verkrijgingsprijs onderscheidt de syllabus regulier dividend van meegekocht dividend: dit laatste vermindert de verkrijgingsprijs in de behandelde casussen.",
+    "practice": "Voor de accountant is dus niet alleen de ontvangstdatum van belang, maar ook de herkomst van het uitgekeerde resultaat en de verwervingsdatum van het betreffende aandelenpakket."
+  },
+  "wettelijke-reserve": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 6"
+      },
+      {
+        "article": "373",
+        "part": "lid 1 onder d en lid 4"
+      }
+    ],
+    "why": "Een resultaat kan bij de moeder zijn verantwoord zonder dat zij het bijbehorende vermogen vrij kan uitkeren. De wettelijke reserve deelneming houdt daarom het niet vrij beschikbare deel binnen het eigen vermogen gebonden; de reserve vormt geen tweede kostenpost.",
+    "method": "Onderzoek per deelneming de cumulatief positieve resultaten en rechtstreekse vermogensvermeerderingen sinds eerste waardering. Verwerk de verminderingen en uitkeringen waarop recht is verkregen én uitkeringen die zonder beperkingen kunnen worden bewerkstelligd zoals lid 6 voorschrijft. Alleen ontvangen dividend aftrekken is te beperkt.",
+    "practice": "De accountant onderscheidt hiermee de juistheid van de winst van de beschikbaarheid van die winst voor uitkering."
+  },
+  "eigen-aandelen": {
+    "refs": [
+      {
+        "article": "385",
+        "part": "lid 5"
+      },
+      {
+        "article": "373",
+        "part": "lid 3"
+      },
+      {
+        "article": "24d",
+        "part": ""
+      }
+    ],
+    "why": "Eigen aandelen vertegenwoordigen voor de uitgevende rechtspersoon geen vermogen tegenover een buitenstaander. Ook een indirect gehouden eigen belang mag daarom niet ongemerkt als een gewoon actief in de deelnemingswaarde blijven zitten.",
+    "method": "Bepaal wie de aandelen houdt en wanneer de houdster dochtermaatschappij werd. Artikel 2:385 lid 5 verbiedt activering van rechtstreeks gehouden eigen aandelen en regelt de vermindering van het belang in de dochter, met een afzonderlijke regel voor reeds vóór de dochterstatus verkregen aandelen.",
+    "practice": "Het geplaatste kapitaal wordt daarbij niet simpelweg verlaagd met de ingekochte aandelen. De accountant moet presentatie, waardering en de gevolgen voor stemrechten afzonderlijk beoordelen."
+  },
+  "stelselwijziging": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 6 en 7"
+      },
+      {
+        "article": "389",
+        "part": "lid 9"
+      },
+      {
+        "article": "390",
+        "part": "lid 1 en 3"
+      }
+    ],
+    "why": "Vergelijkbare jaarcijfers vragen om bestendige grondslagen. Een overstap moet daarom eerst worden gemotiveerd voordat het verschil in boekwaarde wordt geboekt; een hogere uitkomst is op zichzelf geen reden om van methode te wisselen.",
+    "method": "Identificeer oude en nieuwe grondslag en het moment van wijziging. Bereken de nieuwe deelnemingswaarde en behandel goodwill en eerdere vermogensmutaties afzonderlijk volgens de cursuscasus. Bij actuele waarde hangen resultaatverwerking en herwaarderingsreserve samen met artikel 2:384 lid 7 en 2:390, niet met een algemene regel dat iedere stijging naar de reserve gaat.",
+    "practice": "Dit voorkomt dat een mutatie die volgens de uitwerking binnen het eigen vermogen thuishoort ten onrechte als winst van het lopende jaar wordt gepresenteerd."
+  },
+  "valuta": {
+    "refs": [
+      {
+        "article": "362",
+        "part": "lid 7"
+      },
+      {
+        "article": "384",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Omrekenen is pas betekenisvol nadat vaststaat welke economische bedragen worden gemeten en in welke munt wordt gerapporteerd. Het verschil tussen transactie-, functionele en presentatievaluta bepaalt daarom de vraag die je met de koers probeert te beantwoorden.",
+    "method": "Noteer eerst de koersnotatie: euro per eenheid vreemde valuta betekent vermenigvuldigen, vreemde valuta per euro betekent delen. Leg daarna vast welke methode en welke soort post aan de orde zijn. De concrete koersregels volgen uit Deel 2; artikel 2:384 lid 5 verlangt toelichting van grondslagen en koersverschillen.",
+    "practice": "Een consequente koersnotatie helpt de accountant een rekenfout te onderscheiden van een onjuiste keuze van grondslag."
+  },
+  "functionele-valuta": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 5"
+      }
+    ],
+    "why": "De functionele valuta sluit aan op de economische omgeving waarin de activiteiten plaatsvinden. Alleen kijken naar de vestigingsplaats kan daarom een verkeerde omrekenmethode opleveren, bijvoorbeeld wanneer financiering, inkoop en geldstromen juist door de moeder worden bepaald.",
+    "method": "Verbind de indicatoren uit de casus aan de afzet, kosten, financiering en zelfstandigheid van de activiteiten zoals behandeld in Deel 2. Motiveer de conclusie met die feiten; een gegeven lokale munt is niet automatisch de functionele valuta.",
+    "practice": "Voor de accountant verklaart deze beoordeling of omrekeningsverschillen de lopende prestaties of vooral de vertaling van een buitenlandse investering weergeven. De indicatoren staan in de cursus, niet letterlijk in artikel 2:384."
+  },
+  "valuta-methoden": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 5"
+      },
+      {
+        "article": "389",
+        "part": "lid 8"
+      }
+    ],
+    "why": "De tijdstipmethode en slotkoersmethode hebben een ander uitgangspunt. De eerste bewaart bij historische posten de relevante oorspronkelijke eurogrondslag; de tweede vertaalt een buitenlandse jaarrekening naar de presentatiemunt. Dat verklaart ook het verschil in verwerking van de sluitpost.",
+    "method": "Bepaal de functionele valuta en de voorgeschreven methode vóór de berekening. Maak een koersenmatrix per post en onderscheid historische grondslagen, monetaire posten, resultaatposten en vermogensmutaties. Leid de specifieke koersen af uit Deel 2 en de casus.",
+    "practice": "Zo kan de accountant beoordelen of een gevonden koersverschil logisch volgt uit de methode in plaats van alleen een technisch sluitend saldo te zijn."
+  },
+  "tijdstipmethode": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Een tegen historische kosten gemeten actief moet na omrekening dezelfde historische eurogrondslag behouden. Daarom volgen afschrijving en historische aanschaf dezelfde koers, terwijl een monetaire schuld juist het bedrag moet laten zien dat op balansdatum in euro’s wordt afgewikkeld.",
+    "method": "Splits niet-monetaire historische posten naar ontstaansmoment. Reken monetaire eindstanden tegen slotkoers om en bepaal afschrijving vanuit de historische eurogrondslag. Voor voorraad gebruik je de koers van de resterende partij; bij afwaardering vergelijk je bedragen die ieder met hun passende koers zijn omgerekend.",
+    "practice": "De concrete koerskeuzen komen uit de syllabus. Artikel 2:384 lid 5 is de wettelijke toelichtingshaak, niet een opsomming van de temporal-regels."
+  },
+  "valuta-voorraad": {
+    "refs": [
+      {
+        "article": "385",
+        "part": "lid 2"
+      },
+      {
+        "article": "384",
+        "part": "lid 5"
+      },
+      {
+        "article": "387",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Eerst de fysieke goederenstroom bepalen voorkomt dat koersverschillen worden verward met prijs- of hoeveelheidsverschillen. De resterende partijen bepalen de eindvoorraad; de afgegeven partijen bepalen de kostprijs van de verkopen.",
+    "method": "Werk de voorraad per inkooplaag uit volgens de gegeven kostprijsmethode. Controleer beginhoeveelheid plus inkopen minus verkopen op eindhoeveelheid. Reken daarna de historische waarde van de juiste lagen om en toets afzonderlijk de lagere waarde op balansdatum.",
+    "practice": "Deze twee controles laten de accountant zien of een verschil wordt veroorzaakt door een verkeerde laag, een verkeerde koers of een afwaardering."
+  },
+  "valuta-afwaardering": {
+    "refs": [
+      {
+        "article": "387",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "384",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Een afwaardering vergelijkt de oude euroboekwaarde met de nieuwe lagere eurowaarde. Alleen het verlies in vreemde valuta omrekenen tegen één koers kan het verschil missen dat ontstaat doordat de oorspronkelijke voorraad tegen een andere historische koers is opgenomen.",
+    "method": "Bereken eerst de historische euroboekwaarde van de getroffen partij. Bereken daarna de lagere waarde in euro’s tegen de koers die bij die waardering hoort. Het positieve verschil vormt de afwaardering; houd het afzonderlijk van de koersanalyse op de monetaire positie.",
+    "practice": "Zo voorkomt de accountant dat dezelfde valutabeweging zowel in de voorraadkosten als nogmaals in het monetaire koersresultaat terechtkomt."
+  },
+  "monetaire-positie": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 5"
+      }
+    ],
+    "why": "Een koersbeweging raakt een netto vordering in vreemde valuta anders dan een netto schuld. Door de monetaire beginpositie en de geldstromen afzonderlijk te volgen, wordt zowel het bedrag als het teken van het koersresultaat verklaarbaar.",
+    "method": "Bepaal monetaire activa minus monetaire verplichtingen. Analyseer vervolgens de verandering van de beginkoers naar slotkoers en de geldstromen vanaf hun transactietijdstip naar slotkoers. Houd niet-monetaire voorraad- of afschrijvingsposten buiten deze positie.",
+    "practice": "De accountant heeft hiermee een onafhankelijke tekencontrole: bij een sterkere vreemde munt neemt de eurowaarde van een netto bezit toe, maar wordt een netto schuld juist zwaarder."
+  },
+  "slotkoersmethode": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 5"
+      },
+      {
+        "article": "389",
+        "part": "lid 8"
+      }
+    ],
+    "why": "Bij de slotkoersmethode worden eindbalans en jaarmutaties niet tegen dezelfde koersen vertaald. Het verschil is daarom geen onverklaarde bedrijfswinst, maar het gevolg van het in euro’s uitdrukken van dezelfde buitenlandse activiteit op verschillende momenten.",
+    "method": "Bereken de eindpost met de slotkoers. Zet daarnaast beginwaarde en afzonderlijke mutaties om tegen de in de cursuscasus voorgeschreven koersen. Sluit het verloop met het omrekeningsverschil. Pas een deelnemingspercentage pas toe wanneer de vraag de post bij de moeder vraagt.",
+    "practice": "Deze aansluiting maakt de omvang van de buitenlandse activiteit los zichtbaar van het effect van de veranderde omrekenkoers."
+  },
+  "omrekenreserve": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 8"
+      },
+      {
+        "article": "410",
+        "part": "lid 1"
+      }
+    ],
+    "why": "De reserve omrekeningsverschillen scheidt de vertaling van de buitenlandse investering van het resultaat uit de activiteiten. Daardoor wordt de prestatie niet verhuld door een verandering van de presentatiemunt.",
+    "method": "Bereken eerst het verschil in het omrekeningsverloop. Verwerk het aandeel van de moeder met Deelneming tegenover Reserve omrekeningsverschillen in de richting die bij een stijging of daling hoort. Onderscheid die reservemutatie van het resultaat deelneming en van dividend.",
+    "practice": "De wettelijke bepaling laat een negatief reservesaldo toe en koppelt daaraan een uitkeringsbeperking. Een negatieve reserve is dus niet automatisch een boekingsfout."
+  },
+  "valuta-deelneming": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2, 3 en 8"
+      }
+    ],
+    "why": "De deelnemingsrekening moet niet alleen het aandeel in de buitenlandse winst volgen, maar ook uitkeringen en omrekeningsverschillen. Eén sluitend verloop verbindt daarom de vreemde-valutaberekening met de enkelvoudige administratie van de moeder.",
+    "method": "Begin met de boekwaarde, tel het aandeel in het omgerekende resultaat op, trek het aandeel in gedeclareerd dividend af en verwerk de omrekeningsmutatie afzonderlijk. Controleer de eindwaarde met het aandeel in het omgerekende eindvermogen.",
+    "practice": "De accountant kan hiermee nagaan of een sluitpost terecht in de reserve omrekeningsverschillen staat en niet ten onrechte in Resultaat deelneming."
+  },
+  "consolidatieplicht": {
+    "refs": [
+      {
+        "article": "24b",
+        "part": ""
+      },
+      {
+        "article": "406",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "407",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "408",
+        "part": "lid 1, 3 en 4"
+      }
+    ],
+    "why": "De consolidatie laat de economische eenheid zien, niet alleen een lijst aandelenpakketten. Eerst vaststellen wie de groep of het groepsdeel leidt, voorkomt dat een tussenhoudster of een onder centrale leiding staande maatschappij wordt gemist.",
+    "method": "Scheid drie vragen: wie moet consolideren, welke gegevens horen in de kring en welke vrijstelling kan daarna worden toegepast? Verwijs bij een groepshoofd naar lid 1 en bij een groepsdeel naar lid 2 van artikel 2:406. Werk de voorwaarden van 407 of 408 uit; artikel 2:403 is geen algemene consolidatievrijstelling.",
+    "practice": "Voor de accountant raakt dit direct de volledigheid van de geconsolideerde jaarrekening en het inzicht in verplichtingen en resultaten van de groep."
+  },
+  "proces": {
+    "refs": [
+      {
+        "article": "405",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "410",
+        "part": "lid 1 en 3"
+      }
+    ],
+    "why": "Een concern kan geen vermogen of winst creëren door alleen tussen zijn eigen onderdelen te boeken. Het extracomptabele consolidatieproces brengt de afzonderlijke jaarrekeningen daarom terug tot een weergave alsof de opgenomen activiteiten één geheel vormen.",
+    "method": "Maak de grondslagen vergelijkbaar, voeg de vereiste cijfers samen en elimineer vervolgens deelneming/eigen vermogen en onderlinge verhoudingen. Onderscheid deze consolidatieposten van correcties die al in de administratie van de moeder zijn geboekt.",
+    "practice": "De accountant moet de eliminaties terug kunnen voeren op de afzonderlijke cijfers; een sluitende gecombineerde balans alleen bewijst nog geen juiste consolidatie."
+  },
+  "onderlinge-posten": {
+    "refs": [
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "406",
+        "part": ""
+      },
+      {
+        "article": "409",
+        "part": ""
+      }
+    ],
+    "why": "Een interne vordering heeft binnen dezelfde opgenomen groep een bijbehorende schuld. Hetzelfde geldt voor interne baten en lasten. Beide blijven zichtbaar in de enkelvoudige administraties, maar voegen voor het geconsolideerde geheel geen externe positie toe.",
+    "method": "Stel eerst de onderlinge eindstanden en jaarbedragen vast. Houd bij rente rekening met rentepercentage, looptijd en aflossingsmoment; bij huur of managementfee met de werkelijk verstreken maanden. Elimineer bij integrale consolidatie de volledige overeenkomstige posten, niet alleen het kapitaalpercentage.",
+    "practice": "Afstemming van beide administraties voorkomt dat een verschil door timing, verwerking of een ontbrekende boeking ongemerkt als consolidatiecorrectie wordt weggewerkt."
+  },
+  "streams": {
+    "refs": [
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "389",
+        "part": "lid 2"
+      }
+    ],
+    "why": "De verkoper bepaalt waar de interne winst is ontstaan; de koper bepaalt waar die winst nog in de voorraad zit. De waarderingsgrondslag vertelt daarnaast welk deel al in de enkelvoudige cijfers van de moeder is gecorrigeerd. Deze drie vragen verklaren de verschillende boekingen.",
+    "method": "Teken de goederenrichting, noteer het belang in verkoper en koper en vermeld NVW of verkrijgingsprijs. Bereken vervolgens de ongerealiseerde winst. Verdeel pas daarna de interne correctie, het aandeel derden en de aanvullende correctie volgens de cursusmethodiek.",
+    "practice": "Voor de accountant is het vooral van belang dat de uiteindelijke voorraad geen interne marge bevat en dezelfde winst niet twee keer wordt geëlimineerd."
+  },
+  "consolidatie-nvw": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij NVW zit het aandeel in het resultaat van de dochter al in de cijfers van de moeder. Na optelling van de volledige dochtercijfers moet die dubbeltelling verdwijnen, zonder de noodzakelijke interne winstcorrecties opnieuw als kosten te nemen.",
+    "method": "Sluit Deelneming aan op het herrekende vermogen, identificeer de al geboekte intracomptabele correcties en elimineer daarna het eigen vermogen en resultaat van de dochter tegen deelneming en resultaat deelneming. Presenteer het niet aan de moeder toekomende deel afzonderlijk.",
+    "practice": "De accountant controleert dus niet alleen het eindsaldo, maar ook welke correcties al vóór consolidatie verwerkt zijn."
+  },
+  "voorraadtabel": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "De begin- en eindstand beantwoorden een balansvraag; het verschil ertussen verklaart het effect op de jaarwinst. Door die gegevens naast elkaar te zetten, wordt voorkomen dat de volledige eindwinst wordt verward met de correctie voor dit jaar.",
+    "method": "Bereken de interne winst in de beginvoorraad en eindvoorraad. Zet daarnaast de toepasselijke percentages per kolom en bereken de toe- of afname. De tabel bevat in de behandelde methodiek winst vóór belasting; pas een belastingfactor toe wanneer de daaropvolgende journaalpost een nettoresultaat corrigeert.",
+    "practice": "De accountant gebruikt de tabel als aansluiting tussen het actief op de balans, de resultaatmutatie en de verdeling over moeder en derden."
+  },
+  "ic-boekingsmethoden": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "374",
+        "part": "lid 4 onder a"
+      }
+    ],
+    "why": "Een interne boeking corrigeert de enkelvoudige cijfers van de moeder; een eliminatie verwijdert wat na samenvoeging nog niet past bij de groep als geheel. De vorm van de journaalpost verschilt daarom, terwijl dezelfde niet-gerealiseerde winst het uitgangspunt blijft.",
+    "method": "Lees eerst of de vraag een intracomptabele boeking, balanseliminatie of resultaateliminatie vraagt. Koppel elke regel aan beginstand, eindstand of mutatie uit de tabel en splits belasting en nettoresultaat waar de casus dat voorschrijft. Volg de grootboeknamen van het betreffende antwoordmodel.",
+    "practice": "Zo wordt zichtbaar waarom een vrijval als Gerealiseerde winst of als credit op Niet-gerealiseerde winst kan worden weergegeven zonder dat dit op zichzelf een ander economisch effect betekent."
+  },
+  "downstream-nvw": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Bij downstream heeft de moeder zelf de marge gemaakt. Het volgens de cursus intracomptabel uitgestelde deel en de aanvullende consolidatiecorrectie moeten samen de volledige nog interne winst verwijderen; de minderheid in de koper heeft die verkoopwinst niet verdiend.",
+    "method": "Bereken de winst in de voorraad bij de dochter, bepaal het interne deel volgens het moederbelang in de koper en boek de mutatie in dat deel in de moederadministratie. Bij afname valt eerder uitgestelde winst vrij. Verwerk het resterende deel bij consolidatie, niet als aandeel derden in de koper.",
+    "practice": "De accountant kan hiermee verklaren waarom een belang onder 100% niet automatisch tot een correctie ten laste van derden leidt."
+  },
+  "upstream-nvw": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij upstream ontstaat de marge bij de verkopende dochter. Een correctie op haar resultaat werkt via NVW door in Resultaat deelneming en Deelneming bij de moeder; het resterende deel behoort tot de minderheid in diezelfde verkoper.",
+    "method": "Bepaal de winst in de voorraad bij de moeder. Verdeel deze tussen moeder en minderheid in de verkoper. Boek de netto mutatie van het moederdeel intracomptabel op Resultaat deelneming en Deelneming; verwijder bij consolidatie de volledige winst uit de voorraad en werk het derdenaandeel af.",
+    "practice": "Hiermee controleert de accountant zowel de waardering van de voorraad als de juiste toerekening van de winst aan aandeelhouders."
+  },
+  "consolidatie-hk": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 1"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "413",
+        "part": ""
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij verkrijgingsprijs wordt het resultaat van de dochter niet jaarlijks via de deelnemingsrekening gevolgd. De consolidatie moet de nog ontbrekende vermogens- en resultaateffecten daarom zelf zichtbaar maken, inclusief goodwill en na verwerving behaalde resultaten.",
+    "method": "Scheid het vermogen bij verwerving van latere resultaten en verdeel oude en nieuwe aandelenpakketten wanneer op verschillende momenten is gekocht. Elimineer de verkrijgingsprijs tegen het relevante verwervingsvermogen en de goodwill; behandel reguliere dividenden en meegekocht dividend verschillend.",
+    "practice": "De accountant voorkomt hiermee dat een verschil tussen aankoopprijs en eindvermogen zonder analyse als goodwill of als jaarresultaat wordt geboekt."
+  },
+  "downstream-hk": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Ook zonder een interne NVW-correctie is de winst op een levering binnen de groep nog niet tegenover een buitenstaander gerealiseerd. Bij verkrijgingsprijs verschuift de volledige correctie naar de consolidatie; zij verdwijnt niet.",
+    "method": "Bereken begin- en eindwinst in de voorraad van de koper. In de behandelde verkrijgingsprijsmethodiek blijft de interne correctiekolom leeg. Omdat de moeder verkoper is, raakt de correctie haar geconsolideerde resultaat; verwerk belasting en de overgang van beginwinst naar jaarresultaat afzonderlijk.",
+    "practice": "Het onderscheid met NVW betreft dus vooral de plaats waar de correctie wordt verwerkt, niet de groepswaarde van dezelfde voorraad."
+  },
+  "upstream-hk": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij verkrijgingsprijs is geen moederdeel via de deelnemingsrekening uitgesteld. De volledige upstreamwinst wordt daarom extracomptabel verwijderd, maar de toerekening blijft volgen wie aandeelhouder is van de verkoper.",
+    "method": "Verdeel de ongerealiseerde winst tussen het moederdeel en derden in de verkopende dochter. Verwijder de eindwinst uit de voorraad. Verwerk de beginwinst en belastingfactor volgens de gevraagde balans- of resultaataansluiting; laat de interne NVW-kolom leeg.",
+    "practice": "Voor de accountant verklaart deze verdeling waarom dezelfde voorraadcorrectie verschillende effecten heeft op meerderheidsresultaat en belang derden."
+  },
+  "resultaataansluiting": {
+    "refs": [
+      {
+        "article": "405",
+        "part": "lid 1 en 2"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "De eindcontrole verbindt de afzonderlijke boekingen met het beoogde beeld van de hele groep. Een correct totaal is onvoldoende wanneer een winstdeel bij de verkeerde aandeelhouders terechtkomt of een intern effect dubbel is meegenomen.",
+    "method": "Controleer de geconsolideerde voorraad met de opgetelde eindvoorraden minus de volledige interne eindwinst. Controleer het resultaat met de relevante dochterwinsten, reguliere dividenden, goodwillafschrijving en de nog ontbrekende netto IC-mutaties. Bereken het aandeel derden afzonderlijk.",
+    "practice": "De accountant toetst daarmee niet alleen rekenkundige sluiting, maar ook de samenhang van grondslag, resultaattoerekening en balanswaardering."
+  },
+  "proportioneel": {
+    "refs": [
+      {
+        "article": "409",
+        "part": "onder a en b"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Bij proportionele consolidatie wordt slechts het overeengekomen deel van de cijfers opgenomen. Een volledige interne eliminatie zou dan ook bedragen verwijderen waarvan de corresponderende tegenpost helemaal niet in de gecombineerde cijfers zit.",
+    "method": "Controleer eerst de gezamenlijke bevoegdheden krachtens de samenwerkingsregeling en het inzichtvereiste van artikel 2:409. Neem de gegevens volgens de gekozen proportionele methode op en beperk de eliminaties tot het opgenomen overeenkomstige deel. Een 50/50-belang alleen is geen volledige wettelijke motivering.",
+    "practice": "De accountant kan zo uitleggen waarom proportionele consolidatie en verwerking als deelneming een andere presentatie geven zonder dat een niet-opgenomen helft alsnog als belang derden wordt toegevoegd."
+  },
+  "sidestream": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij sidestream zijn zowel verkoper als koper deelnemingen. De winst komt echter maar bij één van hen tot stand. Daarom blijft de correctie van Resultaat deelneming gekoppeld aan de verkoper, ook wanneer het koperbelang het percentage van de interne correctie begrenst.",
+    "method": "Teken verkoper → koper en noteer beide moederbelangen. Niet-afnemend of afnemend beschrijft de belangen langs deze pijl, niet een aankoop of verkoop van aandelen in het jaar. Bepaal daarna afzonderlijk of de voorraadwinst toe- of afneemt.",
+    "practice": "Voor de accountant voorkomt dit dat de juiste rekensom op de verkeerde deelnemingsrekening wordt geboekt."
+  },
+  "sidestream-nab": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij een niet-afnemend belang langs de goederenstroom kan het moederdeel van de verkoperswinst volledig in de interne correctie worden gevolgd. De resterende winst is het aandeel van derden in de verkoper, niet in de voorraadkoper.",
+    "method": "Gebruik volgens de cursusmethodiek het moederbelang in de verkoper voor de interne correctie en het complement daarvan voor derden. Bereken beide kolommen voor begin, einde en mutatie. Corrigeer intracomptabel de deelneming in de verkoper; een extra geconsolideerd meerderheidsdeel resteert hier niet.",
+    "practice": "Een eigen pijlenschema maakt controleerbaar waarom niet het soms hogere belang in de koper wordt gebruikt om het verkopersresultaat te verdelen."
+  },
+  "sidestream-ab": {
+    "refs": [
+      {
+        "article": "389",
+        "part": "lid 2"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      },
+      {
+        "article": "411",
+        "part": "lid 2"
+      }
+    ],
+    "why": "Bij afnemend belang is het volgens de cursus intern te corrigeren percentage lager dan het moederbelang in de verkoper. Het verschil verklaart de aanvullende correctie op het geconsolideerde meerderheidsresultaat; het is geen extra minderheidsbelang.",
+    "method": "Gebruik voor intern het lagere koperbelang, voor derden het minderheidsbelang in de verkoper en voor de aanvullende correctie het verschil tussen verkoper- en koperbelang. Die drie delen moeten samen 100% van de interne winst vormen. De interne boeking blijft op de verkopende deelneming.",
+    "practice": "Bij 90% in de verkoper en 70% in de koper zijn de kolommen dus 70%, 10% en 20%. Deze controle voorkomt een foutieve 30%-toerekening aan derden in de koper."
+  },
+  "mva": {
+    "refs": [
+      {
+        "article": "384",
+        "part": "lid 2"
+      },
+      {
+        "article": "386",
+        "part": "lid 4"
+      },
+      {
+        "article": "405",
+        "part": "lid 1"
+      }
+    ],
+    "why": "Een interne verkoop van een machine verandert de oorspronkelijke kostprijs voor de groep niet. De hogere afschrijving bij de koper verbruikt vervolgens jaarlijks een deel van de interne winst; die vrijval verklaart waarom de correctie in latere jaren kleiner wordt.",
+    "method": "Bereken de groepsboekwaarde vlak vóór de interne verkoop en het verschil met de verkoopprijs. Volg daarna oorspronkelijke boekwinst, jaarlijkse extra afschrijving en resterende boekwinst. Koppel de verdeling aan de verkoper en de gekozen grondslag, zoals bij voorraadleveringen.",
+    "practice": "De accountant controleert zo samenhangend de boekwaarde van het actief, de afschrijvingskosten en het nog niet gerealiseerde resultaat."
+  }
+}

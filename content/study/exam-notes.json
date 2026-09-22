@@ -1,0 +1,1037 @@
+{
+  "cafa2-20240422": {
+    "vraag-1": {
+      "lesson": "waardering",
+      "explanation": "Splits het antwoord voor Gelante in twee conclusies. Het 30%-stemrecht geeft het wettelijke vermoeden van invloed van betekenis; daarna volgt de vermogensmutatiemethode. De verwijzing naar zichtbaar eigen vermogen is geen vrije keuze naast NVW: artikel 2:389 lid 3 vraagt onvoldoende gegevens om NVW te bepalen.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 1",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-2": {
+      "lesson": "dochter",
+      "explanation": "Stel eerst vast dat Casalini dochtermaatschappij is van Monopoli. Daardoor kunnen de rechten van Casalini in de wettelijke toets worden meegenomen. Een indirect economisch belang van 80% × 30% beantwoordt niet zonder meer dezelfde vraag als de toerekening van kapitaal of stemrechten via een dochter.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 2",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-3": {
+      "lesson": "fair-value",
+      "explanation": "De berekening werkt terug van goodwill naar de aankoopprijs. Het herrekende totale vermogen is € 2.750.000 + € 600.000 + € 120.000 − € 350.000 = € 3.120.000. Het 80%-aandeel van € 2.496.000 plus de gegeven goodwill van € 504.000 verklaart de betaling van € 3.000.000.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 3",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-4": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "De € 555.000 is het aangepaste totale resultaat van Casalini, niet direct de opbrengst van Monopoli. Eerst wordt daarop 80% toegepast. Vervolgens verklaart beginwaarde € 2.496.000 plus € 444.000 resultaat minus € 40.000 dividend de eindwaarde van € 2.900.000.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 4",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-5": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "Gebruik hier de balansroute als onafhankelijke controle op het grootboekverloop. Van de oorspronkelijke overnamecorrecties neem je alleen het nog op einddatum resterende deel mee. Het herrekende eindvermogen van € 3.625.000 maal 80% moet weer € 2.900.000 geven; goodwill telt niet opnieuw in deze deelnemingspost mee.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 5",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-6": {
+      "lesson": "fair-value",
+      "explanation": "Voor het geconsolideerde gebouw wordt gerekend op de grondslag van de groep. De herrekende aanschafwaarde van € 5.000.000 leidt tot € 250.000 afschrijving per jaar. Daarmee sluit € 4.400.000 + € 600.000 − € 250.000 aan op € 4.750.000. Neem niet slechts 80% van het gebouw op bij integrale consolidatie.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 6",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-7": {
+      "lesson": "proportioneel",
+      "explanation": "Maak eerst per maatschappij een rij met de consolidatiemethode. Het antwoordmodel telt de omzet van Monopoli en Casalini volledig mee, die van Oria voor 50% en die van Gelante en Erchie niet. De uitkomst van € 9.000.000 volgt dus uit de opnamekring en methode, niet uit één vermenigvuldiging met alle kapitaalpercentages.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 7",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-8": {
+      "lesson": "resultaataansluiting",
+      "explanation": "Het model sluit voor deze casus aan op het resultaat van Monopoli van € 700.000. De gedachte is dat bij de gegeven NVW-verwerking de relevante deelnemingsresultaten al zijn meegenomen. Maak hiervan geen algemene gelijkheid: ontbrekende IC-correcties, andere grondslagen of het afzonderlijke aandeel derden kunnen een extra aansluiting nodig maken.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 8",
+      "page": "5",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-9": {
+      "lesson": "functionele-valuta",
+      "explanation": "Fager wordt in de uitwerking als geïntegreerde activiteit benaderd omdat de leiding, voorraden, financiering en afdracht van geldstromen met Galster samenhangen. Reiter wordt daarvan onderscheiden. Verbind ieder genoemd kenmerk aan die economische afhankelijkheid; alleen de vestigingsplaats of lokale munt noemen motiveert de methode niet.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 9",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-10": {
+      "lesson": "tijdstipmethode",
+      "explanation": "Splits bij Fager het bestaande gebouw en de nieuwe investering, omdat hun historische koersen verschillen. De eindvoorraad wordt eveneens per resterende inkooplaag omgerekend. De datumafwijking die bij het oorspronkelijke model is vermeld blijft relevant: neem geen eigen, derde investeringsdatum aan om een verschil sluitend te maken.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 10",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-11": {
+      "lesson": "valuta-voorraad",
+      "explanation": "Bij de tijdstipmethode worden de verkopen tegen de relevante verkoopkoersen omgerekend, maar volgt de kostprijs de werkelijk afgegeven historische voorraadlagen. Bereken daarnaast de afwaardering en de monetaire koersanalyse afzonderlijk. De afwaardering van de voorraad is geen extra mutatie van de monetaire positie.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 11",
+      "page": "7–8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-12": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Het model boekt aankoop, dividend, jaarresultaat en omrekeningsverschil afzonderlijk bij Galster. Goodwill en deelneming sluiten op de verkrijgingsdatum samen aan op de betaling. Later vermindert het dividend Deelneming, verhoogt het aandeel in de winst Deelneming en heeft het omrekeningsverschil de reserve als tegenrekening.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 12",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-13": {
+      "lesson": "slotkoersmethode",
+      "explanation": "Deze vraag vraagt het volledige eigen vermogen van Reiter, niet slechts een deelnemingspercentage bij Galster. De directe eindberekening is USD 725.000 × € 0,93 = € 674.250. Het controleverloop verklaart het verschil met beginvermogen, resultaat en dividend tegen hun eigen koersen. De omgekeerd genoteerde koersformule in het oorspronkelijke model blijft apart als bronafwijking herkenbaar.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 13",
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-14": {
+      "lesson": "downstream-nvw",
+      "explanation": "De voorraadwinst daalt van € 50.000 naar € 40.000. Daardoor daalt het intern uit te stellen 70%-deel van € 35.000 naar € 28.000 en komt € 7.000 vrij. De overige 30% is hier een aanvullende correctie op het geconsolideerde meerderheidsresultaat, niet een winstcorrectie bij derden in Heerde.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 14",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-15": {
+      "lesson": "downstream-nvw",
+      "explanation": "De boeking betreft de mutatie van het intern uitgestelde bedrag. Omdat € 7.000 eerder uitgestelde winst wordt gerealiseerd, neemt de overlopende passiefpost af en komt er resultaat vrij. De bijbehorende belastingmutatie is € 7.000 × 20% = € 1.400; de voorraadtabel zelf bleef vóór belasting.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 15",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-16": {
+      "lesson": "sidestream-ab",
+      "explanation": "Teken Apeldoorn als verkoper en Heerde als koper. De totale voorraadwinst stijgt van € 25.000 naar € 75.000. Het model verdeelt iedere stand in 70% intern, 10% derden in de verkoper en 20% aanvullend geconsolideerd resultaat. Die percentages tellen op tot 100%.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 16",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-17": {
+      "lesson": "sidestream-ab",
+      "explanation": "Van de € 50.000 winsttoename is 70%, dus € 35.000, het interne deel. De journaalpost corrigeert € 35.000 × (1 − 20%) = € 28.000 netto. De factor 80% in deze laatste stap is dus de belastingfactor, niet nogmaals een deelnemingspercentage.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 17",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-18": {
+      "lesson": "ic-boekingsmethoden",
+      "explanation": "Werk de resultaateliminatie uit met de mutatiekolom, niet met de hele eindvoorraadwinst. Splits vervolgens interne omzet, kostprijs, de al geboekte interne correctie en de nog aanvullende correcties. De rente van € 8.500 volgt afzonderlijk uit acht maanden over € 300.000 en vier maanden over € 250.000 tegen 3%; de huur bedraagt twaalf maanden in de gegeven fasen.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 18",
+      "page": "10–11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-19": {
+      "lesson": "sidestream-ab",
+      "explanation": "Op de balans moet de volledige € 75.000 eindwinst uit de voorraad. Het interne deel van € 52.500, derden van € 7.500 en aanvullende deel van € 15.000 worden ieder gesplitst in belasting en nettovermogen. Daarnaast verwerkt de tweede boeking het aanvullende moederdeel van de beginwinst vanuit de reserves in het resultaat van dit jaar.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 19",
+      "page": "11–12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-20": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Het aanvullende aandelenpakket wordt in de enkelvoudige administratie tegen zijn verkrijgingsprijs van € 2.650.000 opgenomen. De scheiding tussen goodwill, vermogen op verkrijgingsdatum en later resultaat volgt bij consolidatie. Boek dus niet alvast de volledige NVW-verwervingspost wanneer de vraag uitdrukkelijk verkrijgingsprijs voorschrijft.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 20",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-21": {
+      "lesson": "dividend",
+      "explanation": "Van het ontvangen dividend van € 160.000 behandelt het model € 50.000 als meegekocht dividend: 25% van € 200.000. Dit vermindert de kostprijs van het nieuwe pakket. Alleen de resterende € 110.000 is hier reguliere opbrengst; de ontvangstdatum op zichzelf verklaart de splitsing niet.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 21",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-22": {
+      "lesson": "upstream-hk",
+      "explanation": "De verkoper is Armweide en de koper Nolde. De winst in de voorraad stijgt van € 27.000 naar € 42.000. Bij verkrijgingsprijs is geen interne NVW-correctie aanwezig; de gehele winst wordt verdeeld in 80% moederdeel en 20% derden in Armweide.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 22",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-23": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Houd het oorspronkelijke 55%-pakket en het latere 25%-pakket uit elkaar. Zij hebben een eigen verwervingsvermogen, eigen goodwill en afschrijvingsduur. Het meegekochte dividend van € 50.000 vermindert de kostprijs van het nieuwe pakket vóór de eliminatie; daarna worden de volledige eindvoorraadwinst en de beginwinstmutatie verwerkt.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 23",
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-24": {
+      "lesson": "resultaataansluiting",
+      "explanation": "Begin bij 20% van het eindvermogen van Armweide, niet bij het vermogen op aankoopdatum. De minderheid draagt ook haar netto aandeel in de upstream-eindwinst: € 8.400 × 80% = € 6.720. Zo volgt € 1.670.000 − € 6.720 = € 1.663.280. De tweede 80% is hier weer de belastingfactor.",
+      "source": "20240422 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 24",
+      "page": "15",
+      "sourceKind": "uploaded-pdf"
+    }
+  },
+  "cafa2-20240930": {
+    "vraag-1": {
+      "lesson": "waardering",
+      "explanation": "Het antwoordmodel concludeert voor deze casus tot verkrijgingsprijs en verwijst daarbij naar de 65%-aandeelhouder. Lees die motivering niet als algemene regel: een meerderheidsaandeelhouder sluit invloed van betekenis van een andere aandeelhouder niet automatisch uit. Artikel 2:389 lid 1 en Deel 1 verlangen beoordeling van de feitelijke invloed; 35% geeft juist een vermoeden. Die beperking van de modelmotivering is belangrijk voor toepassing op andere casussen.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 1",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-2": {
+      "lesson": "aandelenruil",
+      "explanation": "Houd dividend en uitbreiding uit elkaar. Het dividend is € 30.000 × 35% = € 10.500. Bij de uitbreiding is de tegenprestatie € 625.000; daarvan wordt € 125.000 contant betaald en de rest met aandelen. Nominaal kapitaal van € 225.000 en agio van € 275.000 verklaren samen dat aandelendeel.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 2",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-3": {
+      "lesson": "stelselwijziging",
+      "explanation": "Werk het oude 35%-pakket en het nieuwe 25%-pakket afzonderlijk uit. Bij het oude pakket vergelijkt het model € 400.000 met € 560.000. Bij het nieuwe pakket moet eerst de goodwill uit de verkrijgingsprijs worden afgesplitst en tijdsevenredig worden afgeschreven. Daarom is de wijziging van de deelnemingsrekening niet gelijk aan de enkele totale vermogenssprong.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 3",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-4": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "De € 960.000 is het 60%-aandeel in het zichtbare eindvermogen van € 1.600.000. Controleer dit met beide aankoopbedragen en beide correcties uit vraag 3: € 400.000 + € 160.000 + € 625.000 − € 225.000. De afzonderlijk geactiveerde goodwill hoort niet opnieuw in deze deelnemingspost.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 4",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-5": {
+      "lesson": "goodwill",
+      "explanation": "De lagere gebouwwaarde, het verlies op het project en de claim verlagen alle het herrekende overnamevermogen. Daardoor resteert € 2.000.000 totaal en € 1.000.000 voor het 50%-belang. De prijs van € 1.500.000 bevat dus € 500.000 goodwill, niet het verschil met het ongecorrigeerde eigen vermogen.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 5",
+      "page": "5",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-6": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "In het jaarresultaat worden de overnamecorrecties gevolgd naarmate zij gerealiseerd of afgewikkeld worden. Het model komt daardoor van € 400.000 naar € 820.000 aangepast resultaat en neemt daarvan 50%, € 410.000, op. Controleer de eindwaarde met het nog resterende projectverschil van € 80.000. De bronverwisseling van de naam Pienza en Sasso staat apart vermeld.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 6",
+      "page": "5",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-7": {
+      "lesson": "kwalificatie",
+      "explanation": "De 50%-deelneming en de samenwerkingsovereenkomst leveren niet automatisch één centrale leiding op. Het model toetst de economische eenheid en organisatorische verbondenheid afzonderlijk en concludeert voor Sasso dat geen groepsmaatschappij aanwezig is. Dat antwoord gaat over groepsverband, niet over het bestaan van de deelneming zelf.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 7",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-8": {
+      "lesson": "proportioneel",
+      "explanation": "Artikel 2:409 formuleert een mogelijkheid onder voorwaarden. Geef daarom zowel de gezamenlijke bevoegdheden uit de samenwerking als het inzichtvereiste aan. De twee in het model genoemde routes zijn proportioneel consolideren of het belang als deelneming in de geconsolideerde jaarrekening verantwoorden; 50% bezit alleen maakt de eerste route niet verplicht.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 1, vraag 8",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-9": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Splits eerst in DKK de prijs in nettovermogen en goodwill. Beide worden op de verkrijgingsdatum tegen € 0,130 omgerekend: € 497.900 deelneming plus € 152.100 goodwill sluit aan op € 650.000 betaling. De afwijkende jaartalvermelding in het model verandert de gegeven verwervingsdatum niet.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 9",
+      "page": "7",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-10": {
+      "lesson": "valuta-voorraad",
+      "explanation": "Bij het gebouw blijven boekwaarde en afschrijving tegen de historische koers van € 0,130 staan. Bij de voorraad worden eerst de resterende lagen vastgesteld. Alleen de beschadigde oude partij wordt tegen haar lagere waarde en bijbehorende koers omgerekend; daarom kan de gehele eindvoorraad niet tegen één historische koers worden gewaardeerd.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 10",
+      "page": "7",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-11": {
+      "lesson": "slotkoersmethode",
+      "explanation": "Bereken de eindwaarde van het gebouw eerst tegen de slotkoers. Vergelijk dit met de omgerekende beginwaarde verminderd met de afschrijving van het jaar. Voor het eigen vermogen voer je dezelfde controle uit met resultaat en dividend als afzonderlijke mutaties; het omrekeningsverschil is de verklaarde aansluiting.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 11",
+      "page": "7–8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-12": {
+      "lesson": "valuta-voorraad",
+      "explanation": "Splits de € 814.000 omzet naar de verkoopperioden en de € 468.000 kostprijs naar de afgegeven historische voorraad. Voor de afgewaardeerde 10.000 eenheden vergelijkt het model vervolgens de historische euroboekwaarde met de lagere eindwaarde: de last van € 20.750 bestaat uit € 19.500 prijsverlies en € 1.250 extra koerscomponent. Dit is één voorraadverlies, niet een tweede monetaire post.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 12",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-13": {
+      "lesson": "monetaire-positie",
+      "explanation": "De koersanalyse moet aansluiten op het netto monetaire bezit of de netto monetaire schuld. Zet de beginpositie en de kasstromen uit de casus naast hun koersmomenten en controleer expliciet het teken van het verschil. Niet-monetaire kosten zijn geen afzonderlijke monetaire vordering of schuld.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 2, vraag 13",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-14": {
+      "lesson": "upstream-nvw",
+      "explanation": "De voorraadwinst neemt toe van € 28.000 naar € 32.000. Bij 70% in de verkoper is de interne toename € 2.800 en het derdenaandeel € 1.200. In de tabel zijn dit bedragen vóór belasting; het aanvullende meerderheidsdeel is in deze upstream-NVW-situatie nihil.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 14",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-15": {
+      "lesson": "upstream-nvw",
+      "explanation": "De NVW van 70% van € 500.000 is € 350.000, maar daarin is de upstreamwinst nog begrepen. Het eerder intracomptabel uitgestelde deel bedraagt € 19.600 × 80% = € 15.680 netto. Na aftrek resteert het beginsaldo Deelneming van € 334.320; hier verwijst 80% naar 1 minus 20% belasting.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 15",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-16": {
+      "lesson": "upstream-nvw",
+      "explanation": "De nieuwe uitstelpost is alleen de toename van het interne deel: € 2.800 × 80% = € 2.240. Omdat Broekhuizen verkoper is, verlaagt de moeder haar Resultaat deelneming en Deelneming. Het is geen downstreamboeking op een overlopende passiefpost.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 16",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-17": {
+      "lesson": "ic-boekingsmethoden",
+      "explanation": "De managementfee van € 86.400 verdwijnt aan beide zijden van de geconsolideerde winst-en-verliesrekening. Bij goederen worden eerst de doorgeleverde bedragen geëlimineerd en daarna de € 4.000 toename van interne winst, uitgesplitst naar moeder, derden en belasting. Het al intern gecorrigeerde € 2.240 wordt daarbij niet nogmaals als extra verlies genomen.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 17",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-18": {
+      "lesson": "mva",
+      "explanation": "De moeder heeft in de behandelde downstreammethodiek 70% van de interne boekwinst uitgesteld: € 35.000. De belastingcorrectie bedraagt € 7.000. Deze boeking corrigeert de enkelvoudige administratie; zij haalt nog niet de volledige interne winst van € 50.000 uit de geconsolideerde vrachtautowaarde.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 18",
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-19": {
+      "lesson": "mva",
+      "explanation": "Voor de geconsolideerde balans wordt de vrachtauto met de volledige interne winst van € 50.000 verminderd. De overlopende passiefpost levert € 35.000 en het aanvullende deel € 15.000, gesplitst in € 12.000 resultaat en € 3.000 belasting. De bronkop met “magazijn” is geen aanwijzing om een ander actief te gebruiken.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 19",
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-20": {
+      "lesson": "mva",
+      "explanation": "De koper schrijft jaarlijks € 10.000 extra af op de interne meerprijs. Voor de groep moet die extra last worden teruggenomen. Het model verdeelt die terugname over € 7.000 interne vrijval en het aanvullende deel van € 2.400 nettoresultaat plus € 600 belasting.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 3, vraag 20",
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-21": {
+      "lesson": "goodwill",
+      "explanation": "De betaalde € 3.000.000 omvat 60% van € 4.000.000 nettovermogen, dus € 2.400.000. Het restant van € 600.000 is goodwill. Dat bedrag wordt voor de consolidatieberekening afzonderlijk vastgesteld, ook wanneer de deelneming enkelvoudig voor de volledige verkrijgingsprijs wordt opgenomen.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 21",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-22": {
+      "lesson": "consolidatie-hk",
+      "explanation": "De gevraagde administratieboeking gebruikt de volledige kostprijs van € 3.000.000 op Deelneming tegenover Bank. De berekende goodwill wordt in deze verkrijgingsprijsboeking niet als afzonderlijk enkelvoudig actief afgesplitst; die uitsplitsing komt bij de consolidatie terug.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 22",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-23": {
+      "lesson": "dividend",
+      "explanation": "Het slotdividend over de vóór verwerving aanwezige winst wordt in het model als meegekocht dividend behandeld: € 27.000 vermindert Deelneming. Het interimdividend van € 24.000 betreft de reguliere opbrengst in deze casus. Het verschil komt dus uit de herkomst van de winst, niet alleen uit het woord “dividend”.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 23",
+      "page": "12–13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-24": {
+      "lesson": "upstream-hk",
+      "explanation": "De voorraadwinst daalt van € 60.000 naar € 40.000. Bij 60% in de verkoper daalt het moederdeel van € 36.000 naar € 24.000; derden dalen van € 24.000 naar € 16.000. Er is geen interne NVW-kolom. Pas de belastingfactor pas toe in de daaropvolgende boekingen.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 24",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-25": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Werk de eliminatie in blokken uit: kostprijs na meegekocht dividend, derden op eindvermogen, cumulatieve goodwillafschrijving, onderlinge posities en interne voorraadwinst. De eindwinst van € 40.000 wordt volledig verwijderd. Het netto moederdeel van de beginwinst, € 28.800, wordt afzonderlijk vanuit reserves naar het jaarresultaat overgebracht.",
+      "source": "20240930 Uitwerking tentamen CAFA2.pdf",
+      "question": "Opgave 4, vraag 25",
+      "page": "13–14",
+      "sourceKind": "uploaded-pdf"
+    }
+  },
+  "cafa2-20250417": {
+    "vraag-1": {
+      "lesson": "kwalificatie",
+      "explanation": "Beantwoord voor Terni en Todi eerst de deelnemingstoets van artikel 2:24c. Benoem kapitaalverschaffing voor eigen rekening, duurzame verbondenheid en dienstbaarheid aan de eigen werkzaamheid en verbind deze aan de casus. De waarderingsvraag volgt pas daarna; deelneming en NVW zijn geen synoniemen.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 1,
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-2": {
+      "lesson": "waardering",
+      "explanation": "De vraag richt zich op de gekozen verkrijgingsprijs voor Todi. Onderzoek daarvoor eerst de feitelijke invloed van betekenis. Zonder die invloed verwijst de syllabus naar artikel 2:384; die bepaling noemt naast verkrijgingsprijs ook actuele waarde. De casuskeuze voor verkrijgingsprijs moet dus niet worden geleerd als de enige grondslag die de algemene wet altijd toestaat.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 2,
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-3": {
+      "lesson": "fair-value",
+      "explanation": "De verwervingsboeking van Terni wordt opgebouwd vanuit het herrekende nettovermogen, het verworven aandeel en het verschil met de prijs. Boek deelneming en goodwill afzonderlijk wanneer de voorgeschreven grondslag NVW is. Controleer dat de debetbedragen gezamenlijk overeenkomen met de tegenprestatie.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 3,
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-4": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "Het grootboekverloop over 2023 moet beginnen op de verkrijgingsdatum en eindigen bij het aandeel in het herrekende eindvermogen. Volg het aangepaste resultaat en het aan Montone toekomende dividend als aparte mutaties. Goodwillafschrijving is geen automatische vermindering van de NVW-deelnemingsrekening zelf.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 4,
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-5": {
+      "lesson": "dividend",
+      "explanation": "Houd de deelnemingen en hun waarderingsgrondslagen uit elkaar. Bij NVW loopt het winstaandeel via Resultaat deelneming en verlaagt dividend daarna Deelneming. Bij verkrijgingsprijs wordt het resultaat niet op dezelfde manier gevolgd en moet voor dividend de aard van de uitkering worden beoordeeld. De twee grondslagen verklaren dus verschillende tegenrekeningen.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 5,
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-6": {
+      "lesson": "wettelijke-reserve",
+      "explanation": "Beoordeel Terni en Todi afzonderlijk op de toepassing van de vermogensmutatiemethode én de vrije beschikbaarheid van de sinds eerste waardering opgebouwde vermogensvermeerdering. Een wettelijke reserve volgt niet uitsluitend uit een minderheidspercentage. Verbind de beperkingen en mogelijkheden om uitkering te bewerkstelligen aan de tekst van lid 6.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 6,
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-7": {
+      "lesson": "dochter",
+      "explanation": "Begin met de aard van de houder: een natuurlijke persoon is geen rechtspersoon als moeder in artikel 2:24a. Beoordeel vervolgens de uitoefenbare stemmen en bijzondere rechten per relatie. Voor de VOF geldt daarnaast de gelijkstelling bij volledige aansprakelijkheid, zodat aandelenbezit niet de enige route naar een dochterrelatie is.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 7,
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-8": {
+      "lesson": "consolidatieplicht",
+      "explanation": "Schrijf twee afzonderlijke conclusies: de consolidatieplichtige rechtspersoon en de gegevens die zij moet opnemen. Een groepshoofd valt onder artikel 2:406 lid 1, een hoofd van een groepsdeel onder lid 2. Een buitenlandse maatschappij kan in de kring vallen zonder zelf op grond van Nederlands Titel 9 consolidatieplichtig te worden.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 8,
+      "page": "5",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-9": {
+      "lesson": "tijdstipmethode",
+      "explanation": "Splits vervoermiddelen naar historische aanschaf en afschrijving. Werk voorraad eerst uit in de juiste resterende lagen en gebruik daarna de bijbehorende koersen. Een eindbalansdatum betekent bij de tijdstipmethode niet dat alle activa tegen slotkoers moeten worden omgerekend.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 9,
+      "page": "7",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-10": {
+      "lesson": "valuta-afwaardering",
+      "explanation": "De afwaarderingslast is het verschil tussen twee eurobedragen: de boekwaarde op historische grondslag en de lagere waarde op het waarderingsmoment. Bepaal beide voor de getroffen voorraadpartij. Daardoor wordt duidelijk waarom een berekening die alleen het verlies in de buitenlandse munt omrekent onvolledig kan zijn.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 10,
+      "page": "7",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-11": {
+      "lesson": "monetaire-positie",
+      "explanation": "Verdeel de koersanalyse in beginpositie en mutaties gedurende het jaar. Controleer of sprake is van netto monetaire bezittingen of schulden, want dat bepaalt de richting van het effect. Een negatief rekenresultaat moet ook economisch verklaard kunnen worden, niet uitsluitend met een minteken worden gepresenteerd.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 11,
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-12": {
+      "lesson": "slotkoersmethode",
+      "explanation": "Het verloop van de vervoermiddelen bevat een beginwaarde, eventuele investeringen en afschrijving tegen hun passende koersen. De eindwaarde wordt daarnaast rechtstreeks met de slotkoers berekend. Het verschil tussen beide routes is het omrekeningsverschil van dit actief, niet de goodwill of het totale verschil van de deelneming.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 12,
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-13": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Deelneming Glacier is de post bij Hoek en bevat daarom het aandeel van Hoek in de omgerekende mutaties. Maak eerst het verloop op het niveau van Glacier, verwerk resultaat en dividend tegen hun passende koersen en pas het deelnemingspercentage consequent toe. Controleer de eindwaarde met het omgerekende eindvermogen.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 13,
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-14": {
+      "lesson": "omrekenreserve",
+      "explanation": "Boek de resultaatmutatie en de omrekeningsmutatie afzonderlijk. De eerste heeft Resultaat deelneming als tegenrekening; het omrekeningsverschil volgt bij de gegeven slotkoersmethode de reserve. De debet- of creditrichting hangt af van het teken van de eerder berekende mutatie.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 14,
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-15": {
+      "lesson": "downstream-nvw",
+      "explanation": "Kisjes is verkoper en Palletdiscounter houdt de voorraad. De winst is daarom bij de moeder ontstaan. Het interne percentage volgt in de cursusmethodiek het belang in de koper, maar de rest van de winstcorrectie gaat niet ten laste van derden in die koper. Leg dit vast voordat de begin- en eindkolommen worden uitgerekend.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 15,
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-16": {
+      "lesson": "downstream-nvw",
+      "explanation": "Gebruik voor de enkelvoudige boeking de mutatie in het intern uit te stellen downstreamdeel. Bij een stijging wordt meer winst uitgesteld; bij een daling komt eerder uitgestelde winst vrij. Verwerk daarna de bijbehorende belastingmutatie, zonder de gehele eindwinst opnieuw als jaarlast te boeken.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 16,
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-17": {
+      "lesson": "ic-boekingsmethoden",
+      "explanation": "Splits de goedereneliminatie in interne omzet/kostprijs en de mutatie van de voorraadwinst. Breng daarbij de reeds intracomptabel geboekte correctie terug in de consolidatieaansluiting en verwerk alleen het ontbrekende deel aanvullend. De volledige interne omzet verdwijnt, ook wanneer het kapitaalbelang kleiner is dan 100%.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 17,
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-18": {
+      "lesson": "sidestream",
+      "explanation": "Teken Q-Pall → Palletdiscounter en schrijf het belang in beide maatschappijen boven die pijl. Pas daarna bepaal je of sprake is van niet-afnemend of afnemend belang. Het derdenpercentage hoort bij Q-Pall als winstmaker; de plaats waar de voorraad ligt bepaalt dit percentage niet.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 18,
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-19": {
+      "lesson": "sidestream",
+      "explanation": "De intracomptabele correctie wordt in Kisjes geboekt, maar betreft het resultaat en de deelnemingsrekening van de verkoper Q-Pall. Dat de goederen bij Palletdiscounter liggen maakt haar niet de gecorrigeerde winstmaker. De belastingfactor wordt toegepast op het al bepaalde interne winstaandeel.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 19,
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-20": {
+      "lesson": "sidestream",
+      "explanation": "De balanseliminatie verwijdert de volledige nog interne winst in de eindvoorraad bij Palletdiscounter. Sluit de tegenboekingen aan op de interne correctie, het belang derden in Q-Pall en een eventueel aanvullend moederdeel. De beginwinstboeking verklaart afzonderlijk de overgang van eerder vermogen naar resultaat van het boekjaar.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 20,
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-21": {
+      "lesson": "onderlinge-posten",
+      "explanation": "De huur en managementfee zijn voor de groep interne baten en lasten. Bereken eerst voor iedere dienst het werkelijk in het jaar geboekte bedrag, rekening houdend met de perioden in de casus. Verwijder daarna de overeenkomstige volledige bate en last; pas niet zonder reden het deelnemingspercentage toe.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 21,
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-22": {
+      "lesson": "consolidatie-nvw",
+      "explanation": "Het resultaat van Q-Pall en Palletdiscounter zit na optelling van hun jaarrekeningen opnieuw in de combinatie. Elimineer daarom de resultaat-deelnemingspost bij de moeder en zonder het aandeel derden af. Neem daarbij mee welke IC-correcties al in de enkelvoudige resultaatpost zijn verwerkt.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 22,
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-23": {
+      "lesson": "goodwill",
+      "explanation": "Vergelijk de aankoopprijs van het verworven pakket met het aandeel in het vermogen op aankoopdatum. Het verschil is betaalde goodwill. Gebruik niet het eindvermogen van 2024: daarin kunnen resultaten zitten die pas na de verwerving zijn ontstaan en daarom geen onderdeel van de aankoopgoodwill zijn.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 23,
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-24": {
+      "lesson": "consolidatie-hk",
+      "explanation": "De aankoop wordt enkelvoudig tegen de voorgeschreven verkrijgingsprijs geboekt. Beoordeel het ontvangen dividend afzonderlijk op de herkomst van de winst en de verwervingsdatum. Wanneer het model dividend als meegekocht behandelt, verlaagt dit de kostprijs in plaats van het lopende resultaat te verhogen.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 24,
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-25": {
+      "lesson": "upstream-hk",
+      "explanation": "Dingspel is verkoper en Orvelde koper, dus upstream. Omdat de deelneming tegen verkrijgingsprijs wordt gewaardeerd, ontbreekt een interne NVW-correctie. Verdeel de beginwinst, eindwinst en mutatie over moeder en derden in Dingspel en laat die bedragen eerst vóór belasting staan.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 25,
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-26": {
+      "lesson": "upstream-hk",
+      "explanation": "Verwijder op de eindbalans de volledige interne winst uit de voorraad. Verdeel de nettovermogenseffecten tussen moeder en belang derden en neem het belastingeffect apart op. De boeking van de beginwinst is nodig om de resultaatmutatie in het huidige jaar niet met de eindstand te verwarren.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 26,
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-27": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Werk aandeel derden, goodwillafschrijving en dividend in afzonderlijke blokken af. Deelnemingsdividend dat enkelvoudig als opbrengst is geboekt moet bij consolidatie verdwijnen, omdat de onderliggende dochterwinst al in de opgetelde cijfers zit. Voor goodwill wordt alleen de afschrijving van het gevraagde jaar in de resultaateliminatie gebruikt.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 27,
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-28": {
+      "lesson": "resultaataansluiting",
+      "explanation": "Voor het aandeel derden begin je bij hun aandeel in het relevante dochterresultaat en verwerk je de bijbehorende IC-mutaties. Voor de goodwillboekwaarde begin je juist bij de oorspronkelijke goodwill en trek je alle afschrijvingen tot eind 2024 af. Een jaarlast en een cumulatieve eindboekwaarde mogen niet worden verwisseld.",
+      "source": "20250417 Uitwerking tentamen CAFA2.pdf",
+      "question": 28,
+      "page": "15",
+      "sourceKind": "uploaded-pdf"
+    }
+  },
+  "cafa2-20250924": {
+    "vraag-1": {
+      "lesson": "fair-value",
+      "explanation": "De aankoopprijs voor Olbia wordt verklaard vanuit het herrekende vermogen op verwervingsdatum, het verkregen percentage en goodwill. Bereken eerst alle overnamecorrecties op 100%-niveau. Anders wordt een correctie op het totale vermogen ten onrechte nogmaals of helemaal niet met het belang gewogen.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 1",
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-2": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "Het verloop van Deelneming Olbia verbindt verwerving, het op moedergrondslagen bepaalde resultaat en dividend. Laat per overnameverschil zien welk deel in 2024 in het resultaat doorwerkt. De resterende correcties moeten later terugkomen in de aansluiting op het eindvermogen.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 2",
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-3": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "Gebruik deze vraag als controle vanuit de andere richting: neem het eigen vermogen van Olbia op einddatum en herreken alleen de dan nog resterende waarderingsverschillen. Het aandeel daarin moet aansluiten op de grootboekrekening uit vraag 2. Neem niet opnieuw goodwill of reeds gerealiseerde overnamecorrecties in dit eindvermogen op.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 3",
+      "page": "2",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-4": {
+      "lesson": "kwalificatie",
+      "explanation": "Ook 10% kan een deelneming zijn wanneer de duurzame verbondenheid ten dienste van de eigen werkzaamheid aanwezig is. Onder 20% ontbreekt alleen het wettelijke vermoeden; de kwalificatie is niet uitgesloten. De verkrijgingsprijs volgt uit de afzonderlijke beoordeling van invloed van betekenis en de casusgrondslag.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 4",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-5": {
+      "lesson": "eigen-aandelen",
+      "explanation": "Na verwerving van Palau moet het door Palau gehouden belang in Monserrato vanuit de moeder als indirect gehouden eigen aandelen worden beoordeeld. Artikel 2:385 lid 5 bevat hiervoor een specifieke vermindering van de deelnemingswaarde. Het belang blijft dus niet zonder verdere toets een gewoon extern actief van de groep.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 5",
+      "page": "3",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-6": {
+      "lesson": "eigen-aandelen",
+      "explanation": "Bereken eerst de waarde van het 80%-belang in Palau op de toepasselijke grondslag. Pas daarna de correctie voor de door Palau gehouden eigen aandelen van Monserrato toe. Let op het tijdstip waarop Palau die aandelen verkreeg: de wet onderscheidt bezit van vóór de dochterstatus.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 6",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-7": {
+      "lesson": "dochter",
+      "explanation": "Onderzoek voor Bosa de daadwerkelijk uitoefenbare stemrechten, inclusief de invloed van eigen en stemrechtloze aandelen op de noemer. Het nominale aandelenpercentage is niet automatisch het zeggenschapspercentage. Motiveer daarna de moeder-dochterrelatie met de toepasselijke route van artikel 2:24a.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 7",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-8": {
+      "lesson": "dividend",
+      "explanation": "Gebruik hetzelfde dividendbedrag in beide varianten, maar leg de tegenrekening uit. Bij NVW is de winst eerder verwerkt en vermindert dividend Deelneming. Bij verkrijgingsprijs kan regulier dividend opbrengst zijn; beoordeel een eventueel meegekocht gedeelte steeds afzonderlijk. Een andere grondslag verandert dus de verwerking, niet het ontvangen geld.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 1, vraag 8",
+      "page": "4",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-9": {
+      "lesson": "tijdstipmethode",
+      "explanation": "Bij Omberg worden gebouwen tegen hun historische eurogrondslag gevolgd. Bij voorraad bepaalt de laagadministratie welke aanschafmomenten nog in de eindvoorraad zitten. Voer een eventuele afwaardering daarna afzonderlijk uit, zodat de historische waardering niet onbedoeld met een slotkoerswaardering wordt vermengd.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 1",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-10": {
+      "lesson": "valuta-afwaardering",
+      "explanation": "Bereken voor de afgewaardeerde voorraadpartij eerst de oude euroboekwaarde en daarna de lagere eurowaarde. De bijbehorende koersen kunnen verschillen. De gevraagde last is het verschil tussen die waarden, niet noodzakelijk het verlies in vreemde valuta vermenigvuldigd met alleen de slotkoers.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 2",
+      "page": "6",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-11": {
+      "lesson": "monetaire-positie",
+      "explanation": "Maak de netto monetaire positie en de mutaties uit de casus zichtbaar voordat je het koersresultaat berekent. Beoordeel na de berekening expliciet of het positief of negatief is. De economische controle op bezit versus schuld voorkomt dat een rekenkundig juist bedrag met de verkeerde richting wordt verantwoord.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 3",
+      "page": "7",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-12": {
+      "lesson": "functionele-valuta",
+      "explanation": "De vraag verlangt twee concrete factoren uit de casus die de economische zelfstandigheid van Omberg ondersteunen. Leg bij ieder gegeven uit waarom dit voor de munt van de activiteiten relevant is. Alleen de naam van de buitenlandse munt of de locatie van de vennootschap noemen is geen inhoudelijke onderbouwing.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 4",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-13": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Het verloop bij Dole omvat het aandeel in beginvermogen, resultaat, dividend en omrekeningsverschil. Bereken de buitenlandse eindwaarde eerst tegen slotkoers en vergelijk die met de omgerekende mutaties. Het verschil hoort bij de vertaling van de investering en wordt niet verstopt in het bedrijfsresultaat van Omberg.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 5",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-14": {
+      "lesson": "omrekenreserve",
+      "explanation": "De journaalpost vertaalt het eerder berekende verloop naar de administratie van Dole. Houd resultaat deelneming en reserve omrekeningsverschillen herkenbaar uit elkaar. Deelneming is de verbindende balanspost; de richting van de reservemutatie volgt uit het positieve of negatieve omrekeningsverschil.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 2, vraag 6",
+      "page": "8",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-15": {
+      "lesson": "downstream-nvw",
+      "explanation": "Oldemarcke is de verkoper en Westerbles de voorraadkoper. De tabel volgt daarom de downstreamroute bij NVW. Verdeel de interne winst in het intracomptabele moederdeel en het aanvullende geconsolideerde deel, zonder ten onrechte een deel toe te rekenen aan derden in Westerbles als koper.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 1",
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-16": {
+      "lesson": "downstream-nvw",
+      "explanation": "Een afname van de interne winst leidt tot vrijval, ook wanneer de rekening in het model “Niet gerealiseerde winst” heet. Lees de debet- en creditrichting en de mutatie samen. De grootboeknaam alleen bepaalt niet of sprake is van nieuwe uitstelwinst of realisatie van eerder uitgestelde winst.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 2",
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-17": {
+      "lesson": "upstream-nvw",
+      "explanation": "Peperga maakt de marge en Oldemarcke houdt de voorraad. Verdeel de nog niet gerealiseerde winst dus naar de aandelenverhouding in Peperga. Het moederdeel vormt de interne NVW-correctie; de rest hoort bij derden in Peperga. Bereken stand en mutatie afzonderlijk.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 3",
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-18": {
+      "lesson": "upstream-nvw",
+      "explanation": "De intracomptabele boeking corrigeert Resultaat deelneming en Deelneming Peperga voor de netto mutatie van het moederdeel. Oldemarcke is wel de voorraadkoper, maar niet de verkoper die deze marge heeft verdiend. Daardoor verschilt de tegenrekening van die bij de downstreamlevering aan Westerbles.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 4",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-19": {
+      "lesson": "consolidatie-nvw",
+      "explanation": "Elimineer de enkelvoudige deelnemingswaarde tegen het bijbehorende moederdeel van het herrekende eigen vermogen van Westerbles. Controleer welk deel van de voorraadwinst al via een afzonderlijke interne post is verwerkt. Het doel is de dubbeltelling van deelneming en onderliggende activa weg te nemen.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 5a",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-20": {
+      "lesson": "consolidatie-nvw",
+      "explanation": "Bij Peperga kan de deelnemingsrekening door een upstreamcorrectie afwijken van een eenvoudig percentage van het zichtbare eigen vermogen. Verklaar dat verschil voordat je de eliminatie boekt. Zo kan de reeds intern gecorrigeerde winst bij de latere voorraadboeking aansluiten zonder dubbel resultaatverlies.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 5b",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-21": {
+      "lesson": "downstream-nvw",
+      "explanation": "De balansvraag gebruikt de nog aanwezige eindwinst in de voorraad bij Westerbles. Het intern uitgestelde deel wordt via de overlopende post afgewerkt; het restant via de aanvullende geconsolideerde correctie met belasting. Het derdenbelang in de koper verklaart hier geen aandeel in de door de moeder verdiende marge.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 5c",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-22": {
+      "lesson": "upstream-nvw",
+      "explanation": "Voor de levering door Peperga wordt de eindwinst uit de voorraad bij Oldemarcke verwijderd. De tegenboekingen volgen de eerder verlaagde deelnemingswaarde en het aandeel derden in de verkoper, met belasting afzonderlijk. Vergelijk alle delen op bruto- en nettobasis om een ontbrekende factor te vinden.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 5d",
+      "page": "10",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-23": {
+      "lesson": "resultaataansluiting",
+      "explanation": "Tel de voorraden van de integraal opgenomen maatschappijen volledig op en trek de volledige nog interne eindwinsten af. Gebruik niet alleen de moederpercentages of de mutatiekolommen. De balans moet immers de waarde van alle opgenomen voorraad zonder interne opslag laten zien.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 3, vraag 6",
+      "page": "11",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-24": {
+      "lesson": "dividend",
+      "explanation": "Beoordeel het dividend over 2021 vanuit de verkrijgingsprijsgrondslag en de verwervingsdatum van het betreffende pakket. Het model behandelt een meegekocht deel anders dan reguliere winstuitkering. Daarom kan een credit op Deelneming terecht zijn, hoewel er geen NVW wordt toegepast.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 1a",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-25": {
+      "lesson": "consolidatie-hk",
+      "explanation": "De eindwaarde van Deelneming Ridder bij verkrijgingsprijs volgt het aankoopbedrag en de daarop in mindering gebrachte bedragen, zoals het in de casus meegekochte dividend. Voeg niet alsnog het aandeel in alle dochterwinst toe: dat zou ongemerkt de NVW-methode invoeren.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 1b",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-26": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Het aanvullende pakket van 1 oktober 2023 krijgt zijn eigen verkrijgingsprijs in de administratie. Houd het verwervingsmoment apart voor de daaropvolgende consolidatie en goodwillafschrijving. Een prijs voor extra aandelen is niet zonder meer een herwaardering van het reeds gehouden pakket.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 2",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-27": {
+      "lesson": "consolidatie-hk",
+      "explanation": "De vraag betreft de enkelvoudige resultaatverwerking van het belang tegen verkrijgingsprijs. Neem niet automatisch een percentage van de jaarwinst van Ridder op alsof NVW geldt. Volg de in de casus aanwezige opbrengsten en de voorgeschreven kostprijsmethode; de dochterresultaten worden bij consolidatie verwerkt.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 3",
+      "page": "12",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-28": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Werk per aandelenpakket met de eigen verwervingsdatum, verkrijgingsprijs en het bijbehorende vermogen. Het model vraagt hier niet om de boeking van het belang derden. Door die onderdelen gescheiden te houden, wordt zichtbaar welk deel van het verschil goodwill is en welk deel later opgebouwd vermogen.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 4",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-29": {
+      "lesson": "goodwill",
+      "explanation": "De goodwill van het oorspronkelijke en het nieuwe pakket kan niet zonder tijdsweging worden afgeschreven. Het nieuwe pakket is pas op 1 oktober verworven, zodat de jaarlast voor dat pakket slechts de resterende periode van 2023 betreft. Onderscheid deze jaarlast van de cumulatieve afschrijving op de balans.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 5",
+      "page": "13",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-30": {
+      "lesson": "downstream-hk",
+      "explanation": "SchierGlas is de winstmaker en Ridder houdt de voorraad. Bij de behandelde verkrijgingsprijsmethodiek ontbreekt een interne NVW-correctie en wordt de volledige winstcorrectie geconsolideerd aan het moederresultaat toegerekend. De minderheid in Ridder heeft de door SchierGlas geboekte marge niet verdiend.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 6a",
+      "page": "9",
+      "sourceKind": "uploaded-pdf"
+    },
+    "vraag-31": {
+      "lesson": "downstream-hk",
+      "explanation": "Verwijder eerst de interne omzet tegenover de kostprijs. Verwerk daarna de verandering van de interne voorraadwinst als aanvullend resultaat- en belastingeffect. Omdat het hier downstream bij verkrijgingsprijs betreft, bestaat geen eerder geboekt intern NVW-deel dat opnieuw moet worden uitgeschakeld.",
+      "source": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "question": "Opgave 4, vraag 6b",
+      "page": "14",
+      "sourceKind": "uploaded-pdf"
+    }
+  },
+  "cafa2-20260429": {
+    "vraag-1": {
+      "lesson": "goodwill",
+      "explanation": "Bereken het herrekende vermogen van Dingspel op 100%-niveau en neem daarna het 60%-aandeel. Het verschil met de prijs is de betaalde goodwill. Zo wordt voorkomen dat overnamecorrecties of verplichtingen die al in het nettovermogen zijn verwerkt nogmaals rechtstreeks van goodwill worden afgetrokken.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 1",
+      "sourceKind": "repository-model"
+    },
+    "vraag-2": {
+      "lesson": "waardering",
+      "explanation": "Benoem eerst de invloed van betekenis op het zakelijke en financiële beleid en verbind die aan de feiten van Dingspel. Verwijs daarna naar artikel 2:389 lid 1 en de NVW-hoofdregel van lid 2. Het 60%-belang ondersteunt het vermoeden, maar de woorden “het is een deelneming” zijn op zichzelf nog geen complete waarderingsmotivering.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 2",
+      "sourceKind": "repository-model"
+    },
+    "vraag-3": {
+      "lesson": "fair-value",
+      "explanation": "De verwervingsboeking combineert twee debetposten: het aandeel in het herrekende nettovermogen en de afzonderlijke goodwill. Hun som sluit aan op de gegeven betaling of tegenprestatie. De kwalificatie van het belang verklaart waarom niet alleen de volledige prijs als één deelnemingspost blijft staan.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 3",
+      "sourceKind": "repository-model"
+    },
+    "vraag-4": {
+      "lesson": "dividend",
+      "explanation": "Bij Dingspel wordt de winstbestemming binnen het eigen vermogen verwerkt en ontstaat voor het gedeclareerde dividend een schuld. Oostermoer krijgt voor haar aandeel een vordering of ontvangst en verlaagt bij NVW Deelneming. Dezelfde dividendbeslissing wordt dus vanuit twee administraties bekeken, met verschillende tegenrekeningen.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 4",
+      "sourceKind": "repository-model"
+    },
+    "vraag-5": {
+      "lesson": "resultaat-deelneming",
+      "explanation": "Begin bij het resultaat van Dingspel en verwerk het jaareffect van de bij verwerving vastgestelde verschillen. Neem daarna het 60%-winstaandeel. Goodwillafschrijving bij Oostermoer en een rechtstreekse reservemutatie zijn niet zonder meer onderdeel van het aldus berekende resultaat van de deelneming zelf.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 5",
+      "sourceKind": "repository-model"
+    },
+    "vraag-6": {
+      "lesson": "dochter",
+      "explanation": "Toets Fort op de daadwerkelijk uitoefenbare stemrechten en bijzondere benoemingsrechten uit de casus. Let op eventuele verschillen tussen stem- en winstrecht. De dochtertoets gaat over artikel 2:24a en is daarom niet te vervangen door alleen het voor de waardering gebruikte aandelenpercentage.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 6",
+      "sourceKind": "repository-model"
+    },
+    "vraag-7": {
+      "lesson": "flex-aandelen",
+      "explanation": "De waardering van Fort vraagt om de rechten op het onderliggende vermogen. Splits daarom zo nodig het aandeel in nominaal kapitaal en het aandeel in winstreserves. Het percentage dat bij de vorige vraag de zeggenschap bepaalde hoeft niet automatisch op ieder vermogensbestanddeel van toepassing te zijn.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 1 · Vraag 7",
+      "sourceKind": "repository-model"
+    },
+    "vraag-8": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Reken de tegenprestatie, het aandeel in het nettovermogen en de goodwill op de verwervingsdatum om. De drie bedragen moeten in euro’s op elkaar aansluiten. Latere omrekeningsverschillen worden daarna gevolgd via het verloop, niet terugwerkend als een andere aankoopprijs.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 1",
+      "sourceKind": "repository-model"
+    },
+    "vraag-9": {
+      "lesson": "tijdstipmethode",
+      "explanation": "Voor deze vraag gebruikt het model historische koersen: het oude gebouw en zijn afschrijving tegen € 1,12, de verbouwing en haar afschrijving tegen € 1,09. Zo resteert € 667.950. De voorraad van € 195.250 wordt eveneens uit de resterende historische lagen opgebouwd. Pas dus niet alleen vanwege de eindbalansdatum overal de slotkoers toe.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 2",
+      "sourceKind": "repository-model"
+    },
+    "vraag-10": {
+      "lesson": "valuta-voorraad",
+      "explanation": "De kostprijs volgt de afgegeven partijen fusten, terwijl de afwaardering alleen de partij betreft die op de eindbalans nog aanwezig is en lager wordt gewaardeerd. Bereken deze componenten eerst afzonderlijk en gebruik daarna de in de casus voorgeschreven koersen. Zo wordt een voorraadverlies niet verward met een omrekeningsverschil.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 3",
+      "sourceKind": "repository-model"
+    },
+    "vraag-11": {
+      "lesson": "monetaire-positie",
+      "explanation": "Het model vergelijkt de theoretische europositie van −€ 70.950 met de werkelijke monetaire eindpositie van −£ 65.000 × € 1,11 = −€ 72.150. Het verschil van −€ 1.200 is een koersverlies in het resultaat bij deze tijdstipberekening. De afwaardering van een debiteur is wél een mutatie van een monetaire post en staat daarom afzonderlijk in het verloop.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 4",
+      "sourceKind": "repository-model"
+    },
+    "vraag-12": {
+      "lesson": "slotkoersmethode",
+      "explanation": "Bereken het gebouwverloop afzonderlijk: beginwaarde, afschrijving en eindwaarde tegen hun passende koersen. Het verschil is alleen het omrekeningsverschil van het gebouw. Tel dit niet nogmaals als extra totaalverschil bij de eerder berekende reserve op wanneer het al in de totale vermogensaansluiting zit.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 5",
+      "sourceKind": "repository-model"
+    },
+    "vraag-13": {
+      "lesson": "valuta-deelneming",
+      "explanation": "Het model splitst € 15.820 resultaat deelneming en € 2.240 negatief omrekeningsverschil. Daardoor neemt Deelneming in deze eindejaarsboeking netto € 13.580 toe. Het eerder verwerkte dividend van € 42.000 staat wel in de controle van het jaarverloop, maar wordt niet opnieuw als onderdeel van deze boeking verdubbeld.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 2 · Vraag 6",
+      "sourceKind": "repository-model"
+    },
+    "vraag-14": {
+      "lesson": "downstream-nvw",
+      "explanation": "De totale voorraadwinst stijgt van € 64.000 naar € 96.000. Het interne 60%-deel stijgt met € 19.200 en het aanvullende 40%-deel met € 12.800. Derden in ChargeIT dragen geen deel van de door Moderna als moeder gemaakte verkoopwinst; de open derdenkolom is daarom niet automatisch met 40% in te vullen.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 1",
+      "sourceKind": "repository-model"
+    },
+    "vraag-15": {
+      "lesson": "sidestream-ab",
+      "explanation": "Power4You is voor 75% gehouden en ChargeIT voor 60%: langs de pijl neemt het belang af. Daarom gebruikt de tabel 60% intern, 25% derden in de verkoper en 15% aanvullend. De totale winst daalt met € 48.000. De afzonderlijk gemarkeerde doorleveringsregel in het model moet niet als definitie van voorraadmutatie worden geleerd.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 2",
+      "sourceKind": "repository-model"
+    },
+    "vraag-16": {
+      "lesson": "ic-boekingsmethoden",
+      "explanation": "Er zijn twee verschillende oorzaken: downstream neemt het uitgestelde interne deel met € 19.200 toe; sidestream valt juist € 28.800 bruto vrij. Die laatste vrijval is na 20% belasting € 23.040 en verhoogt Resultaat deelneming. Gebruik dus niet voor beide stromen dezelfde debet- en creditrichting.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 3",
+      "sourceKind": "repository-model"
+    },
+    "vraag-17": {
+      "lesson": "consolidatie-nvw",
+      "explanation": "Het in de moeder verwerkte resultaat van Power4You bevat al de interne vrijval van € 23.040. Bij de eliminatie moet dit aansluiten op de opgetelde dochtercijfers. Het uitgangsbedrag voor derden is € 200.000 × 25% + € 320.000 × 40% = € 178.000; verdere IC-resultaateffecten volgen bij de betreffende eliminaties.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 4",
+      "sourceKind": "repository-model"
+    },
+    "vraag-18": {
+      "lesson": "ic-boekingsmethoden",
+      "explanation": "Voor downstream wordt € 4.000.000 interne omzet gesplitst in € 3.840.000 doorgeleverd en € 160.000 voorraadtoename. Voor sidestream wordt de winstafname van € 48.000 uitgesplitst: € 28.800 intern, € 12.000 derden en € 7.200 aanvullend, telkens met resultaat en belasting afzonderlijk. Dezelfde mutatie wordt zo niet dubbel als winstvrijval behandeld.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 5",
+      "sourceKind": "repository-model"
+    },
+    "vraag-19": {
+      "lesson": "sidestream-ab",
+      "explanation": "De eindwinst van € 180.000 valt uiteen in € 108.000 intern, € 45.000 derden en € 27.000 aanvullend. De nettofactor van 80% verklaart onder meer € 86.400, € 36.000 en € 21.600 in de boeking. Daarnaast wordt € 34.200 beginwinst aanvullend × 80% = € 27.360 van reserves naar resultaat overgebracht.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 3 · Vraag 6",
+      "sourceKind": "repository-model"
+    },
+    "vraag-20": {
+      "lesson": "downstream-hk",
+      "explanation": "De winst daalt van € 100.000 naar € 80.000. Omdat Baldetti tegen verkrijgingsprijs waardeert, blijft de interne correctiekolom leeg. En omdat Baldetti zelf de verkoper is, gaat de volledige winstcorrectie naar het geconsolideerde moederresultaat, niet naar derden in Vinsanto.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 4 · Vraag 1",
+      "sourceKind": "repository-model"
+    },
+    "vraag-21": {
+      "lesson": "downstream-hk",
+      "explanation": "“Geen boeking” betekent hier geen intracomptabele correctie volgens de behandelde verkrijgingsprijsmethodiek. Het betekent niet dat € 80.000 interne eindwinst mag blijven staan. Die winst wordt volledig extracomptabel verwijderd in de daaropvolgende consolidatievraag.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 4 · Vraag 2",
+      "sourceKind": "repository-model"
+    },
+    "vraag-22": {
+      "lesson": "consolidatie-hk",
+      "explanation": "Scheid de deelnemingseliminatie, het eindvermogen van derden, goodwillafschrijving en voorraadwinst. De goodwill van € 400.000 wordt cumulatief met € 80.000 verminderd, waarvan € 40.000 het vorige jaar betreft. De eindwinst van € 80.000 wordt bruto uit de voorraad gehaald; de netto beginwinst van € 80.000 wordt afzonderlijk in het jaarresultaat ingevoegd.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 4 · Vraag 3",
+      "sourceKind": "repository-model"
+    },
+    "vraag-23": {
+      "lesson": "downstream-hk",
+      "explanation": "De afschrijving van € 40.000 is de jaarlast, niet de cumulatieve € 80.000 van de balans. Bij de goederen neemt de interne winst met € 20.000 af, zodat na 20% belasting € 16.000 vrijvalt voor het moederresultaat. De volledige interne omzet van € 2.000.000 verdwijnt daarnaast tegenover de kostprijs.",
+      "source": "Bestaand antwoordmodel in CAFA2, tentamen 29 april 2026",
+      "question": "Opgave 4 · Vraag 4",
+      "sourceKind": "repository-model"
+    }
+  }
+}
