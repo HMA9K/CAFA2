@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const generated=read('css/study-dark.css');
+const source=read('content/study/dark-contrast.css');
+assert.ok(generated.includes(source),'Authored contrast layer must survive a rebuild');
+assert.ok(generated.startsWith('@media screen {'),'Dark paint is screen-only');
+assert.ok(generated.trimEnd().endsWith(source.trimEnd()+'\n\n}'),'No unscoped patch after the screen-only layer');
+assert.match(generated,/\.btn\{[^}]*color:var\(--study-ink\)/,'Enabled buttons need a foreground, not a dark fill token');
+assert.match(generated,/\.views button\{[^}]*color:var\(--study-ink\)/,'Unselected A/B/C/D remain readable');
+assert.match(generated,/\.mode-switch label\{[^}]*color:var\(--study-ink\)/,'Unselected own-work tab remains readable');
+assert.match(generated,/\.cafa-direct-check\{[^}]*color:var\(--study-ink\)/,'Direct-check label must be readable');
+assert.match(source,/button:disabled/);
+assert.match(source,/opacity:1!important/,'No multiplicative fading of disabled text');
+assert.doesNotMatch(source,/(?:pointer-events|display|visibility)\s*:/,'Contrast layer must not change interaction or visibility');
+assert.match(source,/cafa-home-choice\.practice \.cafa-choice-icon/,'Preserve approved homepage badges');
+console.log('Semantic dark contrast source and generated output match; foregrounds and control states are covered.');

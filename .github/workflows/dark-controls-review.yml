@@ -1,0 +1,54 @@
+name: CAFA2 semantic dark contrast review
+on:
+  push:
+    branches: [cafa2-dark-controls-20260922]
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-dark-controls-review
+  cancel-in-progress: true
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated test dependencies
+        run: |
+          python -m pip install -q tinycss2 playwright
+          python -m playwright install --with-deps chromium webkit >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Build and check unchanged course content
+        run: |
+          npm run build:study
+          npm test
+          sha256sum css/study-dark.css > /tmp/dark-css.sha256
+          python scripts/build-study-dark.py
+          sha256sum --check /tmp/dark-css.sha256
+      - name: Real browser contrast and control-state tests
+        run: python tests/dark-contrast-browser.py
+      - name: Existing question, answer, restart and timer regressions
+        run: python tests/study-upgrade-browser.py
+      - name: Save generated stylesheet only after all checks pass
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-dark-controls-20260922'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add css/study-dark.css
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build verified semantic dark-mode foregrounds and distinct control states'
+            git push origin HEAD:cafa2-dark-controls-20260922
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-dark-contrast-review
+          path: |
+            /tmp/cafa2-contrast-review/
+            /tmp/cafa2-study-review/
+          retention-days: 7
