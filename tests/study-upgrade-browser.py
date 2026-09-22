@@ -47,7 +47,7 @@ async def run():
           assert await page.evaluate('document.activeElement.dataset.law')=='24c'
           assert await page.locator('#kapitaalboom select').count()==0
           assert await page.locator('#kapitaalboom details').count()==0
-          await page.locator('[data-capital-field=participation][data-capital-value=yes]').click()
+          await page.locator('[data-capital-field=participation][data-capital-value=yes]').first.click()
           await page.locator('[data-capital-stage=value]').click()
           await page.locator('[data-capital-field=influence][data-capital-value=yes]').click()
           await page.locator('[data-capital-field=information][data-capital-value=yes]').click()
