@@ -1,0 +1,91 @@
+name: CAFA2 compact study review
+on:
+  push:
+    branches: [cafa2-klikroute-20260922]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cafa2-compact-study-review
+  cancel-in-progress: true
+jobs:
+  review:
+    if: github.ref == 'refs/heads/cafa2-klikroute-20260922'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Materialize locally reviewed source bundle
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,lzma,shutil
+          root=Path('.').resolve();folder=root/'content/refinement-bootstrap'
+          if folder.exists():
+              raw=b''.join(p.read_bytes() for p in sorted(folder.glob('*.part')))
+              assert hashlib.sha256(raw).hexdigest()=='20b744d46b914b4514e358dfa4dc2a5cc9ce0e1e6646f9effdb4a30690473cd4'
+              bundle=json.loads(lzma.decompress(raw))
+              for relative,item in bundle.items():
+                  path=root/relative
+                  assert path.resolve().is_relative_to(root) and not relative.startswith(('.git','/'))
+                  if item['base'] is None:
+                      assert not path.exists(),relative
+                      text=item['text']
+                  else:
+                      old=path.read_bytes()
+                      assert hashlib.sha256(old).hexdigest()==item['base'],relative
+                      text=old.decode('utf-8')
+                      for start,end,replacement in reversed(item['changes']):
+                          text=text[:start]+replacement+text[end:]
+                  assert hashlib.sha256(text.encode('utf-8')).hexdigest()==item['sha256'],relative
+                  path.parent.mkdir(parents=True,exist_ok=True)
+                  path.write_text(text,encoding='utf-8')
+              shutil.rmtree(folder)
+              print('Verified and materialized',len(bundle),'reviewed source files.')
+          PY
+      - name: Install isolated browser test dependencies
+        run: |
+          python -m pip install -q tinycss2 playwright
+          python -m playwright install --with-deps chromium webkit >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Build and verify source, calculations and unchanged answer models
+        run: |
+          npm run build:study
+          npm test
+      - name: HTTP return navigation, progress, themes and restart regressions
+        run: python tests/study-upgrade-browser.py
+      - name: HTTP compact route, anchored statutes and floating calculator acceptance
+        run: python tests/study-refinement-browser.py
+      - name: Commit reviewed application only after all checks pass
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/cafa2-klikroute-20260922'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content css data docs fallback fragments js scripts tests index.html samenvatting.html package.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build verified compact capital route, contextual law popovers and exam-grounded learning'
+            git push origin HEAD:cafa2-klikroute-20260922
+          fi
+      - name: Capture source and build
+        if: always()
+        run: tar --exclude='./.git' --exclude='./node_modules' -cf /tmp/cafa2-refinement-source.tar .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-refinement-source
+          path: /tmp/cafa2-refinement-source.tar
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-refinement-browser-results
+          path: |
+            /tmp/cafa2-study-review/
+            /tmp/cafa2-refinement-review/
+          if-no-files-found: ignore
+          retention-days: 7

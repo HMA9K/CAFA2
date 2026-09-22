@@ -1,19 +1,19 @@
 /* Additive, reproducible presentation build. The original exam models are not mutated. */
 import fs from 'node:fs';
 import vm from 'node:vm';
-import {guides,laws,examNotes,flowPage,lawPage,topicAddition,noteHtml,lawRail} from '../content/study/render.mjs';
-import {wizardHtml} from '../content/study/wizard.mjs';
+import {guides,laws,examNotes,capitalFlow,lawLink,lawPage,topicAddition,noteHtml,lawRail} from '../content/study/render.mjs';
+import {orientation,orientationHtml,examRoutePage} from '../content/study/learning-route.mjs';
 const read=p=>fs.readFileSync(p,'utf8'),write=(p,s)=>fs.writeFileSync(p,s);
 const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,'').replace(/<!-- study-note:[\s\S]*?<!-- \/study-note -->/g,'');
 const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade -->';
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
-  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260922-1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-1">')+'</head>');
-  s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-1"></script>'));
-  const scripts='<script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-1"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260922-1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-1"></script>';
+  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2">')+'</head>');
+  s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
+  const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-2"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260922-2"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-2"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
-  else s=s.replace('</head>',wrap('scripts',scripts)+'</head>');
+  else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260922-2"></script>')+'</head>');
   return s;
 }
 const context={window:{CAFA2_DATA:{modules:{}}}};vm.createContext(context);
@@ -27,7 +27,16 @@ for(const id of Object.keys(guides)){
   if(!opening.test(summary))throw Error('Onderwerp ontbreekt: '+id);
   summary=summary.replace(opening,(_,a,b)=>a+block(id,topicAddition(id))+b);topics++;
 }
-summary=summary.replace('</main>',wrap('pages',flowPage().replace('<nav class="capital-stages"',wizardHtml()+'<nav class="capital-stages"')+lawPage())+'</main>');
+for(const id of Object.keys(orientation)){
+ const opening=new RegExp('(<article class="reader-chapter"[^>]*id="'+id+'"[\\s\\S]*?<h1[^>]*>[\\s\\S]*?</h1>)');
+ // Reader chapters are section elements in the source builder.
+ const sectionOpening=new RegExp('(<section class="reader-chapter"[^>]*id="'+id+'"[\\s\\S]*?<h1[^>]*>[\\s\\S]*?</h1>)');
+ const re=opening.test(summary)?opening:sectionOpening;
+ if(!re.test(summary))throw Error('Geen hoofdstukkop: '+id);
+ summary=summary.replace(re,m=>m+wrap('orientation-'+id,orientationHtml(id)));
+}
+summary=summary.replace(/<section class="summary-page" data-view="tentamen"[^>]*>[\s\S]*?<\/section>/,examRoutePage());
+summary=summary.replace('</main>',wrap('pages',capitalFlow(lawLink)+lawPage())+'</main>');
 const toolLinks='<a data-tool-link="kapitaalboom" href="#kapitaalboom">Kapitaalbelangen</a><a data-tool-link="wetsartikelen" href="#wetsartikelen">Wetsartikelen</a>';
 summary=summary.replace(/(<a [^>]*data-tool-link="kernschema"[^>]*>[\s\S]*?<\/a>)/,m=>m+wrap('tool-tabs',toolLinks));
 summary=summary.replace('<div class="reader-tools">','<div class="reader-tools">'+wrap('tool-home','<a class="study-button" href="#kapitaalboom">Beslisboom kapitaalbelangen</a><a class="study-button" href="#wetsartikelen">Wetsartikelen</a>'));
@@ -69,5 +78,5 @@ for(const exam of context.window.CAFA2_EXAMS){
  }
 }
 write('data/study-support.js','window.CAFA2_STUDY='+JSON.stringify({laws,guides,notes}).replace(/</g,'\\u003c')+';\n');
-write('docs/study-upgrade-manifest.json',JSON.stringify({version:'2026-09-22',topics,practiceQuestions:practice,examNotes:noteCount,articles:Object.keys(laws).length,examDataUnchanged:true,defaultTheme:'auto',themePersistence:'browser session',sourceVersion:'Aangeleverde studiekopie 01-01-2025'},null,2)+'\n');
+write('docs/study-upgrade-manifest.json',JSON.stringify({version:'2026-09-22',topics,practiceQuestions:practice,examNotes:noteCount,articles:Object.keys(laws).length,examDataUnchanged:true,defaultTheme:'auto',themePersistence:'browser session',chapterOrientations:7,examRouteExamples:7,examRouteSourceCount:4,lawPresentation:'non-modal anchored literal source',capitalRoute:'three click stages with immediate recomputation',sourceVersion:'Aangeleverde studiekopie 01-01-2025'},null,2)+'\n');
 console.log('Study upgrade built:',{topics,practice,noteCount,articles:Object.keys(laws).length});
