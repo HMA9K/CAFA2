@@ -39,10 +39,15 @@ jobs:
                   assert path.resolve().is_relative_to(root) and not relative.startswith(('.git','/'))
                   path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
               shutil.rmtree(folder)
-          # Do not consume a saved return position until all asynchronous feedback modules are ready.
+          # Wait until the complete async application is ready before restoring feedback and position.
           p=root/'js/study-shell.js';s=p.read_text()
           s=s.replace("if (p.question && p.question.kind === 'practice' && !window.CafaPractice) return false;", "if (p.question && p.question.kind === 'practice' && (!window.CafaPractice || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
           s=s.replace("if (p.question && p.question.kind === 'exam' && !window.CafaExams) return false;", "if (p.question && p.question.kind === 'exam' && (!window.CafaExams || !window.CafaFeedback || document.documentElement.classList.contains('cafa-starting'))) return false;")
+          p.write_text(s)
+          # Exercise options are labelled radio controls, not elements named option-*.
+          p=root/'tests/study-upgrade-browser.py';s=p.read_text()
+          s=s.replace("page.locator('#option-kap-12-0').click()", "page.locator('label[for=\"a-kap-12-0\"]').click()")
+          s=s.replace("except Exception:\n          await shot('FAILURE');", "except Exception as exc:\n          import traceback\n          report['failure']={'browser':kind,'url':page.url,'exception':str(exc),'traceback':traceback.format_exc(),'passed':checks}\n          await shot('FAILURE');")
           p.write_text(s)
           PY
       - name: Install test dependencies
