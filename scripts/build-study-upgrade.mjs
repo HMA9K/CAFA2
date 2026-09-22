@@ -9,11 +9,11 @@ const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade --
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
-  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2">')+'</head>');
+  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260922-3">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
   const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-2"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260922-2"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-2"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
-  else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260922-2"></script>')+'</head>');
+  else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260922-3"></script>')+'</head>');
   return s;
 }
 const context={window:{CAFA2_DATA:{modules:{}}}};vm.createContext(context);
