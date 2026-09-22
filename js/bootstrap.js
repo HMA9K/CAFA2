@@ -50,7 +50,7 @@
     document.querySelector('.top-controls').appendChild(profile);
     return loadScript('js/app.js');
   }).then(function () {
-    return loadScript('js/calculator.js');
+    return loadScript('js/calculator.js?v=20260922-3');
   }).then(function () {
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
