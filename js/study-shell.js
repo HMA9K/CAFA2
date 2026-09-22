@@ -130,19 +130,7 @@
   }
   function sourceLocation(a){var law=data.laws[a];return law?'Studiekopie Boek 2 BW, p. '+(law.pages||law.page)+'.':'';}
   function lawRail(refs,base){return '<div class="law-rail" aria-label="Wetsartikelen">'+(refs||[]).map(function(r){var law=data.laws[r.article];if(!law)return '';return '<a class="law-ref" data-law="'+escape(r.article)+'" data-law-part="'+escape(r.part)+'" href="'+escape(base||'samenvatting.html')+'#wet-'+escape(r.article)+'">art. 2:'+escape(r.article)+(r.part?' '+escape(r.part):'')+' BW<span>p. '+escape(law.pages||law.page)+'</span></a>';}).join('')+'</div>';}
-  function showLaw(article,part,opener) {
-    var law=data.laws[article];if(!law)return;
-    lawOpener=opener;
-    var dialog=document.getElementById('study-law-dialog');
-    if(!dialog){dialog=document.createElement('dialog');dialog.id='study-law-dialog';dialog.className='study-law-dialog';document.body.append(dialog);
-      dialog.addEventListener('close',function(){if(lawOpener&&lawOpener.isConnected)lawOpener.focus({preventScroll:true});});
-      dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();});}
-    var selected=(part||'').match(/\d+/g)||[];var member='';
-    dialog.setAttribute('aria-labelledby','study-law-title');
-    dialog.innerHTML='<header><div><p>WETBOEK · '+escape(part||'volledig artikel')+'</p><h2 id="study-law-title">Art. 2:'+escape(article)+' BW</h2><span>'+escape(law.title)+'</span></div><button type="button" data-close-law aria-label="Wetsartikel sluiten">Sluiten ×</button></header><div class="study-law-body"><p class="study-note-source">'+escape(sourceLocation(article))+' De aangeleverde versie vermeldt 01-01-2025.</p>'+law.paragraphs.map(function(p){var m=p.match(/^(\d+)\./);if(m)member=m[1];return '<p'+(selected.includes(member)?' class="law-selected"':'')+'>'+escape(p)+'</p>';}).join('')+'</div><footer><span>Je vraag en antwoorden blijven behouden.</span><a href="'+(/\/fallback\//.test(path)?'../':'')+'samenvatting.html#wetsartikelen" data-law-directory>Alle wetsartikelen →</a></footer>';
-    dialog.showModal();
-    var selectedEl=dialog.querySelector('.law-selected');if(selectedEl)selectedEl.scrollIntoView({block:'nearest'});
-  }
+  function showLaw(article,part,opener) { if(window.CafaLaw)window.CafaLaw.open(article,part,opener); }
   function enrichRules() {
     document.querySelectorAll('.theory-panel[data-guidance-id]').forEach(function(panel){
       if(panel.dataset.studyAdded)return;
@@ -155,12 +143,12 @@
     if(!root)return;
     var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
     while((n=walker.nextNode())) {
-      if(!n.parentElement||n.parentElement.closest('a,button,script,style,textarea,input,select,[contenteditable],.law-verbatim,.study-law-body'))continue;
+      if(!n.parentElement||n.parentElement.closest('a,button,script,style,textarea,input,select,[contenteditable],.law-verbatim,.study-law-body,.law-popover'))continue;
       if(/(?:art\.?|artikel)\s*2:\s*\d+/i.test(n.textContent))nodes.push(n);
     }
     nodes.forEach(function(text){
-      var re=/\b(?:art\.?|artikel)\s*2:\s*(\d+[a-z]*)(?:\s+lid\s+\d+(?:\s*(?:en|t\/m|,)\s*\d+)*(?:\s+onder\s+[a-z])?)?(?:\s+BW)?/gi,last=0,m,frag=document.createDocumentFragment();
-      while((m=re.exec(text.textContent))){if(!data.laws[m[1]])continue;frag.append(document.createTextNode(text.textContent.slice(last,m.index)));var a=document.createElement('a');a.className='law-inline';a.dataset.law=m[1];var part=m[0].match(/lid[\s\S]*?(?=\s+BW|$)/i);a.dataset.lawPart=part?part[0]:'';a.href=(/\/fallback\//.test(path)?'../':'')+'samenvatting.html#wet-'+m[1];a.title=sourceLocation(m[1]);a.textContent=m[0];frag.append(a);last=m.index+m[0].length;}
+      var re=/\b(?:art\.?|artikel)\s*2:\s*(\d+[a-z]*)(?:\s+(?:lid|leden)\s+\d+(?:\s*(?:en|of|t\/m|,|[-–])\s*\d+)*(?:\s+onder\s+[a-z](?:\s+(?:en|of)\s+[a-z])?)?)?(?:\s+BW)?/gi,last=0,m,frag=document.createDocumentFragment();
+      while((m=re.exec(text.textContent))){if(!data.laws[m[1]])continue;frag.append(document.createTextNode(text.textContent.slice(last,m.index)));var a=document.createElement('a');a.className='law-inline';a.dataset.law=m[1];var part=m[0].match(/(?:lid|leden)[\s\S]*?(?=\s+BW|$)/i);a.dataset.lawPart=part?part[0]:'';a.href=(/\/fallback\//.test(path)?'../':'')+'samenvatting.html#wet-'+m[1];a.title=sourceLocation(m[1]);a.textContent=m[0];frag.append(a);last=m.index+m[0].length;}
       if(last){frag.append(document.createTextNode(text.textContent.slice(last)));text.replaceWith(frag);}
     });
   }
@@ -175,15 +163,14 @@
   read();nav.stack=nav.stack.filter(function(s){return s&&localURL(s.url);});
   document.addEventListener('click',function(e){
     var b=e.target.closest('[data-theme-choice]');if(b){window.CafaTheme.setMode(b.dataset.themeChoice);document.getElementById('study-theme-control').open=false;return;}
-    if(e.target.closest('[data-close-law]')){document.getElementById('study-law-dialog').close();return;}
-    if(e.target.closest('[data-study-origin]')){var o=nav.origin;nav.origin=null;nav.stack=[];persist();restore(o);return;}
+        if(e.target.closest('[data-study-origin]')){var o=nav.origin;nav.origin=null;nav.stack=[];persist();restore(o);return;}
     if(e.target.closest('[data-study-back]')){var p=nav.stack.pop();persist();restore(p);return;}
     var law=e.target.closest('[data-law]');if(law){e.preventDefault();e.stopImmediatePropagation();showLaw(law.dataset.law,law.dataset.lawPart,law);return;}
     var a=e.target.closest('a[href]');if(!a||a.target==='_blank'||a.hasAttribute('download')||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;
     // These are modal triggers, not navigation to a new page.
     if(a.hasAttribute('data-overview')||a.hasAttribute('data-calc'))return;
     var u=localURL(a.href);if(!u||u.pathname+u.hash===location.pathname+location.hash)return;
-    if(a.hasAttribute('data-law-directory'))document.getElementById('study-law-dialog').close();
+    if(a.hasAttribute('data-law-directory')&&window.CafaLaw)window.CafaLaw.close(false);
     rememberDestination(u);
   },true);
   document.addEventListener('click',function(e){var t=document.getElementById('study-theme-control');if(t&&t.open&&!t.contains(e.target))t.open=false;});

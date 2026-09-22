@@ -12,8 +12,8 @@ async def run():
     threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}'
     report={'browsers':{},'errors':[]}
     async with async_playwright() as pw:
-      for kind in ['chromium','webkit']:
-        browser=await getattr(pw,kind).launch(headless=True)
+      for kind in os.environ.get('CAFA_BROWSERS','chromium,webkit').split(','):
+        browser=await getattr(pw,kind).launch(headless=True, **({'executable_path':os.environ['CAFA_CHROMIUM_PATH']} if kind=='chromium' and os.environ.get('CAFA_CHROMIUM_PATH') else {}))
         context=await browser.new_context(viewport={'width':390,'height':844},color_scheme='dark')
         await context.route('**/*',lambda r:r.continue_() if r.request.url.startswith(base) else r.abort())
         page=await context.new_page();page.on('pageerror',lambda e:report['errors'].append(str(e)))
@@ -36,15 +36,25 @@ async def run():
           assert await page.locator('html').get_attribute('data-study-theme')=='light'
           await choose('dark');await page.emulate_media(color_scheme='light')
           assert await page.locator('html').get_attribute('data-study-theme')=='dark'
-          await page.locator('#capital-classify .law-ref[data-law="24c"]').first.click()
-          assert await page.locator('#study-law-dialog').is_visible()
-          assert 'p. 1' in await page.locator('#study-law-dialog').inner_text()
-          await page.locator('[data-close-law]').click()
+          law=page.locator('#capital-classify .law-ref[data-law="24c"]').first
+          await law.focus();await page.keyboard.press('Enter')
+          assert await page.locator('#study-law-popover').is_visible()
+          assert 'p. 1' in await page.locator('#study-law-popover').inner_text()
+          assert 'Letterlijke wettekst' in await page.locator('#study-law-popover').inner_text()
+          assert await page.locator('#study-law-popover mark.law-essence').count()>0
+          assert await page.locator('dialog:modal').count()==0
+          await page.locator('[data-law-popover-close]').click()
           assert await page.evaluate('document.activeElement.dataset.law')=='24c'
-          await page.locator('#capital-wizard>summary').click()
-          await page.locator('#capital-check-form button[type=submit]').click()
-          assert 'nog' in (await page.locator('#capital-check-result').inner_text()).lower()
-          await page.locator('#capital-wizard>summary').click()
+          assert await page.locator('#kapitaalboom select').count()==0
+          assert await page.locator('#kapitaalboom details').count()==0
+          await page.locator('[data-capital-field=participation][data-capital-value=yes]').click()
+          await page.locator('[data-capital-stage=value]').click()
+          await page.locator('[data-capital-field=influence][data-capital-value=yes]').click()
+          await page.locator('[data-capital-field=information][data-capital-value=yes]').click()
+          assert 'Nettovermogenswaarde (NVW)' in await page.locator('#capital-value-result').inner_text()
+          await page.locator('[data-capital-field=information][data-capital-value=no]').click()
+          assert 'Andere vermogensmutatiewaarde' in await page.locator('#capital-value-result').inner_text()
+          await page.locator('[data-capital-reset]').click()
           for width in [320,390,430,760,1024,1440]:
             await page.set_viewport_size({'width':width,'height':900})
             for mode in ['light','dark']:
@@ -60,7 +70,7 @@ async def run():
           await page.locator('#study-law-search').fill('389')
           assert await page.locator('[data-law-entry]:visible').count()>=1
           await hash('wet-389');await page.locator('#wet-389').wait_for(state='visible')
-          checks.append('Responsive flow, accessible law dialog, article search, wizard and automatic/manual themes')
+          checks.append('Responsive click route, accessible non-modal source popover, literal highlights, article search and automatic/manual themes')
           # Theme sticks within the same tab across full-page navigation.
           await goto('index.html#oefenen')
           assert await page.evaluate('CafaTheme.getMode()')=='light'
