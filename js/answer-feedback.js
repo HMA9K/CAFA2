@@ -59,6 +59,7 @@
     showPractice(record);
   }
   function preparePractice(question) {
+    each('details', question, function(d, index) { if (!d.id) d.id = 'cafa-detail-' + question.id + '-' + index; });
     var mcRecord = null;
     each('.review', question, function (source, index) {
       var feedback = source.querySelector('.review-content'), summary = source.querySelector('summary');
@@ -153,6 +154,7 @@
       model.innerHTML = window.CafaAnswerEditor.sanitize(q.solutionHtml);
     } else { model.textContent = q.solution || 'Er is nog geen antwoordmodel toegevoegd.'; }
     box.appendChild(model);
+    if(window.CafaStudy)box.insertAdjacentHTML('beforeend',window.CafaStudy.examNote(a.exam.id,q.id));
     if (window.CafaStockTable) window.CafaStockTable.enhance(model);
   }
   function selfScore(context, box) {

@@ -55,6 +55,9 @@ fallbackPages.forEach((fallbackPage) => {
 
 function listFiles(directory, prefix = '') {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    // Git history and installed development dependencies are not published site assets.
+    // Keep the existing size limit for every actual application and source file.
+    if (entry.name === '.git' || (entry.isDirectory() && entry.name === 'node_modules')) return [];
     const relativePath = path.join(prefix, entry.name);
     const absolutePath = path.join(directory, entry.name);
     return entry.isDirectory() ? listFiles(absolutePath, relativePath) : [relativePath];
