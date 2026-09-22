@@ -9,24 +9,28 @@ s = s.replace("document.querySelector('.question:target, [data-view]:not([hidden
 s = s.replace('if(p.detailState){var r=', "if(p.detailState&&!(p.question&&p.question.kind==='practice')){var r=")
 if 'function settleReadingPosition' not in s:
     helper = '''  function settleReadingPosition(position) {
-    var target = here(), interrupted = false, events = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
+    var target = location.pathname + location.hash, interrupted = false;
+    var events = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
     function stop() { interrupted = true; events.forEach(function(type) { window.removeEventListener(type, stop, true); }); }
     function apply() {
-      if (interrupted || here() !== target) return stop();
-      window.scrollTo(0, position.y || 0);
-      (position.panes || []).forEach(function(v) { var el = document.querySelector(v.selector); if (el) el.scrollTop = v.y; });
+      if (interrupted || location.pathname + location.hash !== target) return stop();
+      window.scrollTo(0, Number(position.y) || 0);
+      var panes = document.querySelectorAll('.review-side-content, .exam-modal-body, .reader-sidebar');
+      (position.panes || []).forEach(function(pair) { if (panes[pair[0]]) panes[pair[0]].scrollTop = pair[1]; });
       previous = snapshot();
     }
     events.forEach(function(type) { window.addEventListener(type, stop, {capture: true, passive: true}); });
     apply();
-    // WebKit may perform its native fragment jump after the first rendering frames.
-    // These bounded retries are cancelled as soon as the reader interacts or navigates.
+    // Native fragment positioning in WebKit can happen after the first rendering frames.
+    // Bounded retries stop immediately on a real gesture or another navigation.
     [60, 160, 320].forEach(function(delay) { setTimeout(apply, delay); });
     setTimeout(stop, 400);
   }
 '''
+    assert '  function applyPending() {' in s
     s = s.replace('  function applyPending() {', helper + '  function applyPending() {')
-    s = s.replace('        window.scrollTo(0, p.y || 0);', '        settleReadingPosition(p);')
+    assert 'window.scrollTo(0,Number(p.y)||0);' in s
+    s = s.replace('window.scrollTo(0,Number(p.y)||0);', 'settleReadingPosition(p);')
 p.write_text(s)
 p = root / 'js/answer-feedback.js'
 s = p.read_text()
