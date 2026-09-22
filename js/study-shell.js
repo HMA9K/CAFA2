@@ -103,12 +103,26 @@
     originButton.hidden = !hasOrigin;
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
-    bar.hidden=back.hidden&&originButton.hidden;
+    bar.hidden=false;
     document.documentElement.style.setProperty('--study-return-h',bar.hidden?'0px':'46px');
   }
   function scheduleUpdate() {
     if(scheduled)return;scheduled=true;
     requestAnimationFrame(function(){scheduled=false;updateBar();applyPending();previous=snapshot();});
+  }
+  function closeTools(restoreFocus) {
+    var menu=document.getElementById('study-tools-menu');
+    if(menu&&menu.open){menu.open=false;if(restoreFocus)menu.querySelector('summary').focus();}
+  }
+  function mountTools() {
+    document.querySelectorAll('.cafa-wordmark small, .brand small, .reader-brand small').forEach(function(el){el.textContent='LEER- EN OEFENOMGEVING';});
+    if(!bar||document.getElementById('study-tools-menu'))return;
+    var base=/\/fallback\//.test(path)?'../':'';
+    var practice=/\/(?:index\.html)?$/.test(path)?'':base+'index.html';
+    var menu=document.createElement('details');menu.id='study-tools-menu';menu.className='study-tools-menu';
+    menu.innerHTML='<summary aria-label="Hulpmiddelen openen">Meer <span aria-hidden="true">⌄</span></summary><nav aria-label="Studiehulpmiddelen"><a href="'+base+'samenvatting.html#kernschema">IC-kernschema</a><a href="'+practice+'#voortgang">Voortgang</a><a href="'+base+'samenvatting.html#begrippen">Begrippen</a><a href="'+base+'samenvatting.html#bronnen">Bronnen</a><a href="'+base+'samenvatting.html#wetsartikelen">Wetsartikelen</a></nav>';
+    bar.append(menu);
+    menu.addEventListener('click',function(e){if(e.target.closest('a'))closeTools(false);});
   }
   function mountControls() {
     if(!document.getElementById('study-theme-control')) {
@@ -126,7 +140,7 @@
         function measure(){document.documentElement.style.setProperty('--study-top-h',header.getBoundingClientRect().height+'px');}
         if(window.ResizeObserver)new ResizeObserver(measure).observe(header);measure();}
     }
-    updateBar();
+    mountTools();updateBar();
   }
   function sourceLocation(a){var law=data.laws[a];return law?'Studiekopie Boek 2 BW, p. '+(law.pages||law.page)+'.':'';}
   function lawRail(refs,base){return '<div class="law-rail" aria-label="Wetsartikelen">'+(refs||[]).map(function(r){var law=data.laws[r.article];if(!law)return '';return '<a class="law-ref" data-law="'+escape(r.article)+'" data-law-part="'+escape(r.part)+'" href="'+escape(base||'samenvatting.html')+'#wet-'+escape(r.article)+'">art. 2:'+escape(r.article)+(r.part?' '+escape(r.part):'')+' BW<span>p. '+escape(law.pages||law.page)+'</span></a>';}).join('')+'</div>';}
@@ -173,9 +187,10 @@
     if(a.hasAttribute('data-law-directory')&&window.CafaLaw)window.CafaLaw.close(false);
     rememberDestination(u);
   },true);
-  document.addEventListener('click',function(e){var t=document.getElementById('study-theme-control');if(t&&t.open&&!t.contains(e.target))t.open=false;});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){var t=document.getElementById('study-theme-control');if(t&&t.open){t.open=false;t.querySelector('summary').focus();}}});
+  document.addEventListener('click',function(e){if(!e.target.closest('#study-tools-menu'))closeTools(false);var t=document.getElementById('study-theme-control');if(t&&t.open&&!t.contains(e.target))t.open=false;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeTools(true);var t=document.getElementById('study-theme-control');if(t&&t.open){t.open=false;t.querySelector('summary').focus();}}});
   window.addEventListener('hashchange',function(){
+    closeTools(false);
     if(!suppress&&!nav.pending&&previous&&previous.url!==location.pathname+location.hash)push(previous);
     suppress=false;scheduleUpdate();
   });
