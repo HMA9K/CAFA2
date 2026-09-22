@@ -29,3 +29,15 @@ html[data-study-theme=light]{color-scheme:light}html[data-study-theme=dark]{colo
 @media print{#study-returnbar,.study-theme-control,.study-exam-link,.capital-wizard{display:none!important}.capital-page .capital-lane,.capital-page .capital-node{break-inside:avoid}.capital-page .capital-parallel{grid-template-columns:1fr}.law-ref{color:#352657;background:transparent;border-color:#b9accb;font-size:9px}.study-principle,.study-answer-note{color:#222!important;background:transparent}.study-law-dialog{display:none!important}}
 
 #study-returnbar .study-origin{white-space:normal;text-overflow:clip;line-height:1.25;padding-top:4px;padding-bottom:4px}
+
+/* Shared More menu, alongside the return action on every study page. */
+#study-returnbar .study-tools-menu{position:relative;align-self:stretch;margin:-5px 0 -5px auto;flex:none;color:var(--study-muted);font:14px/1.4 Arial,sans-serif}
+#study-returnbar .study-tools-menu>summary{display:flex;align-items:center;gap:7px;height:46px;padding:0 18px;list-style:none;cursor:pointer;border:0;border-left:1px solid transparent;border-right:1px solid transparent}
+#study-returnbar .study-tools-menu>summary::-webkit-details-marker{display:none}
+#study-returnbar .study-tools-menu[open]>summary{background:var(--study-wash);border-color:var(--study-line)}
+#study-returnbar .study-tools-menu>nav{display:flex;flex-direction:column;position:absolute;top:100%;right:0;min-width:210px;max-width:calc(100vw - 18px);padding:7px 0;background:var(--study-surface);border:1px solid var(--study-line);box-shadow:0 12px 26px #17203920;z-index:80}
+#study-returnbar .study-tools-menu:not([open])>nav{display:none}
+#study-returnbar .study-tools-menu a{display:block;color:var(--study-muted);text-decoration:none;padding:12px 20px;white-space:nowrap;font-size:14px;border:0;background:transparent}
+#study-returnbar .study-tools-menu a:hover{color:var(--study-ink);background:var(--study-wash)}
+#study-returnbar .study-tools-menu :focus-visible{outline:2px solid var(--study-accent);outline-offset:-2px}
+@media print{#study-returnbar{display:none!important}}
