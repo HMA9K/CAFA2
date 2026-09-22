@@ -68,7 +68,7 @@ async def run():
     assert await page.locator('dialog:modal').count()==0
     assert await page.locator('#study-law-popover').get_attribute('aria-modal')=='false'
     assert await page.locator('.law-essence').count()>0
-    assert 'Geen vertaling' in await page.locator('#study-law-popover').inner_text()
+    assert await page.locator('.law-mark-legend').inner_text() == 'Gearceerd = kern voor deze verwijzing.'
     assert await page.evaluate("Array.from(document.querySelectorAll('#study-law-popover [data-law-paragraph]')).every(p=>p.textContent===CAFA2_STUDY.laws['407'].paragraphs[Number(p.dataset.lawParagraph)])")
     before=await page.locator('#study-law-popover [data-law-paragraph]').count()
     await page.locator('[data-law-full]').click()
