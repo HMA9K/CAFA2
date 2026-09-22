@@ -1139,3 +1139,17 @@ html[data-study-theme=dark] .study-theme-menu button{color:var(--study-ink);back
 @media print{html[data-study-theme=dark] body{background:#fff!important;color:#111!important}html[data-study-theme=dark] .reader-layout [data-view]{color:#111!important}}
 
 }
+/* Dark-mode contrast pass 2026-09-22: homepage badges and accent text */
+html[data-study-theme=dark] .cafa-home-intro h1,
+html[data-study-theme=dark] .cafa-home-choice h2{color:#e1eaf0}
+html[data-study-theme=dark] .cafa-home-eyebrow,
+html[data-study-theme=dark] .cafa-choice-action,
+html[data-study-theme=dark] .study-home-links a{color:#7ee2c2}
+html[data-study-theme=dark] .cafa-choice-icon{background:#473269;color:#fff;border:1px solid #8f6bc2;box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+html[data-study-theme=dark] .cafa-home-choice.practice .cafa-choice-icon{background:#145d43;color:#fff;border:1px solid #35a47b}
+html[data-study-theme=dark] .cafa-home-choice.exam .cafa-choice-icon{background:#5b351d;color:#ffe1c8;border:1px solid #b87746}
+html[data-study-theme=dark] .cafa-choice-icon{font-weight:800}
+html[data-study-theme=dark] .topic-progress,
+html[data-study-theme=dark] [data-topic-progress],
+html[data-study-theme=dark] .exam-save-status:not(.is-error){color:#a8b8c4}
+
