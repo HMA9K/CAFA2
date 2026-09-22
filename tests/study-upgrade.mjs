@@ -41,3 +41,14 @@ const paths=['samenvatting.html','index.html','data/study-support.js','docs/stud
 const digest=()=>paths.map(p=>crypto.createHash('sha256').update(read(p)).digest('hex')).join();
 const before=digest();child.execFileSync(process.execPath,['scripts/build-study-upgrade.mjs']);assert.equal(digest(),before,'Study build is idempotent');
 console.log('Study upgrade verified: 40 topic rationales, 120 exercise links, 131 exam explanations, 74 statutes, source pages, default automatic theme and reproducible output.');
+
+// Cloudflare serves clean URLs. Both canonical and local HTML paths must restore.
+const shell=read('js/study-shell.js');
+const localFunction=shell.slice(shell.indexOf('  function localURL('),shell.indexOf('  function label()'));
+const navBox={URL,location:{href:'https://cafa2.pages.dev/samenvatting#begrippen',origin:'https://cafa2.pages.dev'}};
+vm.runInNewContext(localFunction+';this.resolveStudyURL=localURL;',navBox);
+for(const url of ['/#oefenen','/samenvatting#begrippen','/samenvatting.html#bronnen','/index#voortgang','/index.html#voortgang','/fallback/vreemde-valuta','/fallback/vreemde-valuta.html'])assert.ok(navBox.resolveStudyURL(url),url);
+for(const url of ['https://example.com/samenvatting','/samenvatting?token=test','/data/config.js']) {
+ assert.equal(navBox.resolveStudyURL(url),null,url);
+}
+console.log('Navigation accepts canonical Pages URLs and local HTML routes, while rejecting external and unrelated URLs.');

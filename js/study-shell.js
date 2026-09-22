@@ -12,7 +12,7 @@
     try {
       var u = new URL(value, location.href);
       if (u.origin !== location.origin || u.search) return null;
-      if (!/\/(?:index\.html|samenvatting\.html|kapitaalbelangen\.html|fallback\/[\w-]+\.html)?$/.test(u.pathname)) return null;
+      if (!/\/(?:index(?:\.html)?|samenvatting(?:\.html)?|kapitaalbelangen(?:\.html)?|fallback\/[\w-]+(?:\.html)?)?$/.test(u.pathname)) return null;
       return u;
     } catch (_) { return null; }
   }
