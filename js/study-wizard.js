@@ -12,18 +12,20 @@
  function yesno(f){return opts(f,[['yes','Ja'],['no','Nee'],['unknown','Nog beoordelen']]);}
  function question(f,title,body,a,p,note){return '<div class="route-question" data-route-question="'+f+'"><div><h3>'+title+'</h3><p>'+body+'</p>'+(note?'<p class="route-hint">'+note+'</p>':'')+law(a,p)+'</div>'+yesno(f)+'</div>';}
  function result(title,text,refs){return '<strong>'+title+'</strong><p>'+text+'</p>'+(refs||[]).map(function(r){return law(r[0],r[1]);}).join('');}
- function showStage(next){
+ function showStage(next,scroll){
   if(['classify','value','consolidate'].includes(next))stage=next;
-  root.querySelectorAll('.route-stage').forEach(function(x){x.hidden=x.id!=='capital-'+stage;});
-  root.querySelector('.capital-context').hidden=stage!=='classify';
+  root.querySelectorAll('.route-stage').forEach(function(x){x.hidden=false;});
+  root.querySelector('.capital-context').hidden=false;
   root.querySelectorAll('[data-capital-stage]').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.capitalStage===stage));});
-  root.querySelector('[data-capital-previous]').hidden=stage==='classify';
-  var nextButton=root.querySelector('[data-capital-next]');nextButton.hidden=stage==='consolidate';nextButton.textContent=stage==='classify'?'Verder naar waardering →':'Verder naar consolidatie →';
   var names={yes:'Ja',no:'Nee',unknown:'Nog beoordelen'};
   root.querySelector('[data-route-status=classify]').textContent=state.participation?'Deelneming: '+names[state.participation]:'Welke relaties?';
-  var value=root.querySelector('#capital-value-result strong'),cons=root.querySelector('#capital-consolidation-result strong');
+  var value=root.querySelector('#capital-value-result strong');
   root.querySelector('[data-route-status=value]').textContent=value?value.textContent:'Kies de grondslag';
-  root.querySelector('[data-route-status=consolidate]').textContent=state.head==='group'?'Groepshoofd':state.head==='part'?'Groepsdeel':'Beoordeel afzonderlijk';
+  root.querySelector('[data-route-status=consolidate]').textContent=state.head==='group'?'Groepshoofd':state.head==='part'?'Groepsdeel':state.head==='none'?'Geen plicht op deze grond':'Beoordeel afzonderlijk';
+  if(scroll&&next){
+   var target=root.querySelector('#capital-'+next);
+   if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+  }
  }
  function paint(){
   var natural=false,vennoot=state.target==='partnership',legal=true;
@@ -59,6 +61,19 @@
   else if(state.information==='yes')vr.innerHTML=result('Nettovermogenswaarde (NVW)','Neem je aandeel in het herrekende nettovermogen op. Resultaat en vermogensmutaties werken door in de deelneming; dividend verlaagt de deelnemingswaarde.'+scope,[['389','lid 2']]);
   else if(state.information==='no')vr.innerHTML=result('Andere vermogensmutatiewaarde','Bepaal een waarde volgens Titel 9 en wijzig die met je aandeel in resultaat en uitkeringen. In de syllabus: zichtbaar eigen vermogen. Dus niet automatisch een onveranderlijke verkrijgingsprijs.'+scope,[['389','lid 3']]);
   else vr.innerHTML=result('Vermogensmutatiemethode','Toets de beschikbare gegevens om te kiezen tussen de NVW-route van lid 2 en de route van lid 3.',[['389','lid 2 en 3']]);
+ function routeOverview(){
+  var box=document.getElementById('capital-route-overview-grid');if(!box)return;
+  var names={yes:'Ja',no:'Nee',unknown:'Nog beoordelen'};
+  var target=state.target==='partnership'?'VOF / CV zonder rechtspersoonlijkheid':'Rechtspersoon (bv / nv)';
+  var valTitle=(document.querySelector('#capital-value-result strong')||{}).textContent||'Nog te bepalen';
+  var consTitle=(document.querySelector('#capital-consolidation-result strong')||{}).textContent||'Nog te bepalen';
+  function row(label,value,refs){return '<div class="route-overview-row"><span>'+label+'</span><strong>'+value+'</strong>'+(refs||[]).map(function(r){return law(r[0],r[1]);}).join('')+'</div>';}
+  box.innerHTML=
+   '<article><h3>Uitgangspunten</h3>'+row('Rapporterende houder','Rechtspersoon (bv / nv)',[['360','']])+row('Belang in',target,state.target==='partnership'?[['24c','lid 2'],['24a','lid 2']]:[['24c','lid 1'],['24a','lid 1']])+'</article>'+
+   '<article><h3>Classificatie</h3>'+row('Deelneming',names[state.participation]||'Nog beoordelen',[['24c',state.target==='partnership'?'lid 2':'lid 1']])+row('Dochtermaatschappij',names[state.subsidiary]||'Nog beoordelen',[['24a',state.target==='partnership'?'lid 2':'lid 1']])+row('Groepsmaatschappij',names[state.group]||'Nog beoordelen',[['24b','']])+'</article>'+
+   '<article><h3>Waardering</h3>'+row('Uitkomst',valTitle,[])+(state.participation==='yes'?row('Invloed van betekenis',names[state.influence]||'Nog beoordelen',[['389','lid 1']]):'')+(state.influence==='yes'?row('Gegevens voor NVW',names[state.information]||'Nog beoordelen',[['389','lid 2 en 3']]):'')+'</article>'+
+   '<article><h3>Consolidatie</h3>'+row('Uitkomst',consTitle,[['406','lid 1 en 2']])+(state.head==='group'||state.head==='part'?row('Daarna toetsen','Kring en vrijstellingen',[['407','lid 1 en 2'],['408','lid 1, 3 en 4']]):'')+'</article>';
+ }
   if(!legal){c.innerHTML='';cr.innerHTML=result('Beoordeel eerst de wettelijke houder','Art. 2:406 noemt de rechtspersoon. Leid voor een vennootschap zonder rechtspersoonlijkheid geen consolidatieplicht af uit dit schema.',[['406','lid 1 en 2']]);}
   else{
    c.innerHTML='<div class="route-consolidation"><p>Staat de rechtspersoon aan het hoofd van de groep of van een groepsdeel zoals bedoeld in art. 2:406?</p>'+opts('head',[['group','Groepshoofd'],['part','Groepsdeel'],['none','Geen van beide'],['unknown','Nog beoordelen']])+law('406','lid 1 en 2')+'</div>';
@@ -67,10 +82,11 @@
    cr.innerHTML=result(title,text)+(state.head==='group'||state.head==='part'? '<div class="route-next-checks"><span>Uitzonderingen: </span>'+law('407','lid 1 en 2')+law('408','lid 1, 3 en 4')+'<p>Gezamenlijke bevoegdheden krachtens samenwerking? Toets de mogelijkheid van proportionele consolidatie; alleen 50/50 is niet genoeg.</p>'+law('409','onder a en b')+'</div>':'');
   }
   showStage();
+  routeOverview();
   var names=['participation','subsidiary','group'];names.forEach(function(f){var card=q.querySelector('[data-route-question='+f+']');if(card)card.dataset.answer=state[f]||'unknown';});
  }
  root.addEventListener('click',function(e){
-  var step=e.target.closest('[data-capital-stage],[data-capital-next],[data-capital-previous]');if(step){var steps=['classify','value','consolidate'];showStage(step.dataset.capitalStage||steps[steps.indexOf(stage)+(step.hasAttribute('data-capital-next')?1:-1)]);return;}
+  var step=e.target.closest('[data-capital-stage]');if(step){showStage(step.dataset.capitalStage,true);return;}
   var b=e.target.closest('[data-capital-field]');if(b){var f=b.dataset.capitalField,value=b.dataset.capitalValue;if(!allowed[f]||!allowed[f].includes(value))return;state[f]=value;
   if(f==='holder'||f==='target'){['participation','subsidiary','group','influence','information','exception','head'].forEach(function(k){delete state[k];});}
   if(f==='participation'){delete state.influence;delete state.information;delete state.exception;}
