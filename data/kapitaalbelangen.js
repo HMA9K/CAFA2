@@ -323,7 +323,7 @@ window.CAFA2_DATA.modules["kap"]={
       "type": "Theorie",
       "intro": "Een deelneming geeft zowel stemrechtloze als stemrechtgevende aandelen uit.",
       "facts": [],
-      "task": "Welk criterium en welk wettelijk vermoeden bepalen volgens artikel 2:389 lid 1 BW of een deelneming volgens de vermogensmutatiemethode wordt verantwoord?",
+      "task": "Welk wettelijk vermoeden van invloed van betekenis gebruikt artikel 2:389 lid 1 BW voor toepassing van de vermogensmutatiemethode?",
       "options": [
         {
           "text": "Een vijfde of meer van de winstrechten bezitten.",
@@ -360,7 +360,7 @@ window.CAFA2_DATA.modules["kap"]={
       "guidance": {
         "lesson": "waardering",
         "title": "Invloed van betekenis gaat over het beleid",
-        "task": "Welk criterium en welk wettelijk vermoeden bepalen volgens artikel 2:389 lid 1 BW of een deelneming volgens de vermogensmutatiemethode wordt verantwoord?",
+        "task": "Welk wettelijk vermoeden van invloed van betekenis gebruikt artikel 2:389 lid 1 BW voor toepassing van de vermogensmutatiemethode?",
         "rules": "Voor de vermogensmutatiemethode moet invloed van betekenis op het zakelijke en financiële beleid bestaan. Vanaf een vijfde van de naar eigen inzicht uit te brengen stemmen wordt die invloed vermoed. Het gaat hier dus om stemrechten, terwijl het vermoeden van een deelneming in artikel 2:24c betrekking heeft op kapitaalverschaffing. Feitelijke invloed blijft beslissend.",
         "pattern": [
           "Herken: de vraag noemt waardering en invloed op het beleid.",
@@ -3262,7 +3262,7 @@ window.CAFA2_DATA.modules["kap"]={
           "Vliet wordt tegen NVW opgenomen."
         ]
       ],
-      "task": "Voor welk bedrag blijft Merwedes deelneming Vliet op de balans staan na de aankoopboeking en de expliciet voorgeschreven evenredige correctie van 80% voor de door Vliet gehouden aandelen Merwede?",
+      "task": "Welke combinatie van aankoopboeking en evenredige correctie van 80% verwerkt Merwede voor de door Vliet gehouden aandelen Merwede?",
       "options": [
         {
           "journals": [
@@ -3567,7 +3567,7 @@ window.CAFA2_DATA.modules["kap"]={
       "guidance": {
         "lesson": "eigen-aandelen",
         "title": "Middellijk eigen aandelen via een dochter",
-        "task": "Voor welk bedrag blijft Merwedes deelneming Vliet op de balans staan na de aankoopboeking en de expliciet voorgeschreven evenredige correctie van 80% voor de door Vliet gehouden aandelen Merwede?",
+        "task": "Welke combinatie van aankoopboeking en evenredige correctie van 80% verwerkt Merwede voor de door Vliet gehouden aandelen Merwede?",
         "rules": "Splits eerst de aankoopprijs in deelneming tegen NVW en afzonderlijke goodwill. De door de dochter gehouden aandelen in de moeder leiden vervolgens tot een correctie op het eigen vermogen en de deelneming. De bronuitwerking accepteert verschillende omvangvarianten; deze eigen oefenvraag schrijft daarom uitdrukkelijk de evenredige 80%-variant voor. Volg die variant consequent.",
         "pattern": [
           "Herken: de dochter bezit aandelen in de moeder en de correctievariant is expliciet gegeven.",

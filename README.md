@@ -1,15 +1,15 @@
 # CAFA2 oefenplatform
 
-Mobielvriendelijke oefenomgeving met 120 eigen CAFA2-oefenvragen, verdeeld over vier onderwerpen:
+Mobielvriendelijke oefenomgeving met 247 eigen CAFA2-oefenvragen, verdeeld over vier delen en 19 afzonderlijk te oefenen onderwerpen:
 
 - Kapitaalbelangen
 - Vreemde valuta
 - Consolidatie tegen nettovermogenswaarde
 - Consolidatie tegen verkrijgingsprijs
 
-Elk onderwerp bevat 30 vragen. De app ondersteunt oefenen met directe feedback, een tentamenstand, zelf uitwerken, een ingebouwde rekenmachine, vraagmarkeringen, resultaten per onderwerp en export of import van voortgang.
+De delen bevatten 64, 46, 94 en 43 vragen. Ieder van de 19 onderwerpen bevat minimaal 10 vragen. Onder de vier delen staat de nieuwe onderwerpkeuze met per onderwerp het voorkomen in 11 unieke tentamens uit 2021–2026 en de bijbehorende vindplaatsen. De app ondersteunt oefenen met directe feedback, een tentamenstand, zelf uitwerken, een ingebouwde rekenmachine, vraagmarkeringen, resultaten per onderwerp en export of import van voortgang.
 
-Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en vijf volledige tentamens: 22 april 2024, 30 september 2024, 17 april 2025, 24 september 2025 en 29 april 2026. Samen bevatten die 131 vragen en 20 casussecties. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 120 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
+Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en vijf volledige tentamens: 22 april 2024, 30 september 2024, 17 april 2025, 24 september 2025 en 29 april 2026. Samen bevatten die 131 vragen en 20 casussecties. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 247 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
 
 ## Privacy en voortgang
 
@@ -42,7 +42,7 @@ js/calculator.js
 tests/validate.mjs
 ```
 
-De startpagina laadt de vier onderwerpen uit losse HTML-fragmenten. Voor omgevingen waarin scripts zijn geblokkeerd, bevat de startpagina directe links naar vier zelfstandige basisversies. Daardoor blijven alle vragen, antwoordkeuzes, uitwerkingen en navigatie bereikbaar. Automatische scores, lokale opslag, de tentamenstand en de rekenmachine vereisen JavaScript.
+De startpagina laadt de vier onderwerpen uit losse HTML-fragmenten. Voor omgevingen waarin scripts zijn geblokkeerd, bevat de startpagina directe links naar vier zelfstandige basisversies. Deze basisversies bevatten de oorspronkelijke 120 vragen, antwoordkeuzes en uitwerkingen. De 127 aanvullingen en de onderwerpindeling zijn beschikbaar in de hoofdapp met JavaScript. Automatische scores, lokale opslag, de tentamenstand en de rekenmachine vereisen JavaScript.
 
 ## Controleren
 
@@ -50,7 +50,13 @@ De startpagina laadt de vier onderwerpen uit losse HTML-fragmenten. Voor omgevin
 npm test
 ```
 
-De controle valideert de vier modules, alle 120 vragen, antwoordopties, interne verwijzingen en opgenomen controleberekeningen.
+De controle valideert de oorspronkelijke 120 vragen, de 127 aanvullingen, alle 19 onderwerpen, de 11 unieke tentamens, antwoordopties, verwijzingen en rekencontroles. `npm run test:topics-browser` controleert navigatie, feedback, tentamenstand, eigen uitwerkingen, behoud van voortgang en desktop/mobiel in Chromium.
+
+## Onderwerpen en aanvullingen
+
+Brondata staan in `content/practice/`. Bouw frequenties en vraagfragmenten met `npm run build:practice`. `question-registry.json` bewaart stabiele nieuwe IDs; de oorspronkelijke 120 IDs, antwoordposities en opslagkey blijven behouden. Onderwerproutes gebruiken dezelfde antwoorden als de vier delen. Nieuwe vragen hebben uitleg per optie, drie patroonstappen en een passende introductie.
+
+Zie het [inhoudelijke auditverslag](docs/mc-audit/README.md) en de [leesbare tentamenfrequentie](tentamenfrequentie.html). Frequentie telt aanwezigheid per tentamen, geen puntengewicht.
 
 ## Publiceren
 

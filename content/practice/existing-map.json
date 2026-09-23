@@ -1,0 +1,899 @@
+[
+  {
+    "questionId": "kap-1",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Vier kwalitatieve criteria voor de kwalificatie deelneming."
+  },
+  {
+    "questionId": "kap-2",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Kwalificatie van een strategisch 15%-belang; geen waarderingsberekening."
+  },
+  {
+    "questionId": "kap-3",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Deelneming tegenover tijdelijke belegging herkennen vanuit het doel."
+  },
+  {
+    "questionId": "kap-4",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "zeggenschap"
+    ],
+    "reason": "Criterium voor toepassing van de vermogensmutatiemethode; stemrechten ondersteunen de waarderingskeuze."
+  },
+  {
+    "questionId": "kap-5",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Alternatieve vermogensmutatiewaardering bij onvoldoende gegevens voor NVW."
+  },
+  {
+    "questionId": "kap-6",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Meer dan de helft van de stemrechten toetsen; precies 50% volstaat niet."
+  },
+  {
+    "questionId": "kap-7",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [
+      "eigen-aandelen"
+    ],
+    "reason": "Effectief stemrechtenpercentage berekenen na inkoop door de vennootschap."
+  },
+  {
+    "questionId": "kap-8",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Dochterkwalificatie bij benoemingsmacht zonder aandeelhouderschap."
+  },
+  {
+    "questionId": "kap-9",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Directe en via een dochter uit te oefenen stemmen optellen."
+  },
+  {
+    "questionId": "kap-10",
+    "topicId": "consolidatiekader",
+    "secondaryTopicIds": [
+      "zeggenschap"
+    ],
+    "reason": "Consolidatieplicht van groepshoofd en tussenholding afzonderlijk toetsen."
+  },
+  {
+    "questionId": "kap-11",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Goodwill bepalen als koopsom minus verworven aandeel in NVW."
+  },
+  {
+    "questionId": "kap-12",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "goodwill"
+    ],
+    "reason": "Deelnemingswaarde bij verwerving berekenen na fout- en fair-valuecorrecties; goodwill wordt niet gevraagd."
+  },
+  {
+    "questionId": "kap-13",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Aankoopboeking splitsen in deelneming, afzonderlijke goodwill en betaling."
+  },
+  {
+    "questionId": "kap-14",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Verwerving door aandelenruil en contanten: tegenprestatie, goodwill, kapitaal en agio."
+  },
+  {
+    "questionId": "kap-15",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "reason": "Tijdsevenredige afschrijving van afzonderlijke goodwill."
+  },
+  {
+    "questionId": "kap-16",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Deelnemingsresultaat herrekenen naar moedergrondslagen."
+  },
+  {
+    "questionId": "kap-17",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Resultaat- en dividendboeking onderscheiden bij NVW."
+  },
+  {
+    "questionId": "kap-18",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Regulier dividend bij verkrijgingsprijs als opbrengst verantwoorden."
+  },
+  {
+    "questionId": "kap-19",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Meegekocht dividend afboeken van de verkrijgingsprijs."
+  },
+  {
+    "questionId": "kap-20",
+    "topicId": "reserves",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Omvang wettelijke reserve bepalen uit niet vrij uitkeerbare resultaatgroei."
+  },
+  {
+    "questionId": "kap-21",
+    "topicId": "reserves",
+    "secondaryTopicIds": [],
+    "reason": "Vorming wettelijke reserve als verschuiving binnen het eigen vermogen boeken."
+  },
+  {
+    "questionId": "kap-22",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Eindboekwaarde NVW aansluiten op aangepast eindvermogen."
+  },
+  {
+    "questionId": "kap-23",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "reason": "Dochterkwalificatie berekenen met stemrechten van verschillende aandelensoorten."
+  },
+  {
+    "questionId": "kap-24",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "zeggenschap"
+    ],
+    "reason": "Dividend volgens winstrechten verdelen en bij NVW afboeken."
+  },
+  {
+    "questionId": "kap-25",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "zeggenschap"
+    ],
+    "reason": "Boekwaarde splitsen in nominaal kapitaal en aandeel in winstreserves bij afwijkende rechten."
+  },
+  {
+    "questionId": "kap-26",
+    "topicId": "eigen-aandelen",
+    "secondaryTopicIds": [],
+    "reason": "Rechtstreekse inkoop eigen aandelen zonder intrekking ten laste van reserves."
+  },
+  {
+    "questionId": "kap-27",
+    "topicId": "eigen-aandelen",
+    "secondaryTopicIds": [
+      "waardering",
+      "goodwill"
+    ],
+    "reason": "Evenredige correctie voor via een dochter gehouden eigen aandelen."
+  },
+  {
+    "questionId": "kap-28",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "goodwill"
+    ],
+    "reason": "Overgang van verkrijgingsprijs naar vermogensmutatiewaardering per aankooplaag."
+  },
+  {
+    "questionId": "kap-29",
+    "topicId": "reserves",
+    "secondaryTopicIds": [],
+    "reason": "Wettelijke reserve per deelneming bepalen zonder verliesgevende belangen te salderen."
+  },
+  {
+    "questionId": "kap-30",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "goodwill"
+    ],
+    "reason": "Gecombineerde aansluiting van aankoopwaarde, deelnemingsresultaat en eindboekwaarde; goodwill apart volgen."
+  },
+  {
+    "questionId": "val-1",
+    "topicId": "functionele-valuta",
+    "secondaryTopicIds": [],
+    "reason": "Begrip functionele valuta herkennen tegenover lokale en presentatievaluta."
+  },
+  {
+    "questionId": "val-2",
+    "topicId": "functionele-valuta",
+    "secondaryTopicIds": [
+      "tijdstip"
+    ],
+    "reason": "Omrekenmethode kiezen bij gelijke functionele valuta."
+  },
+  {
+    "questionId": "val-3",
+    "topicId": "functionele-valuta",
+    "secondaryTopicIds": [
+      "slotkoers"
+    ],
+    "reason": "Functionele valuta bepalen uit economische feiten en daaruit methode kiezen."
+  },
+  {
+    "questionId": "val-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Monetaire posten herkennen als basis voor de tijdstipmethode."
+  },
+  {
+    "questionId": "val-5",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Monetaire vordering bij de tijdstipmethode tegen slotkoers omrekenen."
+  },
+  {
+    "questionId": "val-6",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Historische koers gebruiken voor machineboekwaarde onder de tijdstipmethode; geen IC-verkoop."
+  },
+  {
+    "questionId": "val-7",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Relevante historische koers bij verwerving voor machineafschrijving bepalen; geen IC-verkoop."
+  },
+  {
+    "questionId": "val-8",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "reason": "Niet-monetair actief bij slotkoersmethode tegen slotkoers omrekenen."
+  },
+  {
+    "questionId": "val-9",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "reason": "Gelijkmatig behaald resultaat onder slotkoersmethode tegen gemiddelde koers omrekenen."
+  },
+  {
+    "questionId": "val-10",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Onder slotkoersmethode omgerekend resultaat voor het moederaandeel boeken."
+  },
+  {
+    "questionId": "val-11",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Boekwaarde van gebouwlagen met afzonderlijke historische koersen omrekenen."
+  },
+  {
+    "questionId": "val-12",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Afschrijving per investeringslaag met eigen historische koers omrekenen."
+  },
+  {
+    "questionId": "val-13",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Courante voorraadpartijen tegen afzonderlijke historische koersen omrekenen."
+  },
+  {
+    "questionId": "val-14",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "FIFO-eindvoorraad en historische koers per resterende laag combineren."
+  },
+  {
+    "questionId": "val-15",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Dividendboeking bij NVW met koers op declaratie- en betaaldatum; geen specifieke omrekenmethode gegeven."
+  },
+  {
+    "questionId": "val-16",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Afgewaardeerde voorraad tegen koers op het waarderingsmoment omrekenen."
+  },
+  {
+    "questionId": "val-17",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Euro-afwaarderingsverlies inclusief koerseffect onder de tijdstipmethode bepalen."
+  },
+  {
+    "questionId": "val-18",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Courante en afgewaardeerde delen van voorraad met verschillende relevante koersen combineren."
+  },
+  {
+    "questionId": "val-19",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Historische euroboekwaarde en verkoopopbrengst tegen transactiekoers vergelijken; geen IC-verkoop."
+  },
+  {
+    "questionId": "val-20",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Afwaardering in euro boeken op basis van historische en nieuwe waarderingskoers."
+  },
+  {
+    "questionId": "val-21",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Netto monetaire beginpositie samenstellen."
+  },
+  {
+    "questionId": "val-22",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Mutaties herkennen die de netto monetaire positie daadwerkelijk veranderen."
+  },
+  {
+    "questionId": "val-23",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Koersresultaat berekenen via theoretische en werkelijke monetaire eindpositie."
+  },
+  {
+    "questionId": "val-24",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "reason": "Koersresultaat berekenen met investering en debiteurenafboeking zonder dubbele monetaire mutaties."
+  },
+  {
+    "questionId": "val-25",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Koersverlies volgens tijdstipmethode in het deelnemingsresultaat verwerken."
+  },
+  {
+    "questionId": "val-26",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "reason": "Omrekenverschil uit beginvermogen, resultaat en dividend bepalen."
+  },
+  {
+    "questionId": "val-27",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Positieve reserve omrekenverschillen en winst boeken."
+  },
+  {
+    "questionId": "val-28",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Negatieve reserve omrekenverschillen met positieve winst boeken."
+  },
+  {
+    "questionId": "val-29",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Volledig omgerekend resultaat bepalen met postafhankelijke koersen en koersverlies."
+  },
+  {
+    "questionId": "val-30",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Resultaat, reserve omrekenverschillen en eindboekwaarde onder slotkoersmethode aansluiten."
+  },
+  {
+    "questionId": "nvw-1",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "reason": "Integrale opname en onderscheid balansbelang versus resultaataandeel derden."
+  },
+  {
+    "questionId": "nvw-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "downstream-nvw",
+      "upstream-nvw"
+    ],
+    "reason": "Algemene herkenning van leveringsrichtingen; er wordt geen sidestream-belangenverhouding getoetst."
+  },
+  {
+    "questionId": "nvw-3",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [],
+    "reason": "Interne winst in door moeder geleverde eindvoorraad berekenen vóór percentage en belasting."
+  },
+  {
+    "questionId": "nvw-4",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "reason": "Deelneming tegen volledig dochtervermogen en belang derden elimineren zonder IC-transacties."
+  },
+  {
+    "questionId": "nvw-5",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "reason": "Onderlinge managementfee en rekening-courantverhouding volledig elimineren."
+  },
+  {
+    "questionId": "nvw-6",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [],
+    "reason": "Voorraadtabel downstream bij NVW verdelen tussen interne en aanvullende correctie."
+  },
+  {
+    "questionId": "nvw-7",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Enkelvoudige correctie voor toegenomen downstreamwinst met belasting boeken."
+  },
+  {
+    "questionId": "nvw-8",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Enkelvoudige vrijval van downstreamwinst met belasting boeken."
+  },
+  {
+    "questionId": "nvw-9",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Aanvullende downstream-balanseliminatie voor eindwinst en beginstand na NVW-correcties."
+  },
+  {
+    "questionId": "nvw-10",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Onderlinge omzet en downstream-voorraadmutatie onder de voorgeschreven W&V-aanpak elimineren."
+  },
+  {
+    "questionId": "nvw-11",
+    "topicId": "upstream-nvw",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Upstream-voorraadtabel bij NVW verdelen tussen interne correctie en derden."
+  },
+  {
+    "questionId": "nvw-12",
+    "topicId": "upstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen",
+      "waardering"
+    ],
+    "reason": "Aanvullende enkelvoudige correctie voor toegenomen upstreamwinst op resultaat en deelneming."
+  },
+  {
+    "questionId": "nvw-13",
+    "topicId": "upstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen",
+      "waardering"
+    ],
+    "reason": "Enkelvoudige vrijval van upstreamwinst bij afnemende voorraad."
+  },
+  {
+    "questionId": "nvw-14",
+    "topicId": "upstream-nvw",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Volledige upstream-eindwinst elimineren met terugname interne correctie en derden."
+  },
+  {
+    "questionId": "nvw-15",
+    "topicId": "upstream-nvw",
+    "secondaryTopicIds": [
+      "waardering",
+      "belastingen"
+    ],
+    "reason": "Enkelvoudige eindboekwaarde deelneming corrigeren voor ongerealiseerde upstreamwinst."
+  },
+  {
+    "questionId": "nvw-16",
+    "topicId": "sidestream-niet-afnemend",
+    "secondaryTopicIds": [
+      "sidestream-afnemend"
+    ],
+    "reason": "Vergelijkende herkenningsvraag over beide sidestreamvarianten; de eerst getoetste stroom 70% naar 90% is primair."
+  },
+  {
+    "questionId": "nvw-17",
+    "topicId": "sidestream-niet-afnemend",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Voorraadtabel voor 70% verkoper naar 90% koper verdelen over intern en derden."
+  },
+  {
+    "questionId": "nvw-18",
+    "topicId": "sidestream-niet-afnemend",
+    "secondaryTopicIds": [
+      "waardering",
+      "belastingen"
+    ],
+    "reason": "Interne resultaatcorrectie bij niet-afnemend belang boeken op de verkopende deelneming."
+  },
+  {
+    "questionId": "nvw-19",
+    "topicId": "sidestream-niet-afnemend",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Eindvoorraadwinst elimineren en interne NVW-correctie terugnemen bij niet-afnemend belang."
+  },
+  {
+    "questionId": "nvw-20",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "sidestream-niet-afnemend"
+    ],
+    "reason": "Eerste eliminatie van resultaat deelnemingen en aandeel derden; goedereneliminatie volgt afzonderlijk."
+  },
+  {
+    "questionId": "nvw-21",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Voorraadtabel voor afnemend belang splitsen in intern, derden en aanvullend meerderheidsdeel."
+  },
+  {
+    "questionId": "nvw-22",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "waardering",
+      "belastingen"
+    ],
+    "reason": "Interne winstcorrectie bij afnemend belang met koperpercentage op verkopende deelneming boeken."
+  },
+  {
+    "questionId": "nvw-23",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Eindwinst en aanvullend meerderheidsdeel beginvoorraad bij afnemend belang elimineren."
+  },
+  {
+    "questionId": "nvw-24",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "waardering",
+      "belastingen"
+    ],
+    "reason": "Vrijval bij afnemende voorraad onderscheiden van afnemende belangenverhouding."
+  },
+  {
+    "questionId": "nvw-25",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "W&V-eliminatie van omzet en voorraadwinstvrijval bij afnemend belang afronden."
+  },
+  {
+    "questionId": "nvw-26",
+    "topicId": "vaste-activa",
+    "secondaryTopicIds": [
+      "downstream-nvw",
+      "belastingen"
+    ],
+    "reason": "Interne machineboekwinst en bijbehorende belasting corrigeren; het activum is geen handelsvoorraad."
+  },
+  {
+    "questionId": "nvw-27",
+    "topicId": "vaste-activa",
+    "secondaryTopicIds": [
+      "downstream-nvw",
+      "belastingen"
+    ],
+    "reason": "Extra afschrijving op intern verkochte machine in een volgend jaar corrigeren."
+  },
+  {
+    "questionId": "nvw-28",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "downstream-nvw",
+      "upstream-nvw",
+      "sidestream-afnemend",
+      "sidestream-niet-afnemend"
+    ],
+    "reason": "Geconsolideerde eindvoorraad over vier stromen bepalen; volledige eindwinsten elimineren zonder één dominante richting."
+  },
+  {
+    "questionId": "nvw-29",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "downstream-nvw",
+      "sidestream-afnemend",
+      "belastingen"
+    ],
+    "reason": "Aansluiting enkelvoudig naar meerderheidsresultaat met aanvullende correcties van twee verschillende stromen."
+  },
+  {
+    "questionId": "nvw-30",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "upstream-nvw",
+      "sidestream-afnemend",
+      "sidestream-niet-afnemend",
+      "belastingen"
+    ],
+    "reason": "Totaal aandeel derden over meerdere stromen berekenen; derden is de primaire gevraagde uitkomst."
+  },
+  {
+    "questionId": "hk-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Geen enkelvoudige resultaatmutatie bij verkrijgingsprijs zonder dividendbesluit."
+  },
+  {
+    "questionId": "hk-2",
+    "topicId": "waardering",
+    "secondaryTopicIds": [
+      "goodwill"
+    ],
+    "reason": "Volledige koopsom inclusief goodwill als deelneming activeren bij verkrijgingsprijs."
+  },
+  {
+    "questionId": "hk-3",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Consolidatiegoodwill bepalen uit koopsom en aandeel in verwervingsvermogen."
+  },
+  {
+    "questionId": "hk-4",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Ontvangst meegekocht dividend van verkrijgingsprijs afboeken."
+  },
+  {
+    "questionId": "hk-5",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "reason": "Regulier dividend bij verkrijgingsprijs als enkelvoudige opbrengst boeken."
+  },
+  {
+    "questionId": "hk-6",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "goodwill",
+      "waardering"
+    ],
+    "reason": "Deelneming tegen verwervingsvermogen elimineren met goodwill en meegekocht dividend."
+  },
+  {
+    "questionId": "hk-7",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "reason": "Derdenbelang in volledig eindvermogen presenteren zonder IC-transacties."
+  },
+  {
+    "questionId": "hk-8",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "reason": "Resterende consolidatiegoodwill na twee volledige afschrijvingsjaren berekenen."
+  },
+  {
+    "questionId": "hk-9",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Cumulatieve goodwillafschrijving splitsen tussen reserves en jaarresultaat."
+  },
+  {
+    "questionId": "hk-10",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Alleen de lopende goodwillafschrijving in de W&V-consolidatiestaat verwerken."
+  },
+  {
+    "questionId": "hk-11",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "waardering"
+    ],
+    "reason": "Enkelvoudige dividendopbrengst elimineren wegens integrale consolidatie."
+  },
+  {
+    "questionId": "hk-12",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "reason": "Resultaataandeel derden vóór IC-correcties boeken."
+  },
+  {
+    "questionId": "hk-13",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "goodwill",
+      "waardering"
+    ],
+    "reason": "Enkelvoudig naar geconsolideerd meerderheidsresultaat aansluiten zonder IC-transacties."
+  },
+  {
+    "questionId": "hk-14",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "downstream-vp",
+      "upstream-vp"
+    ],
+    "reason": "Algemene scheiding enkelvoudige verwerking en consolidatie bij verkrijgingsprijs; beide leveringsrichtingen genoemd."
+  },
+  {
+    "questionId": "hk-15",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Upstream-voorraadtabel bij verkrijgingsprijs maken en opslag naar verkoopmarge omzetten."
+  },
+  {
+    "questionId": "hk-16",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Upstream-eindwinst verdelen over moeder, derden en latente belasting."
+  },
+  {
+    "questionId": "hk-17",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Moederdeel netto upstream-beginwinst vanuit reserves invoegen."
+  },
+  {
+    "questionId": "hk-18",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Upstream-winstvrijval in W&V verdelen over moeder, derden en belasting."
+  },
+  {
+    "questionId": "hk-19",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "belastingen"
+    ],
+    "reason": "Derdenaandeel corrigeren voor één upstreamvrijval; het upstream-effect is de specifieke getoetste vaardigheid."
+  },
+  {
+    "questionId": "hk-20",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "basisconsolidatie",
+      "goodwill",
+      "belastingen"
+    ],
+    "reason": "Meerderheidsresultaat verhogen met moederdeel van upstreamvrijval."
+  },
+  {
+    "questionId": "hk-21",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [],
+    "reason": "Downstream-voorraadtabel bij verkrijgingsprijs volledig aan meerderheidsresultaat toerekenen."
+  },
+  {
+    "questionId": "hk-22",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Volledige downstream-eindwinst met belasting bij consolidatie verwijderen."
+  },
+  {
+    "questionId": "hk-23",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Volledige netto downstream-beginwinst vanuit reserves invoegen."
+  },
+  {
+    "questionId": "hk-24",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "W&V-eliminatie van doorlevering en voorraadgroei volgens syllabus-aanpak."
+  },
+  {
+    "questionId": "hk-25",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "reason": "Volledige downstream-winstvrijval in een volgend jaar aan moeder toerekenen."
+  },
+  {
+    "questionId": "hk-26",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [
+      "basisconsolidatie"
+    ],
+    "reason": "Goodwill en afschrijving per aankooplaag en eigen verkrijgingsdatum berekenen."
+  },
+  {
+    "questionId": "hk-27",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "goodwill",
+      "waardering"
+    ],
+    "reason": "Twee aankooplagen tegen hun eigen verwervingsvermogen elimineren met meegekocht dividend."
+  },
+  {
+    "questionId": "hk-28",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "upstream-vp",
+      "downstream-vp"
+    ],
+    "reason": "Geconsolideerde voorraad over upstream en downstream bepalen door volledige eindwinsten te verwijderen."
+  },
+  {
+    "questionId": "hk-29",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "upstream-vp",
+      "downstream-vp",
+      "belastingen"
+    ],
+    "reason": "Totaal aandeel derden over twee dochters bepalen en het ontbreken van een downstreamcorrectie onderscheiden."
+  },
+  {
+    "questionId": "hk-30",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "upstream-vp",
+      "downstream-vp",
+      "goodwill",
+      "belastingen"
+    ],
+    "reason": "Volledige resultaataansluiting met twee IC-richtingen, dividend en goodwillafschrijving."
+  }
+]

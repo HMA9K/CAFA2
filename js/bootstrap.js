@@ -7,6 +7,10 @@
     'fragments/vreemde-valuta.html',
     'fragments/consolidatie-nvw.html',
     'fragments/consolidatie-hk.html',
+    'fragments/practice-additions-kap.html',
+    'fragments/practice-additions-val.html',
+    'fragments/practice-additions-nvw.html',
+    'fragments/practice-additions-hk.html',
     'fragments/shared.html'
   ];
   function getText(url) {
@@ -54,7 +58,8 @@
   }).then(function () {
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
-    return loadScript('js/exams.js');
+    if (root.CafaTopics) root.CafaTopics.mount();
+    return loadScript('js/exams.js?v=20260923-casepanel3');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260920-content-v2');
   }).then(function () {

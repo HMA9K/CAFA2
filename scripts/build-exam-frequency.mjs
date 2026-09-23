@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const write=(p,v)=>fs.writeFileSync(path.join(root,p),v);
+const base=s=>String(s).split(/[\\/]+/).pop();
+const inputs=['early','recent'].map(n=>read('docs/mc-audit/exams-'+n+'.json'));
+const exams=inputs.flatMap(d=>d.exams.map(e=>({id:e.examId||e.id,date:e.date,questionFile:base(e.questionFile),answerFile:base(e.answerFile)}))).sort((a,b)=>a.id.localeCompare(b.id));
+if(exams.length!==11||new Set(exams.map(e=>e.id)).size!==11)throw Error('Er moeten 11 unieke afnamedata zijn.');
+const evidence=inputs.flatMap(d=>d.evidence).map(e=>({...e,refs:e.refs.map(r=>({...r,sourceFile:base(r.sourceFile)}))}));
+const topics=read('content/practice/topics.json');
+const existing=read('content/practice/existing-map.json');
+const targets=[12,20,12,10,10,10,10,20,15,20,15,12,12,12,10,12,10,15,10];
+const result={version:1,date:'2026-09-23',examCount:11,method:'Een onderwerp telt één keer per unieke afnamedatum als het expliciet gevraagd of noodzakelijk bepaald, berekend of geboekt wordt. Alleen achtergrond of algemene aannamen tellen niet mee. Meerdere onderwerpen per vraag zijn mogelijk. Machineleveringen tellen als vaste activa, niet automatisch als voorraadlevering. Bij samengestelde onderwerpen telt aanwezigheid van een deelonderwerp mee; niet ieder deelonderwerp is dus telkens getoetst. De frequentie is geen puntenweging en geen voorspelling.',exams,
+  topics:topics.map((t,i)=>{const rows=evidence.filter(e=>e.topicId===t.id),ids=[...new Set(rows.map(r=>r.examId))];return{topicId:t.id,title:t.title,count:ids.length,total:11,target:targets[i],existing:existing.filter(m=>m.topicId===t.id).length,exams:exams.filter(e=>ids.includes(e.id)).map(e=>({...e,refs:rows.filter(r=>r.examId===e.id).flatMap(r=>r.refs)}))};})};
+if(evidence.some(e=>!topics.some(t=>t.id===e.topicId)||!exams.some(x=>x.id===e.examId)||!e.refs.length))throw Error('Onvolledig bewijsrecord.');
+write('docs/mc-audit/exam-frequency.json',JSON.stringify(result,null,2)+'\n');
+const date=s=>s.split('-').reverse().join('-');
+let md='# MC-onderwerpen en tentamenfrequentie CAFA2\n\nDatum: '+result.date+'. Onderzocht: **11 unieke tentamens**, inclusief uitwerkingen.\n\n'+result.method+'\n\nInkoop eigen aandelen telt ook mee als het effect daarvan op stemrechten noodzakelijk is voor een antwoord. Bij een toegepaste proportionele consolidatie kan ook een gevraagde leveringsrichting voorkomen; de bronverwijzing maakt die context zichtbaar.\n\n## Telling en vraagaantallen\n\n| Onderwerp | Tentamens | Bestaande MC | Totaal MC | Nieuwe MC |\n|---|---:|---:|---:|---:|\n';
+for(const t of result.topics)md+=`| ${t.title} | ${t.count}/11 | ${t.existing} | ${t.target} | ${t.target-t.existing} |\n`;
+md+='\nDe aantallen combineren historische frequentie, complexiteit, verschillende subvaardigheden en bestaande dekking. Elk onderwerp heeft minimaal tien vragen. De hoge bestaande aantallen bij waardering, tijdstipmethode en basisconsolidatie blijven behouden. Syllabusonderwerpen met weinig of geen waargenomen tentamenvragen worden expliciet aangevuld vanuit de syllabus.\n\n## Examenmatrix\n\n| Onderwerp | '+exams.map(e=>date(e.date)).join(' | ')+' |\n|---|'+exams.map(()=>'---:').join('|')+'|\n';
+for(const t of result.topics)md+='| '+t.title+' | '+exams.map(e=>t.exams.some(x=>x.id===e.id)?'Ja':'').join(' | ')+' |\n';
+md+='\n## Controleerbare vindplaatsen\n';
+for(const t of result.topics){md+='\n### '+t.title+' ('+t.count+'/11)\n\n';if(!t.exams.length)md+='Niet als getoetst onderwerp aangetroffen. Wel syllabusstof.\n';for(const e of t.exams){md+='\n**'+date(e.date)+'**\n\n';for(const r of e.refs)md+='- '+r.sourceFile+', opgave '+r.section+', vraag '+r.question+(r.page?', PDF p. '+r.page:'; DOCX zonder vaste PDF-pagina')+': '+r.evidence+'\n';}}
+md+='\n## Gebruikte tentamens en antwoordmodellen\n\n';for(const e of exams)md+='- '+date(e.date)+': '+e.questionFile+'; '+e.answerFile+'.\n';
+write('docs/mc-audit/exam-frequency.md',md);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rows=result.topics.map(t=>`<tr><th scope="row">${esc(t.title)}</th><td>${t.count}/11</td><td>${t.existing}</td><td>${t.target}</td></tr>`).join('');
+const detail=result.topics.map(t=>`<details><summary>${esc(t.title)}: ${t.count}/11</summary><p class="exam-codes">${t.exams.length?t.exams.map(e=>esc(e.id)).join(' · '):'Geen'}</p></details>`).join('');
+write('tentamenfrequentie.html',`<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAFA2 · Tentamenfrequentie</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#242332;background:#f7f7fa;margin:0}main{max-width:1080px;margin:auto;padding:28px 20px}a{color:#3b3873}h1{font-size:1.9rem;line-height:1.2}table{border-collapse:collapse;width:100%;background:#fff}th,td{border-bottom:1px solid #d4d2dc;text-align:left;padding:10px 12px}thead{background:#444159;color:white}td{white-space:nowrap}.table-wrap{overflow:auto}details{background:white;padding:12px 16px;border:1px solid #d4d2dc;margin:12px 0}summary{font-weight:650;cursor:pointer}li{margin:10px 0}small{color:#555}header{border-bottom:4px solid #ed710b;margin-bottom:24px}p{max-width:85ch}</style></head><body><main><header><a href="index.html#oefenen">← Oefenvragen</a><h1>Tentamenfrequentie per onderwerp</h1><p>19 onderwerpen · 11 tentamens · controle met vraag en antwoordmodel</p></header><p>${esc(result.method)}</p><p>Eigen aandelen telt ook mee wanneer de invloed op stemrechten wordt getoetst. De minimumdekking is tien MC-vragen per onderwerp; grotere onderwerpen krijgen extra vragen op basis van frequentie, complexiteit en verschillende vaardigheden.</p><div class="table-wrap"><table><thead><tr><th>Onderwerp</th><th>Tentamens</th><th>Bestaande MC</th><th>Totaal MC</th></tr></thead><tbody>${rows}</tbody></table></div><h2>Tentamens per onderwerp</h2>${detail}<h2>Onderzochte tentamens</h2><p>${exams.map(e=>esc(e.id)).join(' · ')}</p></main></body></html>`);
+console.log(JSON.stringify(result.topics.map(t=>({topic:t.topicId,exams:t.count,existing:t.existing,target:t.target}))));

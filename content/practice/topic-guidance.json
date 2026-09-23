@@ -1,0 +1,97 @@
+{
+  "zeggenschap": {
+    "lesson": "kwalificatie",
+    "title": "Kapitaalbelangen en zeggenschap",
+    "rules": "Beoordeel deelneming, dochtermaatschappij en groepsmaatschappij afzonderlijk aan de hand van het doel van het belang en de daadwerkelijk uit te oefenen rechten."
+  },
+  "waardering": {
+    "lesson": "waardering",
+    "title": "Waardering van kapitaalbelangen",
+    "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen."
+  },
+  "goodwill": {
+    "lesson": "goodwill",
+    "title": "Verwerving en het verschil met de koopsom",
+    "rules": "Vergelijk de tegenprestatie met het verworven aandeel in de aangepaste netto-activa en volg het verschil afzonderlijk volgens de waarderingsgrondslag en de expliciete casusregels."
+  },
+  "reserves": {
+    "lesson": "wettelijke-reserve",
+    "title": "Gebonden vermogen en reservemutaties",
+    "rules": "Bepaal waardoor een reserve ontstaat en welk bedrag gebonden moet blijven; vergelijk daarna het vereiste eindsaldo met de bestaande reserve en beoordeel de mutatie."
+  },
+  "eigen-aandelen": {
+    "lesson": "eigen-aandelen",
+    "title": "Directe en middellijke inkoop van eigen aandelen",
+    "rules": "Stel vast wie de aandelen inkoopt, welke onderneming de aandelen heeft uitgegeven en of intrekking plaatsvindt; houd verwerking, nominale waarde en resterende rechten uit elkaar."
+  },
+  "consolidatiekader": {
+    "lesson": "consolidatieplicht",
+    "title": "Consolidatieplicht, kring en vrijstellingen",
+    "rules": "Toets achtereenvolgens wie moet consolideren, welke maatschappijen binnen de consolidatiekring vallen en of aan alle voorwaarden van een toepasselijke vrijstelling wordt voldaan."
+  },
+  "functionele-valuta": {
+    "lesson": "functionele-valuta",
+    "title": "Functionele valuta en omrekening",
+    "rules": "Onderbouw de functionele valuta met de economische omgeving waarin geldmiddelen worden ontvangen en uitgegeven; bepaal daarna welke omrekening naar de presentatievaluta nodig is."
+  },
+  "tijdstip": {
+    "lesson": "tijdstipmethode",
+    "title": "Koerskeuze bij de tijdstipmethode",
+    "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast."
+  },
+  "slotkoers": {
+    "lesson": "slotkoersmethode",
+    "title": "Balans, resultaat en omrekeningsreserve",
+    "rules": "Reken balans en resultaat met hun eigen toepasselijke koersen om en sluit het eindvermogen aan op beginvermogen, resultaat en overige vermogensmutaties."
+  },
+  "basisconsolidatie": {
+    "lesson": "onderlinge-posten",
+    "title": "Basiseliminaties en toerekening aan derden",
+    "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden."
+  },
+  "downstream-nvw": {
+    "lesson": "downstream-nvw",
+    "title": "Downstream bij nettovermogenswaarde",
+    "rules": "Volg de goederen van moeder naar dochter en onderscheid de interne correctie in de moederadministratie van de aanvullende eliminaties voor balans en jaarresultaat."
+  },
+  "downstream-vp": {
+    "lesson": "downstream-hk",
+    "title": "Downstream bij verkrijgingsprijs",
+    "rules": "Stel vast welke winst de moeder heeft geboekt en welk deel nog binnen de groep aanwezig is; werk bij verkrijgingsprijs vanuit de consolidatie zonder een interne NVW-correctie te veronderstellen."
+  },
+  "upstream-nvw": {
+    "lesson": "upstream-nvw",
+    "title": "Upstream bij nettovermogenswaarde",
+    "rules": "Lokaliseer de winst bij de verkopende dochter en onderscheid het moederdeel dat al intern is gecorrigeerd van het derdenaandeel dat bij consolidatie moet worden verwerkt."
+  },
+  "upstream-vp": {
+    "lesson": "upstream-hk",
+    "title": "Upstream bij verkrijgingsprijs",
+    "rules": "Bepaal de ongerealiseerde winst bij de verkopende dochter en werk de consolidatiecorrectie uit naar moeder, derden en belasting, zonder een interne NVW-correctie mee te nemen."
+  },
+  "sidestream-niet-afnemend": {
+    "lesson": "sidestream-nab",
+    "title": "Sidestream bij niet-afnemend belang",
+    "rules": "Vergelijk de moederbelangen langs de goederenstroom van verkoper naar koper en bepaal afzonderlijk de interne correctie, het derdenaandeel en de mutatie van de voorraadwinst."
+  },
+  "sidestream-afnemend": {
+    "lesson": "sidestream-ab",
+    "title": "Sidestream bij afnemend belang",
+    "rules": "Vergelijk het belang in verkoper en koper en houd de interne correctie, het derdenaandeel en de aanvullende concerncorrectie afzonderlijk zichtbaar in de voorraadtabel."
+  },
+  "vaste-activa": {
+    "lesson": "mva",
+    "title": "Interne verkoop van materiële vaste activa",
+    "rules": "Bepaal de boekwaarde vanuit concernperspectief en volg daarna de interne boekwinst, de afschrijving en de nog resterende winst afzonderlijk over de gebruiksjaren."
+  },
+  "belastingen": {
+    "lesson": "voorraadtabel",
+    "title": "Brutowinst, belasting en nettocorrectie",
+    "rules": "Werk eerst de bruto winstcorrectie en de toepasselijke belangpercentages uit; bepaal daarna het belastingeffect en controleer welke bedragen al intern zijn verwerkt."
+  },
+  "proportioneel": {
+    "lesson": "proportioneel",
+    "title": "Proportionele consolidatie en joint ventures",
+    "rules": "Bepaal welk evenredig deel van de financiële gegevens wordt opgenomen en elimineer onderlinge relaties voor zover deze in de combinatie aanwezig zijn."
+  }
+}

@@ -1,0 +1,1836 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-09-23",
+  "scope": "Vijf unieke recente tentamens; uitsluitend aangeleverde lokale bronnen.",
+  "method": {
+    "unit": "uniek tentamen per onderwerp",
+    "inclusion": "Expliciet gevraagd of noodzakelijk berekend/geboekt in de uitwerking; multi-label toegestaan.",
+    "exclusion": "Alleen achtergrond, aannamen, generiek voorkomen van resultaat/overige reserves, en voorgeschreven methode zonder methodekeuze worden niet automatisch als zelfstandig onderwerp geteld.",
+    "inventoryVersusAssetDelivery": "Voorraadstromen downstream/upstream gescheiden van interne verkoop vaste activa.",
+    "points": "Geen onderwerp-puntenpercentages afgeleid omdat meervoudige labels overlappen.",
+    "pageNumbering": "PDF-paginanummer vanaf1, gelijk aan gedrukte paginanummering bij genoemde bronnen."
+  },
+  "exams": [
+    {
+      "id": "20240422",
+      "date": "2024-04-22",
+      "questionFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+      "answerFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+      "questionPages": 14,
+      "answerPages": 15,
+      "questionAndAnswerReadCompletely": true,
+      "sections": [
+        {
+          "section": 1,
+          "name": "Monopoli",
+          "points": 30
+        },
+        {
+          "section": 2,
+          "name": "Galster",
+          "points": 20
+        },
+        {
+          "section": 3,
+          "name": "Beverwijk (Zwolle, Apeldoorn, Heerde)",
+          "points": 30
+        },
+        {
+          "section": 4,
+          "name": "Nolde",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "id": "20240930",
+      "date": "2024-09-30",
+      "questionFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+      "answerFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+      "questionPages": 15,
+      "answerPages": 14,
+      "questionAndAnswerReadCompletely": true,
+      "sections": [
+        {
+          "section": 1,
+          "name": "Mulini",
+          "points": 30
+        },
+        {
+          "section": 2,
+          "name": "Bornholm",
+          "points": 20
+        },
+        {
+          "section": 3,
+          "name": "Oud Avereest",
+          "points": 30
+        },
+        {
+          "section": 4,
+          "name": "Hoza",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "id": "20250417",
+      "date": "2025-04-17",
+      "questionFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+      "answerFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+      "questionPages": 15,
+      "answerPages": 15,
+      "questionAndAnswerReadCompletely": true,
+      "sections": [
+        {
+          "section": 1,
+          "name": "Montone",
+          "points": 30
+        },
+        {
+          "section": 2,
+          "name": "Hoek",
+          "points": 20
+        },
+        {
+          "section": 3,
+          "name": "Kisjes",
+          "points": 30
+        },
+        {
+          "section": 4,
+          "name": "Orvelde",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "id": "20250924",
+      "date": "2025-09-24",
+      "questionFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+      "answerFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "questionPages": 15,
+      "answerPages": 14,
+      "questionAndAnswerReadCompletely": true,
+      "sections": [
+        {
+          "section": 1,
+          "name": "Monserrato",
+          "points": 30
+        },
+        {
+          "section": 2,
+          "name": "Dole",
+          "points": 20
+        },
+        {
+          "section": 3,
+          "name": "Oldemarcke",
+          "points": 30
+        },
+        {
+          "section": 4,
+          "name": "SchierGlas",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "id": "20260429",
+      "date": "2026-04-29",
+      "questionFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+      "answerFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+      "questionPages": 13,
+      "answerPages": 13,
+      "questionAndAnswerReadCompletely": true,
+      "sections": [
+        {
+          "section": 1,
+          "name": "Oostermoer",
+          "points": 30
+        },
+        {
+          "section": 2,
+          "name": "Ruinen",
+          "points": 20
+        },
+        {
+          "section": 3,
+          "name": "Moderna",
+          "points": 30
+        },
+        {
+          "section": 4,
+          "name": "Baldetti",
+          "points": 20
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "examId": "20240422",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1-2",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Invloed van betekenis bij 30% met zeven overige aandeelhouders van 10%; middellijke deelneming via een 80%-dochter beoordelen."
+        },
+        {
+          "section": 1,
+          "question": "1-2",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Invloed van betekenis bij 30% met zeven overige aandeelhouders van 10%; middellijke deelneming via een 80%-dochter beoordelen."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1,3-5",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "NVW bepalen met fair-valueverschillen, verloop en aansluiting deelnemingswaarde: €2.496.000 + €444.000 - €40.000 = €2.900.000."
+        },
+        {
+          "section": 1,
+          "question": "1,3-5",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "NVW bepalen met fair-valueverschillen, verloop en aansluiting deelnemingswaarde: €2.496.000 + €444.000 - €40.000 = €2.900.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": 1,
+          "question": "3",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Aankoopprijs bepalen: 80% van aangepaste waarde €3.120.000 plus goodwill €504.000 = €3.000.000; ook opgave4 vraag23b toetst afschrijving."
+        },
+        {
+          "section": 1,
+          "question": "3",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Aankoopprijs bepalen: 80% van aangepaste waarde €3.120.000 plus goodwill €504.000 = €3.000.000; ook opgave4 vraag23b toetst afschrijving."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": 1,
+          "question": "7",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Geconsolideerde omzet vereist onderscheid tussen 100%-opname groepsdochter, 50%-opname joint venture en uitsluiten van niet-geconsolideerde deelnemingen."
+        },
+        {
+          "section": 1,
+          "question": "7",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Geconsolideerde omzet vereist onderscheid tussen 100%-opname groepsdochter, 50%-opname joint venture en uitsluiten van niet-geconsolideerde deelnemingen."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": 2,
+          "question": "9",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Fager als niet-zelfstandige eenheid herkennen en functionele valuta euro motiveren met ten minste drie concrete factoren."
+        },
+        {
+          "section": 2,
+          "question": "9",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Fager als niet-zelfstandige eenheid herkennen en functionele valuta euro motiveren met ten minste drie concrete factoren."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": 2,
+          "question": "10-11",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Fager: gebouwen en FIFO-voorraad tegen passende historische/lagere-opbrengstwaarde koersen, omzet/kostprijs en monetaire positie; koersverlies €151.750."
+        },
+        {
+          "section": 2,
+          "question": "10-11",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Fager: gebouwen en FIFO-voorraad tegen passende historische/lagere-opbrengstwaarde koersen, omzet/kostprijs en monetaire positie; koersverlies €151.750."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": 2,
+          "question": "12c-d,13",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Reiter: resultaat €71.250, reserve omrekenverschillen +€33.500 en eindvermogen €674.250."
+        },
+        {
+          "section": 2,
+          "question": "12c-d,13",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Reiter: resultaat €71.250, reserve omrekenverschillen +€33.500 en eindvermogen €674.250."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": 1,
+          "question": "6-8",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Groepsboekwaarde gebouwen €4.750.000, geconsolideerde omzet €9.000.000 en resultaat €700.000; opgave3 vraag18c-d elimineert rente en huur."
+        },
+        {
+          "section": 1,
+          "question": "6-8",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Groepsboekwaarde gebouwen €4.750.000, geconsolideerde omzet €9.000.000 en resultaat €700.000; opgave3 vraag18c-d elimineert rente en huur."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "14-15,18a",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Zwolle naar Heerde (70%): voorraadwinst €50.000 naar €40.000; intracomptabele vrijval €7.000 en aanvullend groepsdeel €3.000 bruto."
+        },
+        {
+          "section": 3,
+          "question": "14-15,18a",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Zwolle naar Heerde (70%): voorraadwinst €50.000 naar €40.000; intracomptabele vrijval €7.000 en aanvullend groepsdeel €3.000 bruto."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": 4,
+          "question": "22-24",
+          "page": 14,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Armweide naar Nolde; moederbelang80%; voorraadwinst €27.000 naar €42.000, eindcorrectie derden €6.720 netto en belang derden €1.663.280."
+        },
+        {
+          "section": 4,
+          "question": "22-24",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Armweide naar Nolde; moederbelang80%; voorraadwinst €27.000 naar €42.000, eindcorrectie derden €6.720 netto en belang derden €1.663.280."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "sidestream-afnemend",
+      "refs": [
+        {
+          "section": 3,
+          "question": "16-17,18b,19",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Apeldoorn (90%) levert aan Heerde (70%): afnemend. Winsttoename €50.000 splitst 70% intern,10% derden,20% aanvullend groepsresultaat."
+        },
+        {
+          "section": 3,
+          "question": "16-17,18b,19",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Apeldoorn (90%) levert aan Heerde (70%): afnemend. Winsttoename €50.000 splitst 70% intern,10% derden,20% aanvullend groepsresultaat."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": 3,
+          "question": "15,17-19",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "20% belasting expliciet in intracomptabele en consolidatieboekingen; sidestream eindwinst €75.000 levert belastingcorrectie €15.000 totaal op."
+        },
+        {
+          "section": 3,
+          "question": "15,17-19",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "20% belasting expliciet in intracomptabele en consolidatieboekingen; sidestream eindwinst €75.000 levert belastingcorrectie €15.000 totaal op."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240422",
+      "topicId": "proportioneel",
+      "refs": [
+        {
+          "section": 1,
+          "question": "7",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Oria wordt op basis van artikel409 proportioneel opgenomen: 50% van €1.000.000 omzet = €500.000; totaal groepsomzet €9.000.000."
+        },
+        {
+          "section": 1,
+          "question": "7",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240422 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Oria wordt op basis van artikel409 proportioneel opgenomen: 50% van €1.000.000 omzet = €500.000; totaal groepsomzet €9.000.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1,7",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Vermoede deelneming en invloed van betekenis beoordelen; q7 beoordeelt groepsmaatschappij bij 50/50 samenwerkingsregeling."
+        },
+        {
+          "section": 1,
+          "question": "1,7",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Vermoede deelneming en invloed van betekenis beoordelen; q7 beoordeelt groepsmaatschappij bij 50/50 samenwerkingsregeling."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1-4,6",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Overgang verkrijgingsprijs naar zichtbaar eigen vermogen; bestaande35% plus extra25% geeft eindboekwaarde60% × €1.600.000 = €960.000."
+        },
+        {
+          "section": 1,
+          "question": "1-4,6",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Overgang verkrijgingsprijs naar zichtbaar eigen vermogen; bestaande35% plus extra25% geeft eindboekwaarde60% × €1.600.000 = €960.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": 1,
+          "question": "3b,5-6",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Sasso: prijs €1.500.000 minus50% × aangepaste waarde €2.000.000 = goodwill €500.000; jaarlijkse afschrijving €100.000."
+        },
+        {
+          "section": 1,
+          "question": "3b,5-6",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Sasso: prijs €1.500.000 minus50% × aangepaste waarde €2.000.000 = goodwill €500.000; jaarlijkse afschrijving €100.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": 1,
+          "question": "7-8",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Geen centrale leiding in Sasso; bepalen of en hoe joint venture in geconsolideerde jaarrekening kan worden verwerkt."
+        },
+        {
+          "section": 1,
+          "question": "7-8",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Geen centrale leiding in Sasso; bepalen of en hoe joint venture in geconsolideerde jaarrekening kan worden verwerkt."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": 2,
+          "question": "10,12-13",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Historische boekwaarden/FIFO/afwaardering en monetaire positie. Koerswinst €21.975; boekwaarde voorraad €612.500."
+        },
+        {
+          "section": 2,
+          "question": "10,12-13",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Historische boekwaarden/FIFO/afwaardering en monetaire positie. Koerswinst €21.975; boekwaarde voorraad €612.500."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": 2,
+          "question": "11",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Gebouw en eigen vermogen omrekenen met afzonderlijke omrekenverschillen; eindvermogen DKK4.730.000 × €0,125 = €591.250."
+        },
+        {
+          "section": 2,
+          "question": "11",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Gebouw en eigen vermogen omrekenen met afzonderlijke omrekenverschillen; eindvermogen DKK4.730.000 × €0,125 = €591.250."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": 3,
+          "question": "17a-b",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Eliminatie resultaat deelneming en derden plus managementfee €86.400; opgave4 vraag25a,b,d elimineert deelneming, derden en onderlinge lening/rente."
+        },
+        {
+          "section": 3,
+          "question": "17a-b",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Eliminatie resultaat deelneming en derden plus managementfee €86.400; opgave4 vraag25a,b,d elimineert deelneming, derden en onderlinge lening/rente."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "upstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "14-17",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Broekhuizen naar Oud Avereest,70%-belang. Voorraadwinst €28.000 naar €32.000; interne nettoresultaatcorrectie €4.000 ×70% ×80% = €2.240."
+        },
+        {
+          "section": 3,
+          "question": "14-17",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Broekhuizen naar Oud Avereest,70%-belang. Voorraadwinst €28.000 naar €32.000; interne nettoresultaatcorrectie €4.000 ×70% ×80% = €2.240."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": 4,
+          "question": "24,25e",
+          "page": 14,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Outdoor Living naar Hoza,60%-belang. Eindwinst €40.000 splitst60% groep/40% derden; brutovrijval €20.000."
+        },
+        {
+          "section": 4,
+          "question": "24,25e",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Outdoor Living naar Hoza,60%-belang. Eindwinst €40.000 splitst60% groep/40% derden; brutovrijval €20.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "vaste-activa",
+      "refs": [
+        {
+          "section": 3,
+          "question": "18-20",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Downstreamvrachtauto met boekwinst €50.000. Interne70%-correctie €35.000; volgend jaar €10.000 extra afschrijving terugnemen. Dit is geen voorraadlevering."
+        },
+        {
+          "section": 3,
+          "question": "18-20",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Downstreamvrachtauto met boekwinst €50.000. Interne70%-correctie €35.000; volgend jaar €10.000 extra afschrijving terugnemen. Dit is geen voorraadlevering."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": 3,
+          "question": "15-20",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Voorraadwinst en vrachtautoboekwinst moeten met belastingtarief20% bruto/netto worden gesplitst; latentie en vrijval expliciet geboekt."
+        },
+        {
+          "section": 3,
+          "question": "15-20",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Voorraadwinst en vrachtautoboekwinst moeten met belastingtarief20% bruto/netto worden gesplitst; latentie en vrijval expliciet geboekt."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20240930",
+      "topicId": "proportioneel",
+      "refs": [
+        {
+          "section": 1,
+          "question": "8",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Sasso 50/50: proportioneel consolideren onder samenwerking en inzichtvereiste, of als deelneming laten staan."
+        },
+        {
+          "section": 1,
+          "question": "8",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20240930 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Sasso 50/50: proportioneel consolideren onder samenwerking en inzichtvereiste, of als deelneming laten staan."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1-2,7",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Deelnemingscriteria en moeder-dochterrelaties met stemrechtovereenkomst, rechtspersoonvereiste, volledige aansprakelijkheid en ingekochte eigen aandelen."
+        },
+        {
+          "section": 1,
+          "question": "1-2,7",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Deelnemingscriteria en moeder-dochterrelaties met stemrechtovereenkomst, rechtspersoonvereiste, volledige aansprakelijkheid en ingekochte eigen aandelen."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": 1,
+          "question": "2-5",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "NVW-correcties en onderscheid resultaat/dividend bij NVW versus verkrijgingsprijs. Terni eind2023: €352.000 +80% × €480.000 = €736.000."
+        },
+        {
+          "section": 1,
+          "question": "2-5",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "NVW-correcties en onderscheid resultaat/dividend bij NVW versus verkrijgingsprijs. Terni eind2023: €352.000 +80% × €480.000 = €736.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": 1,
+          "question": "3",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Terni: NVW €440.000 ×80%=€352.000; prijs €900.000 minus €352.000 geeft goodwill €548.000. Opgave4 vraagt eveneens goodwill en afschrijving."
+        },
+        {
+          "section": 1,
+          "question": "3",
+          "page": 2,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Terni: NVW €440.000 ×80%=€352.000; prijs €900.000 minus €352.000 geeft goodwill €548.000. Opgave4 vraagt eveneens goodwill en afschrijving."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "reserves",
+      "refs": [
+        {
+          "section": 1,
+          "question": "6",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Expliciet motiveren of wettelijke reserve deelneming nodig is: Terni80% zonder uitkeringsbeperking en Todi tegen verkrijgingsprijs; beide geen reserve in deze casus."
+        },
+        {
+          "section": 1,
+          "question": "6",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Expliciet motiveren of wettelijke reserve deelneming nodig is: Terni80% zonder uitkeringsbeperking en Todi tegen verkrijgingsprijs; beide geen reserve in deze casus."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "eigen-aandelen",
+      "refs": [
+        {
+          "section": 1,
+          "question": "7e",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Direct ingekochte eigen aandelen wijzigen stemrechtnoemer: Assisi40%/(100%-25%)=53,33%; vereist voor kwalificatie dochtermaatschappij."
+        },
+        {
+          "section": 1,
+          "question": "7e",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Direct ingekochte eigen aandelen wijzigen stemrechtnoemer: Assisi40%/(100%-25%)=53,33%; vereist voor kwalificatie dochtermaatschappij."
+        }
+      ],
+      "status": "confirmed",
+      "note": "Geteld wegens noodzakelijke berekening van invloed van inkoop op stemrechten; geen journaalpost van de inkoop gevraagd."
+    },
+    {
+      "examId": "20250417",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": 1,
+          "question": "8",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Groepshoofden en groepsdeelhoofd bepalen en consolidatiekring motiveren; Spoleto, Assisi en Foligno hebben ieder in beginsel consolidatieplicht."
+        },
+        {
+          "section": 1,
+          "question": "8",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Groepshoofden en groepsdeelhoofd bepalen en consolidatiekring motiveren; Spoleto, Assisi en Foligno hebben ieder in beginsel consolidatieplicht."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": 2,
+          "question": "9-11",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Historische koers vervoermiddelen/FIFO, gedeeltelijke afwaardering en koersresultaat op monetaire positie; eindvoorraad €2.225.600 en koersverlies €81.000."
+        },
+        {
+          "section": 2,
+          "question": "9-11",
+          "page": 7,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Historische koers vervoermiddelen/FIFO, gedeeltelijke afwaardering en koersresultaat op monetaire positie; eindvoorraad €2.225.600 en koersverlies €81.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": 2,
+          "question": "12-14",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Omrekening vervoermiddelen en deelneming; eigen vermogen USD2.400.000 ×€0,97 =€2.328.000 en reserve omrekenverschillen €216.000."
+        },
+        {
+          "section": 2,
+          "question": "12-14",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Omrekening vervoermiddelen en deelneming; eigen vermogen USD2.400.000 ×€0,97 =€2.328.000 en reserve omrekenverschillen €216.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": 3,
+          "question": "21-22",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Eliminatie huur €200.000, managementfee €112.400 en resultaat deelnemingen met aandeel derden €68.000."
+        },
+        {
+          "section": 3,
+          "question": "21 en 23 (bronfout: tentamenvraag22 heet23 in uitwerking)",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Eliminatie huur €200.000, managementfee €112.400 en resultaat deelnemingen met aandeel derden €68.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "15-17",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Kisjes naar Palletdiscounter70%; voorraadwinst €64.000 naar €96.000, interne brutotoename €22.400 en belasting €4.480."
+        },
+        {
+          "section": 3,
+          "question": "15-17",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Kisjes naar Palletdiscounter70%; voorraadwinst €64.000 naar €96.000, interne brutotoename €22.400 en belasting €4.480."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": 4,
+          "question": "25-28a",
+          "page": 15,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Dingspel naar Orvelde70%; winst daalt €36.000 naar €28.000; derden krijgen30% van netto vrijval (€1.920), eind aandeel derden €34.920."
+        },
+        {
+          "section": 4,
+          "question": "25-28a",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Dingspel naar Orvelde70%; winst daalt €36.000 naar €28.000; derden krijgen30% van netto vrijval (€1.920), eind aandeel derden €34.920."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "sidestream-afnemend",
+      "refs": [
+        {
+          "section": 3,
+          "question": "18-20",
+          "page": 12,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Q-Pall90% naar Palletdiscounter70%; winst daalt €114.000 naar €90.000. Interne netto vrijval €24.000 ×70% ×80% = €13.440."
+        },
+        {
+          "section": 3,
+          "question": "18-20",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Q-Pall90% naar Palletdiscounter70%; winst daalt €114.000 naar €90.000. Interne netto vrijval €24.000 ×70% ×80% = €13.440."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250417",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": 3,
+          "question": "16-20",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "20% belasting expliciet in downstream en sidestream. Bij eindwinst sidestream€90.000: belastingcorrectie€18.000, verdeeld over betrokken correcties."
+        },
+        {
+          "section": 3,
+          "question": "16-20",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250417 Uitwerking tentamen CAFA2.pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "20% belasting expliciet in downstream en sidestream. Bij eindwinst sidestream€90.000: belastingcorrectie€18.000, verdeeld over betrokken correcties."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": 1,
+          "question": "4-5,7",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Deelneming bij10%, dochterrelatie na middellijke eigen-aandeleninkoop en stemrecht in aandelensoorten (380/700=54,3%)."
+        },
+        {
+          "section": 1,
+          "question": "4-5,7",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Deelneming bij10%, dochterrelatie na middellijke eigen-aandeleninkoop en stemrecht in aandelensoorten (380/700=54,3%)."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1-4,6,8",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "NVW met fair-valueverschillen en dividend; Olbia waarde€969.500. Bosa dividend€48.000 verlaagt bij NVW deelneming, bij verkrijgingsprijs opbrengst."
+        },
+        {
+          "section": 1,
+          "question": "1-4,6,8",
+          "page": 2,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "NVW met fair-valueverschillen en dividend; Olbia waarde€969.500. Bosa dividend€48.000 verlaagt bij NVW deelneming, bij verkrijgingsprijs opbrengst."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1",
+          "page": 4,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Olbia: gecorrigeerde NVW€1.030.000 ×70% + goodwill€150.000 = prijs€871.000; opgave4 toetst twee aankooptranches en afschrijving."
+        },
+        {
+          "section": 1,
+          "question": "1",
+          "page": 2,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Olbia: gecorrigeerde NVW€1.030.000 ×70% + goodwill€150.000 = prijs€871.000; opgave4 toetst twee aankooptranches en afschrijving."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "eigen-aandelen",
+      "refs": [
+        {
+          "section": 1,
+          "question": "5-6",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Middellijk ingekochte eigen aandelen via Palau80%: kwalificatie, aftrek eigen vermogen en deelnemingsboekwaarde na aankoop."
+        },
+        {
+          "section": 1,
+          "question": "5-6",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Middellijk ingekochte eigen aandelen via Palau80%: kwalificatie, aftrek eigen vermogen en deelnemingsboekwaarde na aankoop."
+        }
+      ],
+      "status": "confirmed",
+      "note": "Uitwerking na normering accepteert zowel100% als80% ×€100.000 aftrek. Niet zonder gekozen syllabusbenadering als MC met beide bedragen gebruiken."
+    },
+    {
+      "examId": "20250924",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": 2,
+          "question": "4",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Twee factoren benoemen waarom Omberg eigen functionele valuta SEK heeft: zelfstandigheid/financiering/transacties/kasstromen."
+        },
+        {
+          "section": 2,
+          "question": "12",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Twee factoren benoemen waarom Omberg eigen functionele valuta SEK heeft: zelfstandigheid/financiering/transacties/kasstromen."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": 2,
+          "question": "1-3",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Gebouwen/FIFO-voorraad en afwaardering plus monetaire positie; gebouw€612.200, voorraad€262.200, koerswinst€11.589."
+        },
+        {
+          "section": 2,
+          "question": "9-11",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Gebouwen/FIFO-voorraad en afwaardering plus monetaire positie; gebouw€612.200, voorraad€262.200, koerswinst€11.589."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": 2,
+          "question": "5-6",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Deelneming Omberg verloop en boeking: resultaat€58.360, reserveomrekenverschillen−€9.543 en deelnemingstoename€48.817."
+        },
+        {
+          "section": 2,
+          "question": "13-14",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Deelneming Omberg verloop en boeking: resultaat€58.360, reserveomrekenverschillen−€9.543 en deelnemingstoename€48.817."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": 3,
+          "question": "5a-b",
+          "page": 12,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Eliminatie eigen vermogen van Westerbles integraal met derden; Peperga50% proportioneel, zonder derdenpost."
+        },
+        {
+          "section": 3,
+          "question": "19-20 (5a-b)",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Eliminatie eigen vermogen van Westerbles integraal met derden; Peperga50% proportioneel, zonder derdenpost."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "1-2,5c,6",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Oldemarcke naar Westerbles90%. Voorraadwinst€20.000 naar€14.000; interne vrijval€5.400 bruto,€1.080 belasting."
+        },
+        {
+          "section": 3,
+          "question": "15-16,21,23",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Oldemarcke naar Westerbles90%. Voorraadwinst€20.000 naar€14.000; interne vrijval€5.400 bruto,€1.080 belasting."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "upstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "3-4,5d,6",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Peperga50% proportioneel naar Oldemarcke; 50% van voorraadwinst€36.000 naar€63.000: correctie€18.000 naar€31.500; netto toename€10.800."
+        },
+        {
+          "section": 3,
+          "question": "17-18,22-23",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Peperga50% proportioneel naar Oldemarcke; 50% van voorraadwinst€36.000 naar€63.000: correctie€18.000 naar€31.500; netto toename€10.800."
+        }
+      ],
+      "status": "confirmed",
+      "note": "Upstream-NVW telt hier als getoetste proportionaliteitsvariant; niet aanduiden als integrale50%-dochter."
+    },
+    {
+      "examId": "20250924",
+      "topicId": "downstream-vp",
+      "refs": [
+        {
+          "section": 4,
+          "question": "6a-b",
+          "page": 15,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "SchierGlas naar Ridder60%. Geen interne correctie; voorraadwinst€80.000 naar€90.000; volledige bruto toename€10.000 ten laste groepsresultaat."
+        },
+        {
+          "section": 4,
+          "question": "30-31",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "SchierGlas naar Ridder60%. Geen interne correctie; voorraadwinst€80.000 naar€90.000; volledige bruto toename€10.000 ten laste groepsresultaat."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": 3,
+          "question": "2,4,5c-d",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "20% belasting expliciet bij intracomptabele correcties en consolidatie; netto€10.800 uit brutotoename€13.500 bij proportionele upstream."
+        },
+        {
+          "section": 3,
+          "question": "16,18,21-22",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "20% belasting expliciet bij intracomptabele correcties en consolidatie; netto€10.800 uit brutotoename€13.500 bij proportionele upstream."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20250924",
+      "topicId": "proportioneel",
+      "refs": [
+        {
+          "section": 3,
+          "question": "3-6",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Tentamen CAFA2.pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Peperga joint venture50% proportioneel opgenomen. Voorraad Peperga€270.000 ×50%=€135.000; upstreamwinst€63.000 ×50%=€31.500. Groepsvoorraad€1.029.500."
+        },
+        {
+          "section": 3,
+          "question": "17-23",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Peperga joint venture50% proportioneel opgenomen. Voorraad Peperga€270.000 ×50%=€135.000; upstreamwinst€63.000 ×50%=€31.500. Groepsvoorraad€1.029.500."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": 1,
+          "question": "2,6",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "NVW-keuze wegens invloed en dochterkwalificatie bij verschillende aandelensoorten; Fort stemrecht50% dus geen dochter in gegeven feiten."
+        },
+        {
+          "section": 1,
+          "question": "2,6",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "NVW-keuze wegens invloed en dochterkwalificatie bij verschillende aandelensoorten; Fort stemrecht50% dus geen dochter in gegeven feiten."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": 1,
+          "question": "2-5,7",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "NVW/deelnemingsresultaat na fair-valuecorrecties en afwijkende winst- en stemrechten; Dingspel resultaat€55.800 en Fort boekwaarde€1.418.000."
+        },
+        {
+          "section": 1,
+          "question": "2-5,7",
+          "page": 3,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "NVW/deelnemingsresultaat na fair-valuecorrecties en afwijkende winst- en stemrechten; Dingspel resultaat€55.800 en Fort boekwaarde€1.418.000."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": 1,
+          "question": "1,3",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Koopsom door aandelenruil en contanten€249.000; NVW€355.000 ×60%=€213.000, goodwill€36.000. Ook opgave4 vraagt goodwillafschrijving."
+        },
+        {
+          "section": 1,
+          "question": "1,3",
+          "page": 2,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Koopsom door aandelenruil en contanten€249.000; NVW€355.000 ×60%=€213.000, goodwill€36.000. Ook opgave4 vraagt goodwillafschrijving."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": 2,
+          "question": "2-4",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Historische koersen gebouw en FIFO-fusten plus koersresultaat monetaire positie: gebouw€667.950; voorraad€195.250; koersverlies€1.200."
+        },
+        {
+          "section": 2,
+          "question": "2-4",
+          "page": 5,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Historische koersen gebouw en FIFO-fusten plus koersresultaat monetaire positie: gebouw€667.950; voorraad€195.250; koersverlies€1.200."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": 2,
+          "question": "5-6",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Gebouwomrekenverlies€1.000 in vermogen; totaal valutareserve van70%-deelneming−€2.240 en resultaatdeelneming€15.820."
+        },
+        {
+          "section": 2,
+          "question": "5-6",
+          "page": 6,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Gebouwomrekenverlies€1.000 in vermogen; totaal valutareserve van70%-deelneming−€2.240 en resultaatdeelneming€15.820."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": 3,
+          "question": "4",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Resultaatdeelneming elimineren met aandeel derden25% ×€200.000 +40% ×€320.000 =€178.000; opgave4 vraag3a-b/4a bevat deelneming/derdeneliminaties."
+        },
+        {
+          "section": 3,
+          "question": "4",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Resultaatdeelneming elimineren met aandeel derden25% ×€200.000 +40% ×€320.000 =€178.000; opgave4 vraag3a-b/4a bevat deelneming/derdeneliminaties."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": 3,
+          "question": "1,3,5a",
+          "page": 10,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Moderna naar ChargeIT60%; voorraadwinst€64.000 naar€96.000. Interne toename€19.200 bruto, belasting€3.840; groepsaanvulling40%."
+        },
+        {
+          "section": 3,
+          "question": "1,3,5a",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Moderna naar ChargeIT60%; voorraadwinst€64.000 naar€96.000. Interne toename€19.200 bruto, belasting€3.840; groepsaanvulling40%."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "downstream-vp",
+      "refs": [
+        {
+          "section": 4,
+          "question": "1-2,3d,4c",
+          "page": 13,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Baldetti naar Vinsanto80%. Geen intracomptabele correctie; voorraadwinst€100.000 naar€80.000; volledige nettovrijval€16.000 in groep."
+        },
+        {
+          "section": 4,
+          "question": "1-2,3d,4c",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Baldetti naar Vinsanto80%. Geen intracomptabele correctie; voorraadwinst€100.000 naar€80.000; volledige nettovrijval€16.000 in groep."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "sidestream-afnemend",
+      "refs": [
+        {
+          "section": 3,
+          "question": "2-3,5b,6",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "Power4You75% naar ChargeIT60%: afnemend; interne60%, derden25%, aanvullend groep15%. Winst daalt€228.000 naar€180.000; interne netto vrijval€23.040."
+        },
+        {
+          "section": 3,
+          "question": "2-3,5b,6",
+          "page": 8,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "Power4You75% naar ChargeIT60%: afnemend; interne60%, derden25%, aanvullend groep15%. Winst daalt€228.000 naar€180.000; interne netto vrijval€23.040."
+        }
+      ],
+      "status": "confirmed"
+    },
+    {
+      "examId": "20260429",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": 3,
+          "question": "3,5-6",
+          "page": 11,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Tentamen CAFA2 def 2 (1).pdf",
+          "sourceKind": "tentamen",
+          "evidence": "20% belasting in downstream en afnemende sidestream; eindwinst€180.000 heeft belastingcorrectie€36.000. Ook opgave4 vraag3d/4c vraagt latentie/vrijval."
+        },
+        {
+          "section": 3,
+          "question": "3,5-6",
+          "page": 9,
+          "sourceFile": "C:\\Users\\HamudiAlkarradi\\OneDrive - De Rekenaar\\Studie\\CAFA2\\Tentamens\\20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+          "sourceKind": "uitwerking",
+          "evidence": "20% belasting in downstream en afnemende sidestream; eindwinst€180.000 heeft belastingcorrectie€36.000. Ook opgave4 vraag3d/4c vraagt latentie/vrijval."
+        }
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "counts": {
+    "zeggenschap": 5,
+    "waardering": 5,
+    "goodwill": 5,
+    "reserves": 1,
+    "eigen-aandelen": 2,
+    "consolidatiekader": 3,
+    "functionele-valuta": 2,
+    "tijdstip": 5,
+    "slotkoers": 5,
+    "basisconsolidatie": 5,
+    "downstream-nvw": 4,
+    "downstream-vp": 2,
+    "upstream-nvw": 2,
+    "upstream-vp": 3,
+    "sidestream-niet-afnemend": 0,
+    "sidestream-afnemend": 3,
+    "vaste-activa": 1,
+    "belastingen": 5,
+    "proportioneel": 3
+  },
+  "sourceNotes": [
+    {
+      "examId": "20240422",
+      "kind": "source-typo",
+      "refs": "uitwerking opgave2 vraag13 p9",
+      "detail": "Omrekenreserve beginvermogen is positief€35.000. Gedrukte formule700.000×(0,88−0,93) heeft omgekeerd teken; correct700.000×(0,93−0,88). Netto reserve+€33.500 blijft correct."
+    },
+    {
+      "examId": "20240930",
+      "kind": "excluded-topic",
+      "topicId": "reserves",
+      "refs": "uitwerking opgave1 vraag3 p4",
+      "detail": "Alternatief label Herwaarderingsreserve deelneming wordt goedgekeurd naast overige reserves. Geen aparte reservevorming/berekening getoetst; niet als onderwerp reserves geteld."
+    },
+    {
+      "examId": "20240930",
+      "kind": "excluded-topic",
+      "topicId": "downstream-nvw",
+      "refs": "tentamen opgave3 vraag18-20 p11-12",
+      "detail": "Downstreamvrachtauto uitsluitend onder vaste-activa geteld. Overige goederenstroom is upstream."
+    },
+    {
+      "examId": "20240930",
+      "kind": "source-qualification",
+      "refs": "uitwerking opgave1 vraag1 p3",
+      "detail": "Uitwerking verklaart verkrijgingsprijs door65%-andere aandeelhouder. Niet veralgemeniseren: meerderheid van een ander weerlegt op zichzelf invloed van betekenis niet. Voor MC een expliciet feit opnemen dat invloed ontbreekt."
+    },
+    {
+      "examId": "20250417",
+      "kind": "source-qualification",
+      "refs": "uitwerking opgave1 vraag2 p2",
+      "detail": "Uitwerking leidt geen invloed af uit groter belang andere aandeelhouder. Gebruik alleen expliciet gegeven ontbreken feitelijke invloed; maak geen algemene regel van eigendomspercentage andere aandeelhouders."
+    },
+    {
+      "examId": "20250417",
+      "kind": "source-typo",
+      "refs": "uitwerking opgave1 vraag4 p3 en opgave3 vraag22/23 p12",
+      "detail": "Uitwerking noemt2024 boven verloop dat2023 betreft; vraag22 uit tentamen heet23 in uitwerking. Verwijs bij MC naar nummer in tentamen en vermeld eventuele antwoordnummer."
+    },
+    {
+      "examId": "20250924",
+      "kind": "source-ambiguity",
+      "refs": "uitwerking na normering opgave1 vraag6 p4",
+      "detail": "Beide boekwaarden€350.000 en€370.000 zijn goedgekeurd door100% of80% aftrek middellijke eigen aandelen. Niet gebruiken als MC met beide bedragen zonder nadere aanname."
+    },
+    {
+      "examId": "20250924",
+      "kind": "source-typo",
+      "refs": "uitwerking vraag15 p9",
+      "detail": "Voorraad€200.000 naar€140.000 daalt€60.000, niet de gedrukte€90.000. Winstafname€6.000 en verdere boekingen kloppen."
+    },
+    {
+      "examId": "20250924",
+      "kind": "numbering",
+      "refs": "gehele tentamen/uitwerking",
+      "detail": "Tentamen nummert per opgave; uitwerking na normering nummert1-31 door. Beide nummeringen staan waar nodig in refs."
+    },
+    {
+      "examId": "20260429",
+      "kind": "source-typo",
+      "refs": "uitwerking opgave2 vraag4 en opgave3 vraag3-6 p5,8-10",
+      "detail": "Uitwerking heeft resten van jaartal2020 terwijl vraag en data2025 betreffen. Gebruik2025 uit tentamen."
+    },
+    {
+      "examId": "20260429",
+      "kind": "source-typo",
+      "refs": "uitwerking opgave1 vraag7 p4",
+      "detail": "Label Winst en stemrechten moet worden gelezen als winstrechten voor berekening60%; stemrechten in vraag6 zijn50%."
+    },
+    {
+      "examId": "20260429",
+      "kind": "excluded-topic",
+      "topicId": "functionele-valuta",
+      "refs": "tentamen opgave2 p8-9",
+      "detail": "Tijdstip- en slotkoersmethode worden beide voorgeschreven. Geen zelfstandige bepaling of motivering functionele valuta of methodekeuze gevraagd."
+    }
+  ],
+  "questionAnchors": [
+    {
+      "examId": "20240422",
+      "topicId": "waardering",
+      "question": "1.4",
+      "questionPage": 5,
+      "answerPage": 4,
+      "pattern": "Maak resultaat eerst gelijk aan moeders grondslagen; pas daarna belang en dividend toe.",
+      "calculation": "(500000+25000-120000+150000)*0.8=444000;2496000+444000-40000=2900000",
+      "answer": "Deelnemingsresultaat€444.000; eindwaarde€2.900.000."
+    },
+    {
+      "examId": "20240422",
+      "topicId": "proportioneel",
+      "question": "1.7",
+      "questionPage": 6,
+      "answerPage": 4,
+      "pattern": "Bepaal per rechtspersoon opnamepercentage voordat omzet wordt opgeteld.",
+      "calculation": "5000000+3500000+0+0.5*1000000+0=9000000",
+      "answer": "Geconsolideerde omzet€9.000.000."
+    },
+    {
+      "examId": "20240422",
+      "topicId": "functionele-valuta",
+      "question": "2.9",
+      "questionPage": 7,
+      "answerPage": 6,
+      "pattern": "Verlengstuk herkennen aan aansturing, financiering en afdracht kasstromen.",
+      "answer": "Fager: euro; Reiter is zelfstandig."
+    },
+    {
+      "examId": "20240422",
+      "topicId": "sidestream-afnemend",
+      "question": "3.16-17",
+      "questionPage": 11,
+      "answerPage": 10,
+      "pattern": "Verkoper90%→koper70%; interne correctie gebruikt kopersbelang70%.20% belasting is andere factor.",
+      "calculation": "(75000-25000)*0.7*0.8=28000",
+      "answer": "Resultaatdeelneming en deelneming dalen€28.000."
+    },
+    {
+      "examId": "20240930",
+      "topicId": "upstream-nvw",
+      "question": "3.15-16",
+      "questionPage": 11,
+      "answerPage": 10,
+      "pattern": "Balans gebruikt eindstand voorraadwinst; resultaat gebruikt mutatie, telkens netto maal moederbelang.",
+      "calculation": "0.7*500000-28000*0.7*0.8=334320;(32000-28000)*0.7*0.8=2240",
+      "answer": "Beginwaarde deelneming€334.320; resultaatcorrectie−€2.240."
+    },
+    {
+      "examId": "20240930",
+      "topicId": "vaste-activa",
+      "question": "3.18-20",
+      "questionPage": 11,
+      "answerPage": 11,
+      "pattern": "Bereken eerst concernboekwaarde, dan interne boekwinst en jaarlijkse extra afschrijving.",
+      "calculation": "360000-3*(360000/8)=225000;275000-225000=50000;275000/5-360000/8=10000",
+      "answer": "Boekwinst€50.000; jaarlijkse realisatie€10.000, waarvan70% intern€7.000."
+    },
+    {
+      "examId": "20240930",
+      "topicId": "upstream-vp",
+      "question": "4.24-25e",
+      "questionPage": 14,
+      "answerPage": 14,
+      "pattern": "Geen intracomptabele voorraadcorrectie; geconsolideerd100% winst verwijderen en daarna groep/derden splitsen.",
+      "calculation": "40000*0.6*0.8=19200;40000*0.4*0.8=12800;40000*0.2=8000",
+      "answer": "Eindcorrectie moeder€19.200 netto; derden€12.800; belasting€8.000."
+    },
+    {
+      "examId": "20250417",
+      "topicId": "reserves",
+      "question": "1.6",
+      "questionPage": 5,
+      "answerPage": 4,
+      "pattern": "Eerst waarderingsgrondslag, daarna mogelijkheid uitkering bewerkstelligen beoordelen.",
+      "answer": "Geen WRD voor verkrijgingsprijsdeelneming; in gegeven80%-NVW-casus ook geen WRD wegens onbeperkte uitkeringsmogelijkheid."
+    },
+    {
+      "examId": "20250417",
+      "topicId": "eigen-aandelen",
+      "question": "1.7e",
+      "questionPage": 7,
+      "answerPage": 5,
+      "pattern": "Ingekochte eigen aandelen verminderen stemgerechtigde noemer.",
+      "calculation": "40/(100-25)*100=53.333333",
+      "answer": "53,33% stemrechten, dus dochter in gegeven casus."
+    },
+    {
+      "examId": "20250417",
+      "topicId": "sidestream-afnemend",
+      "question": "3.18-20",
+      "questionPage": 12,
+      "answerPage": 11,
+      "pattern": "Voorraadwinst daalt: vrijval. Gebruik koper70%, derdenverkoper10%, resterend20%.",
+      "calculation": "24000*0.7*0.8=13440;90000*0.7*0.8=50400;90000*0.1*0.8=7200;90000*0.2*0.8=14400",
+      "answer": "Interne nettovrijval€13.440. Eindcorrecties€50.400 deelneming,€7.200 derden,€14.400 resultaat plus€18.000 belasting."
+    },
+    {
+      "examId": "20250924",
+      "topicId": "proportioneel",
+      "question": "3.3-6",
+      "questionPage": 11,
+      "answerPage": 11,
+      "pattern": "Bij proportioneel consolideren eerst evenredig opnemen; geen derdenpost in opgenomen deel.",
+      "calculation": "63000*0.5=31500;560000-31500+380000-14000+270000*0.5=1029500",
+      "answer": "Upstreamcorrectie€31.500; groepsvoorraad€1.029.500."
+    },
+    {
+      "examId": "20250924",
+      "topicId": "tijdstip",
+      "question": "2.1-2",
+      "questionPage": 9,
+      "answerPage": 6,
+      "pattern": "Ongeschonden voorraad historische koers; verlaagde opbrengstwaarde koers op waarderingsdatum.",
+      "calculation": "27500*40*0.087+10000*25*0.088+40000*42.5*0.085=262200;10000*40*0.087-10000*25*0.088=12800",
+      "answer": "Voorraad€262.200; afwaarderingslast€12.800."
+    },
+    {
+      "examId": "20260429",
+      "topicId": "goodwill",
+      "question": "1.1",
+      "questionPage": 5,
+      "answerPage": 2,
+      "pattern": "Aandelenruil telt tegen reële waarde; zet koopsom af tegen aandeel in aangepaste nettoactiva.",
+      "calculation": "(75000/75)*0.6=600;600/100*15*1100+600*250=249000;249000-(295000+100000-30000-10000)*0.6=36000",
+      "answer": "Koopsom€249.000; goodwill€36.000."
+    },
+    {
+      "examId": "20260429",
+      "topicId": "waardering",
+      "question": "1.7",
+      "questionPage": 6,
+      "answerPage": 4,
+      "pattern": "Winstrecht en stemrecht zijn verschillend; waarde van aandelen met alleen stemrecht afzonderlijk.",
+      "calculation": "(4600+5000)/(6000+10000)=0.6;0.6*(350000+80000)+9600*100+2000*100=1418000",
+      "answer": "Fort NVW€1.418.000 bij60% winstrecht en50% stemrecht."
+    },
+    {
+      "examId": "20260429",
+      "topicId": "sidestream-afnemend",
+      "question": "3.2-3",
+      "questionPage": 11,
+      "answerPage": 9,
+      "pattern": "Verkoper75%→koper60%: intern60%, derden25%, aanvullend15%. Voorraadwinst neemt af.",
+      "calculation": "(228000-180000)*0.6*0.8=23040",
+      "answer": "Interne nettovrijval€23.040."
+    },
+    {
+      "examId": "20260429",
+      "topicId": "downstream-vp",
+      "question": "4.1-4",
+      "questionPage": 13,
+      "answerPage": 13,
+      "pattern": "Downstreamwinst behoort volledig bij moeder; derdenpercentage80/20 splitst deze winst niet.",
+      "calculation": "(100000-80000)*0.8=16000",
+      "answer": "Volledige nettovrijval€16.000;20% belasting€4.000; geen interne boeking bij VP."
+    }
+  ]
+}

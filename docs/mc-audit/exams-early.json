@@ -1,0 +1,1724 @@
+{
+  "schemaVersion": 1,
+  "scope": "Zes vroege CAFA2-tentamens en hun antwoordmodellen, volledig inhoudelijk gelezen.",
+  "sourceDirectory": "C:\\Users\\HamudiAlkarradi\\Documents\\Claude\\Projects\\CAFA2\\Tentamens",
+  "countingRule": "Onderwerp telt eenmaal per unieke afnamedatum als expliciet gevraagd of noodzakelijk bepaald/berekend/geboekt in het antwoord. Meerdere labels mogelijk. Geen telling voor alleen achtergrond of algemene uitgangspunten. Machine-IC valt primair onder vaste-activa, niet ook automatisch onder voorraadleveringsrichting.",
+  "exams": [
+    {
+      "examId": "20210419",
+      "date": "2021-04-19",
+      "questionFile": "2021-04 CAFA2 - Tentamen.docx",
+      "answerFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "Opgave is DOCX: page=null voor de vraagbron; de antwoord-PDF geeft stabiele pagina- en vraagverwijzingen. Vraagnummering ontleend aan het antwoordmodel omdat DOCX automatische lijsten niet uitleest.",
+        "Inkoop eigen aandelen is alleen getoetst via de noodzakelijke invloed op zeggenschap en consolidatiekring; geen zelfstandige inkoopboeking.",
+        "Machinelevering telt als vaste-activa, niet ook als voorraadonderwerp downstream-NVW."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "reserves",
+        "eigen-aandelen",
+        "consolidatiekader",
+        "functionele-valuta",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "downstream-vp",
+        "upstream-nvw",
+        "vaste-activa",
+        "belastingen",
+        "proportioneel"
+      ]
+    },
+    {
+      "examId": "20211006",
+      "date": "2021-10-06",
+      "questionFile": "2021-10 CAFA2 - Tentamen.pdf",
+      "answerFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "Functionele valuta/methodekeuze niet geteld: beide omrekenmethoden zijn in de vragen opgelegd, zonder keuze- of begripsvraag.",
+        "Consolidatiekader niet geteld: opgave 1 toetst dochter/groepskwalificatie, geen consolidatieplicht of kring.",
+        "Bronfouten: antwoord p.5 credit belastinglast 4.880 moet bij 25% van 19.200 4.800 zijn. Valuta-uitwerking p.11-12 heeft o.a. strijdige voorraadaantallen/koersen en laat in de resultaatboeking p.12 het 70%-aandeel weg. Nieuwe vragen zelfstandig narekenen."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "reserves",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "downstream-nvw",
+        "downstream-vp",
+        "sidestream-afnemend",
+        "belastingen"
+      ]
+    },
+    {
+      "examId": "20220411",
+      "date": "2022-04-11",
+      "questionFile": "2022-04 CAFA2 - Tentamen.pdf",
+      "answerFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "Antwoordmodel gebruikt vanaf opgave 2 lokale vraagnummering, terwijl opgave doornummert; beide nummers zijn in refs vastgelegd.",
+        "Afnemend belang bepaald door verkoper DOMO 70% naar koper Enter 60%.",
+        "Geen eigen-aandelenonderwerp: aandelenbezit in het organogram is achtergrond, geen inkoop."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "reserves",
+        "consolidatiekader",
+        "functionele-valuta",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "upstream-vp",
+        "sidestream-afnemend",
+        "belastingen"
+      ]
+    },
+    {
+      "examId": "20221006",
+      "date": "2022-10-06",
+      "questionFile": "2022-10 CAFA2 - Tentamen.pdf",
+      "answerFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "40%-deelneming Predore wordt volgens casus integraal geconsolideerd; geen eigen conclusie over zeggenschap uit percentage alleen aan toevoegen.",
+        "Gewone reserves in goodwill-/consolidatieboekingen tellen niet als wettelijke/herwaarderingsreserve."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "consolidatiekader",
+        "functionele-valuta",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "downstream-nvw",
+        "upstream-vp",
+        "vaste-activa",
+        "belastingen",
+        "proportioneel"
+      ]
+    },
+    {
+      "examId": "20230411",
+      "date": "2023-04-11",
+      "questionFile": "20230411 Tentamen CAFA2.pdf",
+      "answerFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "Voorblad opgave heeft foutieve footer 11-04-2022, maar datumveld vermeldt 11 april 2023; overige pagina’s en antwoordmodel bevestigen 2023.",
+        "Geen consolidatiekader: kwalificatie dochter/deelneming in vraag 1 telt als zeggenschap, niet automatisch als consolidatieplicht/kring.",
+        "Antwoordmodel p.7 zet Aandeel derden bij voorraadtoename aan debetzijde; deze tabel balanceert daardoor niet. Correcte nieuwe MC zelfstandig opstellen/narekenen."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "eigen-aandelen",
+        "functionele-valuta",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "downstream-nvw",
+        "upstream-vp",
+        "sidestream-niet-afnemend",
+        "belastingen"
+      ]
+    },
+    {
+      "examId": "20231009",
+      "date": "2023-10-09",
+      "questionFile": "20231009 Tentamen CAFA2.pdf",
+      "answerFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+      "dateVerified": "Voorblad opgave en voorblad antwoordmodel; PDF-pagina 1, DOCX voorblad voor 20210419.",
+      "notes": [
+        "Functionele valuta/methodekeuze niet geteld: beide methoden zijn voorgeschreven en er is geen afzonderlijke methodekeuzevraag.",
+        "Slotkoers TCC: casus zegt 60% belang, maar ontvangen dividend en antwoordmodel rekenen 100%. De methode wordt getoetst; bedragen niet ongecorrigeerd voor nieuwe MC overnemen.",
+        "Meegekocht dividend bij VP (vraag 18) gaat volgens antwoordmodel in mindering op deelneming. Dit is een bruikbaar apart contrast met dividend uit na verwerving behaalde winst."
+      ],
+      "topicIds": [
+        "zeggenschap",
+        "waardering",
+        "goodwill",
+        "tijdstip",
+        "slotkoers",
+        "basisconsolidatie",
+        "downstream-nvw",
+        "upstream-vp",
+        "belastingen"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "examId": "20210419",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Toren / BV X",
+          "question": "5-6",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "BV A heeft 60% in BV B; BV C moet worden geconsolideerd wegens overheersende zeggenschap. BV X houdt 45% in C; na 20% inkoop eigen aandelen C is dit 45/80 = 56,25% van uitstaande stemrechten."
+        },
+        {
+          "section": "1 Toren / BV X",
+          "question": "5-6",
+          "page": 4,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "BV A heeft 60% in BV B; BV C moet worden geconsolideerd wegens overheersende zeggenschap. BV X houdt 45% in C; na 20% inkoop eigen aandelen C is dit 45/80 = 56,25% van uitstaande stemrechten."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Toren",
+          "question": "2-3",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Verloop en aansluiting NVW Foreest: begin 262.500, dividend -7.000, resultaat -17.500 en grondslagcorrecties +10.850; eind 248.850."
+        },
+        {
+          "section": "1 Toren",
+          "question": "2-3",
+          "page": 2,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Verloop en aansluiting NVW Foreest: begin 262.500, dividend -7.000, resultaat -17.500 en grondslagcorrecties +10.850; eind 248.850."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Toren",
+          "question": "1",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Goodwill berekenen na foutcorrectie en fair-valuecorrecties: betaald 350.000 minus 35% van gecorrigeerde NVW 750.000 = 87.500."
+        },
+        {
+          "section": "1 Toren",
+          "question": "1",
+          "page": 2,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Goodwill berekenen na foutcorrectie en fair-valuecorrecties: betaald 350.000 minus 35% van gecorrigeerde NVW 750.000 = 87.500."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "reserves",
+      "refs": [
+        {
+          "section": "1 Toren",
+          "question": "4",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Bepaal of wettelijke reserve deelneming moet worden gevormd; antwoord nee wegens niet-positief cumulatief resultaat sedert eerste waardering."
+        },
+        {
+          "section": "1 Toren",
+          "question": "4",
+          "page": 3,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bepaal of wettelijke reserve deelneming moet worden gevormd; antwoord nee wegens niet-positief cumulatief resultaat sedert eerste waardering."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "eigen-aandelen",
+      "refs": [
+        {
+          "section": "1 Toren / BV X",
+          "question": "6",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Indirect getoetst effect van eigen aandelen: C koopt 20% eigen aandelen in; X houdt 45% en verkrijgt daardoor 56,25% uitstaande stemrechten. Nodig om C wegens overheersende zeggenschap te consolideren. Geen inkoopjournaalpost gevraagd."
+        },
+        {
+          "section": "1 Toren / BV X",
+          "question": "6",
+          "page": 4,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Indirect getoetst effect van eigen aandelen: C koopt 20% eigen aandelen in; X houdt 45% en verkrijgt daardoor 56,25% uitstaande stemrechten. Nodig om C wegens overheersende zeggenschap te consolideren. Geen inkoopjournaalpost gevraagd."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": "1 Toren / BV X",
+          "question": "5-7",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Bepaal consolidatieplicht X en A, consolidatiekring X/A en methode voor joint venture E."
+        },
+        {
+          "section": "1 Toren / BV X",
+          "question": "5-7",
+          "page": 4,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bepaal consolidatieplicht X en A, consolidatiekring X/A en methode voor joint venture E."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": "4 Mondovi",
+          "question": "1",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Definieer functionele valuta als valuta van economische omgeving en belangrijkste zakelijke transacties."
+        },
+        {
+          "section": "4 Mondovi",
+          "question": "1",
+          "page": 11,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Definieer functionele valuta als valuta van economische omgeving en belangrijkste zakelijke transacties."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Mondovi",
+          "question": "2-4",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Bij functionele euro gebouwen/voorraden en kostprijs tegen historische koersen; monetaire positie leidt tot koersverlies 49.000 in resultaat (antwoord p.12)."
+        },
+        {
+          "section": "4 Mondovi",
+          "question": "2-4",
+          "page": 11,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bij functionele euro gebouwen/voorraden en kostprijs tegen historische koersen; monetaire positie leidt tot koersverlies 49.000 in resultaat (antwoord p.12)."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Mondovi",
+          "question": "5-7",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Bij functionele USD omrekenverschil op beginvermogen, resultaat en dividend: -530.000; aandeel 80% is -424.000, te boeken in reserve omrekenverschillen (p.13)."
+        },
+        {
+          "section": "4 Mondovi",
+          "question": "5-7",
+          "page": 12,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bij functionele USD omrekenverschil op beginvermogen, resultaat en dividend: -530.000; aandeel 80% is -424.000, te boeken in reserve omrekenverschillen (p.13)."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "2 Clinimed",
+          "question": "5a en 6a",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Elimineer eigen vermogen ApeldoornMedical tegen deelneming en belang derden 1.680.000; elimineer deelnemingsresultaat en aandeel derden 160.000."
+        },
+        {
+          "section": "2 Clinimed",
+          "question": "5a en 6a",
+          "page": 7,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Elimineer eigen vermogen ApeldoornMedical tegen deelneming en belang derden 1.680.000; elimineer deelnemingsresultaat en aandeel derden 160.000."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "downstream-vp",
+      "refs": [
+        {
+          "section": "3 Future Lighting",
+          "question": "2-4c",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Future levert aan 70%-dochter Modern; bij verkrijgingsprijs geen interne correctie, volledige voorraadwinst 105.000 in consolidatie elimineren (p.10)."
+        },
+        {
+          "section": "3 Future Lighting",
+          "question": "2-4c",
+          "page": 9,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Future levert aan 70%-dochter Modern; bij verkrijgingsprijs geen interne correctie, volledige voorraadwinst 105.000 in consolidatie elimineren (p.10)."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "upstream-nvw",
+      "refs": [
+        {
+          "section": "2 Clinimed",
+          "question": "1-6",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "ApeldoornMedical (60%-dochter) levert aan moeder Clinimed; voorraadwinst 32.000 naar 48.000, interne correctie 60%, eliminatie derden 40%."
+        },
+        {
+          "section": "2 Clinimed",
+          "question": "1-6",
+          "page": 6,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "ApeldoornMedical (60%-dochter) levert aan moeder Clinimed; voorraadwinst 32.000 naar 48.000, interne correctie 60%, eliminatie derden 40%."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "vaste-activa",
+      "refs": [
+        {
+          "section": "2 Clinimed, deel II",
+          "question": "7-9",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Moeder verkoopt inpakmachine aan dochter voor 21.000 bij concernboekwaarde 18.000; interne boekwinst 3.000, 60% interne correctie en 40% aanvullende eliminatie."
+        },
+        {
+          "section": "2 Clinimed, deel II",
+          "question": "7-9",
+          "page": 8,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Moeder verkoopt inpakmachine aan dochter voor 21.000 bij concernboekwaarde 18.000; interne boekwinst 3.000, 60% interne correctie en 40% aanvullende eliminatie."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Clinimed",
+          "question": "5b, 6b, 8-9",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Voorraadwinst splitsen in netto-effect en belastinglatentie tegen 20%; ook machinecorrectie met belastingvoorziening (p.8)."
+        },
+        {
+          "section": "2 Clinimed",
+          "question": "5b, 6b, 8-9",
+          "page": 7,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Voorraadwinst splitsen in netto-effect en belastinglatentie tegen 20%; ook machinecorrectie met belastingvoorziening (p.8)."
+        }
+      ]
+    },
+    {
+      "examId": "20210419",
+      "topicId": "proportioneel",
+      "refs": [
+        {
+          "section": "1 Toren / BV X",
+          "question": "7-8",
+          "page": null,
+          "sourceFile": "2021-04 CAFA2 - Tentamen.docx",
+          "evidence": "Joint venture E wordt proportioneel opgenomen; geconsolideerde omzet neemt 50% x 7.500.000 = 3.750.000 van E mee (p.5)."
+        },
+        {
+          "section": "1 Toren / BV X",
+          "question": "7-8",
+          "page": 4,
+          "sourceFile": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Joint venture E wordt proportioneel opgenomen; geconsolideerde omzet neemt 50% x 7.500.000 = 3.750.000 van E mee (p.5)."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Ahorn",
+          "question": "3, 6 en 8",
+          "page": 6,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Bereken stemrechten 7.000/14.000=50% (geen dochter); latere stemrechtovereenkomst en beleidsdeelname leiden tot groepsmaatschappij."
+        },
+        {
+          "section": "1 Ahorn",
+          "question": "3, 6 en 8",
+          "page": 4,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bereken stemrechten 7.000/14.000=50% (geen dochter); latere stemrechtovereenkomst en beleidsdeelname leiden tot groepsmaatschappij."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Ahorn",
+          "question": "4-5 en 7",
+          "page": 5,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Dividend onder NVW verminderen op deelneming; resultaat volgens grondslagen moeder 43.800. Bij Finken stemrechtaandelen afzonderlijk waarderen (antwoord p.4)."
+        },
+        {
+          "section": "1 Ahorn",
+          "question": "4-5 en 7",
+          "page": 3,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Dividend onder NVW verminderen op deelneming; resultaat volgens grondslagen moeder 43.800. Bij Finken stemrechtaandelen afzonderlijk waarderen (antwoord p.4)."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Ahorn",
+          "question": "1-2",
+          "page": 5,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Overname met aandelenruil plus contanten: koopsom 249.000; verworven NVW 129.000; goodwill 120.000 en aankoopboeking."
+        },
+        {
+          "section": "1 Ahorn",
+          "question": "1-2",
+          "page": 2,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Overname met aandelenruil plus contanten: koopsom 249.000; verworven NVW 129.000; goodwill 120.000 en aankoopboeking."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "reserves",
+      "refs": [
+        {
+          "section": "1 Ahorn",
+          "question": "2a",
+          "page": 5,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Eben boekt waardedaling gebouw 40.000 ten laste van herwaarderingsreserve."
+        },
+        {
+          "section": "1 Ahorn",
+          "question": "2a",
+          "page": 2,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Eben boekt waardedaling gebouw 40.000 ten laste van herwaarderingsreserve."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Norbertijner",
+          "question": "2-4",
+          "page": 12,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Historische koersen voor gebouw, verbouwing en voorraadlagen; monetaire positie en koersresultaat worden uitgewerkt. Antwoordmodel bevat te herrekenen inconsistenties."
+        },
+        {
+          "section": "4 Norbertijner",
+          "question": "2-4",
+          "page": 11,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Historische koersen voor gebouw, verbouwing en voorraadlagen; monetaire positie en koersresultaat worden uitgewerkt. Antwoordmodel bevat te herrekenen inconsistenties."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Norbertijner",
+          "question": "5-6",
+          "page": 13,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Omrekenverschil gebouw uitgesplitst; totale reserve omrekenverschillen berekenen uit beginvermogen, dividend en verlies en boeken."
+        },
+        {
+          "section": "4 Norbertijner",
+          "question": "5-6",
+          "page": 12,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Omrekenverschil gebouw uitgesplitst; totale reserve omrekenverschillen berekenen uit beginvermogen, dividend en verlies en boeken."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "2 Moderna / 3 Baldetti",
+          "question": "opg.2:3; opg.3:3a-b en 4a",
+          "page": 8,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Elimineer deelnemingsresultaten en aandeel derden; bij VP daarnaast deelneming/eigen vermogen en belang derden (antwoord p.8-9)."
+        },
+        {
+          "section": "2 Moderna / 3 Baldetti",
+          "question": "opg.2:3; opg.3:3a-b en 4a",
+          "page": 6,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Elimineer deelnemingsresultaten en aandeel derden; bij VP daarnaast deelneming/eigen vermogen en belang derden (antwoord p.8-9)."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": "2 Moderna",
+          "question": "1a, 2, 4a",
+          "page": 7,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Moderna levert aan 60%-dochter ChargeIT; interne voorraadwinst neemt toe van 64.000 naar 96.000; 60% interne en 40% aanvullende correctie."
+        },
+        {
+          "section": "2 Moderna",
+          "question": "1a, 2, 4a",
+          "page": 5,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Moderna levert aan 60%-dochter ChargeIT; interne voorraadwinst neemt toe van 64.000 naar 96.000; 60% interne en 40% aanvullende correctie."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "downstream-vp",
+      "refs": [
+        {
+          "section": "3 Baldetti",
+          "question": "1-4",
+          "page": 9,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Baldetti levert aan 80%-dochter Vinsanto; voorraadwinst daalt 100.000 naar 80.000; geen interne correctie bij VP, volledige winstcorrectie bij consolidatie."
+        },
+        {
+          "section": "3 Baldetti",
+          "question": "1-4",
+          "page": 8,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Baldetti levert aan 80%-dochter Vinsanto; voorraadwinst daalt 100.000 naar 80.000; geen interne correctie bij VP, volledige winstcorrectie bij consolidatie."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "sidestream-afnemend",
+      "refs": [
+        {
+          "section": "2 Moderna",
+          "question": "1b, 2, 4b en 5",
+          "page": 7,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Power4You (75%) levert aan ChargeIT (60%): afnemend belang. Interne correctie 60%, derden 25%, aanvullend concern 15%; voorraadwinst daalt 228.000 naar 180.000."
+        },
+        {
+          "section": "2 Moderna",
+          "question": "1b, 2, 4b en 5",
+          "page": 6,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Power4You (75%) levert aan ChargeIT (60%): afnemend belang. Interne correctie 60%, derden 25%, aanvullend concern 15%; voorraadwinst daalt 228.000 naar 180.000."
+        }
+      ]
+    },
+    {
+      "examId": "20211006",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Moderna / 3 Baldetti",
+          "question": "opg.2:2,4-5; opg.3:3-4",
+          "page": 8,
+          "sourceFile": "2021-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Belastinglast en latenties van IC-correcties expliciet boeken tegen 25%, met scheiding concern/derden."
+        },
+        {
+          "section": "2 Moderna / 3 Baldetti",
+          "question": "opg.2:2,4-5; opg.3:3-4",
+          "page": 7,
+          "sourceFile": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Belastinglast en latenties van IC-correcties expliciet boeken tegen 25%, met scheiding concern/derden."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Rosen",
+          "question": "1a, 2-3 en 7",
+          "page": 4,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Belegging versus deelneming bij gewijzigd duurzaam doel; 45% eigen stemrechten plus 5% overeenkomst is 50%, dus geen dochter (antwoord p.3)."
+        },
+        {
+          "section": "1 Rosen",
+          "question": "1a, 2-3 en 7",
+          "page": 2,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Belegging versus deelneming bij gewijzigd duurzaam doel; 45% eigen stemrechten plus 5% overeenkomst is 50%, dus geen dochter (antwoord p.3)."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Rosen",
+          "question": "1b, 4 en 6",
+          "page": 4,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Waardering belegging tegen VP/actuele waarde; resultaat en dividend deelneming boeken; eind-NVW Wald 175.200 na grondslagcorrecties."
+        },
+        {
+          "section": "1 Rosen",
+          "question": "1b, 4 en 6",
+          "page": 4,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Waardering belegging tegen VP/actuele waarde; resultaat en dividend deelneming boeken; eind-NVW Wald 175.200 na grondslagcorrecties."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Rosen / 3 Energizer",
+          "question": "5-6 en 18b",
+          "page": 7,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Betaalde koopsom Wald afleiden uit verworven NVW plus goodwill; goodwill afschrijven. VP-casus onderscheidt afschrijving huidig/voorgaand boekjaar (antwoord p.11)."
+        },
+        {
+          "section": "1 Rosen / 3 Energizer",
+          "question": "5-6 en 18b",
+          "page": 4,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Betaalde koopsom Wald afleiden uit verworven NVW plus goodwill; goodwill afschrijven. VP-casus onderscheidt afschrijving huidig/voorgaand boekjaar (antwoord p.11)."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "reserves",
+      "refs": [
+        {
+          "section": "1 Rosen",
+          "question": "4",
+          "page": 5,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Naast resultaat 225.000 en dividend 36.000 wettelijke reserve deelneming vormen respectievelijk laten vrijvallen."
+        },
+        {
+          "section": "1 Rosen",
+          "question": "4",
+          "page": 3,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Naast resultaat 225.000 en dividend 36.000 wettelijke reserve deelneming vormen respectievelijk laten vrijvallen."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": "1 Rosen",
+          "question": "8",
+          "page": 7,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Consolidatieplicht Rosen en Wald; consolidatiekringen op basis van dochter/groepsverhoudingen (antwoord p.6)."
+        },
+        {
+          "section": "1 Rosen",
+          "question": "8",
+          "page": 5,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Consolidatieplicht Rosen en Wald; consolidatiekringen op basis van dochter/groepsverhoudingen (antwoord p.6)."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": "4 Carini",
+          "question": "19",
+          "page": 12,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Leid functionele USD af uit reserve omrekenverschillen op balans; keuze slotkoersmethode motiveren."
+        },
+        {
+          "section": "4 Carini",
+          "question": "1",
+          "page": 12,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Leid functionele USD af uit reserve omrekenverschillen op balans; keuze slotkoersmethode motiveren."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Carini",
+          "question": "22-24",
+          "page": 13,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Historische koersen gebouwen/voorraad; afgewaardeerde voorraad tegen koers waarderingsdatum; monetaire-positieoverzicht geeft koerswinst 29.500."
+        },
+        {
+          "section": "4 Carini",
+          "question": "4-6",
+          "page": 13,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Historische koersen gebouwen/voorraad; afgewaardeerde voorraad tegen koers waarderingsdatum; monetaire-positieoverzicht geeft koerswinst 29.500."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Carini",
+          "question": "20-21",
+          "page": 13,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Omrekenverschil 100.700 inclusief emissie tegen eigen transactiedatum; 80%-aandeel reserve 80.560 boeken."
+        },
+        {
+          "section": "4 Carini",
+          "question": "2-3",
+          "page": 12,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Omrekenverschil 100.700 inclusief emissie tegen eigen transactiedatum; 80%-aandeel reserve 80.560 boeken."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "2 Mariëndal",
+          "question": "14a en 14c",
+          "page": 9,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "Elimineer deelnemingen/eigen vermogen met belang derden 925.000 en schuld/vordering Enter-DOMO 350.000."
+        },
+        {
+          "section": "2 Mariëndal",
+          "question": "6a en 6c",
+          "page": 9,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Elimineer deelnemingen/eigen vermogen met belang derden 925.000 en schuld/vordering Enter-DOMO 350.000."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": "3 Energizer",
+          "question": "15-18",
+          "page": 11,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "60%-dochter Bisseling levert aan Energizer; voorraadwinst 120.000 naar 160.000, toedeling 40% derden/60% concern zonder interne correctie."
+        },
+        {
+          "section": "3 Energizer",
+          "question": "1-4",
+          "page": 10,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "60%-dochter Bisseling levert aan Energizer; voorraadwinst 120.000 naar 160.000, toedeling 40% derden/60% concern zonder interne correctie."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "sidestream-afnemend",
+      "refs": [
+        {
+          "section": "2 Mariëndal",
+          "question": "9-14",
+          "page": 9,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "DOMO (70%) levert aan Enter (60%): afnemend belang. Voorraadwinst 128.000 naar 112.000; verdeling 60% intern, 30% derden, 10% concern."
+        },
+        {
+          "section": "2 Mariëndal",
+          "question": "1-6",
+          "page": 7,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "DOMO (70%) levert aan Enter (60%): afnemend belang. Voorraadwinst 128.000 naar 112.000; verdeling 60% intern, 30% derden, 10% concern."
+        }
+      ]
+    },
+    {
+      "examId": "20220411",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Mariëndal / 3 Energizer",
+          "question": "11, 13-14 en 16-17",
+          "page": 9,
+          "sourceFile": "2022-04 CAFA2 - Tentamen.pdf",
+          "evidence": "25% belastingeffect expliciet in interne correctie, IC-resultaatcorrecties en balanslatenties (ook antwoord p.9-10)."
+        },
+        {
+          "section": "2 Mariëndal / 3 Energizer",
+          "question": "3,5-6; opgave 3:2-3",
+          "page": 8,
+          "sourceFile": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "25% belastingeffect expliciet in interne correctie, IC-resultaatcorrecties en balanslatenties (ook antwoord p.9-10)."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Rast Holding",
+          "question": "4b en 7-8",
+          "page": 5,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Kwalificeer 15%-belang Schaf als deelneming en beoordeel invloed van betekenis; gezamenlijke zeggenschap Wieder betekent geen centrale leiding door één partner."
+        },
+        {
+          "section": "1 Rast Holding",
+          "question": "4b en 7-8",
+          "page": 5,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Kwalificeer 15%-belang Schaf als deelneming en beoordeel invloed van betekenis; gezamenlijke zeggenschap Wieder betekent geen centrale leiding door één partner."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Rast Holding",
+          "question": "2-3 en 8",
+          "page": 5,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Gecorrigeerd deelnemingsresultaat Filzen 98.000 en aansluiting NVW; invloed van betekenis bij 15% belang bepaalt NVW (antwoord p.6)."
+        },
+        {
+          "section": "1 Rast Holding",
+          "question": "2-3 en 8",
+          "page": 3,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Gecorrigeerd deelnemingsresultaat Filzen 98.000 en aansluiting NVW; invloed van betekenis bij 15% belang bepaalt NVW (antwoord p.6)."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Rast Holding / 3 Collina",
+          "question": "1 en 20b",
+          "page": 4,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Goodwill Filzen 800.000 - 80% x 868.000 = 105.600; bij Collina goodwillafschrijving over twee jaren boeken (antwoord p.12)."
+        },
+        {
+          "section": "1 Rast Holding / 3 Collina",
+          "question": "1 en 20b",
+          "page": 3,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Goodwill Filzen 800.000 - 80% x 868.000 = 105.600; bij Collina goodwillafschrijving over twee jaren boeken (antwoord p.12)."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "consolidatiekader",
+      "refs": [
+        {
+          "section": "1 Rast Holding",
+          "question": "4-5",
+          "page": 5,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Beoordeel of natuurlijke persoon als mede-aandeelhouder consolidatie verhindert en of Wieder tot groep/kring hoort; bepaal passende methode."
+        },
+        {
+          "section": "1 Rast Holding",
+          "question": "4-5",
+          "page": 4,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Beoordeel of natuurlijke persoon als mede-aandeelhouder consolidatie verhindert en of Wieder tot groep/kring hoort; bepaal passende methode."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": "4 Oldengaerde",
+          "question": "21",
+          "page": 12,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Beoordeel strijd tussen functionele CHF en koersresultaat in omgerekende winst-en-verliesrekening; passende slotkoersmethode verwerkt verschil in eigen vermogen."
+        },
+        {
+          "section": "4 Oldengaerde",
+          "question": "21",
+          "page": 13,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Beoordeel strijd tussen functionele CHF en koersresultaat in omgerekende winst-en-verliesrekening; passende slotkoersmethode verwerkt verschil in eigen vermogen."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Oldengaerde",
+          "question": "22-24",
+          "page": 13,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Historische koers gewone koelcel versus waarderingskoers afgewaardeerde koelcel; voorraadlagen en monetaire-positieoverzicht (p.14)."
+        },
+        {
+          "section": "4 Oldengaerde",
+          "question": "22-24",
+          "page": 13,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Historische koers gewone koelcel versus waarderingskoers afgewaardeerde koelcel; voorraadlagen en monetaire-positieoverzicht (p.14)."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Oldengaerde",
+          "question": "25-26",
+          "page": 14,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Omrekenverschil beginvermogen 44.000 plus resultaat 3.640 = 47.640, rechtstreeks boeken in eigen vermogen."
+        },
+        {
+          "section": "4 Oldengaerde",
+          "question": "25-26",
+          "page": 14,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Omrekenverschil beginvermogen 44.000 plus resultaat 3.640 = 47.640, rechtstreeks boeken in eigen vermogen."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "3 Collina",
+          "question": "20a en 20c",
+          "page": 11,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Bij VP deelneming en belang derden elimineren; eerder verwerkt dividend in geconsolideerde balans corrigeren (antwoord p.12)."
+        },
+        {
+          "section": "3 Collina",
+          "question": "20a en 20c",
+          "page": 11,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Bij VP deelneming en belang derden elimineren; eerder verwerkt dividend in geconsolideerde balans corrigeren (antwoord p.12)."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": "2 Molina",
+          "question": "12, 14b en 15b",
+          "page": 8,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Moeder Molina levert aan 90%-dochter Domenico; voorraadwinst 16.000 naar 18.000; interne correctie 90%, concernrest 10%."
+        },
+        {
+          "section": "2 Molina",
+          "question": "12, 14b en 15b",
+          "page": 7,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Moeder Molina levert aan 90%-dochter Domenico; voorraadwinst 16.000 naar 18.000; interne correctie 90%, concernrest 10%."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": "3 Collina",
+          "question": "17-19",
+          "page": 11,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Predore (40%-belang, integrale consolidatie gegeven) levert aan Collina; voorraadwinst daalt 75.000 naar 60.000, 60% derden en 40% concern."
+        },
+        {
+          "section": "3 Collina",
+          "question": "17-19",
+          "page": 10,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Predore (40%-belang, integrale consolidatie gegeven) levert aan Collina; voorraadwinst daalt 75.000 naar 60.000, 60% derden en 40% concern."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "vaste-activa",
+      "refs": [
+        {
+          "section": "2 Molina",
+          "question": "9-11, 14a en 15a",
+          "page": 7,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Machine verkocht voor 60.000 bij concernboekwaarde 45.000; interne winst 15.000, een jaar later 10.000 door 5.000 afschrijvingsrealisatie."
+        },
+        {
+          "section": "2 Molina",
+          "question": "9-11, 14a en 15a",
+          "page": 7,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Machine verkocht voor 60.000 bij concernboekwaarde 45.000; interne winst 15.000, een jaar later 10.000 door 5.000 afschrijvingsrealisatie."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Molina / 3 Collina",
+          "question": "10, 14-15, 18-19",
+          "page": 9,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "20% belastingeffect in machine- en voorraadcorrecties, actuele realisatie en balanslatenties."
+        },
+        {
+          "section": "2 Molina / 3 Collina",
+          "question": "10, 14-15, 18-19",
+          "page": 8,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "20% belastingeffect in machine- en voorraadcorrecties, actuele realisatie en balanslatenties."
+        }
+      ]
+    },
+    {
+      "examId": "20221006",
+      "topicId": "proportioneel",
+      "refs": [
+        {
+          "section": "1 Rast Holding",
+          "question": "5-6",
+          "page": 6,
+          "sourceFile": "2022-10 CAFA2 - Tentamen.pdf",
+          "evidence": "Joint venture Wieder evenredig voor 50% opnemen; geen aandeel derden uit deze proportionele consolidatie."
+        },
+        {
+          "section": "1 Rast Holding",
+          "question": "5-6",
+          "page": 5,
+          "sourceFile": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+          "evidence": "Joint venture Wieder evenredig voor 50% opnemen; geen aandeel derden uit deze proportionele consolidatie."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Moneglia",
+          "question": "1",
+          "page": 4,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Indirecte dochter en deelneming via bestuurdersbenoemingsrecht en v.o.f.; motiveer kwalificatie Rapallo en Farneta."
+        },
+        {
+          "section": "1 Moneglia",
+          "question": "1",
+          "page": 3,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Indirecte dochter en deelneming via bestuurdersbenoemingsrecht en v.o.f.; motiveer kwalificatie Rapallo en Farneta."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Moneglia",
+          "question": "4-6",
+          "page": 6,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Grondslagverschillen aanpassen in resultaat deelneming (420.000), dividend en resultaat boeken; afzonderlijke waarderingsgrondslagvraag Rapallo (p.5)."
+        },
+        {
+          "section": "1 Moneglia",
+          "question": "4-6",
+          "page": 4,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Grondslagverschillen aanpassen in resultaat deelneming (420.000), dividend en resultaat boeken; afzonderlijke waarderingsgrondslagvraag Rapallo (p.5)."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Moneglia / 3 Langeloo",
+          "question": "2-3 en 15-16",
+          "page": 5,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Goodwill na fair-value- en foutcorrecties; bij stapsgewijze verwerving Langeloo per tranche berekenen en verschillende afschrijvingstermijnen volgen (antwoord p.8)."
+        },
+        {
+          "section": "1 Moneglia / 3 Langeloo",
+          "question": "2-3 en 15-16",
+          "page": 4,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Goodwill na fair-value- en foutcorrecties; bij stapsgewijze verwerving Langeloo per tranche berekenen en verschillende afschrijvingstermijnen volgen (antwoord p.8)."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "eigen-aandelen",
+      "refs": [
+        {
+          "section": "1 Moneglia",
+          "question": "7",
+          "page": 6,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Rapallo koopt 25% eigen aandelen van Toane; inkoop ten laste van reserves 220.000, verkoopboeking bij Toane, resterend belang 35/75 en herrekening waarde."
+        },
+        {
+          "section": "1 Moneglia",
+          "question": "7",
+          "page": 5,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Rapallo koopt 25% eigen aandelen van Toane; inkoop ten laste van reserves 220.000, verkoopboeking bij Toane, resterend belang 35/75 en herrekening waarde."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "functionele-valuta",
+      "refs": [
+        {
+          "section": "4 Alten",
+          "question": "20",
+          "page": 11,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Economische omstandigheden Store versus Bora beoordelen: lokale autonome kasstromen versus financiering/inkopen en verlengstuk van Nederlandse moeder."
+        },
+        {
+          "section": "4 Alten",
+          "question": "20",
+          "page": 10,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Economische omstandigheden Store versus Bora beoordelen: lokale autonome kasstromen versus financiering/inkopen en verlengstuk van Nederlandse moeder."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Alten",
+          "question": "21-23",
+          "page": 13,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Machines/voorraad, afwaardering en afschrijving tegen juiste historische/waarderingskoersen; monetaire positie van -50.000 naar 120.000 NOK, koerswinst 5.800 (p.11)."
+        },
+        {
+          "section": "4 Alten",
+          "question": "21-23",
+          "page": 10,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Machines/voorraad, afwaardering en afschrijving tegen juiste historische/waarderingskoersen; monetaire positie van -50.000 naar 120.000 NOK, koerswinst 5.800 (p.11)."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Alten",
+          "question": "24-25",
+          "page": 14,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Reserve verklaren met beginvermogen, dividend en resultaat: 29.750 positief; deelnemingsboeking en dividend."
+        },
+        {
+          "section": "4 Alten",
+          "question": "24-25",
+          "page": 12,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Reserve verklaren met beginvermogen, dividend en resultaat: 29.750 positief; deelnemingsboeking en dividend."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "2 Bruggeman / 3 Langeloo",
+          "question": "14, 16a, 18a en 19",
+          "page": 8,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Onderlinge lening 225.000 en rente 4.791,66 elimineren; VP-deelneming per tranche, dividend en aansluiting geconsolideerd resultaat met derden (antwoord p.8-9)."
+        },
+        {
+          "section": "2 Bruggeman / 3 Langeloo",
+          "question": "14, 16a, 18a en 19",
+          "page": 7,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Onderlinge lening 225.000 en rente 4.791,66 elimineren; VP-deelneming per tranche, dividend en aansluiting geconsolideerd resultaat met derden (antwoord p.8-9)."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": "2 Bruggeman",
+          "question": "9, 11 en 13",
+          "page": 8,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Bruggeman levert aan Assemblage (90%); voorraadwinst daalt 140.000 naar 120.000, 90% intern en 10% aanvullend concern."
+        },
+        {
+          "section": "2 Bruggeman",
+          "question": "9, 11 en 13",
+          "page": 6,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Bruggeman levert aan Assemblage (90%); voorraadwinst daalt 140.000 naar 120.000, 90% intern en 10% aanvullend concern."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": "3 Langeloo",
+          "question": "17-19",
+          "page": 10,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Norch (80%) levert aan Langeloo; voorraadwinst daalt 40.000 naar 24.000, verdeling 80% concern/20% derden; resultaat aansluiten."
+        },
+        {
+          "section": "3 Langeloo",
+          "question": "17-19",
+          "page": 9,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Norch (80%) levert aan Langeloo; voorraadwinst daalt 40.000 naar 24.000, verdeling 80% concern/20% derden; resultaat aansluiten."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "sidestream-niet-afnemend",
+      "refs": [
+        {
+          "section": "2 Bruggeman",
+          "question": "8, 10-12",
+          "page": 8,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "Gieterij (70%) levert aan Assemblage (90%): niet-afnemend belang; voorraadwinst 50.000 naar 70.000, intern 70%, derden 30%."
+        },
+        {
+          "section": "2 Bruggeman",
+          "question": "8, 10-12",
+          "page": 6,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Gieterij (70%) levert aan Assemblage (90%): niet-afnemend belang; voorraadwinst 50.000 naar 70.000, intern 70%, derden 30%."
+        }
+      ]
+    },
+    {
+      "examId": "20230411",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Bruggeman / 3 Langeloo",
+          "question": "11-13 en 18-19",
+          "page": 8,
+          "sourceFile": "20230411 Tentamen CAFA2.pdf",
+          "evidence": "20% belastingeffect in vrijval downstream, mutatie sidestream, balanslatentie en upstream-VP-resultaatcorrectie."
+        },
+        {
+          "section": "2 Bruggeman / 3 Langeloo",
+          "question": "11-13 en 18-19",
+          "page": 7,
+          "sourceFile": "20230411 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "20% belastingeffect in vrijval downstream, mutatie sidestream, balanslatentie en upstream-VP-resultaatcorrectie."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "zeggenschap",
+      "refs": [
+        {
+          "section": "1 Voorn",
+          "question": "1 en 5",
+          "page": 4,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Vermoede deelneming en stemrechtsoverdracht; flex-bv Patti: 35/65 stemrechten betekent dochter, winstrechten afzonderlijk berekenen (p.5)."
+        },
+        {
+          "section": "1 Voorn",
+          "question": "1 en 5",
+          "page": 3,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Vermoede deelneming en stemrechtsoverdracht; flex-bv Patti: 35/65 stemrechten betekent dochter, winstrechten afzonderlijk berekenen (p.5)."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "waardering",
+      "refs": [
+        {
+          "section": "1 Voorn",
+          "question": "1, 3-4, 6-7",
+          "page": 5,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "NVW Noto na grondslagcorrecties en dividend; flex-aandelen waarderen en dividend NVW versus VP afzonderlijk boeken (p.5)."
+        },
+        {
+          "section": "1 Voorn",
+          "question": "1, 3-4, 6-7",
+          "page": 4,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "NVW Noto na grondslagcorrecties en dividend; flex-aandelen waarderen en dividend NVW versus VP afzonderlijk boeken (p.5)."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "goodwill",
+      "refs": [
+        {
+          "section": "1 Voorn / 3 Norch",
+          "question": "2, 16 en 20c",
+          "page": 5,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Aandelenruil inclusief goodwill; Norch goodwill 760.000 en afschrijving 152.000 bij consolidatie (antwoord p.9-10)."
+        },
+        {
+          "section": "1 Voorn / 3 Norch",
+          "question": "2, 16 en 20c",
+          "page": 4,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Aandelenruil inclusief goodwill; Norch goodwill 760.000 en afschrijving 152.000 bij consolidatie (antwoord p.9-10)."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "tijdstip",
+      "refs": [
+        {
+          "section": "4 Neige, Genser",
+          "question": "24-25",
+          "page": 16,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Gebouw en nieuwe loods tegen historische koersen; beschadigde vrachtwagen en afgewaardeerde voorraad; koerswinst monetaire positie 18.020 (p.12-13)."
+        },
+        {
+          "section": "4 Neige, Genser",
+          "question": "24-25",
+          "page": 11,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Gebouw en nieuwe loods tegen historische koersen; beschadigde vrachtwagen en afgewaardeerde voorraad; koerswinst monetaire positie 18.020 (p.12-13)."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "slotkoers",
+      "refs": [
+        {
+          "section": "4 Neige, TCC",
+          "question": "22-23",
+          "page": 14,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Machines tegen slotkoers en reserve omrekenverschillen via vermogen/dividend/resultaat. Casus en antwoordmodel zijn inconsistent over 60%-aandeel; niet ongewijzigd gebruiken."
+        },
+        {
+          "section": "4 Neige, TCC",
+          "question": "22-23",
+          "page": 11,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Machines tegen slotkoers en reserve omrekenverschillen via vermogen/dividend/resultaat. Casus en antwoordmodel zijn inconsistent over 60%-aandeel; niet ongewijzigd gebruiken."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "basisconsolidatie",
+      "refs": [
+        {
+          "section": "2 Gluton / 3 Norch",
+          "question": "12 en 20a-b, 21",
+          "page": 9,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Elimineer resultaat deelneming, aandeel derden, rente en doorberekende directiekosten; VP-deelneming en belang derden plus geconsolideerd eigen vermogen (p.10)."
+        },
+        {
+          "section": "2 Gluton / 3 Norch",
+          "question": "12 en 20a-b, 21",
+          "page": 7,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Elimineer resultaat deelneming, aandeel derden, rente en doorberekende directiekosten; VP-deelneming en belang derden plus geconsolideerd eigen vermogen (p.10)."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "downstream-nvw",
+      "refs": [
+        {
+          "section": "2 Gluton",
+          "question": "8-10, 12-15",
+          "page": 9,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Gluton levert aan 70%-dochter Seal-it; voorraad daalt 150 naar 50 vaten, interne marge 100 per vat; vrijval en aanvullende concerncorrectie."
+        },
+        {
+          "section": "2 Gluton",
+          "question": "8-10, 12-15",
+          "page": 6,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Gluton levert aan 70%-dochter Seal-it; voorraad daalt 150 naar 50 vaten, interne marge 100 per vat; vrijval en aanvullende concerncorrectie."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "upstream-vp",
+      "refs": [
+        {
+          "section": "3 Norch",
+          "question": "19-21",
+          "page": 12,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "Roon (60%) levert aan moeder Norch; eindvoorraadwinst 54.000, 60% concern/40% derden; consolidatiecorrecties en eigen vermogen."
+        },
+        {
+          "section": "3 Norch",
+          "question": "19-21",
+          "page": 9,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "Roon (60%) levert aan moeder Norch; eindvoorraadwinst 54.000, 60% concern/40% derden; consolidatiecorrecties en eigen vermogen."
+        }
+      ]
+    },
+    {
+      "examId": "20231009",
+      "topicId": "belastingen",
+      "refs": [
+        {
+          "section": "2 Gluton / 3 Norch",
+          "question": "10, 12 en 20d",
+          "page": 9,
+          "sourceFile": "20231009 Tentamen CAFA2.pdf",
+          "evidence": "20% belastingeffect bij gerealiseerde winst en IC-eindvoorraad; VP-correctie 54.000 splitsen in netto concern, netto derden en latenties (p.10)."
+        },
+        {
+          "section": "2 Gluton / 3 Norch",
+          "question": "10, 12 en 20d",
+          "page": 7,
+          "sourceFile": "20231009 Uitwerking tentamen CAFA2.pdf",
+          "evidence": "20% belastingeffect bij gerealiseerde winst en IC-eindvoorraad; VP-correctie 54.000 splitsen in netto concern, netto derden en latenties (p.10)."
+        }
+      ]
+    }
+  ],
+  "authoringAnchors": [
+    {
+      "topicId": "eigen-aandelen",
+      "examId": "20230411",
+      "section": "1",
+      "question": "7",
+      "answerPage": 5,
+      "pattern": "Inkoop bij de uitgevende vennootschap en verkoop bij aandeelhouder onderscheiden; resterende uitstaande aandelen vormen de nieuwe noemer.",
+      "numbers": "60% bezit, verkoop 25 procentpunten; resterend 35/75; oude EV 760.000, inkoopprijs 220.000; restwaarde 252.000."
+    },
+    {
+      "topicId": "reserves",
+      "examId": "20220411",
+      "section": "1",
+      "question": "4",
+      "answerPage": 3,
+      "pattern": "Resultaat doet gebonden reserve toenemen; ontvangen dividend kan dezelfde reserve vrijmaken.",
+      "numbers": "45% x 500.000 resultaat = 225.000; 45% x 80.000 dividend = 36.000; netto reservetoename 189.000."
+    },
+    {
+      "topicId": "consolidatiekader",
+      "examId": "20210419",
+      "section": "1",
+      "question": "5-8",
+      "answerPage": 4,
+      "pattern": "Groepshoofd, subgroepshoofd en consolidatiekring afzonderlijk bepalen; niet elke deelneming wordt integraal geconsolideerd.",
+      "numbers": "X en A consolidatieplicht; joint venture E 50% proportioneel; C meerderheid door eigen-aandeleninkoop."
+    },
+    {
+      "topicId": "proportioneel",
+      "examId": "20221006",
+      "section": "1",
+      "question": "4-6",
+      "answerPage": 5,
+      "pattern": "Gezamenlijke zeggenschap -> evenredige opname bij gegeven toepasselijke voorwaarden; hierdoor geen derdenpost.",
+      "numbers": "Wieder 50/50 joint venture."
+    },
+    {
+      "topicId": "goodwill",
+      "examId": "20230411",
+      "section": "3",
+      "question": "15-16",
+      "answerPage": 8,
+      "pattern": "Stapsgewijze aankoop: goodwill en afschrijving per verwerving apart, niet over de totale koopsom met één verwervingsdatum.",
+      "numbers": "25% x 4 mln versus 1,2 mln geeft 0,2 mln; 55% x 4,8 mln versus 3 mln geeft 0,36 mln; alleen latere tranche schrijft nog 72.000 per jaar af."
+    },
+    {
+      "topicId": "vaste-activa",
+      "examId": "20221006",
+      "section": "2",
+      "question": "9-11,14a,15a",
+      "answerPage": 7,
+      "pattern": "Interne verkoopprijs vergelijken met concernboekwaarde; verschil in afschrijving realiseert jaarlijkse interne boekwinst.",
+      "numbers": "Verkoop 60.000, concernboekwaarde 45.000; interne winst 15.000; resterende levensduur 3 jaar; jaarlijkse vrijval 5.000."
+    },
+    {
+      "topicId": "sidestream-afnemend",
+      "examId": "20220411",
+      "section": "2",
+      "question": "9-14",
+      "answerPage": 7,
+      "pattern": "Verkoper 70% -> koper 60%: intern 60%, derden verkoper 30%, aanvullende concerncorrectie 10%.",
+      "numbers": "Winst 128.000 naar 112.000; vrijval 16.000; netto interne correctie 16.000 x 60% x 75% = 7.200."
+    },
+    {
+      "topicId": "sidestream-niet-afnemend",
+      "examId": "20230411",
+      "section": "2",
+      "question": "8,10-12",
+      "answerPage": 6,
+      "pattern": "Verkoper 70% -> koper 90%: intern 70%, derden 30%; geen extra concernpercentage.",
+      "numbers": "Voorraadwinst 50.000 naar 70.000; interne resultaatcorrectie 20.000 x 70% x 80% = 11.200."
+    },
+    {
+      "topicId": "basisconsolidatie",
+      "examId": "20230411",
+      "section": "2",
+      "question": "14",
+      "answerPage": 7,
+      "pattern": "Onderlinge lening elimineren en tijdsevenredige rente apart berekenen; geen voorraadlevering nodig.",
+      "numbers": "250.000 lening, 25.000 aflossing op 1 augustus, 2% rente: 2% x (250.000 x 7/12 + 225.000 x 5/12) = 4.791,67."
+    },
+    {
+      "topicId": "waardering",
+      "examId": "20231009",
+      "section": "3",
+      "question": "18",
+      "answerPage": 9,
+      "pattern": "VP-dividend onderscheiden naar winstperiode: meegekocht dividend vermindert kostprijs, regulier resultaatdividend vormt opbrengst.",
+      "numbers": "60% x 600.000 = 360.000 uit voor aankoop behaalde winst vermindert deelneming 5,8 mln naar 5,44 mln."
+    },
+    {
+      "topicId": "tijdstip",
+      "examId": "20220411",
+      "section": "4",
+      "question": "22-24",
+      "answerPage": 13,
+      "pattern": "Historische aanschafkoers versus koers op afwaarderingsdatum; afwaardering in euro is verschil tussen beide omgerekende waarden.",
+      "numbers": "50 printers: aanschaf USD 1.100 x 0,86 versus opbrengstwaarde USD 200 x 0,89; afwaardering 38.400 euro."
+    },
+    {
+      "topicId": "slotkoers",
+      "examId": "20220411",
+      "section": "4",
+      "question": "20-21",
+      "answerPage": 12,
+      "pattern": "Reserve omrekenverschillen uitsplitsen in beginvermogen, resultaat en aandelenemissie op transactiedatum.",
+      "numbers": "Emissie USD 250.000 tegen 0,87 versus slot 0,89 geeft 5.000; totale reserve-mutatie op 100% 100.700; deelnemingsaandeel 80%."
+    },
+    {
+      "topicId": "functionele-valuta",
+      "examId": "20230411",
+      "section": "4",
+      "question": "20",
+      "answerPage": 10,
+      "pattern": "Bepaal valuta vanuit activiteiten, financiering en kasstromen; vestigingsland is niet genoeg.",
+      "numbers": "Zelfstandige Store versus door Nederlandse moeder gefinancierde Bora met inkopen in euro."
+    }
+  ]
+}

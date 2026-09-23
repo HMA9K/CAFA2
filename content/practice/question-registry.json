@@ -1,0 +1,510 @@
+{
+  "dn-nvw-margewissel": {
+    "code": "nvw",
+    "id": 31
+  },
+  "dn-nvw-eerstejaar100": {
+    "code": "nvw",
+    "id": 32
+  },
+  "dn-nvw-geendubbeltelling": {
+    "code": "nvw",
+    "id": 33
+  },
+  "dn-nvw-gelijkewinst": {
+    "code": "nvw",
+    "id": 34
+  },
+  "dn-nvw-resultaataansluiting": {
+    "code": "nvw",
+    "id": 35
+  },
+  "dn-nvw-doorlevering100procent": {
+    "code": "nvw",
+    "id": 36
+  },
+  "dn-nvw-derdenongewijzigd": {
+    "code": "nvw",
+    "id": 37
+  },
+  "dn-nvw-passivastand": {
+    "code": "nvw",
+    "id": 38
+  },
+  "dn-nvw-administratieplaats": {
+    "code": "nvw",
+    "id": 39
+  },
+  "dn-vp-belangvergelijking": {
+    "code": "hk",
+    "id": 31
+  },
+  "dn-vp-verkeerdeinterneboeking": {
+    "code": "hk",
+    "id": 32
+  },
+  "dn-vp-voorraadopslag": {
+    "code": "hk",
+    "id": 33
+  },
+  "dn-vp-doorleveringanalyse": {
+    "code": "hk",
+    "id": 34
+  },
+  "dn-vp-vrijvalgeeninkoop": {
+    "code": "hk",
+    "id": 35
+  },
+  "dn-vp-voorraadgelijk": {
+    "code": "hk",
+    "id": 36
+  },
+  "dn-vp-derdenfout": {
+    "code": "hk",
+    "id": 37
+  },
+  "up-nvw-eerstejaar100": {
+    "code": "nvw",
+    "id": 40
+  },
+  "up-nvw-eindwaarde": {
+    "code": "nvw",
+    "id": 41
+  },
+  "up-nvw-omgekeerdeaansluiting": {
+    "code": "nvw",
+    "id": 42
+  },
+  "up-nvw-resultaatna-mutatie": {
+    "code": "nvw",
+    "id": 43
+  },
+  "up-nvw-gevorderdresultaat": {
+    "code": "nvw",
+    "id": 44
+  },
+  "up-nvw-percentagesdiagnose": {
+    "code": "nvw",
+    "id": 45
+  },
+  "up-nvw-volledigerealistaie": {
+    "code": "nvw",
+    "id": 46
+  },
+  "up-vp-eerstejaarvolledig": {
+    "code": "hk",
+    "id": 38
+  },
+  "up-vp-dividendblijft": {
+    "code": "hk",
+    "id": 39
+  },
+  "up-vp-derdenstandmutatie": {
+    "code": "hk",
+    "id": 40
+  },
+  "up-vp-marge-inventarisatie": {
+    "code": "hk",
+    "id": 41
+  },
+  "up-vp-gecorrigeerderesultaatvergelijking": {
+    "code": "hk",
+    "id": 42
+  },
+  "up-vp-winsttoenamejournaal": {
+    "code": "hk",
+    "id": 43
+  },
+  "basis-internefeevolledig": {
+    "code": "nvw",
+    "id": 47
+  },
+  "basis-lening-rentegrens": {
+    "code": "nvw",
+    "id": 48
+  },
+  "kap-zeg-eigen-rekening": {
+    "code": "kap",
+    "id": 31
+  },
+  "kap-zeg-vof-aansprakelijkheid": {
+    "code": "kap",
+    "id": 32
+  },
+  "kap-zeg-geen-dochterdoorgifte": {
+    "code": "kap",
+    "id": 33
+  },
+  "kap-zeg-doelwijziging": {
+    "code": "kap",
+    "id": 34
+  },
+  "kap-waarde-duurzame-daling": {
+    "code": "kap",
+    "id": 35
+  },
+  "kap-waarde-herstel-plafond": {
+    "code": "kap",
+    "id": 36
+  },
+  "kap-waarde-beurseffecten": {
+    "code": "kap",
+    "id": 37
+  },
+  "kap-good-badwill-aankoop": {
+    "code": "kap",
+    "id": 38
+  },
+  "kap-good-badwill-vervolg": {
+    "code": "kap",
+    "id": 39
+  },
+  "kap-good-voorziening-gevoeligheid": {
+    "code": "kap",
+    "id": 40
+  },
+  "kap-res-grondslag-eerst": {
+    "code": "kap",
+    "id": 41
+  },
+  "kap-res-beperkte-ruimte": {
+    "code": "kap",
+    "id": 42
+  },
+  "kap-res-stockdividend": {
+    "code": "kap",
+    "id": 43
+  },
+  "kap-res-verlies-vrijval": {
+    "code": "kap",
+    "id": 44
+  },
+  "kap-res-daling-onder-kostprijs": {
+    "code": "kap",
+    "id": 45
+  },
+  "kap-res-realisatie-gebonden": {
+    "code": "kap",
+    "id": 46
+  },
+  "kap-res-verkoop-vrijval": {
+    "code": "kap",
+    "id": 47
+  },
+  "kap-eigen-fout-activering": {
+    "code": "kap",
+    "id": 48
+  },
+  "kap-eigen-negatieve-reserves": {
+    "code": "kap",
+    "id": 49
+  },
+  "kap-eigen-verkoper-deelverkoop": {
+    "code": "kap",
+    "id": 50
+  },
+  "kap-eigen-restbelang-herrekening": {
+    "code": "kap",
+    "id": 51
+  },
+  "kap-eigen-voor-dochterdatum": {
+    "code": "kap",
+    "id": 52
+  },
+  "kap-eigen-varianten-vergelijken": {
+    "code": "kap",
+    "id": 53
+  },
+  "kap-eigen-dochter-inkoop": {
+    "code": "kap",
+    "id": 54
+  },
+  "kap-eigen-toelichting": {
+    "code": "kap",
+    "id": 55
+  },
+  "kap-kader-natuurlijk-persoon": {
+    "code": "kap",
+    "id": 56
+  },
+  "kap-kader-zonder-aandelen": {
+    "code": "kap",
+    "id": 57
+  },
+  "kap-kader-groepsdeel": {
+    "code": "kap",
+    "id": 58
+  },
+  "kap-kader-omzet-kring": {
+    "code": "kap",
+    "id": 59
+  },
+  "kap-kader-gezamenlijke-betekenis": {
+    "code": "kap",
+    "id": 60
+  },
+  "kap-kader-verkoopplan": {
+    "code": "kap",
+    "id": 61
+  },
+  "kap-kader-bezwaar-kleine-groep": {
+    "code": "kap",
+    "id": 62
+  },
+  "kap-kader-408-voorwaarden": {
+    "code": "kap",
+    "id": 63
+  },
+  "kap-kader-408-effecten": {
+    "code": "kap",
+    "id": 64
+  },
+  "prop-methode-grondslag": {
+    "code": "nvw",
+    "id": 49
+  },
+  "prop-geen-derden": {
+    "code": "nvw",
+    "id": 50
+  },
+  "prop-lening-restant": {
+    "code": "nvw",
+    "id": 51
+  },
+  "prop-managementfee": {
+    "code": "nvw",
+    "id": 52
+  },
+  "prop-upstream-niet-dubbel": {
+    "code": "nvw",
+    "id": 53
+  },
+  "prop-downstream-restcorrectie": {
+    "code": "nvw",
+    "id": 54
+  },
+  "prop-combinatie-voorraden": {
+    "code": "nvw",
+    "id": 55
+  },
+  "prop-resultaat-eliminatie": {
+    "code": "nvw",
+    "id": 56
+  },
+  "prop-ev-eliminatie": {
+    "code": "nvw",
+    "id": 57
+  },
+  "prop-contract-zeggenschap": {
+    "code": "nvw",
+    "id": 58
+  },
+  "side-na-gelijk": {
+    "code": "nvw",
+    "id": 59
+  },
+  "side-na-vrijval-mutate": {
+    "code": "nvw",
+    "id": 60
+  },
+  "side-na-boekwaarde-verkoper": {
+    "code": "nvw",
+    "id": 61
+  },
+  "side-na-derden-jaar": {
+    "code": "nvw",
+    "id": 62
+  },
+  "side-na-omzetdeel": {
+    "code": "nvw",
+    "id": 63
+  },
+  "side-na-geen-product": {
+    "code": "nvw",
+    "id": 64
+  },
+  "side-af-derdenpercentage": {
+    "code": "nvw",
+    "id": 65
+  },
+  "side-af-resultaatverschil": {
+    "code": "nvw",
+    "id": 66
+  },
+  "side-af-beginreserve": {
+    "code": "nvw",
+    "id": 67
+  },
+  "side-af-waarde-deelnemingen": {
+    "code": "nvw",
+    "id": 68
+  },
+  "side-af-balansboeking": {
+    "code": "nvw",
+    "id": 69
+  },
+  "side-af-richting-wisselt": {
+    "code": "nvw",
+    "id": 70
+  },
+  "side-af-sluitende-vrijval": {
+    "code": "nvw",
+    "id": 71
+  },
+  "mva-boekwaarde-restwaarde": {
+    "code": "nvw",
+    "id": 72
+  },
+  "mva-groepsboekwaarde-einde": {
+    "code": "nvw",
+    "id": 73
+  },
+  "mva-halfjaar-realisatie": {
+    "code": "nvw",
+    "id": 74
+  },
+  "mva-upstream-rekening": {
+    "code": "nvw",
+    "id": 75
+  },
+  "mva-upstream-derden-realisatie": {
+    "code": "nvw",
+    "id": 76
+  },
+  "mva-overlopende-na-tweejaar": {
+    "code": "nvw",
+    "id": 77
+  },
+  "mva-rest-afschrijving": {
+    "code": "nvw",
+    "id": 78
+  },
+  "mva-groepseffect-vervolgjaar": {
+    "code": "nvw",
+    "id": 79
+  },
+  "tax-bruto-netto-voorraad": {
+    "code": "nvw",
+    "id": 80
+  },
+  "tax-stand-mutatie": {
+    "code": "nvw",
+    "id": 81
+  },
+  "tax-downstream-interne-boeking": {
+    "code": "nvw",
+    "id": 82
+  },
+  "tax-downstream-aanvullend": {
+    "code": "nvw",
+    "id": 83
+  },
+  "tax-upstream-nvw-nettoboeking": {
+    "code": "nvw",
+    "id": 84
+  },
+  "tax-derden-netto-jaar": {
+    "code": "nvw",
+    "id": 85
+  },
+  "tax-side-som-latenties": {
+    "code": "nvw",
+    "id": 86
+  },
+  "tax-vrijval-richting": {
+    "code": "nvw",
+    "id": 87
+  },
+  "tax-machine-eindlatentie": {
+    "code": "nvw",
+    "id": 88
+  },
+  "tax-geen-terugbetaling": {
+    "code": "nvw",
+    "id": 89
+  },
+  "tax-rente-geen-voorraadwinst": {
+    "code": "nvw",
+    "id": 90
+  },
+  "tax-proportioneel-intern-deel": {
+    "code": "nvw",
+    "id": 91
+  },
+  "tax-vrijval-jaar-vs-balans": {
+    "code": "nvw",
+    "id": 92
+  },
+  "tax-van-netto-naar-bruto": {
+    "code": "nvw",
+    "id": 93
+  },
+  "tax-upstream-vp-compleet": {
+    "code": "nvw",
+    "id": 94
+  },
+  "fx-afhankelijk": {
+    "code": "val",
+    "id": 31
+  },
+  "fx-zelfstandig": {
+    "code": "val",
+    "id": 32
+  },
+  "fx-twee-dochters": {
+    "code": "val",
+    "id": 33
+  },
+  "fx-reserve-signaal": {
+    "code": "val",
+    "id": 34
+  },
+  "fx-resultaatfout": {
+    "code": "val",
+    "id": 35
+  },
+  "fx-gemengde-signalen": {
+    "code": "val",
+    "id": 36
+  },
+  "fx-drie-valutas": {
+    "code": "val",
+    "id": 37
+  },
+  "fx-monetaire-aansluiting": {
+    "code": "val",
+    "id": 38
+  },
+  "fx-dividend-middenjaar": {
+    "code": "val",
+    "id": 39
+  },
+  "fx-kapitaalstorting": {
+    "code": "val",
+    "id": 40
+  },
+  "fx-moederboeking": {
+    "code": "val",
+    "id": 41
+  },
+  "fx-gebouwverloop": {
+    "code": "val",
+    "id": 42
+  },
+  "fx-balanscontrole": {
+    "code": "val",
+    "id": 43
+  },
+  "fx-stand-versus-mutatie": {
+    "code": "val",
+    "id": 44
+  },
+  "fx-koerswinst-al-in-resultaat": {
+    "code": "val",
+    "id": 45
+  },
+  "fx-verliesjaar": {
+    "code": "val",
+    "id": 46
+  }
+}

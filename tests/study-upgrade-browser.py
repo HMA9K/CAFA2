@@ -66,7 +66,8 @@ async def run():
           rect=await page.locator('.study-theme-menu').bounding_box()
           assert rect and rect['x']>=0 and rect['x']+rect['width']<=321,rect
           await shot('theme-menu-320');await page.locator('[data-theme-choice=light]').click()
-          await page.locator('[data-tool-link=wetsartikelen]').click()
+          await page.locator('#study-tools-menu>summary').click()
+          await page.locator('#study-tools-menu a[href$="#wetsartikelen"]').click()
           await page.locator('#study-law-search').fill('389')
           assert await page.locator('[data-law-entry]:visible').count()>=1
           await hash('wet-389');await page.locator('#wet-389').wait_for(state='visible')

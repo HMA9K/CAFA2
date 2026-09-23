@@ -75,8 +75,8 @@
     var count = question.querySelector('.question-count');
     if (count) {
       count.classList.add('practice-question-count');
-      count.innerHTML = 'VRAAG <span>' + id + '</span> VAN <span>30</span>';
-      count.setAttribute('aria-label', 'Vraag ' + id + ' van 30');
+      count.innerHTML = 'VRAAG <span>' + id + '</span> VAN <span>'+topic.questions.length+'</span>';
+      count.setAttribute('aria-label', 'Vraag ' + id + ' van ' + topic.questions.length);
     }
     var footer = question.querySelector('.question-nav');
     var actions = question.querySelector('.nav-right');

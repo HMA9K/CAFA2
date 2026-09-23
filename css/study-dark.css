@@ -750,7 +750,7 @@ html[data-study-theme=dark] .cafa-overview-item .cafa-overview-mark{border:1px s
 /* exams.css */
 html[data-study-theme=dark] .exam-position{color:#98c0e1}
 html[data-study-theme=dark] .exam-position strong{color:#adbdc9}
-html[data-study-theme=dark] .exam-cirrus-actions .btn{border:2px solid #3b4a54;background:#152129;color:#adbdc9}
+html[data-study-theme=dark] .exam-cirrus-actions .btn,html[data-study-theme=dark] .exam-question-identity .btn{border:2px solid #3b4a54;background:#152129;color:#adbdc9}
 html[data-study-theme=dark] .exam-cirrus-actions .btn[data-exam-action="submit"]{border-color:#2d765d;color:#8deccb}
 html[data-study-theme=dark] .exam-cirrus-actions .btn[aria-pressed="true"]{background:#2c2416;border-color:#76592d}
 html[data-study-theme=dark] .exam-document td,html[data-study-theme=dark] .exam-document th{border:1px solid #3b4a54}
@@ -848,6 +848,11 @@ html[data-study-theme=dark] .exam-clock.is-urgent .exam-time-badge{background:#2
 html[data-study-theme=dark] .exam-clock.is-urgent .exam-time-badge strong{color:#ecb08d}
 html[data-study-theme=dark] .cafa-profile{color:#f0f7fc}
 /* exam-experience.css */
+html[data-study-theme=dark] .exam-case-panel{background:var(--study-surface,#152129);color:var(--study-ink,#adb3cc)}
+html[data-study-theme=dark] .exam-case-resizer{background:var(--study-wash,#17202b);color:var(--study-muted,#adbdc9)}
+html[data-study-theme=dark] .exam-case-resizer:hover,html[data-study-theme=dark] .exam-case-resizer:focus-visible{color:var(--study-accent,#8decda);outline:2px solid var(--study-accent,#2d7668)}
+html[data-study-theme=dark] .exam-question-identity .btn[aria-pressed=true]{border-color:var(--study-accent,#2d7668);color:var(--study-accent,#8decda)}
+@media (max-width:760px){html[data-study-theme=dark] .exam-case-panel{border-bottom:1px solid var(--study-line,#38526b)}}
 html[data-study-theme=dark] .exam-running .exam-question-top h2{color:#adbdc9}
 html[data-study-theme=dark] .exam-running .exam-question-body{background:#152129}
 html[data-study-theme=dark] .journal-table{border:2px solid #3b4a54;background:#152129;color:#e0ebf2}
