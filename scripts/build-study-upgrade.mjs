@@ -9,7 +9,7 @@ const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,
 const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade -->';
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
-  s=s.replace(/css\/(exams|exam-experience)\.css(?:\?v=[^"]*)?"/g,'css/$1.css?v=20260923-casepanel2"');
+  s=s.replace(/css\/(exams|exam-experience)\.css(?:\?v=[^"]*)?"/g,'css/$1.css?v=20260923-caseleft1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
   s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260923-menu1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260922-3"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
