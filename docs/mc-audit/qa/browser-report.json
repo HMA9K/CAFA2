@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "desktop": [
+    1366,
+    950
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "topics": 19,
+  "questions": 247,
+  "checks": [
+    "old progress and notes preserved",
+    "topic navigation and overview",
+    "canonical answer persistence on reload",
+    "pattern first in feedback",
+    "feedback immediately below selected option",
+    "module/topic separation",
+    "exam mode and scoped finish",
+    "new question direct feedback and rich answer persistence",
+    "dark/light rendering",
+    "scoped reset preserves other answers",
+    "part reset invalidates topic modes",
+    "historical attempt denominator",
+    "topic result context exit",
+    "mobile overflow"
+  ],
+  "errors": []
+}

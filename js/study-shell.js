@@ -104,7 +104,7 @@
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
     bar.hidden=false;
-    document.documentElement.style.setProperty('--study-return-h',bar.hidden?'0px':'46px');
+    document.documentElement.style.setProperty('--study-return-h',bar.getBoundingClientRect().height+'px');
   }
   function scheduleUpdate() {
     if(scheduled)return;scheduled=true;
@@ -134,11 +134,16 @@
     if(!bar){
       var header=document.querySelector('.reader-topbar, .topbar');
       if(header){bar=document.createElement('nav');bar.id='study-returnbar';bar.setAttribute('aria-label','Terug naar je leeractiviteit');bar.hidden=true;
-        back=document.createElement('button');back.type='button';back.className='study-back';back.textContent='← Vorige pagina';back.dataset.studyBack='';
+        back=document.createElement('button');back.type='button';back.className='study-back';back.textContent='← Vorige pagina';back.setAttribute('aria-label','Vorige pagina');back.dataset.studyBack='';
         originButton=document.createElement('button');originButton.type='button';originButton.className='study-origin';originButton.dataset.studyOrigin='';
         bar.append(back,originButton);header.after(bar);
         function measure(){document.documentElement.style.setProperty('--study-top-h',header.getBoundingClientRect().height+'px');}
         if(window.ResizeObserver)new ResizeObserver(measure).observe(header);measure();}
+    }
+    var tabs=document.querySelector('.reader-tabs');
+    if(tabs&&bar&&tabs.parentElement!==bar){
+      bar.append(tabs);bar.classList.add('study-inline-navigation');
+      document.body.classList.add('study-inline-reader');
     }
     mountTools();updateBar();
   }

@@ -1,0 +1,140 @@
+{
+  "total": 247,
+  "existing": 120,
+  "new": 127,
+  "topics": [
+    {
+      "id": "zeggenschap",
+      "title": "Kapitaalbelangen en zeggenschap",
+      "count": 12,
+      "existing": 8,
+      "examCount": 11
+    },
+    {
+      "id": "waardering",
+      "title": "Waardering en resultaat van kapitaalbelangen",
+      "count": 20,
+      "existing": 17,
+      "examCount": 11
+    },
+    {
+      "id": "goodwill",
+      "title": "Verwerving, goodwill en badwill",
+      "count": 12,
+      "existing": 9,
+      "examCount": 11
+    },
+    {
+      "id": "reserves",
+      "title": "Wettelijke reserve deelneming en herwaarderingsreserve",
+      "count": 10,
+      "existing": 3,
+      "examCount": 4
+    },
+    {
+      "id": "eigen-aandelen",
+      "title": "Inkoop van eigen aandelen",
+      "count": 10,
+      "existing": 2,
+      "examCount": 4
+    },
+    {
+      "id": "consolidatiekader",
+      "title": "Consolidatieplicht, consolidatiekring en vrijstellingen",
+      "count": 10,
+      "existing": 1,
+      "examCount": 6
+    },
+    {
+      "id": "functionele-valuta",
+      "title": "Functionele valuta en methodekeuze",
+      "count": 10,
+      "existing": 3,
+      "examCount": 6
+    },
+    {
+      "id": "tijdstip",
+      "title": "Tijdstipmethode en koersresultaat",
+      "count": 20,
+      "existing": 19,
+      "examCount": 11
+    },
+    {
+      "id": "slotkoers",
+      "title": "Slotkoersmethode en reserve omrekenverschillen",
+      "count": 15,
+      "existing": 7,
+      "examCount": 11
+    },
+    {
+      "id": "basisconsolidatie",
+      "title": "Basisconsolidatie en derdenbelang",
+      "count": 20,
+      "existing": 18,
+      "examCount": 11
+    },
+    {
+      "id": "downstream-nvw",
+      "title": "Downstream bij NVW",
+      "count": 15,
+      "existing": 6,
+      "examCount": 8
+    },
+    {
+      "id": "downstream-vp",
+      "title": "Downstream bij verkrijgingsprijs",
+      "count": 12,
+      "existing": 5,
+      "examCount": 4
+    },
+    {
+      "id": "upstream-nvw",
+      "title": "Upstream bij NVW",
+      "count": 12,
+      "existing": 5,
+      "examCount": 3
+    },
+    {
+      "id": "upstream-vp",
+      "title": "Upstream bij verkrijgingsprijs",
+      "count": 12,
+      "existing": 6,
+      "examCount": 7
+    },
+    {
+      "id": "sidestream-niet-afnemend",
+      "title": "Sidestream bij NVW: niet-afnemend belang",
+      "count": 10,
+      "existing": 4,
+      "examCount": 1
+    },
+    {
+      "id": "sidestream-afnemend",
+      "title": "Sidestream bij NVW: afnemend belang",
+      "count": 12,
+      "existing": 5,
+      "examCount": 5
+    },
+    {
+      "id": "vaste-activa",
+      "title": "Intercompanyverkoop van materiële vaste activa",
+      "count": 10,
+      "existing": 2,
+      "examCount": 3
+    },
+    {
+      "id": "belastingen",
+      "title": "Belastingeffecten bij consolidatie",
+      "count": 15,
+      "existing": 0,
+      "examCount": 11
+    },
+    {
+      "id": "proportioneel",
+      "title": "Proportionele consolidatie en joint ventures",
+      "count": 10,
+      "existing": 0,
+      "examCount": 5
+    }
+  ]
+}

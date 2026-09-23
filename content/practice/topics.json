@@ -1,0 +1,21 @@
+[
+  {"id":"zeggenschap","title":"Kapitaalbelangen en zeggenschap","group":"kap","description":"Dochter, deelneming, belegging, stemrechten en invloed van betekenis."},
+  {"id":"waardering","title":"Waardering en resultaat van kapitaalbelangen","group":"kap","description":"Nettovermogenswaarde, verkrijgingsprijs, actuele waarde, resultaat en dividend."},
+  {"id":"goodwill","title":"Verwerving, goodwill en badwill","group":"kap","description":"Verkregen waarde, overnameprijs, goodwill en afschrijving."},
+  {"id":"reserves","title":"Wettelijke reserve deelneming en herwaarderingsreserve","group":"kap","description":"Uitkeerbaarheid, opbouw, realisatie en vrijval van reserves."},
+  {"id":"eigen-aandelen","title":"Inkoop van eigen aandelen","group":"kap","description":"Directe inkoop en inkoop via een dochtermaatschappij."},
+  {"id":"consolidatiekader","title":"Consolidatieplicht, consolidatiekring en vrijstellingen","group":"kap","description":"Wie consolideert, welke maatschappijen worden opgenomen en welke vrijstellingen gelden?"},
+  {"id":"functionele-valuta","title":"Functionele valuta en methodekeuze","group":"val","description":"Economische omgeving, valutasoorten en keuze van de omrekenmethode."},
+  {"id":"tijdstip","title":"Tijdstipmethode en koersresultaat","group":"val","description":"Monetaire positie, historische koersen en koersresultaat."},
+  {"id":"slotkoers","title":"Slotkoersmethode en reserve omrekenverschillen","group":"val","description":"Omrekening van balans en resultaat en verloop van de valutareserve."},
+  {"id":"basisconsolidatie","title":"Basisconsolidatie en derdenbelang","group":"nvw","description":"Basiseliminaties, onderlinge saldi, dividend, vermogen en resultaat van derden."},
+  {"id":"downstream-nvw","title":"Downstream bij NVW","group":"nvw","description":"Moeder levert aan dochter; enkelvoudige correctie en aanvullende consolidatie."},
+  {"id":"downstream-vp","title":"Downstream bij verkrijgingsprijs","group":"hk","description":"Moeder levert aan dochter; interne winst en realisatie bij consolidatie."},
+  {"id":"upstream-nvw","title":"Upstream bij NVW","group":"nvw","description":"Dochter levert aan moeder; deelnemingsresultaat en correcties voor derden."},
+  {"id":"upstream-vp","title":"Upstream bij verkrijgingsprijs","group":"hk","description":"Dochter levert aan moeder; interne winst verdelen over moeder en derden."},
+  {"id":"sidestream-niet-afnemend","title":"Sidestream bij NVW: niet-afnemend belang","group":"nvw","description":"Belang in verkoper is gelijk aan of kleiner dan het belang in koper."},
+  {"id":"sidestream-afnemend","title":"Sidestream bij NVW: afnemend belang","group":"nvw","description":"Belang in verkoper is groter dan het belang in koper."},
+  {"id":"vaste-activa","title":"Intercompanyverkoop van materiële vaste activa","group":"nvw","description":"Interne boekwinst, concernboekwaarde, afschrijving en jaarlijkse realisatie."},
+  {"id":"belastingen","title":"Belastingeffecten bij consolidatie","group":"nvw","description":"Bruto en netto, belastinglatenties en vrijval bij realisatie."},
+  {"id":"proportioneel","title":"Proportionele consolidatie en joint ventures","group":"nvw","description":"Gezamenlijke zeggenschap, evenredige opname en eliminatie."}
+]

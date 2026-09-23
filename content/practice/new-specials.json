@@ -1,0 +1,3943 @@
+[
+  {
+    "key": "prop-methode-grondslag",
+    "topicId": "proportioneel",
+    "title": "Waardering en consolidatiemethode",
+    "type": "Herkenning",
+    "intro": "M bezit 50% van joint venture J. De samenwerking voldoet volgens de casus aan de voorwaarden voor proportionele consolidatie. M waardeert de deelneming enkelvoudig tegen nettovermogenswaarde (NVW).",
+    "facts": [
+      [
+        "Belang",
+        "50%"
+      ],
+      [
+        "Samenwerking",
+        "Gezamenlijke zeggenschap; proportionele consolidatie is gegeven"
+      ]
+    ],
+    "task": "Welke beschrijving onderscheidt de enkelvoudige waardering en de consolidatiemethode juist?",
+    "options": [
+      {
+        "text": "Enkelvoudig staat het belang als één deelnemingspost; geconsolideerd wordt 50% van iedere relevante post van J opgenomen, waarna eliminaties volgen.",
+        "why": "NVW bepaalt de enkelvoudige deelnemingspost. Proportionele consolidatie bepaalt welk aandeel van de onderliggende activa, schulden, baten en lasten wordt samengevoegd."
+      },
+      {
+        "text": "NVW betekent dat ook geconsolideerd uitsluitend één deelnemingspost wordt getoond.",
+        "why": "Dit verwart waardering met consolidatie. Bij proportionele consolidatie worden de onderliggende posten juist evenredig opgenomen."
+      },
+      {
+        "text": "Proportionele consolidatie betekent dat de deelneming enkelvoudig tegen verkrijgingsprijs moet worden gewaardeerd.",
+        "why": "De consolidatiemethode schrijft in deze casus geen andere enkelvoudige waarderingsgrondslag voor; NVW is uitdrukkelijk gegeven."
+      },
+      {
+        "text": "J wordt eerst voor 100% opgenomen; daarna wordt 50% als belang derden gepresenteerd.",
+        "why": "Dat is het patroon van integrale consolidatie bij een 50%-belang, niet de gegeven proportionele methode."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bepaal eerst op welke jaarrekening de vraag ziet. Enkelvoudig gebruikt M één deelnemingspost tegen NVW.",
+      "Voor de consolidatie neemt M haar eigen posten voor 100% en die van J voor 50% mee. Onderlinge posten worden daarna voor het opgenomen deel geëlimineerd."
+    ],
+    "pattern": [
+      "Herken: NVW is een waarderingsgrondslag; proportioneel is een consolidatiemethode.",
+      "Aanpak: scheid de enkelvoudige deelnemingspost van de samenvoeging van onderliggende posten.",
+      "Controle: een belang van 50% betekent hier geen automatische derdenpost."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "6",
+        "label": "Tentamen 06-10-2022, opgave 1, vraag 5-6; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5",
+        "label": "Antwoordmodel 06-10-2022, opgave 1, bij vraag 5-6",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "186-193",
+        "label": "Syllabus deel 3, p. 186-193; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "NVW en proportioneel hebben verschillende functies"
+  },
+  {
+    "key": "prop-geen-derden",
+    "topicId": "proportioneel",
+    "title": "Derdenbelang bij een joint venture",
+    "type": "Foutdiagnose",
+    "intro": "Een medewerker consolideert joint venture J voor 50% en wil daarnaast 50% van het eigen vermogen van J als belang derden opnemen.",
+    "facts": [
+      [
+        "Eigen vermogen J",
+        "€ 800.000"
+      ],
+      [
+        "Opnamemethode",
+        "50% proportioneel; geen andere maatschappijen"
+      ]
+    ],
+    "task": "Welke correctie is nodig?",
+    "options": [
+      {
+        "text": "Geen belang derden opnemen: het niet-gehouden deel van J is al buiten de samenvoeging gebleven.",
+        "why": "Er is slechts 50% van J opgenomen. De andere aandeelhouder zit daardoor niet in de geconsolideerde posten en krijgt hierin geen aparte vermogenspost."
+      },
+      {
+        "text": "Belang derden van € 400.000 opnemen.",
+        "why": "Dat hoort bij integrale opname van 100% van J; de casus neemt slechts 50% op."
+      },
+      {
+        "text": "Belang derden van € 200.000 opnemen.",
+        "why": "Dit halveert het niet-gehouden deel opnieuw, maar ook dit deel is niet opgenomen en vereist geen derdenpost."
+      },
+      {
+        "text": "De consolidatie geheel achterwege laten omdat M niet alle aandelen houdt.",
+        "why": "De casus geeft proportionele consolidatie. Niet volledig eigendom verhindert de voorgeschreven evenredige opname niet."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Van het eigen vermogen van J is vóór eliminatie 50% × € 800.000 = € 400.000 meegenomen.",
+      "Dat eigen aandeel wordt tegen de deelnemingspost geëlimineerd. Het overige vermogen van J komt niet in deze consolidatie terecht."
+    ],
+    "pattern": [
+      "Herken: evenredige opname sluit het niet-gehouden deel vooraf uit.",
+      "Aanpak: controleer eerst hoeveel van de dochter- of jointventurebalans is samengevoegd.",
+      "Controle: een derdenpost past bij integrale opname boven het eigen belang."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "6",
+        "label": "Tentamen 06-10-2022, opgave 1, vraag 6; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5",
+        "label": "Antwoordmodel 06-10-2022, opgave 1, bij vraag 6",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "192-193",
+        "label": "Syllabus deel 3, p. 192-193; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Waarom ontbreekt een belang derden?"
+  },
+  {
+    "key": "prop-lening-restant",
+    "topicId": "proportioneel",
+    "title": "Onderlinge lening bij een joint venture",
+    "type": "Berekening",
+    "intro": "M heeft een vordering van € 120.000 op haar 50%-joint venture J. J heeft de overeenkomstige schuld. M wordt volledig en J proportioneel voor 50% opgenomen.",
+    "facts": [
+      [
+        "Vordering M op J",
+        "€ 120.000"
+      ],
+      [
+        "Schuld J aan M",
+        "€ 120.000"
+      ],
+      [
+        "Opname J",
+        "50%"
+      ]
+    ],
+    "task": "Welk bedrag van M’s vordering blijft na de onderlinge eliminatie in de geconsolideerde balans staan?",
+    "options": [
+      {
+        "text": "€ 60.000.",
+        "why": "Van J’s schuld is maar € 60.000 opgenomen. Dat deel wordt tegen M’s vordering geëlimineerd; de andere € 60.000 ziet op het niet-meegeconsolideerde deel."
+      },
+      {
+        "text": "€ 0.",
+        "why": "Volledig elimineren zou een schuld wegboeken die voor de helft niet eens is opgenomen."
+      },
+      {
+        "text": "€ 120.000.",
+        "why": "Dit laat ook het opgenomen interne deel staan en verdubbelt de interne verhouding."
+      },
+      {
+        "text": "€ 30.000.",
+        "why": "De vordering wordt niet eerst gehalveerd en vervolgens nogmaals voor 50% geëlimineerd; M is voor 100% opgenomen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Opgenomen schuld J: 50% × € 120.000 = € 60.000.",
+      "Elimineer € 60.000 schuld tegen € 60.000 vordering. Resterende vordering: € 120.000 − € 60.000 = € 60.000."
+    ],
+    "pattern": [
+      "Herken: de wederpartij is maar gedeeltelijk in de consolidatie opgenomen.",
+      "Aanpak: bepaal de opgenomen tegenpost vóór de eliminatie.",
+      "Controle: het restant vertegenwoordigt de verhouding met het niet-geconsolideerde deel."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "6",
+        "label": "Tentamen 06-10-2022, opgave 1, vraag 5-6; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5",
+        "label": "Antwoordmodel 06-10-2022, opgave 1, bij vraag 5-6",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "192-193",
+        "label": "Syllabus deel 3, p. 192-193; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Een deel van de interne lening blijft staan",
+    "check": {
+      "description": "Vordering minus opgenomen schuld",
+      "actual": 60000.0,
+      "expected": 60000
+    }
+  },
+  {
+    "key": "prop-managementfee",
+    "topicId": "proportioneel",
+    "title": "Managementfee bij proportionele consolidatie",
+    "type": "Berekening",
+    "intro": "M berekent haar 50%-joint venture J jaarlijks € 80.000 managementfee. M neemt de volledige opbrengst op. Bij proportionele consolidatie wordt 50% van J’s kosten opgenomen. Er zijn geen andere fees.",
+    "facts": [
+      [
+        "Fee door M aan J",
+        "€ 80.000"
+      ],
+      [
+        "Opname J",
+        "50%"
+      ]
+    ],
+    "task": "Welke managementfee-opbrengst resteert in de geconsolideerde winst-en-verliesrekening?",
+    "options": [
+      {
+        "text": "€ 40.000.",
+        "why": "De opgenomen kosten bedragen € 40.000. Na eliminatie tegen evenveel opbrengst resteert de opbrengst van het niet-geconsolideerde deel."
+      },
+      {
+        "text": "€ 0.",
+        "why": "Dit elimineert ook het deel tegenover de andere jointventurepartner, terwijl de bijbehorende kosten niet zijn opgenomen."
+      },
+      {
+        "text": "€ 80.000.",
+        "why": "Dan is het opgenomen interne fee-deel van € 40.000 niet verwijderd."
+      },
+      {
+        "text": "€ 20.000.",
+        "why": "Dit past het deelnamepercentage tweemaal toe op de opbrengst; M’s opbrengst is volledig opgenomen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Opgenomen managementfeekosten J: 50% × € 80.000 = € 40.000.",
+      "Eliminatie: managementfee-opbrengst debet € 40.000, managementfeekosten credit € 40.000. Van de oorspronkelijke opbrengst blijft € 40.000 over."
+    ],
+    "pattern": [
+      "Herken: bij proportioneel is slechts een deel van de onderlinge vergoeding intern.",
+      "Aanpak: elimineer de opbrengst tot het bedrag van de opgenomen tegenkosten.",
+      "Controle: vergelijk met de lening; ook hier blijft het externe deel zichtbaar."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "6",
+        "label": "Tentamen 06-10-2022, opgave 1, vraag 5-6; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5",
+        "label": "Antwoordmodel 06-10-2022, opgave 1, bij vraag 5-6",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "194-195",
+        "label": "Syllabus deel 3, p. 194-195; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Managementfee gedeeltelijk elimineren",
+    "check": {
+      "description": "Volledige fee minus opgenomen interne fee",
+      "actual": 40000.0,
+      "expected": 40000
+    }
+  },
+  {
+    "key": "prop-upstream-niet-dubbel",
+    "topicId": "proportioneel",
+    "title": "Upstreamvoorraad bij een joint venture",
+    "type": "Foutdiagnose",
+    "intro": "Joint venture J levert goederen aan M. M heeft een 50%-belang, waardeert dat tegen NVW en consolideert J proportioneel. In de eindvoorraad van M zit € 40.000 winst van J. Een medewerker heeft het interne deel al berekend op € 20.000.",
+    "facts": [
+      [
+        "Volledige ongerealiseerde winst",
+        "€ 40.000"
+      ],
+      [
+        "Al bepaald intern deel",
+        "€ 20.000"
+      ],
+      [
+        "Belasting",
+        "Buiten beschouwing"
+      ]
+    ],
+    "task": "Hoeveel winst moet bij consolidatie uit M’s voorraad worden verwijderd?",
+    "options": [
+      {
+        "text": "€ 20.000.",
+        "why": "De eerste halvering heeft het meegeconsolideerde deel al afgebakend. Dat interne deel wordt vervolgens volledig verwijderd."
+      },
+      {
+        "text": "€ 10.000.",
+        "why": "Dit halveert de winst tweemaal en laat de helft van het opgenomen interne resultaat in de voorraad zitten."
+      },
+      {
+        "text": "€ 40.000.",
+        "why": "Dit verwijdert ook het winstdeel dat hoort bij het niet-geconsolideerde 50%-belang."
+      },
+      {
+        "text": "€ 0 omdat de moeder de winst niet zelf heeft gemaakt.",
+        "why": "Ook bij upstream moet het in de voorraad aanwezige winstdeel van de opgenomen joint venture worden geëlimineerd."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Intern deel: 50% × € 40.000 = € 20.000.",
+      "De consolidatie elimineert 100% van dat interne deel. Bij deze proportionele opname ontstaat geen extra derdenkolom."
+    ],
+    "pattern": [
+      "Herken: de casus geeft een bedrag dat al naar het deelnamepercentage is omgerekend.",
+      "Aanpak: markeer of bedragen op 100% van J of op het opgenomen deel zien.",
+      "Controle: pas het deelnamepercentage maar één keer toe."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "11-12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 3-5d; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "9-11",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 3-5d",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "203-206",
+        "label": "Syllabus deel 3, p. 203-206; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het opgenomen deel niet nogmaals halveren",
+    "check": {
+      "description": "Opgenomen winstdeel",
+      "actual": 20000.0,
+      "expected": 20000
+    }
+  },
+  {
+    "key": "prop-downstream-restcorrectie",
+    "topicId": "proportioneel",
+    "title": "Downstreamvoorraad bij een joint venture",
+    "type": "Berekening",
+    "intro": "M levert aan haar 50%-joint venture J. In J’s eindvoorraad zit € 24.000 interne winst. M waardeert J tegen NVW en heeft de ongerealiseerde winst in haar enkelvoudige cijfers voor € 12.000 gecorrigeerd. J wordt proportioneel voor 50% geconsolideerd.",
+    "facts": [
+      [
+        "Winst in volledige voorraad J",
+        "€ 24.000"
+      ],
+      [
+        "Enkelvoudig gecorrigeerd",
+        "€ 12.000"
+      ],
+      [
+        "Belasting",
+        "Buiten beschouwing"
+      ]
+    ],
+    "task": "Hoeveel aanvullende winstcorrectie ten laste van het geconsolideerde resultaat is nodig, boven de al verwerkte € 12.000?",
+    "options": [
+      {
+        "text": "€ 0.",
+        "why": "Van J is maar 50% opgenomen. De opgenomen voorraadwinst is € 12.000 en is al volledig in M’s resultaat gecorrigeerd."
+      },
+      {
+        "text": "€ 12.000.",
+        "why": "Dit past de aanvullende correctie van integrale consolidatie toe. De andere helft van J is hier niet opgenomen."
+      },
+      {
+        "text": "€ 24.000.",
+        "why": "Dit corrigeert het gehele winstbedrag nogmaals en gaat voorbij aan zowel evenredige opname als de bestaande correctie."
+      },
+      {
+        "text": "€ 6.000.",
+        "why": "Dit halveert de reeds afgebakende correctie opnieuw; er resteert geen intern winstdeel."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Opgenomen voorraadwinst: 50% × € 24.000 = € 12.000.",
+      "Die € 12.000 wordt uit de opgenomen voorraad verwijderd tegen de bestaande overlopende passiva. Het resultaat behoeft geen aanvullende correctie."
+    ],
+    "pattern": [
+      "Herken: downstream met NVW kan zowel integraal als proportioneel worden geconsolideerd.",
+      "Aanpak: vergelijk de al gecorrigeerde winst met de winst in het daadwerkelijk opgenomen voorraaddeel.",
+      "Controle: bij proportioneel is het niet-gehouden deel geen extra concerncorrectie."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "11-12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 3-6; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "9-11",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 3-6",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "195-203",
+        "label": "Syllabus deel 3, p. 195-203; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Geen extra correctie buiten het opgenomen deel",
+    "check": {
+      "description": "Opgenomen winst minus reeds gecorrigeerde winst",
+      "actual": 0.0,
+      "expected": 0
+    }
+  },
+  {
+    "key": "prop-combinatie-voorraden",
+    "topicId": "proportioneel",
+    "title": "Voorraad bij een dochter en een joint venture",
+    "type": "Berekening",
+    "intro": "M consolideert dochter D integraal en haar 50%-joint venture J proportioneel. D heeft voorraad gekocht van M; M heeft voorraad gekocht van J. De genoemde voorraadwinsten zijn nog niet uit de afzonderlijke voorraadposten verwijderd.",
+    "facts": [
+      [
+        "Voorraad M",
+        "€ 500.000; hierin € 40.000 winst van J"
+      ],
+      [
+        "Voorraad D",
+        "€ 300.000; hierin € 20.000 winst van M"
+      ],
+      [
+        "Voorraad J",
+        "€ 200.000"
+      ],
+      [
+        "Opname",
+        "M en D 100%; J 50%"
+      ]
+    ],
+    "task": "Hoe hoog is de geconsolideerde voorraad na beide winstcorrecties?",
+    "options": [
+      {
+        "text": "€ 860.000.",
+        "why": "Neem € 500.000 + € 300.000 + 50% × € 200.000 op. Verwijder vervolgens € 20.000 downstream en 50% × € 40.000 upstream."
+      },
+      {
+        "text": "€ 840.000.",
+        "why": "Hier wordt de volledige € 40.000 winst van J verwijderd, terwijl J maar voor 50% wordt opgenomen."
+      },
+      {
+        "text": "€ 960.000.",
+        "why": "Hier wordt J’s voorraad volledig in plaats van voor 50% samengevoegd."
+      },
+      {
+        "text": "€ 900.000.",
+        "why": "Dit is de samenvoeging vóór correctie van de twee nog aanwezige interne winstbedragen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Samenvoeging: € 500.000 + € 300.000 + € 100.000 = € 900.000.",
+      "Dochter D: volledige interne winst € 20.000 verwijderen. Joint venture J: 50% van € 40.000 = € 20.000 verwijderen.",
+      "Geconsolideerde voorraad: € 900.000 − € 20.000 − € 20.000 = € 860.000."
+    ],
+    "pattern": [
+      "Herken: één consolidatie kan integrale en proportionele opname combineren.",
+      "Aanpak: bepaal per maatschappij de opnamefractie en daarna per levering de winstcorrectie.",
+      "Controle: het belangpercentage in D verlaagt de integrale voorraadcorrectie niet."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 6; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "11",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 6",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "186, 203-206",
+        "label": "Syllabus deel 3, p. 186, 203-206; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "gevorderd",
+    "skill": "Een dochter en een joint venture combineren",
+    "check": {
+      "description": "Samenvoeging minus beide opgenomen winstbedragen",
+      "actual": 860000.0,
+      "expected": 860000
+    }
+  },
+  {
+    "key": "prop-resultaat-eliminatie",
+    "topicId": "proportioneel",
+    "title": "Deelnemingsresultaat van een joint venture",
+    "type": "Berekening",
+    "intro": "M waardeert haar 50%-belang in J tegen NVW. J verdient € 160.000 na belasting. M heeft daarom € 80.000 resultaat deelneming verantwoord. Bij proportionele consolidatie wordt € 80.000 van J’s resultaat samengevoegd. Er zijn geen onderlinge leveringen.",
+    "facts": [
+      [
+        "Resultaat J op 100%",
+        "€ 160.000"
+      ],
+      [
+        "Resultaat deelneming bij M",
+        "€ 80.000"
+      ],
+      [
+        "Proportioneel opgenomen resultaat J",
+        "€ 80.000"
+      ]
+    ],
+    "task": "Welk bedrag van de post resultaat deelneming moet worden geëlimineerd?",
+    "options": [
+      {
+        "text": "€ 80.000.",
+        "why": "De hele deelnemingsopbrengst van M vormt een dubbeltelling van het al evenredig opgenomen resultaat van J."
+      },
+      {
+        "text": "€ 40.000.",
+        "why": "Het deelnemingsresultaat is al 50% van J’s resultaat; nogmaals halveren laat een dubbeltelling staan."
+      },
+      {
+        "text": "€ 160.000.",
+        "why": "M heeft slechts € 80.000 deelnemingsresultaat en er is slechts € 80.000 van J opgenomen."
+      },
+      {
+        "text": "€ 0.",
+        "why": "Dan blijft hetzelfde aandeel in J’s winst tweemaal in het geconsolideerde resultaat opgenomen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "M’s eigen winst bevat € 80.000 uit J. De samenvoeging voegt daarnaast € 80.000 resultaat van J toe.",
+      "Elimineer de volledige deelnemingsopbrengst van € 80.000 om deze dubbeltelling weg te nemen."
+    ],
+    "pattern": [
+      "Herken: een deelnemingsresultaat is zelf al het aandeel van de moeder.",
+      "Aanpak: vergelijk de opgenomen deelnemingsopbrengst met het proportioneel samengevoegde resultaat.",
+      "Controle: eenzelfde resultaat mag slechts eenmaal in de consolidatie eindigen."
+    ],
+    "sources": [
+      {
+        "file": "2021-04 CAFA2 - Tentamen.docx",
+        "pages": "DOCX opgave 1",
+        "label": "Tentamen 19-04-2021, opgave 1, vraag 7-8; eigen oefenvariant",
+        "examId": "20210419"
+      },
+      {
+        "file": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "4-5",
+        "label": "Antwoordmodel 19-04-2021, opgave 1, bij vraag 7-8",
+        "examId": "20210419"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "193-194",
+        "label": "Syllabus deel 3, p. 193-194; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het deelnemingsresultaat is al evenredig",
+    "check": {
+      "description": "Dubbeltelling van reeds evenredig geboekt resultaat",
+      "actual": 80000.0,
+      "expected": 80000
+    }
+  },
+  {
+    "key": "prop-ev-eliminatie",
+    "topicId": "proportioneel",
+    "title": "Eigen vermogen van een joint venture",
+    "type": "Journaalpost",
+    "intro": "M bezit 50% van J en consolideert J proportioneel. De enkelvoudige deelnemingswaarde van M is € 300.000, gelijk aan 50% van J’s eigen vermogen. Er is geen goodwill of interne winst.",
+    "facts": [
+      [
+        "Eigen vermogen J",
+        "Kapitaal € 200.000; reserves € 300.000; resultaat € 100.000"
+      ],
+      [
+        "Opname J",
+        "50%"
+      ],
+      [
+        "Deelneming bij M",
+        "€ 300.000"
+      ]
+    ],
+    "task": "Welke eliminatie sluit aan op de proportioneel samengevoegde balans?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Kapitaal J",
+              "€ 100.000",
+              ""
+            ],
+            [
+              "Reserves J",
+              "€ 150.000",
+              ""
+            ],
+            [
+              "Resultaat J",
+              "€ 50.000",
+              ""
+            ],
+            [
+              "Deelneming J",
+              "",
+              "€ 300.000"
+            ]
+          ]
+        },
+        "why": "Dit verwijdert precies het opgenomen 50%-eigen vermogen tegen de volledige enkelvoudige deelnemingspost."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Kapitaal J",
+              "€ 200.000",
+              ""
+            ],
+            [
+              "Reserves J",
+              "€ 300.000",
+              ""
+            ],
+            [
+              "Resultaat J",
+              "€ 100.000",
+              ""
+            ],
+            [
+              "Deelneming J",
+              "",
+              "€ 300.000"
+            ],
+            [
+              "Belang derden",
+              "",
+              "€ 300.000"
+            ]
+          ]
+        },
+        "why": "Dit hoort bij 100% integrale opname; de casus bevat slechts de helft van J’s balans."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Kapitaal J",
+              "€ 50.000",
+              ""
+            ],
+            [
+              "Reserves J",
+              "€ 75.000",
+              ""
+            ],
+            [
+              "Resultaat J",
+              "€ 25.000",
+              ""
+            ],
+            [
+              "Deelneming J",
+              "",
+              "€ 150.000"
+            ]
+          ]
+        },
+        "why": "Hier wordt het 50%-aandeel nogmaals gehalveerd, zodat de helft van de deelneming en het opgenomen vermogen blijft staan."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming J",
+              "€ 300.000",
+              ""
+            ],
+            [
+              "Kapitaal J",
+              "",
+              "€ 100.000"
+            ],
+            [
+              "Reserves J",
+              "",
+              "€ 150.000"
+            ],
+            [
+              "Resultaat J",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "De richting is omgekeerd: deze boeking verhoogt de activa en het opgenomen eigen vermogen in plaats van ze te elimineren."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Opgenomen eigen vermogen J: € 100.000 + € 150.000 + € 50.000 = € 300.000.",
+      "Debiteer die opgenomen vermogensposten en crediteer M’s deelneming voor hetzelfde bedrag. Er ontstaat geen belang derden."
+    ],
+    "pattern": [
+      "Herken: de consolidatiestaat bevat het vermogen van J al naar rato.",
+      "Aanpak: elimineer uitsluitend de opgenomen vermogensposten tegen de deelneming.",
+      "Controle: het saldo deelneming is nul en de boeking bevat geen derdenpost."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 5b; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "10",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 5b",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "192-193",
+        "label": "Syllabus deel 3, p. 192-193; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het eigen vermogen van de joint venture elimineren",
+    "check": {
+      "description": "Opgenomen vermogenscomponenten",
+      "actual": 300000.0,
+      "expected": 300000
+    }
+  },
+  {
+    "key": "prop-contract-zeggenschap",
+    "topicId": "proportioneel",
+    "title": "Zeggenschap volgens de samenwerkingsovereenkomst",
+    "type": "Herkenning",
+    "intro": "Twee ondernemingen bezitten ieder 50% van J. Een overeenkomst bepaalt dat zij gezamenlijk beslissen over het zakelijke en financiële beleid. De casus vermeldt dat aan de voorwaarden voor proportionele consolidatie is voldaan.",
+    "facts": [
+      [
+        "Kapitaalbelangen",
+        "Beide partners 50%"
+      ],
+      [
+        "Besluitvorming",
+        "Contractueel gezamenlijk"
+      ]
+    ],
+    "task": "Welke redenering past bij deze casus?",
+    "options": [
+      {
+        "text": "Gezamenlijke zeggenschap verklaart de joint venture; bij de gegeven methode wordt het eigen aandeel van de onderliggende posten opgenomen.",
+        "why": "De samenwerkingsovereenkomst is doorslaggevend voor de gezamenlijke aansturing; de casus geeft de toepasselijke consolidatiemethode."
+      },
+      {
+        "text": "Alleen het percentage 50% bewijst in iedere situatie dat proportioneel moet worden geconsolideerd.",
+        "why": "Een percentage alleen bewijst geen gezamenlijke besluitvorming. De overeenkomst en de gegeven voorwaarden zijn nodig."
+      },
+      {
+        "text": "Omdat geen partner meer dan 50% bezit, kan J nooit in een geconsolideerde jaarrekening voorkomen.",
+        "why": "Proportionele consolidatie is juist de gegeven manier waarop dit gezamenlijke belang wordt opgenomen."
+      },
+      {
+        "text": "De andere partner moet eerst een groepsmaatschappij van M zijn voordat proportionele consolidatie mogelijk is.",
+        "why": "De casus vereist samenwerking en gezamenlijke zeggenschap, niet dat de twee partners tot dezelfde groep behoren."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Lees de afspraken over zeggenschap naast de percentages. Hier moeten de twee partners gezamenlijk beslissen.",
+      "De casus geeft expliciet dat proportionele consolidatie wordt toegepast. Neem dus M’s eigen aandeel op en voer de bijbehorende eliminaties uit."
+    ],
+    "pattern": [
+      "Herken: het besluitvormingsrecht staat in de samenwerkingsovereenkomst.",
+      "Aanpak: bepaal de zeggenschap vóór het toepassen van het opnamepercentage.",
+      "Controle: verwar gelijke aandelenverhoudingen niet met zelfstandig bewijs van gezamenlijke zeggenschap."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "5-6",
+        "label": "Tentamen 06-10-2022, opgave 1, vraag 4-6; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "4-5",
+        "label": "Antwoordmodel 06-10-2022, opgave 1, bij vraag 4-6",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "186-187",
+        "label": "Syllabus deel 3, p. 186-187; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Gezamenlijke zeggenschap herkennen"
+  },
+  {
+    "key": "side-na-gelijk",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Levering tussen dochters met gelijke belangen",
+    "type": "Herkenning",
+    "intro": "M waardeert twee integraal geconsolideerde deelnemingen tegen NVW. Verkoper V levert goederen aan koper K. M heeft in beide vennootschappen 70%.",
+    "facts": [
+      [
+        "Belang in V",
+        "70%"
+      ],
+      [
+        "Belang in K",
+        "70%"
+      ]
+    ],
+    "task": "Welke indeling en bruto verdeling van de ongerealiseerde winst zijn juist?",
+    "options": [
+      {
+        "text": "Niet-afnemend: 70% intern, 30% derden, geen aanvullend concernpercentage.",
+        "why": "Het belang blijft gelijk. Niet-afnemend omvat zowel een stijging als gelijkblijven; het verkopersbelang bepaalt het interne deel."
+      },
+      {
+        "text": "Afnemend: 70% intern en 30% aanvullend concern.",
+        "why": "Er is geen afname tussen verkoper en koper. Bovendien hoort de 30% bij derden in de verkoper."
+      },
+      {
+        "text": "Niet-afnemend: 49% intern en 51% derden.",
+        "why": "De twee belangen worden niet vermenigvuldigd: dit zijn zustermaatschappijen met directe belangen van M."
+      },
+      {
+        "text": "Er is geen sidestream omdat de belangen gelijk zijn.",
+        "why": "Sidestream wordt bepaald door levering tussen deelnemingen; gelijke percentages veranderen die richting niet."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Volg de goederen: V 70% → K 70%. Het belang daalt niet.",
+      "De interne NVW-correctie is 70% van de winst. Het overige 30% komt bij integrale consolidatie ten laste van derden in V."
+    ],
+    "pattern": [
+      "Herken: vergelijk de percentages langs de goederenstroom.",
+      "Aanpak: gelijk of stijgend betekent niet-afnemend; gebruik het verkoperspercentage.",
+      "Controle: intern plus derden is 100%; vermenigvuldig de twee belangen niet."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 8; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 8",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "214, 226",
+        "label": "Syllabus deel 3, p. 214, 226; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Gelijke belangen zijn ook niet-afnemend"
+  },
+  {
+    "key": "side-na-vrijval-mutate",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Interne voorraadwinst over twee boekjaren",
+    "type": "Berekening",
+    "intro": "M heeft 60% in verkoper V en 80% in koper K. Beide belangen worden tegen NVW gewaardeerd en integraal geconsolideerd. De winst van V in K’s voorraad daalt in het jaar.",
+    "facts": [
+      [
+        "Interne winst begin jaar",
+        "€ 40.000"
+      ],
+      [
+        "Interne winst eind jaar",
+        "€ 25.000"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Met welk bedrag neemt M’s enkelvoudige resultaat deelneming door de interne correctie in dit jaar toe?",
+    "options": [
+      {
+        "text": "€ 6.750.",
+        "why": "De vrijval is € 15.000; daarvan behoort 60% aan M en resteert na 25% belasting € 6.750."
+      },
+      {
+        "text": "€ 9.000.",
+        "why": "Dit is het bruto interne deel van de vrijval; de belasting is nog niet verwerkt."
+      },
+      {
+        "text": "€ 11.250.",
+        "why": "Dit is de volledige netto vrijval op 100%; M bezit slechts 60% in de verkoper."
+      },
+      {
+        "text": "€ 11.250 afname.",
+        "why": "Dit gebruikt de netto eindvoorraadcorrectie als jaarlast. De voorraadwinst daalt juist, zodat winst vrijkomt."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Vrijval ongerealiseerde winst: € 40.000 − € 25.000 = € 15.000.",
+      "Interne nettovrijval: € 15.000 × 60% × 75% = € 6.750. Debiteer deelneming en crediteer resultaat deelneming."
+    ],
+    "pattern": [
+      "Herken: dalende voorraadwinst betekent realisatie in het lopende jaar.",
+      "Aanpak: gebruik de mutatie voor resultaat en het verkopersbelang voor de interne correctie.",
+      "Controle: een kleinere eindcorrectie verhoogt het deelnemingsresultaat."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 8, 10-12; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6-7",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 8, 10-12",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "224-226",
+        "label": "Syllabus deel 3, p. 224-226; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Vrijval is een jaarmutatie",
+    "check": {
+      "description": "Verschil tussen netto begin- en eindcorrectie",
+      "actual": 6750.0,
+      "expected": 6750
+    }
+  },
+  {
+    "key": "side-na-boekwaarde-verkoper",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Deelnemingswaarde na een zusterlevering",
+    "type": "Berekening",
+    "intro": "M bezit 70% in V en 90% in K. V levert goederen aan K. M waardeert beide deelnemingen tegen NVW; alle grondslagen zijn gelijk. De eindvoorraad van K bevat winst van V.",
+    "facts": [
+      [
+        "Eigen vermogen V",
+        "€ 500.000"
+      ],
+      [
+        "Winst van V in K’s eindvoorraad",
+        "€ 30.000"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Wat is de enkelvoudige boekwaarde van de deelneming V bij M na de interne correctie?",
+    "options": [
+      {
+        "text": "€ 333.200.",
+        "why": "Van 70% × € 500.000 = € 350.000 gaat 70% × € 30.000 × 80% = € 16.800 af."
+      },
+      {
+        "text": "€ 328.400.",
+        "why": "Hier wordt het 90%-belang in koper K gebruikt; bij niet-afnemend belang is de winstcorrectie gebaseerd op verkoper V."
+      },
+      {
+        "text": "€ 329.000.",
+        "why": "Dit trekt de bruto correctie van € 21.000 af; de NVW-correctie betreft hier het nettoresultaat."
+      },
+      {
+        "text": "€ 350.000.",
+        "why": "Dit vergeet dat de winst van V nog in de groepsvoorraad zit en dus de deelnemingswaarde te hoog maakt."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Ongecorrigeerde NVW V: € 500.000 × 70% = € 350.000.",
+      "Netto winstcorrectie: € 30.000 × 70% × 80% = € 16.800. Boekwaarde V wordt € 333.200."
+    ],
+    "pattern": [
+      "Herken: de voorraad ligt bij K, maar de winst is door V geboekt.",
+      "Aanpak: corrigeer de deelneming in de verkoper voor M’s aandeel in de netto ongerealiseerde winst.",
+      "Controle: de fysieke plaats van de voorraad bepaalt niet welke deelnemingswaarde te hoog is."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 10; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 10",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "215-218",
+        "label": "Syllabus deel 3, p. 215-218; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Welke deelneming draagt de voorraadcorrectie?",
+    "check": {
+      "description": "Aandeel in gecorrigeerd verkopersvermogen",
+      "actual": 333200.0,
+      "expected": 333200
+    }
+  },
+  {
+    "key": "side-na-derden-jaar",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Derdenresultaat bij een zusterlevering",
+    "type": "Berekening",
+    "intro": "V levert aan K. M heeft 70% in V en 90% in K, waardeert beide tegen NVW en consolideert integraal. De ongerealiseerde winst in de voorraad neemt in het jaar met € 12.000 toe.",
+    "facts": [
+      [
+        "Voorraadwinstmutatie",
+        "€ 12.000 toename"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Met welk bedrag vermindert de IC-correctie het aandeel derden in het geconsolideerde jaarresultaat?",
+    "options": [
+      {
+        "text": "€ 2.880.",
+        "why": "Derden bezitten 30% in winstmaker V. Hun netto aandeel in de toename is € 12.000 × 30% × 80%."
+      },
+      {
+        "text": "€ 960.",
+        "why": "Dit gebruikt de 10% derden in koper K. De interne winst is echter door V verdiend."
+      },
+      {
+        "text": "€ 3.600.",
+        "why": "Dit is het bruto derdenaandeel; de vraag gaat om het resultaat na belasting."
+      },
+      {
+        "text": "€ 8.640.",
+        "why": "Dit gebruikt 90% van de netto mutatie, terwijl 90% het moederbelang in koper K is."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Winstmaker is V; derdenpercentage is 100% − 70% = 30%.",
+      "Netto vermindering: € 12.000 × 30% × 80% = € 2.880."
+    ],
+    "pattern": [
+      "Herken: de winst behoort tot de verkopende maatschappij.",
+      "Aanpak: bepaal derden bij de verkoper en pas dat toe op de netto jaarmutatie.",
+      "Controle: gebruik voor een jaarresultaat niet automatisch de eindvoorraadstand."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 12; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 12",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "219-221",
+        "label": "Syllabus deel 3, p. 219-221; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Derden dragen het verkopersdeel",
+    "check": {
+      "description": "Derden in netto jaarmutatie",
+      "actual": 2880.0000000000005,
+      "expected": 2880
+    }
+  },
+  {
+    "key": "side-na-omzetdeel",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Omzet en voorraad bij zusterleveringen",
+    "type": "Berekening",
+    "intro": "V levert dit jaar € 600.000 aan K. M bezit 70% in V en 90% in K en consolideert beide integraal. K heeft begin en eind jaar voorraad afkomstig van V, gewaardeerd tegen de interne factuurprijzen.",
+    "facts": [
+      [
+        "Interne leveringen",
+        "€ 600.000"
+      ],
+      [
+        "Beginvoorraad afkomstig van V",
+        "€ 70.000"
+      ],
+      [
+        "Eindvoorraad afkomstig van V",
+        "€ 100.000"
+      ]
+    ],
+    "task": "Welk bedrag vormt de doorlevering voor de afzonderlijke eliminatie omzet tegen kostprijs, vóór de aparte boeking van de voorraadtoename?",
+    "options": [
+      {
+        "text": "€ 570.000.",
+        "why": "De voorraad neemt met € 30.000 toe. Van € 600.000 interne levering is daardoor € 570.000 doorgeleverd; de resterende € 30.000 komt in de mutatieboeking."
+      },
+      {
+        "text": "€ 600.000.",
+        "why": "Dit is de totale interne levering. Bij deze gevraagde gesplitste aanpak bevat dat ook de afzonderlijk te behandelen voorraadtoename."
+      },
+      {
+        "text": "€ 500.000.",
+        "why": "Dit trekt de hele eindvoorraad af en vergeet de beginvoorraad die dit jaar kan zijn doorverkocht."
+      },
+      {
+        "text": "€ 399.000.",
+        "why": "Dit neemt 70% van € 570.000, terwijl de maatschappijen integraal worden geconsolideerd."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Voorraadtoename tegen interne prijs: € 100.000 − € 70.000 = € 30.000.",
+      "Doorlevering: € 600.000 − € 30.000 = € 570.000. Samen met de omzetcomponent in de mutatieboeking wordt € 600.000 geëlimineerd."
+    ],
+    "pattern": [
+      "Herken: de vraag vraagt één onderdeel van een gesplitste omzeteliminatie.",
+      "Aanpak: interne levering minus voorraadtoename geeft doorlevering.",
+      "Controle: de beide omzetcomponenten moeten samen de volledige interne levering verwijderen."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 12; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 12",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "220-221",
+        "label": "Syllabus deel 3, p. 220-221; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Doorlevering en voorraadtoename scheiden",
+    "check": {
+      "description": "Beginvoorraad plus leveringen minus eindvoorraad",
+      "actual": 570000,
+      "expected": 570000
+    }
+  },
+  {
+    "key": "side-na-geen-product",
+    "topicId": "sidestream-niet-afnemend",
+    "title": "Een correctiepercentage beoordelen",
+    "type": "Foutdiagnose",
+    "intro": "M bezit rechtstreeks 60% in V en 80% in K. V verkoopt goederen aan K. De administratie berekent M’s interne aandeel in de ongerealiseerde winst als 60% × 80% = 48%. Beide deelnemingen worden tegen NVW gewaardeerd.",
+    "facts": [
+      [
+        "Structuur",
+        "Twee rechtstreekse belangen van M"
+      ],
+      [
+        "Goederenstroom",
+        "V (60%) naar K (80%)"
+      ]
+    ],
+    "task": "Welke beoordeling is juist?",
+    "options": [
+      {
+        "text": "Gebruik 60%: de belangen vormen geen keten en de winst is van V.",
+        "why": "Bij niet-afnemende sidestream gaat het om het moederbelang in de verkopende zuster, niet om een indirect belang via de koper."
+      },
+      {
+        "text": "48% is juist omdat twee vennootschappen betrokken zijn.",
+        "why": "Het aantal betrokken vennootschappen is geen reden om percentages te vermenigvuldigen; er is geen deelnemingsketen."
+      },
+      {
+        "text": "Gebruik 80% omdat de voorraad bij K ligt.",
+        "why": "De plaats van de voorraad maakt de daar aanwezige winst nog niet tot resultaat van K."
+      },
+      {
+        "text": "Gebruik 100% voor M’s interne NVW-correctie.",
+        "why": "100% is de uiteindelijke integrale eliminatie. M’s interne aandeel is 60%; de overige 40% hoort bij derden in V."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De leveringsrichting is 60% → 80%, dus niet-afnemend.",
+      "M’s interne correctie volgt het 60%-verkopersbelang. Integrale consolidatie verwijdert daarnaast het 40%-derdenaandeel."
+    ],
+    "pattern": [
+      "Herken: rechtstreeks gehouden zusterbelangen zijn geen keten van deelnemingen.",
+      "Aanpak: volg de winstmaker en kies het daarbij behorende correctiepercentage.",
+      "Controle: intern 60% plus derden 40% sluit aan op volledige eliminatie."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 8, 11; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 8, 11",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "214-218",
+        "label": "Syllabus deel 3, p. 214-218; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Geen vermenigvuldiging van zusterbelangen"
+  },
+  {
+    "key": "side-af-derdenpercentage",
+    "topicId": "sidestream-afnemend",
+    "title": "Derdenpercentage bij een zusterlevering",
+    "type": "Herkenning",
+    "intro": "M bezit 85% in verkoper V en 65% in koper K. Beide deelnemingen worden tegen NVW gewaardeerd en integraal geconsolideerd. V levert aan K.",
+    "facts": [
+      [
+        "Goederenstroom",
+        "V (85%) → K (65%)"
+      ]
+    ],
+    "task": "Welke bruto verdeling van de ongerealiseerde winst is juist?",
+    "options": [
+      {
+        "text": "65% interne correctie, 15% derden, 20% aanvullende concerncorrectie.",
+        "why": "Het koperbelang bepaalt het interne deel, derden bezitten 15% in de verkoper en het verschil 85% − 65% is het aanvullende concerndeel."
+      },
+      {
+        "text": "65% interne correctie, 35% derden, geen aanvullende concerncorrectie.",
+        "why": "Dit gebruikt het derdenpercentage van de koper. De winst is echter van V en diens derden bezitten 15%."
+      },
+      {
+        "text": "85% interne correctie, 15% derden, geen aanvullende concerncorrectie.",
+        "why": "Dit is de verdeling bij niet-afnemend belang. Hier moet de interne correctie het lagere koperbelang volgen."
+      },
+      {
+        "text": "55,25% interne correctie en 44,75% derden.",
+        "why": "Dit vermenigvuldigt de twee rechtstreekse belangen, alsof sprake is van een deelnemingsketen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Het belang daalt met 20 procentpunten: 85% − 65%.",
+      "Intern wordt 65% gecorrigeerd; derden verkoper dragen 15%; aanvullend concern draagt 20%. Totaal 100%."
+    ],
+    "pattern": [
+      "Herken: verkopersbelang is groter dan kopersbelang.",
+      "Aanpak: koper, derden verkoper, verschil tussen beide belangen.",
+      "Controle: de drie percentages moeten optellen tot 100%."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 9; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 9",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "226-228",
+        "label": "Syllabus deel 3, p. 226-228; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Derden horen bij de verkoper"
+  },
+  {
+    "key": "side-af-resultaatverschil",
+    "topicId": "sidestream-afnemend",
+    "title": "Enkelvoudig en geconsolideerd resultaat vergelijken",
+    "type": "Berekening",
+    "intro": "M heeft 80% in V en 60% in K. V levert aan K. M heeft de interne NVW-correctie al volledig verwerkt. Beide maatschappijen worden integraal geconsolideerd. Andere consolidatieverschillen zijn er niet.",
+    "facts": [
+      [
+        "Ongerealiseerde winst begin jaar",
+        "€ 12.000"
+      ],
+      [
+        "Ongerealiseerde winst eind jaar",
+        "€ 20.000"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Hoe wijzigt het aan M toekomende geconsolideerde jaarresultaat ten opzichte van M’s enkelvoudige jaarresultaat door deze levering?",
+    "options": [
+      {
+        "text": "€ 1.200 lager.",
+        "why": "De voorraadwinst neemt € 8.000 toe. Het nog niet intern gecorrigeerde concerndeel is 20%; na belasting is dit € 1.200 extra last."
+      },
+      {
+        "text": "€ 3.600 lager.",
+        "why": "Dit is de interne correctie van 60% die volgens de casus al is verwerkt."
+      },
+      {
+        "text": "€ 3.000 lager.",
+        "why": "Dit gebruikt de eindvoorraadwinst van € 20.000 in plaats van de jaarmutatie van € 8.000."
+      },
+      {
+        "text": "€ 1.200 hoger.",
+        "why": "Een toename van ongerealiseerde winst verlaagt het resultaat; alleen een afname leidt tot vrijval."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Aanvullend concernpercentage: 80% − 60% = 20%.",
+      "Jaarmutatie ongerealiseerde winst: € 20.000 − € 12.000 = € 8.000. Aanvullende netto last: € 8.000 × 20% × 75% = € 1.200."
+    ],
+    "pattern": [
+      "Herken: de interne NVW-correctie is al verwerkt, maar het afnemende belang laat een rest over.",
+      "Aanpak: pas het verschil tussen verkopers- en kopersbelang toe op de netto jaarmutatie.",
+      "Controle: verwar verschil in jaarresultaat niet met correctie van het eindvermogen."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 13; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "8",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 13",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "226, 234-239",
+        "label": "Syllabus deel 3, p. 226, 234-239; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Waarom wijkt het groepsresultaat nog af?",
+    "check": {
+      "description": "Verschil tussen aanvullende netto eind- en begincorrectie",
+      "actual": 1200.0000000000005,
+      "expected": 1200
+    }
+  },
+  {
+    "key": "side-af-beginreserve",
+    "topicId": "sidestream-afnemend",
+    "title": "Correctie van de beginvoorraad",
+    "type": "Berekening",
+    "intro": "M bezit 90% in V en 70% in K. V levert aan K. Bij het opstellen van de geconsolideerde eindbalans wordt de aanvullende concerncorrectie op de eindvoorraad eerst ten laste van het resultaat boekjaar geboekt. Daarna moet de aanvullende concerncorrectie op de beginvoorraad worden vrijgemaakt uit de overige reserves.",
+    "facts": [
+      [
+        "Winst in beginvoorraad",
+        "€ 50.000"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ],
+      [
+        "Grondslag",
+        "NVW; integrale consolidatie"
+      ]
+    ],
+    "task": "Welk bedrag wordt voor deze aanvullende beginvoorraadcorrectie gedebiteerd op overige reserves en gecrediteerd op resultaat boekjaar?",
+    "options": [
+      {
+        "text": "€ 8.000.",
+        "why": "Het aanvullende concerndeel is 90% − 70% = 20%. Netto beginwinst is € 50.000 × 20% × 80% = € 8.000."
+      },
+      {
+        "text": "€ 28.000.",
+        "why": "Dit is het interne 70%-deel, dat al in de enkelvoudige NVW-verwerking zit."
+      },
+      {
+        "text": "€ 4.000.",
+        "why": "Dit is het netto 10%-derdenaandeel van de verkoper, niet de aanvullende concerncorrectie."
+      },
+      {
+        "text": "€ 10.000.",
+        "why": "Dit is het bruto aanvullende concerndeel; voor de vermogens- en resultaatcorrectie moet belasting worden meegenomen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bepaal het aanvullende concernpercentage: 90% − 70% = 20%.",
+      "Beginvoorraadcorrectie netto: € 50.000 × 20% × 80% = € 8.000. De overboeking zorgt dat het lopende resultaat alleen de jaarmutatie draagt."
+    ],
+    "pattern": [
+      "Herken: een eindbalansboeking alleen kan het huidige resultaat te zwaar belasten.",
+      "Aanpak: maak de netto aanvullende beginwinst vrij uit overige reserves.",
+      "Controle: eindcorrectie minus begincorrectie moet de jaarlast opleveren."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 14b; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "9",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 14b",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "229-233",
+        "label": "Syllabus deel 3, p. 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Beginvoorraadwinst naar het juiste boekjaar",
+    "check": {
+      "description": "Beginvoorraad maal ontbrekend concernbelang netto",
+      "actual": 8000.000000000004,
+      "expected": 8000
+    }
+  },
+  {
+    "key": "side-af-waarde-deelnemingen",
+    "topicId": "sidestream-afnemend",
+    "title": "Totale deelnemingswaarde bij zusterleveringen",
+    "type": "Berekening",
+    "intro": "M heeft 75% in V en 60% in K. V levert aan K. Beide deelnemingen worden tegen NVW gewaardeerd; er zijn geen andere grondslagverschillen. In K’s eindvoorraad zit € 80.000 winst van V.",
+    "facts": [
+      [
+        "Eigen vermogen V",
+        "€ 900.000"
+      ],
+      [
+        "Eigen vermogen K",
+        "€ 700.000"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Wat is de totale enkelvoudige boekwaarde van beide deelnemingen bij M na de interne correctie?",
+    "options": [
+      {
+        "text": "€ 1.059.000.",
+        "why": "De ongecorrigeerde waarde is € 675.000 + € 420.000 = € 1.095.000. Daarvan gaat 60% × € 80.000 × 75% = € 36.000 af."
+      },
+      {
+        "text": "€ 1.050.000.",
+        "why": "Hier wordt 75% in plaats van het lagere koperbelang van 60% gebruikt voor de interne correctie."
+      },
+      {
+        "text": "€ 1.035.000.",
+        "why": "Dit trekt de volledige netto interne winst af, terwijl enkelvoudig alleen het interne NVW-deel wordt gecorrigeerd."
+      },
+      {
+        "text": "€ 1.095.000.",
+        "why": "Dit vergeet dat de deelnemingswaarde winst bevat die binnen de groep nog niet is gerealiseerd."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Brutowaarden: 75% × € 900.000 = € 675.000 en 60% × € 700.000 = € 420.000.",
+      "Bij afnemend belang is de interne netto correctie € 80.000 × 60% × 75% = € 36.000. Totale boekwaarde: € 1.059.000."
+    ],
+    "pattern": [
+      "Herken: de enkelvoudige balans bevat twee deelnemingen, maar één winstcorrectie.",
+      "Aanpak: bereken eerst beide NVW-bedragen en trek dan het interne netto winstdeel af.",
+      "Controle: de aanvullende concern- en derdenpercentages horen pas bij consolidatie."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 10; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 10",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "227-230",
+        "label": "Syllabus deel 3, p. 227-230; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Totale deelnemingswaarde met afnemend belang",
+    "check": {
+      "description": "Som deelnemingen na één interne nettocorrectie",
+      "actual": 1059000.0,
+      "expected": 1059000
+    }
+  },
+  {
+    "key": "side-af-balansboeking",
+    "topicId": "sidestream-afnemend",
+    "title": "Consolidatieboeking van de eindvoorraad",
+    "type": "Journaalpost",
+    "intro": "M bezit 80% in V en 60% in K. V levert aan K. De eindvoorraad bevat € 50.000 winst van V. NVW en integrale consolidatie worden toegepast; de interne correctie is al verwerkt. Het belastingtarief is 20%.",
+    "facts": [
+      [
+        "Eindvoorraadwinst",
+        "€ 50.000"
+      ],
+      [
+        "Verdeling",
+        "60% intern; 20% derden; 20% aanvullend concern"
+      ]
+    ],
+    "task": "Welke boeking verwijdert de winst uit de geconsolideerde eindvoorraad, vóór de aparte verwerking van beginvoorraad?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming V",
+              "€ 24.000",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 8.000",
+              ""
+            ],
+            [
+              "Resultaat boekjaar",
+              "€ 8.000",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "De netto delen zijn 60%, 20% en 20% van € 40.000. De belastingcorrectie over de volledige winst is € 10.000; samen € 50.000."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming V",
+              "€ 30.000",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Resultaat boekjaar",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "Dit boekt de bruto bedragen volledig op vermogensposten en laat de noodzakelijke belastingcorrectie weg."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming V",
+              "€ 32.000",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 8.000",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "Dit behandelt de stroom alsof het belang niet afneemt: 80% op deelneming en geen aanvullende concerncorrectie."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming V",
+              "€ 24.000",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 16.000",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "Dit gebruikt de 40% derden in koper K; de verkoper heeft slechts 20% derden. De andere 20% is aanvullend concern."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Netto winst: € 50.000 × 80% = € 40.000. Verdeel dit in € 24.000 deelneming, € 8.000 derden en € 8.000 resultaat.",
+      "Belasting: € 50.000 × 20% = € 10.000. De debetbedragen tellen op tot de bruto voorraadcorrectie van € 50.000."
+    ],
+    "pattern": [
+      "Herken: afnemend belang geeft drie netto correctiedelen.",
+      "Aanpak: verdeel netto, voeg de belasting toe en crediteer de bruto voorraadwinst.",
+      "Controle: netto delen plus belasting moeten exact de voorraadcredit vormen."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 14b; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "9",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 14b",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "229-233",
+        "label": "Syllabus deel 3, p. 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "gevorderd",
+    "skill": "Alle eindvoorraadcorrecties sluiten aan",
+    "check": {
+      "description": "Balanscontrole vier debetcomponenten",
+      "actual": 50000.0,
+      "expected": 50000
+    }
+  },
+  {
+    "key": "side-af-richting-wisselt",
+    "topicId": "sidestream-afnemend",
+    "title": "Leveringsrichting en belangpercentages",
+    "type": "Vergelijking",
+    "intro": "M bezit 80% in A en 60% in B. Beide belangen worden tegen NVW gewaardeerd. In situatie I levert A aan B. In situatie II levert B aan A. Alle andere omstandigheden zijn gelijk.",
+    "facts": [
+      [
+        "Belangen",
+        "A 80%; B 60%"
+      ],
+      [
+        "Twee situaties",
+        "I: A → B; II: B → A"
+      ]
+    ],
+    "task": "Welke vergelijking is juist?",
+    "options": [
+      {
+        "text": "I is afnemend met 20% aanvullende concerncorrectie; II is niet-afnemend zonder zo’n aanvullend percentage.",
+        "why": "Bij I daalt M’s belang van 80% naar 60%. Bij II stijgt het van 60% naar 80%; dan wordt het verkopersdeel van 60% intern gecorrigeerd en 40% via derden."
+      },
+      {
+        "text": "Beide situaties zijn afnemend omdat B slechts 60% bedraagt.",
+        "why": "Niet het laagste percentage op zichzelf, maar de volgorde verkoper naar koper bepaalt of het belang afneemt."
+      },
+      {
+        "text": "I is niet-afnemend en II afnemend.",
+        "why": "Dit volgt de goederenstroom achterstevoren; verkoper naar koper is de juiste richting."
+      },
+      {
+        "text": "Beide situaties hebben een aanvullende concerncorrectie van 20%.",
+        "why": "Het verschil tussen de belangen leidt alleen bij afnemend belang tot een aanvullende concerncorrectie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "I: 80% → 60%, dus 60% intern, 20% derden en 20% aanvullend concern.",
+      "II: 60% → 80%, dus 60% intern en 40% derden. Dezelfde percentages in de structuur kunnen bij een andere stroom een andere verwerking geven."
+    ],
+    "pattern": [
+      "Herken: dezelfde groepsstructuur kan twee sidestreamvarianten bevatten.",
+      "Aanpak: teken voor iedere levering een afzonderlijke pijl van verkoper naar koper.",
+      "Controle: beoordeel afnemend belang nooit zonder leveringsrichting."
+    ],
+    "sources": [
+      {
+        "file": "2021-10 CAFA2 - Tentamen.pdf",
+        "pages": "7-8",
+        "label": "Tentamen 06-10-2021, opgave 2, vraag 1b, 2; eigen oefenvariant",
+        "examId": "20211006"
+      },
+      {
+        "file": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5-6",
+        "label": "Antwoordmodel 06-10-2021, opgave 2, bij vraag 1b, 2",
+        "examId": "20211006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "214, 226",
+        "label": "Syllabus deel 3, p. 214, 226; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "De goederenrichting bepaalt de variant"
+  },
+  {
+    "key": "side-af-sluitende-vrijval",
+    "topicId": "sidestream-afnemend",
+    "title": "Toedeling van de gerealiseerde voorraadwinst",
+    "type": "Berekening",
+    "intro": "M heeft 90% in V en 70% in K. V levert aan K. De voorraadwinst daalt dit jaar met € 20.000. M heeft de interne NVW-vrijval al geboekt; beide vennootschappen worden integraal geconsolideerd. Het belastingtarief is 20%.",
+    "facts": [
+      [
+        "Bruto vrijval",
+        "€ 20.000"
+      ],
+      [
+        "Interne vrijval",
+        "70%"
+      ],
+      [
+        "Derden verkoper",
+        "10%"
+      ],
+      [
+        "Aanvullend concern",
+        "20%"
+      ]
+    ],
+    "task": "Welke verdeling van de netto vrijval is juist?",
+    "options": [
+      {
+        "text": "€ 11.200 intern, € 1.600 derden en € 3.200 aanvullend concern.",
+        "why": "Na belasting resteert € 16.000. Daarvan gaat 70% naar de interne correctie, 10% naar derden en 20% naar aanvullend concern."
+      },
+      {
+        "text": "€ 14.000 intern, € 2.000 derden en € 4.000 aanvullend concern.",
+        "why": "Dit zijn de bruto delen; de vraag vraagt de netto vrijval bij 20% belasting."
+      },
+      {
+        "text": "€ 14.400 intern, € 1.600 derden en € 0 aanvullend concern.",
+        "why": "Dit gebruikt 90% intern alsof het belang niet afneemt. Het lagere koperbelang is 70%."
+      },
+      {
+        "text": "€ 11.200 intern, € 4.800 derden en € 0 aanvullend concern.",
+        "why": "Dit gebruikt de 30% derden van de koper. Slechts 10% van de winst behoort aan derden in V."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Totale netto vrijval: € 20.000 × 80% = € 16.000.",
+      "Verdeling: 70% = € 11.200; 10% = € 1.600; 20% = € 3.200. Samen € 16.000."
+    ],
+    "pattern": [
+      "Herken: afname van winst betekent vrijval, ook als de belangenverhouding afnemend heet.",
+      "Aanpak: scheid voorraadmutatie, belasting en de drie toedelingspercentages.",
+      "Controle: alle netto delen samen sluiten aan op 100% van de netto vrijval."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 11, 13; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7-8",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 11, 13",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "235-239",
+        "label": "Syllabus deel 3, p. 235-239; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Vrijval over drie partijen verdelen",
+    "check": {
+      "description": "Totale netto vrijval als som van drie delen",
+      "actual": 16000.0,
+      "expected": 16000
+    }
+  },
+  {
+    "key": "mva-boekwaarde-restwaarde",
+    "topicId": "vaste-activa",
+    "title": "Boekwinst bij een interne machineverkoop",
+    "type": "Berekening",
+    "intro": "M verkoopt een gebruikte machine aan dochter D. Vanuit het concern is er geen externe verkoop. De machine werd drie volledige jaren geleden extern aangeschaft. Het concern schrijft lineair af.",
+    "facts": [
+      [
+        "Externe aanschafprijs",
+        "€ 160.000"
+      ],
+      [
+        "Oorspronkelijke levensduur",
+        "7 jaar"
+      ],
+      [
+        "Restwaarde",
+        "€ 20.000"
+      ],
+      [
+        "Interne verkoopprijs na 3 jaar",
+        "€ 125.000"
+      ]
+    ],
+    "task": "Hoeveel bruto interne boekwinst ontstaat op het verkoopmoment?",
+    "options": [
+      {
+        "text": "€ 25.000.",
+        "why": "De jaarlijkse afschrijving is (€ 160.000 − € 20.000)/7 = € 20.000. Na drie jaren is de concernboekwaarde € 100.000; boekwinst € 125.000 − € 100.000."
+      },
+      {
+        "text": "€ 35.000 verlies.",
+        "why": "Dit vergelijkt de verkoopprijs met de oorspronkelijke aanschafprijs en vergeet de drie jaren afschrijving."
+      },
+      {
+        "text": "€ 45.000.",
+        "why": "Dit trekt de restwaarde nogmaals van de al berekende boekwaarde af. Restwaarde bepaalt de afschrijvingsbasis."
+      },
+      {
+        "text": "€ 125.000.",
+        "why": "De verkoopopbrengst is niet gelijk aan boekwinst; de bestaande concernboekwaarde moet eraf."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Afschrijving per jaar: (€ 160.000 − € 20.000)/7 = € 20.000.",
+      "Concernboekwaarde op verkoopdatum: € 160.000 − 3 × € 20.000 = € 100.000. Interne boekwinst: € 25.000."
+    ],
+    "pattern": [
+      "Herken: een intern verkocht activum heeft al een afschrijvingsverleden.",
+      "Aanpak: bereken de concernboekwaarde vóór je de interne verkoopprijs vergelijkt.",
+      "Controle: restwaarde verlaagt de afschrijvingsbasis, niet nogmaals de actuele boekwaarde."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "7",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 9; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 9",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "239-240",
+        "label": "Syllabus deel 3, p. 239-240; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Boekwinst begint bij de oude boekwaarde",
+    "check": {
+      "description": "Verkoopprijs minus boekwaarde met restwaarde",
+      "actual": 25000.0,
+      "expected": 25000
+    }
+  },
+  {
+    "key": "mva-groepsboekwaarde-einde",
+    "topicId": "vaste-activa",
+    "title": "Machine op de geconsolideerde eindbalans",
+    "type": "Berekening",
+    "intro": "M verkoopt op 1 januari een machine voor € 300.000 aan dochter D. De concernboekwaarde is op die datum € 240.000. De resterende levensduur is voor beide vier jaar, zonder restwaarde. D schrijft af vanaf 1 januari. Koper en concern schrijven lineair af.",
+    "facts": [
+      [
+        "Boekwaarde vóór interne verkoop",
+        "€ 240.000"
+      ],
+      [
+        "Interne prijs",
+        "€ 300.000"
+      ],
+      [
+        "Resterende levensduur",
+        "4 jaar"
+      ]
+    ],
+    "task": "Voor welk bedrag staat de machine op 31 december in de geconsolideerde balans?",
+    "options": [
+      {
+        "text": "€ 180.000.",
+        "why": "Vanuit het concern loopt de bestaande boekwaarde door: € 240.000 − € 240.000/4 = € 180.000."
+      },
+      {
+        "text": "€ 225.000.",
+        "why": "Dit is D’s eigen boekwaarde na afschrijving op de interne koopprijs; daarin zit nog € 45.000 interne winst."
+      },
+      {
+        "text": "€ 165.000.",
+        "why": "Dit trekt de afschrijving van D (€ 75.000) af van de oude concernboekwaarde; voor het concern is de afschrijving € 60.000."
+      },
+      {
+        "text": "€ 240.000.",
+        "why": "Dit negeert dat ook voor het concern één jaar afschrijving is verstreken."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "D’s boekwaarde: € 300.000 − € 75.000 = € 225.000.",
+      "Overgebleven interne winst: € 60.000 − (€ 75.000 − € 60.000) = € 45.000. Geconsolideerd: € 225.000 − € 45.000 = € 180.000."
+    ],
+    "pattern": [
+      "Herken: een interne transactie geeft geen nieuwe aanschafprijs voor het concern.",
+      "Aanpak: laat de externe boekwaarde en concern-afschrijving doorlopen.",
+      "Controle: D’s boekwaarde minus resterende interne winst moet dezelfde uitkomst geven."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "8-9",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 11, 14a; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7-8",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 11, 14a",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240-243",
+        "label": "Syllabus deel 3, p. 240-243; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "De interne prijs verandert de groepsboekwaarde niet",
+    "check": {
+      "description": "Boekwaarde koper minus resterende interne winst",
+      "actual": 180000.0,
+      "expected": 180000
+    }
+  },
+  {
+    "key": "mva-halfjaar-realisatie",
+    "topicId": "vaste-activa",
+    "title": "Machineoverdracht op 1 juli",
+    "type": "Berekening",
+    "intro": "Een dochter koopt op 1 juli intern een machine. De interne boekwinst bedraagt € 24.000. Vanaf die datum resteert voor koper en concern dezelfde levensduur van vier jaar zonder restwaarde. Afschrijving gebeurt tijdsevenredig. Koper en concern schrijven lineair af.",
+    "facts": [
+      [
+        "Interne boekwinst op 1 juli",
+        "€ 24.000"
+      ],
+      [
+        "Resterende gebruiksduur",
+        "4 jaar"
+      ],
+      [
+        "Belasting",
+        "Buiten beschouwing"
+      ]
+    ],
+    "task": "Hoeveel bruto interne boekwinst is op 31 december nog ongerealiseerd?",
+    "options": [
+      {
+        "text": "€ 21.000.",
+        "why": "Een volledig jaar realiseert € 24.000/4 = € 6.000. Voor zes maanden is dat € 3.000, zodat € 21.000 resteert."
+      },
+      {
+        "text": "€ 18.000.",
+        "why": "Dit verwerkt een heel jaar realisatie, terwijl de interne overdracht pas op 1 juli plaatsvond."
+      },
+      {
+        "text": "€ 24.000.",
+        "why": "Dit negeert dat de machine na overdracht al zes maanden is gebruikt en extra afschrijving heeft plaatsgevonden."
+      },
+      {
+        "text": "€ 3.000.",
+        "why": "Dit is het in het halfjaar gerealiseerde deel, niet de nog ongerealiseerde eindstand."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Extra afschrijving per volledig jaar: € 24.000/4 = € 6.000.",
+      "In het eerste halfjaar na overdracht realiseert € 6.000 × 6/12 = € 3.000. Eindcorrectie: € 24.000 − € 3.000 = € 21.000."
+    ],
+    "pattern": [
+      "Herken: het activum is midden in het boekjaar intern overgedragen.",
+      "Aanpak: bereken jaarlijkse realisatie en pas daarna de tijdsfractie toe.",
+      "Controle: eindstand plus gerealiseerd deel moet gelijk zijn aan de oorspronkelijke interne winst."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "7-8",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 9-11; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 9-11",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "239-243",
+        "label": "Syllabus deel 3, p. 239-243; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Een halfjaar afschrijving realiseert een halfjaar winst",
+    "check": {
+      "description": "Ongerealiseerde winst na zes maanden",
+      "actual": 21000.0,
+      "expected": 21000
+    }
+  },
+  {
+    "key": "mva-upstream-rekening",
+    "topicId": "vaste-activa",
+    "title": "Enkelvoudige correctie bij een upstreammachine",
+    "type": "Journaalpost",
+    "intro": "Dochter D verkoopt op 31 december een machine aan M. M bezit 80% van D, waardeert D tegen NVW en consolideert integraal. De boekwinst bij D is € 30.000; er is nog geen afschrijving na de overdracht. Het belastingtarief is 20%.",
+    "facts": [
+      [
+        "Richting",
+        "Dochter → moeder"
+      ],
+      [
+        "Bruto interne boekwinst",
+        "€ 30.000"
+      ],
+      [
+        "Belang M",
+        "80%"
+      ]
+    ],
+    "task": "Welke interne correctie boekt M enkelvoudig voor haar aandeel in de ongerealiseerde machinewinst?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming D",
+              "€ 19.200",
+              ""
+            ],
+            [
+              "Deelneming D",
+              "",
+              "€ 19.200"
+            ]
+          ]
+        },
+        "why": "M corrigeert 80% van D’s netto ongerealiseerde winst: € 30.000 × 80% × 80%."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Niet-gerealiseerde boekwinst",
+              "€ 24.000",
+              ""
+            ],
+            [
+              "Overlopende passiva",
+              "",
+              "€ 24.000"
+            ]
+          ]
+        },
+        "why": "Dit volgt de downstreamrekeninggang bij een door M geboekte verkoopwinst. Hier zit de winst in D’s resultaat en M’s deelnemingswaarde."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming D",
+              "€ 24.000",
+              ""
+            ],
+            [
+              "Deelneming D",
+              "",
+              "€ 24.000"
+            ]
+          ]
+        },
+        "why": "Dit gebruikt de bruto winst zonder belastingcorrectie; het deelnemingsresultaat wordt netto bepaald."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming D",
+              "€ 19.200",
+              ""
+            ],
+            [
+              "Resultaat deelneming D",
+              "",
+              "€ 19.200"
+            ]
+          ]
+        },
+        "why": "Dit zou winst vrijmaken. In de casus ontstaat juist nieuwe ongerealiseerde winst."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "D heeft de winst gemaakt. Netto winst is € 30.000 × 80% = € 24.000.",
+      "M’s aandeel is 80% × € 24.000 = € 19.200. Verlaag deelneming én resultaat deelneming met dat bedrag."
+    ],
+    "pattern": [
+      "Herken: bij upstream staat de boekwinst in het resultaat van de dochter.",
+      "Aanpak: corrigeer M’s netto aandeel via resultaat deelneming en deelneming.",
+      "Controle: gebruik overlopende passiva niet als standaardrekening voor elke machinelevering."
+    ],
+    "sources": [
+      {
+        "file": "2021-04 CAFA2 - Tentamen.docx",
+        "pages": "DOCX opgave 2 deel II",
+        "label": "Tentamen 19-04-2021, opgave 2, vraag 7-9; machinecasus met aangepaste leveringsrichting, upstreamverwerking uit syllabus",
+        "examId": "20210419"
+      },
+      {
+        "file": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "8",
+        "label": "Antwoordmodel 19-04-2021, opgave 2, bij vraag 7-9; machinecasus met aangepaste leveringsrichting, upstreamverwerking uit syllabus",
+        "examId": "20210419"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "244-245",
+        "label": "Syllabus deel 3, p. 244-245; aanvullende upstreamvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Upstream machinewinst raakt de deelneming",
+    "check": {
+      "description": "Aandeel in netto upstream machinewinst",
+      "actual": 19200.0,
+      "expected": 19200
+    }
+  },
+  {
+    "key": "mva-upstream-derden-realisatie",
+    "topicId": "vaste-activa",
+    "title": "Derdenresultaat na een upstreammachineverkoop",
+    "type": "Berekening",
+    "intro": "M bezit 75% van dochter D. D verkocht eind vorig jaar een machine aan M met € 40.000 interne boekwinst. De resterende levensduur was vier jaar zonder restwaarde. Dit jaar wordt een vol jaar afgeschreven. NVW en integrale consolidatie worden toegepast. Koper en concern schrijven lineair af.",
+    "facts": [
+      [
+        "Interne boekwinst bij overdracht",
+        "€ 40.000"
+      ],
+      [
+        "Resterende levensduur",
+        "4 jaar"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Hoeveel neemt het aandeel derden in het geconsolideerde jaarresultaat toe door de realisatie van deze interne boekwinst?",
+    "options": [
+      {
+        "text": "€ 2.000.",
+        "why": "Jaarlijks realiseert € 10.000 bruto. Het netto aandeel van de 25% derden in verkoper D is € 10.000 × 25% × 80%."
+      },
+      {
+        "text": "€ 8.000.",
+        "why": "Dit is de totale netto realisatie; slechts 25% daarvan behoort aan derden."
+      },
+      {
+        "text": "€ 2.500.",
+        "why": "Dit is het bruto derdenaandeel; de vraag betreft resultaat na belasting."
+      },
+      {
+        "text": "€ 6.000.",
+        "why": "Dit is M’s 75%-aandeel in de netto realisatie, niet het aandeel derden."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Jaarlijkse realisatie: € 40.000/4 = € 10.000.",
+      "Derden in D: 25%. Netto toename aandeel derden: € 10.000 × 25% × 80% = € 2.000."
+    ],
+    "pattern": [
+      "Herken: door extra afschrijving wordt oude upstreamwinst geleidelijk gerealiseerd.",
+      "Aanpak: bepaal jaarrealisatie, belasting en derdenpercentage van de verkoper.",
+      "Controle: moederdeel plus derdenaandeel is de volledige netto realisatie."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "8-9",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 11, 15a; machinecasus met aangepaste leveringsrichting, upstreamverwerking uit syllabus",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7-9",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 11, 15a; machinecasus met aangepaste leveringsrichting, upstreamverwerking uit syllabus",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "244-248",
+        "label": "Syllabus deel 3, p. 244-248; aanvullende upstreamvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Derden profiteren van de afschrijvingsrealisatie",
+    "check": {
+      "description": "Derden in jaarlijkse nettorealisatie",
+      "actual": 2000.0,
+      "expected": 2000
+    }
+  },
+  {
+    "key": "mva-overlopende-na-tweejaar",
+    "topicId": "vaste-activa",
+    "title": "Overlopende passiva na twee gebruiksjaren",
+    "type": "Berekening",
+    "intro": "M verkocht eind jaar 0 een machine aan haar 70%-dochter D. De interne boekwinst was € 50.000. De resterende levensduur is vijf jaar zonder restwaarde, gelijk voor D en concern. M waardeert D tegen NVW en corrigeert downstreamwinst via overlopende passiva. Koper en concern schrijven lineair af.",
+    "facts": [
+      [
+        "Interne boekwinst bij overdracht",
+        "€ 50.000"
+      ],
+      [
+        "Belang in D",
+        "70%"
+      ],
+      [
+        "Sinds overdracht",
+        "2 volledige gebruiksjaren"
+      ]
+    ],
+    "task": "Wat is het creditsaldo overlopende passiva voor deze machine op 31 december van jaar 2?",
+    "options": [
+      {
+        "text": "€ 21.000.",
+        "why": "Na twee jaren resteert € 30.000 bruto interne winst. Daarvan is 70% = € 21.000 enkelvoudig uitgesteld."
+      },
+      {
+        "text": "€ 35.000.",
+        "why": "Dit is het oorspronkelijke saldo direct na overdracht, zonder jaarlijkse vrijval."
+      },
+      {
+        "text": "€ 30.000.",
+        "why": "Dit is de totale resterende interne winst; enkelvoudig corrigeert M het 70%-deel."
+      },
+      {
+        "text": "€ 14.000.",
+        "why": "Dit is de vrijval in twee jaren, niet het resterende creditsaldo."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Jaarlijkse bruto realisatie: € 50.000/5 = € 10.000. Na twee jaren resteert € 50.000 − € 20.000 = € 30.000.",
+      "Overlopende passiva: 70% × € 30.000 = € 21.000 credit. Dit is een bruto rekening; belasting wordt apart verwerkt."
+    ],
+    "pattern": [
+      "Herken: gevraagd is een balansstand na meerdere jaren.",
+      "Aanpak: bereken resterende machinewinst en pas daarop het interne aandeel toe.",
+      "Controle: beginstand € 35.000 minus twee vrijvallen van € 7.000 geeft € 21.000."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "7-8",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 9-11; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 9-11",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240-243",
+        "label": "Syllabus deel 3, p. 240-243; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het saldo overlopende passiva loopt af",
+    "check": {
+      "description": "Beginstand minus twee jaarlijkse vrijvallen",
+      "actual": 21000.0,
+      "expected": 21000
+    }
+  },
+  {
+    "key": "mva-rest-afschrijving",
+    "topicId": "vaste-activa",
+    "title": "Een afschrijvingseliminatie beoordelen",
+    "type": "Foutdiagnose",
+    "intro": "D kocht intern een machine voor € 180.000. De concernboekwaarde op overdrachtdatum was € 120.000. Beide schrijven vanaf die datum af in drie gelijke jaarbedragen zonder restwaarde. Een medewerker wil D’s hele jaarlijkse afschrijving van € 60.000 elimineren.",
+    "facts": [
+      [
+        "Afschrijving D",
+        "€ 60.000 per jaar"
+      ],
+      [
+        "Concernboekwaarde bij overdracht",
+        "€ 120.000"
+      ],
+      [
+        "Resterende levensduur",
+        "3 jaar"
+      ]
+    ],
+    "task": "Welke verbetering is juist?",
+    "options": [
+      {
+        "text": "Elimineer € 20.000; de geconsolideerde afschrijving moet € 40.000 blijven.",
+        "why": "De machine wordt ook voor het concern gebruikt. Alleen het verschil tussen afschrijving op interne prijs en concernboekwaarde moet worden verwijderd."
+      },
+      {
+        "text": "Elimineer € 60.000; een interne aankoop leidt nooit tot afschrijving.",
+        "why": "De interne transactie verdwijnt, maar het bestaande activum blijft verbruikt worden en vereist concern-afschrijving."
+      },
+      {
+        "text": "Elimineer € 40.000; de geconsolideerde afschrijving wordt € 20.000.",
+        "why": "Dit verwisselt de normale concern-afschrijving en de te elimineren extra afschrijving."
+      },
+      {
+        "text": "Elimineer niets; de factuurprijs van D is bepalend voor het concern.",
+        "why": "De interne factuurprijs mag de concern-afschrijvingsbasis niet verhogen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Concern-afschrijving: € 120.000/3 = € 40.000.",
+      "D schrijft € 180.000/3 = € 60.000 af. Elimineer alleen de extra € 20.000."
+    ],
+    "pattern": [
+      "Herken: het activum blijft bestaan ondanks eliminatie van de interne verkoop.",
+      "Aanpak: vergelijk afschrijving bij koper met afschrijving vanuit concernperspectief.",
+      "Controle: na correctie resteert afschrijving op de oorspronkelijke concernboekwaarde."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 15a; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "9",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 15a",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "243-244",
+        "label": "Syllabus deel 3, p. 243-244; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Alleen de extra afschrijving elimineren",
+    "check": {
+      "description": "Afschrijvingsverschil",
+      "actual": 20000.0,
+      "expected": 20000
+    }
+  },
+  {
+    "key": "mva-groepseffect-vervolgjaar",
+    "topicId": "vaste-activa",
+    "title": "Aanvullend resultaateffect in het vervolgjaar",
+    "type": "Vergelijking",
+    "intro": "M verkoopt eind jaar 0 een machine aan haar 80%-dochter D met € 25.000 winst. De resterende levensduur is vijf jaar zonder restwaarde. M verwerkt de interne NVW-correcties. Het belastingtarief is 20%; andere verschillen ontbreken.",
+    "facts": [
+      [
+        "Bruto interne winst",
+        "€ 25.000"
+      ],
+      [
+        "Extra afschrijving per volledig jaar",
+        "€ 5.000"
+      ],
+      [
+        "Aanvullend concernpercentage",
+        "20%"
+      ]
+    ],
+    "task": "Wat is in het volledige jaar 1 het aanvullende effect op het aan M toekomende geconsolideerde resultaat tegenover M’s enkelvoudige resultaat?",
+    "options": [
+      {
+        "text": "€ 800 hoger.",
+        "why": "Boven M’s interne vrijval realiseert het concern nog 20% × € 5.000 bruto. Na 20% belasting is dat € 800 extra resultaat."
+      },
+      {
+        "text": "€ 4.000 lager.",
+        "why": "Dit is de aanvullende netto correctie op de oorspronkelijke verkoopdatum, niet de vrijval in jaar 1."
+      },
+      {
+        "text": "€ 3.200 hoger.",
+        "why": "Dit is M’s interne 80%-vrijval; die is volgens de casus al in het enkelvoudige resultaat verwerkt."
+      },
+      {
+        "text": "€ 800 lager.",
+        "why": "In een vervolgjaar daalt de resterende interne boekwinst door afschrijving. Daardoor ontstaat vrijval, geen nieuwe uitstelpost."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Jaarrealisatie bruto: € 25.000/5 = € 5.000.",
+      "Interne 80% is al verwerkt. De resterende 20% geeft extra netto resultaat: € 5.000 × 20% × 80% = € 800."
+    ],
+    "pattern": [
+      "Herken: verkoopjaar stelt winst uit; vervolgjaren realiseren winst via afschrijving.",
+      "Aanpak: neem het aanvullende concernpercentage van de netto jaarrealisatie.",
+      "Controle: een afname van de resterende interne winst verhoogt het resultaat."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 14a-15a; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "8-9",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 14a-15a",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "241-244",
+        "label": "Syllabus deel 3, p. 241-244; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het teken keert in het vervolgjaar om",
+    "check": {
+      "description": "Aanvullende netto realisatie",
+      "actual": 799.9999999999999,
+      "expected": 800
+    }
+  },
+  {
+    "key": "tax-bruto-netto-voorraad",
+    "topicId": "belastingen",
+    "title": "Voorraadcorrectie en belastingeffect",
+    "type": "Berekening",
+    "intro": "Bij integrale consolidatie moet € 80.000 winst uit de eindvoorraad worden verwijderd. Deze winst is fiscaal al belast. De casus werkt met een belastingtarief van 25% en een belastinglatentie volgens de syllabus. Er was geen interne beginvoorraad.",
+    "facts": [
+      [
+        "Bruto ongerealiseerde winst",
+        "€ 80.000"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Welke combinatie geeft het totale netto-effect en de belastingcorrectie, vóór verdeling over moeder en derden?",
+    "options": [
+      {
+        "text": "Netto resultaat € 60.000 lager; belastingcorrectie € 20.000.",
+        "why": "De netto winst is 75% van € 80.000. Het overige kwart is het belastingeffect op de tijdelijke winstcorrectie."
+      },
+      {
+        "text": "Netto resultaat € 80.000 lager; belastingcorrectie € 20.000.",
+        "why": "Dit belast het resultaat nog met het brutobedrag en voegt het belastingeffect erbovenop; de aansluiting loopt dan niet meer tot € 80.000."
+      },
+      {
+        "text": "Netto resultaat € 20.000 lager; belastingcorrectie € 60.000.",
+        "why": "Dit verwisselt belasting en netto winst."
+      },
+      {
+        "text": "Netto resultaat € 60.000 lager; geen belastingcorrectie.",
+        "why": "Dan blijft de al verwerkte belasting op de nu uitgestelde winst ongewijzigd en ontbreekt € 20.000 in de aansluiting."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Belastingeffect: € 80.000 × 25% = € 20.000.",
+      "Netto winstcorrectie: € 80.000 − € 20.000 = € 60.000. Beide samen verklaren de bruto voorraadcorrectie."
+    ],
+    "pattern": [
+      "Herken: voorraad bevat winst vóór belasting, resultaat en vermogen worden netto gecorrigeerd.",
+      "Aanpak: splits de bruto winst in belasting en resterende netto winst.",
+      "Controle: netto plus belasting moet terugleiden naar het brutobedrag."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "11",
+        "label": "Tentamen 11-04-2022, opgave 3, vraag 16-17; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "10",
+        "label": "Antwoordmodel 11-04-2022, opgave 3, bij vraag 16-17",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "229-233",
+        "label": "Syllabus deel 3, p. 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Bruto voorraadcorrectie en netto resultaat",
+    "check": {
+      "description": "Netto winst plus belasting sluit op bruto aan",
+      "actual": 80000.0,
+      "expected": 80000
+    }
+  },
+  {
+    "key": "tax-stand-mutatie",
+    "topicId": "belastingen",
+    "title": "Belastinglatentie en belastingresultaat",
+    "type": "Berekening",
+    "intro": "Een integraal geconsolideerde groep heeft aan het begin van het jaar € 40.000 en aan het einde € 70.000 fiscaal belaste maar voor de groep ongerealiseerde voorraadwinst. Het belastingtarief is 20%. Er zijn geen andere mutaties.",
+    "facts": [
+      [
+        "Beginwinst",
+        "€ 40.000"
+      ],
+      [
+        "Eindwinst",
+        "€ 70.000"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Wat zijn de totale belastinglatentie bij jaareinde en de belastingbate door de winstcorrectie in het lopende jaar?",
+    "options": [
+      {
+        "text": "Eindlatentie € 14.000; jaarbate € 6.000.",
+        "why": "De balans gebruikt € 70.000 × 20%. Het jaarresultaat gebruikt alleen de toename van € 30.000 × 20%."
+      },
+      {
+        "text": "Eindlatentie € 14.000; jaarbate € 14.000.",
+        "why": "Dit rekent ook de al bestaande beginlatentie van € 8.000 opnieuw tot de jaarbate."
+      },
+      {
+        "text": "Eindlatentie € 6.000; jaarbate € 6.000.",
+        "why": "Dit verwart het nieuwe deel met de volledige balansstand."
+      },
+      {
+        "text": "Eindlatentie € 8.000; jaarbate € 14.000.",
+        "why": "Dit gebruikt voor de balans de beginstand en voor het resultaat de eindstand in plaats van de mutatie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Beginlatentie: € 40.000 × 20% = € 8.000. Eindlatentie: € 70.000 × 20% = € 14.000.",
+      "Toename: € 14.000 − € 8.000 = € 6.000. Dit is de belastingbate bij de extra winstuitstelpost."
+    ],
+    "pattern": [
+      "Herken: balans vraagt een stand; winst-en-verliesrekening vraagt een jaarverandering.",
+      "Aanpak: bereken begin- en eindlatentie afzonderlijk en neem het verschil.",
+      "Controle: beginstand plus jaarmutatie moet de eindstand opleveren."
+    ],
+    "sources": [
+      {
+        "file": "2021-04 CAFA2 - Tentamen.docx",
+        "pages": "DOCX opgave 2",
+        "label": "Tentamen 19-04-2021, opgave 2, vraag 5b-6b; eigen oefenvariant",
+        "examId": "20210419"
+      },
+      {
+        "file": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 19-04-2021, opgave 2, bij vraag 5b-6b",
+        "examId": "20210419"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "229-233",
+        "label": "Syllabus deel 3, p. 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Belastinglatentie is niet de belastingbate van het jaar",
+    "check": {
+      "description": "Mutatie latentie uit beide standen",
+      "actual": 6000.0,
+      "expected": 6000
+    }
+  },
+  {
+    "key": "tax-downstream-interne-boeking",
+    "topicId": "belastingen",
+    "title": "Belastingboeking bij een downstreamcorrectie",
+    "type": "Berekening",
+    "intro": "M levert goederen aan haar 60%-dochter D. M waardeert D tegen NVW. De ongerealiseerde voorraadwinst stijgt dit jaar met € 32.000. Voor de interne downstreamcorrectie boekt M eerst 60% van deze winst als niet-gerealiseerde winst.",
+    "facts": [
+      [
+        "Toename voorraadwinst",
+        "€ 32.000"
+      ],
+      [
+        "Intern aandeel",
+        "60%"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Hoeveel debiteert M vervolgens op voorziening belastingen en crediteert zij op belastinglast voor deze interne correctie?",
+    "options": [
+      {
+        "text": "€ 4.800.",
+        "why": "Het intern gecorrigeerde brutodeel is € 19.200. Het belastingdeel daarvan is 25% = € 4.800."
+      },
+      {
+        "text": "€ 8.000.",
+        "why": "Dit is belasting over de volledige winsttoename. Enkelvoudig wordt hier eerst slechts het 60%-deel gecorrigeerd."
+      },
+      {
+        "text": "€ 3.200.",
+        "why": "Dit is belasting over het aanvullende 40%-deel dat pas bij consolidatie wordt gecorrigeerd."
+      },
+      {
+        "text": "€ 14.400.",
+        "why": "Dit is de netto interne winstcorrectie, niet de belastingcomponent."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Interne winstcorrectie bruto: € 32.000 × 60% = € 19.200.",
+      "Belastingcorrectie: € 19.200 × 25% = € 4.800. Zo bedraagt de netto interne resultaatdaling € 14.400."
+    ],
+    "pattern": [
+      "Herken: de vraag beperkt zich tot de enkelvoudige correctie.",
+      "Aanpak: bepaal eerst het interne brutodeel en pas daarop het belastingtarief toe.",
+      "Controle: neem het aanvullende concernpercentage niet alvast mee in deze boeking."
+    ],
+    "sources": [
+      {
+        "file": "2021-10 CAFA2 - Tentamen.pdf",
+        "pages": "8",
+        "label": "Tentamen 06-10-2021, opgave 2, vraag 2; eigen oefenvariant",
+        "examId": "20211006"
+      },
+      {
+        "file": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "5",
+        "label": "Antwoordmodel 06-10-2021, opgave 2, bij vraag 2",
+        "examId": "20211006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240",
+        "label": "Syllabus deel 3, p. 240; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Het belastingdeel van de interne downstreamcorrectie",
+    "check": {
+      "description": "Interne winsttoename maal tarief",
+      "actual": 4800.0,
+      "expected": 4800
+    }
+  },
+  {
+    "key": "tax-downstream-aanvullend",
+    "topicId": "belastingen",
+    "title": "Belastingcorrectie bij de consolidatie",
+    "type": "Berekening",
+    "intro": "M levert aan haar 75%-dochter D en waardeert D tegen NVW. De winst in D’s eindvoorraad bedraagt € 40.000. M heeft de interne correctie en bijbehorende belasting over haar 75%-deel al verwerkt. D wordt integraal geconsolideerd.",
+    "facts": [
+      [
+        "Totale eindvoorraadwinst",
+        "€ 40.000"
+      ],
+      [
+        "Reeds intern verwerkt",
+        "75%"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Welke aanvullende belastingcorrectie hoort bij de eliminatie van het resterende downstreamwinstdeel in de geconsolideerde eindbalans?",
+    "options": [
+      {
+        "text": "€ 2.000.",
+        "why": "Van de winst resteert 25% × € 40.000 = € 10.000; belasting hierover is 20% = € 2.000."
+      },
+      {
+        "text": "€ 8.000.",
+        "why": "Dit is de totale belastingcorrectie. Daarvan is € 6.000 al enkelvoudig verwerkt."
+      },
+      {
+        "text": "€ 6.000.",
+        "why": "Dit is juist het reeds intern verwerkte 75%-belastingdeel."
+      },
+      {
+        "text": "€ 0 omdat M tegen NVW waardeert.",
+        "why": "NVW corrigeert bij downstream enkelvoudig slechts het eigen aandeel; integrale consolidatie vereist ook het overige deel."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Totale latentie: € 40.000 × 20% = € 8.000.",
+      "Al intern verwerkt: € 40.000 × 75% × 20% = € 6.000. Aanvullend: € 2.000."
+    ],
+    "pattern": [
+      "Herken: bij downstream met NVW kan een deel van de belastingcorrectie al geboekt zijn.",
+      "Aanpak: bereken totaal minus reeds verwerkt, of gebruik direct het aanvullende percentage.",
+      "Controle: tel interne en aanvullende belastingcorrectie op tot 100% van het totale effect."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "11-12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 2, 5c; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "9-11",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 2, 5c",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240-241",
+        "label": "Syllabus deel 3, p. 240-241; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Welke belastingcorrectie resteert bij consolidatie?",
+    "check": {
+      "description": "Totale latentie minus interne latentie",
+      "actual": 2000.0,
+      "expected": 2000
+    }
+  },
+  {
+    "key": "tax-upstream-nvw-nettoboeking",
+    "topicId": "belastingen",
+    "title": "Boekingswijze van een upstreamcorrectie",
+    "type": "Journaalpost",
+    "intro": "D levert aan M. M bezit 70% van D en waardeert D tegen NVW. De winst van D in M’s voorraad neemt met € 20.000 toe. Het tarief is 20%. De vraag betreft uitsluitend M’s interne correctie, vóór consolidatie.",
+    "facts": [
+      [
+        "Richting",
+        "Upstream"
+      ],
+      [
+        "Bruto winsttoename",
+        "€ 20.000"
+      ],
+      [
+        "Aandeel M",
+        "70%"
+      ]
+    ],
+    "task": "Welke interne journaalpost verwerkt de correctie passend bij het netto deelnemingsresultaat?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming D",
+              "€ 11.200",
+              ""
+            ],
+            [
+              "Deelneming D",
+              "",
+              "€ 11.200"
+            ]
+          ]
+        },
+        "why": "De correctie volgt het netto resultaat van D: € 20.000 × 70% × 80% = € 11.200. De fiscale splitsing volgt verder bij consolidatie."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming D",
+              "€ 14.000",
+              ""
+            ],
+            [
+              "Deelneming D",
+              "",
+              "€ 14.000"
+            ]
+          ]
+        },
+        "why": "Dit boekt M’s brutodeel op een deelnemingsresultaat dat na belasting wordt bepaald."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming D",
+              "€ 11.200",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 2.800",
+              ""
+            ],
+            [
+              "Deelneming D",
+              "",
+              "€ 14.000"
+            ]
+          ]
+        },
+        "why": "Dit voegt in de enkelvoudige NVW-correctie een aparte belastingpost toe en verlaagt de deelneming bruto. De syllabus verwerkt deze upstreamcorrectie netto op deelneming en resultaat."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming D",
+              "€ 11.200",
+              ""
+            ],
+            [
+              "Resultaat deelneming D",
+              "",
+              "€ 11.200"
+            ]
+          ]
+        },
+        "why": "Dit is de richting voor vrijval. De ongerealiseerde winst neemt hier toe, dus resultaat en deelneming dalen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "M’s bruto aandeel is € 20.000 × 70% = € 14.000. Na 20% belasting resteert € 11.200.",
+      "Verlaag enkelvoudig deelneming en resultaat deelneming met het netto bedrag. Bij de consolidatie wordt de bruto voorraadcorrectie uitgesplitst."
+    ],
+    "pattern": [
+      "Herken: upstreamwinst is al onderdeel van het netto dochterresultaat.",
+      "Aanpak: corrigeer het netto moederdeel via de twee deelnemingsrekeningen.",
+      "Controle: kopieer de losse belastingboeking van downstream niet naar deze interne upstreamboeking."
+    ],
+    "sources": [
+      {
+        "file": "2021-04 CAFA2 - Tentamen.docx",
+        "pages": "DOCX opgave 2",
+        "label": "Tentamen 19-04-2021, opgave 2, vraag 2-3; eigen oefenvariant",
+        "examId": "20210419"
+      },
+      {
+        "file": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "6",
+        "label": "Antwoordmodel 19-04-2021, opgave 2, bij vraag 2-3",
+        "examId": "20210419"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "75-81",
+        "label": "Syllabus deel 3, p. 75-81; upstreamvoorraadwinst bij NVW"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Waarom bevat de NVW-correctie geen losse belastingregel?",
+    "check": {
+      "description": "Netto moederdeel",
+      "actual": 11200.0,
+      "expected": 11200
+    }
+  },
+  {
+    "key": "tax-derden-netto-jaar",
+    "topicId": "belastingen",
+    "title": "Belasting en derdenresultaat",
+    "type": "Berekening",
+    "intro": "Een 60%-dochter levert aan M. De dochter wordt integraal geconsolideerd. De winst in M’s voorraad stijgt van € 30.000 naar € 50.000. Het belastingtarief is 25%.",
+    "facts": [
+      [
+        "Derdenbelang in verkoper",
+        "40%"
+      ],
+      [
+        "Voorraadwinst begin/eind",
+        "€ 30.000 / € 50.000"
+      ]
+    ],
+    "task": "Wat is de vermindering van het aandeel derden in het geconsolideerde jaarresultaat door deze voorraadmutatie?",
+    "options": [
+      {
+        "text": "€ 6.000.",
+        "why": "De netto winsttoename is € 20.000 × 75% = € 15.000. Daarvan behoort 40% = € 6.000 aan derden."
+      },
+      {
+        "text": "€ 8.000.",
+        "why": "Dit is het brutoderdenaandeel zonder belastingeffect."
+      },
+      {
+        "text": "€ 15.000.",
+        "why": "Dit is de netto correctie op het belang derden in de eindbalans: € 50.000 × 40% × 75%. Gevraagd is het jaarresultaat."
+      },
+      {
+        "text": "€ 9.000.",
+        "why": "Dit is het 60%-moederaandeel in de netto jaarmutatie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Mutatie bruto: € 50.000 − € 30.000 = € 20.000.",
+      "Netto derdenlast: € 20.000 × 40% × 75% = € 6.000. Het verschil met bruto € 8.000 is € 2.000 belasting."
+    ],
+    "pattern": [
+      "Herken: aandeel derden in resultaat vraagt de netto jaarmutatie.",
+      "Aanpak: gebruik mutatie × derden verkoper × (1 − tarief).",
+      "Controle: verwar aandeel derden in jaarresultaat niet met belang derden op de eindbalans."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "11",
+        "label": "Tentamen 11-04-2022, opgave 3, vraag 16-17; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "10",
+        "label": "Antwoordmodel 11-04-2022, opgave 3, bij vraag 16-17",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "226, 229-233",
+        "label": "Syllabus deel 3, p. 226, 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Derdenresultaat na belasting berekenen",
+    "check": {
+      "description": "Netto toename derden correctie",
+      "actual": 6000.0,
+      "expected": 6000
+    }
+  },
+  {
+    "key": "tax-side-som-latenties",
+    "topicId": "belastingen",
+    "title": "Belastinglatenties bij een zusterlevering",
+    "type": "Berekening",
+    "intro": "Bij sidestream met afnemend belang bezit M 80% in verkoper V en 60% in koper K. De bruto eindvoorraadwinst is € 100.000. NVW en integrale consolidatie worden toegepast. Het tarief bedraagt 20%.",
+    "facts": [
+      [
+        "Interne verdeling",
+        "60% intern; 20% derden; 20% aanvullend concern"
+      ]
+    ],
+    "task": "Hoe groot is de totale belastingcorrectie in de eliminatie van deze eindvoorraadwinst?",
+    "options": [
+      {
+        "text": "€ 20.000, opgebouwd uit € 12.000 + € 4.000 + € 4.000.",
+        "why": "De belasting wordt over alle drie winstcomponenten berekend; samen vertegenwoordigen die 100% van de ongerealiseerde winst."
+      },
+      {
+        "text": "€ 12.000, omdat alleen het interne 60%-deel meetelt.",
+        "why": "Dit vergeet de belastingcorrecties bij het derden- en aanvullende concerndeel."
+      },
+      {
+        "text": "€ 16.000, omdat M 80% van de verkoper bezit.",
+        "why": "Ook het 20%-derdenaandeel wordt bij integrale consolidatie netto gecorrigeerd en heeft een belastingcomponent."
+      },
+      {
+        "text": "€ 4.000, omdat alleen het verschil tussen de belangen nog wordt gecorrigeerd.",
+        "why": "De vraag betreft de volledige belastingcorrectie in de eindvoorraadeliminatie, niet alleen de aanvullende concerncomponent."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Intern: € 100.000 × 60% × 20% = € 12.000. Derden en aanvullend concern: ieder € 4.000.",
+      "Som: € 20.000 = 20% van de volledige € 100.000. De overige € 80.000 vormt de netto winstcorrectie."
+    ],
+    "pattern": [
+      "Herken: afnemende sidestream splitst de winst in drie delen, maar elimineert integraal.",
+      "Aanpak: bereken belasting per deel en controleer tegen belasting over het geheel.",
+      "Controle: consolidatie van minder dan 100% eigendom is hier nog steeds 100% opname."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "9",
+        "label": "Tentamen 11-04-2022, opgave 2, vraag 14b; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "9",
+        "label": "Antwoordmodel 11-04-2022, opgave 2, bij vraag 14b",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "226-233",
+        "label": "Syllabus deel 3, p. 226-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "De belastingdelen moeten samen het totaal vormen",
+    "check": {
+      "description": "Som belastingcomponenten",
+      "actual": 20000.0,
+      "expected": 20000
+    }
+  },
+  {
+    "key": "tax-vrijval-richting",
+    "topicId": "belastingen",
+    "title": "Belastingboeking bij gerealiseerde voorraadwinst",
+    "type": "Journaalpost",
+    "intro": "M waardeert haar dochter tegen NVW. In een vorig jaar heeft M downstreamwinst intern uitgesteld en de belastinglast met € 3.000 verlaagd door voorziening belastingen te debiteren. Dit jaar wordt het bijbehorende winstdeel volledig gerealiseerd. Het tarief verandert niet.",
+    "facts": [
+      [
+        "Eerder uitgestelde belastingcomponent",
+        "€ 3.000"
+      ],
+      [
+        "Huidig jaar",
+        "Volledige realisatie van dat winstdeel"
+      ]
+    ],
+    "task": "Welke belastingboeking hoort bij deze interne vrijval?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Belastinglast",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "De eerdere belastingbate wordt teruggenomen wanneer de winst wordt gerealiseerd: belastinglast neemt toe en het debetsaldo van de latentie verdwijnt."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Voorziening belastingen",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Belastinglast",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "Dit creëert opnieuw een belastingbate en vergroot de latentie, terwijl deze juist moet vrijvallen."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Bank",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Belastinglast",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "De consolidatiecorrectie veroorzaakt geen nieuwe belastingontvangst; het gaat om het aflopen van een boekhoudkundige latentie."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Belastinglast",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Overlopende passiva",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "De belastingcomponent wordt op de belastingrekening afgewikkeld; overlopende passiva draagt de bruto uitgestelde winst."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bij uitstel is belastinglast gecrediteerd; bij realisatie wordt dit effect omgekeerd.",
+      "Debiteer belastinglast en crediteer voorziening belastingen voor € 3.000. De winstvrijval zelf wordt afzonderlijk geboekt."
+    ],
+    "pattern": [
+      "Herken: oude ongerealiseerde winst wordt gerealiseerd.",
+      "Aanpak: draai de bijbehorende uitstelboeking voor belasting om.",
+      "Controle: na volledige realisatie mag voor dit winstdeel geen latentie overblijven."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 11b; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 11b",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "242-243",
+        "label": "Syllabus deel 3, p. 242-243; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "De belastingboeking bij vrijval draait om"
+  },
+  {
+    "key": "tax-machine-eindlatentie",
+    "topicId": "belastingen",
+    "title": "Belastinglatentie op een interne machinewinst",
+    "type": "Berekening",
+    "intro": "Bij een interne machineverkoop ontstond € 60.000 winst. Voor koper en concern resteerde een gelijke levensduur van vijf jaar zonder restwaarde. Er zijn nu twee volledige jaren verstreken. De groep consolideert integraal en de belasting is bij de interne verkoop al geheven. Koper en concern schrijven lineair af.",
+    "facts": [
+      [
+        "Oorspronkelijke interne winst",
+        "€ 60.000"
+      ],
+      [
+        "Verstreken gebruiksduur",
+        "2 van 5 jaren"
+      ],
+      [
+        "Belastingtarief",
+        "25%"
+      ]
+    ],
+    "task": "Hoe groot is de totale resterende belastinglatentie voor deze interne winst, vóór toedeling over moeder en derden?",
+    "options": [
+      {
+        "text": "€ 9.000.",
+        "why": "Van de oorspronkelijke winst resteert drie vijfde: € 36.000. De belastinglatentie is 25% daarvan."
+      },
+      {
+        "text": "€ 15.000.",
+        "why": "Dit is de oorspronkelijke latentie, zonder vrijval door twee jaren extra afschrijving."
+      },
+      {
+        "text": "€ 6.000.",
+        "why": "Dit is de belasting die in twee jaren is vrijgevallen, niet het resterende saldo."
+      },
+      {
+        "text": "€ 3.000.",
+        "why": "Dit is de jaarlijkse vrijval: € 60.000/5 × 25%. Gevraagd is de volledige eindlatentie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Realisatie in twee jaren: 2 × € 60.000/5 = € 24.000. Resterende winst: € 36.000.",
+      "Eindlatentie: € 36.000 × 25% = € 9.000. Controle: oorspronkelijk € 15.000 minus twee vrijvallen van € 3.000."
+    ],
+    "pattern": [
+      "Herken: de tijdelijke belastingcorrectie loopt mee met de resterende interne boekwinst.",
+      "Aanpak: bereken eerst de ongerealiseerde eindstand en pas daarop het tarief toe.",
+      "Controle: maak onderscheid tussen oorspronkelijke latentie, jaarlijkse vrijval en eindstand."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "8-9",
+        "label": "Tentamen 06-10-2022, opgave 2, vraag 11, 14a; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7-8",
+        "label": "Antwoordmodel 06-10-2022, opgave 2, bij vraag 11, 14a",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240-244",
+        "label": "Syllabus deel 3, p. 240-244; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Belasting over de resterende machinewinst",
+    "check": {
+      "description": "Oorspronkelijke belasting minus twee jaar vrijval",
+      "actual": 9000.0,
+      "expected": 9000
+    }
+  },
+  {
+    "key": "tax-geen-terugbetaling",
+    "topicId": "belastingen",
+    "title": "Verwerking van de belastinglatentie",
+    "type": "Begrip",
+    "intro": "Een groepsmaatschappij heeft belasting betaald over winst op een interne verkoop. De goederen liggen nog binnen de groep. Bij consolidatie wordt de winst uitgesteld en wordt volgens de casus een belastinglatentie verwerkt. De fiscale aanslag zelf verandert niet.",
+    "facts": [
+      [
+        "Fiscaal",
+        "Belasting is al geheven"
+      ],
+      [
+        "Concern",
+        "Winst wordt nog niet als gerealiseerd beschouwd"
+      ]
+    ],
+    "task": "Wat verklaart de belastingcorrectie het best?",
+    "options": [
+      {
+        "text": "De belastinglast wordt in de verslaggeving afgestemd op de uitgestelde winst; er ontstaat niet automatisch een terugbetaling van belasting.",
+        "why": "Fiscaal is de transactie belast, maar de concernwinst wordt later gerealiseerd. De latentie overbrugt dit tijdsverschil."
+      },
+      {
+        "text": "De Belastingdienst betaalt het belastingbedrag direct terug zodra de consolidatieboeking is gemaakt.",
+        "why": "Een consolidatieboeking verandert de gegeven fiscale aanslag niet en is geen kasontvangst."
+      },
+      {
+        "text": "Omdat de winst intern is, mag de betaalde belasting geheel uit de administratie verdwijnen.",
+        "why": "De fiscale betaling blijft bestaan. De verwerking corrigeert de timing van de last, niet het feit van betaling."
+      },
+      {
+        "text": "De voorraad moet worden verhoogd met de betaalde belasting.",
+        "why": "De voorraad wordt verminderd met de bruto interne winst. Het belastingeffect wordt afzonderlijk verwerkt."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De casus onderscheidt fiscale heffing en winstverantwoording voor het concern.",
+      "Door de latentie wordt de belastinglast afgestemd op het moment waarop de concernwinst wordt gerealiseerd; de bankmutatie verandert niet."
+    ],
+    "pattern": [
+      "Herken: fiscaal belaste winst kan in de geconsolideerde cijfers nog ongerealiseerd zijn.",
+      "Aanpak: onderscheid kasbetaling, actuele fiscale heffing en tijdelijke belastingcorrectie.",
+      "Controle: een latentie is geen nieuwe bankontvangst."
+    ],
+    "sources": [
+      {
+        "file": "2021-04 CAFA2 - Tentamen.docx",
+        "pages": "DOCX opgave 2",
+        "label": "Tentamen 19-04-2021, opgave 2, vraag 5b en 8-9; eigen oefenvariant",
+        "examId": "20210419"
+      },
+      {
+        "file": "2021-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "7-8",
+        "label": "Antwoordmodel 19-04-2021, opgave 2, bij vraag 5b en 8-9",
+        "examId": "20210419"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "240-241",
+        "label": "Syllabus deel 3, p. 240-241; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Winstuitstel geeft geen nieuwe kasontvangst"
+  },
+  {
+    "key": "tax-rente-geen-voorraadwinst",
+    "topicId": "belastingen",
+    "title": "Belastingeffect van een rente-eliminatie",
+    "type": "Foutdiagnose",
+    "intro": "M en haar volledig geconsolideerde dochter D hebben dit jaar over een onderlinge lening beiden € 10.000 verantwoord: M als rentebaat, D als rentelast. De bedragen betreffen hetzelfde jaar. Het belastingtarief is bij beide 20%; fiscale verschillen en verliesbeperkingen zijn er volgens de casus niet.",
+    "facts": [
+      [
+        "Rentebaat M",
+        "€ 10.000"
+      ],
+      [
+        "Rentelast D",
+        "€ 10.000"
+      ],
+      [
+        "Saldo vóór eliminatie",
+        "€ 0 resultaat vóór belasting"
+      ]
+    ],
+    "task": "Welke aanvullende belastinglatentie ontstaat uitsluitend door het wegstrepen van deze renteopbrengst en rentelast?",
+    "options": [
+      {
+        "text": "€ 0.",
+        "why": "De eliminatie verwijdert gelijke opbrengst en last. Er wordt geen netto winst uitgesteld en er zit geen interne winst in een activum."
+      },
+      {
+        "text": "€ 2.000 actief.",
+        "why": "Dit behandelt de rentebaat alsof deze zonder bijbehorende rentelast uitgestelde voorraadwinst is."
+      },
+      {
+        "text": "€ 2.000 passief.",
+        "why": "Er is geen nieuw tijdelijk resultaatverschil in de gegeven symmetrische situatie."
+      },
+      {
+        "text": "€ 4.000 actief.",
+        "why": "Dit telt belasting over opbrengst én last op, terwijl de effecten in deze casus tegengesteld en gelijk zijn."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Vóór eliminatie is het gecombineerde resultaat van deze rente € 10.000 − € 10.000 = € 0. Na eliminatie blijft dat € 0.",
+      "Bij gelijke fiscale behandeling ontstaat door deze eliminatie op zichzelf geen uitgestelde winst of belastinglatentie."
+    ],
+    "pattern": [
+      "Herken: een onderlinge vergoeding is niet automatisch ongerealiseerde winst in een activum.",
+      "Aanpak: bepaal eerst of de eliminatie het gezamenlijke resultaat of de timing ervan wijzigt.",
+      "Controle: voeg geen belastinglatentie toe aan een per saldo neutrale rente-eliminatie."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "8",
+        "label": "Tentamen 11-04-2023, opgave 2, vraag 14; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "7",
+        "label": "Antwoordmodel 11-04-2023, opgave 2, bij vraag 14",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "194-195",
+        "label": "Syllabus deel 3, p. 194-195; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Een rente-eliminatie schept geen voorraadlatentie",
+    "check": {
+      "description": "Netto belastingeffect van symmetrische posten",
+      "actual": 0.0,
+      "expected": 0
+    }
+  },
+  {
+    "key": "tax-proportioneel-intern-deel",
+    "topicId": "belastingen",
+    "title": "Belastinglatentie bij een proportionele joint venture",
+    "type": "Berekening",
+    "intro": "Joint venture J levert aan M. M houdt 50%, waardeert tegen NVW en consolideert J proportioneel. In M’s eindvoorraad is € 60.000 winst van J begrepen. Deze winst is fiscaal belast tegen 20%.",
+    "facts": [
+      [
+        "Volledige voorraadwinst van J",
+        "€ 60.000"
+      ],
+      [
+        "Proportioneel opgenomen aandeel",
+        "50%"
+      ],
+      [
+        "Belastingtarief",
+        "20%"
+      ]
+    ],
+    "task": "Hoeveel bedraagt de belastingcorrectie bij de eliminatie van het in de consolidatie opgenomen interne winstdeel?",
+    "options": [
+      {
+        "text": "€ 6.000.",
+        "why": "Het interne deel is 50% × € 60.000 = € 30.000. De belastingcorrectie bedraagt 20% daarvan."
+      },
+      {
+        "text": "€ 12.000.",
+        "why": "Dit berekent belasting over 100% van J’s winst, terwijl de helft van J niet wordt meegeconsolideerd."
+      },
+      {
+        "text": "€ 3.000.",
+        "why": "Dit halveert het reeds opgenomen 50%-deel opnieuw."
+      },
+      {
+        "text": "€ 24.000.",
+        "why": "Dit is het netto interne winstdeel: € 30.000 × 80%. Gevraagd is de belastingcomponent."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Opgenomen interne winst: € 60.000 × 50% = € 30.000.",
+      "Deze bestaat uit € 24.000 netto en € 6.000 belasting. De voorraad wordt voor € 30.000 gecorrigeerd."
+    ],
+    "pattern": [
+      "Herken: proportionele opname begrenst ook het interne belastingeffect.",
+      "Aanpak: bepaal eerst het opgenomen winstdeel, splits dat daarna in netto en belasting.",
+      "Controle: pas het deelnamepercentage eenmaal toe."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "12",
+        "label": "Tentamen 24-09-2025, opgave 3, vraag 5d; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "11",
+        "label": "Antwoordmodel 24-09-2025, opgave 3, bij vraag 5d",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "203-206",
+        "label": "Syllabus deel 3, p. 203-206; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Belastinglatentie bij een proportionele joint venture",
+    "check": {
+      "description": "Belasting op opgenomen winstdeel",
+      "actual": 6000.0,
+      "expected": 6000
+    }
+  },
+  {
+    "key": "tax-vrijval-jaar-vs-balans",
+    "topicId": "belastingen",
+    "title": "Belastinglatentie over twee boekjaren",
+    "type": "Vergelijking",
+    "intro": "De groep heeft € 50.000 interne voorraadwinst aan het begin van het jaar en € 30.000 aan het einde. De gehele winst wordt integraal gecorrigeerd. Het belastingtarief is 20%.",
+    "facts": [
+      [
+        "Beginlatentie",
+        "20% van € 50.000"
+      ],
+      [
+        "Eindwinst",
+        "€ 30.000"
+      ]
+    ],
+    "task": "Welke uitspraak over de belasting is juist?",
+    "options": [
+      {
+        "text": "Er resteert € 6.000 latentie; de belastinglast neemt dit jaar door vrijval met € 4.000 toe.",
+        "why": "De latentie daalt van € 10.000 naar € 6.000. Het eerdere belastingvoordeel valt voor € 4.000 terug in de last."
+      },
+      {
+        "text": "Er resteert € 6.000 latentie; er ontstaat dit jaar € 6.000 belastingbate.",
+        "why": "De eindstand is geen jaarbate. De latentie neemt af, dus de richting van het jaareffect is juist tegengesteld."
+      },
+      {
+        "text": "Er resteert € 4.000 latentie; de belastinglast neemt € 6.000 toe.",
+        "why": "Dit verwisselt de afname met de resterende balansstand."
+      },
+      {
+        "text": "Er resteert geen latentie omdat de winst in de voorraad afneemt.",
+        "why": "Afname betekent gedeeltelijke realisatie. De resterende € 30.000 winst is nog steeds ongerealiseerd."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Beginlatentie € 50.000 × 20% = € 10.000; eindlatentie € 30.000 × 20% = € 6.000.",
+      "De vrijval is € 4.000. Tegenover de winstvrijval van € 20.000 staat dus € 4.000 extra belastinglast en € 16.000 netto winst."
+    ],
+    "pattern": [
+      "Herken: een eindstand kan positief blijven terwijl de jaarmutatie negatief is.",
+      "Aanpak: zet begin, eind en verschil naast elkaar voordat je het teken van de last kiest.",
+      "Controle: winstvrijval verhoogt de belastinglast en verlaagt de latentie."
+    ],
+    "sources": [
+      {
+        "file": "2021-10 CAFA2 - Tentamen.pdf",
+        "pages": "9-10",
+        "label": "Tentamen 06-10-2021, opgave 3, vraag 3-4; eigen oefenvariant",
+        "examId": "20211006"
+      },
+      {
+        "file": "2021-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "9-10",
+        "label": "Antwoordmodel 06-10-2021, opgave 3, bij vraag 3-4",
+        "examId": "20211006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "242-244",
+        "label": "Syllabus deel 3, p. 242-244; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Een positieve eindlatentie kan dit jaar dalen",
+    "check": {
+      "description": "Vrijval belastinglatentie",
+      "actual": 4000.0,
+      "expected": 4000
+    }
+  },
+  {
+    "key": "tax-van-netto-naar-bruto",
+    "topicId": "belastingen",
+    "title": "Belastingdeel van een netto winstcorrectie",
+    "type": "Berekening",
+    "intro": "Na belasting verlaagt een consolidatiecorrectie het groepsresultaat vóór verdeling over moeder en derden met € 24.000. Dit is uitsluitend het gevolg van nieuw ongerealiseerde voorraadwinst. Het belastingtarief is 20%.",
+    "facts": [
+      [
+        "Netto resultaatcorrectie",
+        "€ 24.000 lager"
+      ],
+      [
+        "Tarief",
+        "20%"
+      ]
+    ],
+    "task": "Hoe groot is de bijbehorende belastingcorrectie?",
+    "options": [
+      {
+        "text": "€ 6.000.",
+        "why": "€ 24.000 is 80% van het brutobedrag. Bruto is € 30.000; belasting bedraagt het verschil van € 6.000."
+      },
+      {
+        "text": "€ 4.800.",
+        "why": "Dit neemt 20% van het nettobedrag. Het tarief hoort bij de winst vóór belasting."
+      },
+      {
+        "text": "€ 30.000.",
+        "why": "Dit is de totale bruto winstcorrectie, niet de belastingcomponent."
+      },
+      {
+        "text": "€ 19.200.",
+        "why": "Dit trekt opnieuw 20% belasting van het reeds gegeven nettobedrag af."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bruto winst = € 24.000/80% = € 30.000.",
+      "Belasting = € 30.000 × 20% = € 6.000. Controle: € 30.000 − € 6.000 = € 24.000."
+    ],
+    "pattern": [
+      "Herken: het gegeven bedrag is uitdrukkelijk ná belasting.",
+      "Aanpak: deel door (1 − tarief) vóór je de belasting berekent.",
+      "Controle: belastingtarief is een percentage van bruto, niet van netto."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "11",
+        "label": "Tentamen 11-04-2022, opgave 3, vraag 16-17; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "10",
+        "label": "Antwoordmodel 11-04-2022, opgave 3, bij vraag 16-17",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "229-233",
+        "label": "Syllabus deel 3, p. 229-233; onderliggende consolidatiesystematiek"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "Van netto winstcorrectie terug naar belasting",
+    "check": {
+      "description": "Belasting terugrekenen uit netto",
+      "actual": 6000.0,
+      "expected": 6000
+    }
+  },
+  {
+    "key": "tax-upstream-vp-compleet",
+    "topicId": "belastingen",
+    "title": "Belastingaansluiting bij upstream en verkrijgingsprijs",
+    "type": "Journaalpost",
+    "intro": "Een 75%-dochter D levert aan M. M waardeert D tegen verkrijgingsprijs; er is geen interne NVW-correctie. De eindvoorraad bevat € 40.000 fiscaal belaste winst van D. Er was geen beginvoorraad. De groep consolideert integraal, met 25% belasting.",
+    "facts": [
+      [
+        "Interne eindvoorraadwinst",
+        "€ 40.000"
+      ],
+      [
+        "Moeder / derden",
+        "75% / 25%"
+      ],
+      [
+        "Belasting",
+        "25%"
+      ]
+    ],
+    "task": "Welke eliminatie verwijdert deze winst uit de geconsolideerde eindbalans?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat boekjaar",
+              "€ 22.500",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 7.500",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 40.000"
+            ]
+          ]
+        },
+        "why": "Netto winst € 30.000 wordt 75/25 verdeeld: € 22.500 en € 7.500. De € 10.000 belasting maakt de bruto aansluiting sluitend."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat boekjaar",
+              "€ 30.000",
+              ""
+            ],
+            [
+              "Belang derden",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 40.000"
+            ]
+          ]
+        },
+        "why": "Dit verdeelt bruto over moeder en derden en vergeet de afzonderlijke belastingcorrectie."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat boekjaar",
+              "€ 22.500",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 7.500",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 30.000"
+            ]
+          ]
+        },
+        "why": "Dit elimineert slechts het 75%-moederdeel. Integrale consolidatie verwijdert ook de winst en belasting van het derdenaandeel."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat boekjaar",
+              "€ 30.000",
+              ""
+            ],
+            [
+              "Voorziening belastingen",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Voorraad",
+              "",
+              "€ 40.000"
+            ]
+          ]
+        },
+        "why": "Dit wijst de volledige netto winst aan M toe en laat de 25% derden in verkoper D buiten de correctie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bruto € 40.000 bestaat uit netto € 30.000 en belasting € 10.000.",
+      "Netto moederdeel: 75% × € 30.000 = € 22.500. Netto derden: 25% × € 30.000 = € 7.500.",
+      "Totaal debet € 22.500 + € 7.500 + € 10.000 = credit voorraad € 40.000."
+    ],
+    "pattern": [
+      "Herken: bij verkrijgingsprijs is nog geen interne NVW-correctie verwerkt.",
+      "Aanpak: verdeel netto over moeder en derden en voeg de totale belastingcorrectie toe.",
+      "Controle: bij integrale opname moet de volledige bruto voorraadwinst verdwijnen."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "11",
+        "label": "Tentamen 11-04-2022, opgave 3, vraag 17; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "10",
+        "label": "Antwoordmodel 11-04-2022, opgave 3, bij vraag 17",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+        "pages": "180-184",
+        "label": "Syllabus deel 3, p. 180-184; upstreamleveringen bij verkrijgingsprijs"
+      }
+    ],
+    "difficulty": "gevorderd",
+    "skill": "Een volledige belastingaansluiting in de balans",
+    "check": {
+      "description": "Netto aandeel moeder en derden plus belasting",
+      "actual": 40000.0,
+      "expected": 40000
+    }
+  }
+]

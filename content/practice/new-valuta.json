@@ -1,0 +1,1203 @@
+[
+  {
+    "key": "fx-afhankelijk",
+    "topicId": "functionele-valuta",
+    "title": "Een buitenlandse verkooporganisatie",
+    "type": "Methodekeuze",
+    "intro": "Linde bv presenteert in euro en heeft de euro als functionele valuta. Haar Amerikaanse dochter Haven houdt de lokale administratie in dollars bij.",
+    "facts": [
+      [
+        "Bedrijfsvoering",
+        "Haven verkoopt uitsluitend goederen van Linde; inkoop en interne verrekening luiden in euro."
+      ],
+      [
+        "Financiering en kasstromen",
+        "Linde financiert tekorten. Overschotten worden direct aan Linde overgemaakt. Haven werkt als verlengstuk van Linde."
+      ]
+    ],
+    "task": "Welke functionele valuta en omrekenmethode passen volgens deze gegevens bij Haven?",
+    "options": [
+      {
+        "text": "Euro; tijdstipmethode.",
+        "why": "De economische afhankelijkheid en de eurostromen wijzen op dezelfde functionele valuta als Linde. Omrekening uit de dollaradministratie gebeurt dan met de tijdstipmethode."
+      },
+      {
+        "text": "Amerikaanse dollar; slotkoersmethode.",
+        "why": "De lokale administratie bepaalt de functionele valuta niet. Hier wijzen de activiteiten en financiering juist op euro."
+      },
+      {
+        "text": "Euro; slotkoersmethode omdat Haven in het buitenland is gevestigd.",
+        "why": "De euro is passend, maar de buitenlandse vestiging maakt de slotkoersmethode niet van toepassing."
+      },
+      {
+        "text": "Amerikaanse dollar; tijdstipmethode omdat Linde alle aandelen bezit.",
+        "why": "Aandelenbezit bepaalt de methode niet; bovendien combineert deze optie een afwijkende functionele valuta met de verkeerde methode."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Haven is economisch een verlengstuk van Linde: inkoop, financiering en kasstromen zijn met Linde verbonden.",
+      "Functionele valuta Haven = euro. De in dollars opgestelde cijfers worden met de tijdstipmethode naar euro omgerekend."
+    ],
+    "pattern": [
+      "Herken: lokale administratie in dollars naast sterke afhankelijkheid van een euromoeder.",
+      "Aanpak: beoordeel eerst de economische omgeving, kies daarna de omrekenmethode.",
+      "Controle: vestigingsland, administratiemunt en functionele valuta zijn niet automatisch gelijk."
+    ],
+    "sources": [
+      {
+        "file": "20240422 Tentamen CAFA2.pdf",
+        "pages": "7",
+        "label": "Tentamen 22-04-2024, opgave 2, vraag 9; eigen oefenvariant",
+        "examId": "20240422"
+      },
+      {
+        "file": "20240422 Uitwerking tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 9",
+        "examId": "20240422"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "5-6",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Functionele valuta van een afhankelijk verlengstuk"
+  },
+  {
+    "key": "fx-zelfstandig",
+    "topicId": "functionele-valuta",
+    "title": "Volledig bezit, zelfstandig bedrijf",
+    "type": "Methodekeuze",
+    "intro": "Euromoeder Duin bezit alle aandelen van de Zweedse onderneming Gran. Een medewerker kiest daarom zonder verdere beoordeling voor euro als functionele valuta van Gran.",
+    "facts": [
+      [
+        "Verkoop en kosten",
+        "Prijsstelling, lonen en inkopen worden zelfstandig bepaald en afgewikkeld in Zweedse kronen (SEK)."
+      ],
+      [
+        "Kasstromen",
+        "Gran betaalt haar verplichtingen uit eigen kasstromen; transacties met Duin zijn beperkt."
+      ]
+    ],
+    "task": "Welke beoordeling van de medewerker is juist?",
+    "options": [
+      {
+        "text": "Onjuist: de zelfstandige economische omgeving wijst op SEK; voor de eurojaarrekening past de slotkoersmethode.",
+        "why": "Zelfstandige SEK-activiteiten en voldoende eigen kasstromen ondersteunen een afwijkende functionele valuta, ondanks volledige zeggenschap."
+      },
+      {
+        "text": "Juist: bij een 100%-belang is de functionele valuta altijd gelijk aan die van de moeder.",
+        "why": "Volledige zeggenschap is een consolidatievraag; zij bepaalt de functionele valuta niet zelfstandig."
+      },
+      {
+        "text": "Onjuist: SEK is functioneel, maar 100% zeggenschap verplicht tot de tijdstipmethode.",
+        "why": "Na vaststelling van SEK als functionele valuta past voor omzetting naar euro de slotkoersmethode."
+      },
+      {
+        "text": "Juist: eigen kasstromen zijn alleen relevant als minder dan 50% van de aandelen wordt gehouden.",
+        "why": "Voor de beoordeling van functionele valuta bestaat hier geen grens van 50% voor het meewegen van kasstromen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De concrete operationele gegevens wegen zwaarder dan het feit dat Duin alle aandelen bezit.",
+      "De functionele valuta van Gran is SEK; de presentatie in euro verloopt via de slotkoersmethode."
+    ],
+    "pattern": [
+      "Herken: een zelfstandig buitenlands bedrijf met beperkte intercompanytransacties.",
+      "Aanpak: scheid zeggenschap van de economische factoren voor functionele valuta.",
+      "Controle: een dochtermaatschappij kan een andere functionele valuta dan haar moeder hebben."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "7-9",
+        "label": "Tentamen 24-09-2025, opgave 2, vraag 4 (uitwerking: vraag 12); eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "8",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 4 (uitwerking: vraag 12)",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "5-6",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Zeggenschap onderscheiden van functionele valuta"
+  },
+  {
+    "key": "fx-twee-dochters",
+    "topicId": "functionele-valuta",
+    "title": "Twee dochters, twee methoden",
+    "type": "Vergelijking",
+    "intro": "De Nederlandse moeder Maas gebruikt euro als functionele en presentatievaluta. Twee Noorse dochters administreren in NOK.",
+    "facts": [
+      [
+        "Berg",
+        "Zelfstandige Noorse verkoop en inkoop in NOK, eigen financiering en voldoende eigen kasstromen."
+      ],
+      [
+        "Dal",
+        "Volledig verlengstuk van Maas: inkoop bij Maas in euro, financiering door Maas en directe afdracht van kasoverschotten."
+      ]
+    ],
+    "task": "Welke combinatie van omrekenmethoden volgt uit deze gegevens?",
+    "options": [
+      {
+        "text": "Berg: slotkoersmethode; Dal: tijdstipmethode.",
+        "why": "Berg heeft op deze gegevens NOK als functionele valuta; Dal euro. Daardoor verschillen de methoden."
+      },
+      {
+        "text": "Berg: tijdstipmethode; Dal: slotkoersmethode.",
+        "why": "Deze combinatie keert de economische zelfstandigheid en afhankelijkheid om."
+      },
+      {
+        "text": "Beide: slotkoersmethode, omdat zij in hetzelfde buitenland gevestigd zijn.",
+        "why": "Hetzelfde vestigingsland en dezelfde administratiemunt geven geen automatische gelijke functionele valuta."
+      },
+      {
+        "text": "Beide: tijdstipmethode, omdat zij dezelfde moeder hebben.",
+        "why": "Een gemeenschappelijke moeder maakt de economische omgeving van beide dochters niet gelijk."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Berg ontvangt en besteedt geld binnen een zelfstandige NOK-omgeving. Omrekening naar euro: slotkoersmethode.",
+      "Dal vormt een verlengstuk van de euromoeder. Omrekening van de NOK-administratie naar functionele euro: tijdstipmethode."
+    ],
+    "pattern": [
+      "Herken: twee buitenlandse ondernemingen met verschillende mate van zelfstandigheid.",
+      "Aanpak: bepaal de functionele valuta per onderneming.",
+      "Controle: kies niet één methode uitsluitend op basis van groepslidmaatschap of land."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "11",
+        "label": "Tentamen 11-04-2023, opgave 4, vraag 20; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "10",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 20",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "5-6",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Methodekeuze per buitenlandse onderneming"
+  },
+  {
+    "key": "fx-reserve-signaal",
+    "topicId": "functionele-valuta",
+    "title": "Wat verraadt een omrekenreserve?",
+    "type": "Herkenning",
+    "intro": "Molen presenteert in euro, haar functionele valuta. Bij de omrekening van de jaarrekening van haar Amerikaanse deelneming ontstaat dit jaar uitsluitend door die omrekening een mutatie in de reserve omrekenverschillen.",
+    "facts": [
+      [
+        "Afbakening",
+        "Er zijn geen afdekkingsinstrumenten of netto-investeringsleningen. De te kiezen functionele valuta van de deelneming is uitsluitend euro of Amerikaanse dollar."
+      ]
+    ],
+    "task": "Welke conclusie past bij dit verwerkingspatroon?",
+    "options": [
+      {
+        "text": "De deelneming heeft dollar als functionele valuta; de jaarrekening wordt met de slotkoersmethode omgerekend.",
+        "why": "Het beschreven omrekenverschil in het eigen vermogen past bij omzetting van een afwijkende functionele valuta met de slotkoersmethode."
+      },
+      {
+        "text": "De deelneming heeft euro als functionele valuta; de tijdstipmethode brengt het omrekenverschil in een reserve.",
+        "why": "Bij de tijdstipmethode komt het beschreven koersresultaat in de winst-en-verliesrekening."
+      },
+      {
+        "text": "Een negatieve reservemutatie betekent tijdstipmethode; een positieve betekent slotkoersmethode.",
+        "why": "Het teken bepaalt de methode niet. Beide tekens kunnen binnen de slotkoersmethode voorkomen."
+      },
+      {
+        "text": "Uit het bestaan van deze reservemutatie volgt dat de deelneming tegen verkrijgingsprijs wordt gewaardeerd.",
+        "why": "De reserve zegt in deze casus iets over de valutaomrekening, niet dat de waarderingsgrondslag verkrijgingsprijs is."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De expliciete afbakening sluit andere oorzaken van een valutagerelateerde reservemutatie uit.",
+      "Een omrekenverschil in de reserve wijst hier op de slotkoersmethode. Van de twee toegestane valuta is dollar dan de afwijkende functionele valuta."
+    ],
+    "pattern": [
+      "Herken: een reservemutatie die uitsluitend uit jaarrekeningomrekening voortkomt.",
+      "Aanpak: werk terug van verwerkingsplaats naar methode en vervolgens naar de gegeven valutakeuze.",
+      "Controle: het teken van het verschil is niet het besliscriterium."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "12",
+        "label": "Tentamen 11-04-2022, opgave 4, vraag 19; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "12",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 19",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "7-9,16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Omgekeerde methodeherkenning uit verwerkingsplaats"
+  },
+  {
+    "key": "fx-resultaatfout",
+    "topicId": "functionele-valuta",
+    "title": "Een nieuwe koerspost na omrekening",
+    "type": "Foutdiagnose",
+    "intro": "Een Zwitserse dochter heeft CHF als functionele valuta. Haar moeder gebruikt euro. De CHF-jaarrekening bevat geen koersresultaten. Bij de omrekening van deze jaarrekening naar euro boekt de medewerker het nieuw ontstane omrekenverschil als koerswinst in de winst-en-verliesrekening.",
+    "facts": [],
+    "task": "Welke correctie is nodig?",
+    "options": [
+      {
+        "text": "Pas de slotkoersmethode toe en verwerk dit omrekenverschil in de reserve omrekenverschillen.",
+        "why": "CHF wijkt af van de euro. Het nieuwe verschil uit deze omzetting behoort bij de slotkoersmethode tot de omrekenreserve."
+      },
+      {
+        "text": "Laat de koerswinst in het resultaat staan; ieder valutaverschil is een opbrengst of last.",
+        "why": "De verwerkingsplaats hangt af van het soort valutaverschil en de methode."
+      },
+      {
+        "text": "Kies de tijdstipmethode zodat de reeds geboekte koerswinst behouden kan blijven.",
+        "why": "De methode volgt uit de functionele valuta, niet uit de wens een bestaande boeking te handhaven."
+      },
+      {
+        "text": "Neem het verschil op als goodwill op de dochter.",
+        "why": "Goodwill ontstaat uit een verwervingsverschil; dit is een later omrekenverschil."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bepaal de methode vóór de boeking: CHF naar presentatievaluta euro betekent slotkoersmethode.",
+      "Verplaats uitsluitend het hier beschreven nieuwe omrekenverschil van resultaat naar omrekenreserve."
+    ],
+    "pattern": [
+      "Herken: de functionele valuta is gegeven en wijkt af van die van de moeder.",
+      "Aanpak: controleer of de gekozen methode en verwerkingsplaats daarmee overeenstemmen.",
+      "Controle: verander de functionele valuta niet om een foutieve boeking passend te maken."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "12",
+        "label": "Tentamen 06-10-2022, opgave 4, vraag 21; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "13",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 21",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "7-9,16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Verwerkingsfout bij afwijkende functionele valuta"
+  },
+  {
+    "key": "fx-gemengde-signalen",
+    "topicId": "functionele-valuta",
+    "title": "Tegenstrijdige valutafactoren",
+    "type": "Afweging",
+    "intro": "Een buitenlandse onderneming verkoopt op een zelfstandige lokale markt. Verkoopprijzen worden door de lokale concurrentie bepaald in CHF. Ook arbeid en materialen worden hoofdzakelijk in CHF betaald. Alleen de financiering bestaat uit een eurolening van de moeder.",
+    "facts": [
+      [
+        "Overige gegevens",
+        "Er zijn geen andere aanwijzingen voor operationele afhankelijkheid van de moeder."
+      ]
+    ],
+    "task": "Welke afweging sluit aan op de rangorde van factoren in de syllabus?",
+    "options": [
+      {
+        "text": "Ken het meeste gewicht toe aan verkoopprijzen en operationele kosten; CHF ligt hier het meest voor de hand.",
+        "why": "Bij uiteenlopende aanwijzingen krijgen de primaire factoren voor verkoopprijzen en kosten het meeste gewicht."
+      },
+      {
+        "text": "De eurolening beslist altijd; euro is verplicht als functionele valuta.",
+        "why": "Financiering is een relevante aanvullende factor, maar gaat niet automatisch vóór de operationele factoren."
+      },
+      {
+        "text": "Elke factor telt even zwaar; zonder nog een factor kan geen keuze worden gemaakt.",
+        "why": "De syllabus noemt juist een rangorde; een eenvoudige meerderheid van even zware factoren is niet de regel."
+      },
+      {
+        "text": "De directie kan vrij de valuta kiezen die de hoogste jaarwinst oplevert.",
+        "why": "De keuze moet de economische gevolgen getrouw weergeven en is geen winstoptimalisatie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Beoordeel de primaire economische omgeving: opbrengsten en operationele kosten wijzen beide op CHF.",
+      "De eurolening is een tegenaanwijzing, maar krijgt bij deze afweging minder gewicht dan de primaire factoren."
+    ],
+    "pattern": [
+      "Herken: verkoop en kosten wijzen dezelfde kant op, financiering een andere.",
+      "Aanpak: pas de rangorde uit RJ 122.106-109 zoals opgenomen in de syllabus toe.",
+      "Controle: tellen van aanwijzingen is geen vervanging voor het wegen ervan."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "5-6",
+        "label": "Syllabusaanvulling: rangorde factoren functionele valuta, RJ 122.106-109"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Primaire en aanvullende valutafactoren wegen"
+  },
+  {
+    "key": "fx-drie-valutas",
+    "topicId": "functionele-valuta",
+    "title": "Administratie, economie en presentatie",
+    "type": "Begrip",
+    "intro": "Atlas voert haar wettelijke lokale administratie in GBP. De primaire economische omgeving van Atlas is de euro. Voor de groepsrapportage presenteert de moeder, die eveneens euro als functionele valuta heeft, de cijfers in euro.",
+    "facts": [],
+    "task": "Welke uitspraak onderscheidt de valutabegrippen correct?",
+    "options": [
+      {
+        "text": "GBP is de administratiemunt; euro is de functionele en presentatievaluta. Omrekening van de GBP-administratie gebeurt met de tijdstipmethode.",
+        "why": "De gekozen administratiemunt verandert de gegeven economische omgeving niet. Het omrekenen naar functionele euro past bij de tijdstipmethode."
+      },
+      {
+        "text": "GBP is automatisch de functionele valuta, omdat de administratie in GBP wordt gevoerd.",
+        "why": "Administratie en functionele valuta zijn verschillende begrippen. De euro is hier expliciet economisch bepalend."
+      },
+      {
+        "text": "Euro is alleen de presentatievaluta; een primaire economische omgeving bepaalt de functionele valuta niet.",
+        "why": "De primaire economische omgeving is juist het uitgangspunt voor functionele valuta."
+      },
+      {
+        "text": "GBP en euro mogen elk jaar als functionele valuta worden afgewisseld om koersverschillen te vermijden.",
+        "why": "Een opportunistische jaarlijkse wissel volgt niet uit de economische factoren."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Functionele valuta: valuta van de primaire economische omgeving, hier euro. Presentatievaluta: valuta waarin wordt gerapporteerd, hier ook euro.",
+      "De lokale administratie luidt in GBP. Die administratiemunt is hier niet de functionele valuta."
+    ],
+    "pattern": [
+      "Herken: drie verschillende rollen voor een valuta in één casus.",
+      "Aanpak: benoem eerst elke rol en koppel daarna de methode aan de functionele valuta.",
+      "Controle: een lokaal grootboek in GBP bewijst op zichzelf geen functionele GBP."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "3-8",
+        "label": "Syllabusaanvulling: valutabegrippen en tijdstipmethode"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "Valutarollen uit elkaar houden"
+  },
+  {
+    "key": "fx-monetaire-aansluiting",
+    "topicId": "tijdstip",
+    "title": "Een controleberekening met aflossing",
+    "type": "Berekening",
+    "intro": "Een dochter wordt volgens de tijdstipmethode omgerekend. Alle bedragen luiden in GBP; de functionele valuta is euro. De tabel bevat alle veranderingen in haar netto monetaire positie.",
+    "facts": [
+      [
+        "Beginpositie",
+        "Monetaire activa minus monetaire verplichtingen: GBP -100.000; koers € 1,10 per GBP."
+      ],
+      [
+        "Contante omzet",
+        "GBP 200.000 bij koers € 1,15."
+      ],
+      [
+        "Contant betaalde inkoop voorraad",
+        "GBP 120.000 bij koers € 1,12."
+      ],
+      [
+        "Betaalde overige kosten",
+        "GBP 30.000 bij koers € 1,14."
+      ],
+      [
+        "Aflossing uit bank",
+        "GBP 20.000: bank en lening nemen beide af; geen apart betalingskoersverschil."
+      ],
+      [
+        "Slotkoers",
+        "€ 1,20 per GBP."
+      ]
+    ],
+    "task": "Wat is het koersresultaat over het jaar en waar wordt het verwerkt?",
+    "options": [
+      {
+        "text": "€ 11.400 verlies in de winst-en-verliesrekening.",
+        "why": "De werkelijke europositie is € -60.000; de theoretische positie € -48.600. Het verschil is € -11.400 en behoort bij tijdstip tot het resultaat."
+      },
+      {
+        "text": "€ 11.400 verlies in de reserve omrekenverschillen.",
+        "why": "Het bedrag klopt, maar bij de tijdstipmethode wordt dit koersverschil als resultaat verwerkt."
+      },
+      {
+        "text": "€ 11.400 winst in de winst-en-verliesrekening.",
+        "why": "Werkelijk minus theoretisch is negatief: de netto monetaire positie verslechtert."
+      },
+      {
+        "text": "€ 35.400 verlies in de winst-en-verliesrekening.",
+        "why": "Dit trekt de aflossing ten onrechte nogmaals uitsluitend van de werkelijke eindpositie af: GBP 20.000 × € 1,20 = € 24.000 extra verlies. Bank en schuld dalen echter evenveel."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Netto monetaire eindpositie: -100.000 + 200.000 - 120.000 - 30.000 = GBP -50.000. De aflossing heeft per saldo geen invloed.",
+      "Theoretische europositie: -110.000 + 230.000 - 134.400 - 34.200 = € -48.600.",
+      "Werkelijke europositie: -50.000 × 1,20 = € -60.000. Koersresultaat = -60.000 - (-48.600) = € -11.400, dus verlies."
+    ],
+    "pattern": [
+      "Herken: een controleberekening via monetaire activa minus monetaire verplichtingen.",
+      "Aanpak: bouw de theoretische europositie op tegen transactietarieven en vergelijk met de eindpositie tegen slotkoers.",
+      "Controle: een betaling tussen twee monetaire posten verandert het netto saldo niet."
+    ],
+    "sources": [
+      {
+        "file": "20260429 Tentamen CAFA2 def 2 (1).pdf",
+        "pages": "7-8",
+        "label": "Tentamen 29-04-2026, opgave 2, vraag 4; eigen oefenvariant",
+        "examId": "20260429"
+      },
+      {
+        "file": "20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+        "pages": "5-6",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 4",
+        "examId": "20260429"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "14-15",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Monetaire controle met neutrale aflossing",
+    "check": {
+      "description": "Werkelijke minus theoretische europositie",
+      "actual": -11400.0,
+      "expected": -11400
+    }
+  },
+  {
+    "key": "fx-dividend-middenjaar",
+    "topicId": "slotkoers",
+    "title": "Dividend tegen een eigen koers",
+    "type": "Berekening",
+    "intro": "Een euromoeder bezit 100% van een zelfstandige USD-deelneming en waardeert tegen NVW. De slotkoersmethode is van toepassing. Er zijn geen goodwillverschillen, belastingeffecten of andere vermogensmutaties.",
+    "facts": [
+      [
+        "Beginvermogen",
+        "USD 800.000; beginkoers € 0,90 per USD."
+      ],
+      [
+        "Jaarwinst",
+        "USD 100.000; gelijkmatig verdiend, gemiddelde koers € 0,92."
+      ],
+      [
+        "Dividend",
+        "USD 40.000, direct vastgesteld en betaald bij koers € 0,94."
+      ],
+      [
+        "Slotkoers",
+        "€ 0,95 per USD."
+      ]
+    ],
+    "task": "Hoe groot is de jaarlijkse mutatie van de reserve omrekenverschillen?",
+    "options": [
+      {
+        "text": "€ 42.600 positief.",
+        "why": "Beginvermogen geeft +40.000, winst +3.000 en uitgekeerd dividend -400: samen +42.600."
+      },
+      {
+        "text": "€ 43.000 positief.",
+        "why": "Dit vergeet dat het dividend het vermogen verlaagt en daarom een negatieve koersaanpassing van € 400 geeft."
+      },
+      {
+        "text": "€ 40.000 positief.",
+        "why": "Dit rekent alleen het koersverschil op het beginvermogen mee."
+      },
+      {
+        "text": "€ 42.600 negatief.",
+        "why": "Het eindvermogen tegen slotkoers is hoger dan het theoretische eurovermogen; de reservemutatie is positief."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Theoretisch eurovermogen: 800.000 × 0,90 + 100.000 × 0,92 - 40.000 × 0,94 = € 774.400.",
+      "Werkelijk eindvermogen: (800.000 + 100.000 - 40.000) × 0,95 = € 817.000. Verschil: € 42.600.",
+      "Componentencontrole: 800.000 × (0,95 - 0,90) + 100.000 × (0,95 - 0,92) - 40.000 × (0,95 - 0,94) = € 42.600."
+    ],
+    "pattern": [
+      "Herken: een slotkoersvraag met een tussentijds dividend.",
+      "Aanpak: neem iedere eigenvermogensmutatie eerst tegen haar eigen omrekenkoers op.",
+      "Controle: dividend is een vermogensafname en krijgt in de reserveformule een minteken."
+    ],
+    "sources": [
+      {
+        "file": "20260429 Tentamen CAFA2 def 2 (1).pdf",
+        "pages": "7-9",
+        "label": "Tentamen 29-04-2026, opgave 2, vraag 6; eigen oefenvariant",
+        "examId": "20260429"
+      },
+      {
+        "file": "20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+        "pages": "6-7",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 6",
+        "examId": "20260429"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Reserve met tussentijds dividend",
+    "check": {
+      "description": "Reserve uit eindvermogen minus theoretisch verloop",
+      "actual": 42600.0,
+      "expected": 42600
+    }
+  },
+  {
+    "key": "fx-kapitaalstorting",
+    "topicId": "slotkoers",
+    "title": "Een nieuwe kapitaalstorting",
+    "type": "Berekening",
+    "intro": "De moeder bezit 80% van een USD-deelneming. Alle aandeelhouders storten naar evenredigheid nieuw kapitaal; het belang blijft 80%. De moeder verwerkt haar aandeel in het omrekenverschil rechtstreeks in de omrekenreserve.",
+    "facts": [
+      [
+        "Storting bij de dochter",
+        "USD 250.000 op 1 juli; koers € 0,87 per USD."
+      ],
+      [
+        "Slotkoers",
+        "€ 0,89 per USD."
+      ],
+      [
+        "Afbakening",
+        "Alleen het omrekenverschil op deze storting wordt gevraagd; overige vermogensbestanddelen blijven buiten beschouwing."
+      ]
+    ],
+    "task": "Welk deel van de reservemutatie bij de moeder ontstaat uitsluitend door deze storting?",
+    "options": [
+      {
+        "text": "€ 4.000 positief.",
+        "why": "Het koersverschil op 100% is 250.000 × 0,02 = € 5.000; het aandeel van de moeder is 80%, dus € 4.000."
+      },
+      {
+        "text": "€ 5.000 positief.",
+        "why": "Dit is het koersverschil voor alle aandeelhouders samen, niet het gevraagde aandeel van de moeder."
+      },
+      {
+        "text": "€ 178.000 positief.",
+        "why": "Dit is 80% van de storting tegen slotkoers. De storting zelf is geen omrekenverschil."
+      },
+      {
+        "text": "€ 4.000 negatief.",
+        "why": "De slotkoers is hoger dan de stortingskoers, waardoor een positief verschil ontstaat."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De storting komt tegen € 0,87 in het theoretische verloop. Aan het einde moet hetzelfde vermogen tegen € 0,89 aansluiten.",
+      "Reserveaandeel moeder: 80% × USD 250.000 × (€ 0,89 - € 0,87) = € 4.000 positief."
+    ],
+    "pattern": [
+      "Herken: nieuw vermogen ingebracht gedurende het jaar.",
+      "Aanpak: bereken alleen het koersverschil vanaf de stortingsdatum en pas daarna het belang toe.",
+      "Controle: de hoofdsom van de storting hoort niet in de omrekenreserve."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "12-13",
+        "label": "Tentamen 11-04-2022, opgave 4, vraag 20; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "12-13",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 20",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Koerscomponent van kapitaalstorting bij gelijkblijvend belang",
+    "check": {
+      "description": "Aandeel moeder in koerscomponent storting",
+      "actual": 4000.0,
+      "expected": 4000
+    }
+  },
+  {
+    "key": "fx-moederboeking",
+    "topicId": "slotkoers",
+    "title": "Positieve winst, negatieve omrekenreserve",
+    "type": "Journaalpost",
+    "intro": "Een moeder waardeert haar 70%-belang in een GBP-deelneming tegen NVW en gebruikt de slotkoersmethode. Het dividend is al volledig verwerkt. Goodwill en overige correcties blijven buiten beschouwing.",
+    "facts": [
+      [
+        "Jaarwinst dochter",
+        "GBP 40.000; gemiddelde koers € 1,15 per GBP."
+      ],
+      [
+        "Omrekenverschil op 100% van de dochter",
+        "€ 6.000 negatief, al juist berekend."
+      ]
+    ],
+    "task": "Welke gecombineerde journaalpost boekt de moeder voor haar aandeel in de jaarwinst en het omrekenverschil?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet (€)",
+            "Credit (€)"
+          ],
+          "rows": [
+            [
+              "Deelneming",
+              "28.000",
+              ""
+            ],
+            [
+              "Reserve omrekenverschillen",
+              "4.200",
+              ""
+            ],
+            [
+              "Aan resultaat deelneming",
+              "",
+              "32.200"
+            ]
+          ]
+        },
+        "why": "Resultaat: 70% × 40.000 × 1,15 = € 32.200. Negatieve reserve: 70% × 6.000 = € 4.200 debet. Netto stijgt de deelneming € 28.000."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet (€)",
+            "Credit (€)"
+          ],
+          "rows": [
+            [
+              "Deelneming",
+              "40.000",
+              ""
+            ],
+            [
+              "Reserve omrekenverschillen",
+              "6.000",
+              ""
+            ],
+            [
+              "Aan resultaat deelneming",
+              "",
+              "46.000"
+            ]
+          ]
+        },
+        "why": "Deze journaalpost gebruikt de volle 100% in plaats van het 70%-belang van de moeder."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet (€)",
+            "Credit (€)"
+          ],
+          "rows": [
+            [
+              "Deelneming",
+              "28.000",
+              ""
+            ],
+            [
+              "Aan resultaat deelneming",
+              "",
+              "28.000"
+            ]
+          ]
+        },
+        "why": "Dit saldeert het omrekenverlies met het resultaat deelneming. Het verlies hoort hier rechtstreeks in het eigen vermogen."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet (€)",
+            "Credit (€)"
+          ],
+          "rows": [
+            [
+              "Deelneming",
+              "36.400",
+              ""
+            ],
+            [
+              "Aan resultaat deelneming",
+              "",
+              "32.200"
+            ],
+            [
+              "Aan reserve omrekenverschillen",
+              "",
+              "4.200"
+            ]
+          ]
+        },
+        "why": "Deze boeking behandelt het negatieve omrekenverschil als een positieve reservemutatie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Het aandeel in de winst verhoogt deelneming en resultaat met € 32.200.",
+      "Het negatieve omrekenverschil verlaagt deelneming en omrekenreserve met € 4.200. Samen: deelneming debet € 28.000, reserve debet € 4.200, resultaat credit € 32.200."
+    ],
+    "pattern": [
+      "Herken: een winstgevende dochter met een negatief koersverschil in het eigen vermogen.",
+      "Aanpak: bereken beide componenten afzonderlijk op het moederpercentage en combineer daarna de boeking.",
+      "Controle: een negatieve reservemutatie is debet; debet en credit moeten gelijk zijn."
+    ],
+    "sources": [
+      {
+        "file": "20260429 Tentamen CAFA2 def 2 (1).pdf",
+        "pages": "7-9",
+        "label": "Tentamen 29-04-2026, opgave 2, vraag 6; eigen oefenvariant",
+        "examId": "20260429"
+      },
+      {
+        "file": "20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+        "pages": "6-7",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 6",
+        "examId": "20260429"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Gecombineerde NVW-boeking bij negatieve omrekenreserve",
+    "check": {
+      "description": "Netto mutatie deelneming",
+      "actual": 28000.0,
+      "expected": 28000
+    }
+  },
+  {
+    "key": "fx-gebouwverloop",
+    "topicId": "slotkoers",
+    "title": "Omrekenverschil op één gebouw",
+    "type": "Berekening",
+    "intro": "Een GBP-dochter wordt met de slotkoersmethode in euro omgerekend. Alleen het koersverschil op het gebouw wordt gevraagd. Er zijn geen desinvesteringen of herwaarderingen.",
+    "facts": [
+      [
+        "Beginboekwaarde",
+        "GBP 400.000; beginkoers € 1,10."
+      ],
+      [
+        "Investering dit jaar",
+        "GBP 100.000; koers op investeringsdatum € 1,16."
+      ],
+      [
+        "Afschrijving",
+        "GBP 40.000; de passende gemiddelde koers is € 1,14."
+      ],
+      [
+        "Eindboekwaarde en slotkoers",
+        "GBP 460.000; slotkoers € 1,12."
+      ]
+    ],
+    "task": "Welk omrekenverschil ontstaat dit jaar op het gebouw en waar wordt het verwerkt?",
+    "options": [
+      {
+        "text": "€ 4.800 positief in de reserve omrekenverschillen.",
+        "why": "Het theoretische euroverloop eindigt op € 510.400; de slotkoerswaarde is € 515.200. Het verschil is +€ 4.800 in de reserve."
+      },
+      {
+        "text": "€ 4.800 positief in de winst-en-verliesrekening.",
+        "why": "Het bedrag is juist, maar deze omzetting volgens de slotkoersmethode geeft een vermogensmutatie."
+      },
+      {
+        "text": "€ 8.000 positief in de reserve omrekenverschillen.",
+        "why": "Dit is alleen het verschil op de beginboekwaarde. Investering en afschrijving geven eveneens aansluitverschillen."
+      },
+      {
+        "text": "€ 4.800 negatief in de reserve omrekenverschillen.",
+        "why": "De slotkoerswaarde is hoger dan het theoretische verloop, dus het verschil is positief."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Theoretisch: 400.000 × 1,10 + 100.000 × 1,16 - 40.000 × 1,14 = € 510.400.",
+      "Werkelijk eindbedrag: 460.000 × 1,12 = € 515.200. Reservecomponent: € 515.200 - € 510.400 = € 4.800.",
+      "Controle per component: +8.000 op het begin, -4.000 op de investering en +800 op de afschrijving."
+    ],
+    "pattern": [
+      "Herken: bij slotkoers wordt een afzonderlijke balanspost via een verloopstaat gecontroleerd.",
+      "Aanpak: vergelijk de eindstand tegen slotkoers met beginstand plus mutaties tegen hun eigen koersen.",
+      "Controle: de gemiddelde afschrijvingskoers hoort bij slotkoers; haal hier geen historische tijdstipkoers bij."
+    ],
+    "sources": [
+      {
+        "file": "20260429 Tentamen CAFA2 def 2 (1).pdf",
+        "pages": "7-9",
+        "label": "Tentamen 29-04-2026, opgave 2, vraag 5; eigen oefenvariant",
+        "examId": "20260429"
+      },
+      {
+        "file": "20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+        "pages": "6",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 5",
+        "examId": "20260429"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Aansluiting afzonderlijk vast actief bij slotkoers",
+    "check": {
+      "description": "Gebouw slotkoers minus theoretisch verloop",
+      "actual": 4800.0,
+      "expected": 4800
+    }
+  },
+  {
+    "key": "fx-balanscontrole",
+    "topicId": "slotkoers",
+    "title": "Controle van de eindwaarde deelneming",
+    "type": "Controleberekening",
+    "intro": "Een euromoeder houdt 60% van een zelfstandige USD-dochter en waardeert op NVW. Bij de slotkoersmethode sluiten de waarderingsgrondslagen volledig op elkaar aan. Er zijn geen goodwill, interne winst of andere correcties.",
+    "facts": [
+      [
+        "Eigen vermogen dochter op balansdatum",
+        "USD 900.000, inclusief het resultaat van het jaar."
+      ],
+      [
+        "Slotkoers",
+        "€ 0,94 per USD."
+      ],
+      [
+        "Overige koersen",
+        "Verwervingskoers € 0,85; gemiddelde jaarkoers € 0,90."
+      ]
+    ],
+    "task": "Welk bedrag moet de moeder op balansdatum als deelneming opnemen?",
+    "options": [
+      {
+        "text": "€ 507.600.",
+        "why": "60% × USD 900.000 × € 0,94 = € 507.600. Deze eindstand controleert het volledige NVW-verloop inclusief omrekenreserve."
+      },
+      {
+        "text": "€ 846.000.",
+        "why": "Dit is het volledige eigen vermogen in euro; gevraagd is het 60%-belang van de moeder."
+      },
+      {
+        "text": "€ 486.000.",
+        "why": "Dit gebruikt de gemiddelde koers voor een eindbalansstand. Die koers past bij het gelijkmatig verdiende jaarresultaat."
+      },
+      {
+        "text": "€ 459.000.",
+        "why": "Dit gebruikt de verwervingskoers voor het gehele huidige eigen vermogen in plaats van de slotkoers."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Alle activa en verplichtingen zijn bij slotkoers omgerekend tegen de balansdatumkoers. Daarom sluit ook het totale nettovermogen tegen die koers aan.",
+      "De deelneming is 60% × 900.000 × 0,94 = € 507.600. Tel een berekende omrekenreserve niet nogmaals boven op dit bedrag."
+    ],
+    "pattern": [
+      "Herken: gevraagd wordt naar de eindstand, niet naar het jaarresultaat of de reservemutatie.",
+      "Aanpak: vermenigvuldig het aangepaste eindvermogen met slotkoers en deelnemingspercentage.",
+      "Controle: de omrekenreserve verklaart de aansluiting en komt niet nogmaals boven op de NVW."
+    ],
+    "sources": [
+      {
+        "file": "20240422 Tentamen CAFA2.pdf",
+        "pages": "9",
+        "label": "Tentamen 22-04-2024, opgave 2, vraag 13; eigen oefenvariant",
+        "examId": "20240422"
+      },
+      {
+        "file": "20240422 Uitwerking tentamen CAFA2.pdf",
+        "pages": "9",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 13",
+        "examId": "20240422"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Eindstand NVW als controle van reserveverloop",
+    "check": {
+      "description": "Aandeel in slotkoerswaarde eigen vermogen",
+      "actual": 507600.0,
+      "expected": 507600
+    }
+  },
+  {
+    "key": "fx-stand-versus-mutatie",
+    "topicId": "slotkoers",
+    "title": "Een negatieve reserve met positief jaarverschil",
+    "type": "Berekening",
+    "intro": "Een euromoeder bezit de gehele USD-deelneming. De slotkoersmethode geldt. De reserve omrekenverschillen van deze deelneming bedraagt bij aanvang € 30.000 negatief.",
+    "facts": [
+      [
+        "Beginvermogen dochter",
+        "USD 500.000 bij koers € 0,90."
+      ],
+      [
+        "Jaarwinst",
+        "USD 50.000, gelijkmatig verdiend bij gemiddelde koers € 0,92."
+      ],
+      [
+        "Slotkoers",
+        "€ 0,94."
+      ],
+      [
+        "Overige mutaties",
+        "Geen dividend, stortingen of andere vermogensmutaties."
+      ]
+    ],
+    "task": "Wat is de stand van de reserve omrekenverschillen aan het einde van het jaar?",
+    "options": [
+      {
+        "text": "€ 9.000 negatief.",
+        "why": "De jaarmutatie is +€ 21.000. Opgeteld bij de beginstand van -€ 30.000 resteert -€ 9.000."
+      },
+      {
+        "text": "€ 21.000 positief.",
+        "why": "Dit is de positieve jaarmutatie, niet de gevraagde cumulatieve eindstand."
+      },
+      {
+        "text": "€ 51.000 negatief.",
+        "why": "Dit trekt een positieve koersmutatie ten onrechte af van de negatieve beginreserve."
+      },
+      {
+        "text": "€ 9.000 positief.",
+        "why": "Dit verliest het minteken van de eindstand; het jaarverschil maakt de oude negatieve reserve niet volledig goed."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Jaarmutatie: 500.000 × (0,94 - 0,90) + 50.000 × (0,94 - 0,92) = € 21.000.",
+      "Eindreserve = beginreserve + mutatie = -30.000 + 21.000 = € -9.000."
+    ],
+    "pattern": [
+      "Herken: de casus geeft een beginreserve en vraagt om een eindstand.",
+      "Aanpak: bereken eerst het jaarverschil en tel dat met het juiste teken bij de oude reserve op.",
+      "Controle: positieve mutatie betekent niet automatisch een positieve eindreserve."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "12-13",
+        "label": "Tentamen 11-04-2022, opgave 4, vraag 20; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "12-13",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 20",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Cumulatieve reserve onderscheiden van jaarmutatie",
+    "check": {
+      "description": "Eindreserve inclusief historische beginstand",
+      "actual": -9000.0,
+      "expected": -9000
+    }
+  },
+  {
+    "key": "fx-koerswinst-al-in-resultaat",
+    "topicId": "slotkoers",
+    "title": "Twee verschillende valutaverschillen",
+    "type": "Foutdiagnose",
+    "intro": "Een dochter heeft USD als functionele valuta. In haar correct opgestelde USD-winst-en-verliesrekening zit een koerswinst op een afzonderlijke CHF-handelsvordering. De moeder zet de gehele USD-jaarrekening met de slotkoersmethode om naar euro.",
+    "facts": [
+      [
+        "Afzonderlijk gegeven",
+        "Daarnaast ontstaat door deze USD-naar-euro-omrekening een nieuw omrekenverschil. De handelsvordering is geen netto-investering en wordt niet afgedekt."
+      ]
+    ],
+    "task": "Hoe worden de twee verschillen onderscheiden?",
+    "options": [
+      {
+        "text": "De bestaande transactiewinst blijft onderdeel van het omgerekende resultaat; het nieuwe jaarrekeningomrekenverschil komt in de omrekenreserve.",
+        "why": "De slotkoersmethode verandert een eerder juist bepaald transactieresultaat niet in een reservemutatie. Alleen het nieuwe omzettingsverschil komt in de reserve."
+      },
+      {
+        "text": "Beide verschillen worden uit het resultaat verwijderd en in de omrekenreserve opgenomen.",
+        "why": "Dit verwart een transactie in een vreemde valuta met omzetting van een volledige jaarrekening."
+      },
+      {
+        "text": "Beide verschillen komen als nieuwe koerswinst in de eurowinst-en-verliesrekening.",
+        "why": "Het nieuwe verschil door USD naar euro hoort bij slotkoers in het eigen vermogen."
+      },
+      {
+        "text": "De bestaande transactiewinst wordt in euro volledig genegeerd, omdat USD de functionele valuta is.",
+        "why": "Een CHF-vordering is voor de USD-dochter juist een vreemdvalutapost; het correct bepaalde transactieresultaat blijft meetellen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De CHF-vordering wordt eerst beoordeeld binnen de USD-jaarrekening. Het daar terecht opgenomen koersresultaat blijft onderdeel van de te vertalen winst-en-verliesrekening.",
+      "De daaropvolgende omzetting van USD naar euro is een afzonderlijke stap. Het nieuwe verschil uit die stap loopt via de omrekenreserve."
+    ],
+    "pattern": [
+      "Herken: een transactieresultaat binnen de functionele valuta naast een jaarrekeningomrekenverschil.",
+      "Aanpak: bepaal op welk van de twee niveaus elk verschil ontstaat.",
+      "Controle: de regel over de omrekenreserve betekent niet dat een buitenlandse dochter nooit koersresultaten kan hebben."
+    ],
+    "sources": [
+      {
+        "file": "2022-10 CAFA2 - Tentamen.pdf",
+        "pages": "12",
+        "label": "Tentamen 06-10-2022, opgave 4, vraag 21; verdiepende contrastvariant; eigen oefenvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2022-10 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "13",
+        "label": "Bijbehorende uitwerking, opgave 4, vraag 21; verdiepende contrastvariant",
+        "examId": "20221006"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "3-4,7-9,16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Transactievalutaverschil onderscheiden van jaarrekeningomrekening"
+  },
+  {
+    "key": "fx-verliesjaar",
+    "topicId": "slotkoers",
+    "title": "Een verlies als negatieve vermogensmutatie",
+    "type": "Berekening",
+    "intro": "Een zelfstandige USD-dochter wordt met de slotkoersmethode omgerekend. De moeder houdt 100%. Er zijn geen dividenduitkeringen, stortingen of andere mutaties.",
+    "facts": [
+      [
+        "Beginvermogen",
+        "USD 600.000 tegen beginkoers € 0,90."
+      ],
+      [
+        "Jaarverlies",
+        "USD 100.000; gelijkmatig ontstaan, gemiddelde koers € 0,94."
+      ],
+      [
+        "Slotkoers",
+        "€ 0,96 per USD."
+      ]
+    ],
+    "task": "Wat is de jaarlijkse mutatie van de reserve omrekenverschillen?",
+    "options": [
+      {
+        "text": "€ 34.000 positief.",
+        "why": "Het beginvermogen geeft +€ 36.000. Het negatieve jaarresultaat geeft -€ 2.000, samen +€ 34.000."
+      },
+      {
+        "text": "€ 38.000 positief.",
+        "why": "Dit behandelt het verlies als een positieve vermogensmutatie en telt € 2.000 op in plaats van af."
+      },
+      {
+        "text": "€ 36.000 positief.",
+        "why": "Dit laat het koersverschil op het jaarverlies geheel buiten beschouwing."
+      },
+      {
+        "text": "€ 34.000 negatief.",
+        "why": "Het positieve verschil op het beginvermogen is groter dan de negatieve component op het verlies."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Theoretisch eurovermogen: 600.000 × 0,90 - 100.000 × 0,94 = € 446.000.",
+      "Werkelijke eindwaarde: (600.000 - 100.000) × 0,96 = € 480.000. Omrekenreserve neemt toe met € 34.000.",
+      "Controle: 600.000 × 0,06 - 100.000 × 0,02 = € 34.000."
+    ],
+    "pattern": [
+      "Herken: het resultaat is een verlies en verlaagt dus het eigen vermogen.",
+      "Aanpak: gebruik het resultaat met zijn eigen teken in zowel het verloop als de componentenformule.",
+      "Controle: een verliesjaar kan toch een positieve omrekenreserve-mutatie opleveren."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "7-9",
+        "label": "Tentamen 24-09-2025, opgave 2, vraag 5 (uitwerking: vraag 13); variant met verlies; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "8",
+        "label": "Bijbehorende uitwerking, opgave 2, vraag 5 (uitwerking: vraag 13); variant met verlies",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+        "pages": "16",
+        "label": "Syllabus deel 2, onderliggende systematiek"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "Jaarverlies correct verwerken in reserveberekening",
+    "check": {
+      "description": "Omrekenreserve bij negatief jaarresultaat",
+      "actual": 34000.0,
+      "expected": 34000
+    }
+  }
+]

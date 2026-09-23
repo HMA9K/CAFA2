@@ -9,10 +9,11 @@ const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,
 const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade -->';
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
+  s=s.replace(/css\/(exams|exam-experience)\.css(?:\?v=[^"]*)?"/g,'css/$1.css?v=20260923-casepanel2"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
-  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260923-menu1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260922-3"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260922-clarity1">')+'</head>');
+  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260923-menu1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260922-3"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
-  const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260923-menu1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
+  const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260923-navrow1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
   else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260922-3"></script>')+'</head>');
   return s;
@@ -38,8 +39,8 @@ for(const id of Object.keys(orientation)){
 }
 summary=summary.replace(/<section class="summary-page" data-view="tentamen"[^>]*>[\s\S]*?<\/section>/,examRoutePage());
 summary=summary.replace('</main>',wrap('pages',capitalFlow(lawLink)+lawPage())+'</main>');
-const toolLinks='<a data-tool-link="kapitaalboom" href="#kapitaalboom">Kapitaalbelangen</a><a data-tool-link="wetsartikelen" href="#wetsartikelen">Wetsartikelen</a>';
-summary=summary.replace(/(<a [^>]*data-tool-link="kernschema"[^>]*>[\s\S]*?<\/a>)/,m=>m+wrap('tool-tabs',toolLinks));
+const toolLinks='<a data-tool-link="kapitaalboom" href="#kapitaalboom">Kapitaalbelangen</a>';
+summary=summary.replace(/(<a [^>]*data-tool-link="summary"[^>]*>[\s\S]*?<\/a>)/,m=>m+wrap('tool-tabs',toolLinks));
 summary=summary.replace('<div class="reader-tools">','<div class="reader-tools">'+wrap('tool-home','<a class="study-button" href="#kapitaalboom">Beslisboom kapitaalbelangen</a><a class="study-button" href="#wetsartikelen">Wetsartikelen</a>'));
 write('samenvatting.html',assets(decorateTables(summary)));
 const readerManifest=JSON.parse(read('docs/summary-reader-manifest.json'));readerManifest.views=14;write('docs/summary-reader-manifest.json',JSON.stringify(readerManifest,null,2)+'\n');

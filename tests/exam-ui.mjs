@@ -13,6 +13,7 @@ try {
 }
 const read = path => fs.readFileSync(new URL('../' + path, import.meta.url), 'utf8');
 const storageKey = 'cafa2-full-exams-v1';
+const caseSettingsKey = 'cafa2-case-panel-v1';
 const startTime = Date.parse('2026-09-17T10:00:00Z');
 const fixture = () => ({
   id: 'ui-fixture', title: 'CAFA2 integratietest', date: '2026-09-17', durationMinutes: 15,
@@ -31,7 +32,7 @@ const fixture = () => ({
 });
 const windows = [];
 
-function environment({ now = startTime, saved, hash = '#dashboard', exam = fixture(), practice = [] } = {}) {
+function environment({ now = startTime, saved, caseSettings, hash = '#dashboard', exam = fixture(), practice = [] } = {}) {
   const errors = [], downloads = [], intervalCallbacks = [];
   const virtualConsole = new VirtualConsole();
   virtualConsole.on('jsdomError', error => errors.push(error));
@@ -53,6 +54,7 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
   window.HTMLAnchorElement.prototype.click = function () { /* Backups must never navigate or download during tests. */ };
   window.CafaPractice = { getCompleted: () => practice };
   if (saved !== undefined) window.localStorage.setItem(storageKey, saved);
+  if (caseSettings !== undefined) window.sessionStorage.setItem(caseSettingsKey, caseSettings);
   for (const script of ['js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'js/journal-table.js', 'data/exam-source-format.js', 'js/exam-document.js', 'data/exams.js']) window.eval(read(script));
   window.CAFA2_EXAMS = exam ? (Array.isArray(exam)?exam:[exam]) : [];
   window.eval(read('js/exams.js'));
@@ -94,6 +96,66 @@ function environment({ now = startTime, saved, hash = '#dashboard', exam = fixtu
 }
 
 try {
+  // Case toggles and resizing must not recreate the in-progress answer editor.
+  const cases=environment();cases.route('#welkom/ui-fixture');cases.action('start');
+  const casePanel=cases.$('#exam-case-panel'),caseHandle=cases.$('.exam-case-resizer');
+  const caseEditor=cases.$('[contenteditable="true"]');
+  const caseButtons=Array.from(cases.document.querySelectorAll('[data-exam-action="section"]'));
+  function assertCaseToggle(run,visible){
+    assert.equal(run.$('#exam-case-panel').hidden,!visible);
+    assert.equal(run.$('.exam-case-resizer').hidden,!visible);
+    assert.equal(run.$('.exam-case-layout').classList.contains('is-case-hidden'),!visible);
+    const buttons=Array.from(run.document.querySelectorAll('[data-exam-action="section"]'));
+    assert.equal(buttons.length,2,'Both Casus buttons control the same panel.');
+    for(const button of buttons){
+      assert.equal(button.getAttribute('aria-expanded'),String(visible));
+      assert.equal(button.getAttribute('aria-pressed'),String(visible));
+      assert.equal(button.getAttribute('aria-controls'),'exam-case-panel');
+      assert.equal(button.hasAttribute('aria-haspopup'),false);
+    }
+  }
+  assertCaseToggle(cases,true);
+  assert.deepEqual(Array.from(cases.$('.exam-case-layout').children,el=>el.className),['exam-question-body','exam-case-resizer','exam-case-panel'],
+    'Question and answer precede the vertical separator and case in the split layout.');
+  assert.equal(caseHandle.getAttribute('aria-orientation'),'vertical');
+  assert.equal(caseHandle.getAttribute('aria-valuenow'),'33');
+  assert.match(casePanel.textContent,/UITSLUITEND CASUS A/);
+  assert.doesNotMatch(casePanel.textContent,/UITSLUITEND CASUS B|GEHEIM ANTWOORD/);
+  assert.equal(casePanel.querySelector('img,.exam-source-brand'),null);
+  assert.match(casePanel.querySelector('table').textContent,/Post A100/);
+  cases.type('<p>Mijn antwoord blijft staan</p>');
+  caseButtons[0].click();assertCaseToggle(cases,false);
+  assert.equal(cases.$('[contenteditable="true"]'),caseEditor,'Hiding the case must preserve the editor DOM node.');
+  assert.equal(cases.$('#exam-info-dialog'),null,'Casus toggles inline and never opens a modal.');
+  caseButtons[1].click();assertCaseToggle(cases,true);
+  assert.equal(cases.$('[contenteditable="true"]'),caseEditor,'Showing the case must preserve the editor DOM node.');
+  assert.equal(cases.$('#exam-case-panel'),casePanel,'Toggling preserves the case pane and its scrollable content.');
+  function resizeCase(key){caseHandle.dispatchEvent(new cases.window.KeyboardEvent('keydown',{bubbles:true,cancelable:true,key}));}
+  resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'38');
+  resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'33');
+  resizeCase('Home');resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'25');
+  resizeCase('End');resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'60');
+  for(let n=0;n<3;n++)resizeCase('ArrowRight');
+  assert.equal(cases.$('.exam-case-layout').style.getPropertyValue('--case-width'),'45%');
+  assert.equal(cases.$('[contenteditable="true"]'),caseEditor,'Resizing must preserve the editor DOM node.');
+  assert.match(cases.state()[0].answers.q1.html,/Mijn antwoord blijft staan/);
+  caseButtons[0].click();cases.action('next');cases.action('next');
+  assertCaseToggle(cases,false);
+  assert.equal(cases.$('.exam-case-resizer').getAttribute('aria-valuenow'),'45');
+  assert.match(cases.$('#exam-case-panel').textContent,/UITSLUITEND CASUS B/);
+  assert.doesNotMatch(cases.$('#exam-case-panel').textContent,/UITSLUITEND CASUS A|GEHEIM ANTWOORD/);
+  const casesReload=environment({saved:cases.saved(),caseSettings:cases.window.sessionStorage.getItem(caseSettingsKey),hash:cases.window.location.hash});
+  assertCaseToggle(casesReload,false);
+  assert.equal(casesReload.$('.exam-case-resizer').getAttribute('aria-valuenow'),'45');
+  assert.match(casesReload.$('#exam-case-panel').textContent,/UITSLUITEND CASUS B/);
+  casesReload.$('[data-exam-action="section"]').click();assertCaseToggle(casesReload,true);
+  casesReload.action('previous');casesReload.action('previous');
+  assertCaseToggle(casesReload,true);
+  assert.match(casesReload.$('[contenteditable="true"]').textContent,/Mijn antwoord blijft staan/);
+  assert.equal(casesReload.$('.exam-case-resizer').getAttribute('aria-valuenow'),'45');
+  assert.deepEqual(cases.errors,[]);assert.deepEqual(casesReload.errors,[]);
+  console.log('Case panel: default open, scoped source content, synchronized toggles, preserved editor, keyboard bounds and session reload passed.');
+
   // New practice modes retain time and answers across reloads.
   const modes=environment();modes.route('#welkom/ui-fixture');modes.action('start');
   const modeId=modes.state()[0].id;modes.type('<p>Bewaar mijn antwoord</p>');
@@ -168,14 +230,15 @@ try {
   multi.route('#dashboard');
   assert.equal(multi.document.querySelectorAll('a[href^="#tentamen/"]').length,6);
   assert.equal(multi.$('.exam-clock').hidden,true);
-  multi.route('#tentamen/'+bId);multi.action('section');
+  multi.route('#tentamen/'+bId);
+  const currentCase=multi.$('#exam-case-panel');assert.equal(currentCase.hidden,false);
   multi.setTime(startTime+15*60_000);
   assert.equal(multi.state()[0].status,'completed');
   assert.equal(multi.state()[1].status,'active');
   assert.equal(multi.state()[2].status,'active');
   assert.equal(multi.window.location.hash,'#tentamen/'+bId,'Other expiry must not navigate away.');
-  assert.ok(multi.$('#exam-info-dialog'),'Other expiry must not close the current section.');
-  multi.click('[data-close-info]');
+  assert.equal(multi.$('#exam-case-panel'),currentCase,'Other expiry must not replace the current case.');
+  assert.equal(currentCase.hidden,false,'Other expiry must not close the current case.');
   assert.equal(multi.$('[role="timer"]').textContent,'76 minuten');
   assert.match(multi.$('[contenteditable]').textContent,/tweede tentamen/);
   multi.setTime(startTime+16*60_000);
@@ -230,10 +293,9 @@ try {
   assert.match(ui.state()[0].answers.q1.html, /<strong>Mijn uitwerking<\/strong>/);
   assert.match(JSON.parse(ui.saved()).attempts[0].answers.q1.html, /<td>42<\/td>/);
 
-  ui.action('section');
-  assert.match(ui.$('#exam-info-dialog').textContent, /UITSLUITEND CASUS A/);
-  assert.doesNotMatch(ui.$('#exam-info-dialog').textContent, /UITSLUITEND CASUS B/);
-  ui.click('[data-close-info]');
+  assert.equal(ui.$('#exam-case-panel').hidden,false);
+  assert.match(ui.$('#exam-case-panel').textContent, /UITSLUITEND CASUS A/);
+  assert.doesNotMatch(ui.$('#exam-case-panel').textContent, /UITSLUITEND CASUS B/);
   ui.action('introduction');
   assert.match(ui.$('#exam-info-dialog').textContent, /Voorblad testfixture/);
   ui.click('[data-close-info]');
@@ -245,10 +307,9 @@ try {
   assert.equal(ui.state()[0].answers.q2.optionId, 'b');
   ui.action('next');
   assert.equal(ui.state()[0].currentIndex, 2);
-  ui.action('section');
-  assert.match(ui.$('#exam-info-dialog').textContent, /UITSLUITEND CASUS B/);
-  assert.doesNotMatch(ui.$('#exam-info-dialog').textContent, /UITSLUITEND CASUS A/);
-  ui.click('[data-close-info]');
+  assert.equal(ui.$('#exam-case-panel').hidden,false);
+  assert.match(ui.$('#exam-case-panel').textContent, /UITSLUITEND CASUS B/);
+  assert.doesNotMatch(ui.$('#exam-case-panel').textContent, /UITSLUITEND CASUS A/);
   ui.action('overview');
   assert.equal(ui.document.querySelectorAll('#exam-info-dialog [data-exam-index]').length, 3);
   assert.equal(ui.document.querySelectorAll('#exam-info-dialog .compact-overview-divider').length, 1);
@@ -347,6 +408,8 @@ try {
     'The sectionless demonstration must list all its questions.');
   demo.click('[data-close-info]');
   assert.equal(demo.$('[data-exam-action="section"]'), null);
+  assert.equal(demo.$('#exam-case-panel'),null,'A sectionless exam must not show an empty case panel.');
+  assert.equal(demo.$('.exam-case-resizer'),null);
 
   // All real stock questions use the question's blank table, never the answer key.
   const content=environment({exam:null});
@@ -397,7 +460,8 @@ try {
     const intro=render(exam,'exam',exam.introductionHtml);
     assert.match(intro,/nyenrode-logo.png/);
     for(const section of exam.sections){
-      const rendered=render(exam,'exam',section.contentHtml);
+      const rendered=render(exam,'case',section.contentHtml);
+      assert.doesNotMatch(rendered,/nyenrode-logo|exam-source-brand/,'Only covers carry university branding.');
       assert.equal(sourceText(rendered),sourceText(section.contentHtml),'Case text must not change.');
     }
     for(const q of exam.questions){

@@ -8,7 +8,7 @@
 .exam-position { color:#173650; white-space:nowrap; font-size:.72rem; }
 .exam-position strong { font-weight:400; font-size:1.25rem; color:#686570; }
 .exam-cirrus-actions { display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end; }
-.exam-cirrus-actions .btn { border:2px solid #615365; border-radius:1px; background:white; color:#615365; min-height:32px; padding:5px 9px; font-size:14px; font-weight:700; }
+.exam-cirrus-actions .btn,.exam-question-identity .btn { border:2px solid #615365; border-radius:1px; background:white; color:#615365; min-height:32px; padding:5px 9px; font-size:14px; font-weight:700; }
 .exam-cirrus-actions .btn[data-exam-action="submit"] { border-color:#008859; color:#008859; }
 .exam-cirrus-actions .btn[aria-pressed="true"] { background:#fff1d9; border-color:#b57b25; }
 .exam-document { overflow-wrap:anywhere; overflow-x:auto; line-height:1.65; }
@@ -114,7 +114,7 @@
   .exam-work-head { flex-wrap:wrap; }
   .exam-position { margin-left:auto; }
   .exam-cirrus-actions { gap:7px; width:100%; }
-  .exam-cirrus-actions .btn { font-size:12px; padding:5px 7px; min-height:36px; }
+  .exam-cirrus-actions .btn,.exam-question-identity .btn { font-size:12px; padding:5px 7px; min-height:36px; }
   .exam-modal-body { padding:16px; }
   .exam-page-head { display:block; padding:18px 0; }
   .exam-page-head h1 { font-size:1.5rem; }
@@ -219,7 +219,7 @@
   .exam-results-filters select { height:40px; width:65%; min-width:0; font-size:12px; }
   .exam-running main { padding:10px 8px; }
   .exam-runner-title { font-size:23px; margin:10px 8px 18px; }
-  .exam-running .exam-work-head { padding:22px 16px; flex-wrap:nowrap; }
+  .exam-running .exam-work-head { padding:22px 16px; flex-wrap:wrap; }
   .exam-running .exam-question-body { padding:6px 16px 20px; }
   .exam-running .exam-footer { padding:12px; }
   .exam-question-identity { gap:12px; }

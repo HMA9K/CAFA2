@@ -121,7 +121,7 @@ window.CAFA2_DATA.modules["val"]={
       "type": "Theorie",
       "intro": "Een onderneming onderscheidt een lokale valuta, een functionele valuta en een presentatievaluta.",
       "facts": [],
-      "task": "Welke omschrijving onderscheidt lokale valuta, functionele valuta en presentatievaluta correct?",
+      "task": "Welke omschrijving geeft de functionele valuta van een onderneming correct weer?",
       "options": [
         {
           "text": "De valuta van de economische omgeving waarin de onderneming actief is.",
@@ -157,7 +157,7 @@ window.CAFA2_DATA.modules["val"]={
       "guidance": {
         "lesson": "valuta",
         "title": "Drie valuta met een eigen betekenis",
-        "task": "Welke omschrijving onderscheidt lokale valuta, functionele valuta en presentatievaluta correct?",
+        "task": "Welke omschrijving geeft de functionele valuta van een onderneming correct weer?",
         "rules": "De lokale valuta hoort bij het vestigingsland. De functionele valuta weerspiegelt de economische omgeving waarin de onderneming geldmiddelen ontvangt en uitgeeft. De presentatievaluta is de valuta waarin de jaarrekening wordt gepresenteerd. Deze drie hoeven niet gelijk te zijn; stel ze daarom eerst afzonderlijk vast voordat je een omrekenmethode kiest.",
         "pattern": [
           "Herken: de vraag gaat om begrippen, nog niet om wisselkoersen.",

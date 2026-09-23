@@ -1,0 +1,3130 @@
+[
+  {
+    "key": "kap-zeg-eigen-rekening",
+    "topicId": "zeggenschap",
+    "title": "Aandelen voor rekening van een ander",
+    "type": "Theorie",
+    "intro": "De administratie van Linde bv vermeldt een 30%-kapitaalbelang in Haven bv.",
+    "facts": [
+      [
+        "Economisch belang",
+        "Linde houdt alle aandelen uitsluitend voor rekening en risico van een opdrachtgever."
+      ],
+      [
+        "Bevoegdheden",
+        "De opdrachtgever bepaalt hoe de rechten worden uitgeoefend. Linde krijgt alleen een vaste beheervergoeding."
+      ],
+      [
+        "Eigen samenwerking",
+        "Linde heeft zelf geen bedrijfsbelang bij Haven."
+      ]
+    ],
+    "task": "Welke conclusie over een deelneming van Linde volgt uit deze feiten volgens artikel 2:24c lid 1 BW?",
+    "options": [
+      {
+        "text": "Voor Linde ontbreekt het criterium voor eigen rekening; het 30%-percentage maakt dit niet alsnog een deelneming.",
+        "why": "De kwalitatieve toets gaat vóór een conclusie op basis van het wettelijke vermoeden."
+      },
+      {
+        "text": "Linde heeft altijd een deelneming omdat 30% hoger is dan 20%.",
+        "why": "Het percentage geeft een vermoeden, maar herstelt het ontbreken van eigen rekening niet."
+      },
+      {
+        "text": "Linde heeft een deelneming zodra de beheervergoeding winstgevend is.",
+        "why": "Een vergoeding voor beheer is geen economisch belang in de aandelen voor eigen rekening."
+      },
+      {
+        "text": "Linde heeft een deelneming omdat de opdrachtgever duurzaam wil beleggen.",
+        "why": "Het voornemen van de opdrachtgever maakt Linde niet tot economisch belanghebbende."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Artikel 2:24c lid 1 vereist onder meer kapitaalverschaffing voor eigen rekening.",
+      "Linde draagt volgens de casus geen economisch risico en houdt het belang voor een ander. Het wettelijke vermoeden vanaf 20% neemt dit gebrek niet weg."
+    ],
+    "pattern": [
+      "Herken: juridisch houden van aandelen en economisch houden voor eigen rekening worden uit elkaar getrokken.",
+      "Aanpak: toets per partij wie het belang voor eigen rekening houdt.",
+      "Controle: een percentage is een vermoeden, geen vervanging van de kwalitatieve criteria."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Tentamen 20250417, opgave 1, vraag 1, p. 4; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "2",
+        "label": "Uitwerking 20250417, opgave 1, vraag 1, p. 2; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "10–12",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 10–12; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "kwalificatie-voor-eigen-rekening"
+  },
+  {
+    "key": "kap-zeg-vof-aansprakelijkheid",
+    "topicId": "zeggenschap",
+    "title": "Een vof in de dochterketen",
+    "type": "Theorie",
+    "intro": "Linde bv houdt 70% van de stemmen in Dijk bv. Dijk is vennoot in Handelsvof.",
+    "facts": [
+      [
+        "Aansprakelijkheid Dijk",
+        "Volledig jegens de schuldeisers aansprakelijk voor de schulden van Handelsvof."
+      ],
+      [
+        "Handelsvof",
+        "Treedt onder eigen naam op."
+      ],
+      [
+        "Stemrecht",
+        "Linde heeft bij Dijk de meerderheid en er zijn geen afwijkende afspraken."
+      ]
+    ],
+    "task": "Hoe wordt Handelsvof voor Linde behandeld bij de dochtertoets van artikel 2:24a BW?",
+    "options": [
+      {
+        "text": "Handelsvof wordt via dochter Dijk met een dochtermaatschappij van Linde gelijkgesteld.",
+        "why": "Lid 2 ziet op volledige aansprakelijkheid van de rechtspersoon of een dochter als vennoot."
+      },
+      {
+        "text": "Handelsvof kan nooit meetellen omdat een vof geen rechtspersoon is.",
+        "why": "Juist de gelijkstelling in lid 2 omvat een onder eigen naam optredende vennootschap."
+      },
+      {
+        "text": "Handelsvof telt alleen mee als Linde zelf volledig aansprakelijk is.",
+        "why": "Ook volledige aansprakelijkheid van een dochtermaatschappij is relevant."
+      },
+      {
+        "text": "Handelsvof telt voor 70% als dochtermaatschappij.",
+        "why": "De kwalificatie dochter is geen evenredig boekhoudkundig opnamepercentage."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Dijk is dochter van Linde door de meerderheid van de stemrechten.",
+      "Dijk is als vennoot volledig aansprakelijk voor Handelsvof. Artikel 2:24a lid 2 laat deze gelijkstelling via een dochter doorwerken naar Linde."
+    ],
+    "pattern": [
+      "Herken: een vof en volledige aansprakelijkheid, niet alleen een aandelenpercentage.",
+      "Aanpak: stel eerst de dochterrelatie met Dijk vast en toets daarna de aansprakelijkheid als vennoot.",
+      "Controle: vermenigvuldig geen belangpercentages om de juridische dochterkwalificatie te bepalen."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Tentamen 20230411, opgave 1, vraag 1b, p. 4; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "3",
+        "label": "Uitwerking 20230411, opgave 1, vraag 1b, p. 3; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "5, 10–12",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 5, 10–12; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "dochter-gelijkstelling-via-vof"
+  },
+  {
+    "key": "kap-zeg-geen-dochterdoorgifte",
+    "topicId": "zeggenschap",
+    "title": "Een minderheidsbelang in de tussenhouder",
+    "type": "Theorie",
+    "intro": "Linde bv heeft belangen in een keten met twee vennootschappen.",
+    "facts": [
+      [
+        "Linde in Dijk",
+        "40% van de stemmen; geen stemrechtovereenkomsten, benoemingsrechten of andere dochtergrond."
+      ],
+      [
+        "Dijk in Haven",
+        "80% van de stemmen."
+      ],
+      [
+        "Linde rechtstreeks in Haven",
+        "Geen aandelen en geen bijzondere rechten."
+      ]
+    ],
+    "task": "Is Haven op grond van de gegeven stemrechten een dochtermaatschappij van Linde?",
+    "options": [
+      {
+        "text": "Nee. Dijk is geen dochter van Linde, zodat de door Dijk gehouden 80% niet als dochterstemmen aan Linde wordt toegerekend.",
+        "why": "De volledige toerekening van indirecte stemmen vereist eerst een dochterrelatie met de tussenhouder."
+      },
+      {
+        "text": "Ja. Dijks 80% mag altijd volledig bij Linde worden meegeteld.",
+        "why": "Een willekeurige deelneming is niet hetzelfde als een dochtermaatschappij."
+      },
+      {
+        "text": "Ja. Het economische belang van 40% × 80% is voldoende voor een dochterrelatie.",
+        "why": "32% economisch belang is geen meerderheid van uitoefenbare stemmen."
+      },
+      {
+        "text": "Ja. Elke dochter van een deelneming is automatisch ook dochter van de deelnemer.",
+        "why": "De wettelijke dochterketen kan niet over een ontbrekende dochterrelatie heen springen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Haven is op de gegeven feiten wel dochter van Dijk.",
+      "Dijk is geen dochter van Linde. Daardoor ontbreekt de schakel voor toerekening van Dijks stemmen aan Linde onder artikel 2:24a lid 1."
+    ],
+    "pattern": [
+      "Herken: een indirect belang met een tussenhouder die geen dochter is.",
+      "Aanpak: toets elke schakel voordat je indirecte stemmen meetelt.",
+      "Controle: onderscheid economisch belang van wettelijk uitoefenbare zeggenschap."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Tentamen 20230411, opgave 1, vraag 1a, onderscheid tussen dochterketens, p. 4; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "3",
+        "label": "Uitwerking 20230411, opgave 1, vraag 1a, onderscheid tussen dochterketens, p. 3; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "6–9",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 6–9; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "dochterketen-onderbroken"
+  },
+  {
+    "key": "kap-zeg-doelwijziging",
+    "topicId": "zeggenschap",
+    "title": "Van verkoopplan naar samenwerking",
+    "type": "Theorie",
+    "intro": "Linde kreeg een 18%-belang in Reis bv en wilde dit aanvankelijk binnen enkele maanden verkopen.",
+    "facts": [
+      [
+        "Aanvankelijke situatie",
+        "Geen aansluiting bij de eigen activiteiten; uitsluitend tijdelijk aangehouden voor koerswinst."
+      ],
+      [
+        "Nieuwe situatie",
+        "Linde besluit het belang duurzaam aan te houden en samen met Reis pakketten te verkopen die de eigen dienstverlening aanvullen."
+      ],
+      [
+        "Economisch belang",
+        "Het belang wordt in beide situaties voor eigen rekening gehouden; het percentage blijft 18%."
+      ]
+    ],
+    "task": "Welke beoordeling van de kwalificatie past bij de gewijzigde feiten?",
+    "options": [
+      {
+        "text": "De belegging kan vanaf de gewijzigde duurzame samenwerking als deelneming kwalificeren, ook zonder stijging tot 20%.",
+        "why": "Doel en duurzame dienstbaarheid veranderen; 20% is geen minimumvereiste."
+      },
+      {
+        "text": "Het blijft verplicht een belegging totdat Linde minstens 20% bezit.",
+        "why": "Bij een lager percentage kan aan de kwalitatieve criteria worden voldaan."
+      },
+      {
+        "text": "Het was vanaf aankoop automatisch een deelneming doordat Linde kapitaal verschafte.",
+        "why": "Kapitaalverschaffing alleen vervult de andere kwalitatieve criteria niet."
+      },
+      {
+        "text": "De samenwerking maakt Reis automatisch een dochter van Linde.",
+        "why": "Een deelneming en een dochtermaatschappij hebben verschillende criteria."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "In de eerste situatie ontbreken duurzame verbondenheid en dienstbaarheid aan de eigen werkzaamheid.",
+      "Door de gewijzigde samenwerking kunnen die criteria nu wel vervuld zijn. De beoordeling volgt de feiten, niet uitsluitend een ongewijzigd percentage."
+    ],
+    "pattern": [
+      "Herken: het doel van het aanhouden verandert terwijl het percentage gelijk blijft.",
+      "Aanpak: vergelijk de vier kwalitatieve criteria vóór en na het besluit.",
+      "Controle: kwalificatie als deelneming bepaalt nog niet automatisch waardering tegen NVW."
+    ],
+    "sources": [
+      {
+        "file": "2022-04 CAFA2 - Tentamen.pdf",
+        "pages": "4–5",
+        "label": "Tentamen 11-04-2022, opgave 1, vragen 1a en 2, p. 4–5; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2022-04 CAFA2 - Uitwerking tentamen.pdf",
+        "pages": "2–3",
+        "label": "Uitwerking 20220411, opgave 1, vragen 1a en 2, p. 2–3; eigen oefenvariant",
+        "examId": "20220411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "10–12",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 10–12; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "kwalificatie-na-doelwijziging"
+  },
+  {
+    "key": "kap-waarde-duurzame-daling",
+    "topicId": "waardering",
+    "title": "Duurzame waardedaling bij verkrijgingsprijs",
+    "type": "Journaalpost",
+    "intro": "Linde waardeert haar deelneming Haven tegen verkrijgingsprijs.",
+    "facts": [
+      [
+        "Boekwaarde",
+        "€ 300.000."
+      ],
+      [
+        "Waarde op balansdatum",
+        "€ 240.000; de daling is volgens de gegeven beoordeling duurzaam."
+      ],
+      [
+        "Herwaarderingsreserve",
+        "Niet aanwezig."
+      ],
+      [
+        "Belastingen",
+        "Buiten beschouwing."
+      ]
+    ],
+    "task": "Welke journaalpost verwerkt de bijzondere waardevermindering op balansdatum?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Verlies op deelneming",
+              "€ 60.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 60.000"
+            ]
+          ]
+        },
+        "why": "Het duurzame verschil tussen boekwaarde en waarde op balansdatum komt ten laste van resultaat."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 60.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 60.000"
+            ]
+          ]
+        },
+        "why": "Er is geen herwaarderingsreserve; bij deze verkrijgingsprijswaardering wordt de duurzame daling als verlies geboekt."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Haven",
+              "€ 60.000",
+              ""
+            ],
+            [
+              "Resultaat deelneming",
+              "",
+              "€ 60.000"
+            ]
+          ]
+        },
+        "why": "Dit verhoogt de boekwaarde terwijl juist een duurzame waardedaling is gegeven."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Verlies op deelneming",
+              "€ 240.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 240.000"
+            ]
+          ]
+        },
+        "why": "€ 240.000 is de resterende waarde, niet het af te boeken verschil."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De afwaardering is € 300.000 − € 240.000 = € 60.000.",
+      "Volgens de syllabus gaat een duurzame waardedaling bij verkrijgingsprijs ten laste van het resultaat. De eindboekwaarde wordt € 240.000."
+    ],
+    "pattern": [
+      "Herken: verkrijgingsprijs, duurzame waardedaling en geen herwaarderingsreserve.",
+      "Aanpak: bereken boekwaarde minus lagere waarde en boek dat verschil als verlies.",
+      "Controle: beginboekwaarde minus afwaardering moet de nieuwe boekwaarde opleveren."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "25",
+        "label": "Syllabusaanvulling: bijzondere waardevermindering, artikel 2:387 leden 3–4 BW, p. 25; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "duurzame-waardevermindering-deelneming",
+    "check": {
+      "description": "Afwaardering en eindboekwaarde",
+      "actual": 60000,
+      "expected": 60000
+    }
+  },
+  {
+    "key": "kap-waarde-herstel-plafond",
+    "topicId": "waardering",
+    "title": "Herstel heeft een bovengrens",
+    "type": "Berekening",
+    "intro": "Linde heeft een deelneming die blijvend tegen verkrijgingsprijs wordt gewaardeerd.",
+    "facts": [
+      [
+        "Oorspronkelijke verkrijgingsprijs",
+        "€ 300.000."
+      ],
+      [
+        "Huidige boekwaarde",
+        "€ 240.000 na een eerdere afwaardering van € 60.000 ten laste van resultaat."
+      ],
+      [
+        "Herstelde waarde",
+        "€ 330.000; de redenen voor de afwaardering zijn volledig vervallen."
+      ],
+      [
+        "Overige mutaties",
+        "Geen dividend of aanvullende aankopen."
+      ]
+    ],
+    "task": "Welke terugneming en eindboekwaarde volgen uit de syllabusmethodiek?",
+    "options": [
+      {
+        "text": "€ 60.000 bate; eindboekwaarde € 300.000.",
+        "why": "De terugneming herstelt de eerdere afwaardering en stopt bij de oorspronkelijke verkrijgingsprijs."
+      },
+      {
+        "text": "€ 90.000 bate; eindboekwaarde € 330.000.",
+        "why": "Dit neemt naast herstel ook een waardestijging boven verkrijgingsprijs in het resultaat op."
+      },
+      {
+        "text": "Geen terugneming; eindboekwaarde € 240.000.",
+        "why": "De oorzaak van de eerdere afwaardering is vervallen, zodat terugneming aan de orde is."
+      },
+      {
+        "text": "€ 60.000 rechtstreeks naar overige reserves; eindboekwaarde € 300.000.",
+        "why": "De eerdere afwaardering liep via resultaat en wordt volgens de behandelde methode via resultaat teruggenomen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De waarde is € 90.000 hoger dan de huidige boekwaarde, maar slechts € 60.000 is eerder afgewaardeerd.",
+      "De terugneming is dus € 60.000. De deelneming eindigt op € 300.000; het meerdere van € 30.000 wordt bij verkrijgingsprijs niet geactiveerd."
+    ],
+    "pattern": [
+      "Herken: herstel na een eerdere verliesboeking, met ongewijzigde verkrijgingsprijsgrondslag.",
+      "Aanpak: neem maximaal de eerdere afwaardering terug.",
+      "Controle: de eindboekwaarde mag door deze terugneming niet boven de oorspronkelijke verkrijgingsprijs uitkomen."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "25",
+        "label": "Syllabusaanvulling: terugneming bijzondere waardevermindering, p. 25; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "herstel-tot-verkrijgingsprijs",
+    "check": {
+      "description": "Maximaal herstel",
+      "actual": 60000,
+      "expected": 60000
+    }
+  },
+  {
+    "key": "kap-waarde-beurseffecten",
+    "topicId": "waardering",
+    "title": "Actuele waarde van een beursbelegging",
+    "type": "Journaalpost",
+    "intro": "Linde houdt beursgenoteerde aandelen uitsluitend ter belegging.",
+    "facts": [
+      [
+        "Beginboekwaarde",
+        "€ 100.000."
+      ],
+      [
+        "Actuele waarde ultimo",
+        "€ 115.000."
+      ],
+      [
+        "Gekozen verwerking",
+        "Waardeveranderingen direct via resultaat volgens de in de syllabus besproken toepassing van artikel 2:384 lid 7 BW."
+      ],
+      [
+        "Markt",
+        "Er zijn frequente marktnoteringen."
+      ],
+      [
+        "Overige mutaties",
+        "Geen dividend, aankopen, verkopen of belastingen."
+      ]
+    ],
+    "task": "Welke verwerking van de waardestijging is juist onder deze expliciete uitgangspunten?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Effecten",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Resultaat effecten",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "De gekozen grondslag verwerkt de stijging in resultaat; bij frequente marktnoteringen is de aanvullende herwaarderingsreserve niet nodig."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Effecten",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Herwaarderingsreserve",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "Dit volgt niet de gegeven keuze om waardeveranderingen direct via resultaat te verwerken."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Bank",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Resultaat effecten",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "De koersstijging brengt zonder verkoop geen geldontvangst mee."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Effecten",
+              "€ 115.000",
+              ""
+            ],
+            [
+              "Resultaat effecten",
+              "",
+              "€ 115.000"
+            ]
+          ]
+        },
+        "why": "Alleen de stijging van € 15.000 is de jaarmutatie; € 115.000 is de eindstand."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Waardestijging: € 115.000 − € 100.000 = € 15.000.",
+      "De gegeven resultaatkeuze leidt tot Effecten debet en Resultaat effecten credit. De frequente marktnotering maakt de aanvullende reserve volgens de syllabus niet nodig."
+    ],
+    "pattern": [
+      "Herken: belegging, expliciete resultaatkeuze en frequente marktnotering.",
+      "Aanpak: boek de verandering van de actuele waarde, niet de volledige eindstand.",
+      "Controle: onderzoek de reservevoorwaarde apart van de verwerking in resultaat."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "27–28",
+        "label": "Syllabusaanvulling: beleggingen tegen actuele waarde, p. 27–28; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "beursbelegging-resultaat-actuele-waarde",
+    "check": {
+      "description": "Jaarlijkse waardestijging",
+      "actual": 15000,
+      "expected": 15000
+    }
+  },
+  {
+    "key": "kap-good-badwill-aankoop",
+    "topicId": "goodwill",
+    "title": "Een lagere koopsom dan de verkregen waarde",
+    "type": "Journaalpost",
+    "intro": "Linde koopt op 31 december alle aandelen van Haven en waardeert de deelneming tegen NVW.",
+    "facts": [
+      [
+        "Betaald per bank",
+        "€ 360.000."
+      ],
+      [
+        "Totale NVW na alle aankoopcorrecties",
+        "€ 400.000."
+      ],
+      [
+        "Casusregel badwill",
+        "Negatieve goodwill wordt, zoals in opgave Speedster, afzonderlijk als overlopende passiva geboekt."
+      ],
+      [
+        "Belastingen en bijkomende kosten",
+        "Niet van toepassing."
+      ]
+    ],
+    "task": "Welke aankoopboeking volgt uit deze casusregel?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Haven",
+              "€ 400.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 360.000"
+            ],
+            [
+              "Overlopende passiva badwill",
+              "",
+              "€ 40.000"
+            ]
+          ]
+        },
+        "why": "Deelneming volgt NVW; het verschil met de lagere betaling vormt de voorgeschreven passiefpost."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Haven",
+              "€ 360.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 360.000"
+            ]
+          ]
+        },
+        "why": "Dit laat de deelneming op koopsom staan en past de gegeven NVW- en badwillregel niet toe."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Haven",
+              "€ 400.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 360.000"
+            ],
+            [
+              "Resultaat deelneming",
+              "",
+              "€ 40.000"
+            ]
+          ]
+        },
+        "why": "De casus schrijft een passiefpost voor en geen volledige onmiddellijke winstneming."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Haven",
+              "€ 320.000",
+              ""
+            ],
+            [
+              "Goodwill",
+              "€ 40.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 360.000"
+            ]
+          ]
+        },
+        "why": "Het verschil is negatief; positieve goodwill activeren en NVW verlagen keert de betekenis om."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Verschil: betaalde prijs € 360.000 minus verkregen NVW € 400.000 = € 40.000 negatieve goodwill.",
+      "Volgens de uitdrukkelijke casusregel wordt € 40.000 gecrediteerd op Overlopende passiva. Debet € 400.000 sluit aan op totaal credit € 400.000."
+    ],
+    "pattern": [
+      "Herken: de prijs is lager dan de verkregen nettovermogenswaarde.",
+      "Aanpak: bepaal eerst het teken van het verschil en pas daarna de voorgeschreven badwillregel toe.",
+      "Controle: presenteer badwill niet als positief goodwillactief en verwar de casusregel niet met een algemene regel voor alle overnames."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf",
+        "pages": "33–34",
+        "label": "Syllabusaanvulling: opgave 16 Speedster, vragen 2–4; eigen oefenvariant met expliciete badwillregel"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf",
+        "pages": "40–41",
+        "label": "Uitwerking opgave 16 Speedster, vragen 2–4; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "badwill-afzonderlijke-passiefpost",
+    "check": {
+      "description": "Negatieve goodwill in absolute omvang",
+      "actual": 40000,
+      "expected": 40000
+    }
+  },
+  {
+    "key": "kap-good-badwill-vervolg",
+    "topicId": "goodwill",
+    "title": "Verlies én badwillvrijval",
+    "type": "Berekening",
+    "intro": "Linde bezit 100% van Haven tegen NVW. Bij aankoop op 1 januari ontstond afzonderlijke badwill.",
+    "facts": [
+      [
+        "Badwill bij aankoop",
+        "€ 40.000 op overlopende passiva."
+      ],
+      [
+        "Expliciete casusregel",
+        "Gelijkmatige vrijval in vijf jaar ten gunste van overige baten, vanaf aankoop; één volledig jaar is verstreken."
+      ],
+      [
+        "Aangepast resultaat Haven",
+        "€ 12.000 verlies, na alle noodzakelijke NVW-correcties."
+      ],
+      [
+        "Overig",
+        "Geen belastingen, dividend of andere mutaties."
+      ]
+    ],
+    "task": "Wat zijn gezamenlijk het effect op Lindes jaarresultaat en de badwillstand ultimo?",
+    "options": [
+      {
+        "text": "€ 4.000 verlies; badwill ultimo € 32.000.",
+        "why": "Het deelnemingsverlies van € 12.000 en de afzonderlijke vrijvalbate van € 8.000 geven samen € 4.000 verlies."
+      },
+      {
+        "text": "€ 12.000 verlies; badwill ultimo € 40.000.",
+        "why": "De voorgeschreven jaarlijkse vrijval van badwill wordt ten onrechte overgeslagen."
+      },
+      {
+        "text": "€ 20.000 verlies; badwill ultimo € 32.000.",
+        "why": "De badwillvrijval is een bate en wordt niet als extra afschrijvingslast opgeteld."
+      },
+      {
+        "text": "€ 28.000 winst; badwill ultimo nihil.",
+        "why": "De gehele passiefpost vrijvallen in één jaar strijdt met de gegeven termijn van vijf jaar."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Jaarvrijval badwill: € 40.000 ÷ 5 = € 8.000, te boeken Overlopende passiva aan Overige baten.",
+      "Gezamenlijk resultaateffect: −€ 12.000 + € 8.000 = −€ 4.000. Deelnemingswaarde en badwill hebben afzonderlijke verloopstaten; badwill ultimo is € 32.000."
+    ],
+    "pattern": [
+      "Herken: het deelnemingsresultaat en de badwillvrijval zijn afzonderlijke posten.",
+      "Aanpak: bepaal beide jaareffecten en tel ze met het juiste teken op.",
+      "Controle: een vrijval van een passiefpost geeft hier een bate; de passiefstand daalt."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf",
+        "pages": "33–34",
+        "label": "Syllabusaanvulling: opgave 16 Speedster, vragen 2–4; eigen oefenvariant met expliciete badwillregel"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf",
+        "pages": "40–41",
+        "label": "Uitwerking opgave 16 Speedster, vragen 2–4; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "badwill-vrijval-en-deelnemingsverlies",
+    "check": {
+      "description": "Gezamenlijk jaarresultaat",
+      "actual": -4000,
+      "expected": -4000
+    }
+  },
+  {
+    "key": "kap-good-voorziening-gevoeligheid",
+    "topicId": "goodwill",
+    "title": "Een ontbrekende verplichting bij de overname",
+    "type": "Berekening",
+    "intro": "Linde koopt 60% van Haven tegen een vaste koopsom. Een eerste berekening gaf € 90.000 goodwill.",
+    "facts": [
+      [
+        "Ontdekte fout",
+        "In de gebruikte overnamebalans ontbreekt een verplichting van € 50.000."
+      ],
+      [
+        "Koopsom",
+        "Blijft ongewijzigd."
+      ],
+      [
+        "Grondslag",
+        "NVW, met afzonderlijke goodwill."
+      ],
+      [
+        "Overig",
+        "Geen belastingeffect of andere wijzigingen."
+      ]
+    ],
+    "task": "Wat doet verwerking van deze verplichting met de deelnemingswaarde en de goodwill?",
+    "options": [
+      {
+        "text": "De deelnemingswaarde daalt € 30.000; goodwill stijgt naar € 120.000.",
+        "why": "De NVW van het 60%-pakket daalt € 30.000 en de vaste prijs blijft gelijk; goodwill vult het verschil."
+      },
+      {
+        "text": "De deelnemingswaarde daalt € 50.000; goodwill stijgt naar € 140.000.",
+        "why": "€ 50.000 is het effect voor 100% van Haven; Linde koopt 60%."
+      },
+      {
+        "text": "De deelnemingswaarde daalt € 30.000; goodwill daalt naar € 60.000.",
+        "why": "Bij een vaste koopsom maakt een lagere verkregen waarde het goodwillverschil groter."
+      },
+      {
+        "text": "De deelnemingswaarde blijft gelijk; € 50.000 wordt als actuele jaarlast bij Linde geboekt.",
+        "why": "De vraag betreft de overnamebalans, niet een na de verwerving ontstane last bij Linde."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De ontbrekende verplichting verlaagt de totale NVW met € 50.000 en Lindes aandeel met 60% × € 50.000 = € 30.000.",
+      "Omdat de tegenprestatie gelijk blijft, stijgt goodwill met € 30.000: € 90.000 + € 30.000 = € 120.000."
+    ],
+    "pattern": [
+      "Herken: een correctie op aankoopdatum bij een vaste koopsom.",
+      "Aanpak: bepaal eerst het effect op het gekochte aandeel in de nettoactiva; goodwill beweegt tegengesteld.",
+      "Controle: deelneming plus goodwill blijft aansluiten op dezelfde betaalde prijs."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 20230411, opgave 1, vraag 2, p. 5; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Uitwerking 20230411, opgave 1, vraag 2, p. 4; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "15–16",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 15–16; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "goodwill-effect-ontbrekende-verplichting",
+    "check": {
+      "description": "Stijging goodwill door extra verplichting",
+      "actual": 30000,
+      "expected": 30000
+    }
+  },
+  {
+    "key": "kap-res-grondslag-eerst",
+    "topicId": "reserves",
+    "title": "Eerst grondslag, dan uitkeerbaarheid",
+    "type": "Theorie",
+    "intro": "Linde beoordeelt voor twee belangen of zij een wettelijke reserve deelneming moet vormen.",
+    "facts": [
+      [
+        "Deelneming A",
+        "NVW; het gehele cumulatieve resultaataandeel van € 90.000 kan Linde zonder beperkingen laten uitkeren."
+      ],
+      [
+        "Deelneming B",
+        "Verkrijgingsprijs; B heeft winst gemaakt maar nog geen dividend gedeclareerd."
+      ],
+      [
+        "Overig",
+        "Geen rechtstreekse vermogensmutaties of andere beperkingen."
+      ]
+    ],
+    "task": "Welke conclusie volgt voor de wettelijke reserve deelneming onder de gegeven omstandigheden?",
+    "options": [
+      {
+        "text": "Voor beide belangen is geen wettelijke reserve deelneming nodig.",
+        "why": "Bij A vermindert de onbeperkte uitkeringsmogelijkheid de reserve tot nihil; bij B ontbreekt vermogensmutatiewaardering."
+      },
+      {
+        "text": "Voor A is € 90.000 nodig en voor B niets.",
+        "why": "De uitkeringen die zonder beperkingen kunnen worden bewerkstelligd worden bij A in mindering gebracht."
+      },
+      {
+        "text": "Voor B is een reserve nodig zolang geen dividend is gedeclareerd.",
+        "why": "Bij verkrijgingsprijs is de winst niet via vermogensmutaties in Lindes vermogen opgenomen; deze reservebepaling is daarop niet van toepassing."
+      },
+      {
+        "text": "Voor elk belang is altijd een reserve nodig ter grootte van de onuitgekeerde winst.",
+        "why": "Dit slaat zowel de toets van de grondslag als de toets van de uitkeerbaarheid over."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De wettelijke reserve deelneming sluit aan bij de vermogensmutatiemethoden van artikel 2:389 leden 2 en 3.",
+      "Bij A is de uitkering expliciet onbeperkt mogelijk. Bij B wordt verkrijgingsprijs toegepast. In beide gevallen resteert hier geen wettelijke reserve deelneming."
+    ],
+    "pattern": [
+      "Herken: verschillende waarderingsgrondslagen en expliciete uitkeringsmogelijkheden.",
+      "Aanpak: toets eerst of vermogensmutatiewaardering wordt toegepast en vervolgens welk deel gebonden is.",
+      "Controle: leid onbeperkte uitkeerbaarheid niet alleen af uit een meerderheidspercentage."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 6, p. 5; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 6, p. 4; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "21–24",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 21–24; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "wrd-grondslag-en-uitkeerbaarheid"
+  },
+  {
+    "key": "kap-res-beperkte-ruimte",
+    "topicId": "reserves",
+    "title": "Slechts een deel kan worden uitgekeerd",
+    "type": "Berekening",
+    "intro": "Linde waardeert haar 40%-deelneming Haven tegen NVW.",
+    "facts": [
+      [
+        "Cumulatieve winst Haven sinds verwerving",
+        "€ 300.000 voor 100%."
+      ],
+      [
+        "Sindsdien verkregen cashdividendrechten",
+        "€ 50.000 voor 100%."
+      ],
+      [
+        "Aanvullend vrij te bewerkstelligen uitkering",
+        "€ 100.000 voor 100%, naast het al gedeclareerde dividend."
+      ],
+      [
+        "Overig",
+        "De overige winst is gebonden; geen andere vermogensmutaties."
+      ]
+    ],
+    "task": "Hoe groot is Lindes wettelijke reserve deelneming na beide verminderingen?",
+    "options": [
+      {
+        "text": "€ 60.000.",
+        "why": "40% × (€ 300.000 − € 50.000 − € 100.000) = € 60.000: eerst de twee uitkeringsbedragen aftrekken, daarna het belang toepassen."
+      },
+      {
+        "text": "€ 100.000.",
+        "why": "Dit verwerkt het gedeclareerde dividend maar negeert de aanvullende onbeperkte uitkeringsruimte."
+      },
+      {
+        "text": "€ 120.000.",
+        "why": "Dit reserveert het volledige winstaandeel zonder toegestane verminderingen."
+      },
+      {
+        "text": "€ 150.000.",
+        "why": "Dit is de gebonden winst voor de gehele deelneming; Linde houdt 40%."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Resterend gebonden resultaat voor Haven: € 300.000 − € 50.000 − € 100.000 = € 150.000.",
+      "Aandeel Linde: 40% × € 150.000 = € 60.000. De vrij te bewerkstelligen uitkering hoeft nog niet daadwerkelijk te zijn betaald."
+    ],
+    "pattern": [
+      "Herken: al gedeclareerd dividend en nog vrij te bewerkstelligen dividend zijn twee afzonderlijke verminderingen.",
+      "Aanpak: bereken het gebonden totaal en pas daarna het deelnemingspercentage toe.",
+      "Controle: tel dezelfde uitkeringsruimte niet dubbel en gebruik bedragen op hetzelfde 100%-niveau."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 6; verdieping met gedeeltelijke uitkeringsruimte, p. 5; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 6; verdieping met gedeeltelijke uitkeringsruimte, p. 4; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "21–24",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 21–24; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "wrd-gedeeltelijke-uitkeringsruimte",
+    "check": {
+      "description": "Gebonden moederaandeel",
+      "actual": 60000,
+      "expected": 60000
+    }
+  },
+  {
+    "key": "kap-res-stockdividend",
+    "topicId": "reserves",
+    "title": "Twee vormen van dividend",
+    "type": "Berekening",
+    "intro": "Linde moet voor haar deelneming een wettelijke reserve aanhouden.",
+    "facts": [
+      [
+        "Cumulatief positief resultaataandeel",
+        "€ 100.000, reeds het aandeel van Linde."
+      ],
+      [
+        "Cashdividend",
+        "Linde heeft recht verkregen op € 20.000."
+      ],
+      [
+        "Stockdividend",
+        "Daarnaast ontvangt Linde € 30.000 dividend in aandelen."
+      ],
+      [
+        "Uitkeringsbeperkingen",
+        "Geen verdere uitkeringen kunnen zonder beperkingen worden bewerkstelligd."
+      ],
+      [
+        "Overig",
+        "Geen andere vermogensmutaties."
+      ]
+    ],
+    "task": "Hoe hoog is de wettelijke reserve deelneming na verwerking van deze uitkeringen?",
+    "options": [
+      {
+        "text": "€ 80.000.",
+        "why": "Het cashdividend vermindert de reserve; dividend in aandelen wordt volgens de beschreven reservebepaling niet afgetrokken."
+      },
+      {
+        "text": "€ 50.000.",
+        "why": "Dit trekt ook stockdividend af, terwijl dit Linde geen vrijgekomen liquiditeiten oplevert."
+      },
+      {
+        "text": "€ 100.000.",
+        "why": "Het verkregen recht op cashdividend vermindert de reserve wel."
+      },
+      {
+        "text": "€ 110.000.",
+        "why": "Het stockdividend moet niet bovenop het al gegeven cumulatieve resultaataandeel worden gereserveerd."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Begin bij € 100.000 cumulatief positief resultaataandeel.",
+      "Trek alleen € 20.000 cashdividend af. De aandelenuitkering van € 30.000 valt buiten de uitkeringen die de wettelijke reserve deelneming verminderen. Uitkomst € 80.000."
+    ],
+    "pattern": [
+      "Herken: cashdividend en dividend in aandelen staan naast elkaar.",
+      "Aanpak: bepaal per uitkering of deze de wettelijke reserve mag verminderen.",
+      "Controle: de bedragen zijn al Lindes aandeel; pas geen extra deelnemingspercentage toe."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 6; variant op de geciteerde reserveregel, p. 5; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 6; variant op de geciteerde reserveregel, p. 4; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "21, 24",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 21, 24; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "wrd-stockdividend",
+    "check": {
+      "description": "Wettelijke reserve na cashdividend",
+      "actual": 80000,
+      "expected": 80000
+    }
+  },
+  {
+    "key": "kap-res-verlies-vrijval",
+    "topicId": "reserves",
+    "title": "Een verliesjaar na eerdere winsten",
+    "type": "Journaalpost",
+    "intro": "Linde waardeert Haven tegen NVW. De reguliere resultaatboeking is al verwerkt.",
+    "facts": [
+      [
+        "Wettelijke reserve begin jaar",
+        "€ 45.000, volledig gevormd uit eerdere cumulatieve winst van Haven."
+      ],
+      [
+        "Lindes aandeel in het jaarverlies",
+        "€ 15.000; dit verlaagt het cumulatieve positieve resultaataandeel tot € 30.000."
+      ],
+      [
+        "Overig",
+        "Geen dividend, rechtstreekse mutaties of wijziging van uitkeringsmogelijkheden."
+      ],
+      [
+        "Voorgeschreven verwerking",
+        "De vrijval van de wettelijke reserve gaat naar overige reserves."
+      ]
+    ],
+    "task": "Welke aanvullende journaalpost past de wettelijke reserve aan?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Wettelijke reserve deelneming",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Overige reserves",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "De benodigde reserve daalt van € 45.000 naar € 30.000; alleen de interne vermogensoverboeking ontbreekt."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Wettelijke reserve deelneming",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "Dit vergroot de gebonden reserve terwijl het cumulatieve positieve resultaat is gedaald."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Resultaat deelneming",
+              "€ 15.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 15.000"
+            ]
+          ]
+        },
+        "why": "Dit herhaalt de verliesboeking die volgens de vraag al is verwerkt."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Wettelijke reserve deelneming",
+              "€ 45.000",
+              ""
+            ],
+            [
+              "Overige reserves",
+              "",
+              "€ 45.000"
+            ]
+          ]
+        },
+        "why": "Er blijft € 30.000 cumulatieve gebonden winst over; volledige vrijval is te groot."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Nieuw benodigd: € 45.000 − € 15.000 = € 30.000.",
+      "De aanwezige reserve wordt met € 15.000 verminderd. De overboeking verandert het totale eigen vermogen niet; het verlies is daar al in verwerkt."
+    ],
+    "pattern": [
+      "Herken: de vraag vraagt de aanvullende reserveboeking nadat het resultaat is geboekt.",
+      "Aanpak: vergelijk aanwezige en benodigde reserve.",
+      "Controle: boek de verliesmutatie in de deelneming niet voor een tweede keer."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 6; variant op cumulatieve positieve resultaten, p. 5; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "4",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 6; variant op cumulatieve positieve resultaten, p. 4; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "22–23",
+        "label": "Syllabus deel 1, kapitaalbelangen, p. 22–23; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "wrd-vrijval-na-verlies",
+    "check": {
+      "description": "Verschil aanwezige en benodigde reserve",
+      "actual": 15000,
+      "expected": 15000
+    }
+  },
+  {
+    "key": "kap-res-daling-onder-kostprijs",
+    "topicId": "reserves",
+    "title": "Herwaardering verdwijnt en wordt een verlies",
+    "type": "Journaalpost",
+    "intro": "Linde waardeert een deelneming zonder invloed van betekenis tegen actuele waarde volgens de syllabus.",
+    "facts": [
+      [
+        "Oorspronkelijke verkrijgingsprijs",
+        "€ 200.000."
+      ],
+      [
+        "Boekwaarde vóór jaarafsluiting",
+        "€ 250.000; de eerdere stijging van € 50.000 staat volledig in de herwaarderingsreserve."
+      ],
+      [
+        "Actuele waarde ultimo",
+        "€ 180.000."
+      ],
+      [
+        "Overig",
+        "Geen belastingen of eerdere verliesboekingen."
+      ]
+    ],
+    "task": "Welke boeking verwerkt de daling tot € 180.000?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 50.000",
+              ""
+            ],
+            [
+              "Verlies op deelneming",
+              "€ 20.000",
+              ""
+            ],
+            [
+              "Deelneming",
+              "",
+              "€ 70.000"
+            ]
+          ]
+        },
+        "why": "De bestaande reserve vangt de eerste € 50.000 op; de daling onder verkrijgingsprijs is € 20.000 verlies."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 70.000",
+              ""
+            ],
+            [
+              "Deelneming",
+              "",
+              "€ 70.000"
+            ]
+          ]
+        },
+        "why": "De reserve bevat slechts € 50.000 en kan dit extra verlies niet opvangen."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Verlies op deelneming",
+              "€ 70.000",
+              ""
+            ],
+            [
+              "Deelneming",
+              "",
+              "€ 70.000"
+            ]
+          ]
+        },
+        "why": "Dit laat de bestaande herwaarderingsreserve onterecht staan."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 50.000",
+              ""
+            ],
+            [
+              "Deelneming",
+              "",
+              "€ 50.000"
+            ]
+          ]
+        },
+        "why": "Daarmee resteert € 200.000 in plaats van de gegeven actuele waarde van € 180.000."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Totale daling: € 250.000 − € 180.000 = € 70.000.",
+      "Boek € 50.000 tegen de bestaande herwaarderingsreserve en het restant € 20.000 ten laste van resultaat. Deelneming ultimo € 180.000; reserve nihil."
+    ],
+    "pattern": [
+      "Herken: de actuele waarde daalt door de oorspronkelijke verkrijgingsprijs heen.",
+      "Aanpak: splits de daling in terugname van eerdere herwaardering en aanvullend verlies.",
+      "Controle: de herwaarderingsreserve mag hier niet negatief worden om een verlies te verbergen."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "25–26",
+        "label": "Syllabusaanvulling: actuele waarde en herwaarderingsreserve, p. 25–26; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "herwaarderingsdaling-onder-kostprijs",
+    "check": {
+      "description": "Aanvullend verlies na gebruik reserve",
+      "actual": 20000,
+      "expected": 20000
+    }
+  },
+  {
+    "key": "kap-res-realisatie-gebonden",
+    "topicId": "reserves",
+    "title": "Realisatie van een herwaardering",
+    "type": "Journaalpost",
+    "intro": "Linde houdt een 30%-deelneming tegen NVW en moet voor de niet vrij uitkeerbare winst een wettelijke reserve deelneming aanhouden.",
+    "facts": [
+      [
+        "Realisatie bij de deelneming",
+        "€ 10.000 herwaardering wordt dit jaar via extra afschrijving gerealiseerd."
+      ],
+      [
+        "Lindes herwaarderingsreserve",
+        "Bevat het relevante 30%-aandeel en is toereikend."
+      ],
+      [
+        "Uitkeringsmogelijkheid",
+        "Linde kan dit gerealiseerde bedrag niet zonder beperkingen laten uitkeren."
+      ],
+      [
+        "Boekingen",
+        "Deelnemingsresultaat en afschrijving zijn al correct verwerkt; gevraagd is alleen de reserveoverboeking."
+      ]
+    ],
+    "task": "Welke aanvullende overboeking maakt Linde volgens de syllabus?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Wettelijke reserve deelneming",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "Het gerealiseerde 30%-deel blijft gebonden omdat uitkering niet vrij kan worden bewerkstelligd."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Overige reserves",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "Dit maakt het bedrag vrij terwijl volgens de casus nog een wettelijke reserve deelneming nodig is."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 3.000",
+              ""
+            ],
+            [
+              "Herwaarderingsreserve",
+              "",
+              "€ 3.000"
+            ]
+          ]
+        },
+        "why": "Realisatie vermindert de herwaarderingsreserve; dit is de omgekeerde richting."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Herwaarderingsreserve",
+              "€ 10.000",
+              ""
+            ],
+            [
+              "Wettelijke reserve deelneming",
+              "",
+              "€ 10.000"
+            ]
+          ]
+        },
+        "why": "€ 10.000 is de realisatie bij 100% van de deelneming; Linde verwerkt 30%."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Lindes aandeel in de realisatie is 30% × € 10.000 = € 3.000.",
+      "De herwaarderingsreserve neemt af, maar het bedrag gaat volgens de syllabus naar de wettelijke reserve deelneming als die reserveplicht blijft bestaan."
+    ],
+    "pattern": [
+      "Herken: realisatie van herwaardering én een blijvende beperking op uitkeringen.",
+      "Aanpak: bepaal het eigen aandeel en kies de juiste bestemming van de vrijvallende herwaarderingsreserve.",
+      "Controle: realisatie maakt het bedrag niet automatisch vrij uitkeerbaar bij de deelnemer."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "18–19, 22",
+        "label": "Syllabusaanvulling: realisatie herwaardering en wettelijke reserve deelneming, p. 18–19, 22; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "herwaarderingsrealisatie-naar-wrd",
+    "check": {
+      "description": "Aandeel in gerealiseerde herwaardering",
+      "actual": 3000,
+      "expected": 3000
+    }
+  },
+  {
+    "key": "kap-res-verkoop-vrijval",
+    "topicId": "reserves",
+    "title": "Verkoopwinst en reservevrijval afzonderlijk",
+    "type": "Berekening",
+    "intro": "Linde verkoopt haar volledige belang in Haven per bank.",
+    "facts": [
+      [
+        "Verkoopprijs",
+        "€ 250.000."
+      ],
+      [
+        "Boekwaarde deelneming",
+        "€ 220.000; actuele waarde."
+      ],
+      [
+        "Oorspronkelijke verkrijgingsprijs",
+        "€ 160.000."
+      ],
+      [
+        "Herwaarderingsreserve voor dit belang",
+        "€ 60.000."
+      ],
+      [
+        "Voorgeschreven keuze",
+        "Bij realisatie wordt de herwaarderingsreserve rechtstreeks naar overige reserves overgeboekt."
+      ],
+      [
+        "Overig",
+        "Geen belastingen of verkoopkosten."
+      ]
+    ],
+    "task": "Welke combinatie van verkoopresultaat en reserveoverboeking is juist?",
+    "options": [
+      {
+        "text": "€ 30.000 verkoopwinst; € 60.000 van herwaarderingsreserve naar overige reserves.",
+        "why": "De verkoopwinst is opbrengst minus actuele boekwaarde; de gekozen reservevrijval blijft buiten resultaat."
+      },
+      {
+        "text": "€ 90.000 verkoopwinst; daarnaast € 60.000 naar overige reserves.",
+        "why": "Dit rekent de eerdere waardestijging tweemaal mee bij de voorgeschreven rechtstreekse reservevrijval."
+      },
+      {
+        "text": "€ 30.000 verkoopwinst; de herwaarderingsreserve blijft € 60.000.",
+        "why": "Na volledige verkoop is de herwaardering gerealiseerd en schrijft de casus vrijval voor."
+      },
+      {
+        "text": "€ 60.000 verkoopwinst; € 30.000 van herwaarderingsreserve naar overige reserves.",
+        "why": "De twee bedragen zijn verwisseld; de reserve en het verschil met boekwaarde zijn verschillende grootheden."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Verkoopresultaat: € 250.000 − € 220.000 = € 30.000.",
+      "De volledige reserve van € 60.000 wordt volgens de expliciete keuze naar overige reserves overgeboekt. De gecombineerde vermogensgroei sinds aankoop is € 90.000, waarvan € 60.000 al vóór verkoop in vermogen zat."
+    ],
+    "pattern": [
+      "Herken: de boekwaarde bevat eerdere herwaardering en de bestemming van de reserve is voorgeschreven.",
+      "Aanpak: bereken eerst de verkoopwinst ten opzichte van boekwaarde en verwerk daarna de reservevrijval apart.",
+      "Controle: tel de reeds opgenomen herwaardering niet nogmaals als nieuwe vermogensgroei."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "26–27",
+        "label": "Syllabusaanvulling: verkoop en realisatie herwaarderingsreserve, p. 26–27; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "verkoop-resultaat-en-reservevrijval",
+    "check": {
+      "description": "Verkoopwinst tegenover actuele boekwaarde",
+      "actual": 30000,
+      "expected": 30000
+    }
+  },
+  {
+    "key": "kap-eigen-fout-activering",
+    "topicId": "eigen-aandelen",
+    "title": "Herstel van ten onrechte geactiveerde eigen aandelen",
+    "type": "Journaalpost",
+    "intro": "Haven heeft eigen aandelen ingekocht, maar de boekhouder heeft de aankoop onjuist verwerkt.",
+    "facts": [
+      [
+        "Betaalde prijs",
+        "€ 120.000 per bank."
+      ],
+      [
+        "Al geboekt",
+        "Eigen aandelen als actief debet € 120.000; Bank credit € 120.000."
+      ],
+      [
+        "Nominaal bedrag",
+        "€ 20.000; de aandelen worden niet ingetrokken."
+      ],
+      [
+        "Voorgeschreven verwerking",
+        "De inkoop komt volledig ten laste van overige reserves."
+      ]
+    ],
+    "task": "Welke aanvullende correctie herstelt de fout zonder de betaling dubbel te boeken?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 120.000",
+              ""
+            ],
+            [
+              "Ten onrechte geactiveerde eigen aandelen",
+              "",
+              "€ 120.000"
+            ]
+          ]
+        },
+        "why": "De betaling staat al goed; de correctie vervangt het verboden actief door een vermindering van reserves."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 120.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 120.000"
+            ]
+          ]
+        },
+        "why": "Dit boekt dezelfde betaling tweemaal en laat het onjuiste actief staan."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Aandelenkapitaal",
+              "€ 20.000",
+              ""
+            ],
+            [
+              "Ten onrechte geactiveerde eigen aandelen",
+              "",
+              "€ 20.000"
+            ]
+          ]
+        },
+        "why": "Er is geen intrekking; bovendien moet de volledige verkrijgingsprijs uit het actief verdwijnen."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Verlies op aandelen",
+              "€ 120.000",
+              ""
+            ],
+            [
+              "Ten onrechte geactiveerde eigen aandelen",
+              "",
+              "€ 120.000"
+            ]
+          ]
+        },
+        "why": "De eigen-aandelencorrectie loopt hier via eigen vermogen en niet via resultaat."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De eigen aandelen mogen niet als actief blijven staan. De fout zit in de debetrekening, niet in de reeds geboekte bankbetaling.",
+      "Debiteer overige reserves en crediteer het onjuiste actief voor € 120.000. Het geplaatste kapitaal blijft bij ontbreken van intrekking gelijk."
+    ],
+    "pattern": [
+      "Herken: de bankbetaling is al geboekt, maar de tegenrekening is onjuist.",
+      "Aanpak: herstel alleen het onjuiste actief tegenover de voorgeschreven reserve.",
+      "Controle: bank en aandelenkapitaal mogen door deze aanvullende correctie niet nogmaals veranderen."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Tentamen 20230411, opgave 1, vraag 7, verwerking bij inkopende vennootschap, p. 6; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Uitwerking 20230411, opgave 1, vraag 7, verwerking bij inkopende vennootschap, p. 5; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "28–29",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 28–29; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "eigen-aandelen-herstel-activeringsfout"
+  },
+  {
+    "key": "kap-eigen-negatieve-reserves",
+    "topicId": "eigen-aandelen",
+    "title": "De overige reserves zijn niet groot genoeg",
+    "type": "Berekening",
+    "intro": "Haven koopt eigen aandelen in zonder deze in te trekken.",
+    "facts": [
+      [
+        "Eigen vermogen vóór inkoop",
+        "Geplaatst kapitaal € 200.000 en overige reserves € 50.000; geen andere posten."
+      ],
+      [
+        "Inkoopprijs",
+        "€ 80.000, betaald per bank."
+      ],
+      [
+        "Voorgeschreven verwerking",
+        "Gehele inkoopprijs ten laste van overige reserves."
+      ],
+      [
+        "Overig",
+        "De transactie zelf staat vast; er wordt alleen naar de boekhoudkundige verwerking gevraagd."
+      ]
+    ],
+    "task": "Welke balansstanden ontstaan direct na de boeking?",
+    "options": [
+      {
+        "text": "Kapitaal € 200.000; overige reserves −€ 30.000; totaal eigen vermogen € 170.000.",
+        "why": "De volledige prijs vermindert de reserves, die daardoor negatief worden; kapitaal blijft gelijk."
+      },
+      {
+        "text": "Kapitaal € 170.000; overige reserves nihil; totaal € 170.000.",
+        "why": "Het tekort wordt zonder intrekking niet alsnog op geplaatst kapitaal afgeboekt."
+      },
+      {
+        "text": "Kapitaal € 200.000; overige reserves nihil; totaal € 200.000.",
+        "why": "Dit verwerkt slechts € 50.000 van de betaalde € 80.000."
+      },
+      {
+        "text": "Kapitaal € 200.000; overige reserves € 50.000; totaal € 250.000.",
+        "why": "Eigen aandelen activeren zou de vereiste vermogensvermindering verbergen."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Overige reserves na inkoop: € 50.000 − € 80.000 = −€ 30.000.",
+      "Totaal eigen vermogen: € 200.000 − € 30.000 = € 170.000. Volgens de syllabus kan deze boeking een negatief saldo overige reserves opleveren."
+    ],
+    "pattern": [
+      "Herken: inkoop zonder intrekking en een inkoopprijs hoger dan de overige reserves.",
+      "Aanpak: verwerk de gehele prijs op de aangegeven reserve.",
+      "Controle: totaal eigen vermogen daalt met de volledige betaalde inkoopprijs."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "29",
+        "label": "Syllabusaanvulling: onvoldoende overige reserves bij inkoop, p. 29; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "eigen-aandelen-negatieve-reserves",
+    "check": {
+      "description": "Totaal eigen vermogen na inkoop",
+      "actual": 170000,
+      "expected": 170000
+    }
+  },
+  {
+    "key": "kap-eigen-verkoper-deelverkoop",
+    "topicId": "eigen-aandelen",
+    "title": "De verkoper van de ingekochte aandelen",
+    "type": "Journaalpost",
+    "intro": "Linde verkoopt een deel van haar deelneming aan Haven zelf.",
+    "facts": [
+      [
+        "Eigen vermogen Haven vóór inkoop",
+        "€ 1.000.000; geen waarderingsverschillen of goodwill."
+      ],
+      [
+        "Belang Linde vóór verkoop",
+        "60% van de oorspronkelijk geplaatste gewone aandelen; waardering zichtbaar eigen vermogen."
+      ],
+      [
+        "Door Linde verkocht",
+        "20 procentpunten van het oorspronkelijke geplaatste kapitaal."
+      ],
+      [
+        "Ontvangst per bank",
+        "€ 260.000."
+      ],
+      [
+        "Gevraagde stap",
+        "Alleen de verkoop van dit pakket; de aanvullende aanpassing van het resterende belang wordt afzonderlijk verwerkt."
+      ]
+    ],
+    "task": "Welke eerste verkoopboeking maakt Linde?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Bank",
+              "€ 260.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 200.000"
+            ],
+            [
+              "Resultaat deelneming",
+              "",
+              "€ 60.000"
+            ]
+          ]
+        },
+        "why": "De afgestoten boekwaarde is 20% van het vóór inkoop aanwezige vermogen; het verschil met de opbrengst is € 60.000."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Bank",
+              "€ 260.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 260.000"
+            ]
+          ]
+        },
+        "why": "Dit stelt de boekwaarde van het verkochte pakket ten onrechte gelijk aan de opbrengst."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Bank",
+              "€ 260.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 120.000"
+            ],
+            [
+              "Resultaat deelneming",
+              "",
+              "€ 140.000"
+            ]
+          ]
+        },
+        "why": "De verkochte 20 procentpunten zijn geen 20% van Lindes 60%-pakket."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 260.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 260.000"
+            ]
+          ]
+        },
+        "why": "Dit is de inkoopboeking bij Haven; gevraagd is juist de verkoopboeking bij Linde."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Boekwaarde verkocht pakket: 20% × € 1.000.000 = € 200.000.",
+      "Verkoopopbrengst € 260.000 geeft in deze eerste stap € 60.000 resultaat. De later vereiste herrekening van het resterende belang hoort niet dubbel in deze boeking."
+    ],
+    "pattern": [
+      "Herken: gevraagd is de administratie van de verkopende aandeelhouder, niet van de inkopende bv.",
+      "Aanpak: bereken welk deel van het oorspronkelijke vermogen wordt afgestoten.",
+      "Controle: onderscheid 20 procentpunten van het geplaatste kapitaal van 20% van het eigen pakket."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Tentamen 20230411, opgave 1, vraag 7, eerste boeking bij verkopende aandeelhouder, p. 6; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Uitwerking 20230411, opgave 1, vraag 7, eerste boeking bij verkopende aandeelhouder, p. 5; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "28–30",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 28–30; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "eigen-aandelen-verkoopboeking-aandeelhouder",
+    "check": {
+      "description": "Resultaat verkocht pakket",
+      "actual": 60000,
+      "expected": 60000
+    }
+  },
+  {
+    "key": "kap-eigen-restbelang-herrekening",
+    "topicId": "eigen-aandelen",
+    "title": "Het resterende belang na de inkoop",
+    "type": "Berekening",
+    "intro": "Linde houdt een deelneming in Haven tegen zichtbaar eigen vermogen.",
+    "facts": [
+      [
+        "Vóór inkoop",
+        "Linde bezit 60 van de 100 gelijke gewone aandelen; eigen vermogen Haven € 1.000.000."
+      ],
+      [
+        "Inkoop door Haven",
+        "Haven koopt 20 aandelen van Linde voor € 260.000. De eigen aandelen delen niet in stem- of winstrechten."
+      ],
+      [
+        "Boekingen tot nu toe bij Linde",
+        "De verkoopontvangst is geboekt en de boekwaarde van het verkochte pakket is afgeboekt. Resterende deelnemingsboekwaarde € 400.000."
+      ],
+      [
+        "Voorgeschreven aanvullende verwerking",
+        "De correctie op de resterende deelneming loopt via overige reserves."
+      ],
+      [
+        "Overig",
+        "Geen goodwill, belastingen of andere mutaties."
+      ]
+    ],
+    "task": "Welke aanvullende correctie maakt Linde en wat is daarna de deelnemingswaarde?",
+    "options": [
+      {
+        "text": "Overige reserves € 30.000 debet en deelneming € 30.000 credit; eindwaarde € 370.000.",
+        "why": "Linde houdt 40 van 80 winstrechtgevende aandelen; 50% van € 740.000 is € 370.000."
+      },
+      {
+        "text": "Geen correctie; eindwaarde € 400.000.",
+        "why": "Na de inkoop is zowel het relevante aandeel als het vermogen van Haven veranderd."
+      },
+      {
+        "text": "Deelneming € 104.000 credit; eindwaarde € 296.000.",
+        "why": "Dit gebruikt 40% van € 740.000, maar de noemer is na inkoop 80 aandelen."
+      },
+      {
+        "text": "Deelneming € 140.000 credit; eindwaarde € 260.000.",
+        "why": "De ontvangst voor het verkochte pakket is niet de waarde van het resterende belang."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Havens eigen vermogen wordt € 1.000.000 − € 260.000 = € 740.000.",
+      "Linde houdt nog 40 aandelen van 80 extern uitstaande winstrechtgevende aandelen: 50%. Deelnemingswaarde: 50% × € 740.000 = € 370.000.",
+      "De al resterende € 400.000 moet nog € 30.000 omlaag, volgens de gegeven keuze ten laste van overige reserves."
+    ],
+    "pattern": [
+      "Herken: na inkoop veranderen de noemer van het belang en het eigen vermogen van de deelneming.",
+      "Aanpak: bereken eerst het nieuwe belang, daarna het nieuwe aandeel in vermogen en vergelijk dat met de geboekte restwaarde.",
+      "Controle: gebruik niet het oude kapitaalpercentage of de verkoopopbrengst als eindboekwaarde."
+    ],
+    "sources": [
+      {
+        "file": "20230411 Tentamen CAFA2.pdf",
+        "pages": "6",
+        "label": "Tentamen 20230411, opgave 1, vraag 7, aanvullende correctie na inkoop, p. 6; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "20230411 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Uitwerking 20230411, opgave 1, vraag 7, aanvullende correctie na inkoop, p. 5; eigen oefenvariant",
+        "examId": "20230411"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "28–30",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 28–30; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "eigen-aandelen-herrekening-restbelang",
+    "check": {
+      "description": "Eindwaarde volgens nieuw winstaandeel",
+      "actual": 370000,
+      "expected": 370000
+    }
+  },
+  {
+    "key": "kap-eigen-voor-dochterdatum",
+    "topicId": "eigen-aandelen",
+    "title": "Aandelen die al vóór de dochterrelatie aanwezig waren",
+    "type": "Berekening",
+    "intro": "Linde koopt op 1 januari 80% van Haven en verwerkt de via Haven gehouden aandelen Linde als middellijk ingekochte eigen aandelen.",
+    "facts": [
+      [
+        "Deelneming Haven vóór deze correctie",
+        "€ 600.000, exclusief goodwill."
+      ],
+      [
+        "Door Haven gehouden aandelen Linde",
+        "Jaren vóór de dochterrelatie gekocht voor € 70.000."
+      ],
+      [
+        "Boekwaarde op 1 januari",
+        "€ 90.000."
+      ],
+      [
+        "Actuele waarde op 1 januari",
+        "€ 110.000."
+      ],
+      [
+        "Voorgeschreven variant",
+        "Linde brengt de volledige relevante boekwaarde in mindering, dus geen evenredige 80%-correctie."
+      ]
+    ],
+    "task": "Voor welk bedrag blijft de deelneming Haven na deze correctie staan?",
+    "options": [
+      {
+        "text": "€ 510.000.",
+        "why": "Bij al vóór de dochterrelatie verworven aandelen wordt de boekwaarde op de dochterdatum gebruikt: € 600.000 − € 90.000."
+      },
+      {
+        "text": "€ 530.000.",
+        "why": "Dit gebruikt de oude aankoopprijs van € 70.000 in plaats van de relevante boekwaarde op de dochterdatum."
+      },
+      {
+        "text": "€ 490.000.",
+        "why": "De actuele waarde van € 110.000 vervangt hier niet de voorgeschreven boekwaarde."
+      },
+      {
+        "text": "€ 528.000.",
+        "why": "Dit verwerkt 80% van € 90.000, terwijl de casus de volledige variant voorschrijft."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De aandelen Linde waren al aanwezig voordat Haven dochter werd. Artikel 2:385 lid 5 verwijst voor die situatie naar de boekwaarde op dat tijdstip.",
+      "De casus kiest volledige aftrek: € 600.000 − € 90.000 = € 510.000."
+    ],
+    "pattern": [
+      "Herken: de aandelen zijn vóór het ontstaan van de dochterrelatie gekocht.",
+      "Aanpak: selecteer de boekwaarde op die datum en pas de expliciet gekozen correctieomvang toe.",
+      "Controle: verwissel historische aankoopprijs, boekwaarde en actuele waarde niet."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 20250924, opgave 1, vragen 5–6, p. 5; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "3–4",
+        "label": "Uitwerking 20250924, opgave 1, vragen 5–6, p. 3–4; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "28–30",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 28–30; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "middellijke-inkoop-boekwaarde-op-dochterdatum",
+    "check": {
+      "description": "Deelneming na volledige boekwaardecorrectie",
+      "actual": 510000,
+      "expected": 510000
+    }
+  },
+  {
+    "key": "kap-eigen-varianten-vergelijken",
+    "topicId": "eigen-aandelen",
+    "title": "Twee toegestane correctievarianten herkennen",
+    "type": "Theorie",
+    "intro": "Linde houdt 80% van Haven; Haven is dochtermaatschappij en bezit aandelen Linde.",
+    "facts": [
+      [
+        "Deelneming vóór correctie",
+        "€ 450.000, exclusief afzonderlijke goodwill."
+      ],
+      [
+        "Relevante waarde aandelen Linde bij Haven",
+        "€ 100.000."
+      ],
+      [
+        "Vraagdoel",
+        "Vergelijk de volledige en de evenredige correctie volgens de in de syllabus beschreven mogelijkheden."
+      ],
+      [
+        "Overig",
+        "Er is geen keuze tussen beide varianten voorgeschreven; gevraagd wordt juist welke twee uitkomsten erbij horen."
+      ]
+    ],
+    "task": "Welke combinatie noemt beide bijbehorende deelnemingswaarden correct?",
+    "options": [
+      {
+        "text": "Volledige correctie: € 350.000; evenredige correctie: € 370.000.",
+        "why": "Volledig is € 100.000 aftrek; evenredig is 80% daarvan, € 80.000."
+      },
+      {
+        "text": "Volledige correctie: € 370.000; evenredige correctie: € 350.000.",
+        "why": "De namen van de twee correctievarianten zijn verwisseld."
+      },
+      {
+        "text": "Volledige correctie: € 450.000; evenredige correctie: € 370.000.",
+        "why": "Een volledige correctie betekent niet dat de boekwaarde ongewijzigd blijft."
+      },
+      {
+        "text": "Volledige correctie: € 350.000; evenredige correctie: € 280.000.",
+        "why": "Bij de evenredige variant pas je 80% toe op de correctie, niet nogmaals op de volledige resterende boekwaarde."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Volledige variant: € 450.000 − € 100.000 = € 350.000.",
+      "Evenredige variant: € 450.000 − 80% × € 100.000 = € 370.000. Lees steeds welke variant de casus voorschrijft en pas die consequent toe."
+    ],
+    "pattern": [
+      "Herken: al dan niet evenredig aan het belang zijn twee onderscheiden varianten.",
+      "Aanpak: pas het percentage uitsluitend toe waar de variant dat voorschrijft.",
+      "Controle: laat de afzonderlijke goodwill buiten de eigen-aandelencorrectie."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 20250924, opgave 1, vraag 6, beide na normering geaccepteerde varianten, p. 5; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "4",
+        "label": "Uitwerking 20250924, opgave 1, vraag 6, beide na normering geaccepteerde varianten, p. 4; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "28, 30",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 28, 30; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "middellijke-inkoop-varianten"
+  },
+  {
+    "key": "kap-eigen-dochter-inkoop",
+    "topicId": "eigen-aandelen",
+    "title": "De dochter koopt aandelen in de moeder",
+    "type": "Journaalpost",
+    "intro": "Haven is al een dochtermaatschappij van Linde en koopt nu aandelen Linde van een externe aandeelhouder.",
+    "facts": [
+      [
+        "Inkoopprijs",
+        "€ 90.000, direct per bank betaald."
+      ],
+      [
+        "Toegepaste bronmethodiek",
+        "Volg de verwerking bij de dochter uit paragraaf 10 van de syllabus: de volledige inkoopprijs komt ten laste van overige reserves."
+      ],
+      [
+        "Gevraagde administratie",
+        "Alleen Haven. De aanvullende boeking bij Linde wordt niet gevraagd."
+      ]
+    ],
+    "task": "Welke journaalpost maakt Haven volgens deze gegeven methodiek?",
+    "options": [
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 90.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 90.000"
+            ]
+          ]
+        },
+        "why": "Dit is de expliciet voorgeschreven verwerking bij de dochter die aandelen in de moeder inkoopt."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Deelneming Linde",
+              "€ 90.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 90.000"
+            ]
+          ]
+        },
+        "why": "Deze verwerking activeert de aandelen en past de gegeven eigen-aandelenmethodiek niet toe."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Overige reserves",
+              "€ 90.000",
+              ""
+            ],
+            [
+              "Deelneming Haven",
+              "",
+              "€ 90.000"
+            ]
+          ]
+        },
+        "why": "Dit lijkt op de aanvullende correctie in de moederadministratie, maar gevraagd is Haven zelf."
+      },
+      {
+        "table": {
+          "headers": [
+            "Rekening",
+            "Debet",
+            "Credit"
+          ],
+          "rows": [
+            [
+              "Aandelenkapitaal Haven",
+              "€ 90.000",
+              ""
+            ],
+            [
+              "Bank",
+              "",
+              "€ 90.000"
+            ]
+          ]
+        },
+        "why": "Haven koopt aandelen in Linde; er is geen intrekking van Havens geplaatst kapitaal gegeven."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Stel eerst vast in welke administratie de boeking gevraagd wordt: Haven betaalt de externe verkoper.",
+      "De expliciet gekozen syllabusmethodiek leidt bij Haven tot Overige reserves aan Bank voor € 90.000. De correctie van Lindes deelnemingswaarde is een andere boeking."
+    ],
+    "pattern": [
+      "Herken: de dochter verricht de betaling en de gevraagde administratie is de dochter.",
+      "Aanpak: onderscheid de dochterboeking van de aanvullende moederboeking.",
+      "Controle: boek geen deelneming in de eigen dochter in de administratie van die dochter."
+    ],
+    "sources": [
+      {
+        "file": "20250924 Tentamen CAFA2.pdf",
+        "pages": "5",
+        "label": "Tentamen 20250924, opgave 1, vragen 5–6, achtergrondboeking bij dochter, p. 5; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+        "pages": "4",
+        "label": "Uitwerking 20250924, opgave 1, vragen 5–6, achtergrondboeking bij dochter, p. 4; eigen oefenvariant",
+        "examId": "20250924"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "30",
+        "label": "Syllabus deel 1, inkoop eigen aandelen, p. 30; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "middellijke-inkoop-dochteradministratie"
+  },
+  {
+    "key": "kap-eigen-toelichting",
+    "topicId": "eigen-aandelen",
+    "title": "Welke informatie blijft zichtbaar?",
+    "type": "Theorie",
+    "intro": "Haven heeft de inkoop van eigen aandelen correct ten laste van overige reserves geboekt.",
+    "facts": [
+      [
+        "Aandelen",
+        "Niet ingetrokken."
+      ],
+      [
+        "Jaarrekening",
+        "De balans toont geen actief voor deze eigen aandelen."
+      ],
+      [
+        "Vraag",
+        "Betreft uitsluitend de in de syllabus beschreven toelichting op deze inkoop."
+      ]
+    ],
+    "task": "Welke informatie moet volgens de aangeleverde syllabus afzonderlijk worden vermeld?",
+    "options": [
+      {
+        "text": "De eindstand en het verloop van de eigen aandelen en de eigenvermogenspost waarop de prijs of boekwaarde is afgeboekt.",
+        "why": "De verwerking buiten de activa neemt de afzonderlijke toelichtingsvereisten niet weg."
+      },
+      {
+        "text": "Alleen de actuele beurswaarde van de eigen aandelen als financieel actief.",
+        "why": "De eigen aandelen zijn juist niet als actief opgenomen; dit vervangt de gevraagde toelichting niet."
+      },
+      {
+        "text": "Alleen de daling van het geplaatste kapitaal.",
+        "why": "Zonder intrekking is geen dergelijke kapitaaldaling geboekt."
+      },
+      {
+        "text": "Niets, omdat de transactie volledig via reserves is verwerkt.",
+        "why": "Juist voor gehouden eigen aandelen beschrijft artikel 2:378 lid 2 afzonderlijke informatie."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De syllabus noemt afzonderlijke vermelding van eindstand en verloop van eigen aandelen.",
+      "Ook wordt vermeld op welke post van het eigen vermogen de verkrijgingsprijs of boekwaarde in mindering is gebracht. Correct boeken en correct toelichten zijn afzonderlijke stappen."
+    ],
+    "pattern": [
+      "Herken: gevraagd is toelichting nadat de journaalpost al correct is.",
+      "Aanpak: benoem zowel de aandelenbeweging als de getroffen eigenvermogenspost.",
+      "Controle: geen actief presenteren betekent niet dat informatie over de aandelen achterwege blijft."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "29",
+        "label": "Syllabusaanvulling: toelichting eigen aandelen, artikel 2:378 lid 2 BW, p. 29; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "eigen-aandelen-toelichtingsinformatie"
+  },
+  {
+    "key": "kap-kader-natuurlijk-persoon",
+    "topicId": "consolidatiekader",
+    "title": "Twee groepen onder één aandeelhouder",
+    "type": "Theorie",
+    "intro": "Mevrouw Linde bezit alle aandelen van Holding Noord bv en Holding Zuid bv.",
+    "facts": [
+      [
+        "Holding Noord",
+        "Staat aan het hoofd van een eigen groep met Werk bv."
+      ],
+      [
+        "Holding Zuid",
+        "Staat aan het hoofd van een andere groep met Handel bv."
+      ],
+      [
+        "Samenhang",
+        "Noord en Zuid vormen onderling geen economische eenheid en staan niet onder gezamenlijke centrale leiding."
+      ],
+      [
+        "Vrijstellingen",
+        "Niet van toepassing."
+      ]
+    ],
+    "task": "Wie moeten op basis van deze gegevens in beginsel een geconsolideerde jaarrekening opstellen?",
+    "options": [
+      {
+        "text": "Noord en Zuid, ieder voor de eigen groep; mevrouw Linde is geen consolidatieplichtige rechtspersoon.",
+        "why": "De verplichting wordt per rechtspersoon en per groep beoordeeld."
+      },
+      {
+        "text": "Alleen mevrouw Linde, omdat zij uiteindelijk alle aandelen bezit.",
+        "why": "Een natuurlijk persoon valt niet onder de bedoelde consolidatieplicht van de rechtspersoon."
+      },
+      {
+        "text": "Alleen Noord, met daarin ook Zuid omdat dezelfde persoon aandeelhouder is.",
+        "why": "Gelijke uiteindelijke aandeelhouder is zonder gegeven groepsverband niet voldoende voor deze kring."
+      },
+      {
+        "text": "Geen van hen, omdat het groepshoofd uiteindelijk een natuurlijk persoon is.",
+        "why": "Noord en Zuid zijn zelf rechtspersonen die ieder aan het hoofd van een groep staan."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Stel per structuur het groepshoofd vast: Noord voor de ene groep, Zuid voor de andere.",
+      "Artikel 2:406 lid 1 richt zich op rechtspersonen die aan het hoofd van hun groep staan. De persoonlijke aandeelhouder wordt niet zelf de consolidatieplichtige."
+    ],
+    "pattern": [
+      "Herken: één natuurlijk persoon boven twee afzonderlijke rechtspersonen met eigen groepen.",
+      "Aanpak: bepaal de groep en het groepshoofd per structuur.",
+      "Controle: verwissel uiteindelijke eigendom niet met één gezamenlijke consolidatiekring."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "6–7",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 8, p. 6–7; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5–6",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 8, p. 5–6; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "32–33",
+        "label": "Syllabus deel 1, consolidatiekader, p. 32–33; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "consolidatieplicht-natuurlijk-persoon"
+  },
+  {
+    "key": "kap-kader-zonder-aandelen",
+    "topicId": "consolidatiekader",
+    "title": "Centrale leiding zonder kapitaalbelang",
+    "type": "Theorie",
+    "intro": "Holding Noord bv staat aan het hoofd van een groep. Daarnaast leidt Noord Contract bv op basis van een overeenkomst.",
+    "facts": [
+      [
+        "Aandelen Contract",
+        "Noord bezit geen aandelen in Contract."
+      ],
+      [
+        "Feitelijke verhouding",
+        "Noord heeft volgens de overeenkomst en de feitelijke uitvoering de centrale leiding over Contract."
+      ],
+      [
+        "Vrijstellingen",
+        "Geen vrijstelling is van toepassing."
+      ],
+      [
+        "Gevraagd",
+        "De consolidatiekring van Noord, niet de kwalificatie als deelneming."
+      ]
+    ],
+    "task": "Hoe behandelt Noord Contract bij de afbakening van de consolidatiekring volgens de syllabus?",
+    "options": [
+      {
+        "text": "Contract wordt in de kring opgenomen, omdat de centrale leiding ook buiten een aandelenrelatie relevant is.",
+        "why": "Artikel 2:406 omvat ook andere rechtspersonen waarover het groepshoofd de centrale leiding heeft."
+      },
+      {
+        "text": "Contract blijft buiten de kring omdat zonder aandelen nooit consolidatie mogelijk is.",
+        "why": "De consolidatiekring is breder dan alleen dochtermaatschappijen op basis van aandelen."
+      },
+      {
+        "text": "Contract wordt alleen voor 20% opgenomen wegens het vermoeden van invloed van betekenis.",
+        "why": "Het 20%-vermoeden bepaalt niet het opnamepercentage van een centraal geleide rechtspersoon."
+      },
+      {
+        "text": "Contract telt uitsluitend mee als Noord een dividend ontvangt.",
+        "why": "Dividend is geen criterium voor afbakening van de consolidatiekring."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De vraag geeft de centrale leiding expliciet als feit. Een kapitaalpercentage hoeft daarom niet als vervangend criterium te worden bedacht.",
+      "De in de syllabus beschreven kring bevat ook andere rechtspersonen waarover Noord de centrale leiding heeft."
+    ],
+    "pattern": [
+      "Herken: de vraag gaat over consolidatiekring en noemt centrale leiding zonder aandelen.",
+      "Aanpak: toets alle categorieën van artikel 2:406 en niet alleen het begrip dochtermaatschappij.",
+      "Controle: houd deelnemingskwalificatie en consolidatiekring als afzonderlijke beslissingen uit elkaar."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "6–7",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 8, p. 6–7; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5–6",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 8, p. 5–6; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "33",
+        "label": "Syllabus deel 1, consolidatiekader, p. 33; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "consolidatiekring-centrale-leiding"
+  },
+  {
+    "key": "kap-kader-groepsdeel",
+    "topicId": "consolidatiekader",
+    "title": "Wat hoort bij de tussenholding?",
+    "type": "Theorie",
+    "intro": "Top bv bezit alle aandelen in Midden bv en Zuster bv. Midden bezit 80% van Werk bv.",
+    "facts": [
+      [
+        "Groep",
+        "Alle vier behoren tot één groep onder centrale leiding van Top."
+      ],
+      [
+        "Groepsdeel",
+        "Midden leidt het groepsdeel Midden en Werk. Midden heeft geen zeggenschap of centrale leiding over Zuster."
+      ],
+      [
+        "Vrijstellingen",
+        "Niet van toepassing."
+      ]
+    ],
+    "task": "Welke financiële gegevens horen in de eigen geconsolideerde jaarrekening van Midden?",
+    "options": [
+      {
+        "text": "Midden en Werk.",
+        "why": "Midden consolideert haar eigen groepsdeel; Top en de zuster vallen daar niet onder."
+      },
+      {
+        "text": "Top, Midden, Werk en Zuster.",
+        "why": "Dit is de gegeven kring van Top, niet van Midden."
+      },
+      {
+        "text": "Alleen Werk voor 80%.",
+        "why": "De eigen gegevens van Midden horen erbij en de minderheid maakt de opname niet automatisch proportioneel."
+      },
+      {
+        "text": "Midden en Zuster.",
+        "why": "Zuster valt niet onder Midden; Werk juist wel."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Midden heeft in de groep een dochter en is zonder vrijstelling als subgroepshoofd consolidatieplichtig.",
+      "Haar groepsdeel omvat de eigen gegevens en Werk. De kring van het hogere groepshoofd wordt niet één op één overgenomen."
+    ],
+    "pattern": [
+      "Herken: gevraagd is de eigen consolidatie van een tussenholding.",
+      "Aanpak: teken de rechtspersonen onder die tussenholding en voeg haar eigen gegevens toe.",
+      "Controle: laat bovenliggende en nevengeschikte maatschappijen buiten haar kring als er geen andere relevante zeggenschap is."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "6–7",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 8, p. 6–7; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5–6",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 8, p. 5–6; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "32–33",
+        "label": "Syllabus deel 1, consolidatiekader, p. 32–33; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "consolidatiekring-subgroepshoofd"
+  },
+  {
+    "key": "kap-kader-omzet-kring",
+    "topicId": "consolidatiekader",
+    "title": "Eerst de kring, dan de omzet",
+    "type": "Berekening",
+    "intro": "Noord stelt haar geconsolideerde jaarrekening op.",
+    "facts": [
+      [
+        "Noord",
+        "Eigen omzet € 1.000.000."
+      ],
+      [
+        "Werk",
+        "80%-dochter in de groep onder centrale leiding van Noord; omzet € 2.000.000. Integrale consolidatie."
+      ],
+      [
+        "Advies",
+        "30%-deelneming met invloed van betekenis; geen groepsmaatschappij, geen overheersende zeggenschap of centrale leiding; omzet € 3.000.000."
+      ],
+      [
+        "Onderlinge omzet",
+        "Geen."
+      ],
+      [
+        "Vrijstellingen",
+        "Niet van toepassing."
+      ]
+    ],
+    "task": "Welke omzet komt in Noords geconsolideerde winst-en-verliesrekening?",
+    "options": [
+      {
+        "text": "€ 3.000.000.",
+        "why": "Noord en Werk behoren tot de kring; Werk wordt voor 100% opgenomen. Advies valt buiten de gegeven kring."
+      },
+      {
+        "text": "€ 2.600.000.",
+        "why": "Dit neemt slechts 80% van Werks omzet op, terwijl integrale consolidatie is gegeven."
+      },
+      {
+        "text": "€ 3.900.000.",
+        "why": "Dit voegt 30% van de omzet van een buiten de consolidatiekring vallende deelneming toe."
+      },
+      {
+        "text": "€ 6.000.000.",
+        "why": "Dit neemt ook de volledige omzet van Advies op zonder consolidatiegrond."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Bepaal eerst de kring: Noord en Werk. De deelneming Advies valt volgens de expliciete feiten daarbuiten.",
+      "Geconsolideerde omzet: € 1.000.000 + 100% × € 2.000.000 = € 3.000.000. Het derdenbelang verlaagt de omzetopname niet."
+    ],
+    "pattern": [
+      "Herken: kapitaalpercentages staan naast feiten over de consolidatiekring.",
+      "Aanpak: beslis eerst wie binnen de kring valt en pas daarna de gegeven consolidatiemethode toe.",
+      "Controle: NVW-waardering van een deelneming is geen reden om een percentage van haar omzet op te tellen."
+    ],
+    "sources": [
+      {
+        "file": "20250417 Tentamen CAFA2.pdf",
+        "pages": "6–7",
+        "label": "Tentamen 17-04-2025, opgave 1, vraag 8, p. 6–7; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "20250417 Uitwerking tentamen CAFA2.pdf",
+        "pages": "5–6",
+        "label": "Uitwerking 17-04-2025, opgave 1, vraag 8, p. 5–6; eigen oefenvariant",
+        "examId": "20250417"
+      },
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "33, 36",
+        "label": "Syllabus deel 1, consolidatiekader, p. 33, 36; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "consolidatiekring-omzetopname",
+    "check": {
+      "description": "Omzet van opgenomen maatschappijen",
+      "actual": 3000000,
+      "expected": 3000000
+    }
+  },
+  {
+    "key": "kap-kader-gezamenlijke-betekenis",
+    "topicId": "consolidatiekader",
+    "title": "Kleine dochters samen beoordelen",
+    "type": "Theorie",
+    "intro": "Noord overweegt drie dochtermaatschappijen buiten de consolidatie te laten.",
+    "facts": [
+      [
+        "Individuele omvang",
+        "Elke dochter afzonderlijk heeft een beperkte omvang."
+      ],
+      [
+        "Gezamenlijk belang",
+        "Samen zijn hun gegevens volgens de casus van materiële betekenis voor het geheel."
+      ],
+      [
+        "Andere redenen",
+        "Geen andere vrijstellingsgrond is gegeven."
+      ]
+    ],
+    "task": "Kan Noord zich volgens de syllabus beroepen op artikel 2:407 lid 1 onder a BW om alle drie buiten de consolidatie te houden?",
+    "options": [
+      {
+        "text": "Nee. De gezamenlijke betekenis moet te verwaarlozen zijn; dat is hier expliciet niet het geval.",
+        "why": "De toets mag niet worden omzeild door relevante gezamenlijke gegevens in kleine onderdelen op te splitsen."
+      },
+      {
+        "text": "Ja. Elke dochter wordt uitsluitend afzonderlijk beoordeeld.",
+        "why": "Het artikel noemt juist de gezamenlijke betekenis op het geheel."
+      },
+      {
+        "text": "Ja. Drie kleine dochters zijn altijd samen verwaarloosbaar.",
+        "why": "De casus geeft het tegendeel; het aantal maatschappijen bepaalt de materialiteit niet."
+      },
+      {
+        "text": "Ja, mits Noord de deelnemingen enkelvoudig tegen NVW waardeert.",
+        "why": "Enkelvoudige waardering vervangt de voorwaarden van de consolidatievrijstelling niet."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De vrijstelling ziet op gegevens van maatschappijen wier gezamenlijke betekenis te verwaarlozen is.",
+      "De gezamenlijke betekenis is hier materieel. Op de gegeven grond mogen deze drie dus niet allemaal worden weggelaten."
+    ],
+    "pattern": [
+      "Herken: afzonderlijk klein, maar gezamenlijk materieel.",
+      "Aanpak: beoordeel de gezamenlijke invloed op het geconsolideerde geheel.",
+      "Controle: verwar individueel geringe omvang niet met gezamenlijke verwaarloosbaarheid."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "34",
+        "label": "Syllabusaanvulling: artikel 2:407 lid 1 onder a BW, p. 34; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "basis",
+    "skill": "consolidatievrijstelling-gezamenlijk-belang"
+  },
+  {
+    "key": "kap-kader-verkoopplan",
+    "topicId": "consolidatiekader",
+    "title": "Verkoopplannen na vijf jaar",
+    "type": "Theorie",
+    "intro": "Noord consolideert Werk al vijf jaar. Aan het einde van dit jaar besluit Noord Werk volgend jaar te verkopen.",
+    "facts": [
+      [
+        "Huidige situatie",
+        "Werk blijft tot de verkoop in de groep onder centrale leiding van Noord."
+      ],
+      [
+        "Verwerving vijf jaar geleden",
+        "Het belang is toen voor duurzame bedrijfsuitoefening gekocht."
+      ],
+      [
+        "Andere vrijstellingen",
+        "Niet van toepassing."
+      ]
+    ],
+    "task": "Wat volgt volgens de aangeleverde syllabus voor de huidige consolidatie?",
+    "options": [
+      {
+        "text": "Werk blijft in beginsel geconsolideerd tot de daadwerkelijke afstoting; het latere verkoopplan is op zichzelf onvoldoende.",
+        "why": "De syllabus onderscheidt een later afstotingsvoornemen van een belang dat uitsluitend met verkoopdoel wordt gehouden."
+      },
+      {
+        "text": "Werk moet onmiddellijk buiten de consolidatie zodra het bestuur over verkoop spreekt.",
+        "why": "Een afstotingsvoornemen beëindigt de gegeven centrale leiding en groepsrelatie niet."
+      },
+      {
+        "text": "Alleen de balans blijft geconsolideerd; de winst-en-verliesrekening vervalt.",
+        "why": "Voor zo'n splitsing biedt de gegeven situatie geen grond."
+      },
+      {
+        "text": "Werk wordt automatisch proportioneel geconsolideerd tot de verkoop.",
+        "why": "Een verkoopplan creëert geen gezamenlijke zeggenschap of proportionele methode."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De bestaande groepsrelatie en centrale leiding zijn niet beëindigd.",
+      "De syllabus vermeldt dat bestaande geconsolideerde belangen met een later afstotingsvoornemen over het algemeen in de consolidatie blijven tot zij worden afgestoten."
+    ],
+    "pattern": [
+      "Herken: het verkoopvoornemen ontstaat pas jaren na een duurzame verwerving.",
+      "Aanpak: beoordeel of de consolidatiegrond nog bestaat en of de specifieke vrijstellingsvoorwaarden zijn vervuld.",
+      "Controle: een voorgenomen verkoop is niet hetzelfde als een reeds beëindigde consolidatiekring."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "34",
+        "label": "Syllabusaanvulling: artikel 2:407 lid 1 onder c en onderscheid later afstotingsvoornemen, p. 34; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "consolidatievrijstelling-later-verkoopplan"
+  },
+  {
+    "key": "kap-kader-bezwaar-kleine-groep",
+    "topicId": "consolidatiekader",
+    "title": "Een aandeelhouder maakt bezwaar",
+    "type": "Theorie",
+    "intro": "Noord wil gebruikmaken van de kleine-groepsvrijstelling zoals beschreven in artikel 2:407 lid 2 BW in de syllabus.",
+    "facts": [
+      [
+        "Groepsomvang",
+        "Er is expliciet gegeven dat bij consolidatie de toepasselijke grenzen niet worden overschreden."
+      ],
+      [
+        "Effecten",
+        "Geen in de kring betrokken maatschappij heeft de in deze bepaling bedoelde beursgenoteerde effecten."
+      ],
+      [
+        "Bezwaar",
+        "Een houder van precies 10% van het geplaatste kapitaal maakt schriftelijk bezwaar, vijf maanden na aanvang van het boekjaar."
+      ],
+      [
+        "Overig",
+        "Er is geen andere vrijstelling gegeven."
+      ]
+    ],
+    "task": "Mag Noord deze vrijstelling toepassen?",
+    "options": [
+      {
+        "text": "Nee. Het schriftelijke bezwaar is tijdig en komt van ten minste een tiende van het geplaatste kapitaal.",
+        "why": "De genoemde voorwaarden moeten gezamenlijk zijn vervuld; precies 10% bereikt de bezwaardrempel."
+      },
+      {
+        "text": "Ja. Alleen een belang groter dan 10% kan bezwaar maken.",
+        "why": "De bepaling gebruikt ten minste een tiende; precies 10% volstaat."
+      },
+      {
+        "text": "Ja. Voldoen aan de omvanggrenzen is de enige voorwaarde.",
+        "why": "Ook de voorwaarden over effecten en tijdig bezwaar zijn nodig."
+      },
+      {
+        "text": "Ja. Een bezwaar in de vijfde maand is te laat.",
+        "why": "Vijf maanden valt binnen de in de syllabus genoemde zesmaandstermijn."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De casus voldoet aan de eerste twee voorwaarden, maar niet aan de voorwaarde dat geen tijdig kwalificerend bezwaar is gemaakt.",
+      "Precies 10% is ten minste een tiende en vijf maanden is binnen zes maanden. De gegeven vrijstelling kan daarom niet worden toegepast."
+    ],
+    "pattern": [
+      "Herken: grenswoorden als ten minste en binnen zijn beslissend.",
+      "Aanpak: toets iedere vrijstellingsvoorwaarde afzonderlijk.",
+      "Controle: een vrijstelling met cumulatieve voorwaarden vervalt als één voorwaarde ontbreekt."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "35",
+        "label": "Syllabusaanvulling: artikel 2:407 lid 2 BW, p. 35; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "kleine-groepsvrijstelling-bezwaar"
+  },
+  {
+    "key": "kap-kader-408-voorwaarden",
+    "topicId": "consolidatiekader",
+    "title": "Consolidatie door het grotere geheel",
+    "type": "Theorie",
+    "intro": "Midden is in beginsel verplicht haar groepsdeel te consolideren en wil de vrijstelling uit artikel 2:408 BW toepassen.",
+    "facts": [
+      [
+        "Hoger geheel",
+        "De benodigde financiële gegevens zijn opgenomen in de geconsolideerde jaarrekening van Top."
+      ],
+      [
+        "Overige voorwaarden",
+        "Er zijn geen beursgenoteerde effecten of bezwaren; aan de inhoudelijke voorwaarden is voldaan."
+      ],
+      [
+        "Ontbrekend",
+        "De voorgeschreven stukken of verwijzing zijn niet binnen de toepasselijke termijn gedeponeerd."
+      ],
+      [
+        "Uitgangspunt",
+        "Pas de voorwaarden toe zoals beschreven in de aangeleverde syllabus."
+      ]
+    ],
+    "task": "Welke conclusie is juist?",
+    "options": [
+      {
+        "text": "Opname in de grotere consolidatie is niet voldoende; zonder tijdige deponering is niet aan alle beschreven voorwaarden voldaan.",
+        "why": "De grotere consolidatie is één van meerdere cumulatieve voorwaarden."
+      },
+      {
+        "text": "De vrijstelling geldt automatisch zodra Top consolideert.",
+        "why": "Dat slaat de overige beschreven voorwaarden, waaronder deponering, over."
+      },
+      {
+        "text": "Deponering is alleen nodig als Midden geen dochter is.",
+        "why": "Juist bij een beroep op deze groepsdeelvrijstelling horen de beschreven publicatievoorwaarden."
+      },
+      {
+        "text": "Een mondelinge toezegging om later te deponeren vervangt de voorwaarde.",
+        "why": "De casus geeft geen uitzondering op de voorgeschreven tijdige deponering."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "Midden toetst eerst of artikel 2:408 kan worden toegepast en daarna alle voorwaarden van de vrijstelling.",
+      "De casus vermeldt dat de publicatievoorwaarde niet is vervuld. Alleen opname in Tops consolidatie heft de eigen verplichting dus niet via deze vrijstelling op."
+    ],
+    "pattern": [
+      "Herken: een geldig beroep op een vrijstelling vraagt meer dan één vervulde voorwaarde.",
+      "Aanpak: maak een afvinklijst van alle in de bron beschreven voorwaarden.",
+      "Controle: verwar inhoudelijke opname bij de moeder niet met naleving van de openbaarmakingsvoorwaarde."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "35–36",
+        "label": "Syllabusaanvulling: artikel 2:408 lid 1 onder b–e BW, p. 35–36; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "toepassing",
+    "skill": "groepsdeelvrijstelling-deponering"
+  },
+  {
+    "key": "kap-kader-408-effecten",
+    "topicId": "consolidatiekader",
+    "title": "Eerst de uitsluitingsgrond toetsen",
+    "type": "Theorie",
+    "intro": "Midden leidt een groepsdeel. Alle voorwaarden uit artikel 2:408 lid 1 zijn volgens de casus vervuld.",
+    "facts": [
+      [
+        "Effecten Midden",
+        "Zijn toegelaten tot de handel op een gereglementeerde markt zoals bedoeld in de aangeleverde bepaling."
+      ],
+      [
+        "Vraag",
+        "Uitsluitend of Midden de in de syllabus beschreven groepsdeelvrijstelling mag toepassen."
+      ]
+    ],
+    "task": "Wat is de juiste conclusie op grond van de in de syllabus opgenomen artikelleden?",
+    "options": [
+      {
+        "text": "Nee. De uitsluiting van artikel 2:408 lid 4 verhindert toepassing, ook als alle voorwaarden van lid 1 zijn vervuld.",
+        "why": "De uitsluitingsgrond moet vóór de inhoudelijke voorwaarden worden getoetst."
+      },
+      {
+        "text": "Ja. Voldoen aan lid 1 is altijd voldoende.",
+        "why": "De afzonderlijke uitsluiting in lid 4 blijft naast lid 1 gelden."
+      },
+      {
+        "text": "Ja, als Midden een toelichting opneemt dat haar effecten verhandelbaar zijn.",
+        "why": "Een toelichting neemt de gegeven uitsluitingsgrond niet weg."
+      },
+      {
+        "text": "Ja, maar alleen voor de balans en niet voor het resultaat.",
+        "why": "De beschreven regeling geeft geen gedeeltelijke vrijstelling op die grond."
+      }
+    ],
+    "correct": 0,
+    "explanation": [
+      "De casus geeft een uitdrukkelijke uitsluitingsgrond: de in artikel 2:408 lid 4 bedoelde effecten.",
+      "Daardoor is deze vrijstelling niet van toepassing. Het vervolgens vervullen van alle voorwaarden van lid 1 verandert die uitsluiting niet."
+    ],
+    "pattern": [
+      "Herken: een uitsluitingsgrond staat naast een lijst vervulde voorwaarden.",
+      "Aanpak: toets eerst of de regeling überhaupt openstaat, daarna pas de voorwaarden.",
+      "Controle: positieve voorwaarden zetten een expliciet toepassingsverbod niet opzij."
+    ],
+    "sources": [
+      {
+        "file": "2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+        "pages": "36",
+        "label": "Syllabusaanvulling: artikel 2:408 lid 4 BW, p. 36; eigen oefenvariant"
+      }
+    ],
+    "difficulty": "verdieping",
+    "skill": "groepsdeelvrijstelling-uitsluiting-effecten"
+  }
+]

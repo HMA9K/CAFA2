@@ -1,4 +1,26 @@
 /* Question delivery follows Cirrus; the original paper styling stays inside cases and models. */
+.exam-case-layout{display:grid;grid-template-columns:minmax(0,1fr) 14px minmax(0,var(--case-width,33.333333%));align-items:stretch}
+.exam-case-layout.is-case-hidden{grid-template-columns:minmax(0,1fr)}
+.exam-running .exam-case-layout>.exam-question-body{min-width:0;padding:12px 28px 32px}
+.exam-case-panel{position:sticky;top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 12px);align-self:start;min-width:0;max-height:var(--case-available-height,calc(100dvh - 370px));overflow:auto;overscroll-behavior:contain;padding:16px 20px 24px;background:var(--study-surface,#fff);color:var(--study-ink,#292e42);scrollbar-gutter:stable}
+.exam-case-panel>h2{font-size:16px;line-height:1.4;margin:0 0 18px;color:inherit}
+.exam-case-panel .exam-source-document{max-width:none;margin:0;padding:0;font-size:14px;line-height:1.5}
+.exam-case-panel .exam-source-brand{display:none}
+.exam-case-table-scroll{max-width:100%;overflow-x:auto}
+.exam-case-panel table{min-width:420px;font-size:13px}
+.exam-case-resizer{display:flex;align-items:flex-start;justify-content:center;min-width:14px;cursor:col-resize;touch-action:none;background:var(--study-wash,#f3f6fa);border-inline:1px solid var(--study-line,#d9e2eb);color:var(--study-muted,#58677a)}
+.exam-case-resizer>span{position:sticky;top:50vh;display:grid;place-items:center;min-height:56px;font-size:23px;line-height:1}
+.exam-case-resizer:hover,.exam-case-resizer:focus-visible{color:var(--study-accent,#087c66);outline:2px solid var(--study-accent,#087c66);outline-offset:-2px}
+.exam-case-layout.is-resizing{user-select:none;cursor:col-resize}
+.exam-case-layout>[hidden]{display:none!important}
+.exam-question-identity .btn[aria-pressed=true]{border-color:var(--study-accent,#087c66);color:var(--study-accent,#087c66)}
+@media(max-width:760px){
+ .exam-case-layout{display:flex;flex-direction:column}
+ .exam-case-layout>.exam-case-resizer{display:none}
+ .exam-case-panel{position:static;order:-1;width:100%;max-height:45dvh;padding:14px 16px;border-bottom:1px solid var(--study-line,#d9e2eb)}
+ .exam-running .exam-case-layout>.exam-question-body{padding:16px}
+}
+@media print{.exam-case-layout{display:block}.exam-case-resizer{display:none}.exam-case-panel{position:static;max-height:none;overflow:visible}}
 .exam-running .exam-question-top{max-width:none;margin:4px 0 24px;align-items:baseline}
 .exam-running .exam-question-top h2{font-weight:400;color:#55515c}
 .exam-running .exam-source-question,.review-prompt .exam-source-question,.result-expanded .exam-source-question{max-width:none;margin:0;padding:0 0 12px;text-align:left;line-height:1.65;background:transparent}
