@@ -174,18 +174,18 @@
   function mountCasePanel(attempt,section) {
     if(!section)return;
     var body=host.querySelector('.exam-question-body'),layout=document.createElement('div');
-    layout.className='exam-case-layout';body.before(layout);layout.append(body);
+    layout.className='exam-case-layout';body.before(layout);
     var handle=document.createElement('div');handle.className='exam-case-resizer';handle.tabIndex=0;
-    handle.setAttribute('role','separator');handle.setAttribute('aria-label','Breedte casus aanpassen');
+    handle.setAttribute('role','separator');handle.setAttribute('aria-label','Breedte van de casus links aanpassen');
     handle.setAttribute('aria-orientation','vertical');handle.setAttribute('aria-controls','exam-case-panel');
     handle.setAttribute('aria-valuemin','25');handle.setAttribute('aria-valuemax','60');
-    handle.title='Sleep om de casus breder of smaller te maken, of gebruik de pijltoetsen';
+    handle.title='Sleep naar rechts voor een bredere casus of naar links voor een smallere casus. Gebruik ook de pijltjestoetsen, Home en End.';
     handle.innerHTML='<span aria-hidden="true">⋮</span>';
     var panel=document.createElement('aside');panel.id='exam-case-panel';panel.className='exam-case-panel';
     panel.setAttribute('aria-labelledby','exam-case-heading');
     panel.innerHTML='<h2 id="exam-case-heading">'+esc(section.title)+'</h2>'+documentHtml(attempt.exam,'case',section.contentHtml);
     panel.querySelectorAll('table').forEach(function(table){var wrap=document.createElement('div');wrap.className='exam-case-table-scroll';table.before(wrap);wrap.append(table);});
-    layout.append(handle,panel);updateCasePanel();
+    layout.append(panel,handle,body);updateCasePanel();
     if(window.ResizeObserver){caseResizeObserver=new ResizeObserver(scheduleCaseFit);caseResizeObserver.observe(layout);caseResizeObserver.observe(host.querySelector('.exam-footer'));}
     handle.addEventListener('pointerdown',function(e){
       if(e.button!==0)return;e.preventDefault();handle.setPointerCapture(e.pointerId);
@@ -194,14 +194,14 @@
     handle.addEventListener('pointermove',function(e){
       if(handle.dataset.dragging!=='true')return;
       var rect=layout.getBoundingClientRect();if(!rect.width)return;
-      caseWidth=Math.max(25,Math.min(60,100*(rect.right-e.clientX)/rect.width));updateCasePanel();
+      caseWidth=Math.max(25,Math.min(60,100*(e.clientX-rect.left)/rect.width));updateCasePanel();
     });
     function finishResize(){delete handle.dataset.dragging;layout.classList.remove('is-resizing');saveCaseSettings();}
     handle.addEventListener('pointerup',function(e){finishResize();if(handle.hasPointerCapture(e.pointerId))handle.releasePointerCapture(e.pointerId);});
     handle.addEventListener('pointercancel',finishResize);handle.addEventListener('lostpointercapture',finishResize);
     handle.addEventListener('keydown',function(e){
       var value=caseWidth;
-      if(e.key==='ArrowLeft')value+=5;else if(e.key==='ArrowRight')value-=5;
+      if(e.key==='ArrowLeft')value-=5;else if(e.key==='ArrowRight')value+=5;
       else if(e.key==='Home')value=25;else if(e.key==='End')value=60;else return;
       e.preventDefault();caseWidth=Math.max(25,Math.min(60,value));updateCasePanel();saveCaseSettings();
     });

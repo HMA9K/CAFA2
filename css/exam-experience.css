@@ -1,5 +1,5 @@
 /* Question delivery follows Cirrus; the original paper styling stays inside cases and models. */
-.exam-case-layout{display:grid;grid-template-columns:minmax(0,1fr) 14px minmax(0,var(--case-width,33.333333%));align-items:stretch}
+.exam-case-layout{display:grid;grid-template-columns:minmax(0,var(--case-width,33.333333%)) 14px minmax(0,1fr);align-items:stretch}
 .exam-case-layout.is-case-hidden{grid-template-columns:minmax(0,1fr)}
 .exam-running .exam-case-layout>.exam-question-body{min-width:0;padding:12px 28px 32px}
 .exam-case-panel{position:sticky;top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 12px);align-self:start;min-width:0;max-height:var(--case-available-height,calc(100dvh - 370px));overflow:auto;overscroll-behavior:contain;padding:16px 20px 24px;background:var(--study-surface,#fff);color:var(--study-ink,#292e42);scrollbar-gutter:stable}

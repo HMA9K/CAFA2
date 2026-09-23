@@ -115,8 +115,8 @@ try {
     }
   }
   assertCaseToggle(cases,true);
-  assert.deepEqual(Array.from(cases.$('.exam-case-layout').children,el=>el.className),['exam-question-body','exam-case-resizer','exam-case-panel'],
-    'Question and answer precede the vertical separator and case in the split layout.');
+  assert.deepEqual(Array.from(cases.$('.exam-case-layout').children,el=>el.className),['exam-case-panel','exam-case-resizer','exam-question-body'],
+    'The case precedes the vertical separator and question and answer in the split layout.');
   assert.equal(caseHandle.getAttribute('aria-orientation'),'vertical');
   assert.equal(caseHandle.getAttribute('aria-valuenow'),'33');
   assert.match(casePanel.textContent,/UITSLUITEND CASUS A/);
@@ -131,12 +131,32 @@ try {
   assert.equal(cases.$('[contenteditable="true"]'),caseEditor,'Showing the case must preserve the editor DOM node.');
   assert.equal(cases.$('#exam-case-panel'),casePanel,'Toggling preserves the case pane and its scrollable content.');
   function resizeCase(key){caseHandle.dispatchEvent(new cases.window.KeyboardEvent('keydown',{bubbles:true,cancelable:true,key}));}
-  resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'38');
-  resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'33');
-  resizeCase('Home');resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'25');
-  resizeCase('End');resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'60');
-  for(let n=0;n<3;n++)resizeCase('ArrowRight');
+  resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'38');
+  resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'33');
+  resizeCase('Home');resizeCase('ArrowLeft');assert.equal(caseHandle.getAttribute('aria-valuenow'),'25');
+  resizeCase('End');resizeCase('ArrowRight');assert.equal(caseHandle.getAttribute('aria-valuenow'),'60');
+  for(let n=0;n<3;n++)resizeCase('ArrowLeft');
   assert.equal(cases.$('.exam-case-layout').style.getPropertyValue('--case-width'),'45%');
+  // A real layout can be offset from the viewport's left edge; pointer resizing must account for it.
+  const caseLayout=cases.$('.exam-case-layout');
+  caseLayout.getBoundingClientRect=()=>({left:137,right:1137,width:1000,top:100,bottom:700,height:600});
+  let capturedPointer;
+  caseHandle.setPointerCapture=id=>{capturedPointer=id;};
+  caseHandle.hasPointerCapture=id=>capturedPointer===id;
+  caseHandle.releasePointerCapture=()=>{capturedPointer=undefined;};
+  function casePointer(type,clientX){
+    const event=new cases.window.MouseEvent(type,{bubbles:true,cancelable:true,button:0,clientX});
+    Object.defineProperty(event,'pointerId',{value:7});
+    caseHandle.dispatchEvent(event);
+  }
+  casePointer('pointerdown',587);assert.equal(capturedPointer,7);
+  casePointer('pointermove',487);assert.equal(caseHandle.getAttribute('aria-valuenow'),'35');
+  casePointer('pointermove',87);assert.equal(caseHandle.getAttribute('aria-valuenow'),'25');
+  casePointer('pointermove',1237);assert.equal(caseHandle.getAttribute('aria-valuenow'),'60');
+  casePointer('pointermove',587);assert.equal(caseLayout.style.getPropertyValue('--case-width'),'45%');
+  casePointer('pointerup',587);assert.equal(capturedPointer,undefined);
+  assert.equal(caseLayout.classList.contains('is-resizing'),false);
+  casePointer('pointermove',737);assert.equal(caseHandle.getAttribute('aria-valuenow'),'45','A released pointer must no longer resize the case.');
   assert.equal(cases.$('[contenteditable="true"]'),caseEditor,'Resizing must preserve the editor DOM node.');
   assert.match(cases.state()[0].answers.q1.html,/Mijn antwoord blijft staan/);
   caseButtons[0].click();cases.action('next');cases.action('next');
@@ -154,7 +174,7 @@ try {
   assert.match(casesReload.$('[contenteditable="true"]').textContent,/Mijn antwoord blijft staan/);
   assert.equal(casesReload.$('.exam-case-resizer').getAttribute('aria-valuenow'),'45');
   assert.deepEqual(cases.errors,[]);assert.deepEqual(casesReload.errors,[]);
-  console.log('Case panel: default open, scoped source content, synchronized toggles, preserved editor, keyboard bounds and session reload passed.');
+  console.log('Case panel: default open on the left, scoped source content, synchronized toggles, preserved editor, keyboard and pointer bounds and session reload passed.');
 
   // New practice modes retain time and answers across reloads.
   const modes=environment();modes.route('#welkom/ui-fixture');modes.action('start');
