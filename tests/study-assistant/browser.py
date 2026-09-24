@@ -256,6 +256,7 @@ try:
     current_ref(first,'vraag-1','exam')
     page.locator('[data-exam-action="review-question"][data-index="1"]').click()
     page.wait_for_function('location.hash.endsWith("/vraag/1")')
+    page.wait_for_function('document.querySelector("[data-context-title]").textContent.includes("Vraag 2")')
     send('Licht de volgende vraag toe.')
     check('Individual review navigation updates question and keeps its own history',
           requests[-1]['ref']['questionId']=='vraag-2' and
