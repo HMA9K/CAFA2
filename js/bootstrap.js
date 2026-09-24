@@ -65,7 +65,7 @@
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
-    return loadScript('js/answer-feedback.js?v=20260924-disclosures1');
+    return loadScript('js/answer-feedback.js?v=20260924-no-duplicate1');
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
