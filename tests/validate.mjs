@@ -35,7 +35,7 @@ assert.match(html, /<link rel="stylesheet" href="css\/app\.css">/);
 assert.doesNotMatch(html, /<style>/);
 assert.doesNotMatch(html, /id="bank"/);
 for (const script of indexScripts) {
-  assert.match(html, new RegExp(`<script src="${script.replaceAll('.', '\\.')}"`));
+  assert.match(html, new RegExp(`<script src="${script.replaceAll('.', '\\.')}([?]v=[\\w-]+)?"`));
 }
 for (const fallbackPage of fallbackPages) {
   assert.match(html, new RegExp(`href="${fallbackPage.replaceAll('.', '\\.')}"`));

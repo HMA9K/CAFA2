@@ -58,7 +58,28 @@
     record.source.open = true;
     showPractice(record);
   }
+  function prepareExplanations(box) {
+    each('.pattern, .study-answer-note', box, function (body) {
+      if (body.parentElement.classList.contains('feedback-disclosure')) return;
+      var pattern = body.classList.contains('pattern');
+      var details = document.createElement('details'), summary = document.createElement('summary');
+      details.className = 'feedback-disclosure ' + (pattern ? 'feedback-pattern' : 'feedback-note');
+      if (box.id) details.id = box.id + (pattern ? '-pattern' : '-note');
+      summary.textContent = pattern ? 'Patroonherkenning' : 'Aanvullende toelichting bij het antwoord';
+      var caption = body.querySelector(pattern ? ':scope > b' : ':scope > .study-note-caption');
+      if (caption) caption.remove();
+      body.replaceWith(details); details.append(summary, body);
+      if (pattern) {
+        var model = details.closest('.correct-model') || box;
+        var afterAnswer = model.querySelector('.study-answer-note, .feedback-note, .source, .self-grades, [data-score-note], [data-self-note]');
+        if (afterAnswer && afterAnswer.parentElement.classList.contains('feedback-disclosure')) afterAnswer = afterAnswer.parentElement;
+        if (afterAnswer && afterAnswer.parentElement === model) model.insertBefore(details, afterAnswer);
+        else model.appendChild(details);
+      }
+    });
+  }
   function preparePractice(question) {
+    each('.review-content', question, prepareExplanations);
     each('details', question, function(d, index) { if (!d.id) d.id = 'cafa-detail-' + question.id + '-' + index; });
     var mcRecord = null;
     each('.review', question, function (source, index) {
@@ -155,6 +176,7 @@
     } else { model.textContent = q.solution || 'Er is nog geen antwoordmodel toegevoegd.'; }
     box.appendChild(model);
     if(window.CafaStudy)box.insertAdjacentHTML('beforeend',window.CafaStudy.examNote(a.exam.id,q.id));
+    prepareExplanations(box);
     if (window.CafaStockTable) window.CafaStockTable.enhance(model);
   }
   function selfScore(context, box) {

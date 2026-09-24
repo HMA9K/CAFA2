@@ -80,6 +80,7 @@ async def run():
           await page.locator('[data-start=kap]').click();await hash('kap-12')
           await page.locator('label[for="a-kap-12-0"]').click()
           await page.locator('#kap-12 .cafa-check-controls button').first.click()
+          await page.locator('#kap-12 .feedback-note > summary:visible').click()
           assert await page.locator('#kap-12 .study-answer-note:visible').count()>=1
           # Create unrelated data before taking a detour, not by replacing the storage implementation.
           await page.evaluate('CafaPractice.setRichAnswer("val",2,"<p>Andere module blijft bewaard</p>")')
@@ -130,6 +131,7 @@ async def run():
           if not await editor.is_visible():await page.locator('#exam-app .stock-notes>summary').click()
           await editor.fill('Mijn berekening blijft staan: 3.000.000')
           await page.locator('[data-exam-action=check]').click()
+          await page.locator('#cafa-exam-feedback .feedback-note > summary').click()
           assert await page.locator('#cafa-exam-feedback .study-answer-note').is_visible()
           saved=await page.evaluate('(id)=>CafaExams.getAttempts().find(a=>a.id===id)',aid)
           assert saved['extraMinutes']==30
