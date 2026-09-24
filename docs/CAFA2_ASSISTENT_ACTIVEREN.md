@@ -1,14 +1,46 @@
 # CAFA2 Assistent: activering na integratie
 
-Dit is een voorbereidingsdocument. Geen account, productie-instelling, secret of originele bron is door deze overdracht aangemaakt of gewijzigd.
+Bijgewerkt op 25 september 2026. De afzonderlijke testomgeving is op verzoek ingericht. De oorspronkelijke CAFA2-productiesite is niet omgezet.
 
-## Actuele Pages-instelling, alleen gelezen op 24 september 2026
+## Ingerichte testomgeving
 
-Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. De branchdeployments van `d2ccac4`, `7f48f2e`, `4ec7c76` en `8a8bbf7` faalden: Pages voerde `exit 0` uit en kon daarna bij het bundelen van alle vier Functions `../../assistant/server/catalog.generated.mjs` niet vinden. Dat bestand ontstaat pas tijdens de assistentbuild. De branchpreview is dus geen runtimeproef. De productiesite antwoordt wel met HTML, maar bevat de assistentimport niet; `/api/study-status` geeft daar eveneens de statische HTML-fallback in plaats van JSON. De assistent is **niet live**. De globale buildinstelling is niet gewijzigd, omdat die ook toekomstige productiedeployments van `main` raakt.
+De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is via zijn URL openbaar bereikbaar; echte modelaanroepen staan uit.
 
-Voor een gecontroleerde preview zijn nog nodig: build command `node scripts/build-study-assistant.mjs`, uitvoermap `dist`, Node.js 22, een afzonderlijke D1-testdatabase met `assistant/server/schema.sql` en de previewbinding `STUDY_DB`. Houd `STUDY_ASSISTANT_ENABLED=false` totdat de hieronder genoemde serverconfiguratie en proefvragen zijn gecontroleerd. Verifieer na iedere aanpassing dat `GET /api/study-status` JSON teruggeeft.
+| Onderdeel | Ingesteld |
+| --- | --- |
+| Pages-project | `cafa2-assistent-test`, gekoppeld aan `HMA9K/CAFA2` |
+| Branch | `codex/cafa2-assistant-handoff` |
+| Build command | `node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs` |
+| Output / root / Node.js | `dist` / repository-root / `22` |
+| D1 | Aparte database `cafa2-assistent-test`, EU-jurisdictie, binding `STUDY_DB` |
+| Schema | `assistant/server/schema.sql` uitgevoerd; tabel en index bevestigd |
+| Sessieondertekening | `STUDY_SESSION_SECRET` willekeurig gegenereerd en rechtstreeks als Cloudflare-secret opgeslagen; waarde niet in Git of chat |
+| Voorlopig testmodel | `OPENAI_MODEL=gpt-5.4-mini`; accounttoegang en inhoudelijke kwaliteit nog niet getest |
+| Activering | `STUDY_ASSISTANT_ENABLED=false` |
+| Testlimieten | `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20` |
 
-Een duurzame Git-preview vraagt om een eigen Pages-project voor deze branch met die buildinstellingen, of om wijziging van de gedeelde projectbuild zodra `main` dezelfde build kan uitvoeren. Het bestaande project nu naar `dist` omschakelen is onveilig voor `main`, dat de assistentbuild nog niet bevat. Als tijdelijke previewroute kan na een lokale build `node scripts/verify-study-assistant-build.mjs` worden uitgevoerd en daarna vanuit de repository-root `wrangler pages deploy dist --project-name cafa2 --branch codex/cafa2-assistant-handoff`. Dit publiceert uitsluitend een handmatige preview en verhelpt de automatische Git-build niet; het commando is nog niet uitgevoerd. De branchworkflow controleert vanaf de volgende commit de catalogus, vier Functions, routes en de scheiding tussen openbare en privébestanden. De Cloudflare-projectinstelling zelf kan CI niet afdwingen.
+Eerste geslaagde deployment: `7dee8e44-2d47-4cbd-a119-8030bed341a4`, codecommit `c33f83a`. De log bevestigt Node.js 22.22.0, build plus deploycontrole, geslaagde Function-bundeling en publicatie. `/api/study-status` geeft HTTP 200 en JSON met `course: "CAFA2"`, `knowledge.questions: true` en `ready: false`. De assistent herkent in de echte browser vraag 1 en daarna vraag 2. Dit zijn technische controles zonder modelantwoorden.
+
+Het bestaande project `cafa2` behoudt `main`, `exit 0` en output `.`. Alleen de previewbranchselectie is aangepast: include `*`, exclude `codex/cafa2-assistant-handoff`. Daardoor probeert het oude project deze branch niet opnieuw met de verkeerde build te publiceren. Eerdere rode deploymentresultaten blijven historische resultaten. De gewone productiebranch blijft automatisch publiceren.
+
+## De eerstvolgende handmatige stap
+
+Open [de instellingen van de testsite](https://dash.cloudflare.com/6ecb240b5f34272ea699322f846c8158/workers-and-pages/pages/view/cafa2-assistent-test/settings/production). Kies binnen **Production**, onder **Variables and Secrets**, tweemaal **Add** met type **Secret**:
+
+1. `OPENAI_API_KEY`: de sleutel van het eigen OpenAI API-project.
+2. `STUDY_ACCESS_CODE`: een zelfgekozen, unieke toegangscode van minimaal 16 tekens.
+
+Voer de waarden alleen rechtstreeks in Cloudflare in. De modelkeuze en het aparte sessiegeheim staan al klaar. Laat `STUDY_ASSISTANT_ENABLED` voorlopig op `false`. Daarna kan de testsite opnieuw worden gepubliceerd en gecontroleerd worden geactiveerd voor de echte login-, cookie-, D1- en modelproef. Een geslaagde statuscontrole bewijst nog geen modelkwaliteit. Originele documenten vragen daarna nog de broncontrole en volledige indexering hieronder.
+
+De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Beschikbaarheid binnen het eigen API-project moet bij de eerste echte proef worden vastgesteld.
+
+## Achtergrond: oorspronkelijke Pages-fout op 24 september 2026
+
+Het bestaande Cloudflare Pages-project `cafa2` gebruikte productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. De branchdeployments van `d2ccac4`, `7f48f2e`, `4ec7c76`, `8a8bbf7` en `c33f83a` faalden: Pages voerde `exit 0` uit en kon daarna bij het bundelen van alle vier Functions `../../assistant/server/catalog.generated.mjs` niet vinden. Dat bestand ontstaat pas tijdens de assistentbuild. Die mislukte branchpreviews waren geen runtimeproef. De bestaande productiesite bevat de assistent niet. De afzonderlijke testsite hierboven lost de buildfout op zonder de gedeelde buildinstelling van `main` te wijzigen.
+
+De hieronder beschreven build en D1-inrichting zijn voor `cafa2-assistent-test` uitgevoerd. Verifieer na iedere aanpassing dat `GET /api/study-status` JSON teruggeeft.
+
+De gekozen route is een eigen Git-gekoppeld Pages-project. Zet het bestaande project pas naar de assistentbuild en `dist` om nadat `main` die build bevat en productieactivering uitdrukkelijk is afgesproken. De branchworkflow en de build van de testsite controleren catalogus, vier Functions, routes en de scheiding tussen openbare en privébestanden.
 
 ## Eerst integreren en testen
 
@@ -19,7 +51,7 @@ Volg `CAFA2_ASSISTENT_OVERDRACHT.md`. `scripts/prepare-study-assistant.mjs --app
 | Instelling | Gewenste waarde na de gecontroleerde integratie |
 | --- | --- |
 | Framework | None |
-| Build command | node scripts/build-study-assistant.mjs |
+| Build command | node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs |
 | Output directory | dist |
 | Root directory | Bestaande repository-root |
 | Node.js | 22 |

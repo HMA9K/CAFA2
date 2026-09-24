@@ -171,7 +171,7 @@ try:
     close_panel()
 
     catalog=page.evaluate('CafaExams.catalog.map(e=>({id:e.id,first:e.questions[0].id, count:e.questions.length}))')
-    check('All five real full exams are loaded',len(catalog)==5)
+    check('All eleven real full exams are loaded',len(catalog)==11)
     exam_attempts={}
     for item in catalog:
       visit('#welkom/'+item['id']);page.locator('[data-exam-untimed]').check()
