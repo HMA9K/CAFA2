@@ -10,6 +10,7 @@
     "test:study-browser": "python tests/study-upgrade-browser.py",
     "test:refinement-browser": "python tests/study-refinement-browser.py",
     "build:practice": "node scripts/build-exam-frequency.mjs && node scripts/build-practice-topics.mjs",
-    "test:topics-browser": "node tests/practice-topics-browser.mjs"
+    "test:topics-browser": "node tests/practice-topics-browser.mjs",
+    "test:topics-layout": "node tests/topic-layout-browser.mjs"
   }
 }

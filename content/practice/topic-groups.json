@@ -1,0 +1,38 @@
+[
+  {
+    "id": "kapitaalbelangen",
+    "title": "Kapitaalbelangen",
+    "sourceLabel": "Syllabus · deel 1",
+    "topics": ["zeggenschap", "waardering", "goodwill", "reserves", "eigen-aandelen", "consolidatiekader"]
+  },
+  {
+    "id": "vreemde-valuta",
+    "title": "Vreemde valuta",
+    "sourceLabel": "Syllabus · deel 2",
+    "topics": ["functionele-valuta", "tijdstip", "slotkoers"]
+  },
+  {
+    "id": "consolidatie-nvw",
+    "title": "Consolidatie bij nettovermogenswaarde",
+    "sourceLabel": "Syllabus · deel 3",
+    "topics": ["basisconsolidatie", "downstream-nvw", "belastingen", "upstream-nvw"]
+  },
+  {
+    "id": "consolidatie-verkrijgingsprijs",
+    "title": "Consolidatie bij verkrijgingsprijs",
+    "sourceLabel": "Syllabus · deel 3",
+    "topics": ["downstream-vp", "upstream-vp"]
+  },
+  {
+    "id": "proportionele-consolidatie",
+    "title": "Proportionele consolidatie",
+    "sourceLabel": "Syllabus · deel 3",
+    "topics": ["proportioneel"]
+  },
+  {
+    "id": "capita-selecta",
+    "title": "Capita selecta: sidestream en vaste activa",
+    "sourceLabel": "Syllabus · deel 3",
+    "topics": ["sidestream-niet-afnemend", "sidestream-afnemend", "vaste-activa"]
+  }
+]

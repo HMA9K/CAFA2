@@ -14,6 +14,9 @@ const ctx={window:{}};vm.createContext(ctx);
 for(const name of ['config',...Object.values(files)])vm.runInContext(read(`data/${name}.js`),ctx);
 const banks=ctx.window.CAFA2_DATA.modules;
 const topics=json('content/practice/topics.json');
+const topicGroups=json('content/practice/topic-groups.json');
+const groupedTopicIds=topicGroups.flatMap(group=>group.topics);
+if(groupedTopicIds.length!==topics.length||new Set(groupedTopicIds).size!==topics.length||groupedTopicIds.some(id=>!topics.some(topic=>topic.id===id)))throw Error('Elk onderwerp moet precies een keer in de syllabusindeling staan');
 const topicGuidance=json('content/practice/topic-guidance.json');
 const mapping=exists('content/practice/existing-map.json')?json('content/practice/existing-map.json'):[];
 const registry=exists('content/practice/question-registry.json')?json('content/practice/question-registry.json'):{};
@@ -40,7 +43,7 @@ for(const [c,qs]of Object.entries(additions))qs.forEach((q,i)=>{if(q.id!==31+i)t
 write('content/practice/question-registry.json',JSON.stringify(registry,null,2)+'\n');
 const frequency=exists('docs/mc-audit/exam-frequency.json')?json('docs/mc-audit/exam-frequency.json'):{examCount:11,topics:[]};
 const topicData=topics.map(t=>({...t,questions:mapping.filter(m=>m.topicId===t.id).map(m=>m.questionId),frequency:frequency.topics?.find(x=>x.topicId===t.id)||null}));
-write('data/practice-topics.js',`(function(){\nvar additions=${JSON.stringify(additions)};\nObject.keys(additions).forEach(function(code){var bank=window.CAFA2_DATA.modules[code];additions[code].forEach(function(q){q.sources.forEach(function(s,i){bank.sources[q.refs[i]]=s;});bank.questions.push(q);});});\nwindow.CAFA2_TOPICS=${JSON.stringify(topicData)};\nwindow.CAFA2_EXAM_FREQUENCY=${JSON.stringify(frequency)};\n})();\n`);
+write('data/practice-topics.js',`(function(){\nvar additions=${JSON.stringify(additions)};\nObject.keys(additions).forEach(function(code){var bank=window.CAFA2_DATA.modules[code];additions[code].forEach(function(q){q.sources.forEach(function(s,i){bank.sources[q.refs[i]]=s;});bank.questions.push(q);});});\nwindow.CAFA2_TOPICS=${JSON.stringify(topicData)};\nwindow.CAFA2_TOPIC_GROUPS=${JSON.stringify(topicGroups)};\nwindow.CAFA2_EXAM_FREQUENCY=${JSON.stringify(frequency)};\n})();\n`);
 
 function table(t){return `<div class="table-wrap"><table>${t.caption?`<caption>${esc(t.caption)}</caption>`:''}<thead><tr>${t.headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
 function option(o){return o.table?table(o.table):`<p class="option-text">${esc(o.text)}</p>`;}
