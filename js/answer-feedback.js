@@ -43,7 +43,12 @@
       each('.feedback-part', feedback, function (part) {
         part.hidden = !selected || !part.classList.contains('for-' + selected.value);
       });
-      each('.correct-model', feedback, function (model) { model.hidden = !selected; });
+      var correct = selected && feedback.querySelector('.feedback-part.for-' + selected.value + '.good');
+      each('.correct-model', feedback, function (model) {
+        model.hidden = !selected;
+        // The selected option already shows the answer. Keep its explanation below it.
+        each(':scope > .model-caption, :scope > .option-content', model, function (answer) { answer.hidden = !!correct; });
+      });
       each('.no-choice', feedback, function (notice) { notice.hidden = !!selected; });
       var option = selected && question.querySelector('.option[data-option="' + selected.value + '"]');
       if (option) option.insertAdjacentElement('afterend', feedback);
@@ -211,7 +216,7 @@
         if (correct) {
           var good = answer.optionId === q.correctOptionId;
           textLine(box, good ? 'Goed' : 'Niet goed', 'cafa-feedback-verdict ' + (good ? 'is-good' : 'is-bad'));
-          textLine(box, 'Juiste antwoord: ' + correct.text);
+          if (!good) textLine(box, 'Juiste antwoord: ' + correct.text);
         } else { textLine(box, 'Vergelijk je antwoord met het antwoordmodel.'); }
         examModel(context, box);
       }
