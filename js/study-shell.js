@@ -101,7 +101,9 @@
     var hasOrigin=nav.origin && localURL(nav.origin.url) && !same(nav.origin,cur) && !cur.question;
     var top=nav.stack[nav.stack.length-1];
     var onQuestion=!!cur.question || !!document.querySelector('.question:target');
-    questionLinks.hidden=!onQuestion;
+    var onResults=/^#(?:resultaat-(?:kap|val|nvw|hk)$|onderwerp-(?:resultaat|overzicht)-|resultaten$|inzage\/|mc-inzage\/)/.test(location.hash);
+    questionLinks.hidden=!(onQuestion||onResults);
+    bar.classList.toggle('has-result-links',onResults);
     back.hidden = onQuestion || !top || same(top,cur);
     originButton.hidden = onQuestion || !hasOrigin;
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
