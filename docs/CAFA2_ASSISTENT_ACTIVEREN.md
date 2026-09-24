@@ -21,7 +21,11 @@ De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch
 
 Eerste geslaagde deployment: `7dee8e44-2d47-4cbd-a119-8030bed341a4`, codecommit `c33f83a`. De log bevestigt Node.js 22.22.0, build plus deploycontrole, geslaagde Function-bundeling en publicatie. `/api/study-status` geeft HTTP 200 en JSON met `course: "CAFA2"`, `knowledge.questions: true` en `ready: false`. De assistent herkent in de echte browser vraag 1 en daarna vraag 2. Dit zijn technische controles zonder modelantwoorden.
 
+Na synchronisatie met `main` tot `1a44e3a` volgden geslaagde automatische deployments van `b5883d8` en `b6bc210`. De laatste is `bc07d611-688e-4fe7-afd1-4deb99207a51`. Deze versie bevat elf volledige tentamens en 282 echte tentamenvragen. De drie POST-routes geven correct 503/JSON met `not_configured` zolang de dienst uitstaat. Ook de context van het nieuw toegevoegde tentamen uit april 2021 is online gecontroleerd.
+
 Het bestaande project `cafa2` behoudt `main`, `exit 0` en output `.`. Alleen de previewbranchselectie is aangepast: include `*`, exclude `codex/cafa2-assistant-handoff`. Daardoor probeert het oude project deze branch niet opnieuw met de verkeerde build te publiceren. Eerdere rode deploymentresultaten blijven historische resultaten. De gewone productiebranch blijft automatisch publiceren.
+
+Bij beide vervolgpushes is op het oude project `is_skipped=true` bevestigd. De bestaande productiedeployment `8022ca96-d53c-4a28-a5df-90b0c660b8d1` bleef actief. Deze controle bevestigt ook de werking van de branchuitsluiting, niet alleen de opgeslagen instelling.
 
 ## De eerstvolgende handmatige stap
 

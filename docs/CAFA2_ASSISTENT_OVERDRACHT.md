@@ -8,6 +8,8 @@ Op verzoek is [cafa2-assistent-test.pages.dev](https://cafa2-assistent-test.page
 
 Een afzonderlijke D1-testdatabase met EU-jurisdictie, schema, binding en willekeurig sessiegeheim staat klaar. Het voorlopige testmodel is `gpt-5.4-mini`; modelkwaliteit en accounttoegang zijn nog niet getest. `STUDY_ASSISTANT_ENABLED=false`. Alleen `OPENAI_API_KEY` en `STUDY_ACCESS_CODE` moeten voor de eerste modelproef nog rechtstreeks als secrets in Cloudflare worden ingevuld. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md) voor de korte handmatige stap.
 
+De actuele gepubliceerde codecommit is `b6bc210`, testdeployment `bc07d611-688e-4fe7-afd1-4deb99207a51`. Beide GitHub Actions-workflows zijn geslaagd: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36071283868) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36071288614). De afsluitende documentatiecommit publiceert geen nieuwe code.
+
 Op het bestaande project `cafa2` is uitsluitend deze werkbranch uitgesloten van automatische previews, zodat de oude `exit 0`-fout zich daar niet herhaalt bij een volgende push. De bestaande productiebuild en website volgen nog `main`. Niets is naar `main` gemerged. De repetitiecursus en andere originele documenten zijn nog niet extern geïndexeerd. De eerdere lokale/CI-browserantwoorden waren gesimuleerd; de nieuwe online controle test alleen de uitgezette dienst en echte vraagcontext.
 
 Na de eerste publicatie zijn de wijzigingen van `main` tot en met `1a44e3a` in de werkbranch opgenomen. Alle elf volledige tentamens staan nu in de catalogus: 282 echte tentamenvragen, 3 demovragen en 247 oefenvragen. De nieuwe onderwerpindeling en onafhankelijk scrollende tentamencasus blijven behouden. Het importconflict in `index.html` is opgelost met de actuele scripts plus de assistentmodule. De synthetische opgavereekstests zijn aangepast aan de expliciete bronindeling; een nieuwe regressie controleert alle 282 bronvragen in de vier onderwerpseries, inclusief eigen antwoorden en canonieke revisies. Lokaal slagen 74 Node-tests, de bestaande regressies, build/deploycontrole en 115 browsercontroles per engine in Chromium en WebKit, met gesimuleerde antwoorden.
@@ -119,7 +121,7 @@ De inmiddels aan `main` toegevoegde oefenreeks per tentamenopgave gebruikt samen
 
 Een routewissel controleert de actuele vraag ook wanneer een modelantwoord sneller terugkomt dan de vertraagde schermverversing. Op mobiel staat de zwevende assistentknop boven de vaste tentamenbalk. Bij een geopende rekenmachine is de assistent vanuit de rekenmachinekop bereikbaar. De server begrenst ook de modelrespons, verwerkt onvolledige en ongeldige antwoorden expliciet en geeft bij quota de werkelijke wachttijd terug. Nieuwe regressietests dekken deze fouten.
 
-## Nog nodig voor een echte preview en modelproef
+## Nog nodig voor een echte modelproef
 
 1. De afzonderlijke testsite, build en D1 zijn ingericht. Laat de twee resterende secrets rechtstreeks in Cloudflare invoeren volgens [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md), publiceer opnieuw en activeer alleen de testsite voor de echte proef.
 2. Controleer toegang tot het voorlopige Responses-model `gpt-5.4-mini` en voer een kleine, traceerbare reeks echte vragen uit. Beoordeel hints, expliciete volledige uitwerkingen, onjuiste aannames over antwoordletters, bedragherleiding, ontbrekende antwoordmodellen en vervolgvragen. De automatische tests gebruiken uitsluitend testreacties. De uitvoerlimiet van 1.800 tokens en het tekstgebaseerde gesprek verdienen daarbij aparte aandacht.
