@@ -33,8 +33,9 @@ const server = http.createServer((req, res) => {
       assert.equal(await page.locator('a[href="#welkom/opgaven"]').count(), 2);
       await page.locator('a[href="#welkom/opgaven"]').first().click();
       await page.locator('[data-opgave-exam]').first().waitFor();
-      assert.equal(await page.locator('[data-opgave-exam]').count(), 5);
-      assert.match(await page.locator('[data-opgave-summary]').innerText(), /5 tentamens geselecteerd · 39 vragen/);
+      assert.equal(await page.locator('[data-opgave-exam]').count(), 11);
+      const allCount = Number((await page.locator('[data-opgave-summary]').innerText()).match(/11 tentamens geselecteerd · (\d+) vragen/)?.[1]);
+      assert.equal(allCount, 85, 'Opgave 1 bevat 85 vragen uit elf tentamens.');
       await page.locator('[data-exam-action="start-opgave"]').click();
       await page.locator('body.exam-running').waitFor();
       assert.ok(await page.locator('.study-exam-link').count(), 'De bronvraag houdt haar link naar de uitleg.');
@@ -44,16 +45,27 @@ const server = http.createServer((req, res) => {
       await page.locator('#exam-info-dialog [data-close-info]').last().click();
       await page.locator('[data-exam-action="overview"]').click();
       await page.locator('#exam-info-dialog.compact-overview-dialog').waitFor();
-      assert.equal(await page.locator('.compact-overview-group h3').count(), 5);
-      assert.equal(await page.locator('.compact-overview-group .compact-overview-item').count(), 39);
+      assert.equal(await page.locator('.compact-overview-group h3').count(), 11);
+      assert.equal(await page.locator('.compact-overview-group .compact-overview-item').count(), allCount);
       await page.screenshot({ path: path.join(output, 'overview-all-' + width + '.png') });
+      assert.equal(await page.locator('.compact-overview-group h3').last().innerText(), 'Examen 20210419');
+      await page.locator('.compact-overview-group').last().locator('[data-exam-index]').first().click();
+      assert.match(await page.locator('.exam-question-top').innerText(), /20210419/);
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+        'Een oudere casus mag de pagina opzij drukken.');
+      await page.screenshot({ path: path.join(output, 'oldest-question-' + width + '.png') });
+      await page.locator('[data-exam-action="introduction"]').click();
+      assert.match(await page.locator('#exam-info-title').innerText(), /Examen 20210419/);
+      assert.match(await page.locator('#exam-info-dialog .exam-modal-body').innerText(), /Algemene uitgangspunten alle opgaven in dit tentamen/);
       await page.locator('#exam-info-dialog [data-close-info]').last().click();
       await page.goto(base + (width === 1366 ? '/index.html#welkom/opgaven' : '/#welkom/opgaven'));
       await page.locator('[data-opgave-exam]').first().waitFor();
       await page.locator('[name="opgave-number"][value="3"]').check();
-      assert.match(await page.locator('[data-opgave-summary]').innerText(), /5 tentamens geselecteerd · 36 vragen/);
-      await page.locator('[data-opgave-exam][value="cafa2-20260429"]').uncheck();
-      await page.locator('[data-opgave-exam][value="cafa2-20250417"]').uncheck();
+      assert.match(await page.locator('[data-opgave-summary]').innerText(), /11 tentamens geselecteerd · 64 vragen/);
+      const keep = new Set(['cafa2-20250924', 'cafa2-20240930', 'cafa2-20240422']);
+      for (const input of await page.locator('[data-opgave-exam]').all()) {
+        if (!keep.has(await input.inputValue())) await input.uncheck();
+      }
       assert.match(await page.locator('[data-opgave-summary]').innerText(), /3 tentamens geselecteerd · 22 vragen/);
       await page.screenshot({ path: path.join(output, 'intro-' + width + '.png'), fullPage: true });
       await page.locator('[data-exam-action="start-opgave"]').click();

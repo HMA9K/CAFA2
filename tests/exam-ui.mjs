@@ -499,7 +499,7 @@ try {
   const april=formatted.window.CAFA2_EXAMS.find(e=>e.id==='cafa2-20260429');
   const model=render(april,'solution',april.questions[0].solutionHtml);
   assert.match(model,/colspan="2"/);assert.match(model,/exam-source-points/);assert.match(model,/exam-source-total/);
-  console.log('Source formatting: 5 covers, 20 sections, 131 questions and models retain all text; logo, letter lists, red grading and reconciliation spans passed.');
+  console.log('Source formatting: 11 covers, 44 sections, 282 questions and models retain all text; logo, letter lists, red grading and reconciliation spans passed.');
   console.log('Exam UI: welcome, untimed MC, +30 minutes, sections, navigation, autosave/reload, timer, expiry, read-only review, completion and backup passed.');
 } finally {
   windows.forEach(window => window.close());

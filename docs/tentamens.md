@@ -2,23 +2,35 @@
 
 ## Opgenomen bronbestanden
 
+- `2021-04 CAFA2 - Tentamen.docx` en `2021-04 CAFA2 - Uitwerking tentamen.pdf`
+- `2021-10 CAFA2 - Tentamen.pdf` en `2021-10 CAFA2 - Uitwerking tentamen.pdf`
+- `2022-04 CAFA2 - Tentamen.pdf` en `2022-04 CAFA2 - Uitwerking tentamen.pdf`
+- `2022-10 CAFA2 - Tentamen.pdf` en `2022-10 CAFA2 - Uitwerking tentamen.pdf`
+- `20230411 Tentamen CAFA2.pdf` en `20230411 Uitwerking tentamen CAFA2.pdf`
+- `20231009 Tentamen CAFA2.pdf` en `20231009 Uitwerking tentamen CAFA2.pdf`
 - `20240422 Tentamen CAFA2.pdf` en `20240422 Uitwerking tentamen CAFA2.pdf`
 - `20240930 Tentamen CAFA2.pdf` en `20240930 Uitwerking tentamen CAFA2.pdf`
 - `20250417 Tentamen CAFA2.pdf` en `20250417 Uitwerking tentamen CAFA2.pdf`
 - `20250924 Tentamen CAFA2.pdf` en `20250924 Uitwerking tentamen CAFA2 (na normering).pdf`
 - `20260429 Tentamen CAFA2 def 2 (1).pdf` en `20260429 Uitwerking Tentamen CAFA2 (1).pdf`
 
-Alle vijf voorbladen vermelden 180 minuten, 100 punten en een grens van 54/55 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
+De elf voorbladen vermelden 180 minuten en 100 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
 
 | Tentamen | Vragen | Opgaven | Punten |
 |---|---:|---:|---:|
+| 19-04-2021 | 28 | 4 | 100 |
+| 06-10-2021 | 23 | 4 | 100 |
+| 11-04-2022 | 24 | 4 | 100 |
+| 06-10-2022 | 26 | 4 | 100 |
+| 11-04-2023 | 25 | 4 | 100 |
+| 09-10-2023 | 25 | 4 | 100 |
 | 22-04-2024 | 24 | 4 | 100 |
 | 30-09-2024 | 25 | 4 | 100 |
 | 17-04-2025 | 28 | 4 | 100 |
 | 24-09-2025 | 31 | 4 | 100 |
 | 29-04-2026 | 23 | 4 | 100 |
 
-Er zijn 131 tentamenvragen en daarnaast 120 aparte MC-oefenvragen. Bij 24-09-2025 is de doorlopende nummering uit het officiële antwoordmodel gevolgd, met behoud van de papieren bronnummering. In de andere tentamens staat de oorspronkelijke vraagnummering eveneens bij de vraag.
+Er zijn 282 tentamenvragen en daarnaast 120 oorspronkelijke MC-oefenvragen. Bij 24-09-2025 is de doorlopende nummering uit het officiële antwoordmodel gevolgd, met behoud van de papieren bronnummering. Bij oudere tentamens waar de vraag- en antwoordnummering verschilt, blijft de papieren bronnummering herkenbaar bij de vraag.
 
 ## Bediening
 
@@ -26,7 +38,7 @@ Het dashboard opent met **Aankomend**: de ongetimede MC-oefenvragen en beschikba
 
 ### Tentamenvragen per opgave
 
-Direct onder de MC-oefenvragen staat een oefenreeks per opgave. Op de introductiepagina kiest de gebruiker Opgave 1, 2, 3 of 4 en vervolgens de gewenste tentamendata. Standaard zijn alle vijf de tentamens geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De aantallen voor alle vijf samen zijn 39, 28, 36 en 28 vragen voor respectievelijk Opgave 1 tot en met 4.
+Direct onder de MC-oefenvragen staat een oefenreeks per opgave. Op de introductiepagina kiest de gebruiker Opgave 1, 2, 3 of 4 en vervolgens de gewenste tentamendata. Alle elf de tentamens zijn afzonderlijk te kiezen en standaard geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De aantallen voor alle elf samen zijn 85, 70, 64 en 63 vragen voor respectievelijk Opgave 1 tot en met 4. In oudere tentamens kan hetzelfde opgavenummer een ander onderwerp behandelen; de selectie volgt het oorspronkelijke opgavenummer.
 
 Elk oorspronkelijk voorblad met algemene uitgangspunten, elke broncasus, vraag, uitwerking en puntwaarde blijft intact. Tijdens een vraag opent **Introductie** het voorblad van het bijbehorende tentamen. De samengestelde poging krijgt unieke vraag- en sectie-ID's, met de oorspronkelijke ID en examencode als bronmetadata. Antwoorden op gelijk genummerde vragen uit verschillende tentamens blijven daardoor gescheiden. Het vraagoverzicht gebruikt dezelfde vraagknoppen, met een kleine examencode boven elke groep. Lopende en voltooide reeksen blijven als afzonderlijke pogingen in de bestaande lokale tentamenopslag bewaard.
 

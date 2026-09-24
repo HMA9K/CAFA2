@@ -28,7 +28,8 @@
     if (examIds.some(function (id) { return !eligible.some(function (exam) { return exam.id === id; }); })) {
       throw new RangeError('Een gekozen tentamen heeft deze opgave niet.');
     }
-    var selected = eligible.filter(function (exam) { return examIds.includes(exam.id); });
+    var selected = eligible.filter(function (exam) { return examIds.includes(exam.id); })
+      .sort(function (a, b) { return b.date.localeCompare(a.date); });
     var sections = [], questions = [];
     selected.forEach(function (exam) {
       var sourceSection = exam.sections.find(function (section) { return section.id === 'opgave-' + number; });
