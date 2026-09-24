@@ -37,11 +37,16 @@ jobs:
       - name: Install browser-test dependencies
         run: |
           pip install playwright==1.57.0
-          python -m playwright install --with-deps chromium
-      - name: Real interface with mocked answer service
+          python -m playwright install --with-deps chromium webkit
+      - name: Real interface with mocked answer service in Chromium
         env:
-          ASSISTANT_QA_OUT: /tmp/assistant-qa/browser
-        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser.log
+          ASSISTANT_QA_OUT: /tmp/assistant-qa/chromium
+        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser-chromium.log
+      - name: Real interface with mocked answer service in WebKit
+        env:
+          ASSISTANT_BROWSER: webkit
+          ASSISTANT_QA_OUT: /tmp/assistant-qa/webkit
+        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser-webkit.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:

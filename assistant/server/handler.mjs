@@ -3,7 +3,7 @@ import {refKey,COURSES} from '../../js/study-assistant-schema.mjs';
 const COOKIE='__Host-study_session';
 const TTL=8*60*60;
 const encode=new TextEncoder();
-export class HttpError extends Error {constructor(status,message,code='request_error'){super(message);this.status=status;this.code=code;}}
+export class HttpError extends Error {constructor(status,message,code='request_error',retryAfter){super(message);this.status=status;this.code=code;this.retryAfter=retryAfter;}}
 function json(value,status=200,extra={}) {return new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer',...extra}});}
 function config(env) {
   return env.STUDY_ASSISTANT_ENABLED==='true' && typeof env.OPENAI_API_KEY==='string' && env.OPENAI_API_KEY.length>10
@@ -27,6 +27,17 @@ async function boundedJSON(request,max) {
   let body;try{body=JSON.parse(new TextDecoder().decode(bytes));}catch{throw new HttpError(400,'Ongeldige JSON.');}
   if(!body || Array.isArray(body) || typeof body!=='object')throw new HttpError(400,'Ongeldig verzoek.');return body;
 }
+async function modelJSON(response) {
+  // The provider response is external input too; do not buffer it without a bound in a Worker.
+  const max=1_000_000;
+  if(Number(response.headers.get('Content-Length'))>max)throw new HttpError(502,'De modeldienst gaf een te groot antwoord.','model_service');
+  const reader=response.body?.getReader();if(!reader)throw new HttpError(502,'De modeldienst gaf geen leesbaar antwoord.','model_service');
+  const decoder=new TextDecoder();let data='',size=0;
+  while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;
+    if(size>max){await reader.cancel();throw new HttpError(502,'De modeldienst gaf een te groot antwoord.','model_service');}
+    data+=decoder.decode(value,{stream:true});}
+  try{return JSON.parse(data+decoder.decode());}catch{throw new HttpError(502,'De modeldienst gaf geen leesbaar antwoord.','model_service');}
+}
 async function digest(secret,text) {
   const key=await crypto.subtle.importKey('raw',encode.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   return [...new Uint8Array(await crypto.subtle.sign('HMAC',key,encode.encode(text)))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -42,10 +53,10 @@ async function session(request,env,course,now) {
   if(!equal(await digest(env.STUDY_SESSION_SECRET,payload),sig))return null;
   try {const s=JSON.parse(unb64(payload));return s.v===1 && s.course===course && /^[\w-]{20,50}$/.test(s.id) && s.exp>Math.floor(now/1000) && s.exp<=Math.floor(now/1000)+TTL+30?s:null;}catch{return null;}
 }
-export async function consume(db,bucket,limit,expires) {
+export async function consume(db,bucket,limit,expires,retryAfter=60) {
   const row=await db.prepare('INSERT INTO study_limits (bucket, used, expires) VALUES (?1, 1, ?2) ON CONFLICT(bucket) DO UPDATE SET used = study_limits.used + 1 WHERE study_limits.used < ?3 RETURNING used')
     .bind(bucket,expires,limit).first();
-  if(!row)throw new HttpError(429,'De gebruikslimiet is bereikt. Probeer het later opnieuw.','rate_limit');
+  if(!row)throw new HttpError(429,'De gebruikslimiet is bereikt. Probeer het later opnieuw.','rate_limit',retryAfter);
 }
 function boundedInt(value,fallback,min,max) {const n=Number(value);return Number.isInteger(n)&&n>=min&&n<=max?n:fallback;}
 async function quota(env,request,sid,now,kind) {
@@ -53,10 +64,11 @@ async function quota(env,request,sid,now,kind) {
   if(!ip)throw new HttpError(503,'De beveiligde serververbinding ontbreekt.','proxy_required');
   const fingerprint=(await digest(env.STUDY_SESSION_SECRET,ip)).slice(0,32);
   const day=Math.floor(now/86400000),minute=Math.floor(now/60000),expires=now+172800000;
-  if(kind==='login')return consume(env.STUDY_DB,`login:${fingerprint}:${Math.floor(now/900000)}`,8,expires);
-  await consume(env.STUDY_DB,`minute:${sid}:${minute}`,6,expires);
-  await consume(env.STUDY_DB,`ip:${fingerprint}:${day}`,boundedInt(env.STUDY_IP_DAILY_LIMIT,60,1,500),expires);
-  await consume(env.STUDY_DB,`global:${day}`,boundedInt(env.STUDY_DAILY_LIMIT,200,1,5000),expires);
+  const remaining=period=>Math.ceil(((Math.floor(now/period)+1)*period-now)/1000);
+  if(kind==='login')return consume(env.STUDY_DB,`login:${fingerprint}:${Math.floor(now/900000)}`,8,expires,remaining(900000));
+  await consume(env.STUDY_DB,`minute:${sid}:${minute}`,6,expires,remaining(60000));
+  await consume(env.STUDY_DB,`ip:${fingerprint}:${day}`,boundedInt(env.STUDY_IP_DAILY_LIMIT,60,1,500),expires,remaining(86400000));
+  await consume(env.STUDY_DB,`global:${day}`,boundedInt(env.STUDY_DAILY_LIMIT,200,1,5000),expires,remaining(86400000));
 }
 function checkedPayload(body,catalog) {
   let key;try{key=refKey(body.ref);}catch{throw new HttpError(400,'Ongeldige vraagverwijzing.');}
@@ -98,6 +110,8 @@ Dit is een oefenomgeving, GEEN beveiligde examenafname. Alle leerlingen mogen de
 Bij een algemene hulpvraag zoals 'Hoe begin ik?' of 'Ik snap dit niet': geef eerst een gerichte hint of uitleg, zonder ongevraagd de hele oplossing te geven.
 Bij een expliciete vraag om het antwoord, eindbedrag, antwoordletter, journaalpost, volledige berekening of uitwerking: geef dat DIRECT met de relevante toelichting. Dit geldt ook in de hintstand.
 Bij antwoordgerichte vragen zoals 'Waarom is B goed?', 'Waar komt dit bedrag in de uitwerking vandaan?', 'Waarom is mijn antwoord fout?' of 'Leg het antwoord uit': bespreek onmiddellijk het antwoordmodel en de bedoelde stap. Laat de leerling niet eerst zelf proberen, inleveren, nakijken, bevestigen of van stand wisselen.
+Controleer bij meerkeuze eerst de canonieke juiste optie voordat je een genoemde antwoordletter bevestigt. Een getal in review.correct is een nulgebaseerde index: 0=A, 1=B. Bij een optie-ID zoek je de bijbehorende optie op. Corrigeer een onjuiste aanname zoals 'B is goed' uitdrukkelijk.
+Herleid een gevraagd bedrag uit de uitwerking tot de relevante casusbedragen, percentages en eventuele eerdere deelstappen. Reken de stap na; meld het als daarvoor gegevens ontbreken.
 Als de leerling specifiek om alleen een hint of geen spoilers vraagt: respecteer dat, ook als eerder het antwoord is besproken. Houd bij vervolgvragen dezelfde vraagcontext vast.
 Als een antwoordmodel ontbreekt of intern tegenstrijdig is, benoem dit; presenteer geen verzonnen uitwerking als officieel. Een eigen berekening moet duidelijk als afleiding herkenbaar zijn.
 ${mode==='hint'?'De gekozen voorkeursstijl is begeleidende hulp. De concrete leervraag bepaalt of direct antwoordgerichte uitleg nodig is.':'De gekozen voorkeursstijl is antwoord en uitleg. Geef de gevraagde uitwerking direct, tenzij de leerling nu uitdrukkelijk alleen een hint wil.'}
@@ -110,11 +124,13 @@ Schrijf leesbaar met korte alinea's. Gebruik Markdown-tabellen voor berekeningen
   return request;
 }
 function parseModelResponse(data,record,mode) {
+  if(!data || !['completed','incomplete'].includes(data.status) || !Array.isArray(data.output))
+    throw new HttpError(502,'De modeldienst gaf geen afgerond antwoord. Probeer het opnieuw.','model_service');
   const texts=[],citations=[];
-  for(const item of data.output || [])if(item.type==='message')for(const block of item.content || []) {
-    if(block.type==='output_text')texts.push(block.text||'');
-    if(block.type==='refusal')texts.push(block.refusal||'Deze vraag kan niet worden beantwoord.');
-    for(const a of block.annotations||[])if(a.type==='file_citation'&&typeof a.filename==='string')citations.push({label:a.filename,kind:'retrieved'});
+  for(const item of data.output)if(item?.type==='message')for(const block of Array.isArray(item.content)?item.content:[]) {
+    if(block?.type==='output_text'&&typeof block.text==='string')texts.push(block.text);
+    if(block?.type==='refusal')texts.push(typeof block.refusal==='string'?block.refusal:'Deze vraag kan niet worden beantwoord.');
+    for(const a of Array.isArray(block?.annotations)?block.annotations:[])if(a?.type==='file_citation'&&typeof a.filename==='string')citations.push({label:a.filename,kind:'retrieved'});
   }
   const answer=texts.join('\n\n').replace(/[^]*/g,'').trim();
   if(!answer)throw new HttpError(502,'Er kwam geen antwoord terug. Probeer een kortere vraag.','empty_response');
@@ -152,14 +168,16 @@ export async function handle(context,catalog,dependencies={}) {
     const controller=new AbortController();const cancel=()=>controller.abort();request.signal.addEventListener('abort',cancel,{once:true});
     const timer=setTimeout(cancel,40000);
     try {
+      if(request.signal.aborted)controller.abort();
+      if(controller.signal.aborted)throw new HttpError(504,'Het verzoek is gestopt. Stel de vraag opnieuw.','timeout');
       const upstream=await call('https://api.openai.com/v1/responses',{method:'POST',signal:controller.signal,
         headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.OPENAI_API_KEY}`},body:JSON.stringify(modelBody)});
       if(!upstream.ok)throw new HttpError(upstream.status===429?429:502,upstream.status===429?'De modeldienst heeft tijdelijk geen capaciteit of API-tegoed. Probeer het later opnieuw.':'De modeldienst kon de vraag niet verwerken. De beheerder kan de API-instelling controleren.','model_service');
-      return json(parseModelResponse(await upstream.json(),payload.record,payload.mode));
+      return json(parseModelResponse(await modelJSON(upstream),payload.record,payload.mode));
     }catch(error){if(controller.signal.aborted)throw new HttpError(504,'Het antwoord duurde te lang of het verzoek is gestopt. Probeer een kortere vraag.','timeout');throw error;}
     finally {clearTimeout(timer);request.signal.removeEventListener('abort',cancel);}
   }catch(error) {
-    if(error instanceof HttpError)return json({error:error.message,code:error.code},error.status,error.status===429?{'Retry-After':'60'}:{});
+    if(error instanceof HttpError)return json({error:error.message,code:error.code},error.status,error.status===429?{'Retry-After':String(error.retryAfter??60)}:{});
     // Do not log or echo the API key, prompt, student answer, code or provider error body.
     return json({error:'De assistent kon dit verzoek niet afronden. Je tentamenantwoord is niet gewijzigd.',code:'server_error'},500);
   }

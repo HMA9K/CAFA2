@@ -31,6 +31,9 @@ export function publicOption(value) {
   return Object.fromEntries(Object.entries(value).filter(([k]) => !privateOptionKeys.test(k))
     .map(([k,v]) => [k,publicOption(v)]));
 }
+function labelledOptions(options) {
+  return options.map((option,index) => ({...publicOption(option),choiceIndex:index,letter:String.fromCharCode(65+index)}));
+}
 export function refKey(ref) {
   if (!ref || !COURSES.includes(ref.course) || !['practice','exam'].includes(ref.kind)) throw new Error('Ongeldige vraagverwijzing.');
   if (![ref.bankId,ref.questionId].every(v => typeof v === 'string' && /^[\w.-]{1,120}$/.test(v))) throw new Error('Ongeldig vraag-ID.');
@@ -50,10 +53,14 @@ export function normalizePractice(course, code, bank, q) {
     ref, title:plain(q.title), subject:plain(bank.title), number:q.id, type:plain(q.type || 'open'),
     prompt:plain(q.task || q.promptHtml || q.prompt), caseText:plain(q.intro || ''),
     facts:cleanData(q.facts || []), caseTables:cleanData(q.caseTables || []),
-    options:(q.options || []).map(publicOption), references:sources(refs)
+    options:labelledOptions(q.options || []), references:sources(refs),
+    answerColumns:(q.options || []).some(option => Array.isArray(option.journal))
+      ? ['Grootboekrekening','Debet (€)','Credit (€)'] : []
   };
   if (!context.prompt) throw new Error(`Vraag zonder vraagtekst: ${refKey(ref)}`);
-  return {ref,context,review:{correct:q.correct ?? null, explanation:cleanData(q.explanation || []),
+  return {ref,context,review:{correct:q.correct ?? null,
+    correctLetter:Number.isInteger(q.correct) ? String.fromCharCode(65+q.correct) : null,
+    explanation:cleanData(q.explanation || []),
     pattern:cleanData(q.pattern || ''), guidance:cleanData(q.guidance || {}),
     optionFeedback:(q.options || []).map((o,i) => ({index:i,why:plain(o?.why || '')})),
     solution:cleanData(q.solutionHtml || q.solution || q.answerModel || '')}};
@@ -62,13 +69,27 @@ export function normalizeExam(course, exam, q) {
   const ref = {course,kind:'exam',bankId:exam.id,questionId:String(q.id)};
   const section = (exam.sections || []).find(s => s.id === q.sectionId);
   if (q.sectionId && !section) throw new Error(`Casus ontbreekt: ${refKey(ref)}`);
+  const questionIndex=(exam.questions || []).indexOf(q);
+  const prompt=plain(q.promptHtml || q.prompt);
+  const referencedNumbers=[...prompt.matchAll(/\bvraag\s+(\d+)\b/gi)]
+    .filter(match => !/\boorspronkelijke\s*$/i.test(prompt.slice(Math.max(0,match.index-20),match.index)))
+    .map(match => Number(match[1]));
+  const referencedSolutions=[...new Set(referencedNumbers)].map(number =>
+    (exam.questions || []).slice(0,questionIndex).find(previous =>
+      previous.sectionId===q.sectionId && (previous.number===number || previous.originalNumber===number)))
+    .filter(Boolean).map(previous => ({id:previous.id,number:previous.originalNumber ?? previous.number,
+      prompt:plain(previous.promptHtml || previous.prompt),
+      solution:plain(previous.solutionHtml || previous.solution || previous.answerModel || previous.modelAnswer || '')}));
   const context = {ref,title:plain(q.title || `Vraag ${q.number || q.id}`),subject:plain(section?.title || exam.title),
     date:exam.date || '',number:q.originalNumber ?? q.number,type:plain(q.type || 'open'),
-    prompt:plain(q.promptHtml || q.prompt), caseText:plain(section?.contentHtml || section?.content || ''),
+    prompt, caseText:plain(section?.contentHtml || section?.content || ''),
     examInstructions:plain(exam.introductionHtml || exam.introduction || ''),
     relatedQuestions:(exam.questions || []).filter(x => x.sectionId === q.sectionId && x.id !== q.id)
       .map(x => ({id:x.id,number:x.originalNumber ?? x.number,prompt:plain(x.promptHtml || x.prompt)})),
-    options:(q.options || []).map(publicOption), references:sources(exam.sources).filter(s => s.kind !== 'model-answers')};
+    referencedSolutions,
+    options:labelledOptions(q.options || []), references:sources(exam.sources).filter(s => s.kind !== 'model-answers'),
+    answerColumns:q.type==='open' && /journaalpost|eliminatieboeking|correctieboeking/i.test(prompt)
+      ? ['Omschrijving grootboekrekening','Debet','Credit','Ruimte voor eventuele toelichting'] : []};
   if (!context.prompt) throw new Error(`Vraag zonder vraagtekst: ${refKey(ref)}`);
   return {ref,context,review:{solution:plain(q.solutionHtml || q.solution || q.answerModel || q.modelAnswer || ''),
     correct:q.correctOptionId ?? q.correctAnswer ?? q.correct ?? null, rubric:cleanData(q.rubric || ''),

@@ -2,6 +2,12 @@
 
 Dit is een voorbereidingsdocument. Geen account, productie-instelling, secret of originele bron is door deze overdracht aangemaakt of gewijzigd.
 
+## Actuele Pages-instelling, alleen gelezen op 24 september 2026
+
+Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. De branchpreview is daarmee nog geen runtimeproef van de assistent. De globale buildinstelling is bewust niet gewijzigd: die wijziging zou ook toekomstige productiedeployments raken.
+
+Voor een gecontroleerde preview zijn nog nodig: build command `node scripts/build-study-assistant.mjs`, uitvoermap `dist`, Node.js 22, een afzonderlijke D1-testdatabase met `assistant/server/schema.sql` en de previewbinding `STUDY_DB`. Houd `STUDY_ASSISTANT_ENABLED=false` totdat de hieronder genoemde serverconfiguratie en proefvragen zijn gecontroleerd. Verifieer na iedere aanpassing dat `GET /api/study-status` JSON teruggeeft.
+
 ## Eerst integreren en testen
 
 Volg `CAFA2_ASSISTENT_OVERDRACHT.md`. `scripts/prepare-study-assistant.mjs --apply` voegt de frontendimports toe en kopieert de endpointtemplates naar `functions/api/`. De imports in de templates zijn bedoeld voor die uiteindelijke locatie. De build maakt de benodigde servercatalogus en dist.
@@ -43,6 +49,26 @@ Plaats secrets alleen in de daarvoor bedoelde beveiligde runtime-instellingen. G
 ## Originele bronnen
 
 Er zijn nog geen oorspronkelijke syllabi, slides of tentamen-PDF's voor deze assistent geüpload. De huidige catalogus gebruikt de bestaande vraagdata en bijbehorende uitwerkingen uit deze repository.
+
+In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maar **niet geïndexeerd of geüpload**:
+
+| Bronset | Aangetroffen bestanden | Nog nodig voor koppeling |
+| --- | --- | --- |
+| Syllabus 2026 | `2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf`, `2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf`, `2026 Syllabus CAFA2 Deel 3 Consolideren.pdf` | Toestemming voor upload naar uitsluitend een CAFA2-store; controle van tekst en tabellen. |
+| Syllabusopgaven 2026 | Deel `1a`, `1b`, `2a`, `2b`, `3a`, `3b`, telkens een bestand met `opgaven` en een met `uitwerking opgaven` onder `Onderwijsmateriaal/Syllabus opgaven/` en `Onderwijsmateriaal/Syllabus uitwerkingen/` | Koppel opgave en uitwerking als paar; controleer bronpassages en rekenstappen. |
+| Tentamens met uitwerkingen | Paren voor `2021-04`, `2021-10`, `2022-04`, `2022-10`, `20230411`, `20231009`, `20240422`, `20240930`, `20250417`, `20250924` onder `Tentamens/`. De opgave van `2021-04` is een `.docx`, de overige aangetroffen paren zijn PDF's. | Kies de toegestane bestanden en controleer per tentamen of de officiële uitwerking en jaartallen overeenkomen. |
+| Collegeslides | `.pptx`-bestanden onder `Thieu Mooren/`, met bestandsnamen waarin Nyenrode-copyright staat. | Afzonderlijke toestemming en gecontroleerde conversie/tekstcontrole voordat deze extern worden geïndexeerd. |
+
+De twaalf syllabusoefenbestanden heten precies:
+
+- `2026 Syllabus CAFA2 deel 1a - opgaven kapitaalbelangen owp.pdf` en `2026 Syllabus CAFA2 deel 1a - uitwerking opgaven kapitaalbelangen owp.pdf`.
+- `2026 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf` en `2026 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf`.
+- `2026 Syllabus CAFA2 deel 2a - opgaven vreemde valuta owp.pdf` en `2026 Syllabus CAFA2 deel 2a - uitwerking opgaven vreemde valuta owp.pdf`.
+- `2026 Syllabus CAFA2 deel 2b - opgaven vreemde valuta extra.pdf` en `2026 Syllabus CAFA2 deel 2b - uitwerking opgaven vreemde valuta extra.pdf`.
+- `2026 Syllabus CAFA2 deel 3a - opgaven consolidatie owp.pdf` en `2026 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf`.
+- `2026 Syllabus CAFA2 deel 3b - opgaven consolidatie extra.pdf` en `2026 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf`.
+
+De bestanden hoeven niet in de openbare repository. Een lokale bestandsnaam of bronlabel bewijst geen gelezen passage. Voor een echte File Search-proef zijn de gekozen bestanden, toestemming voor externe verwerking en daarna `OPENAI_COURSE_VECTOR_STORE_ID` nodig. Zonder deze bronset kan de assistent al met de bestaande CAFA2-vraagbank werken, mits de serverconfiguratie en modelkwaliteit apart zijn gecontroleerd.
 
 Voor uitgebreide documentkennis: gebruik alleen bestanden die voor dit doel mogen worden gedeeld, indexeer ze in een CAFA2-vector store en koppel de store-ID. Controleer proefondervindelijk of tabellen en bronlocaties correct worden teruggevonden. Een bestandsnaam is geen bewijs dat een specifieke pagina is gelezen. Controleer ondersteuning van het gekozen bestandsformaat voordat je uploadt; zet slides of scans zo nodig om naar een gecontroleerde representatie. Uploads, opslag en modelcalls mogen niet stilzwijgend worden uitgevoerd.
 

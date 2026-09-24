@@ -3,7 +3,10 @@ import {createCafa2Adapter} from './study-assistant-cafa2.mjs';
 import {renderMarkdown} from './study-assistant-render.mjs';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
-let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
+let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null,reflowing=false;
+let measuredFooter=null,placementQueued=false;
+let calculator=null,calculatorButton=null,calculatorObserver=null;
+const footerResize=window.ResizeObserver?new ResizeObserver(()=>placeLauncher()):null;
 adapters.set('CAFA2',adapter);
 const doc=document,small=matchMedia('(max-width:760px)');
 const button=doc.createElement('button');button.type='button';button.className='study-assistant-launch';
@@ -21,8 +24,34 @@ doc.body.append(button,panel);
 const $=s=>panel.querySelector(s),input=$('#study-message'),log=$('[data-messages]');
 // Teaching-style changes do not discard the same question's conversation.
 function scope(){return currentKey;}
+function contextKey(value){return value?refKey(value.ref)+'|'+value.revision+'|'+value.attempt:'';}
 function conversation(){const k=scope();if(!conversations.has(k)){if(conversations.size>=40)conversations.delete(conversations.keys().next().value);conversations.set(k,[]);}return conversations.get(k);}
 function banner(message,isError=false){$('[data-banner]').textContent=message;$('[data-banner]').classList.toggle('is-error',isError);$('[data-banner]').hidden=!message;}
+function syncLaunchers() {
+  if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorButton=null;calculatorObserver=null;
+    const found=doc.querySelector('#calculator-dialog .calculator-float-head');
+    if(found){calculator=found.closest('#calculator-dialog');calculatorButton=doc.createElement('button');
+      calculatorButton.type='button';calculatorButton.className='study-calculator-launch';calculatorButton.textContent='?';
+      calculatorButton.title='Vraag over deze vraag';calculatorButton.setAttribute('aria-label','Assistent openen voor deze vraag');
+      calculatorButton.setAttribute('aria-controls','study-assistant');calculatorButton.setAttribute('aria-expanded','false');
+      calculatorButton.addEventListener('click',open);found.insertBefore(calculatorButton,found.querySelector('[data-calc-compact]'));
+      calculatorObserver=new MutationObserver(syncLaunchers);
+      calculatorObserver.observe(calculator,{attributes:true,attributeFilter:['hidden']});}
+  }
+  const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
+  button.hidden=!current||calculatorOpen;
+  if(calculatorButton){calculatorButton.hidden=!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
+  if(calculatorOpen&&panel.open&&!panel.matches(':modal')){reflowing=true;panel.close();panel.showModal();panel.setAttribute('aria-modal','true');input.focus({preventScroll:true});}
+}
+function placeLauncher() {
+  const footer=current?.ref.kind==='exam' && location.hash.startsWith('#tentamen/')
+    ? doc.querySelector('#exam-app .exam-footer') : null;
+  if(footer!==measuredFooter){if(measuredFooter)footerResize?.unobserve(measuredFooter);measuredFooter=footer;if(footer)footerResize?.observe(footer);}
+  const top=footer?.getBoundingClientRect().top;
+  const clearance=Number.isFinite(top)?Math.max(0,Math.ceil(innerHeight-top+12)):0;
+  button.style.setProperty('--sa-footer-clearance',`${clearance}px`);
+}
+function queuePlacement(){if(placementQueued)return;placementQueued=true;requestAnimationFrame(()=>{placementQueued=false;placeLauncher();});}
 function controls() {
   const permitted=!!current&&status?.ready&&status?.authenticated&&consent;
   $('[data-consent]').classList.toggle('is-confirmed',consent);
@@ -61,10 +90,11 @@ function renderConversation() {
 }
 function refresh() {
   let next=null;try{next=adapter.read();}catch{banner('De actuele vraag kon niet worden gelezen. Ververs de leeromgeving.',true);}
-  const k=next?refKey(next.ref)+'|'+next.revision+'|'+next.attempt:'';
+  const k=contextKey(next);
   if(k!==currentKey){if(currentKey)drafts.set(scope(),input.value);stop();current=next;currentKey=k;mode=next?.defaultReview?'review':'hint';input.value=drafts.get(scope())||'';if(next)renderConversation();else log.replaceChildren();}
   else current=next;
-  button.hidden=!current;button.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Vraag over deze vraag');
+  syncLaunchers();button.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Vraag over deze vraag');
+  placeLauncher();
   if(!current){if(panel.open)panel.close();return;}
   
   $('[data-context-title]').textContent=current.title;$('[data-context-question]').textContent=current.questionTitle||current.type;
@@ -95,13 +125,13 @@ async function loadStatus() {
 }
 async function open() {
   refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=doc.activeElement;
-  if(!panel.open){(small.matches||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');}
+  if(!panel.open){(small.matches||(!calculator?.hidden)||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');}
   input.focus({preventScroll:true});await loadStatus();
 }
 button.addEventListener('click',open);
-panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();button.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
+panel.addEventListener('close',()=>{if(reflowing){reflowing=false;return;}drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
 panel.addEventListener('cancel',()=>stop());
-small.addEventListener('change',()=>{if(!panel.open)return;panel.close();(small.matches||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');});
+small.addEventListener('change',()=>{if(!panel.open)return;reflowing=true;panel.close();(small.matches||(!calculator?.hidden)||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');input.focus({preventScroll:true});});
 $('[data-consent-check]').addEventListener('change',e=>{consent=e.target.checked;controls();});
 input.addEventListener('input',()=>{drafts.set(scope(),input.value);controls();});
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('[data-chat-form]').requestSubmit();}});
@@ -129,7 +159,12 @@ $('[data-chat-form]').addEventListener('submit',async e=>{
     const result=await api('chat',{ref:ctx.ref,revision:ctx.revision,mode:m,message,history,studentAnswer:ctx.studentAnswer},controller.signal);
     if(id!==generation)return;
     if(result.questionKey!==refKey(ctx.ref)||result.mode!==m)throw new Error('De antwoordcontext klopt niet. Stel de vraag opnieuw.');
-    pendingTurn=null;chat.push({role:'assistant',content:result.answer,references:result.references,citations:result.citations,incomplete:result.incomplete});banner('');renderConversation();
+    // Route changes can precede the debounced UI refresh. Keep the answer with
+    // its original question even when a fast response wins that race.
+    let live=null;try{live=adapter.read();}catch{}
+    pendingTurn=null;chat.push({role:'assistant',content:result.answer,references:result.references,citations:result.citations,incomplete:result.incomplete});
+    if(contextKey(live)!==scope()){refresh();return;}
+    banner('');renderConversation();
     log.lastElementChild?.scrollIntoView({block:'nearest',behavior:'smooth'});
   }catch(error){if(id!==generation)return;pendingTurn=null;userMessage.failed=true;input.value=message;
     if(error.status===401){status.authenticated=false;$('[data-login]').hidden=false;}
@@ -139,6 +174,8 @@ $('[data-chat-form]').addEventListener('submit',async e=>{
 // Capture the explicit 'check answer' action, without triggering it or changing scores ourselves.
 doc.addEventListener('click',e=>{if(e.target.closest('[data-exam-action="check"], [data-self-grade], [data-check-answer]')){adapter.markChecked?.();schedule();}},true);
 window.addEventListener('hashchange',()=>{adapter.resetPin?.();schedule();});
+window.addEventListener('resize',queuePlacement);
+doc.addEventListener('scroll',queuePlacement,true);
 for(const event of ['cafa:ready','cafa:exam-route','cafa:practice-change'])window.addEventListener(event,schedule);
 window.addEventListener('pagehide',()=>stop());
 window.StudyAssistant={version:VERSION,open,refresh:schedule,

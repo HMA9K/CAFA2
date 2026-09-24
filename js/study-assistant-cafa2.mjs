@@ -3,8 +3,14 @@ import {plain,cleanData,refKey,normalizePractice,normalizeExam,recordRevision} f
 export function createCafa2Adapter(win=window) {
   const checked=new Set();let pinned=null;
   const key=(ref,attempt)=>refKey(ref)+'|'+attempt;
-  function answerValue(a={}) {
-    return {choice:a.choice ?? null,optionId:a.optionId ?? null,text:plain(a.html || a.text || ''),
+  function answerValue(a={},q=null) {
+    const options=q?.options || [];
+    const choice=Number.isInteger(a.choice) ? a.choice
+      : a.optionId == null ? -1 : options.findIndex(option=>option.id===a.optionId);
+    const selected=choice>=0 && choice<options.length ? choice : null;
+    return {choice:selected ?? (q ? null : a.choice ?? null),
+      optionId:a.optionId ?? (selected===null ? null : String.fromCharCode(65+selected)),
+      text:plain(a.html || a.text || ''),
       rows:cleanData(a.journalRows || a.rows || []),
       tables:a.stockCells ? [{kind:'voorraadtabel',cells:cleanData(a.stockCells)}] : []};
   }
@@ -12,20 +18,25 @@ export function createCafa2Adapter(win=window) {
     const bank=win.CAFA2_DATA?.modules?.[code],q=bank?.questions?.find(x=>String(x.id)===String(id));
     if(!q)return null;
     const module=win.CafaPractice?.getModule(code)||{};
-    const a=archived?.answers?.[q.id]||win.CafaPractice?.getAnswer(code,q.id)||{};
+    // A missing answer in an archived attempt must never be borrowed from the live attempt.
+    const a=archived ? (archived.answers?.[q.id]||{})
+      : (module.answers ? module.answers[q.id] : win.CafaPractice?.getAnswer(code,q.id))||{};
     const study=win.CafaTopics?.context(code,q.id)||module;
     const ref={course:'CAFA2',kind:'practice',bankId:code,questionId:String(q.id)};
-    const attempt=String(archived?.id || `${code}-${module.attempt||1}`);
+    const topic=study!==module ? win.CafaTopics?.getState?.()?.active : null;
+    const lastReset=study.history?.at(-1)?.at || 'start';
+    const topicRun=topic ? `|topic:${topic}:${study.history?.length||0}:${lastReset}` : '';
+    const attempt=String(archived?.id || `${code}-${module.attempt||1}${topicRun}`);
     return {ref,revision:recordRevision(normalizePractice('CAFA2',code,bank,q)),attempt,title:`${bank.title} · Vraag ${q.id}`,questionTitle:q.title,type:q.type||'Vraag',
       prompt:plain(q.task||q.prompt),hasCase:!!(q.intro||q.facts?.length||q.caseTables?.length),
       canReview:true,
-      defaultReview:!!archived || !!study.finished || !!a.checked || checked.has(key(ref,attempt)),studentAnswer:answerValue(a)};
+      defaultReview:!!archived || !!study.finished || !!a.checked || checked.has(key(ref,attempt)),studentAnswer:answerValue(a,q)};
   }
   function exam(attemptId,index) {
     const a=win.CafaExams?.getAttempts().find(x=>x.id===attemptId);
     if(!a)return null;const q=a.exam.questions[index ?? a.currentIndex];if(!q)return null;
     const ref={course:'CAFA2',kind:'exam',bankId:a.exam.id,questionId:String(q.id)};
-    const answer=answerValue(a.answers[q.id]||{});
+    const answer=answerValue(a.answers[q.id]||{},q);
     const schema=win.CafaStockTable?.template(q);
     if(schema){const table=answer.tables[0]||{kind:'voorraadtabel',cells:{}};table.schema=cleanData(schema);answer.tables=[table];}
     return {ref,revision:recordRevision(normalizeExam('CAFA2',a.exam,q)),attempt:a.id,title:`${a.exam.title} ${a.exam.date||''} · ${q.title||`Vraag ${q.originalNumber ?? q.number ?? q.id}`}`,
@@ -46,6 +57,12 @@ export function createCafa2Adapter(win=window) {
   function decorate(open) {
     const host=win.document.getElementById('exam-app');if(!host)return;
     const parts=win.location.hash.slice(1).split('/').map(x=>{try{return decodeURIComponent(x);}catch{return x;}});
+    const feedback=host.querySelector('#cafa-exam-feedback');
+    if(parts[0]==='tentamen' && feedback && !feedback.hidden)
+      attach(feedback,()=>exam(parts[1]),open);
+    const dialog=win.document.getElementById('exam-info-dialog');
+    if(parts[0]==='tentamen' && dialog?.querySelector('#exam-info-title')?.textContent?.startsWith('Antwoord controleren'))
+      attach(dialog.querySelector('.exam-modal-body')||dialog,()=>exam(parts[1]),open);
     if(parts[0]==='inzage'&&parts.length===2){
       const a=win.CafaExams?.getAttempts().find(x=>x.id===parts[1]);if(!a)return;
       for(const el of host.querySelectorAll('[data-result-id]')) {
