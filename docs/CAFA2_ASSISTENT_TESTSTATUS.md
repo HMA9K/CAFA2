@@ -1,69 +1,54 @@
-# CAFA2 Assistent: gecontroleerde teststatus bij overdracht
+# CAFA2 Assistent: teststatus na integratie
 
-Datum: 24 september 2026. Versie 2026-09-24.2. Dit document vervangt de eerdere, onderling afwijkende aantallen uit de chat voor deze overdrachtsversie.
+Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
-## GitHub-controle op de daadwerkelijke voorbereidingsbranch
+## Uitgevoerde controles
 
-Geteste implementatiecommit: `02ec4f2177a23d9fdedafd9e7eb5ee3ce37d175d`, gebaseerd op main `dd813848fcb272e23dd54775642066843e91bfd9`.
-
-Run: https://github.com/HMA9K/CAFA2/actions/runs/36054839621
-
-De joblogs zijn gelezen. Niet alleen het groene statusicoon is gecontroleerd: de uitvoer vermeldt 40 geslaagde Node-tests zonder fouten, geslaagde bestaande regressiecontroles en 15 expliciete PASS-regels voor de browserproef. De uitvoer en screenshots zijn in het run-artifact `cafa2-assistant-handoff-checks` opgeslagen, met beperkte bewaartermijn.
-
-| Controle | Daadwerkelijk resultaat | Afbakening |
+| Controle | Resultaat | Wat dit bewijst |
 | --- | --- | --- |
-| Kern-/servertests | 36 geslaagd | Synthetische testdata; authenticatie, cookies, quota, servercontext, directe antwoordverzoeken en foutafhandeling. Geen echte modeldienst. |
-| Echte vraagbanktests | 4 geslaagd | Alle 247 oefenvragen en 134 tentamen-/demovragen genormaliseerd; adapterrevisie en canonieke servercontext gecontroleerd. |
-| Nieuwe Node-tests totaal | 40 geslaagd, 0 mislukt | Uitgevoerd op de actuele voorbereidingsbranch, Node.js 22.23.2. |
-| Integratieprocedure en build | Geslaagd | Imports, scripts, endpointkopieën, gesplitste catalogus en dist in de runner gegenereerd. Niet naar de repository teruggeschreven. |
-| Bestaande npm test | Geslaagd na integratie in de runner | De daadwerkelijke branch bevat de nieuwere rekenmachine-/bronpaneelwijzigingen uit main. |
-| Bundeling serverendpoint | Geslaagd | esbuild 0.25.10; geen echte Cloudflare-deployment of runtimeproef. |
-| Browserproef echte CAFA2-pagina | 15 controles geslaagd | Chromium via Playwright 1.57.0. De antwoorddienst is gesimuleerd. |
-| Echte modelkwaliteit en bronzoekresultaten | Niet getest | Geen API-sleutel, betaalde modelcalls of documentuploads gebruikt. |
-| Cloudflare-preview, D1-runtime, fysieke iPhone/Safari | Niet getest | Moet na integratie afzonderlijk worden gecontroleerd. |
+| Startpunt en bestaande CI | Branchcommit `be418e1` bevestigd; [assistentworkflow](https://github.com/HMA9K/CAFA2/actions/runs/36055009748) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36055015979) geslaagd, jobs en logs gelezen. | De klaargezette branch, niet de oude featurebranch of ZIP, was het vertrekpunt. |
+| Integratie-dry-run | Eerst zeven verwachte bestanden; na `--apply` geen openstaande wijzigingen. | Integratie blijft gericht en herhaalbaar. |
+| Nieuwe Node-tests | 58 geslaagd, 0 mislukt, lokaal met Node.js 24. | Servercontract, veiligheidsgrenzen, adapter, revisies, alle echte records en nieuw gevonden regressies. CI gebruikt Node.js 22. |
+| Canonieke vraagbank | 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen gecontroleerd. | Alle records passen binnen de contextgrens en behouden hun antwoordmodel en revisie. |
+| Bestaande regressiecontroles | Alle negen scripts uit `npm test` afzonderlijk met `node` geslaagd. | Vragen, exam engine, timergrenzen, score- en inhoudsrevisie, lezen, onderwerpen en donkere modus zijn bij deze integratie niet stukgegaan. `npm` is lokaal niet beschikbaar. |
+| Assistentbuild | Geslaagd. | Publieke `dist` en gesplitste servercatalogus worden gegenereerd. |
+| Browserproef | Chromium: 96 controles geslaagd, 0 JavaScript-runtimefouten. WebKit 26.0: 96 controles geslaagd, 0 JavaScript-runtimefouten. Beide lokaal op de laatste build. | Werkelijke DOM, routes, editors en schermindeling met gesimuleerde antwoorddienst; geen inhoudelijke modelkwaliteit. |
+| Echte modelaanroepen, File Search en Cloudflare-runtime | Niet uitgevoerd. | Een model, secrets, geautoriseerde uploads en bruikbare preview-inrichting ontbreken. |
 
-De daaropvolgende documentatie-/workflowcorrectie wijzigt geen applicatiecode. De workflow gebruikt nu expliciet `shell: bash`, zodat fouten vóór `tee` door de standaard pipefail-instelling niet als succes worden gemaskeerd. Controleer de meest recente run opnieuw voordat deze PR verder wordt gebouwd of samengevoegd.
+## Regels waarvoor regressies zijn toegevoegd
 
-## Wat de browserproef daadwerkelijk controleert
+- Lege meerkeuzeantwoorden zijn leeg en niet optie A. Antwoordletters volgen de zichtbare nulgebaseerde index; tentamens bewaren daarnaast hun stabiele optie-ID.
+- Een historische inzage leent geen antwoord van de huidige poging. Een reset van een onderwerp begint een afzonderlijk gesprek.
+- Journaalposten en voorraadtabellen sturen hun eigen kolommen, cellen en percentages door. Een expliciete verwijzing naar een vorige deelvraag bevat alleen de bijbehorende eerdere uitwerking binnen dezelfde casus.
+- Het werkelijke inline antwoordvenster en de historische resultaatrij bieden een vraagknop voor de juiste vraag.
+- Een vertraagd antwoord blijft bij de oorspronkelijke vraag, ook bij een snelle routewissel binnen hetzelfde tentamen. Een stijlwissel behoudt de geschiedenis van dezelfde vraag.
+- De server weigert ongeldige of te grote modelresponsen, stopt een al afgebroken verzoek voor de modelaanroep en geeft bij een quotaoverschrijding de werkelijke `Retry-After` terug.
+- De assistentknop ontwijkt op kleine schermen de vaste tentamenbalk; bij een geopende rekenmachine staat een compacte knop in de rekenmachinekop.
 
-1. Geen chatverzoek vóór toegang en toestemming.
-2. De actuele echte oefenvraag wordt meegestuurd in de hintstijl.
-3. Markdown-tabellen worden weergegeven zonder uitvoerbare model-HTML.
-4. Een antwoordgerichte vraag wordt in hintstijl doorgestuurd zonder verplichte omschakeling.
-5. Eén klik op de antwoordknop stuurt het verzoek, zonder eerst nakijken of toetsinlevering.
-6. De gespreksgeschiedenis blijft bij dezelfde vraag behouden bij stijlwisselingen.
-7. Opgeslagen antwoorden en scores blijven ongewijzigd tijdens die chatinteracties.
-8. Navigatie naar een andere oefenvraag scheidt de gesprekken.
-9. De nieuwe vraag heeft haar eigen context.
-10. Een gesimuleerde serverfout bewaart de vraag voor opnieuw verzenden.
-11. Het paneel past binnen 390 × 844 px.
-12. Het paneel past binnen 320 × 740 px.
-13. Het paneel past binnen 740 × 390 px.
-14. Het bestaande CAFA2-attribuut voor donkere modus kleurt het chatpaneel correct.
-15. Geen JavaScript-runtimefouten tijdens deze proef.
+## Browserproef: reikwijdte
 
-Dit is geen volledige doorloop van ieder vraagtype en elke editor in de browser. De gegevenscontrole dekt alle 381 records; de browserproef richt zich op de basisinteractie met echte oefenvragen. Modelantwoorden zijn testreacties, geen inhoudelijk beoordeelde CAFA2-uitleg.
+De proef opent de vier hoofddelen en alle twaalf benoemde oefenvraagtypen in hun echte route. Hij controleert meerkeuze, eigen tekst, journaalpost, voorraadcellen, onderwerpselectie en reset, historische MC-inzage, het inline antwoordvenster, de vijf volledige tentamens en de navigatie binnen een ingeleverd tentamen. Voor elk van de vijf echte tentamens wordt de eerste vraag in de browser geopend; de Node-tests controleren alle 131 echte tentamenvragen. Eén echt tentamen krijgt in de browser een langere doorloop met eigen antwoord, journaalpost, voorraadcel, vertraagde respons, indiening, historisch overzicht en individuele inzage. Chatten laat opgeslagen tentamenantwoorden, scores en de lopende timerwaarden intact.
 
-## Lokale voorbereiding en gevonden fouten
+Verder worden 320, 390 en 430 px breedte, liggend scherm, licht/donker, een verkorte viewport als toetsenbordsimulatie en de geopende rekenmachine met behouden historie gecontroleerd. De assistent opent boven het rekenmachinevenster, ook op desktop; na sluiten van de rekenmachine keert de zwevende knop terug. Bij de vier beproefde schermgroottes overlapt de knop geen vaste tentamenknop. Een verkorte viewport is geen fysieke mobiele toetsenbordtest. De gesimuleerde dienst retourneert vaste testtekst, geen door een taalmodel gegenereerde CAFA2-uitleg.
 
-Lokaal slaagden dezelfde 40 nieuwe Node-tests, de build en de bestaande regressiesuite op de beschikbare eerdere bronkopie. Browsernavigatie was lokaal geblokkeerd door runtimebeleid (ERR_BLOCKED_BY_ADMINISTRATOR). Dit is vervolgens niet als geslaagde lokale test voorgesteld; de echte browserproef is in GitHub Actions uitgevoerd en daar wel geslaagd.
+## Nog te valideren buiten deze branchcontrole
 
-De oude didactische blokkade is verwijderd uit modelinstructies, servercontext en interface. Een expliciet antwoordverzoek heeft nu toegang tot het huidige antwoordmodel, ook zonder nagekeken of ingeleverde toets. De gesprekssleutel bevat geen hulpstand meer.
+De huidige Cloudflare Pages-configuratie gebruikt `exit 0`, output `.` en heeft geen `STUDY_DB`-binding of assistentvariabelen voor preview en productie. Daarom is de branchpreview nog geen geldige runtimeproef. Voor de ontbrekende instellingen en aangetroffen, nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
 
-De eerste catalogus was groter dan de bestaande grens van 900.000 bytes per bestand. De build schrijft nu delen van maximaal ongeveer 750.000 bytes. De bestaande groottetest blijft intact. De CSS-import wordt vóór het bestaande study-upgrade-stijlblok geplaatst om de herhaalbaarheid van die build te behouden.
+Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, beveiligde cookie, D1-quota, een kleine set inhoudelijke modelvragen en indien toegestaan File Search. Beoordeel bij modelvragen vooral ongevraagde spoilers, directe uitwerkingen, een onjuiste veronderstelling zoals 'B is goed', herkomst van bedragen, vervolgstappen en een onvolledig antwoordmodel. De grens van 1.800 uitvoertokens omvat ook eventuele reasoning-tokens; controleer daarom of langere uitwerkingen worden afgebroken. Het huidige gesprek bewaart tekstberichten, niet alle interne reasoning-items. De invloed daarvan op vervolgvragen is nog niet gemeten.
 
-## Wat Codex nog moet bewijzen
-
-Actuele input uit alle editors, afzonderlijke antwoordmodals en historische inzages, routewissels binnen hetzelfde tentamen, vertraagde antwoorden, de betekenis van optie-indexen, afhankelijkheden tussen deelvragen, overlap met de rekenmachine, geopend mobiel toetsenbord, WebKit/fysieke iPhone, echte modelkwaliteit, correcte bronpassages en runtime-authenticatie/quotum op Cloudflare.
+Een fysieke iPhone met geopend toetsenbord en de echte Cloudflare-preview blijven aparte controles. Er is niets naar `main` gemerged of in productie geactiveerd.
 
 ## Reproduceren
 
 ```bash
 node --test tests/study-assistant/*.test.mjs
+node scripts/prepare-study-assistant.mjs
 node scripts/prepare-study-assistant.mjs --apply
 node scripts/build-study-assistant.mjs
 npm test
 python tests/study-assistant/browser.py
+ASSISTANT_BROWSER=webkit python tests/study-assistant/browser.py
 ```
 
-De browserproef vereist Playwright plus Chromium en toegang tot de lokale testserver. Alle modelreacties in deze automatische tests zijn gesimuleerd. Het handler-contract kan zonder modeltegoed worden getest.
+De browserproef vereist Playwright 1.57.0 en een geïnstalleerde browser. Op Windows kan de laatste regel met een PowerShell-omgevingsvariabele worden uitgevoerd. Alle antwoorden van de automatische browserproef zijn gesimuleerd.

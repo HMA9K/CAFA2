@@ -34,3 +34,22 @@ test('Real question catalog has no duplicated IDs',()=>{
   assert.equal(Object.keys(catalog.records).length,catalog.counts.practice+catalog.counts.exam);
   console.log('Real CAFA2 question coverage:',JSON.stringify({counts:catalog.counts,types:catalog.types}));
 });
+test('Echte vervolgvragen krijgen gericht de eerder genoemde voorraadtabel',()=>{
+  for(const [question,previous] of [['vraag-15','vraag-14'],['vraag-17','vraag-16']]){
+    const current=catalog.records[`CAFA2:exam:cafa2-20240422:${question}`];
+    assert.deepEqual(current.context.referencedSolutions.map(item=>item.id),[previous]);
+    assert.ok(current.context.referencedSolutions[0].solution.includes('€'));
+  }
+  const split=catalog.records['CAFA2:exam:cafa2-20250924:vraag-19'];
+  assert.deepEqual(split.context.referencedSolutions,[]);
+});
+test('Elke echte MC-antwoordindex verwijst naar dezelfde zichtbare antwoordletter',()=>{
+  for(const record of Object.values(catalog.records)){
+    if(record.ref.kind==='practice'){
+      assert.equal(record.context.options[record.review.correct]?.letter,record.review.correctLetter,refKey(record.ref));
+      assert.equal(record.context.options[record.review.correct]?.choiceIndex,record.review.correct,refKey(record.ref));
+    }else if(record.context.options.length){
+      assert.ok(record.context.options.some(option=>option.id===record.review.correct),refKey(record.ref));
+    }
+  }
+});
