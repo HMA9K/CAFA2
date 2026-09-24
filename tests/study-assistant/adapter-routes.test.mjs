@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
 import {createCafa2Adapter} from '../../js/study-assistant-cafa2.mjs';
 import {buildCatalog,normalizeExam,refKey} from '../../js/study-assistant-schema.mjs';
 import {fixtureWindow} from './fixtures.mjs';
@@ -10,6 +12,17 @@ function examAttempt(win,id='attempt-1') {
 function practiceApi(answers={}) {
   return {getModule:()=>({attempt:2,answers}),getAnswer:()=>{throw new Error('Geen opgeslagen antwoord aanmaken tijdens lezen');},
     getCompleted:()=>[]};
+}
+function opgaveAttempt(win) {
+  const older=structuredClone(win.CAFA2_EXAMS[0]);
+  older.id='cafa2-test-older';older.title='OUD TESTTENTAMEN';older.date='2025-01-01';
+  older.questions[0].solutionHtml='<p>OLDER_SECRET_MODEL</p>';
+  win.CAFA2_EXAMS.push(older);
+  const sandbox={window:{}};
+  const script=readFileSync(new URL('../../js/opgave-practice.js',import.meta.url),'utf8');
+  new vm.Script(script).runInNewContext(sandbox);
+  const combined=sandbox.window.CafaOpgavePractice.build(win.CAFA2_EXAMS,1,win.CAFA2_EXAMS.map(exam=>exam.id));
+  return {id:'opgave-attempt-1',exam:combined,status:'active',currentIndex:0,answers:{},pausedAt:null};
 }
 
 test('Alle vier oefenroutes leveren hun eigen vraag en antwoordletter',()=>{
@@ -100,6 +113,53 @@ test('Individuele tentameninzage gebruikt de index uit de route',()=>{
   assert.equal(current.ref.questionId,'vraag-3');
   assert.equal(current.defaultReview,true);
   assert.equal(current.attempt,'attempt-1');
+});
+
+test('Opgave-oefenreeks koppelt elk samengesteld vraag-ID aan het oorspronkelijke tentamenmodel',()=>{
+  const win=fixtureWindow(),attempt=opgaveAttempt(win),catalog=buildCatalog(win);
+  const first=attempt.exam.questions[0];
+  const older=attempt.exam.questions.find(q=>q.sourceExamId==='cafa2-test-older'&&q.sourceQuestionId==='vraag-1');
+  attempt.answers[first.id]={html:'<p>Antwoord bij nieuwe bron</p>'};
+  attempt.answers[older.id]={html:'<p>Antwoord bij oude bron</p>'};
+  attempt.answers['vraag-1']={html:'<p>Verkeerde, niet-samengestelde sleutel</p>'};
+  win.CafaExams={getAttempts:()=>[attempt]};win.location={hash:'#tentamen/opgave-attempt-1'};
+  const adapter=createCafa2Adapter(win);
+  const current=adapter.read();
+  assert.equal(refKey(current.ref),'CAFA2:exam:cafa2-test:vraag-1');
+  assert.equal(current.revision,catalog.records[refKey(current.ref)].revision);
+  assert.equal(current.studentAnswer.text,'Antwoord bij nieuwe bron');
+  assert.equal(current.attempt,attempt.id);
+  attempt.currentIndex=attempt.exam.questions.indexOf(older);
+  const next=adapter.read();
+  assert.equal(refKey(next.ref),'CAFA2:exam:cafa2-test-older:vraag-1');
+  assert.equal(next.revision,catalog.records[refKey(next.ref)].revision);
+  assert.equal(next.studentAnswer.text,'Antwoord bij oude bron');
+  assert.ok(next.title.includes('OUD TESTTENTAMEN'));
+  assert.notEqual(refKey(next.ref),refKey(current.ref));
+});
+
+test('Historische opgave-inzage gebruikt bronverwijzing en het antwoord van de gekozen rij',()=>{
+  const win=fixtureWindow(),attempt=opgaveAttempt(win),host=fakeElement(),expanded=fakeElement(),row=fakeElement();
+  const question=attempt.exam.questions.find(q=>q.sourceExamId==='cafa2-test-older'&&q.sourceQuestionId==='vraag-2');
+  const index=attempt.exam.questions.indexOf(question);
+  attempt.status='completed';attempt.answers[question.id]={html:'<p>Mijn oude voorraadtabel</p>'};
+  row.dataset.resultId=question.id;
+  row.querySelector=selector=>selector==='.result-expanded'?expanded:null;
+  host.querySelectorAll=selector=>selector==='[data-result-id]'?[row]:[];
+  win.CafaExams={getAttempts:()=>[attempt]};
+  win.document=fakeDocument({'exam-app':host});win.location={hash:'#inzage/opgave-attempt-1'};
+  const adapter=createCafa2Adapter(win);let opened=0;
+  adapter.decorate(()=>opened++);
+  expanded.children[0].listeners.click({preventDefault(){}});
+  assert.equal(opened,1);
+  const pinned=adapter.read();
+  assert.equal(refKey(pinned.ref),'CAFA2:exam:cafa2-test-older:vraag-2');
+  assert.equal(pinned.studentAnswer.text,'Mijn oude voorraadtabel');
+  assert.equal(pinned.defaultReview,true);
+  adapter.resetPin();win.location.hash=`#inzage/opgave-attempt-1/vraag/${index}`;
+  const detail=adapter.read();
+  assert.equal(refKey(detail.ref),refKey(pinned.ref));
+  assert.equal(detail.studentAnswer.text,pinned.studentAnswer.text);
 });
 
 test('Historisch tentamenresultaat opent de bij de rij behorende vraag',()=>{
