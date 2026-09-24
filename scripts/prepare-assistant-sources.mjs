@@ -1,10 +1,11 @@
 /**
  * Inventory local CAFA2 source candidates. The default run is read-only and offline.
- * Remote ingestion requires --upload, an explicit group, review flags and an API key.
+ * Remote ingestion requires --upload, --all-groups, review flags and an API key.
+ * Each upload creates a new complete store; never replace a configured store ID with a partial set.
  * Source bytes and credentials must never be committed to this repository.
  */
 import {openAsBlob} from 'node:fs';
-import {readFile,realpath,stat} from 'node:fs/promises';
+import {readFile,readdir,realpath,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -12,6 +13,7 @@ const DEFAULT_MANIFEST=new URL('../assistant/source-manifest.json',import.meta.u
 const API='https://api.openai.com/v1';
 const MAX_BYTES=512*1024*1024;
 const MIME={'.pdf':'application/pdf','.pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document'};
+const DISCOVERABLE=new Set([...Object.keys(MIME),'.ppt']);
 
 function plain(value){return value!==null && typeof value==='object' && !Array.isArray(value);}
 function validRelative(value){
@@ -19,15 +21,45 @@ function validRelative(value){
     && !path.posix.isAbsolute(value) && !/^[a-z]:/i.test(value)
     && value.split('/').every(part=>part!=='' && part!=='.' && part!=='..');
 }
+function scanRoot(value){
+  const root=typeof value==='string'?{path:value,recursive:true}:value;
+  if(!plain(root)||!validRelative(root.path)||
+     (root.recursive!==undefined&&typeof root.recursive!=='boolean'))
+    throw new Error('Ongeldige bron-scanmap.');
+  return {path:root.path,recursive:root.recursive!==false};
+}
+function coveredBy(relative,root){
+  if(!relative.startsWith(root.path+'/'))return false;
+  return root.recursive||!relative.slice(root.path.length+1).includes('/');
+}
 export function validateSourceManifest(manifest){
-  if(!plain(manifest)||manifest.version!==1||!plain(manifest.groups))throw new Error('Ongeldig bronmanifest.');
+  if(!plain(manifest)||manifest.version!==1||!plain(manifest.groups)||!plain(manifest.scanRoots))
+    throw new Error('Ongeldig bronmanifest of ontbrekende scanRoots.');
   const seen=new Set();
   for(const [group,files] of Object.entries(manifest.groups)){
     if(!/^[a-z0-9-]+$/.test(group)||!Array.isArray(files)||!files.length)throw new Error(`Ongeldige brongroep: ${group}`);
+    const rawRoots=manifest.scanRoots[group];
+    if(!Array.isArray(rawRoots)||!rawRoots.length)throw new Error(`Scanmap ontbreekt voor brongroep: ${group}`);
+    const roots=rawRoots.map(scanRoot);
     for(const relative of files){
       if(!validRelative(relative)||!['.pdf','.pptx','.ppt','.docx'].includes(path.posix.extname(relative).toLowerCase()))
         throw new Error(`Ongeldig bronpad: ${relative}`);
+      if(!roots.some(root=>coveredBy(relative,root)))
+        throw new Error(`Bron valt buiten de scanmap van ${group}: ${relative}`);
       if(seen.has(relative))throw new Error(`Dubbel bronpad: ${relative}`);
+      seen.add(relative);
+    }
+  }
+  for(const group of Object.keys(manifest.scanRoots))
+    if(!Object.hasOwn(manifest.groups,group))throw new Error(`Scanmap zonder brongroep: ${group}`);
+  if(manifest.excluded!==undefined){
+    if(!plain(manifest.excluded))throw new Error('Ongeldige expliciete bronuitsluitingen.');
+    const allRoots=Object.values(manifest.scanRoots).flat().map(scanRoot);
+    for(const [relative,reason] of Object.entries(manifest.excluded)){
+      if(!validRelative(relative)||!DISCOVERABLE.has(path.posix.extname(relative).toLowerCase())||
+         !allRoots.some(root=>coveredBy(relative,root))||seen.has(relative)||
+         typeof reason!=='string'||!reason.trim())
+        throw new Error(`Ongeldige expliciete bronuitsluiting: ${relative}`);
       seen.add(relative);
     }
   }
@@ -58,10 +90,63 @@ function convertedRelative(relative){
   if(!relative.startsWith('Repetitiecursus/Slides/')||!relative.toLowerCase().endsWith('.ppt'))return null;
   return relative.slice('Repetitiecursus/'.length).replace(/\.ppt$/i,'.pdf');
 }
+async function discoverSources(manifest,sourceRoot){
+  const unclassified=new Map(),scanIssues=new Map();
+  const issue=(group,relative,status)=>{
+    scanIssues.set(group+':'+relative+':'+status,{group,relative,status});
+  };
+  const approved=new Set([...Object.values(manifest.groups).flat(),...Object.keys(manifest.excluded||{})]);
+  let canonicalRoot;
+  try{canonicalRoot=await realpath(sourceRoot);}
+  catch(error){
+    if(error?.code==='ENOENT'){
+      issue('all','', 'missing_source_root');
+      return {unclassified:[],scanIssues:[...scanIssues.values()]};
+    }
+    throw error;
+  }
+  const scans=Object.entries(manifest.scanRoots).flatMap(([group,roots])=>
+    roots.map(root=>({group,...scanRoot(root)}))).sort((a,b)=>b.path.length-a.path.length);
+  for(const scan of scans){
+    const absolute=path.resolve(sourceRoot,...scan.path.split('/'));
+    if(!inside(sourceRoot,absolute)){issue(scan.group,scan.path,'outside_root');continue;}
+    let real;
+    try{real=await realpath(absolute);}
+    catch(error){
+      if(error?.code==='ENOENT'){issue(scan.group,scan.path,'missing_scan_root');continue;}
+      throw error;
+    }
+    if(!inside(canonicalRoot,real)){issue(scan.group,scan.path,'outside_root');continue;}
+    if(!(await stat(real)).isDirectory()){issue(scan.group,scan.path,'not_directory');continue;}
+    async function walk(directory){
+      for(const item of await readdir(directory,{withFileTypes:true})){
+        const child=path.join(directory,item.name);
+        const relative=path.relative(canonicalRoot,child).replaceAll(path.sep,'/');
+        if(item.isSymbolicLink()){issue(scan.group,relative,'symlink');continue;}
+        let resolved;
+        try{resolved=await realpath(child);}
+        catch(error){
+          if(error?.code==='ENOENT'){issue(scan.group,relative,'vanished');continue;}
+          throw error;
+        }
+        if(!inside(canonicalRoot,resolved)){issue(scan.group,relative,'outside_root');continue;}
+        if(item.isDirectory()){
+          if(scan.recursive)await walk(resolved);
+        }else if(item.isFile()&&DISCOVERABLE.has(path.extname(item.name).toLowerCase())&&!approved.has(relative)){
+          if(!unclassified.has(relative))unclassified.set(relative,{group:scan.group,relative,status:'unclassified'});
+        }
+      }
+    }
+    await walk(real);
+  }
+  return {unclassified:[...unclassified.values()].sort((a,b)=>a.relative.localeCompare(b.relative)),
+    scanIssues:[...scanIssues.values()].sort((a,b)=>a.relative.localeCompare(b.relative))};
+}
 export async function planSources({manifest,sourceRoot,convertedRoot,groups}={}){
   validateSourceManifest(manifest);
   if(!sourceRoot)throw new Error('Geef CAFA2_SOURCE_ROOT of --source-root op.');
-  const chosen=groups?.length?groups:Object.keys(manifest.groups);
+  const allGroups=Object.keys(manifest.groups);
+  const chosen=groups?.length?groups:allGroups;
   if(new Set(chosen).size!==chosen.length)throw new Error('Een brongroep is dubbel geselecteerd.');
   for(const group of chosen)if(!Object.hasOwn(manifest.groups,group))throw new Error(`Onbekende brongroep: ${group}`);
   const root=path.resolve(sourceRoot),converted=convertedRoot?path.resolve(convertedRoot):null;
@@ -87,7 +172,11 @@ export async function planSources({manifest,sourceRoot,convertedRoot,groups}={})
       entries.push(entry);
     }
   }
-  const counts={selected:entries.length,ready:0,direct:0,converted:0,conversionRequired:0,missing:0,invalid:0};
+  const discovery=await discoverSources(manifest,root);
+  const excluded=Object.entries(manifest.excluded||{}).map(([relative,reason])=>({relative,reason}));
+  const counts={selected:entries.length,ready:0,direct:0,converted:0,conversionRequired:0,missing:0,invalid:0,
+    excluded:excluded.length,
+    unclassified:discovery.unclassified.length,scanIssues:discovery.scanIssues.length};
   for(const entry of entries){
     if(entry.status==='ready'){counts.ready++;counts.direct++;}
     else if(entry.status==='ready_converted'){counts.ready++;counts.converted++;}
@@ -95,7 +184,7 @@ export async function planSources({manifest,sourceRoot,convertedRoot,groups}={})
     else if(entry.status==='missing')counts.missing++;
     else counts.invalid++;
   }
-  return {groups:chosen,entries,counts};
+  return {groups:chosen,allGroups,entries,excluded,counts,...discovery};
 }
 
 function parseArgs(args){
@@ -106,31 +195,41 @@ function parseArgs(args){
       const value=args[++i];if(!value||value.startsWith('--'))throw new Error(`Waarde ontbreekt voor ${key}.`);
       if(key==='--group')options.groups.push(value);
       else options[{'--source-root':'sourceRoot','--converted-root':'convertedRoot','--manifest':'manifestPath'}[key]]=value;
-    }else if(['--upload','--confirm-external-processing','--confirm-slide-review','--confirm-content-review','--json','--help'].includes(key))
-      options[{'--upload':'upload','--confirm-external-processing':'confirmExternal','--confirm-slide-review':'confirmSlides','--confirm-content-review':'confirmContent','--json':'json','--help':'help'}[key]]=true;
+    }else if(['--upload','--all-groups','--check','--confirm-external-processing','--confirm-slide-review','--confirm-content-review','--json','--help'].includes(key))
+      options[{'--upload':'upload','--all-groups':'allGroups','--check':'check','--confirm-external-processing':'confirmExternal','--confirm-slide-review':'confirmSlides','--confirm-content-review':'confirmContent','--json':'json','--help':'help'}[key]]=true;
     else throw new Error(`Onbekende optie: ${key}`);
   }
   return options;
 }
 export function preflightUpload(plan,options){
-  if(!options.groups.length)throw new Error('Kies voor upload een of meer expliciete --group opties.');
+  if(!options.groups.length)throw new Error('Kies voor upload expliciet --all-groups.');
+  if(!Array.isArray(plan.allGroups)||plan.groups.length!==plan.allGroups.length||
+     !plan.allGroups.every(group=>plan.groups.includes(group)))
+    throw new Error('Een nieuwe vector store moet alle brongroepen bevatten. Gebruik --all-groups.');
   if(!options.confirmExternal)throw new Error('Externe verwerking vereist --confirm-external-processing na rechtencontrole.');
   if(!options.confirmContent)throw new Error('Broncontrole vereist --confirm-content-review.');
   if(plan.groups.some(group=>group.includes('slides'))&&!options.confirmSlides)
     throw new Error('Slides vereisen --confirm-slide-review na visuele en tekstcontrole.');
+  if(plan.counts.unclassified||plan.counts.scanIssues)
+    throw new Error('Nieuwe of onveilige bronbestanden moeten eerst worden geclassificeerd.');
   if(plan.counts.ready!==plan.counts.selected)throw new Error('Upload geweigerd: ontbrekende, ongeschikte of nog niet geconverteerde bronbestanden.');
   if(typeof process.env.OPENAI_API_KEY!=='string'||process.env.OPENAI_API_KEY.length<12)
     throw new Error('OPENAI_API_KEY ontbreekt in de lokale omgeving.');
 }
 function publicEntry(entry){const {group,relative,flags,status,size,convertedRelative,conversionStatus}=entry;return {group,relative,status,size,flags,...(convertedRelative?{convertedRelative}:{}),...(conversionStatus?{conversionStatus}:{})};}
 function showPlan(plan,asJson,upload){
-  if(asJson){console.log(JSON.stringify({groups:plan.groups,counts:plan.counts,entries:plan.entries.map(publicEntry)},null,2));return;}
-  console.log(`Broncontrole: ${plan.counts.selected} geselecteerd, ${plan.counts.direct} direct formaatklaar, ${plan.counts.converted} via conversie, ${plan.counts.conversionRequired} conversie nodig, ${plan.counts.missing} ontbrekend, ${plan.counts.invalid} ongeldig.`);
+  if(asJson){console.log(JSON.stringify({groups:plan.groups,counts:plan.counts,entries:plan.entries.map(publicEntry),
+    excluded:plan.excluded,unclassified:plan.unclassified,scanIssues:plan.scanIssues},null,2));return;}
+  console.log(`Broncontrole: ${plan.counts.selected} geselecteerd, ${plan.counts.direct} direct formaatklaar, ${plan.counts.converted} via conversie, ${plan.counts.conversionRequired} conversie nodig, ${plan.counts.missing} ontbrekend, ${plan.counts.invalid} ongeldig, ${plan.counts.excluded} expliciet uitgesloten, ${plan.counts.unclassified} niet geclassificeerd, ${plan.counts.scanIssues} scanproblemen.`);
   for(const entry of plan.entries){
     const target=entry.convertedRelative?` -> ${entry.convertedRelative}`:'';
     const flags=entry.flags.length?` [controle: ${entry.flags.join(', ')}]`:'';
     console.log(`${entry.status.padEnd(20)} ${entry.group}: ${entry.relative}${target}${flags}`);
   }
+  for(const entry of plan.excluded)console.log(`UITGESLOTEN ${entry.relative}: ${entry.reason}`);
+  for(const entry of plan.unclassified)console.log(`NIET GECLASSIFICEERD ${entry.group}: ${entry.relative}`);
+  for(const entry of plan.scanIssues)console.log(`SCANPROBLEEM ${entry.group}: ${entry.relative} [${entry.status}]`);
+  if(upload)console.log('Upload maakt een nieuwe volledige vector store. Vervang OPENAI_COURSE_VECTOR_STORE_ID pas nadat alle brongroepen volledig zijn geindexeerd.');
   if(!upload)console.log('Dry-run: geen netwerkverzoeken en geen broninhoud gekopieerd.');
 }
 
@@ -141,6 +240,10 @@ async function api(fetcher,key,method,endpoint,body,form=false){
 }
 export async function uploadSources(plan,{key,fetcher=fetch}={}){
   if(plan.counts.ready!==plan.counts.selected)throw new Error('De bronselectie is niet volledig formaatklaar.');
+  if(!Array.isArray(plan.allGroups)||plan.groups.length!==plan.allGroups.length||
+     !plan.allGroups.every(group=>plan.groups.includes(group)))
+    throw new Error('Een nieuwe vector store moet alle brongroepen bevatten.');
+  if(plan.counts.unclassified||plan.counts.scanIssues)throw new Error('Nieuwe of onveilige bronbestanden moeten eerst worden geclassificeerd.');
   const store=await api(fetcher,key,'POST','/vector_stores',{name:`CAFA2 study sources ${new Date().toISOString().slice(0,10)}`});
   if(typeof store.id!=='string'||!store.id.startsWith('vs_'))throw new Error('De aangemaakte vector store heeft geen geldige ID.');
   let completed=0;
@@ -168,15 +271,20 @@ export async function uploadSources(plan,{key,fetcher=fetch}={}){
 
 export async function main(args=process.argv.slice(2)){
   const options=parseArgs(args);
-  if(options.help){console.log('Gebruik: node scripts/prepare-assistant-sources.mjs --source-root MAP [--converted-root MAP] [--group GROEP] [--json]. Upload alleen met --upload, expliciete --group en de toepasselijke --confirm-* opties.');return;}
+  if(options.help){console.log('Gebruik: node scripts/prepare-assistant-sources.mjs --source-root MAP [--converted-root MAP] [--group GROEP] [--json] [--check]. Upload alleen met --upload --all-groups en de toepasselijke --confirm-* opties; dit maakt een nieuwe volledige vector store.');return;}
   if(options.upload&&options.json)throw new Error('--json is alleen beschikbaar bij een dry-run.');
+  if(options.upload&&options.check)throw new Error('--check en --upload kunnen niet samen worden gebruikt.');
+  if(options.allGroups&&options.groups.length)throw new Error('Gebruik --all-groups of --group, niet beide.');
   const manifest=validateSourceManifest(JSON.parse(await readFile(options.manifestPath||DEFAULT_MANIFEST,'utf8')));
   const sourceRoot=options.sourceRoot||process.env[manifest.sourceRootEnv];
   const convertedRoot=options.convertedRoot||process.env[manifest.convertedRootEnv];
-  const plan=await planSources({manifest,sourceRoot,convertedRoot,groups:options.groups});
+  const selectedGroups=options.allGroups?Object.keys(manifest.groups):options.groups;
+  const plan=await planSources({manifest,sourceRoot,convertedRoot,groups:selectedGroups});
   showPlan(plan,options.json,options.upload);
+  if(options.check&&(plan.counts.unclassified||plan.counts.scanIssues||plan.counts.ready!==plan.counts.selected))
+    throw new Error('Broncontrole faalt: classificeer nieuwe bestanden, verhelp scanproblemen en lever ontbrekende conversies of bronnen aan.');
   if(!options.upload)return plan;
-  preflightUpload(plan,options);
+  preflightUpload(plan,{...options,groups:selectedGroups});
   const result=await uploadSources(plan,{key:process.env.OPENAI_API_KEY});
   console.log(`Volledig geïndexeerd: ${result.completed} bestanden. Stel OPENAI_COURSE_VECTOR_STORE_ID=${result.storeId} in de beveiligde previewconfiguratie in.`);
   return result;

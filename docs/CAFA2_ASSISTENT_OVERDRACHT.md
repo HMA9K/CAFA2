@@ -1,6 +1,6 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-24.5. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.1. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
 ## Status van deze werkronde
 
@@ -12,7 +12,7 @@ Op integratiecommit `d2ccac4` zijn beide GitHub Actions-workflows geslaagd, incl
 
 Na opname van `main` zijn op codecommit `8a8bbf7` beide workflows opnieuw geslaagd: 65 Node-tests, de actuele tien regressiescripts en 103 browsercontroles in elk van Chromium en WebKit. De Pages-preview van dezelfde commit faalde nog steeds op de ongewijzigde projectbuild. De assistent is daardoor nog niet live. De nieuwe opgavereeks is in de assistentproef meegenomen.
 
-Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het nieuwe relatieve bronmanifest omvat nu 95 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabus en tentamens. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow controleert nu ook de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
+Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het relatieve bronmanifest omvat nu 116 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabi uit 2025 en 2026, tentamens en vier aanvullende cursusdocumenten. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Een persoonlijk document is met reden uitgesloten. De lokale controle vindt 116 van 116 kandidaten gereed, zonder ongeclassificeerde bestanden of scanproblemen. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow controleert ook de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
 
 ## Opdracht en afbakening
 
@@ -56,12 +56,21 @@ Toegangscode, privacytoestemming en kostenlimieten blijven bestaan. Dat zijn tec
 | `assistant/pages-functions/study-*.js` | Vier endpointtemplates: status, auth, chat en logout. |
 | `scripts/prepare-study-assistant.mjs` | Expliciete, herhaalbare integratie. Zonder --apply alleen een overzicht. |
 | `scripts/build-study-assistant.mjs` | Genereert servercatalogus in delen en publieke uitvoer in dist. |
-| `scripts/verify-study-assistant-build.mjs` | Controleert voor deployment catalogus, vier Functions, routes en scheiding van privébestanden uit dist. |
-| `assistant/source-manifest.json` en `scripts/prepare-assistant-sources.mjs` | Relatieve lijst met lokale bronkandidaten, offline dry-run en expliciete opt-in voor externe indexering. Bronbestanden blijven buiten Git. |
+| `scripts/assistant-inputs.mjs` en `scripts/build-practice-topics.mjs` | Controleren of nieuwe databestanden door de pagina worden geladen en of gegenereerde MC-vragen overeenkomen met de actuele bron-JSON. |
+| `scripts/verify-study-assistant-build.mjs` | Controleert voor deployment catalogus, actualiteit van de vraagdata, vier Functions, routes en scheiding van privébestanden uit dist. |
+| `assistant/source-manifest.json` en `scripts/prepare-assistant-sources.mjs` | Relatieve lijst met lokale bronkandidaten, herkenning van nieuwe bestanden in de bronmappen, offline controle en expliciete opt-in voor een volledige externe indexering. Bronbestanden blijven buiten Git. |
 | `tests/study-assistant/` | Beveiliging, antwoordgedrag, alle echte vraagrecords en browserproef met mockdienst. |
 | `.github/workflows/assistant-handoff.yml` | Controleert de branch zonder deployment of echte modelaanroepen. |
 
 De vragenbank is geen handmatig onderhouden duplicaat: de build leest de actuele `data/`-scripts uit index.html. De huidige gegevens omvatten 247 oefenvragen, 131 echte tentamenvragen en 3 demovragen. De oefenbank bevat 12 benoemde vraagtypen, waaronder Theorie, Reken-/Berekenvraag, Journaalpost, Voorraadtabel, Methodekeuze, Vergelijking, Herkenning en Foutdiagnose.
+
+## Nieuwe vragen en cursusmaterialen
+
+Nieuwe MC-vragen in `content/practice/new-*.json` moeten met `node scripts/build-practice-topics.mjs` naar de bestaande vraagbank worden gegenereerd. De assistentbuild vergelijkt een hash van de actuele auteurdata met die gegenereerde vraagbank en stopt bij een vergeten generatie. Nieuwe tentamenvragen in reeds geladen bestanden komen bij de volgende build direct in de servercatalogus. Een nieuw `data/*.js`-bestand moet ook als script in `index.html` staan; de build weigert een bestand dat daar ontbreekt. De deploycontrole weigert een catalogus waarvan de vraagdata intussen zijn gewijzigd. Deze poorten houden de zichtbare vraag en de servercontext gelijk.
+
+Nieuwe originele PDF-, PPTX-, PPT- en DOCX-bestanden in de aangewezen lokale cursusmappen worden met `node scripts/prepare-assistant-sources.mjs --check` gevonden. De controle stopt bij ongeclassificeerde, ontbrekende of nog niet geconverteerde bronnen. Classificeer een nieuw bestand als kandidaat in `assistant/source-manifest.json` of sluit het daar gemotiveerd uit. Een manifestvermelding geeft de assistent nog geen documentkennis: na rechten- en inhoudscontrole moet de volledige gewenste set opnieuw in een nieuwe CAFA2-vector store worden geïndexeerd en de preview-store-ID worden vervangen. De import vereist daarvoor uitdrukkelijk `--all-groups`. De lokale OneDrive-map kan geen GitHub- of Cloudflare-build starten; voer deze broncontrole uit wanneer daar materiaal wordt toegevoegd. Alle uploads blijven opt-in en buiten de repository.
+
+Nieuwe zelfstandig geschreven theorie op de site is alleen beschikbaar voor de assistent voor zover die in de actuele vraagcontext staat of na gecontroleerde bronindexering teruggevonden wordt. Een aparte samenvattingspagina wordt niet stilzwijgend als gelezen bron gepresenteerd. De bestaande `build:study`- en `build:practice`-procedures blijven nodig wanneer hun auteurbestanden veranderen.
 
 De servercatalogus blijft buiten dist. De bestaande CAFA2-bronbestanden en uitwerkingen die al in de browserdata staan worden hiermee niet ineens privé. Dit project pretendeert geen beveiligde toetsafname te zijn.
 

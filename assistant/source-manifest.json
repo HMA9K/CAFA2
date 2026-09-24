@@ -3,11 +3,36 @@
   "sourceRootEnv": "CAFA2_SOURCE_ROOT",
   "convertedRootEnv": "CAFA2_CONVERTED_ROOT",
   "description": "Expliciete kandidaatbestanden; geen documentinhoud of rechtenverklaring.",
+  "scanRoots": {
+    "syllabus-2026": ["Onderwijsmateriaal/Syllabus CAFA 2"],
+    "syllabus-2025": ["Onderwijsmateriaal/Syllabus CAFA 2/2025"],
+    "syllabus-exercises-2026": [
+      "Onderwijsmateriaal/Syllabus opgaven",
+      "Onderwijsmateriaal/Syllabus uitwerkingen"
+    ],
+    "syllabus-exercises-2025": [
+      "Onderwijsmateriaal/Syllabus opgaven/2025",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025"
+    ],
+    "additional-materials": ["Onderwijsmateriaal"],
+    "exams": ["Tentamens"],
+    "college-slides": ["Thieu Mooren"],
+    "college-exam-pair-2022": ["Thieu Mooren"],
+    "repetition-program": ["Repetitiecursus"],
+    "repetition-slides": ["Repetitiecursus/Slides"],
+    "repetition-exercises": ["Repetitiecursus/Opgaven repetitiecursus"],
+    "repetition-solutions": ["Repetitiecursus/Antwoorden opgaven repetitiecursus"]
+  },
   "groups": {
     "syllabus-2026": [
       "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
       "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
       "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 3 Consolideren.pdf"
+    ],
+    "syllabus-2025": [
+      "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+      "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+      "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 3 Consolideren.pdf"
     ],
     "syllabus-exercises-2026": [
       "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 1a - opgaven kapitaalbelangen owp.pdf",
@@ -22,6 +47,26 @@
       "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 2b - uitwerking opgaven vreemde valuta extra.pdf",
       "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf",
       "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf"
+    ],
+    "syllabus-exercises-2025": [
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 1a - opgaven kapitaalbelangen owp.pdf",
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf",
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 2a - opgaven vreemde valuta owp.pdf",
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 2b - opgaven vreemde valuta extra.pdf",
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 3a - opgaven consolidatie owp.pdf",
+      "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 3b - opgaven consolidatie extra.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 1a - uitwerking opgaven kapitaalbelangen owp.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 2a - uitwerking opgaven vreemde valuta owp.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 2b - uitwerking opgaven vreemde valuta extra.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf",
+      "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf"
+    ],
+    "additional-materials": [
+      "Onderwijsmateriaal/Aanvullende literatuur - waarom van belastinglatenties.pdf",
+      "Onderwijsmateriaal/Onderwijsprogramma CAFA2_VJ 2025.pdf",
+      "Onderwijsmateriaal/Onderwijsprogramma CAFA2_VJ 2026.pdf",
+      "Onderwijsmateriaal/Overzicht wetboek.docx"
     ],
     "exams": [
       "Tentamens/2021-04 CAFA2 - Tentamen.docx",
@@ -66,6 +111,10 @@
       "Thieu Mooren/Slides College 8 2026 CAFA2 [copyright Nyenrode Business Universiteit.pptx",
       "Thieu Mooren/Slides College 9 2025 CAFA2 [copyright Nyenrode Business Universiteit] 6. Actief Downstream NVW.pptx",
       "Thieu Mooren/Slides Uitwerking Tentamen 2022 okt 6 copyright Nyenrode Business Universiteit].pptx"
+    ],
+    "college-exam-pair-2022": [
+      "Thieu Mooren/TENTAMEN CAFA2 20221006 (1).docx",
+      "Thieu Mooren/UITWERKINGEN tentamen CAFA2 20221006.docx"
     ],
     "repetition-program": [
       "Repetitiecursus/Onderwijsprogramma_Repetitiecursus CAFA2 NJ25.pdf"
@@ -116,7 +165,14 @@
       "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 8 - Obdam-Bobeldijk-Midwoud uitwerking (DS en SSa en USmva).pdf"
     ]
   },
+  "excluded": {
+    "Thieu Mooren/persoonlijke vragen.docx": "Persoonlijke vragen; niet aangemerkt als gedeeld CAFA2-cursusmateriaal."
+  },
   "reviewFlags": {
+    "Onderwijsmateriaal/Aanvullende literatuur - waarom van belastinglatenties.pdf": ["controleer-rechten"],
+    "Onderwijsmateriaal/Overzicht wetboek.docx": ["controleer-rechten"],
+    "Thieu Mooren/TENTAMEN CAFA2 20221006 (1).docx": ["controleer-officiele-status"],
+    "Thieu Mooren/UITWERKINGEN tentamen CAFA2 20221006.docx": ["controleer-officiele-status"],
     "Repetitiecursus/Slides/1. Kapitaalbelangen deel 1 Dochter, deelneming.pptx": ["korte-dia", "beeldinhoud"],
     "Repetitiecursus/Slides/09 Vreemde valuta.pptx": ["beeldinhoud"],
     "Repetitiecursus/Slides/11 Vreemde valuta Closing rate method = Slotkoersmethode.pptx": ["korte-dia", "beeldinhoud"],

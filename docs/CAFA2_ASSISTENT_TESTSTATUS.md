@@ -1,6 +1,6 @@
 # CAFA2 Assistent: teststatus na integratie
 
-Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
+Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
 ## Uitgevoerde controles
 
@@ -15,7 +15,9 @@ Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-P
 | Canonieke vraagbank | 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen gecontroleerd. | Alle records passen binnen de contextgrens en behouden hun antwoordmodel en revisie. |
 | Bestaande regressiecontroles | Alle tien scripts uit het actuele `npm test` afzonderlijk met `node` geslaagd, inclusief de nieuwe opgavereeks. | Vragen, exam engine, timergrenzen, score- en inhoudsrevisie, lezen, onderwerpen en donkere modus zijn bij deze integratie niet stukgegaan. `npm` is lokaal niet beschikbaar. |
 | Assistentbuild en deploycontrole | Geslaagd op de bijgewerkte `main`: 247 oefenvragen, 134 tentamenvragen inclusief 3 demo's, 128 publieke bestanden en 4 actieve Functions-routes. | Publieke `dist` en gesplitste servercatalogus worden gegenereerd; de controle weigert privébestanden in `dist` en ontbrekende routes. |
-| Bronneninventaris en conversie | 95 van 95 kandidaten lokaal aanwezig: 84 direct formaatklaar en 11 omgezette legacy-presentaties. De 11 PDF's tellen 113 pagina's, gelijk aan de bron-dia's; tekst per pagina en drie reken-/boekingsdia's visueel gecontroleerd. | De repetitiecursus en eerdere bronsets zijn lokaal gevonden; dit bewijst geen externe indexering of volledige visuele correctheid. |
+| Eerste bronneninventaris en conversie | Destijds 95 van 95 kandidaten lokaal aanwezig: 84 direct formaatklaar en 11 omgezette legacy-presentaties. De 11 PDF's tellen 113 pagina's, gelijk aan de bron-dia's; tekst per pagina en drie reken-/boekingsdia's visueel gecontroleerd. | De repetitiecursus en eerdere bronsets zijn lokaal gevonden; dit bewijst geen externe indexering of volledige visuele correctheid. De actuele telling staat in de volgende rij. |
+| Controle bij later toegevoegd materiaal | De vraagcatalogus weigert een nieuw `data/*.js` buiten `index.html`, gewijzigde MC-auteurdata zonder hergeneratie en een verouderde servercatalogus. De actuele lokale broncontrole met `--json --check` meldt 116 van 116 kandidaten gereed: 105 direct, 11 geconverteerd, 1 gemotiveerd uitgesloten, 0 ongeclassificeerd en 0 scanproblemen. | Nieuwe vraag- en bronbestanden kunnen niet meer ongemerkt buiten hun respectieve build- of broninventarisatie vallen. Dit bewijst nog geen externe indexering of modelkwaliteit. |
+| Lokale regressie na deze aanvulling | 73 Node-tests geslaagd, inclusief nieuwe materiaal- en broncontroles; tien bestaande regressiescripts afzonderlijk met `node` geslaagd; assistentbuild en deploycontrole geslaagd met 247 oefenvragen, 134 tentamenrecords en 128 publieke bestanden. Chromium- en WebKit-browserproeven van de echte interface zijn beide met exitcode 0 afgerond. | De nieuwe poorten verstoren de bestaande vraag-, examen-, antwoord- en schermroutes niet. De browser gebruikt nog steeds uitsluitend een gesimuleerde antwoorddienst. |
 | Browserproef | Chromium: 103 controles geslaagd, 0 JavaScript-runtimefouten. WebKit 26.0: 103 controles geslaagd, 0 JavaScript-runtimefouten. De aparte opgave- en wetboekbrowsercontroles op desktop en mobiel slagen. | Werkelijke DOM, routes, editors en schermindeling met gesimuleerde antwoorddienst; geen inhoudelijke modelkwaliteit. |
 | Cloudflare-branchpreview | Deployments van `d2ccac4`, `7f48f2e`, `4ec7c76` en `8a8bbf7` faalden. Productie antwoordt met HTML zonder assistentimport; `/api/study-status` geeft HTML in plaats van JSON. | De huidige build voert `exit 0` uit; Functions kunnen daarna `catalog.generated.mjs` niet bundelen. De assistent is niet live en de Pages-buildinstelling is niet aangepast. |
 | Echte modelaanroepen, File Search en Cloudflare-runtime | Niet uitgevoerd. | Een model, secrets, geautoriseerde uploads en bruikbare preview-inrichting ontbreken. |
@@ -30,6 +32,7 @@ Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-P
 - De server weigert ongeldige of te grote modelresponsen, stopt een al afgebroken verzoek voor de modelaanroep en geeft bij een quotaoverschrijding de werkelijke `Retry-After` terug.
 - De assistentknop ontwijkt op kleine schermen de vaste tentamenbalk; bij een geopende rekenmachine staat een compacte knop in de rekenmachinekop.
 - Een samengestelde opgavereeks verwijst voor context en revisie naar de juiste oorspronkelijke tentamenvraag; het eigen antwoord blijft bij de huidige poging. Twee brontentamens met hetzelfde vraag-ID, de historische detailroute en de inline resultaatknop blijven gescheiden.
+- Een nieuwe oefenvraag en tentamenvraag vergroten de canonieke catalogus. Een vergeten databestand, gewijzigde auteur-JSON, verouderde catalogus, nieuwe lokale bron, ontbrekende bron of vereiste presentatieconversie stoppen de bijbehorende build of broncontrole.
 
 ## Browserproef: reikwijdte
 
@@ -45,7 +48,7 @@ Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, be
 
 Een fysieke iPhone met geopend toetsenbord en de echte Cloudflare-preview blijven aparte controles. Er is niets naar `main` gemerged of in productie geactiveerd.
 
-De nieuwe bronimporttest gebruikt een gesimuleerde API-respons. Er is geen echte OpenAI-vector store aangemaakt, geen origineel document geüpload en geen modelantwoord op deze documenten beoordeeld. De 2026-tentamenbestanden in het manifest vragen nog controle van hun officiële status. Beeldinformatie in enkele PPTX-dia's en de overige 110 geconverteerde dia's zijn niet volledig visueel geverifieerd.
+De nieuwe bronimporttest gebruikt een gesimuleerde API-respons. Er is geen echte OpenAI-vector store aangemaakt, geen origineel document geüpload en geen modelantwoord op deze documenten beoordeeld. De 2026-tentamenbestanden en het toegevoegde DOCX-tentamenpaar uit 2022 vragen nog controle van hun officiële status. Beeldinformatie in enkele PPTX-dia's en de overige 110 geconverteerde dia's zijn niet volledig visueel geverifieerd. Een bestand dat onder dezelfde naam inhoudelijk wordt vervangen, vereist handmatige herindexering; de huidige broncontrole vergelijkt geen vorige bestandsinhoud.
 
 ## Reproduceren
 
@@ -53,6 +56,7 @@ De nieuwe bronimporttest gebruikt een gesimuleerde API-respons. Er is geen echte
 node --test tests/study-assistant/*.test.mjs
 node scripts/prepare-study-assistant.mjs
 node scripts/prepare-study-assistant.mjs --apply
+node scripts/prepare-assistant-sources.mjs --check
 node scripts/build-study-assistant.mjs
 node scripts/verify-study-assistant-build.mjs
 npm test
@@ -60,4 +64,4 @@ python tests/study-assistant/browser.py
 ASSISTANT_BROWSER=webkit python tests/study-assistant/browser.py
 ```
 
-De browserproef vereist Playwright 1.57.0 en een geïnstalleerde browser. Op Windows kan de laatste regel met een PowerShell-omgevingsvariabele worden uitgevoerd. Alle antwoorden van de automatische browserproef zijn gesimuleerd.
+De broncontrole vereist de lokale mapvariabelen uit `CAFA2_ASSISTENT_ACTIVEREN.md`. De browserproef vereist Playwright 1.57.0 en een geïnstalleerde browser. Op Windows kan de laatste regel met een PowerShell-omgevingsvariabele worden uitgevoerd. Alle antwoorden van de automatische browserproef zijn gesimuleerd.

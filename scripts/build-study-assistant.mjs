@@ -2,25 +2,24 @@
 import {readFile,writeFile,mkdir,readdir,cp,rm} from 'node:fs/promises';
 import path from 'node:path';
 import vm from 'node:vm';
-import {createHash} from 'node:crypto';
 import {buildCatalog} from '../js/study-assistant-schema.mjs';
+import {listAssistantDataScripts,assistantInputHashes,practiceAuthoringHash} from './assistant-inputs.mjs';
 const root=process.cwd();
 const html=await readFile(path.join(root,'index.html'),'utf8');
 if (!html.includes('study-assistant.mjs')) throw new Error('Installeer eerst de assistent in index.html.');
-const scripts=[...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)]
-  .map(m=>m[1].split('?')[0]).filter(s=>s.startsWith('data/'));
-if (!scripts.length) throw new Error('Geen CAFA2-databestanden gevonden.');
+const scripts=await listAssistantDataScripts(root,html);
 const window={};const sandbox=vm.createContext({window,console});
-const inputHashes={};
+const inputHashes=await assistantInputHashes(root,scripts);
 for (const script of scripts) {
-  const full=path.resolve(root,script);
-  if(!full.startsWith(path.join(root,'data')+path.sep))throw new Error('Onveilig datapad.');
-  const code=await readFile(full,'utf8');
-  inputHashes[script]=createHash('sha256').update(code).digest('hex');
+  const code=await readFile(path.join(root,script),'utf8');
   // Only trusted, version-controlled CAFA2 source files run here; this is not an upload endpoint.
   new vm.Script(code,{filename:script}).runInContext(sandbox,{timeout:5000});
 }
-const catalog=buildCatalog(window);catalog.inputHashes=inputHashes;
+if(window.CAFA2_PRACTICE_SOURCE_HASH!==practiceAuthoringHash(root))
+  throw new Error('Nieuwe of gewijzigde MC-brondata ontbreken in data/practice-topics.js. Voer node scripts/build-practice-topics.mjs uit en commit de gegenereerde vraagbank.');
+const catalog=buildCatalog(window);
+catalog.inputHashes=inputHashes;
+catalog.authoringHashes={practice:practiceAuthoringHash(root)};
 await mkdir(path.join(root,'assistant/server'),{recursive:true});
 // Respect the repository's 900 kB/file ceiling, even when case text is repeated.
 const partsDir=path.join(root,'assistant/server/catalog-parts');
