@@ -4,7 +4,7 @@
   var data = window.CAFA2_STUDY || {laws:{},guides:{},notes:{}};
   var navKey = 'cafa2-navigation-v1', path = location.pathname;
   var nav = {stack:[], origin:null, pending:null}, suppress = false, previous = null;
-  var bar, back, originButton, scheduled = false, lawOpener = null;
+  var bar, back, originButton, questionLinks, scheduled = false, lawOpener = null;
   function read() { try { var n = JSON.parse(sessionStorage.getItem(navKey) || '{}'); if (Array.isArray(n.stack)) nav = n; } catch (_) {} }
   function persist() { try { sessionStorage.setItem(navKey, JSON.stringify(nav)); } catch (_) {} }
   function escape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
@@ -99,8 +99,10 @@
     var cur=snapshot();
     var hasOrigin=nav.origin && localURL(nav.origin.url) && !same(nav.origin,cur) && !cur.question;
     var top=nav.stack[nav.stack.length-1];
-    back.hidden = !top || same(top,cur);
-    originButton.hidden = !hasOrigin;
+    var onQuestion=!!cur.question || !!document.querySelector('.question:target');
+    questionLinks.hidden=!onQuestion;
+    back.hidden = onQuestion || !top || same(top,cur);
+    originButton.hidden = onQuestion || !hasOrigin;
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
     bar.hidden=false;
@@ -136,7 +138,10 @@
       if(header){bar=document.createElement('nav');bar.id='study-returnbar';bar.setAttribute('aria-label','Terug naar je leeractiviteit');bar.hidden=true;
         back=document.createElement('button');back.type='button';back.className='study-back';back.textContent='← Vorige pagina';back.setAttribute('aria-label','Vorige pagina');back.dataset.studyBack='';
         originButton=document.createElement('button');originButton.type='button';originButton.className='study-origin';originButton.dataset.studyOrigin='';
-        bar.append(back,originButton);header.after(bar);
+        questionLinks=document.createElement('span');questionLinks.className='question-return-links';questionLinks.hidden=true;
+        var mainPath=/\/(?:index(?:\.html)?)?$/.test(path)?'':(/\/fallback\//.test(path)?'../':'')+'index.html';
+        questionLinks.innerHTML='<a href="'+mainPath+'#start">Home</a><a href="'+mainPath+'#oefenen">Onderwerpen</a>';
+        bar.append(back,originButton,questionLinks);header.after(bar);
         function measure(){document.documentElement.style.setProperty('--study-top-h',header.getBoundingClientRect().height+'px');}
         if(window.ResizeObserver)new ResizeObserver(measure).observe(header);measure();}
     }
