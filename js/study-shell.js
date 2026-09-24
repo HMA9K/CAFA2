@@ -170,7 +170,7 @@
     if(!root)return;
     var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
     while((n=walker.nextNode())) {
-      if(!n.parentElement||n.parentElement.closest('a,button,script,style,textarea,input,select,[contenteditable],.law-verbatim,.study-law-body,.law-popover'))continue;
+      if(!n.parentElement||n.parentElement.closest('a,button,script,style,textarea,input,select,[contenteditable],.law-verbatim,.study-law-body,.law-popover,.question,#exam-app'))continue;
       if(/(?:art\.?|artikel)\s*2:\s*\d+/i.test(n.textContent))nodes.push(n);
     }
     nodes.forEach(function(text){
