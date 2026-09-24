@@ -53,7 +53,7 @@ async def run():
                 header = await page.locator('.reader-topbar').bounding_box()
                 assert rect['y'] >= header['y'] + header['height'] - 1
                 assert rect['y'] < 140, rect
-                assert await page.locator('.calc-keys button').all_text_contents() == ['7','8','9','/','4','5','6','*','1','2','3','-','0','.','(',')','√','ln','exp','^','C','⌫','=','+']
+                assert await page.locator('.calc-keys button').all_text_contents() == ['7','8','9','÷','4','5','6','×','1','2','3','−','0','.','(',')','√','ln','exp','^','C','⌫','=','+']
                 data = [['2+3*4',14], ['(2+3)*4',20], ['1,5+2.5',4], ['3740*(636-97185/165)',175780],
                         ['8^2',64], ['2^3^2',512], ['-2^2',-4], ['(-2)^2',4], ['2^-2',0.25],
                         ['sqrt(81)',9], ['ln(exp(2))',2], ['exp(0)',1], ['200*25%',50], ['1e3+2',1002], ['10×2÷4',5]]
@@ -65,17 +65,18 @@ async def run():
                 checks.append('SRA input/result/keypad layout, topbar opener, non-modal top-right position, arithmetic/function/invalid-input checks')
                 field = page.locator('#calc-expression')
                 await field.fill('8^2'); await field.press('Enter')
-                assert await page.locator('.calc-output').inner_text() == '64'
-                assert await field.input_value() == '8^2'
+                assert await page.locator('.calc-history-value').last.inner_text() == '= 64'
+                assert await field.input_value() == ''
                 # Buttons must insert at the caret and replace selected input.
                 await field.fill('1+2'); await field.evaluate('(x)=>{x.focus();x.setSelectionRange(2,3)}')
                 await key('7'); await key('=')
-                assert await field.input_value() == '1+7'
-                assert await page.locator('.calc-output').inner_text() == '8'
+                assert await field.input_value() == ''
+                assert await page.locator('.calc-history-expression').last.inner_text() == '1+7'
+                assert await page.locator('.calc-history-value').last.inner_text() == '= 8'
                 await field.fill('1/0'); await field.press('Enter')
                 assert await field.get_attribute('aria-invalid') == 'true'
                 await field.fill('8^2'); await field.press('Enter')
-                assert await field.get_attribute('aria-invalid') == 'false'
+                assert await field.get_attribute('aria-invalid') is None
                 await page.locator('.calc-extra > summary').click(); await key('M+')
                 assert (await page.evaluate('CafaCalculator.getState()'))['memory'] == 64
                 await page.locator('.calc-extra > summary').click()
@@ -101,7 +102,7 @@ async def run():
                 assert await page.locator('.calculator-toolbar-trigger').get_attribute('aria-expanded') == 'false'
                 await page.locator('.calculator-toolbar-trigger').click()
                 assert await page.locator('.calculator-float-body').is_visible()
-                assert await page.locator('.calc-output').inner_text() == '64'
+                assert await page.locator('.calc-history-value').last.inner_text() == '= 64'
                 await page.locator('[data-calc-close]').click()
                 checks.append('Typed formula and Enter, caret insertion, error recovery, memory, light/dark mobile bounds, moving, collapse/close/reopen')
                 if not OFFLINE:
@@ -111,13 +112,13 @@ async def run():
                     assert await page.locator('.calculator-fab').count()==0
                     await page.locator('label[for="a-kap-12-0"]').click()
                     await page.locator('.calculator-toolbar-trigger').click()
-                    assert await page.locator('.calc-output').inner_text()=='64'
+                    assert await page.locator('.calc-history-value').last.inner_text()=='= 64'
                     assert (await page.evaluate('CafaCalculator.getState()'))['memory']==64
                     # The page remains editable, and typed answers outside the calculator are not intercepted.
                     await page.evaluate("var x=document.createElement('textarea');x.id='answer-isolation';document.body.prepend(x);x.focus()")
                     await page.keyboard.type('123+4')
                     assert await page.locator('#answer-isolation').input_value()=='123+4'
-                    assert await page.locator('.calc-output').inner_text()=='64'
+                    assert await page.locator('.calc-history-value').last.inner_text()=='= 64'
                     await page.locator('#answer-isolation').evaluate('(x)=>x.remove()')
                     await page.locator('[data-calc-close]').click()
                     await page.reload(wait_until='networkidle');await page.wait_for_function('!!window.CafaCalculator&&!!window.CafaPractice')

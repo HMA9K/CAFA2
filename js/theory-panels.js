@@ -13,14 +13,15 @@
       panel.dataset.guidanceId=code+'-'+id;panel.open=false;
       summary.append(node('span','i','theory-icon'),node('span','Basisregels bij deze vraag'),node('span',undefined,'theory-chevron'));
       content.append(node('h3',g.title),node('p',g.rules));
-      var refs=node('p',undefined,'theory-source');(q.refs||[]).forEach(function(ref,i){if(i)refs.append(document.createElement('br'));refs.append(document.createTextNode(bank.sources[ref]?bank.sources[ref].label:ref));});content.append(refs);
+      var sources=node('details',undefined,'theory-sources');sources.append(node('summary','Bronnen bij deze basisregels'));
+      var refs=node('p',undefined,'theory-source');(q.refs||[]).forEach(function(ref,i){if(i)refs.append(document.createElement('br'));refs.append(document.createTextNode(bank.sources[ref]?bank.sources[ref].label:ref));});sources.append(refs);content.append(sources);
       var a=node('a','Lees de bijbehorende uitleg','theory-link');a.href=(location.pathname.includes('/fallback/')?'../':'')+'samenvatting.html#'+g.lesson;content.append(a);panel.append(summary,content);
       var task=body.querySelector('.task');if(task)task.after(panel);else body.prepend(panel);body.classList.add('has-theory-panel');
     });
     var match=location.hash.match(/^#(kap|val|nvw|hk)-\d+$/);
     var currentId=match?location.hash.slice(1):null;
     if(currentId!==previousQuestionId){
-      document.querySelectorAll('.question .theory-panel[open]').forEach(function(panel){panel.open=false;});
+      document.querySelectorAll('.question .theory-panel[open], .question .theory-sources[open]').forEach(function(panel){panel.open=false;});
       previousQuestionId=currentId;
     }
   }
