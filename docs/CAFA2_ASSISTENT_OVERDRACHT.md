@@ -10,6 +10,8 @@ Alle 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen zijn opni
 
 Op integratiecommit `d2ccac4` zijn beide GitHub Actions-workflows geslaagd, inclusief 96 browsercontroles in Chromium en 96 in WebKit. De Cloudflare-branchpreview van die commit faalde afzonderlijk: de huidige Pages-build voert `exit 0` uit, zodat de Functions de nog niet gegenereerde servercatalogus niet kunnen vinden. De benodigde preview- en runtime-inrichting staat in het activatiedocument.
 
+Na opname van `main` zijn op codecommit `8a8bbf7` beide workflows opnieuw geslaagd: 65 Node-tests, de actuele tien regressiescripts en 103 browsercontroles in elk van Chromium en WebKit. De Pages-preview van dezelfde commit faalde nog steeds op de ongewijzigde projectbuild. De assistent is daardoor nog niet live. De nieuwe opgavereeks is in de assistentproef meegenomen.
+
 Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het nieuwe relatieve bronmanifest omvat nu 95 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabus en tentamens. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow controleert nu ook de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
 
 ## Opdracht en afbakening
