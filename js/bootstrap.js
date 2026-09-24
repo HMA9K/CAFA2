@@ -59,13 +59,13 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
-    return loadScript('js/exams.js?v=20260923-caseleft1');
+    return loadScript('js/exams.js?v=20260924-opgaven1');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
-    return loadScript('js/answer-feedback.js?v=20260924-no-duplicate1');
+    return loadScript('js/answer-feedback.js?v=20260924-opgaven1');
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
