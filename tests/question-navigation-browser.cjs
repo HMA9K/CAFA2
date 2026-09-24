@@ -21,6 +21,7 @@ const server=http.createServer((req,res)=>{const pathname=decodeURIComponent(new
   if(sra)await page.evaluate(()=>location.hash='#bronnen');else{await page.locator('#study-tools-menu>summary').click();await page.locator('#study-tools-menu').getByRole('link',{name:'Bronnen',exact:true}).click();}
   await back.waitFor();assert.ok(await links.isHidden());await back.click();await checkQuestion();
   await links.getByRole('link',{name:'Home',exact:true}).click();await page.waitForURL('**'+main);assert.ok(await links.isHidden());
+  await page.waitForFunction(sra=>sra?!!window.SRACirrus:!!window.CafaExams&&!document.documentElement.classList.contains('cafa-starting'),sra);
   const examId=await page.evaluate(sra=>(sra?SRACirrus:CafaExams).catalog.find(e=>!e.demo).id,sra);await page.evaluate(id=>location.hash='#welkom/'+id,examId);await page.locator('[data-exam-untimed]').check();await page.locator('[data-exam-action="start"]').click();await page.locator('body.exam-running').waitFor();await checkQuestion();
   const attemptRoute=await page.evaluate(()=>location.hash),editor=page.locator('#exam-app [contenteditable="true"]').first();await editor.fill('Bewaarde proefuitwerking');await page.locator('[data-exam-action="mark"]').click();
   const saved=await page.evaluate(sra=>(sra?SRACirrus:CafaExams).getAttempts().at(-1),sra);assert.ok(JSON.stringify(saved).includes('Bewaarde proefuitwerking'));
