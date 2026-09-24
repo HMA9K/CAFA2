@@ -1,0 +1,47 @@
+name: CAFA2 assistant handoff checks
+on:
+  push:
+    branches: [codex/cafa2-assistant-handoff]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: assistant-handoff-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assistant tests, including real question coverage
+        run: |
+          mkdir -p /tmp/assistant-qa
+          node --test tests/study-assistant/*.test.mjs 2>&1 | tee /tmp/assistant-qa/node-tests.log
+      - name: Integrate in runner only and build
+        run: |
+          node scripts/prepare-study-assistant.mjs --apply
+          node scripts/build-study-assistant.mjs | tee /tmp/assistant-qa/build.log
+      - name: Existing repository regression tests
+        run: npm test 2>&1 | tee /tmp/assistant-qa/regression.log
+      - name: Bundle the Pages Function
+        run: npx --yes esbuild@0.25.10 functions/api/study-chat.js --bundle --format=esm --platform=browser --outfile=/tmp/assistant-qa/worker.mjs
+      - name: Install browser-test dependencies
+        run: |
+          pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Real interface with mocked answer service
+        env:
+          ASSISTANT_QA_OUT: /tmp/assistant-qa/browser
+        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-assistant-handoff-checks
+          path: /tmp/assistant-qa
+          retention-days: 7
