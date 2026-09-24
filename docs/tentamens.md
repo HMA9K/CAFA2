@@ -36,9 +36,18 @@ Er zijn 282 tentamenvragen en daarnaast 120 oorspronkelijke MC-oefenvragen. Bij 
 
 Het dashboard opent met **Aankomend**: de ongetimede MC-oefenvragen en beschikbare volledige tentamens. Een gemaakte poging staat onder **Voltooid**. Vanaf de inzage kan een nieuwe poging worden gestart zonder de oude te verwijderen.
 
-### Tentamenvragen per opgave
+### Tentamenvragen per onderwerp
 
-Direct onder de MC-oefenvragen staat een oefenreeks per opgave. Op de introductiepagina kiest de gebruiker Opgave 1, 2, 3 of 4 en vervolgens de gewenste tentamendata. Alle elf de tentamens zijn afzonderlijk te kiezen en standaard geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De aantallen voor alle elf samen zijn 85, 70, 64 en 63 vragen voor respectievelijk Opgave 1 tot en met 4. In oudere tentamens kan hetzelfde opgavenummer een ander onderwerp behandelen; de selectie volgt het oorspronkelijke opgavenummer.
+Direct onder de MC-oefenvragen staat een oefenreeks per onderwerp. Op de introductiepagina kiest de gebruiker een van vier vaste keuzes en vervolgens de gewenste tentamendata. Alle elf tentamens zijn afzonderlijk te kiezen en standaard geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De selectie volgt het onderwerp van de bronopgave, ook als het oorspronkelijke opgavenummer afwijkt.
+
+| Vaste keuze | Onderwerp | Oorspronkelijke opgave 2021–2023 | Oorspronkelijke opgave 2024–2026 | Vragen bij alle 11 | Punten bij alle 11 |
+|---|---|---:|---:|---:|---:|
+| 1 | Kapitaalbelangen | 1 | 1 | 85 | 330 |
+| 2 | Vreemde valuta | 4 | 2 | 63 | 220 |
+| 3 | Consolidatie nettovermogenswaarde | 2 | 3 | 78 | 330 |
+| 4 | Consolidatie verkrijgingsprijs | 3 | 4 | 56 | 220 |
+
+Dit zijn 282 vragen en 1.100 punten over alle vier onderwerpen. De opgavetitels en casussen in de aangeleverde tentamens onderbouwen de koppeling; de oorspronkelijke nummering blijft bij elke bronvraag zichtbaar.
 
 Elk oorspronkelijk voorblad met algemene uitgangspunten, elke broncasus, vraag, uitwerking en puntwaarde blijft intact. Tijdens een vraag opent **Introductie** het voorblad van het bijbehorende tentamen. De samengestelde poging krijgt unieke vraag- en sectie-ID's, met de oorspronkelijke ID en examencode als bronmetadata. Antwoorden op gelijk genummerde vragen uit verschillende tentamens blijven daardoor gescheiden. Het vraagoverzicht gebruikt dezelfde vraagknoppen, met een kleine examencode boven elke groep. Lopende en voltooide reeksen blijven als afzonderlijke pogingen in de bestaande lokale tentamenopslag bewaard.
 
@@ -58,9 +67,10 @@ Dit is een volledig statische oefenomgeving, geen beveiligde examenafname. Antwo
 
 1. Lees het volledige tentamen, voorblad en antwoordmodel. Controleer tabellen visueel tegen de pdf.
 2. Maak een bestand `data/exam-YYYYMMDD.js` met `window.CAFA2_EXAMS.push(exam)`.
-3. Voeg het script toe in `index.html`, na `data/exams.js` en vóór `js/bootstrap.js`.
-4. Werk `tests/exam-content.mjs` bij met verwachte aantallen, punten en kenmerkende casusgegevens.
-5. Draai `npm test` en controleer op test de sectiewissels, uitwerkingen, timer, invoer en herladen.
+3. Controleer welk oorspronkelijk opgavenummer in het nieuwe tentamen bij elk van de vier vaste onderwerpen hoort. Voeg onder de examen-ID in `SOURCE_ORDER` van `js/opgave-practice.js` de vier bronopgavenummers toe in onderwerpvolgorde: kapitaalbelangen, vreemde valuta, consolidatie nettovermogenswaarde, consolidatie verkrijgingsprijs. Zonder deze koppeling verschijnt het tentamen niet in de onderwerpkeuze.
+4. Voeg het script toe in `index.html`, na `data/exams.js` en vóór `js/bootstrap.js`.
+5. Werk `tests/exam-content.mjs` en `tests/opgave-practice.mjs` bij met verwachte aantallen, punten, bronopgavenummers en kenmerkende casusgegevens.
+6. Draai `npm test` en controleer op test de sectiewissels, uitwerkingen, timer, invoer en herladen.
 
 Formaat:
 
