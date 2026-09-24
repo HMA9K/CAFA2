@@ -34,7 +34,8 @@ try{
  let q=page.locator('#'+next);await q.locator('.option[data-option="1"]').click();
  assert.equal(await q.locator('.cafa-inline-feedback:not([hidden])').count(),0);
  await q.locator('.cafa-check-controls button').first().click();await q.locator('.cafa-inline-feedback:not([hidden])').first().waitFor();
- assert.equal(await q.locator('.correct-model > :first-child').first().evaluate(e=>e.classList.contains('learning-pattern')),true);
+ assert.equal(await q.locator('.correct-model .feedback-pattern').first().evaluate(e=>e.open),false);
+ assert.equal(await q.locator('.correct-model').first().evaluate(e=>!!(e.querySelector('.model-caption').compareDocumentPosition(e.querySelector('.feedback-pattern'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
  assert.equal(await q.locator('.cafa-inline-feedback:not([hidden])').first().evaluate(e=>e.previousElementSibling.matches('.option[data-option="1"]')),true);
  await page.reload();await page.locator('#'+next+' .practice-page-title').waitFor();assert.equal(await page.evaluate(uid=>{const[c,i]=uid.split('-');return CafaPractice.getAnswer(c,+i).choice;},next),1);
  await q.locator('[data-overview]').click();await page.waitForURL('**#onderwerp-overzicht-zeggenschap');assert.equal(await page.locator('#onderwerp-overzicht-zeggenschap .result-row').count(),topics[0].questions.length);

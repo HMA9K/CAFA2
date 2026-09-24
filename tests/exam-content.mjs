@@ -42,5 +42,5 @@ const html=read('index.html');
 for(const file of ['data/exams.js',...examFiles,'js/answer-editor.js','js/exam-engine.js'])assert.ok(html.includes('src="'+file+'"'));
 const styles=[...html.matchAll(/<link\b[^>]*href="([^"]+)"/g)].map(match=>match[1].split('?')[0]);
 for(const file of ['css/answer-editor.css','css/exams.css','css/practice-upgrades.css'])assert.ok(styles.includes(file),'Required stylesheet: '+file);
-assert.ok(html.indexOf('src="js/answer-editor.js"')<html.indexOf('src="js/bootstrap.js"'));
+assert.ok(html.indexOf('src="js/answer-editor.js"')<html.search(/src="js\/bootstrap\.js(?:\?v=[\w-]+)?"/));
 console.log('Tentameninhoud gevalideerd: 5 tentamens, 131 vragen, 20 casussecties, 500 punten.');

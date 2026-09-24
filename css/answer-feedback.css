@@ -45,6 +45,10 @@
 .cafa-inline-feedback [hidden],
 .cafa-check-controls[hidden] { display: none !important; }
 .cafa-feedback-verdict { font-weight: 700; font-size: 1.04rem; }
+.feedback-disclosure { margin: 12px 0; border: 1px solid var(--line, #d9e2eb); border-radius: 4px; }
+.feedback-disclosure > summary { padding: 10px 12px; cursor: pointer; font-weight: 600; color: var(--text, #333044); }
+.feedback-disclosure > summary:focus-visible { outline: 2px solid var(--purple, #444159); outline-offset: 2px; }
+.feedback-disclosure > .pattern, .feedback-disclosure > .study-answer-note { margin: 0; }
 .cafa-feedback-verdict.is-good { color: var(--green, #008859); }
 .cafa-feedback-verdict.is-bad { color: var(--bad, #b32525); }
 .exam-answer-actions > .cafa-check-controls { margin: 0; }

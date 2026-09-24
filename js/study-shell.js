@@ -87,6 +87,7 @@
     (p.details||[]).forEach(function(id){var d=document.getElementById(id); if(d&&d.tagName==='DETAILS')d.open=true;});
     requestAnimationFrame(function(){requestAnimationFrame(function(){
       if(p.examFeedback){var check=document.querySelector("#exam-app [data-exam-action=check]");if(check&&check.getAttribute("aria-expanded")!=="true")check.click();}
+      (p.details||[]).forEach(function(id){var d=document.getElementById(id);if(d&&d.tagName==='DETAILS')d.open=true;});
       settleReadingPosition(p);
       var panes=document.querySelectorAll('.review-side-content, .exam-modal-body, .reader-sidebar');
       (p.panes||[]).forEach(function(pair){if(panes[pair[0]])panes[pair[0]].scrollTop=pair[1];});
