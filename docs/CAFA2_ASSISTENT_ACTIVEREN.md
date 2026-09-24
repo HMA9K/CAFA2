@@ -4,7 +4,7 @@ Dit is een voorbereidingsdocument. Geen account, productie-instelling, secret of
 
 ## Actuele Pages-instelling, alleen gelezen op 24 september 2026
 
-Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. De branchpreview is daarmee nog geen runtimeproef van de assistent. De globale buildinstelling is bewust niet gewijzigd: die wijziging zou ook toekomstige productiedeployments raken.
+Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. Deployment `37372c56-dec5-46ef-bc25-d52aebf66550` van commit `d2ccac4` faalde op 24 september: Pages voerde `exit 0` uit en kon daarna bij het bundelen van alle vier Functions `../../assistant/server/catalog.generated.mjs` niet vinden. Dat bestand ontstaat pas tijdens de assistentbuild. De branchpreview is dus geen runtimeproef. De globale buildinstelling is bewust niet gewijzigd: die wijziging zou ook toekomstige productiedeployments raken.
 
 Voor een gecontroleerde preview zijn nog nodig: build command `node scripts/build-study-assistant.mjs`, uitvoermap `dist`, Node.js 22, een afzonderlijke D1-testdatabase met `assistant/server/schema.sql` en de previewbinding `STUDY_DB`. Houd `STUDY_ASSISTANT_ENABLED=false` totdat de hieronder genoemde serverconfiguratie en proefvragen zijn gecontroleerd. Verifieer na iedere aanpassing dat `GET /api/study-status` JSON teruggeeft.
 

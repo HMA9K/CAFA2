@@ -8,6 +8,8 @@ De assistent is op deze branch in de bestaande CAFA2-pagina geïntegreerd. De dr
 
 Alle 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen zijn opnieuw door de canonieke catalogus- en revisietests gehaald. De browserproef gebruikt de echte CAFA2-interface met een gesimuleerde antwoorddienst. De inhoudelijke kwaliteit van een echt model en externe bronpassages zijn hiermee nog niet vastgesteld. Zie [CAFA2_ASSISTENT_TESTSTATUS.md](CAFA2_ASSISTENT_TESTSTATUS.md) voor exacte testresultaten en beperkingen.
 
+Op integratiecommit `d2ccac4` zijn beide GitHub Actions-workflows geslaagd, inclusief 96 browsercontroles in Chromium en 96 in WebKit. De Cloudflare-branchpreview van die commit faalde afzonderlijk: de huidige Pages-build voert `exit 0` uit, zodat de Functions de nog niet gegenereerde servercatalogus niet kunnen vinden. De benodigde preview- en runtime-inrichting staat in het activatiedocument.
+
 ## Opdracht en afbakening
 
 Werk de voorbereide assistent verder uit en integreer hem in de bestaande CAFA2-leeromgeving, voor alle oefenvraagtypen en alle volledige tentamens. Bouw voort op deze bestanden. Herstructureer de repository niet: dat is een afzonderlijk, later project. Pas SRA en BELRE3 nu niet aan; houd de interface, server en adapterafspraak wel herbruikbaar.

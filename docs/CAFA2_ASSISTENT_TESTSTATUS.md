@@ -7,12 +7,14 @@ Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-P
 | Controle | Resultaat | Wat dit bewijst |
 | --- | --- | --- |
 | Startpunt en bestaande CI | Branchcommit `be418e1` bevestigd; [assistentworkflow](https://github.com/HMA9K/CAFA2/actions/runs/36055009748) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36055015979) geslaagd, jobs en logs gelezen. | De klaargezette branch, niet de oude featurebranch of ZIP, was het vertrekpunt. |
+| CI na integratie | Op codecommit `d2ccac4` zijn [assistentworkflow](https://github.com/HMA9K/CAFA2/actions/runs/36059294019) en [Validate CAFA2](https://github.com/HMA9K/CAFA2/actions/runs/36059299889) geslaagd. De assistentjob en logs zijn gelezen: 58 Node-tests, build, `npm test`, Function-bundeling, 96 Chromium- en 96 WebKit-PASS-regels. [Screenshots en logs](https://github.com/HMA9K/CAFA2/actions/runs/36059294019/artifacts/10834096446) staan in het CI-artifact. | De daadwerkelijke geïntegreerde branch slaagt op Node.js 22 en Linux met beide browserengines. |
 | Integratie-dry-run | Eerst zeven verwachte bestanden; na `--apply` geen openstaande wijzigingen. | Integratie blijft gericht en herhaalbaar. |
 | Nieuwe Node-tests | 58 geslaagd, 0 mislukt, lokaal met Node.js 24. | Servercontract, veiligheidsgrenzen, adapter, revisies, alle echte records en nieuw gevonden regressies. CI gebruikt Node.js 22. |
 | Canonieke vraagbank | 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen gecontroleerd. | Alle records passen binnen de contextgrens en behouden hun antwoordmodel en revisie. |
 | Bestaande regressiecontroles | Alle negen scripts uit `npm test` afzonderlijk met `node` geslaagd. | Vragen, exam engine, timergrenzen, score- en inhoudsrevisie, lezen, onderwerpen en donkere modus zijn bij deze integratie niet stukgegaan. `npm` is lokaal niet beschikbaar. |
 | Assistentbuild | Geslaagd. | Publieke `dist` en gesplitste servercatalogus worden gegenereerd. |
 | Browserproef | Chromium: 96 controles geslaagd, 0 JavaScript-runtimefouten. WebKit 26.0: 96 controles geslaagd, 0 JavaScript-runtimefouten. Beide lokaal op de laatste build. | Werkelijke DOM, routes, editors en schermindeling met gesimuleerde antwoorddienst; geen inhoudelijke modelkwaliteit. |
+| Cloudflare-branchpreview | Deployment `37372c56-dec5-46ef-bc25-d52aebf66550` van `d2ccac4` faalde. | De huidige build voert `exit 0` uit; Functions kunnen daarna `catalog.generated.mjs` niet bundelen. De Pages-buildinstelling is nog niet aangepast. |
 | Echte modelaanroepen, File Search en Cloudflare-runtime | Niet uitgevoerd. | Een model, secrets, geautoriseerde uploads en bruikbare preview-inrichting ontbreken. |
 
 ## Regels waarvoor regressies zijn toegevoegd
@@ -33,7 +35,7 @@ Verder worden 320, 390 en 430 px breedte, liggend scherm, licht/donker, een verk
 
 ## Nog te valideren buiten deze branchcontrole
 
-De huidige Cloudflare Pages-configuratie gebruikt `exit 0`, output `.` en heeft geen `STUDY_DB`-binding of assistentvariabelen voor preview en productie. Daarom is de branchpreview nog geen geldige runtimeproef. Voor de ontbrekende instellingen en aangetroffen, nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
+De huidige Cloudflare Pages-configuratie gebruikt `exit 0`, output `.` en heeft geen `STUDY_DB`-binding of assistentvariabelen voor preview en productie. De eerste branchpreview faalde concreet bij het bundelen van de vier Functions omdat de servercatalogus nog niet was gegenereerd. Voor de ontbrekende instellingen en aangetroffen, nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
 
 Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, beveiligde cookie, D1-quota, een kleine set inhoudelijke modelvragen en indien toegestaan File Search. Beoordeel bij modelvragen vooral ongevraagde spoilers, directe uitwerkingen, een onjuiste veronderstelling zoals 'B is goed', herkomst van bedragen, vervolgstappen en een onvolledig antwoordmodel. De grens van 1.800 uitvoertokens omvat ook eventuele reasoning-tokens; controleer daarom of langere uitwerkingen worden afgebroken. Het huidige gesprek bewaart tekstberichten, niet alle interne reasoning-items. De invloed daarvan op vervolgvragen is nog niet gemeten.
 
