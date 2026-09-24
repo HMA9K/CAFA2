@@ -2,7 +2,7 @@
 .exam-case-layout{display:grid;grid-template-columns:minmax(0,var(--case-width,33.333333%)) 14px minmax(0,1fr);align-items:stretch}
 .exam-case-layout.is-case-hidden{grid-template-columns:minmax(0,1fr)}
 .exam-running .exam-case-layout>.exam-question-body{min-width:0;padding:12px 28px 32px}
-.exam-case-panel{position:sticky;top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 12px);align-self:start;min-width:0;max-height:var(--case-available-height,calc(100dvh - 370px));overflow:auto;overscroll-behavior:contain;padding:16px 20px 24px;background:var(--study-surface,#fff);color:var(--study-ink,#292e42);scrollbar-gutter:stable}
+.exam-case-panel{position:sticky;top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 12px);align-self:start;min-width:0;max-height:var(--case-available-height,calc(100dvh - 370px));overflow:auto;overscroll-behavior:auto;padding:16px 20px 24px;background:var(--study-surface,#fff);color:var(--study-ink,#292e42);scrollbar-gutter:stable}
 .exam-case-panel>h2{font-size:16px;line-height:1.4;margin:0 0 18px;color:inherit}
 .exam-case-panel .exam-source-document{max-width:none;margin:0;padding:0;font-size:14px;line-height:1.5}
 .exam-case-panel .exam-source-brand{display:none}
@@ -28,6 +28,22 @@
 .exam-running .exam-source-points{color:inherit}
 .exam-source-question ol[type="a" s]>li{margin:12px 0;padding-left:2px}
 .exam-running .exam-question-body{min-height:calc(100vh - 300px);background:#fff}
+/* Keep the exam controls in view while the case and answer scroll independently. */
+@media screen and (min-width:761px){
+ .exam-running main{height:calc(100dvh - var(--study-top-h,64px) - var(--study-return-h,46px));min-height:0;display:flex;flex-direction:column;overflow:hidden}
+ .exam-running #exam-app{display:flex;flex:1 1 auto;flex-direction:column;min-height:0}
+ .exam-running .exam-runner-title,.exam-running .exam-work-head{flex:0 0 auto}
+ .exam-running .frame{display:flex;flex:1 1 auto;flex-direction:column;min-height:0}
+ .exam-running .exam-case-layout{flex:1 1 auto;min-height:0;overflow:hidden}
+ .exam-running .exam-case-layout>.exam-case-panel{position:static;align-self:stretch;height:100%;min-height:0;max-height:none;overflow-y:auto}
+ .exam-running .exam-case-layout>.exam-question-body{height:100%;min-height:0;overflow-y:auto}
+ .exam-running .frame>.exam-question-body{flex:1 1 auto;min-height:0;overflow-y:auto}
+ .exam-running .exam-footer{position:static;flex:0 0 auto}
+}
+@media screen and (min-width:761px) and (max-width:1099px){
+ .exam-running .cafa-profile{gap:0;margin-left:8px}
+ .exam-running .cafa-profile span{display:none}
+}
 .exam-answer-actions{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
 .journal-scroll{overflow:auto;max-width:100%;margin:12px 0}
 .journal-table{border-collapse:collapse;width:100%;min-width:850px;border:2px solid #202020;background:#fff;color:#111}
