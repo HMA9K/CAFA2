@@ -12,9 +12,17 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const digest=v=>crypto.createHash('sha256').update(typeof v==='string'?v:JSON.stringify(v)).digest('hex');
 const modules={kap:'kapitaalbelangen',val:'vreemde-valuta',nvw:'consolidatie-nvw',hk:'consolidatie-hk'};
 const original={kap:'3693a48853ec15d2580927c3f079731717eedf613e3a544c8530d4cd0529be71',val:'40c3ca4da0c6e749dd238e829d33ea5873797ae8082c0c1681920f2176ec0757',nvw:'db9e5382194a2233854d736e109d995c466727587e039778c8bfcb33be1c2aa3',hk:'1dfd513b2db69c171c12d5a42c620d82287c34ca0ea89e9e45c7e19f6bd98cf7'};
-// UI snapshot refreshed for the combined Opgave route; official exam hashes stay unchanged.
-const immutable={'js/app.js':'420f601250910aa70eb932d47d1071ec2fc2c513a0663e3d10b6cac179b3849a','js/exams.js':'4e55308e393ac370fb0e1f31c1c2b1744c865e4b3db9b49dab5164721aa83418','js/exam-engine.js':'35330d64e346bad2ec7e16b3d235872e09a9bbef97f565d22a9213f3270cc55e','data/exam-20240422.js':'8346593f40badc4a729879f300eeecb03b4948a1020120c8493d9c73bfd4b8e9','data/exam-20240930.js':'ebe1abd5b292474366ff081b84a9676d1ccc25a4a8dd6738a1cb7190c729cf14','data/exam-20250417.js':'9ca2a7911fe90e34526bf13577d1f1880887ad17cd3e143a957ca612924afa0d','data/exam-20250924.js':'dad786d66db76cb2633653da97f94f4c49fbe61912e635adeeb5305eb584a677','data/exam-20260429.js':'597adf011a2983a1cc6fcd7e65f0daabd36ff5f2498970c0c4974b82d477e488'};
-for(const [p,sha]of Object.entries(immutable))assert.equal(digest(read(p)),sha,'Gecontroleerde UI-versie of ongewijzigde officiële tentamendata: '+p);
+// UI snapshot refreshed for stable case scrolling; official exam transcriptions stay unchanged.
+const immutable={'js/app.js':'420f601250910aa70eb932d47d1071ec2fc2c513a0663e3d10b6cac179b3849a','js/exams.js':'4b80ede99061a5a1e3098fe25340494b8706ee86b7bfb8760a07ba774caf7179','js/exam-engine.js':'35330d64e346bad2ec7e16b3d235872e09a9bbef97f565d22a9213f3270cc55e','data/exam-20240422.js':'8346593f40badc4a729879f300eeecb03b4948a1020120c8493d9c73bfd4b8e9','data/exam-20240930.js':'ebe1abd5b292474366ff081b84a9676d1ccc25a4a8dd6738a1cb7190c729cf14','data/exam-20250417.js':'9ca2a7911fe90e34526bf13577d1f1880887ad17cd3e143a957ca612924afa0d','data/exam-20250924.js':'dad786d66db76cb2633653da97f94f4c49fbe61912e635adeeb5305eb584a677','data/exam-20260429.js':'597adf011a2983a1cc6fcd7e65f0daabd36ff5f2498970c0c4974b82d477e488'};
+const earlyExams={
+ 'data/exam-20210419.js':'6aef1018c3cc73fa41dd32f02b6788e408b5f8d69df3c5b5055ffb0db34d605c',
+ 'data/exam-20211006.js':'252f395bd9c37d722122408e9f1d8a05fb724d7ab51ae4243e342c4d2f3c43c4',
+ 'data/exam-20220411.js':'da8d30d9165ac48fd1b1867da096f61855c2077b2e5bde635dd6e3e56eb4ee2f',
+ 'data/exam-20221006.js':'21597c3f55f9ea98ad525e689faf373f671a7d6090c0c03b84194e344e99dc6d',
+ 'data/exam-20230411.js':'10cf9885654a13d741916b2061301aff8e7f65dad3111bbea69bf5ccb0bc84b6',
+ 'data/exam-20231009.js':'d8198dce321f228daf2ff6eaa3d03b3d78683283818526eeeec7ba858a2f67bc'
+};
+for(const [p,sha]of Object.entries({...immutable,...earlyExams}))assert.equal(digest(read(p)),sha,'Gecontroleerde UI-versie of ongewijzigde officiële tentamendata: '+p);
 const lessons=[...kap,...val,...cons],ids=new Set([...lessons.map(l=>l.id),'start','kernschema','begrippen','bronnen','tentamen','kapitaalboom','wetsartikelen']);
 assert.equal(ids.size,lessons.length+7);assert.ok(kap.length>=12&&val.length>=9&&cons.length>=15);
 for(const l of lessons){assert.ok(l.html.length>400);assert.ok(l.sources.length);for(const s of l.sources)assert.ok(sources[s.split('|')[0]],s);}

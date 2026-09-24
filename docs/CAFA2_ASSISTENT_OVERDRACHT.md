@@ -1,8 +1,18 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.1. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.2. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
-## Status van deze werkronde
+## Actuele status: testsite ingericht
+
+Op verzoek is [cafa2-assistent-test.pages.dev](https://cafa2-assistent-test.pages.dev) ingericht. Deze afzonderlijke site volgt de werkbranch automatisch, voert de assistentbuild en deploycontrole uit en publiceert `dist`. De eerste deployment van `c33f83a` is geslaagd, inclusief alle vier Functions. De statusroute geeft echte JSON en de browser koppelt het paneel aan de actuele vraag.
+
+Een afzonderlijke D1-testdatabase met EU-jurisdictie, schema, binding en willekeurig sessiegeheim staat klaar. Het voorlopige testmodel is `gpt-5.4-mini`; modelkwaliteit en accounttoegang zijn nog niet getest. `STUDY_ASSISTANT_ENABLED=false`. Alleen `OPENAI_API_KEY` en `STUDY_ACCESS_CODE` moeten voor de eerste modelproef nog rechtstreeks als secrets in Cloudflare worden ingevuld. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md) voor de korte handmatige stap.
+
+Op het bestaande project `cafa2` is uitsluitend deze werkbranch uitgesloten van automatische previews, zodat de oude `exit 0`-fout zich daar niet herhaalt bij een volgende push. De bestaande productiebuild en website volgen nog `main`. Niets is naar `main` gemerged. De repetitiecursus en andere originele documenten zijn nog niet extern geïndexeerd. De eerdere lokale/CI-browserantwoorden waren gesimuleerd; de nieuwe online controle test alleen de uitgezette dienst en echte vraagcontext.
+
+Na de eerste publicatie zijn de wijzigingen van `main` tot en met `1a44e3a` in de werkbranch opgenomen. Alle elf volledige tentamens staan nu in de catalogus: 282 echte tentamenvragen, 3 demovragen en 247 oefenvragen. De nieuwe onderwerpindeling en onafhankelijk scrollende tentamencasus blijven behouden. Het importconflict in `index.html` is opgelost met de actuele scripts plus de assistentmodule. De synthetische opgavereekstests zijn aangepast aan de expliciete bronindeling; een nieuwe regressie controleert alle 282 bronvragen in de vier onderwerpseries, inclusief eigen antwoorden en canonieke revisies. Lokaal slagen 74 Node-tests, de bestaande regressies, build/deploycontrole en 115 browsercontroles per engine in Chromium en WebKit, met gesimuleerde antwoorden.
+
+## Eerdere implementatie- en controlerondes
 
 De assistent is op deze branch in de bestaande CAFA2-pagina geïntegreerd. De dry-run van `scripts/prepare-study-assistant.mjs` is eerst gecontroleerd: precies zeven verwachte bestanden. Daarna is `--apply` uitgevoerd; een tweede dry-run gaf geen wijzigingen. De frontendimports, npm-scripts, ignore-regels en vier Pages Functions staan nu op hun bedoelde plaats. De build levert de publieke `dist` en een afzonderlijke servercatalogus. `main`, de bestaande Pages-instellingen en de productiewebsite zijn niet aangepast.
 
@@ -62,7 +72,7 @@ Toegangscode, privacytoestemming en kostenlimieten blijven bestaan. Dat zijn tec
 | `tests/study-assistant/` | Beveiliging, antwoordgedrag, alle echte vraagrecords en browserproef met mockdienst. |
 | `.github/workflows/assistant-handoff.yml` | Controleert de branch zonder deployment of echte modelaanroepen. |
 
-De vragenbank is geen handmatig onderhouden duplicaat: de build leest de actuele `data/`-scripts uit index.html. De huidige gegevens omvatten 247 oefenvragen, 131 echte tentamenvragen en 3 demovragen. De oefenbank bevat 12 benoemde vraagtypen, waaronder Theorie, Reken-/Berekenvraag, Journaalpost, Voorraadtabel, Methodekeuze, Vergelijking, Herkenning en Foutdiagnose.
+De vragenbank is geen handmatig onderhouden duplicaat: de build leest de actuele `data/`-scripts uit index.html. De huidige gegevens omvatten 247 oefenvragen, 282 echte tentamenvragen en 3 demovragen. De oefenbank bevat 12 benoemde vraagtypen, waaronder Theorie, Reken-/Berekenvraag, Journaalpost, Voorraadtabel, Methodekeuze, Vergelijking, Herkenning en Foutdiagnose.
 
 ## Nieuwe vragen en cursusmaterialen
 
@@ -111,8 +121,8 @@ Een routewissel controleert de actuele vraag ook wanneer een modelantwoord snell
 
 ## Nog nodig voor een echte preview en modelproef
 
-1. Configureer een afzonderlijke Cloudflare-preview met build naar `dist`, een preview-D1-database en de runtimevariabelen uit [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md). De huidige Pages-configuratie bouwt de assistent niet en heeft geen D1-binding. De bestaande projectbuild direct omzetten zou ook `main` raken.
-2. Kies een beschikbaar Responses-model en voer een kleine, traceerbare reeks echte vragen uit. Beoordeel hints, expliciete volledige uitwerkingen, onjuiste aannames over antwoordletters, bedragherleiding, ontbrekende antwoordmodellen en vervolgvragen. De automatische tests gebruiken uitsluitend testreacties. De uitvoerlimiet van 1.800 tokens en het tekstgebaseerde gesprek verdienen daarbij aparte aandacht.
+1. De afzonderlijke testsite, build en D1 zijn ingericht. Laat de twee resterende secrets rechtstreeks in Cloudflare invoeren volgens [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md), publiceer opnieuw en activeer alleen de testsite voor de echte proef.
+2. Controleer toegang tot het voorlopige Responses-model `gpt-5.4-mini` en voer een kleine, traceerbare reeks echte vragen uit. Beoordeel hints, expliciete volledige uitwerkingen, onjuiste aannames over antwoordletters, bedragherleiding, ontbrekende antwoordmodellen en vervolgvragen. De automatische tests gebruiken uitsluitend testreacties. De uitvoerlimiet van 1.800 tokens en het tekstgebaseerde gesprek verdienen daarbij aparte aandacht.
 3. Controleer welke originele CAFA2-bronbestanden extern mogen worden geïndexeerd, met name de repetitie- en collegeslides. Het manifest en de lokale conversies zijn klaar; de aangetroffen sets en de dry-run staan in het activatiedocument. Op dit moment is geen syllabus, slide of tentamen-PDF gekoppeld; bronlabels uit de vragenbank bewijzen geen bronpassage.
 4. Controleer daarna de echte Cloudflare-status, sessiecookie, D1-quota en File Search-resultaten op de preview. Een fysieke iPhone met geopend toetsenbord is nog een afzonderlijke gebruiksproef.
 

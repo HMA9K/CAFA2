@@ -10,8 +10,8 @@ const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade --
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
   const opgavePage=s.includes('js/opgave-practice.js');
-  s=s.replace(/css\/exams\.css(?:\?v=[^"]*)?"/g,'css/exams.css?v='+(opgavePage?'20260924-opgaven1':'20260923-caseleft1')+'"');
-  s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260923-caseleft1"');
+  s=s.replace(/css\/exams\.css(?:\?v=[^"]*)?"/g,'css/exams.css?v='+(opgavePage?'20260925-topics1':'20260923-caseleft1')+'"');
+  s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260924-scroll1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
   s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/law-book.css?v=20260924-lawbook1"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
@@ -73,13 +73,16 @@ write('fragments/home.html',home);
 write('index.html',assets(clean(read('index.html'))));
 // Notes are looked up at render time, including for previously saved exam attempts.
 const notes={};let noteCount=0;
-for(const exam of context.window.CAFA2_EXAMS){
- notes[exam.id]={};
+const examsById=new Map(context.window.CAFA2_EXAMS.map(exam=>[exam.id,exam]));
+for(const [id,authoredNotes] of Object.entries(examNotes)){
+ const exam=examsById.get(id);if(!exam)throw Error('Onbekend tentamen bij toelichting: '+id);
+ notes[id]={};
  for(const q of exam.questions){
-   const note=examNotes[exam.id]?.[q.id];if(!note)throw Error('Geen toelichting: '+exam.id+'/'+q.id);
+   const note=authoredNotes[q.id];if(!note)throw Error('Geen toelichting: '+id+'/'+q.id);
    const source=note.source+(note.page?', p. '+note.page:'')+' · '+note.question;
-   notes[exam.id][q.id]={lesson:note.lesson,html:noteHtml(note.lesson,note.explanation,'samenvatting.html',source)};noteCount++;
+   notes[id][q.id]={lesson:note.lesson,html:noteHtml(note.lesson,note.explanation,'samenvatting.html',source)};noteCount++;
  }
+ if(Object.keys(authoredNotes).length!==exam.questions.length)throw Error('Onbekende vraag bij toelichting: '+id);
 }
 write('data/study-support.js','window.CAFA2_STUDY='+JSON.stringify({laws,guides,notes}).replace(/</g,'\\u003c')+';\n');
 write('docs/study-upgrade-manifest.json',JSON.stringify({version:'2026-09-22',topics,practiceQuestions:practice,examNotes:noteCount,articles:Object.keys(laws).length,examDataUnchanged:true,defaultTheme:'auto',themePersistence:'browser session',chapterOrientations:7,examRouteExamples:7,examRouteSourceCount:4,examMethodCount:4,examMethodSourceCount:7,prerequisites:'prior knowledge, not case inputs',functionalCurrency:'facts, interpretation, weight and conclusion',lawPresentation:'article popovers in study pages; searchable supplied study copy during MC and exam questions',capitalRoute:'three click stages with immediate recomputation',sourceVersion:'Aangeleverde studiekopie 01-01-2025'},null,2)+'\n');

@@ -21,7 +21,7 @@ try{
   assert.ok(startupChecks.length>0);assert.ok(startupChecks.every(display=>display==='none'),'The intermediate topic screen must stay hidden during fragment loading.');
   assert.equal(w.document.documentElement.classList.contains('cafa-starting'),false);
   assert.equal(w.document.documentElement.classList.contains('cafa-start-failed'),false);
-  assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,247);assert.equal(w.CafaExams.catalog.length,5);assert.equal(w.location.hash,'#start');
+  assert.ok(w.CafaExams,'Full bootstrap ready');assert.equal(w.document.querySelectorAll('.question[data-code]').length,247);assert.equal(w.CafaExams.catalog.length,11);assert.equal(w.location.hash,'#start');
   w.location.hash='#dashboard';await pause();
   assert.ok(w.document.querySelector('#exam-app').textContent.includes('29-04-2026'));
   const reset=w.document.querySelector('[data-font="0"]');
@@ -50,5 +50,5 @@ try{
   assert.equal(w.document.querySelector('#exam-info-dialog'),null);
   w.location.hash='#kap-1';await pause();assert.equal(w.document.querySelectorAll('.practice-action').length,988);assert.equal(w.document.querySelector('.exam-clock').hidden,true);
   assert.equal(errors.length,0,errors.join('\n'));
-  console.log('Full site passed: bootstrap, 247 MC, 5 exams, dashboard, +30, sections, MC footer, timer isolation.');
+  console.log('Full site passed: bootstrap, 247 MC, 11 exams, dashboard, +30, sections, MC footer, timer isolation.');
 }finally{clearTimeout(readyTimeout);if(dom)dom.window.close();await new Promise(resolve=>server.close(resolve));}

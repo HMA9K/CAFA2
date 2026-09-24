@@ -2,31 +2,52 @@
 
 ## Opgenomen bronbestanden
 
+- `2021-04 CAFA2 - Tentamen.docx` en `2021-04 CAFA2 - Uitwerking tentamen.pdf`
+- `2021-10 CAFA2 - Tentamen.pdf` en `2021-10 CAFA2 - Uitwerking tentamen.pdf`
+- `2022-04 CAFA2 - Tentamen.pdf` en `2022-04 CAFA2 - Uitwerking tentamen.pdf`
+- `2022-10 CAFA2 - Tentamen.pdf` en `2022-10 CAFA2 - Uitwerking tentamen.pdf`
+- `20230411 Tentamen CAFA2.pdf` en `20230411 Uitwerking tentamen CAFA2.pdf`
+- `20231009 Tentamen CAFA2.pdf` en `20231009 Uitwerking tentamen CAFA2.pdf`
 - `20240422 Tentamen CAFA2.pdf` en `20240422 Uitwerking tentamen CAFA2.pdf`
 - `20240930 Tentamen CAFA2.pdf` en `20240930 Uitwerking tentamen CAFA2.pdf`
 - `20250417 Tentamen CAFA2.pdf` en `20250417 Uitwerking tentamen CAFA2.pdf`
 - `20250924 Tentamen CAFA2.pdf` en `20250924 Uitwerking tentamen CAFA2 (na normering).pdf`
 - `20260429 Tentamen CAFA2 def 2 (1).pdf` en `20260429 Uitwerking Tentamen CAFA2 (1).pdf`
 
-Alle vijf voorbladen vermelden 180 minuten, 100 punten en een grens van 54/55 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
+De elf voorbladen vermelden 180 minuten en 100 punten. De oefenomgeving biedt vooraf een eenmalige keuze voor 30 minuten extra. De oorspronkelijke afnamedatum is een label, geen toekomstige beschikbaarheidsdatum. Historische zaalregels worden als broninformatie weergegeven, niet als vereisten voor deze oefensite.
 
 | Tentamen | Vragen | Opgaven | Punten |
 |---|---:|---:|---:|
+| 19-04-2021 | 28 | 4 | 100 |
+| 06-10-2021 | 23 | 4 | 100 |
+| 11-04-2022 | 24 | 4 | 100 |
+| 06-10-2022 | 26 | 4 | 100 |
+| 11-04-2023 | 25 | 4 | 100 |
+| 09-10-2023 | 25 | 4 | 100 |
 | 22-04-2024 | 24 | 4 | 100 |
 | 30-09-2024 | 25 | 4 | 100 |
 | 17-04-2025 | 28 | 4 | 100 |
 | 24-09-2025 | 31 | 4 | 100 |
 | 29-04-2026 | 23 | 4 | 100 |
 
-Er zijn 131 tentamenvragen en daarnaast 120 aparte MC-oefenvragen. Bij 24-09-2025 is de doorlopende nummering uit het officiële antwoordmodel gevolgd, met behoud van de papieren bronnummering. In de andere tentamens staat de oorspronkelijke vraagnummering eveneens bij de vraag.
+Er zijn 282 tentamenvragen en daarnaast 120 oorspronkelijke MC-oefenvragen. Bij 24-09-2025 is de doorlopende nummering uit het officiële antwoordmodel gevolgd, met behoud van de papieren bronnummering. Bij oudere tentamens waar de vraag- en antwoordnummering verschilt, blijft de papieren bronnummering herkenbaar bij de vraag.
 
 ## Bediening
 
 Het dashboard opent met **Aankomend**: de ongetimede MC-oefenvragen en beschikbare volledige tentamens. Een gemaakte poging staat onder **Voltooid**. Vanaf de inzage kan een nieuwe poging worden gestart zonder de oude te verwijderen.
 
-### Tentamenvragen per opgave
+### Tentamenvragen per onderwerp
 
-Direct onder de MC-oefenvragen staat een oefenreeks per opgave. Op de introductiepagina kiest de gebruiker Opgave 1, 2, 3 of 4 en vervolgens de gewenste tentamendata. Standaard zijn alle vijf de tentamens geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De aantallen voor alle vijf samen zijn 39, 28, 36 en 28 vragen voor respectievelijk Opgave 1 tot en met 4.
+Direct onder de MC-oefenvragen staat een oefenreeks per onderwerp. Op de introductiepagina kiest de gebruiker een van vier vaste keuzes en vervolgens de gewenste tentamendata. Alle elf tentamens zijn afzonderlijk te kiezen en standaard geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De selectie volgt het onderwerp van de bronopgave, ook als het oorspronkelijke opgavenummer afwijkt.
+
+| Vaste keuze | Onderwerp | Oorspronkelijke opgave 2021–2023 | Oorspronkelijke opgave 2024–2026 | Vragen bij alle 11 | Punten bij alle 11 |
+|---|---|---:|---:|---:|---:|
+| 1 | Kapitaalbelangen | 1 | 1 | 85 | 330 |
+| 2 | Vreemde valuta | 4 | 2 | 63 | 220 |
+| 3 | Consolidatie nettovermogenswaarde | 2 | 3 | 78 | 330 |
+| 4 | Consolidatie verkrijgingsprijs | 3 | 4 | 56 | 220 |
+
+Dit zijn 282 vragen en 1.100 punten over alle vier onderwerpen. De opgavetitels en casussen in de aangeleverde tentamens onderbouwen de koppeling; de oorspronkelijke nummering blijft bij elke bronvraag zichtbaar.
 
 Elk oorspronkelijk voorblad met algemene uitgangspunten, elke broncasus, vraag, uitwerking en puntwaarde blijft intact. Tijdens een vraag opent **Introductie** het voorblad van het bijbehorende tentamen. De samengestelde poging krijgt unieke vraag- en sectie-ID's, met de oorspronkelijke ID en examencode als bronmetadata. Antwoorden op gelijk genummerde vragen uit verschillende tentamens blijven daardoor gescheiden. Het vraagoverzicht gebruikt dezelfde vraagknoppen, met een kleine examencode boven elke groep. Lopende en voltooide reeksen blijven als afzonderlijke pogingen in de bestaande lokale tentamenopslag bewaard.
 
@@ -46,9 +67,10 @@ Dit is een volledig statische oefenomgeving, geen beveiligde examenafname. Antwo
 
 1. Lees het volledige tentamen, voorblad en antwoordmodel. Controleer tabellen visueel tegen de pdf.
 2. Maak een bestand `data/exam-YYYYMMDD.js` met `window.CAFA2_EXAMS.push(exam)`.
-3. Voeg het script toe in `index.html`, na `data/exams.js` en vóór `js/bootstrap.js`.
-4. Werk `tests/exam-content.mjs` bij met verwachte aantallen, punten en kenmerkende casusgegevens.
-5. Draai `npm test` en controleer op test de sectiewissels, uitwerkingen, timer, invoer en herladen.
+3. Controleer welk oorspronkelijk opgavenummer in het nieuwe tentamen bij elk van de vier vaste onderwerpen hoort. Voeg onder de examen-ID in `SOURCE_ORDER` van `js/opgave-practice.js` de vier bronopgavenummers toe in onderwerpvolgorde: kapitaalbelangen, vreemde valuta, consolidatie nettovermogenswaarde, consolidatie verkrijgingsprijs. Zonder deze koppeling verschijnt het tentamen niet in de onderwerpkeuze.
+4. Voeg het script toe in `index.html`, na `data/exams.js` en vóór `js/bootstrap.js`.
+5. Werk `tests/exam-content.mjs` en `tests/opgave-practice.mjs` bij met verwachte aantallen, punten, bronopgavenummers en kenmerkende casusgegevens.
+6. Draai `npm test` en controleer op test de sectiewissels, uitwerkingen, timer, invoer en herladen.
 
 Formaat:
 

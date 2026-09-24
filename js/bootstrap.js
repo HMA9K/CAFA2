@@ -59,7 +59,7 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
-    return loadScript('js/exams.js?v=20260924-opgaven1');
+    return loadScript('js/exams.js?v=20260925-topics1');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {

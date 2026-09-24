@@ -30,6 +30,30 @@ test('Every current real record fits the context budget and retains its answer m
     const ctx=JSON.parse(p.input[0].content.slice(p.input[0].content.indexOf('\n')+1));assert.equal(JSON.stringify(ctx.review),JSON.stringify(record.review));assert.ok(ctx.prompt);
   }
 });
+
+test('Alle echte tentamenvragen houden in de vier onderwerpseries hun bronmodel en eigen antwoord',()=>{
+  new vm.Script(fs.readFileSync('js/opgave-practice.js','utf8')).runInContext(box);
+  const practice=win.CafaOpgavePractice,seen=new Set();
+  for(let topic=1;topic<=4;topic++){
+    const exams=practice.available(win.CAFA2_EXAMS,topic);
+    const combined=practice.build(win.CAFA2_EXAMS,topic,exams.map(exam=>exam.id));
+    const attempt={id:`topic-${topic}`,exam:combined,status:'active',currentIndex:0,answers:{}};
+    attempts=[attempt];win.location.hash=`#tentamen/${attempt.id}`;
+    for(const [index,question] of combined.questions.entries()){
+      attempt.currentIndex=index;
+      attempt.answers[question.id]={html:`<p>Eigen antwoord ${question.id}</p>`};
+      const current=adapter.read(),key=refKey(current.ref),record=catalog.records[key];
+      assert.equal(key,`CAFA2:exam:${question.sourceExamId}:${question.sourceQuestionId}`);
+      assert.equal(current.revision,record.revision,key);
+      assert.equal(current.studentAnswer.text,`Eigen antwoord ${question.id}`,key);
+      assert.ok(!seen.has(key),`Dubbele bronvraag: ${key}`);seen.add(key);
+      const source=win.CAFA2_EXAMS.find(exam=>exam.id===question.sourceExamId);
+      assert.equal(source.questions.find(q=>q.id===question.sourceQuestionId).sectionId,
+        practice.sourceSectionId(source,topic));
+    }
+  }
+  assert.equal(seen.size,win.CAFA2_EXAMS.reduce((count,exam)=>count+exam.questions.length,0));
+});
 test('Real question catalog has no duplicated IDs',()=>{
   assert.equal(Object.keys(catalog.records).length,catalog.counts.practice+catalog.counts.exam);
   console.log('Real CAFA2 question coverage:',JSON.stringify({counts:catalog.counts,types:catalog.types}));
