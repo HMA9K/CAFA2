@@ -11,6 +11,11 @@
 .theory-content .theory-source{font-size:.78rem;color:#686678}
 .theory-link{display:inline-flex;align-items:center;gap:6px;color:#a94800;font-size:.85rem;font-weight:750;text-decoration:none}
 .theory-link:hover{text-decoration:underline}
+.theory-sources{margin:12px 0;border-top:1px solid #d7d8e1}
+.theory-panel .theory-sources>summary{display:list-item;list-style:disclosure-closed;background:transparent;min-height:0;padding:10px 0;font-size:.8rem;line-height:1.5}
+.theory-panel .theory-sources[open]>summary{list-style:disclosure-open}
+.theory-panel .theory-sources>summary::-webkit-details-marker{display:initial}
+.theory-sources .law-rail{margin-bottom:10px}
 
 @media (min-width:961px){
   .question .qbody.has-theory-panel{display:grid;grid-template-columns:minmax(0,1fr) 300px;column-gap:18px;align-items:start}

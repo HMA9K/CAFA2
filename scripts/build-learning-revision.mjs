@@ -76,7 +76,7 @@ function cases(code,q){
   return out;
 }
 function renderCases(q){if(!q.caseTables?.length)return '';return '<section class="learning-case" aria-labelledby="case-'+q._code+'-'+q.id+'"><h3 id="case-'+q._code+'-'+q.id+'">Casustabel bij deze vraag</h3>'+q.caseTables.map(t=>(t.note?'<p class="learning-case-note">'+esc(t.note)+'</p>':'')+table(t.headers,t.rows,t.caption||'Casusgegevens')).join('')+'</section>';}
-function renderPanel(q,m,prefix){const g=q.guidance;return '<details class="theory-panel" data-guidance-id="'+q._code+'-'+q.id+'"><summary><span class="theory-icon" aria-hidden="true">i</span><span>Basisregels bij deze vraag</span><span class="theory-chevron" aria-hidden="true"></span></summary><div class="theory-content"><h3>'+esc(g.title)+'</h3><p>'+esc(g.rules)+'</p><p class="theory-source">'+(q.refs||[]).map(r=>esc(m.sources[r]?.label||r)).join('<br>')+'</p><a class="theory-link" href="'+prefix+'samenvatting.html#'+esc(g.lesson)+'">Lees de bijbehorende uitleg</a></div></details>';}
+function renderPanel(q,m,prefix){const g=q.guidance;return '<details class="theory-panel" data-guidance-id="'+q._code+'-'+q.id+'"><summary><span class="theory-icon" aria-hidden="true">i</span><span>Basisregels bij deze vraag</span><span class="theory-chevron" aria-hidden="true"></span></summary><div class="theory-content"><h3>'+esc(g.title)+'</h3><p>'+esc(g.rules)+'</p><details class="theory-sources"><summary>Bronnen bij deze basisregels</summary><p class="theory-source">'+(q.refs||[]).map(r=>esc(m.sources[r]?.label||r)).join('<br>')+'</p></details><a class="theory-link" href="'+prefix+'samenvatting.html#'+esc(g.lesson)+'">Lees de bijbehorende uitleg</a></div></details>';}
 function replaceQuestionChunk(chunk,q,m,prefix){
   chunk=chunk.replace(/<details class="theory-panel"[\s\S]*?<\/details>/g,'');
   const body=/<div class="qbody(?: has-theory-panel)?">/.exec(chunk);
@@ -107,7 +107,7 @@ for(const [code,name] of Object.entries(modules)){
   manifest.modules[code]={questions:30,caseTables:m.questions.filter(q=>q.caseTables.length).map(q=>q.id),unchangedAnswerAndFactDigest:original};
 }
 let index=read('index.html');if(!index.includes('css/learning-content.css'))index=index.replace('</head>','<link rel="stylesheet" href="css/learning-content.css">\n</head>');write('index.html',index);
-let bootstrap=read('js/bootstrap.js').replace(/js\/theory-panels\.js\?v=[\w-]+/g,'js/theory-panels.js?v=20260920-content-v2');write('js/bootstrap.js',bootstrap);
+let bootstrap=read('js/bootstrap.js').replace(/js\/theory-panels\.js\?v=[\w-]+/g,'js/theory-panels.js?v=20260924-sources1');write('js/bootstrap.js',bootstrap);
 write('js/theory-panels.js',read('content/summary/theory-runtime.js'));
 write('css/summary.css',read('content/summary/styles.css')+visualStyles);
 write('js/summary.js',read('content/summary/runtime.js'));

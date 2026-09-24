@@ -163,7 +163,7 @@
       if(panel.dataset.studyAdded)return;
       var parts=panel.dataset.guidanceId.split('-'),q=window.CAFA2_DATA&&window.CAFA2_DATA.modules[parts[0]]&&window.CAFA2_DATA.modules[parts[0]].questions[Number(parts[1])-1];
       if(!q||!q.guidance)return;var g=data.guides[q.guidance.lesson];if(!g)return;
-      panel.dataset.studyAdded='true';panel.querySelector('.theory-content').insertAdjacentHTML('beforeend',lawRail(g.refs,(/\/fallback\//.test(path)?'../':'')+'samenvatting.html'));
+      panel.dataset.studyAdded='true';(panel.querySelector('.theory-sources')||panel.querySelector('.theory-content')).insertAdjacentHTML('beforeend',lawRail(g.refs,(/\/fallback\//.test(path)?'../':'')+'samenvatting.html'));
     });
   }
   function annotateLawText(root) {

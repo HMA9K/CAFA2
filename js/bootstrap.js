@@ -61,7 +61,7 @@
     if (root.CafaTopics) root.CafaTopics.mount();
     return loadScript('js/exams.js?v=20260923-caseleft1');
   }).then(function () {
-    return loadScript('js/theory-panels.js?v=20260920-content-v2');
+    return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
