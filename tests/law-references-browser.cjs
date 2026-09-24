@@ -44,11 +44,12 @@ async function checkLawBook(page, opener) {
 
 (async () => {
   let browser;
-  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const externalBase = (process.env.TEST_BASE_URL || '').replace(/\/$/, '');
+  if (!externalBase) await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   try {
     browser = await chromium.launch({ headless: true,
       ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
-    const base = 'http://127.0.0.1:' + server.address().port;
+    const base = externalBase || 'http://127.0.0.1:' + server.address().port;
     for (const width of [1366, 390]) {
       const context = await browser.newContext({ viewport: { width, height: 900 } });
       const page = await context.newPage(), errors = [];
@@ -150,6 +151,6 @@ async function checkLawBook(page, opener) {
     console.log('Wetboek geslaagd: MC, tentamens, samengestelde opgave, inzage en fallback; algemene lijst, zoeken en bewaarde antwoorden op desktop en mobiel.');
   } finally {
     if (browser) await browser.close();
-    await new Promise(resolve => server.close(resolve));
+    if (server.listening) await new Promise(resolve => server.close(resolve));
   }
 })().catch(error => { console.error(error); process.exitCode = 1; });
