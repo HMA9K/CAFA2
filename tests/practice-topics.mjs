@@ -7,6 +7,11 @@ for(const f of ['config',...Object.values(codes)])vm.runInContext(read('data/'+f
 const originals=JSON.parse(JSON.stringify(ctx.window.CAFA2_DATA.modules));
 vm.runInContext(read('data/practice-topics.js'),ctx);
 const banks=ctx.window.CAFA2_DATA.modules,topics=ctx.window.CAFA2_TOPICS;
+const groups=JSON.parse(JSON.stringify(ctx.window.CAFA2_TOPIC_GROUPS));
+assert.deepEqual(groups,json('content/practice/topic-groups.json'),'Published syllabus groups match their source');
+const grouped=groups.flatMap(group=>group.topics);
+assert.equal(grouped.length,19);assert.equal(new Set(grouped).size,19);
+assert.deepEqual([...grouped].sort(),Array.from(topics,topic=>topic.id).sort(),'Every existing topic remains reachable exactly once');
 const added=Object.values(banks).flatMap(b=>b.questions.filter(q=>q.id>30));
 const raw=fs.readdirSync(new URL('../content/practice/',import.meta.url)).filter(f=>/^new-.*\.json$/.test(f)).flatMap(f=>json('content/practice/'+f));
 assert.equal(topics.length,19);assert.equal(added.length,127);assert.equal(raw.length,127);
