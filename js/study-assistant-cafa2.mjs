@@ -35,11 +35,18 @@ export function createCafa2Adapter(win=window) {
   function exam(attemptId,index) {
     const a=win.CafaExams?.getAttempts().find(x=>x.id===attemptId);
     if(!a)return null;const q=a.exam.questions[index ?? a.currentIndex];if(!q)return null;
-    const ref={course:'CAFA2',kind:'exam',bankId:a.exam.id,questionId:String(q.id)};
+    // An opgave practice attempt has compound IDs for its saved answers. Its model
+    // stays in the original exam, where the server catalog records are keyed.
+    const sourceExam=a.exam.practiceKind==='opgave'
+      ? win.CAFA2_EXAMS?.find(x=>x.id===q.sourceExamId) : a.exam;
+    const sourceQuestion=a.exam.practiceKind==='opgave'
+      ? sourceExam?.questions?.find(x=>String(x.id)===String(q.sourceQuestionId)) : q;
+    if(!sourceExam||!sourceQuestion)return null;
+    const ref={course:'CAFA2',kind:'exam',bankId:sourceExam.id,questionId:String(sourceQuestion.id)};
     const answer=answerValue(a.answers[q.id]||{},q);
     const schema=win.CafaStockTable?.template(q);
     if(schema){const table=answer.tables[0]||{kind:'voorraadtabel',cells:{}};table.schema=cleanData(schema);answer.tables=[table];}
-    return {ref,revision:recordRevision(normalizeExam('CAFA2',a.exam,q)),attempt:a.id,title:`${a.exam.title} ${a.exam.date||''} · ${q.title||`Vraag ${q.originalNumber ?? q.number ?? q.id}`}`,
+    return {ref,revision:recordRevision(normalizeExam('CAFA2',sourceExam,sourceQuestion)),attempt:a.id,title:`${sourceExam.title} ${sourceExam.date||''} · ${q.title||`Vraag ${q.originalNumber ?? q.number ?? q.id}`}`,
       questionTitle:q.title,type:q.type==='open'?'Open vraag':q.type,prompt:plain(q.promptHtml||q.prompt),hasCase:!!q.sectionId,
       canReview:true,defaultReview:a.status==='completed'||checked.has(key(ref,a.id)),
       paused:a.pausedAt!=null,studentAnswer:answer};

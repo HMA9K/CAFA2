@@ -1,6 +1,6 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-24.4. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-24.5. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
 ## Status van deze werkronde
 
@@ -10,15 +10,15 @@ Alle 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen zijn opni
 
 Op integratiecommit `d2ccac4` zijn beide GitHub Actions-workflows geslaagd, inclusief 96 browsercontroles in Chromium en 96 in WebKit. De Cloudflare-branchpreview van die commit faalde afzonderlijk: de huidige Pages-build voert `exit 0` uit, zodat de Functions de nog niet gegenereerde servercatalogus niet kunnen vinden. De benodigde preview- en runtime-inrichting staat in het activatiedocument.
 
-Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het nieuwe relatieve bronmanifest omvat nu 95 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabus en tentamens. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow krijgt een extra controle op de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
+Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het nieuwe relatieve bronmanifest omvat nu 95 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabus en tentamens. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow controleert nu ook de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
 
 ## Opdracht en afbakening
 
 Werk de voorbereide assistent verder uit en integreer hem in de bestaande CAFA2-leeromgeving, voor alle oefenvraagtypen en alle volledige tentamens. Bouw voort op deze bestanden. Herstructureer de repository niet: dat is een afzonderlijk, later project. Pas SRA en BELRE3 nu niet aan; houd de interface, server en adapterafspraak wel herbruikbaar.
 
-Deze overdracht is gebaseerd op `main`-commit `dd813848fcb272e23dd54775642066843e91bfd9`. De bestaande rekenmachine-, bronpaneel- en andere wijzigingen uit die commit blijven behouden. De oude branch `feature/study-assistant` en oudere ZIP-pakketten zijn niet het vertrekpunt.
+Deze overdracht begon bij `main`-commit `dd813848fcb272e23dd54775642066843e91bfd9`. Latere wijzigingen uit `main` tot en met `f494ae7` zijn in de werkbranch opgenomen om de concept-PR samenvoegbaar te houden. De bestaande rekenmachine-, bronpaneel-, wetboek- en opgavereekswijzigingen blijven behouden. De oude branch `feature/study-assistant` en oudere ZIP-pakketten zijn niet het vertrekpunt.
 
-In de oorspronkelijke overdrachtscommit waren alleen nieuwe bestanden klaargezet. In deze werkronde zijn `index.html`, `package.json` en `.gitignore` gericht aangepast; de vier endpointtemplates zijn naar `functions/api/` gekopieerd. Vraagdata, scorelogica, timers, rekenmachinecode en hostinginstellingen zijn niet gewijzigd. Er is geen backend geactiveerd en geen API-tegoed gebruikt.
+In de oorspronkelijke overdrachtscommit waren alleen nieuwe bestanden klaargezet. In deze werkronde zijn `index.html`, `package.json` en `.gitignore` gericht aangepast; de vier endpointtemplates zijn naar `functions/api/` gekopieerd. De assistentintegratie wijzigt geen vraagdata, scorelogica, timers of rekenmachinecode. De samenvoeging vanuit `main` neemt de daar intussen gemaakte wijzigingen aan de bestaande leeromgeving mee. Hostinginstellingen zijn niet gewijzigd; er is geen backend geactiveerd en geen API-tegoed gebruikt.
 
 ## Doorslaggevende gebruikerskeuze: hints zijn geen blokkade
 
@@ -93,6 +93,8 @@ Een reeds beschikbare Chromium kan via CHROMIUM_PATH worden gekozen. Het testscr
 ## Uitgevoerde inhoudelijke en technische controle
 
 De CAFA2-adapter onderscheidt nu lege antwoorden van keuze A, koppelt de stabiele optie-ID van tentamens aan de zichtbare antwoordindex en ontleent een historische inzage uitsluitend aan de betreffende poging. Een onderwerpreset begint een eigen gesprek. Journaalpostkolommen en voorraadcellen gaan met het actuele eigen antwoord mee. Bij een expliciete verwijzing naar een eerdere deelvraag in dezelfde casus krijgt het model gericht die eerdere uitwerking. Het antwoordvenster en de historische inzage bieden een knop met de bijbehorende vraagcontext.
+
+De inmiddels aan `main` toegevoegde oefenreeks per tentamenopgave gebruikt samengestelde poging- en vraag-ID's. De assistent zoekt het antwoordmodel voor zo'n vraag via het oorspronkelijke tentamen- en vraag-ID op, maar leest het eigen antwoord onder het samengestelde vraag-ID. Zo blijven ook twee vragen met dezelfde oorspronkelijke vraagnaam uit verschillende tentamens gescheiden. De actieve reeks, historische detailroute en antwoordknop in het resultatenoverzicht zijn getest.
 
 Een routewissel controleert de actuele vraag ook wanneer een modelantwoord sneller terugkomt dan de vertraagde schermverversing. Op mobiel staat de zwevende assistentknop boven de vaste tentamenbalk. Bij een geopende rekenmachine is de assistent vanuit de rekenmachinekop bereikbaar. De server begrenst ook de modelrespons, verwerkt onvolledige en ongeldige antwoorden expliciet en geeft bij quota de werkelijke wachttijd terug. Nieuwe regressietests dekken deze fouten.
 

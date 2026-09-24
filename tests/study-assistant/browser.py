@@ -263,6 +263,46 @@ try:
           any(m['content']=='Vraag 2 krijgt eigen uitleg.' for m in requests[-1]['history']))
     close_panel()
 
+    # An opgave series stores compound IDs, while the assistant must use the
+    # original exam and question IDs for its server-side answer model.
+    visit('#welkom/opgaven')
+    page.locator('[data-exam-action="start-opgave"]').wait_for(state='visible')
+    page.locator('[data-exam-action="start-opgave"]').click()
+    page.wait_for_function('location.hash.startsWith("#tentamen/")')
+    opgave_id=page.evaluate('CafaExams.getAttempts().at(-1).id')
+    opgave=page.evaluate('''id => {const a=CafaExams.getAttempts().find(x=>x.id===id);
+      return {kind:a.exam.practiceKind,questions:a.exam.questions.map(q=>({id:q.id,sourceExamId:q.sourceExamId,
+        sourceQuestionId:q.sourceQuestionId}))};}''',opgave_id)
+    check('Opgave series has compound IDs and original source IDs',
+          opgave['kind']=='opgave' and len(opgave['questions'])>2 and
+          opgave['questions'][0]['id']!=opgave['questions'][0]['sourceQuestionId'])
+    first_source=opgave['questions'][0]
+    current_ref(first_source['sourceExamId'],first_source['sourceQuestionId'],'exam')
+    close_panel()
+    other_index=next(i for i,q in enumerate(opgave['questions']) if q['sourceExamId']!=first_source['sourceExamId'])
+    other_source=opgave['questions'][other_index]
+    page.evaluate('([id,i])=>CafaExams.restorePosition(id,i)',[opgave_id,other_index])
+    page.wait_for_function('(i)=>CafaExams.getPosition()?.index===i',arg=other_index)
+    current_ref(other_source['sourceExamId'],other_source['sourceQuestionId'],'exam')
+    check('Opgave series keeps separate source conversations',requests[-1]['history']==[])
+    close_panel()
+    page.locator('[data-exam-action="submit"]').click()
+    page.locator('[data-exam-confirm-submit]').click()
+    page.wait_for_function('(id)=>location.hash==="#inzage/"+id',arg=opgave_id)
+    visit('#inzage/'+opgave_id+'/vraag/'+str(other_index))
+    current_ref(other_source['sourceExamId'],other_source['sourceQuestionId'],'exam')
+    check('Completed opgave detail uses original exam and question',
+          requests[-1]['ref']['bankId']==other_source['sourceExamId'] and
+          requests[-1]['ref']['questionId']==other_source['sourceQuestionId'])
+    close_panel();visit('#inzage/'+opgave_id)
+    page.locator('#exam-app details[data-result-id="'+other_source['id']+'"]').locator('summary').click()
+    page.locator('#exam-app details[data-result-id="'+other_source['id']+'"] .study-inline-launch').click()
+    send('Licht deze oorspronkelijke uitwerking toe.')
+    check('Opgave summary inline action uses the selected original source',
+          requests[-1]['ref']['bankId']==other_source['sourceExamId'] and
+          requests[-1]['ref']['questionId']==other_source['sourceQuestionId'])
+    close_panel()
+
     # The demonstration exam supplies the multiple-choice option-id editor.
     visit('#welkom/demo-omgeving')
     page.locator('[data-exam-action="start"]').click()
