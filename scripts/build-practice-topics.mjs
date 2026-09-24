@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import {fileURLToPath} from 'node:url';
+import {practiceAuthoringHash} from './assistant-inputs.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
@@ -43,7 +44,7 @@ for(const [c,qs]of Object.entries(additions))qs.forEach((q,i)=>{if(q.id!==31+i)t
 write('content/practice/question-registry.json',JSON.stringify(registry,null,2)+'\n');
 const frequency=exists('docs/mc-audit/exam-frequency.json')?json('docs/mc-audit/exam-frequency.json'):{examCount:11,topics:[]};
 const topicData=topics.map(t=>({...t,questions:mapping.filter(m=>m.topicId===t.id).map(m=>m.questionId),frequency:frequency.topics?.find(x=>x.topicId===t.id)||null}));
-write('data/practice-topics.js',`(function(){\nvar additions=${JSON.stringify(additions)};\nObject.keys(additions).forEach(function(code){var bank=window.CAFA2_DATA.modules[code];additions[code].forEach(function(q){q.sources.forEach(function(s,i){bank.sources[q.refs[i]]=s;});bank.questions.push(q);});});\nwindow.CAFA2_TOPICS=${JSON.stringify(topicData)};\nwindow.CAFA2_TOPIC_GROUPS=${JSON.stringify(topicGroups)};\nwindow.CAFA2_EXAM_FREQUENCY=${JSON.stringify(frequency)};\n})();\n`);
+write('data/practice-topics.js',`(function(){\nvar additions=${JSON.stringify(additions)};\nObject.keys(additions).forEach(function(code){var bank=window.CAFA2_DATA.modules[code];additions[code].forEach(function(q){q.sources.forEach(function(s,i){bank.sources[q.refs[i]]=s;});bank.questions.push(q);});});\nwindow.CAFA2_TOPICS=${JSON.stringify(topicData)};\nwindow.CAFA2_TOPIC_GROUPS=${JSON.stringify(topicGroups)};\nwindow.CAFA2_EXAM_FREQUENCY=${JSON.stringify(frequency)};\nwindow.CAFA2_PRACTICE_SOURCE_HASH=${JSON.stringify(practiceAuthoringHash(root))};\n})();\n`);
 
 function table(t){return `<div class="table-wrap"><table>${t.caption?`<caption>${esc(t.caption)}</caption>`:''}<thead><tr>${t.headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
 function option(o){return o.table?table(o.table):`<p class="option-text">${esc(o.text)}</p>`;}

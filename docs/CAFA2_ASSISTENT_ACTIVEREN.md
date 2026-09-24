@@ -52,6 +52,8 @@ Plaats secrets alleen in de daarvoor bedoelde beveiligde runtime-instellingen. G
 
 Er zijn nog geen oorspronkelijke syllabi, slides of tentamen-PDF's voor deze assistent geüpload. De huidige catalogus gebruikt de bestaande vraagdata en bijbehorende uitwerkingen uit deze repository. `OPENAI_COURSE_VECTOR_STORE_ID` ontbreekt, waardoor File Search nu geen documentbank heeft. De afzonderlijke bronmanifest- en importprocedure op deze branch legt vast welke lokale bestanden in aanmerking komen; de manifestregels zijn geen geïndexeerde inhoud.
 
+Bij toekomstige toevoegingen gelden twee stappen. Nieuwe MC-vragen in `content/practice/new-*.json` moeten eerst met `node scripts/build-practice-topics.mjs` worden gegenereerd; de assistentbuild weigert een verouderde vraagbank. Nieuwe tentamenbestanden in `data/` moeten door `index.html` worden geladen; anders stopt de build. Daarna maakt iedere assistentbuild een actuele servercatalogus. Nieuwe of gewijzigde zelfstandige cursusdocumenten moeten apart door de onderstaande broncontrole en, na de vereiste broncontrole, opnieuw worden geïndexeerd. De lokale bronmap triggert zelf geen Cloudflare-deployment.
+
 In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maar **niet geïndexeerd of geüpload**:
 
 | Bronset | Aangetroffen bestanden | Nog nodig voor koppeling |
@@ -61,6 +63,7 @@ In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maa
 | Tentamens met uitwerkingen | De eerdere tien paren plus `20260429` onder `Tentamens/`: samen 22 bestanden. De opgave van `2021-04` is een `.docx`, de overige paren zijn PDF's. | Controleer de officiële status van het paar uit 2026 en per tentamen of opgave, uitwerking en jaartal overeenkomen. |
 | Collegeslides | `.pptx`-bestanden onder `Thieu Mooren/`, met bestandsnamen waarin Nyenrode-copyright staat. | Afzonderlijke toestemming en gecontroleerde conversie/tekstcontrole voordat deze extern worden geïndexeerd. |
 | Repetitiecursus | 40 bestanden onder de lokale map `Repetitiecursus/`: 10 `.pptx`-presentaties, 11 oude `.ppt`-presentaties, 2 PDF-schema's met journaalposten, 8 opgaven, 8 bijbehorende uitwerkingen en 1 programma-PDF. | Indexeer de slides en opgave-uitwerkingparen als eigen bronset; controleer afbeeldingen en rekenkundige tabellen visueel. De 11 `.ppt`-bestanden zijn lokaal als PDF klaargezet. |
+| Materiaal 2025 en aanvullingen | 3 syllabusdelen, 12 opgave- en uitwerkingsbestanden uit 2025, een CAFA2-tentamenpaar uit 2022 in DOCX en 4 aanvullende cursusdocumenten. | Controleer overlap met 2026, de herkomst en rechten van de aanvullende literatuur en wetboekkopie, en de officiële status van het DOCX-tentamenpaar. |
 
 De twaalf syllabusoefenbestanden heten precies:
 
@@ -75,15 +78,17 @@ De bestanden horen niet in de openbare repository. Een lokale bestandsnaam of br
 
 De 11 oude repetitiepresentaties zijn zonder wijziging van de originelen naar 11 PDF's in een afzonderlijke lokale stagingmap omgezet. De 113 PDF-pagina's komen overeen met de 113 bron-dia's en hebben uitleesbare tekst. Een visuele steekproef op drie reken- en journaalpostdia's liet geen afsnijding zien. Dat is geen volledige inhoudscontrole van alle pagina's. Sommige moderne `.pptx`-dia's bevatten belangrijke beeldinhoud; controleer die voor File Search, omdat tekstextractie een schema of tabel kan missen.
 
-De offline broncontrole is vanaf de repository-root te herhalen met de twee lokale mapvariabelen. Met beide mappen beschikbaar zijn 84 bestanden direct in een ondersteund formaat en 11 via de PDF-conversies klaar, samen 95 van 95 kandidaten. Zonder de conversiemap meldt de controle 11 nog om te zetten presentaties. Geen van deze opdrachten uploadt inhoud:
+De offline broncontrole is vanaf de repository-root te herhalen met de twee lokale mapvariabelen. Met beide mappen beschikbaar zijn 105 bestanden direct in een ondersteund formaat en 11 via de PDF-conversies klaar, samen 116 van 116 kandidaten. Eén persoonlijke vragen-DOCX is expliciet uitgesloten. De controle meldt 0 ongeclassificeerde bestanden en 0 scanproblemen. Zonder de conversiemap meldt zij 11 nog om te zetten presentaties. Nieuwe bestanden in `Onderwijsmateriaal`, `Tentamens`, `Thieu Mooren` of `Repetitiecursus` worden zichtbaar en blokkeren de controle totdat ze in het manifest zijn opgenomen of gemotiveerd zijn uitgesloten. Geen van deze opdrachten uploadt inhoud:
 
 ```powershell
 $env:CAFA2_SOURCE_ROOT = 'C:\Users\HamudiAlkarradi\OneDrive - De Rekenaar\Studie\CAFA2'
 $env:CAFA2_CONVERTED_ROOT = 'C:\Users\HamudiAlkarradi\Documents\Claude\Projects\CAFA2-assistant-sources\repetitiecursus'
-node scripts/prepare-assistant-sources.mjs
+node scripts/prepare-assistant-sources.mjs --check
 ```
 
-Een externe import wordt pas gestart met een expliciete brongroep, `--upload` en de controleopties die het script zelf noemt. De repetitieset gebruikt `repetition-slides`, `repetition-exercises`, `repetition-solutions` en desgewenst `repetition-program`. De API-sleutel wordt uitsluitend via een beveiligde lokale omgeving of runtime ingesteld; geef hem nooit als commandoregelargument. Het script maakt een nieuwe CAFA2-vector store en meldt de ID pas na volledige indexering. Controleer daarna de vindplaatsen bij enkele concrete vraag-antwoorden voordat de store in een preview wordt gekoppeld.
+Een externe import wordt pas gestart met `--upload --all-groups` en de controleopties die het script zelf noemt. Dit maakt steeds een **nieuwe volledige** CAFA2-vector store: bij een nieuwe bron moet de eerdere gewenste bronset dus mee, anders raakt de assistent die bronnen kwijt bij het vervangen van de store-ID. De API-sleutel wordt uitsluitend via een beveiligde lokale omgeving of runtime ingesteld; geef hem nooit als commandoregelargument. Het script meldt de nieuwe ID pas na volledige indexering. Controleer daarna de vindplaatsen bij enkele concrete vraag-antwoorden voordat de store-ID in een preview wordt vervangen. Een gedeeltelijke of mislukte import mag de gekoppelde store niet vervangen.
+
+De scan herkent nieuwe paden en ontbrekende of nog te converteren bestanden. Een inhoudelijk vervangen bestand met dezelfde naam wordt niet aan een vorige import vergeleken; plan ook daarvoor bewust een nieuwe volledige indexering. Een nieuw stuk theorie dat alleen op een zelfstandige sitepagina staat, is niet automatisch een gelezen File Search-bron. Voeg het als gecontroleerd brondocument aan de bronset toe als de assistent het buiten de vraagcontext moet kunnen gebruiken.
 
 Voor uitgebreide documentkennis: gebruik alleen bestanden die voor dit doel mogen worden gedeeld, indexeer ze in een CAFA2-vector store en koppel de store-ID. Controleer proefondervindelijk of tabellen en bronlocaties correct worden teruggevonden. Een bestandsnaam is geen bewijs dat een specifieke pagina is gelezen. Controleer ondersteuning van het gekozen bestandsformaat voordat je uploadt; zet slides of scans zo nodig om naar een gecontroleerde representatie. Uploads, opslag en modelcalls mogen niet stilzwijgend worden uitgevoerd.
 

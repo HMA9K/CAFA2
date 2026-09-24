@@ -2,6 +2,7 @@
 import {readFile,readdir} from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {listAssistantDataScripts,assistantInputHashes,practiceAuthoringHash} from './assistant-inputs.mjs';
 
 const root=process.cwd();
 const output=path.resolve(root,process.argv[2]||'dist');
@@ -11,6 +12,13 @@ const catalog=(await import(pathToFileURL(path.join(root,'assistant/server/catal
 if(catalog.course!=='CAFA2'||!catalog.counts?.practice||!catalog.counts?.exam||
    Object.keys(catalog.records||{}).length!==catalog.counts.practice+catalog.counts.exam)
   throw new Error('De servercatalogus ontbreekt of is onvolledig.');
+const sourceHtml=await readFile(path.join(root,'index.html'),'utf8');
+const scripts=await listAssistantDataScripts(root,sourceHtml);
+const currentHashes=await assistantInputHashes(root,scripts);
+if(JSON.stringify(catalog.inputHashes)!==JSON.stringify(currentHashes))
+  throw new Error('De servercatalogus is verouderd ten opzichte van de actuele vraag- en tentamendata. Bouw de assistent opnieuw.');
+if(catalog.authoringHashes?.practice!==practiceAuthoringHash(root))
+  throw new Error('De servercatalogus is verouderd ten opzichte van de nieuwe MC-brondata. Genereer de vraagbank en bouw de assistent opnieuw.');
 
 for(const route of ['auth','chat','logout','status']){
   const handler=await import(pathToFileURL(path.join(root,`functions/api/study-${route}.js`)).href);
