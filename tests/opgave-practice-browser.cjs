@@ -22,13 +22,13 @@ const server = http.createServer((req, res) => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   try {
     browser = await chromium.launch({ headless: true, ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}) });
-    const base = 'http://127.0.0.1:' + server.address().port;
+    const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:' + server.address().port;
     for (const width of [1366, 390]) {
       const context = await browser.newContext({ viewport: { width, height: 900 } });
       const page = await context.newPage();
       const errors = [];
       page.on('pageerror', error => errors.push(String(error)));
-      await page.goto(base + '/index.html#dashboard');
+      await page.goto(base + (width === 1366 ? '/index.html#dashboard' : '/#dashboard'));
       await page.locator('a[href="#welkom/opgaven"]').first().waitFor();
       assert.equal(await page.locator('a[href="#welkom/opgaven"]').count(), 2);
       await page.locator('a[href="#welkom/opgaven"]').first().click();
@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
       assert.equal(await page.locator('.compact-overview-group .compact-overview-item').count(), 39);
       await page.screenshot({ path: path.join(output, 'overview-all-' + width + '.png') });
       await page.locator('#exam-info-dialog [data-close-info]').last().click();
-      await page.goto(base + '/index.html#welkom/opgaven');
+      await page.goto(base + (width === 1366 ? '/index.html#welkom/opgaven' : '/#welkom/opgaven'));
       await page.locator('[data-opgave-exam]').first().waitFor();
       await page.locator('[name="opgave-number"][value="3"]').check();
       assert.match(await page.locator('[data-opgave-summary]').innerText(), /5 tentamens geselecteerd · 36 vragen/);
