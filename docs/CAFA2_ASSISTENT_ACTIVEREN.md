@@ -4,9 +4,11 @@ Dit is een voorbereidingsdocument. Geen account, productie-instelling, secret of
 
 ## Actuele Pages-instelling, alleen gelezen op 24 september 2026
 
-Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. Deployment `37372c56-dec5-46ef-bc25-d52aebf66550` van commit `d2ccac4` faalde op 24 september: Pages voerde `exit 0` uit en kon daarna bij het bundelen van alle vier Functions `../../assistant/server/catalog.generated.mjs` niet vinden. Dat bestand ontstaat pas tijdens de assistentbuild. De branchpreview is dus geen runtimeproef. De globale buildinstelling is bewust niet gewijzigd: die wijziging zou ook toekomstige productiedeployments raken.
+Het bestaande Cloudflare Pages-project `cafa2` gebruikt productiebranch `main`, build command `exit 0`, uitvoermap `.` en de repository-root als werkmap. In de preview- en productieconfiguratie staat momenteel geen `STUDY_DB`-binding en geen assistentvariabele. De branchdeployments van `d2ccac4` en `7f48f2e` faalden: Pages voerde `exit 0` uit en kon daarna bij het bundelen van alle vier Functions `../../assistant/server/catalog.generated.mjs` niet vinden. Dat bestand ontstaat pas tijdens de assistentbuild. De branchpreview is dus geen runtimeproef. De productiesite antwoordt wel met HTML, maar bevat de assistentimport niet; `/api/study-status` geeft daar eveneens de statische HTML-fallback in plaats van JSON. De assistent is **niet live**. De globale buildinstelling is niet gewijzigd, omdat die ook toekomstige productiedeployments van `main` raakt.
 
 Voor een gecontroleerde preview zijn nog nodig: build command `node scripts/build-study-assistant.mjs`, uitvoermap `dist`, Node.js 22, een afzonderlijke D1-testdatabase met `assistant/server/schema.sql` en de previewbinding `STUDY_DB`. Houd `STUDY_ASSISTANT_ENABLED=false` totdat de hieronder genoemde serverconfiguratie en proefvragen zijn gecontroleerd. Verifieer na iedere aanpassing dat `GET /api/study-status` JSON teruggeeft.
+
+Een duurzame Git-preview vraagt om een eigen Pages-project voor deze branch met die buildinstellingen, of om wijziging van de gedeelde projectbuild zodra `main` dezelfde build kan uitvoeren. Het bestaande project nu naar `dist` omschakelen is onveilig voor `main`, dat de assistentbuild nog niet bevat. Als tijdelijke previewroute kan na een lokale build `node scripts/verify-study-assistant-build.mjs` worden uitgevoerd en daarna vanuit de repository-root `wrangler pages deploy dist --project-name cafa2 --branch codex/cafa2-assistant-handoff`. Dit publiceert uitsluitend een handmatige preview en verhelpt de automatische Git-build niet; het commando is nog niet uitgevoerd. De branchworkflow controleert vanaf de volgende commit de catalogus, vier Functions, routes en de scheiding tussen openbare en privébestanden. De Cloudflare-projectinstelling zelf kan CI niet afdwingen.
 
 ## Eerst integreren en testen
 
@@ -48,7 +50,7 @@ Plaats secrets alleen in de daarvoor bedoelde beveiligde runtime-instellingen. G
 
 ## Originele bronnen
 
-Er zijn nog geen oorspronkelijke syllabi, slides of tentamen-PDF's voor deze assistent geüpload. De huidige catalogus gebruikt de bestaande vraagdata en bijbehorende uitwerkingen uit deze repository.
+Er zijn nog geen oorspronkelijke syllabi, slides of tentamen-PDF's voor deze assistent geüpload. De huidige catalogus gebruikt de bestaande vraagdata en bijbehorende uitwerkingen uit deze repository. `OPENAI_COURSE_VECTOR_STORE_ID` ontbreekt, waardoor File Search nu geen documentbank heeft. De afzonderlijke bronmanifest- en importprocedure op deze branch legt vast welke lokale bestanden in aanmerking komen; de manifestregels zijn geen geïndexeerde inhoud.
 
 In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maar **niet geïndexeerd of geüpload**:
 
@@ -56,8 +58,9 @@ In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maa
 | --- | --- | --- |
 | Syllabus 2026 | `2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf`, `2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf`, `2026 Syllabus CAFA2 Deel 3 Consolideren.pdf` | Toestemming voor upload naar uitsluitend een CAFA2-store; controle van tekst en tabellen. |
 | Syllabusopgaven 2026 | Deel `1a`, `1b`, `2a`, `2b`, `3a`, `3b`, telkens een bestand met `opgaven` en een met `uitwerking opgaven` onder `Onderwijsmateriaal/Syllabus opgaven/` en `Onderwijsmateriaal/Syllabus uitwerkingen/` | Koppel opgave en uitwerking als paar; controleer bronpassages en rekenstappen. |
-| Tentamens met uitwerkingen | Paren voor `2021-04`, `2021-10`, `2022-04`, `2022-10`, `20230411`, `20231009`, `20240422`, `20240930`, `20250417`, `20250924` onder `Tentamens/`. De opgave van `2021-04` is een `.docx`, de overige aangetroffen paren zijn PDF's. | Kies de toegestane bestanden en controleer per tentamen of de officiële uitwerking en jaartallen overeenkomen. |
+| Tentamens met uitwerkingen | De eerdere tien paren plus `20260429` onder `Tentamens/`: samen 22 bestanden. De opgave van `2021-04` is een `.docx`, de overige paren zijn PDF's. | Controleer de officiële status van het paar uit 2026 en per tentamen of opgave, uitwerking en jaartal overeenkomen. |
 | Collegeslides | `.pptx`-bestanden onder `Thieu Mooren/`, met bestandsnamen waarin Nyenrode-copyright staat. | Afzonderlijke toestemming en gecontroleerde conversie/tekstcontrole voordat deze extern worden geïndexeerd. |
+| Repetitiecursus | 40 bestanden onder de lokale map `Repetitiecursus/`: 10 `.pptx`-presentaties, 11 oude `.ppt`-presentaties, 2 PDF-schema's met journaalposten, 8 opgaven, 8 bijbehorende uitwerkingen en 1 programma-PDF. | Indexeer de slides en opgave-uitwerkingparen als eigen bronset; controleer afbeeldingen en rekenkundige tabellen visueel. De 11 `.ppt`-bestanden zijn lokaal als PDF klaargezet. |
 
 De twaalf syllabusoefenbestanden heten precies:
 
@@ -68,7 +71,19 @@ De twaalf syllabusoefenbestanden heten precies:
 - `2026 Syllabus CAFA2 deel 3a - opgaven consolidatie owp.pdf` en `2026 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf`.
 - `2026 Syllabus CAFA2 deel 3b - opgaven consolidatie extra.pdf` en `2026 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf`.
 
-De bestanden hoeven niet in de openbare repository. Een lokale bestandsnaam of bronlabel bewijst geen gelezen passage. Voor een echte File Search-proef zijn de gekozen bestanden, toestemming voor externe verwerking en daarna `OPENAI_COURSE_VECTOR_STORE_ID` nodig. Zonder deze bronset kan de assistent al met de bestaande CAFA2-vraagbank werken, mits de serverconfiguratie en modelkwaliteit apart zijn gecontroleerd.
+De bestanden horen niet in de openbare repository. Een lokale bestandsnaam of bronlabel bewijst geen gelezen passage. De bronmanifest noemt alleen relatieve paden; `CAFA2_SOURCE_ROOT` verwijst lokaal naar de CAFA2-studiemap en `CAFA2_CONVERTED_ROOT` optioneel naar een afgeschermde map met de 11 omgezette presentatie-PDF's. De originele bestanden blijven ongewijzigd. Voor een echte File Search-proef zijn de geselecteerde bestanden, toestemming voor externe verwerking, een beveiligd ingestelde API-sleutel en daarna `OPENAI_COURSE_VECTOR_STORE_ID` nodig. Zonder deze bronset kan de assistent al met de bestaande CAFA2-vraagbank werken, mits de serverconfiguratie en modelkwaliteit apart zijn gecontroleerd.
+
+De 11 oude repetitiepresentaties zijn zonder wijziging van de originelen naar 11 PDF's in een afzonderlijke lokale stagingmap omgezet. De 113 PDF-pagina's komen overeen met de 113 bron-dia's en hebben uitleesbare tekst. Een visuele steekproef op drie reken- en journaalpostdia's liet geen afsnijding zien. Dat is geen volledige inhoudscontrole van alle pagina's. Sommige moderne `.pptx`-dia's bevatten belangrijke beeldinhoud; controleer die voor File Search, omdat tekstextractie een schema of tabel kan missen.
+
+De offline broncontrole is vanaf de repository-root te herhalen met de twee lokale mapvariabelen. Met beide mappen beschikbaar zijn 84 bestanden direct in een ondersteund formaat en 11 via de PDF-conversies klaar, samen 95 van 95 kandidaten. Zonder de conversiemap meldt de controle 11 nog om te zetten presentaties. Geen van deze opdrachten uploadt inhoud:
+
+```powershell
+$env:CAFA2_SOURCE_ROOT = 'C:\Users\HamudiAlkarradi\OneDrive - De Rekenaar\Studie\CAFA2'
+$env:CAFA2_CONVERTED_ROOT = 'C:\Users\HamudiAlkarradi\Documents\Claude\Projects\CAFA2-assistant-sources\repetitiecursus'
+node scripts/prepare-assistant-sources.mjs
+```
+
+Een externe import wordt pas gestart met een expliciete brongroep, `--upload` en de controleopties die het script zelf noemt. De repetitieset gebruikt `repetition-slides`, `repetition-exercises`, `repetition-solutions` en desgewenst `repetition-program`. De API-sleutel wordt uitsluitend via een beveiligde lokale omgeving of runtime ingesteld; geef hem nooit als commandoregelargument. Het script maakt een nieuwe CAFA2-vector store en meldt de ID pas na volledige indexering. Controleer daarna de vindplaatsen bij enkele concrete vraag-antwoorden voordat de store in een preview wordt gekoppeld.
 
 Voor uitgebreide documentkennis: gebruik alleen bestanden die voor dit doel mogen worden gedeeld, indexeer ze in een CAFA2-vector store en koppel de store-ID. Controleer proefondervindelijk of tabellen en bronlocaties correct worden teruggevonden. Een bestandsnaam is geen bewijs dat een specifieke pagina is gelezen. Controleer ondersteuning van het gekozen bestandsformaat voordat je uploadt; zet slides of scans zo nodig om naar een gecontroleerde representatie. Uploads, opslag en modelcalls mogen niet stilzwijgend worden uitgevoerd.
 
@@ -87,3 +102,5 @@ Geraadpleegd op 24 september 2026:
 - OpenAI File Search: https://developers.openai.com/api/docs/guides/tools-file-search
 - Cloudflare Pages Functions: https://developers.cloudflare.com/pages/functions/get-started/
 - Cloudflare bindings en secrets: https://developers.cloudflare.com/pages/functions/bindings/
+- Cloudflare Pages buildconfiguratie: https://developers.cloudflare.com/pages/configuration/build-configuration/
+- Cloudflare handmatige Pages-deployment: https://developers.cloudflare.com/pages/get-started/direct-upload/

@@ -30,10 +30,11 @@ jobs:
         run: |
           node scripts/prepare-study-assistant.mjs --apply
           node scripts/build-study-assistant.mjs | tee /tmp/assistant-qa/build.log
+          node scripts/verify-study-assistant-build.mjs | tee /tmp/assistant-qa/build-verification.log
       - name: Existing repository regression tests
         run: npm test 2>&1 | tee /tmp/assistant-qa/regression.log
-      - name: Bundle the Pages Function
-        run: npx --yes esbuild@0.25.10 functions/api/study-chat.js --bundle --format=esm --platform=browser --outfile=/tmp/assistant-qa/worker.mjs
+      - name: Bundle all Pages Functions
+        run: npx --yes esbuild@0.25.10 functions/api/study-*.js --bundle --format=esm --platform=browser --outdir=/tmp/assistant-qa/functions
       - name: Install browser-test dependencies
         run: |
           pip install playwright==1.57.0

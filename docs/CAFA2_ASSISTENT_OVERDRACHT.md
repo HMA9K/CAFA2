@@ -1,6 +1,6 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-24.3. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-24.4. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
 ## Status van deze werkronde
 
@@ -9,6 +9,8 @@ De assistent is op deze branch in de bestaande CAFA2-pagina geïntegreerd. De dr
 Alle 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen zijn opnieuw door de canonieke catalogus- en revisietests gehaald. De browserproef gebruikt de echte CAFA2-interface met een gesimuleerde antwoorddienst. De inhoudelijke kwaliteit van een echt model en externe bronpassages zijn hiermee nog niet vastgesteld. Zie [CAFA2_ASSISTENT_TESTSTATUS.md](CAFA2_ASSISTENT_TESTSTATUS.md) voor exacte testresultaten en beperkingen.
 
 Op integratiecommit `d2ccac4` zijn beide GitHub Actions-workflows geslaagd, inclusief 96 browsercontroles in Chromium en 96 in WebKit. De Cloudflare-branchpreview van die commit faalde afzonderlijk: de huidige Pages-build voert `exit 0` uit, zodat de Functions de nog niet gegenereerde servercatalogus niet kunnen vinden. De benodigde preview- en runtime-inrichting staat in het activatiedocument.
+
+Bij de vervolginventarisatie zijn ook de 40 bestanden van de lokale repetitiecursus gevonden. Zij stonden buiten de eerder bekeken collegemap. Het nieuwe relatieve bronmanifest omvat nu 95 kandidaatbestanden, waaronder repetitieslides, opgaven, uitwerkingen, syllabus en tentamens. De 11 oude `.ppt`-bestanden zijn als PDF in een afzonderlijke lokale stagingmap omgezet. Er is nog geen document geüpload of met File Search verbonden. De huidige productiesite bevat de assistent niet. De branchworkflow krijgt een extra controle op de gegenereerde catalogus, Functions, routes en openbare uitvoermap; de gedeelde Cloudflare-buildinstelling blijft ongewijzigd.
 
 ## Opdracht en afbakening
 
@@ -52,6 +54,8 @@ Toegangscode, privacytoestemming en kostenlimieten blijven bestaan. Dat zijn tec
 | `assistant/pages-functions/study-*.js` | Vier endpointtemplates: status, auth, chat en logout. |
 | `scripts/prepare-study-assistant.mjs` | Expliciete, herhaalbare integratie. Zonder --apply alleen een overzicht. |
 | `scripts/build-study-assistant.mjs` | Genereert servercatalogus in delen en publieke uitvoer in dist. |
+| `scripts/verify-study-assistant-build.mjs` | Controleert voor deployment catalogus, vier Functions, routes en scheiding van privébestanden uit dist. |
+| `assistant/source-manifest.json` en `scripts/prepare-assistant-sources.mjs` | Relatieve lijst met lokale bronkandidaten, offline dry-run en expliciete opt-in voor externe indexering. Bronbestanden blijven buiten Git. |
 | `tests/study-assistant/` | Beveiliging, antwoordgedrag, alle echte vraagrecords en browserproef met mockdienst. |
 | `.github/workflows/assistant-handoff.yml` | Controleert de branch zonder deployment of echte modelaanroepen. |
 
@@ -94,9 +98,9 @@ Een routewissel controleert de actuele vraag ook wanneer een modelantwoord snell
 
 ## Nog nodig voor een echte preview en modelproef
 
-1. Configureer een afzonderlijke Cloudflare-preview met build naar `dist`, een preview-D1-database en de runtimevariabelen uit [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md). De huidige Pages-configuratie bouwt de assistent niet en heeft geen D1-binding.
+1. Configureer een afzonderlijke Cloudflare-preview met build naar `dist`, een preview-D1-database en de runtimevariabelen uit [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md). De huidige Pages-configuratie bouwt de assistent niet en heeft geen D1-binding. De bestaande projectbuild direct omzetten zou ook `main` raken.
 2. Kies een beschikbaar Responses-model en voer een kleine, traceerbare reeks echte vragen uit. Beoordeel hints, expliciete volledige uitwerkingen, onjuiste aannames over antwoordletters, bedragherleiding, ontbrekende antwoordmodellen en vervolgvragen. De automatische tests gebruiken uitsluitend testreacties. De uitvoerlimiet van 1.800 tokens en het tekstgebaseerde gesprek verdienen daarbij aparte aandacht.
-3. Kies en autoriseer originele CAFA2-bronbestanden voor externe indexering. De aangetroffen bestandssets staan in het activatiedocument. Op dit moment is geen syllabus, slide of tentamen-PDF gekoppeld; bronlabels uit de vragenbank bewijzen geen bronpassage.
+3. Controleer welke originele CAFA2-bronbestanden extern mogen worden geïndexeerd, met name de repetitie- en collegeslides. Het manifest en de lokale conversies zijn klaar; de aangetroffen sets en de dry-run staan in het activatiedocument. Op dit moment is geen syllabus, slide of tentamen-PDF gekoppeld; bronlabels uit de vragenbank bewijzen geen bronpassage.
 4. Controleer daarna de echte Cloudflare-status, sessiecookie, D1-quota en File Search-resultaten op de preview. Een fysieke iPhone met geopend toetsenbord is nog een afzonderlijke gebruiksproef.
 
 De repository wordt hier niet geherstructureerd. SRA en BELRE3 krijgen later hun eigen adapter en broncatalogus. Pull-request #13 blijft concept; er volgt geen zelfstandige merge naar `main` of productieactivering.

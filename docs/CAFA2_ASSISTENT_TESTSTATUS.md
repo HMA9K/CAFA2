@@ -9,12 +9,13 @@ Datum: 24 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-P
 | Startpunt en bestaande CI | Branchcommit `be418e1` bevestigd; [assistentworkflow](https://github.com/HMA9K/CAFA2/actions/runs/36055009748) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36055015979) geslaagd, jobs en logs gelezen. | De klaargezette branch, niet de oude featurebranch of ZIP, was het vertrekpunt. |
 | CI na integratie | Op codecommit `d2ccac4` zijn [assistentworkflow](https://github.com/HMA9K/CAFA2/actions/runs/36059294019) en [Validate CAFA2](https://github.com/HMA9K/CAFA2/actions/runs/36059299889) geslaagd. De assistentjob en logs zijn gelezen: 58 Node-tests, build, `npm test`, Function-bundeling, 96 Chromium- en 96 WebKit-PASS-regels. [Screenshots en logs](https://github.com/HMA9K/CAFA2/actions/runs/36059294019/artifacts/10834096446) staan in het CI-artifact. | De daadwerkelijke geïntegreerde branch slaagt op Node.js 22 en Linux met beide browserengines. |
 | Integratie-dry-run | Eerst zeven verwachte bestanden; na `--apply` geen openstaande wijzigingen. | Integratie blijft gericht en herhaalbaar. |
-| Nieuwe Node-tests | 58 geslaagd, 0 mislukt, lokaal met Node.js 24. | Servercontract, veiligheidsgrenzen, adapter, revisies, alle echte records en nieuw gevonden regressies. CI gebruikt Node.js 22. |
+| Nieuwe Node-tests | 63 geslaagd, 0 mislukt, lokaal met Node.js 24; inclusief vijf bronpipelinecontroles. | Servercontract, veiligheidsgrenzen, adapter, revisies, alle echte records en manifest-/importgrenzen. CI gebruikt Node.js 22. |
 | Canonieke vraagbank | 247 oefenvragen, 131 echte tentamenvragen en 3 demonstratievragen gecontroleerd. | Alle records passen binnen de contextgrens en behouden hun antwoordmodel en revisie. |
 | Bestaande regressiecontroles | Alle negen scripts uit `npm test` afzonderlijk met `node` geslaagd. | Vragen, exam engine, timergrenzen, score- en inhoudsrevisie, lezen, onderwerpen en donkere modus zijn bij deze integratie niet stukgegaan. `npm` is lokaal niet beschikbaar. |
-| Assistentbuild | Geslaagd. | Publieke `dist` en gesplitste servercatalogus worden gegenereerd. |
+| Assistentbuild en deploycontrole | Geslaagd: 247 oefenvragen, 134 tentamenvragen inclusief 3 demo's, 125 publieke bestanden en 4 actieve Functions-routes. | Publieke `dist` en gesplitste servercatalogus worden gegenereerd; de controle weigert privébestanden in `dist` en ontbrekende routes. |
+| Bronneninventaris en conversie | 95 van 95 kandidaten lokaal aanwezig: 84 direct formaatklaar en 11 omgezette legacy-presentaties. De 11 PDF's tellen 113 pagina's, gelijk aan de bron-dia's; tekst per pagina en drie reken-/boekingsdia's visueel gecontroleerd. | De repetitiecursus en eerdere bronsets zijn lokaal gevonden; dit bewijst geen externe indexering of volledige visuele correctheid. |
 | Browserproef | Chromium: 96 controles geslaagd, 0 JavaScript-runtimefouten. WebKit 26.0: 96 controles geslaagd, 0 JavaScript-runtimefouten. Beide lokaal op de laatste build. | Werkelijke DOM, routes, editors en schermindeling met gesimuleerde antwoorddienst; geen inhoudelijke modelkwaliteit. |
-| Cloudflare-branchpreview | Deployment `37372c56-dec5-46ef-bc25-d52aebf66550` van `d2ccac4` faalde. | De huidige build voert `exit 0` uit; Functions kunnen daarna `catalog.generated.mjs` niet bundelen. De Pages-buildinstelling is nog niet aangepast. |
+| Cloudflare-branchpreview | Deployments van `d2ccac4` en `7f48f2e` faalden. Productie antwoordt met HTML zonder assistentimport; `/api/study-status` geeft HTML in plaats van JSON. | De huidige build voert `exit 0` uit; Functions kunnen daarna `catalog.generated.mjs` niet bundelen. De assistent is niet live en de Pages-buildinstelling is niet aangepast. |
 | Echte modelaanroepen, File Search en Cloudflare-runtime | Niet uitgevoerd. | Een model, secrets, geautoriseerde uploads en bruikbare preview-inrichting ontbreken. |
 
 ## Regels waarvoor regressies zijn toegevoegd
@@ -41,6 +42,8 @@ Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, be
 
 Een fysieke iPhone met geopend toetsenbord en de echte Cloudflare-preview blijven aparte controles. Er is niets naar `main` gemerged of in productie geactiveerd.
 
+De nieuwe bronimporttest gebruikt een gesimuleerde API-respons. Er is geen echte OpenAI-vector store aangemaakt, geen origineel document geüpload en geen modelantwoord op deze documenten beoordeeld. De 2026-tentamenbestanden in het manifest vragen nog controle van hun officiële status. Beeldinformatie in enkele PPTX-dia's en de overige 110 geconverteerde dia's zijn niet volledig visueel geverifieerd.
+
 ## Reproduceren
 
 ```bash
@@ -48,6 +51,7 @@ node --test tests/study-assistant/*.test.mjs
 node scripts/prepare-study-assistant.mjs
 node scripts/prepare-study-assistant.mjs --apply
 node scripts/build-study-assistant.mjs
+node scripts/verify-study-assistant-build.mjs
 npm test
 python tests/study-assistant/browser.py
 ASSISTANT_BROWSER=webkit python tests/study-assistant/browser.py
