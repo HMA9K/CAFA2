@@ -105,7 +105,7 @@
     questionLinks.hidden=!(onQuestion||onResults);
     bar.classList.toggle('has-result-links',onResults);
     back.hidden = onQuestion || !top || same(top,cur);
-    originButton.hidden = onQuestion || !hasOrigin;
+    originButton.hidden = onQuestion || onResults || !hasOrigin;
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
     bar.hidden=false;
