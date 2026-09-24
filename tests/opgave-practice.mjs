@@ -28,9 +28,38 @@ const plain = value => JSON.parse(JSON.stringify(value));
 assert.ok(practice, 'De samengestelde opgavenmodule moet beschikbaar zijn.');
 assert.equal(typeof practice.available, 'function');
 assert.equal(typeof practice.build, 'function');
+assert.equal(typeof practice.sourceSectionId, 'function');
 assert.equal(exams.length, 11);
 const originalData = JSON.stringify(exams);
-const expectedCounts = [85, 70, 64, 63];
+const topics = ['kapitaalbelangen', 'vreemde valuta', 'consolidatie nettovermogenswaarde', 'consolidatie verkrijgingsprijs'];
+const expectedCounts = [85, 63, 78, 56];
+const expectedPoints = [330, 220, 330, 220];
+const sourceNumbersByExam = {
+  'cafa2-20210419': [1, 4, 2, 3],
+  'cafa2-20211006': [1, 4, 2, 3],
+  'cafa2-20220411': [1, 4, 2, 3],
+  'cafa2-20221006': [1, 4, 2, 3],
+  'cafa2-20230411': [1, 4, 2, 3],
+  'cafa2-20231009': [1, 4, 2, 3],
+  'cafa2-20240422': [1, 2, 3, 4],
+  'cafa2-20240930': [1, 2, 3, 4],
+  'cafa2-20250417': [1, 2, 3, 4],
+  'cafa2-20250924': [1, 2, 3, 4],
+  'cafa2-20260429': [1, 2, 3, 4]
+};
+assert.deepEqual(plain(exams.map(exam => exam.id).sort()), Object.keys(sourceNumbersByExam).sort());
+for (const exam of exams) {
+  sourceNumbersByExam[exam.id].forEach((sourceNumber, topicIndex) => {
+    const topic = topicIndex + 1;
+    const sourceId = 'opgave-' + sourceNumber;
+    assert.equal(practice.sourceSectionId(exam, topic), sourceId,
+      `${exam.id}: vast onderwerp ${topic} moet papieren ${sourceId} kiezen.`);
+    const section = exam.sections.find(item => item.id === sourceId);
+    assert.ok(section, `${exam.id}: papieren ${sourceId} ontbreekt.`);
+    assert.match(section.title.toLowerCase(), new RegExp(topics[topicIndex]),
+      `${exam.id}: sectietitel past niet bij onderwerp ${topic}.`);
+  });
+}
 
 function checkComposite(number, chosen) {
   const selected = exams.filter(exam => chosen.includes(exam.id))
@@ -38,11 +67,12 @@ function checkComposite(number, chosen) {
   const actual = practice.build(exams, number, chosen);
   const originals = selected.map(exam => ({
     exam,
-    section: exam.sections.find(section => section.id === 'opgave-' + number),
-    questions: exam.questions.filter(question => question.sectionId === 'opgave-' + number)
+    section: exam.sections.find(section => section.id === 'opgave-' + sourceNumbersByExam[exam.id][number - 1]),
+    questions: exam.questions.filter(question => question.sectionId === 'opgave-' + sourceNumbersByExam[exam.id][number - 1])
   }));
   assert.equal(actual.practiceKind, 'opgave');
   assert.equal(actual.opgaveNumber, number);
+  assert.equal(actual.selectionBasis, 'topic');
   assert.deepEqual(plain(actual.sourceExamIds), plain(selected.map(exam => exam.id)));
   assert.equal(actual.sections.length, selected.length);
   assert.equal(actual.questions.length, originals.reduce((sum, source) => sum + source.questions.length, 0));
@@ -55,13 +85,15 @@ function checkComposite(number, chosen) {
 
   let index = 0;
   for (const { exam, section, questions } of originals) {
-    assert.ok(section, `${exam.id} mist opgave ${number}.`);
+    assert.ok(section, `${exam.id} mist de opgave over ${topics[number - 1]}.`);
     const code = exam.date.replaceAll('-', '');
     const combinedSection = actual.sections.find(item => item.sourceExamId === exam.id);
     assert.ok(combinedSection, `De casus van ${code} ontbreekt.`);
     assert.equal(combinedSection.id, exam.id + '-' + section.id);
     assert.equal(combinedSection.sourceCode, code);
     assert.equal(combinedSection.sourceSectionId, section.id);
+    assert.equal(combinedSection.sourceOpgaveNumber, sourceNumbersByExam[exam.id][number - 1]);
+    assert.equal(combinedSection.topicNumber, number);
     assert.equal(combinedSection.contentHtml, section.contentHtml,
       `De originele casustekst van ${code} moet intact blijven.`);
     assert.equal(combinedSection.points, section.points);
@@ -77,6 +109,7 @@ function checkComposite(number, chosen) {
       assert.equal(question.sectionId, combinedSection.id);
       assert.equal(question.sourceExamId, exam.id);
       assert.equal(question.sourceCode, code);
+      assert.equal(question.sourceOpgaveNumber, sourceNumbersByExam[exam.id][number - 1]);
       assert.equal(question.sourceQuestionId, original.id);
       for (const field of ['type', 'points', 'prompt', 'promptHtml', 'solution', 'solutionHtml']) {
         assert.equal(question[field], original[field], `${code} ${original.id}: ${field} is gewijzigd.`);
@@ -102,8 +135,15 @@ function checkComposite(number, chosen) {
 for (let number = 1; number <= 4; number++) {
   assert.deepEqual(plain(practice.available(exams, number).map(exam => exam.id)), plain(exams.map(exam => exam.id)));
   const combined = checkComposite(number, exams.map(exam => exam.id));
-  assert.equal(combined.questions.length, expectedCounts[number - 1], `Verkeerd totaal voor opgave ${number}.`);
+  assert.equal(combined.questions.length, expectedCounts[number - 1], `Verkeerd aantal vragen voor onderwerp ${number}.`);
+  assert.equal(combined.maxScore, expectedPoints[number - 1], `Verkeerd puntentotaal voor onderwerp ${number}.`);
 }
+
+const oldValuta = practice.build(exams, 2, ['cafa2-20231009']);
+assert.equal(oldValuta.sections[0].sourceSectionId, 'opgave-4',
+  'Vreemde valuta uit examen 20231009 staat in de papieren opgave 4.');
+assert.equal(oldValuta.questions.length, 4);
+assert.equal(oldValuta.maxScore, 20);
 
 const subset = ['cafa2-20260429', 'cafa2-20240422', 'cafa2-20250417'];
 const selected = checkComposite(1, subset);
@@ -192,14 +232,18 @@ if (JSDOM) {
       'De nieuwe oefenroute moet direct onder de MC-vragen op het dashboard staan.');
     const firstTwo = Array.from(ui.document.querySelectorAll('.exam-table-upcoming tbody tr')).slice(0, 2);
     assert.match(firstTwo[0].textContent, /CAFA2 oefenvragen/);
-    assert.match(firstTwo[1].textContent, /Tentamenvragen per opgave/);
+    assert.match(firstTwo[1].textContent, /Tentamenvragen per onderwerp/);
 
     ui.route('#welkom/opgaven');
     assert.equal(ui.document.querySelectorAll('[name="opgave-number"]').length, 4);
     assert.equal(ui.document.querySelectorAll('[data-opgave-exam]').length, 11);
-    assert.match(ui.$('[data-opgave-summary]').textContent, /11 tentamens geselecteerd · 85 vragen/);
-    ui.change('[name="opgave-number"][value="4"]', true);
-    assert.match(ui.$('[data-opgave-summary]').textContent, /11 tentamens geselecteerd · 63 vragen/);
+    for (let number = 1; number <= 4; number++) {
+      const radio = ui.$(`[name="opgave-number"][value="${number}"]`);
+      assert.match(radio.closest('label').textContent.toLowerCase(), new RegExp(topics[number - 1]));
+      ui.change(`[name="opgave-number"][value="${number}"]`, true);
+      assert.match(ui.$('[data-opgave-summary]').textContent,
+        new RegExp(`11 tentamens geselecteerd · ${expectedCounts[number - 1]} vragen`));
+    }
     ui.change('[name="opgave-number"][value="1"]', true);
 
     const chosen = ['cafa2-20260429', 'cafa2-20250924', 'cafa2-20240422'];
@@ -226,7 +270,9 @@ if (JSDOM) {
 
     ui.click('[data-exam-action="overview"]');
     assert.deepEqual(Array.from(ui.document.querySelectorAll('.compact-overview-group h3'), node => node.textContent),
-      ['Examen 20260429', 'Examen 20250924', 'Examen 20240422']);
+      ['Examen 20260429 · oorspronkelijke opgave 1',
+        'Examen 20250924 · oorspronkelijke opgave 1',
+        'Examen 20240422 · oorspronkelijke opgave 1']);
     assert.deepEqual(Array.from(ui.document.querySelectorAll('.compact-overview-group'), group => group.querySelectorAll('[data-exam-index]').length),
       [7, 8, 8]);
     ui.click('#exam-info-dialog [data-exam-index="7"]');
@@ -271,4 +317,42 @@ if (JSDOM) {
   } finally {
     ui.close();
   }
+
+  const legacyExam = plain(practice.build(exams, 3, ['cafa2-20231009']));
+  legacyExam.id = 'opgave-2-20231009';
+  legacyExam.title = 'Tentamenvragen per opgave · Opgave 2';
+  legacyExam.opgaveNumber = 2;
+  delete legacyExam.selectionBasis;
+  legacyExam.sections[0].title = 'Opgave 2 · 20231009 · Gluton bv (Consolidatie nettovermogenswaarde)';
+  delete legacyExam.sections[0].topicNumber;
+  delete legacyExam.sections[0].sourceOpgaveNumber;
+  legacyExam.questions.forEach(question => { delete question.sourceOpgaveNumber; });
+  const legacyAttempt = plain(engine.createAttempt(legacyExam, { now, untimed: true }));
+  const legacyQuestionId = legacyAttempt.exam.questions[0].id;
+  legacyAttempt.answers[legacyQuestionId] = { html: '<p>Historisch antwoord uit bronopgave 2</p>' };
+  const legacyUi = environment({ saved: JSON.stringify({ version: 1, attempts: [legacyAttempt] }) });
+  try {
+    legacyUi.window.confirm = () => true;
+    const oldRow = legacyUi.$(`.exam-table-upcoming [data-restart-attempt="${legacyAttempt.id}"]`)
+      ?.closest('tr');
+    assert.ok(oldRow, 'De oude lopende poging moet op het dashboard staan.');
+    assert.match(oldRow.textContent, /Oude indeling/);
+    assert.match(oldRow.textContent, /OPG2-OUD/);
+    legacyUi.click(`.exam-table-upcoming [data-restart-attempt="${legacyAttempt.id}"]`);
+    const [oldSaved, newAttempt] = legacyUi.attempts();
+    assert.equal(oldSaved.exam.selectionBasis, undefined);
+    assert.equal(oldSaved.exam.sections[0].sourceSectionId, 'opgave-2');
+    assert.match(oldSaved.answers[legacyQuestionId].html, /Historisch antwoord/);
+    assert.equal(oldSaved.status, 'completed');
+    assert.equal(newAttempt.exam.selectionBasis, 'topic');
+    assert.equal(newAttempt.exam.opgaveNumber, 2);
+    assert.deepEqual(plain(newAttempt.exam.sourceExamIds), ['cafa2-20231009']);
+    assert.equal(newAttempt.exam.sections[0].sourceSectionId, 'opgave-4');
+    assert.equal(newAttempt.exam.questions.length, 4);
+    assert.equal(Object.keys(newAttempt.answers).length, 0);
+    assert.deepEqual(legacyUi.errors, []);
+  } finally {
+    legacyUi.close();
+  }
+  console.log('Oude opgavepoging geslaagd: zichtbaar onderscheid, historische antwoorden bewaard en herstart op onderwerp.');
 }
