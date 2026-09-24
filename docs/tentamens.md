@@ -24,6 +24,12 @@ Er zijn 131 tentamenvragen en daarnaast 120 aparte MC-oefenvragen. Bij 24-09-202
 
 Het dashboard opent met **Aankomend**: de ongetimede MC-oefenvragen en beschikbare volledige tentamens. Een gemaakte poging staat onder **Voltooid**. Vanaf de inzage kan een nieuwe poging worden gestart zonder de oude te verwijderen.
 
+### Tentamenvragen per opgave
+
+Direct onder de MC-oefenvragen staat een oefenreeks per opgave. Op de introductiepagina kiest de gebruiker Opgave 1, 2, 3 of 4 en vervolgens de gewenste tentamendata. Standaard zijn alle vijf de tentamens geselecteerd. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. De aantallen voor alle vijf samen zijn 39, 28, 36 en 28 vragen voor respectievelijk Opgave 1 tot en met 4.
+
+Elk oorspronkelijk voorblad met algemene uitgangspunten, elke broncasus, vraag, uitwerking en puntwaarde blijft intact. Tijdens een vraag opent **Introductie** het voorblad van het bijbehorende tentamen. De samengestelde poging krijgt unieke vraag- en sectie-ID's, met de oorspronkelijke ID en examencode als bronmetadata. Antwoorden op gelijk genummerde vragen uit verschillende tentamens blijven daardoor gescheiden. Het vraagoverzicht gebruikt dezelfde vraagknoppen, met een kleine examencode boven elke groep. Lopende en voltooide reeksen blijven als afzonderlijke pogingen in de bestaande lokale tentamenopslag bewaard.
+
 De welkomstpagina bevat de introductie en algemene uitgangspunten van de eerste drie bronpagina's. De klok begint pas bij de definitieve knop **Toets starten** op die pagina. Tot de laatste tien minuten worden afgeronde hele minuten getoond; vanaf 10:00 worden minuten en seconden getoond. Verversen of sluiten pauzeert de klok niet. Bij nul wordt automatisch ingeleverd. Als de browser gesloten was, gebeurt dit bij terugkomst met het oorspronkelijke eindtijdstip.
 
 **Overzicht** toont alle vragen met antwoordstatus en markeringen. **Sectie** toont alle casusinformatie van uitsluitend de huidige opgave, inclusief alle delen, aanvullende gegevens en tabellen. **Introductie** opent opnieuw het voorblad. **Markeren** wijzigt de markering zonder het antwoord te veranderen. **Toets voltooien** vraagt bevestiging en vergrendelt daarna de poging. De uitwerkingen zijn alleen in de inzage zichtbaar.
@@ -75,6 +81,7 @@ De optionele DOM-tests gebruiken een geïnstalleerde `jsdom` buiten de statische
 JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/exam-ui.mjs
 JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/answer-editor.mjs
 JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/full-site.mjs
+JSDOM_PATH=/absoluut/pad/naar/jsdom/lib/api.js node tests/opgave-practice.mjs
 ```
 
 De gewone `npm test` heeft geen externe dependencies.

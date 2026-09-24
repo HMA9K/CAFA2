@@ -11,6 +11,10 @@ De delen bevatten 64, 46, 94 en 43 vragen. Ieder van de 19 onderwerpen bevat min
 
 Daarnaast bevat de app een dashboard met **Aankomend** en **Voltooid**, en vijf volledige tentamens: 22 april 2024, 30 september 2024, 17 april 2025, 24 september 2025 en 29 april 2026. Samen bevatten die 131 vragen en 20 casussecties. Volledige tentamens hebben een welkomstpagina, 180 minuten toetstijd (optioneel 30 minuten extra), sectiegebonden casussen en officiële antwoordmodellen voor inzage na inleveren. De 247 MC-oefenvragen blijven zonder tijdslimiet. Zie [tentamenformaat en werking](docs/tentamens.md).
 
+Onder de MC-oefenvragen staat **Tentamenvragen per opgave**. Kies Opgave 1, 2, 3 of 4 en een of meer tentamens. De gekozen opgaven volgen elkaar van nieuw naar oud, zonder tijdslimiet. Het vraagoverzicht groepeert ze per examencode. De casussen, vragen, antwoordmodellen en puntentelling blijven gekoppeld aan hun oorspronkelijke tentamen.
+
+Bij MC-vragen en tentamenvragen staat rechtsonder **Wetboek**. Die knop opent de volledige aangeleverde studiekopie met 74 artikelen uit Boek 2 BW (art. 2:24a–24d en 2:360–414, versie 1 januari 2025), met een zoekveld en uitklapbare artikelen. Artikelverwijzingen in de vragen en antwoordmodellen zijn gewone tekst; het wetboek opent zonder vooraf een relevant artikel te kiezen. Buiten de vraagomgeving blijven de artikelverwijzingen in de studieuitleg bruikbaar.
+
 ## Privacy en voortgang
 
 Voortgang en scores worden uitsluitend in `localStorage` van de gebruikte browser bewaard. Er worden geen namen gevraagd of opgeslagen. Via de pagina **Voortgang** kan de gebruiker zelf een lokaal resultaatbestand exporteren.
@@ -51,6 +55,10 @@ npm test
 ```
 
 De controle valideert de oorspronkelijke 120 vragen, de 127 aanvullingen, alle 19 onderwerpen, de 11 unieke tentamens, antwoordopties, verwijzingen en rekencontroles. `npm run test:topics-browser` controleert navigatie, feedback, tentamenstand, eigen uitwerkingen, behoud van voortgang en desktop/mobiel in Chromium.
+
+`node tests/opgave-practice.mjs` controleert alle vier gecombineerde opgaven en geselecteerde tentamens. Met `JSDOM_PATH` controleert dezelfde test ook de route van dashboard tot inzage. `npm run test:opgaven-browser` controleert deze route in Chromium op desktop en mobiel; zet zo nodig `PLAYWRIGHT_PATH` en `CHROMIUM_PATH`. Met `TEST_BASE_URL=https://cafa2.pages.dev` draait dezelfde browsercontrole op de gepubliceerde site.
+
+`node tests/law-references-browser.cjs` controleert de niet-klikbare artikelverwijzingen en het Wetboekvenster bij MC-vragen, volledige tentamens en samengestelde opgaven, inclusief antwoordbehoud op desktop en mobiel. Met `TEST_BASE_URL=https://cafa2.pages.dev` draait dezelfde controle op de gepubliceerde site.
 
 ## Onderwerpen en aanvullingen
 

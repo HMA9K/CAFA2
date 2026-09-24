@@ -770,6 +770,10 @@ html[data-study-theme=dark] .exam-banner{border:1px solid #3d6651;background:#16
 html[data-study-theme=dark] .exam-paper{background:#152129}
 html[data-study-theme=dark] .exam-instructions{color:#adbdc9}
 html[data-study-theme=dark] .exam-extra{border:1px solid #3b4a54}
+html[data-study-theme=dark] .opgave-practice-options label,html[data-study-theme=dark] .opgave-practice-exams label{background:#152129}
+html[data-study-theme=dark] .opgave-practice-options label:hover,html[data-study-theme=dark] .opgave-practice-exams label:hover{border-color:var(--study-accent,#2d7668)}
+html[data-study-theme=dark] .opgave-practice-options label:has(input:checked),html[data-study-theme=dark] .opgave-practice-exams label:has(input:checked){border-color:var(--study-accent,#2d7668);background:#172c23}
+html[data-study-theme=dark] .opgave-practice-options label:focus-within,html[data-study-theme=dark] .opgave-practice-exams label:focus-within{outline:2px solid var(--study-accent,#2d7668)}
 html[data-study-theme=dark] .exam-clock{border-left:1px solid #3b4a5440}
 html[data-study-theme=dark] .exam-clock span{color:#b5afcb}
 html[data-study-theme=dark] .exam-clock.is-urgent strong{color:#eccf8d}
@@ -937,6 +941,7 @@ html[data-study-theme=dark] #overview-dialog.compact-overview-dialog .dialog-hea
 html[data-study-theme=dark] #overview-dialog.compact-overview-dialog .dialog-header h2,html[data-study-theme=dark] #exam-info-dialog.compact-overview-dialog .exam-modal-head h2{color:#adbdc9}
 html[data-study-theme=dark] #overview-dialog.compact-overview-dialog .dialog-close,html[data-study-theme=dark] #exam-info-dialog.compact-overview-dialog .exam-modal-head [data-close-info]{color:#adbdc9}
 html[data-study-theme=dark] .compact-overview-remaining strong{background:#ae5313;color:#f0f7fc}
+html[data-study-theme=dark] .compact-overview-group h3{border-bottom:1px solid #3b4a54;color:#adbdc9}
 html[data-study-theme=dark] .compact-overview-item{background:#152129;color:#e0ebf2}
 html[data-study-theme=dark] .compact-overview-item:hover{background:#182b25}
 html[data-study-theme=dark] .compact-overview-item:focus-visible{outline:2px solid #2d5576}
@@ -983,6 +988,7 @@ html[data-study-theme=dark] .theory-content{border-top:1px solid #3b4a54}
 html[data-study-theme=dark] .theory-content h3{color:#b0aecb}
 html[data-study-theme=dark] .theory-content .theory-source{color:#adbdc9}
 html[data-study-theme=dark] .theory-link{color:#ecb68d}
+html[data-study-theme=dark] .theory-sources{border-top:1px solid #3b4a54}
 /* learning-content.css */
 html[data-study-theme=dark] .question .learning-case>h3{color:#adbdc9}
 html[data-study-theme=dark] .question .learning-case-note{color:#adbdc9}
@@ -996,6 +1002,9 @@ html[data-study-theme=dark] .question .learning-case .study-table tr:last-child{
 /* answer-feedback.css */
 html[data-study-theme=dark] .cafa-direct-check{color:var(--study-ink)}
 html[data-study-theme=dark] .cafa-direct-check input:focus-visible{outline:2px solid var(--purple, #48455e)}
+html[data-study-theme=dark] .feedback-disclosure{border:1px solid var(--line, #38526b)}
+html[data-study-theme=dark] .feedback-disclosure > summary{color:var(--text, #e0ebf2)}
+html[data-study-theme=dark] .feedback-disclosure > summary:focus-visible{outline:2px solid var(--purple, #48455e)}
 html[data-study-theme=dark] .cafa-feedback-verdict.is-good{color:var(--study-accent)}
 html[data-study-theme=dark] .cafa-feedback-verdict.is-bad{color:var(--bad, #e89191)}
 /* summary.css */
