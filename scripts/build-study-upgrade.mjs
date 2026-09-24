@@ -9,9 +9,11 @@ const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,
 const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade -->';
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
-  s=s.replace(/css\/(exams|exam-experience)\.css(?:\?v=[^"]*)?"/g,'css/$1.css?v=20260923-caseleft1"');
+  const opgavePage=s.includes('js/opgave-practice.js');
+  s=s.replace(/css\/exams\.css(?:\?v=[^"]*)?"/g,'css/exams.css?v='+(opgavePage?'20260924-opgaven1':'20260923-caseleft1')+'"');
+  s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260923-caseleft1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
-  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
+  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
   const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260924-sources1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');

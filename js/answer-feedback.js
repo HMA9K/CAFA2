@@ -174,13 +174,13 @@
     textLine(box, 'ANTWOORDMODEL', 'model-caption');
     var model = document.createElement('div');
     if (window.CafaExamDocument) {
-      model.innerHTML = window.CafaExamDocument.render(a.exam, 'solution', q.solutionHtml,
+      model.innerHTML = window.CafaExamDocument.render(q.sourceExamId ? { id: q.sourceExamId } : a.exam, 'solution', q.solutionHtml,
         q.solution || 'Er is nog geen antwoordmodel toegevoegd.');
     } else if (q.solutionHtml && window.CafaAnswerEditor) {
       model.innerHTML = window.CafaAnswerEditor.sanitize(q.solutionHtml);
     } else { model.textContent = q.solution || 'Er is nog geen antwoordmodel toegevoegd.'; }
     box.appendChild(model);
-    if(window.CafaStudy)box.insertAdjacentHTML('beforeend',window.CafaStudy.examNote(a.exam.id,q.id));
+    if(window.CafaStudy)box.insertAdjacentHTML('beforeend',window.CafaStudy.examNote(q.sourceExamId||a.exam.id,q.sourceQuestionId||q.id));
     prepareExplanations(box);
     if (window.CafaStockTable) window.CafaStockTable.enhance(model);
   }
