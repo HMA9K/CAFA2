@@ -9,6 +9,12 @@ vm.createContext(sandbox);
 for (const file of [
   'js/exam-engine.js',
   'data/exams.js',
+  'data/exam-20210419.js',
+  'data/exam-20211006.js',
+  'data/exam-20220411.js',
+  'data/exam-20221006.js',
+  'data/exam-20230411.js',
+  'data/exam-20231009.js',
   'data/exam-20240422.js',
   'data/exam-20240930.js',
   'data/exam-20250417.js',
@@ -22,12 +28,13 @@ const plain = value => JSON.parse(JSON.stringify(value));
 assert.ok(practice, 'De samengestelde opgavenmodule moet beschikbaar zijn.');
 assert.equal(typeof practice.available, 'function');
 assert.equal(typeof practice.build, 'function');
-assert.equal(exams.length, 5);
+assert.equal(exams.length, 11);
 const originalData = JSON.stringify(exams);
-const expectedCounts = [39, 28, 36, 28];
+const expectedCounts = [85, 70, 64, 63];
 
 function checkComposite(number, chosen) {
-  const selected = exams.filter(exam => chosen.includes(exam.id));
+  const selected = exams.filter(exam => chosen.includes(exam.id))
+    .sort((a, b) => b.date.localeCompare(a.date));
   const actual = practice.build(exams, number, chosen);
   const originals = selected.map(exam => ({
     exam,
@@ -98,7 +105,7 @@ for (let number = 1; number <= 4; number++) {
   assert.equal(combined.questions.length, expectedCounts[number - 1], `Verkeerd totaal voor opgave ${number}.`);
 }
 
-const subset = [exams[4].id, exams[0].id, exams[2].id];
+const subset = ['cafa2-20260429', 'cafa2-20240422', 'cafa2-20250417'];
 const selected = checkComposite(1, subset);
 assert.equal(selected.sections.length, 3);
 assert.equal(selected.questions.length, 23, 'Opgave 1 uit deze drie tentamens bevat 8 + 8 + 7 vragen.');
@@ -108,7 +115,7 @@ assert.throws(() => practice.build(exams, 1, ['onbekend']), 'Een onbekend tentam
 assert.throws(() => practice.build(exams, 5, [exams[0].id]), 'Alleen opgave 1 tot en met 4 zijn beschikbaar.');
 assert.equal(JSON.stringify(exams), originalData, 'Samenstellen mag het originele tentamenmateriaal niet wijzigen.');
 
-console.log('Opgave-oefening gevalideerd: 4 opgaven, 5 bronnen, 131 vragen, selectie, bronverwijzingen en afzonderlijke antwoorden.');
+console.log('Opgave-oefening gevalideerd: 4 opgaven, 11 bronnen, 282 vragen, selectie, bronverwijzingen en afzonderlijke antwoorden.');
 
 // DOM-integratie is optioneel, omdat deze statische site geen npm-afhankelijkheden heeft.
 // Gebruik JSDOM_PATH=/absolute/path/to/jsdom/lib/api.js om de volledige route te controleren.
@@ -127,6 +134,8 @@ if (JSDOM) {
   const scripts = [
     'js/exam-engine.js', 'js/answer-editor.js', 'js/stock-table.js', 'js/journal-table.js',
     'data/exam-source-format.js', 'js/exam-document.js', 'data/exams.js',
+    'data/exam-20210419.js', 'data/exam-20211006.js', 'data/exam-20220411.js',
+    'data/exam-20221006.js', 'data/exam-20230411.js', 'data/exam-20231009.js',
     'data/exam-20240422.js', 'data/exam-20240930.js', 'data/exam-20250417.js',
     'data/exam-20250924.js', 'data/exam-20260429.js', 'js/opgave-practice.js', 'js/exams.js'
   ];
@@ -187,10 +196,10 @@ if (JSDOM) {
 
     ui.route('#welkom/opgaven');
     assert.equal(ui.document.querySelectorAll('[name="opgave-number"]').length, 4);
-    assert.equal(ui.document.querySelectorAll('[data-opgave-exam]').length, 5);
-    assert.match(ui.$('[data-opgave-summary]').textContent, /5 tentamens geselecteerd · 39 vragen/);
+    assert.equal(ui.document.querySelectorAll('[data-opgave-exam]').length, 11);
+    assert.match(ui.$('[data-opgave-summary]').textContent, /11 tentamens geselecteerd · 85 vragen/);
     ui.change('[name="opgave-number"][value="4"]', true);
-    assert.match(ui.$('[data-opgave-summary]').textContent, /5 tentamens geselecteerd · 28 vragen/);
+    assert.match(ui.$('[data-opgave-summary]').textContent, /11 tentamens geselecteerd · 63 vragen/);
     ui.change('[name="opgave-number"][value="1"]', true);
 
     const chosen = ['cafa2-20260429', 'cafa2-20250924', 'cafa2-20240422'];

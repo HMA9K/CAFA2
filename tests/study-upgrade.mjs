@@ -18,11 +18,20 @@ for(const [id,law] of Object.entries(laws)) {
 }
 const exams={window:{}};vm.createContext(exams);
 for(const f of fs.readdirSync('data').filter(f=>/^exam-\d+\.js$/.test(f)))vm.runInContext(read('data/'+f),exams);
-for(const ex of exams.window.CAFA2_EXAMS) for(const q of ex.questions){
- const n=notes[ex.id][q.id];assert.ok(n&&n.html.includes('Aanvullende toelichting'),ex.id+'/'+q.id);
- assert.ok(n.html.includes('law-ref'),ex.id+'/'+q.id);
- assert.ok(n.html.includes('samenvatting.html#'),ex.id+'/'+q.id);
+let documentedQuestions=0;
+for(const ex of exams.window.CAFA2_EXAMS){
+ const examNotes=notes[ex.id];
+ if(!examNotes)continue;
+ assert.equal(Object.keys(examNotes).length,ex.questions.length,'Volledige toelichting bij '+ex.id);
+ for(const q of ex.questions){
+  const n=examNotes[q.id];assert.ok(n&&n.html.includes('Aanvullende toelichting'),ex.id+'/'+q.id);
+  assert.ok(n.html.includes('law-ref'),ex.id+'/'+q.id);
+  assert.ok(n.html.includes('samenvatting.html#'),ex.id+'/'+q.id);
+  documentedQuestions++;
+ }
 }
+assert.equal(documentedQuestions,manifest.examNotes);
+for(const id of Object.keys(notes))assert.ok(exams.window.CAFA2_EXAMS.some(ex=>ex.id===id),'Onbekend tentamen bij toelichting: '+id);
 for(const p of ['index.html','samenvatting.html',...['kapitaalbelangen','vreemde-valuta','consolidatie-nvw','consolidatie-hk'].map(x=>'fallback/'+x+'.html')]){
  const s=read(p);assert.equal((s.match(/src="(?:\.\.\/)?js\/study-theme.js/g)||[]).length,1,p);
  assert.equal((s.match(/src="(?:\.\.\/)?js\/study-shell.js/g)||[]).length,1,p);
