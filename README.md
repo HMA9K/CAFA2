@@ -54,7 +54,7 @@ npm test
 
 De controle valideert de oorspronkelijke 120 vragen, de 127 aanvullingen, alle 19 onderwerpen, de 11 unieke tentamens, antwoordopties, verwijzingen en rekencontroles. `npm run test:topics-browser` controleert navigatie, feedback, tentamenstand, eigen uitwerkingen, behoud van voortgang en desktop/mobiel in Chromium.
 
-`node tests/opgave-practice.mjs` controleert alle vier gecombineerde opgaven en geselecteerde tentamens. Met `JSDOM_PATH` controleert dezelfde test ook de route van dashboard tot inzage. `npm run test:opgaven-browser` controleert deze route in Chromium op desktop en mobiel; zet zo nodig `PLAYWRIGHT_PATH` en `CHROMIUM_PATH`.
+`node tests/opgave-practice.mjs` controleert alle vier gecombineerde opgaven en geselecteerde tentamens. Met `JSDOM_PATH` controleert dezelfde test ook de route van dashboard tot inzage. `npm run test:opgaven-browser` controleert deze route in Chromium op desktop en mobiel; zet zo nodig `PLAYWRIGHT_PATH` en `CHROMIUM_PATH`. Met `TEST_BASE_URL=https://cafa2.pages.dev` draait dezelfde browsercontrole op de gepubliceerde site.
 
 ## Onderwerpen en aanvullingen
 
