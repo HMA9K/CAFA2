@@ -120,5 +120,6 @@ html[data-study-theme=dark] .study-theme-menu button{color:var(--study-ink);back
 @media print{html[data-study-theme=dark] body{background:#fff!important;color:#111!important}html[data-study-theme=dark] .reader-layout [data-view]{color:#111!important}}
 ''')
 pieces.append((ROOT/'content/study/dark-contrast.css').read_text())
-(ROOT/'css/study-dark.css').write_text('@media screen {\n'+'\n'.join(pieces)+'\n}\n')
+with (ROOT/'css/study-dark.css').open('w', encoding='utf-8', newline='\n') as output:
+    output.write('@media screen {\n'+'\n'.join(pieces)+'\n}\n')
 print('Dark paint rules:',sum(p.count('{') for p in pieces))
