@@ -58,7 +58,7 @@ De controle valideert de oorspronkelijke 120 vragen, de 127 aanvullingen, alle 1
 
 `node tests/opgave-practice.mjs` controleert alle vier gecombineerde opgaven en geselecteerde tentamens. Met `JSDOM_PATH` controleert dezelfde test ook de route van dashboard tot inzage. `npm run test:opgaven-browser` controleert deze route in Chromium op desktop en mobiel; zet zo nodig `PLAYWRIGHT_PATH` en `CHROMIUM_PATH`. Met `TEST_BASE_URL=https://cafa2.pages.dev` draait dezelfde browsercontrole op de gepubliceerde site.
 
-`node tests/law-references-browser.cjs` controleert de niet-klikbare artikelverwijzingen en het Wetboekvenster bij MC-vragen, volledige tentamens en samengestelde opgaven, inclusief antwoordbehoud op desktop en mobiel.
+`node tests/law-references-browser.cjs` controleert de niet-klikbare artikelverwijzingen en het Wetboekvenster bij MC-vragen, volledige tentamens en samengestelde opgaven, inclusief antwoordbehoud op desktop en mobiel. Met `TEST_BASE_URL=https://cafa2.pages.dev` draait dezelfde controle op de gepubliceerde site.
 
 ## Onderwerpen en aanvullingen
 
