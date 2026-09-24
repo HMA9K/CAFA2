@@ -1,0 +1,27 @@
+name: Study assistant review
+on:
+  push:
+    branches: [feature/study-assistant]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package source for local integration review
+        run: git archive --format=zip HEAD -o /tmp/cafa2-source.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cafa2-assistant-source
+          path: /tmp/cafa2-source.zip
+          retention-days: 3
+      - name: Existing regression tests
+        run: npm test
+      - name: Assistant tests
+        run: |
+          if [ -f tests/study-assistant.mjs ]; then node --test tests/study-assistant.mjs; fi
