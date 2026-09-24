@@ -8,7 +8,8 @@
   var submitDialog = document.getElementById('exam-submit-dialog');
   var announcedTen = new Set(), catalogErrors = [];
   var reviewTab = 'results', reviewWidth = 38;
-  var caseSettingsKey = 'cafa2-case-panel-v1', caseOpen = true, caseWidth = 100 / 3, caseResizeObserver = null;
+  var caseSettingsKey = 'cafa2-case-panel-v1', caseOpen = true, caseWidth = 100 / 3;
+  var caseScrollPositions = Object.create(null);
   try {
     var caseSettings = JSON.parse(sessionStorage.getItem(caseSettingsKey) || '{}');
     if(typeof caseSettings.open === 'boolean')caseOpen = caseSettings.open;
@@ -77,7 +78,7 @@
     var a = document.createElement('a'); a.href=url; a.download='CAFA2-tentamenpogingen.json'; a.click();
     setTimeout(function () { URL.revokeObjectURL(url); },1000);
   }
-  function dropEditor() { if(caseResizeObserver){caseResizeObserver.disconnect();caseResizeObserver=null;}if (editor) { editor.destroy(); editor = null; } }
+  function dropEditor() { if (editor) { editor.destroy(); editor = null; } }
   function go(hash) { if (location.hash === '#' + hash) route(); else location.hash = hash; }
   function btn(text,action,primary,extra) { return '<button type="button" class="btn' + (primary?' primary':'') + '" data-exam-action="' + action + '" ' + (extra || '') + '>' + text + '</button>'; }
   function head(title,sub) { return '<div class="exam-page-head"><div><div class="exam-eyebrow">CAFA2 · oefenomgeving</div><h1>' + esc(title) + '</h1>' + (sub?'<p>'+esc(sub)+'</p>':'') + '</div></div>'; }
@@ -164,21 +165,6 @@
   function saveCaseSettings() {
     try { sessionStorage.setItem(caseSettingsKey,JSON.stringify({open:caseOpen,width:caseWidth})); } catch (_) {}
   }
-  var caseFitFrame=0;
-  function scheduleCaseFit() {
-    if(caseFitFrame)return;
-    caseFitFrame=requestAnimationFrame(function(){
-      caseFitFrame=0;
-      var panel=host.querySelector('#exam-case-panel'),footer=host.querySelector('.exam-footer');
-      if(!panel||panel.hidden||window.matchMedia('(max-width:760px)').matches)return;
-      var rect=panel.getBoundingClientRect();if(!rect.width)return;
-      var available=window.innerHeight-rect.top-(footer?footer.getBoundingClientRect().height:0)-16;
-      panel.style.setProperty('--case-available-height',Math.max(180,available)+'px');
-    });
-  }
-  window.addEventListener('resize',scheduleCaseFit);
-  window.addEventListener('scroll',scheduleCaseFit,{passive:true});
-  window.addEventListener('cafa:ready',scheduleCaseFit);
   function updateCasePanel() {
     var layout=host.querySelector('.exam-case-layout');if(!layout)return;
     var panel=layout.querySelector('#exam-case-panel'),handle=layout.querySelector('.exam-case-resizer');
@@ -192,7 +178,6 @@
       button.setAttribute('aria-expanded',String(caseOpen));button.setAttribute('aria-pressed',String(caseOpen));
       button.title=caseOpen?'Casus verbergen':'Casus tonen';
     });
-    scheduleCaseFit();
   }
   function mountCasePanel(attempt,section) {
     if(!section)return;
@@ -205,11 +190,12 @@
     handle.title='Sleep naar rechts voor een bredere casus of naar links voor een smallere casus. Gebruik ook de pijltjestoetsen, Home en End.';
     handle.innerHTML='<span aria-hidden="true">⋮</span>';
     var panel=document.createElement('aside');panel.id='exam-case-panel';panel.className='exam-case-panel';
+    panel.dataset.caseKey=attempt.id+':'+section.id;
     panel.setAttribute('aria-labelledby','exam-case-heading');
     panel.innerHTML='<h2 id="exam-case-heading">'+esc(section.title)+'</h2>'+documentHtml(attempt.exam,'case',section.contentHtml,null,section.sourceExamId);
     panel.querySelectorAll('table').forEach(function(table){var wrap=document.createElement('div');wrap.className='exam-case-table-scroll';table.before(wrap);wrap.append(table);});
     layout.append(panel,handle,body);updateCasePanel();
-    if(window.ResizeObserver){caseResizeObserver=new ResizeObserver(scheduleCaseFit);caseResizeObserver.observe(layout);caseResizeObserver.observe(host.querySelector('.exam-footer'));}
+    panel.scrollTop=caseScrollPositions[panel.dataset.caseKey]||0;
     handle.addEventListener('pointerdown',function(e){
       if(e.button!==0)return;e.preventDefault();handle.setPointerCapture(e.pointerId);
       handle.dataset.dragging='true';layout.classList.add('is-resizing');
@@ -369,6 +355,8 @@
     if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);clock.querySelector('strong').textContent=attempt.pausedAt!=null?'Gepauzeerd':Engine.formatTime(seconds).replace(/ min$/,' minuten');clock.querySelector('.exam-time-badge > span').textContent=attempt.untimed?'Oefenmodus:':'Totaal resterende tijd:';clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
   }
   function route() {
+    var oldPanel=host.querySelector('#exam-case-panel');
+    if(oldPanel&&oldPanel.dataset.caseKey)caseScrollPositions[oldPanel.dataset.caseKey]=oldPanel.scrollTop;
     dropEditor(); var parts=location.hash.slice(1).split('/'),kind=parts[0],id;
     try{id=decodeURIComponent(parts.slice(1).join('/'));}catch(e){id='';}
     var isExam=['dashboard','welkom','tentamen','inzage','mc-inzage'].includes(kind);

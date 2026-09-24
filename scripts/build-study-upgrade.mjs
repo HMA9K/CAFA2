@@ -11,7 +11,7 @@ const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
   const opgavePage=s.includes('js/opgave-practice.js');
   s=s.replace(/css\/exams\.css(?:\?v=[^"]*)?"/g,'css/exams.css?v='+(opgavePage?'20260924-opgaven1':'20260923-caseleft1')+'"');
-  s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260923-caseleft1"');
+  s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260924-scroll1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
   s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/law-book.css?v=20260924-lawbook1"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
