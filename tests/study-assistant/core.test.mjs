@@ -38,6 +38,17 @@ test('Promptcontract vraagt controle van antwoordletter en herleiding van bedrag
   assert.equal(exam.review.correct,'a');
 });
 test('Beide stijlen kunnen dezelfde cursusuitwerkingen raadplegen',()=>{const env=environment({OPENAI_TUTOR_VECTOR_STORE_ID:'vs_theory',OPENAI_REVIEW_VECTOR_STORE_ID:'vs_review'});for(const [mode,expected] of [['hint','vs_review'],['review','vs_review']])assert.equal(makeModelRequest({record,mode,history:[],answer:{},message:'x'},env).tools[0].vector_store_ids[0],expected);});
+
+test('meerdere gevraagde documenten krijgen ruimte voor gericht opnieuw zoeken binnen vaste grenzen',()=>{
+  const env=environment({OPENAI_COURSE_VECTOR_STORE_ID:'vs_course'});
+  const value=makeModelRequest({record,mode:'hint',history:[],answer:{},message:'Zoek Niedorp-Swaza en Zeevang op.'},env);
+  assert.equal(value.max_tool_calls,3);assert.equal(value.tools[0].max_num_results,6);
+  assert.equal(value.max_output_tokens,2400);assert.equal(value.store,false);
+  assert.deepEqual(value.tools[0].vector_store_ids,['vs_course']);
+  assert.match(value.instructions,/afzonderlijke gerichte zoekvraag/);
+  assert.match(value.instructions,/openingszin en conclusie overeenkomen/);
+  assert.match(value.instructions,/geef alvast de wel onderbouwde delen/);
+});
 test('Tentamencasus, andere deelvragen en tabel blijven in de context',()=>{const r=catalog.records['CAFA2:exam:cafa2-test:vraag-2'];assert.ok(r.context.caseText.includes('100'));assert.equal(r.context.relatedQuestions.length,3);assert.ok(r.context.prompt.includes('Voorraad'));assert.ok(!JSON.stringify(r.context).includes('SECRET_'));});
 test('JournalRows en StockCells gaan niet verloren in de adapter',()=>{const adapter=createCafa2Adapter({});assert.deepEqual(adapter.answerValue({journalRows:[['A','100','']],stockCells:{'1:1':'100'},html:'<p>Mijn tekst</p>'}),{choice:null,optionId:null,text:'Mijn tekst',rows:[['A','100','']],tables:[{kind:'voorraadtabel',cells:{'1:1':'100'}}]});});
 test('D1-quota gebruikt een atomische begrensde upsert',async()=>{const db=database();const values=await Promise.allSettled(Array.from({length:20},()=>consume(db,'same',5,99999)));assert.equal(values.filter(v=>v.status==='fulfilled').length,5);assert.equal(values.filter(v=>v.status==='rejected').length,15);});
