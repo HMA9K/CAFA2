@@ -50,6 +50,8 @@ try:
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
       if state['delay_once']:
         state['delay_once']=False;r.continue_();return
+      if data['message']=='Proeftabel zonder scheidingsregel':
+        r.fulfill(json=mock_reply(data,'Rekening | Debet | Credit\nDeelneming | 540.000 |\nAgio | | 280.000\n\nStap | Berekening | Uitkomst\n1 | 2 × 3 | 6\n\nGewone tekst | blijft tekst'));return
       r.fulfill(json=mock_reply(data,'Berekening: '+ 'stap '*1500+'Goodwill = 99.000.') if data['message']=='Test lange uitwerking' else mock_reply(data))
     page.route('**/*',route)
     page.goto(base+'/index.html#kap-1')
@@ -91,6 +93,10 @@ try:
     page.screenshot(path=str(OUT/f'desktop-{engine}.png'))
     send('Test lange uitwerking');send('Waar komt die 99.000 vandaan?')
     check('Long previous calculation survives in follow-up context',any(len(m['content'])>6000 and m['content'].endswith('Goodwill = 99.000.') for m in requests[-1]['history']))
+    send('Proeftabel zonder scheidingsregel')
+    last=page.locator('.study-message').last
+    check('Real-model table shape without separators renders as accessible tables',last.locator('table').count()==2 and last.locator('th[scope=col]').count()==6)
+    check('Empty debit/credit cells keep their columns and pipe prose stays text',last.locator('table').first.locator('tbody tr').first.locator('td').all_text_contents()==['Deelneming','540.000',''] and last.locator('p').last.inner_text()=='Gewone tekst | blijft tekst')
     page.evaluate("location.hash='kap-2'");page.wait_for_function('document.querySelector("[data-context-title]").textContent.includes("Vraag 2")')
     check('Question navigation isolates chat history',page.locator('.study-message').count()==0)
     send('Geef het antwoord.');check('New question uses its own context',requests[-1]['ref']['questionId']=='2' and requests[-1]['history']==[])

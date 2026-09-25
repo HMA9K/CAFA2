@@ -23,6 +23,22 @@ test('documentbankcheck is alleen-lezen en meldt de ontbrekende uitwerking',asyn
   const remote=api();const r=await syncAttachments(plan,{key:'test-key-no-secret',...remote});
   assert.deepEqual(r.missing,['Uitwerking.pdf']);assert.equal(remote.writes.length,0);
 });
+
+test('publicatie wacht begrensd op gelijktijdig toegevoegde bestanden in dezelfde bank',async()=>{
+  const remote=api();let polls=0,waits=0;
+  const fetcher=async(url,options)=>{
+    if(new URL(url).pathname==='/v1/vector_stores/vs_course')return Response.json({file_counts:{total:3,failed:0,in_progress:++polls<3?1:0}});
+    return remote.fetcher(url,options);
+  };
+  const result=await syncAttachments(plan,{key:'test-key-no-secret',apply:true,fetcher,sleep:async()=>{waits++;},attempts:3});
+  assert.equal(result.pending,0);assert.equal(polls,3);assert.equal(waits,2);assert.equal(remote.writes.length,1);
+});
+test('blijvende indexeerwachttijd of mislukte bestanden geven geen schijnsucces',async()=>{
+  for(const counts of [{total:3,failed:0,in_progress:1},{total:3,failed:1,in_progress:0}]){
+    const remote=api();const fetcher=async(url,options)=>new URL(url).pathname==='/v1/vector_stores/vs_course'?Response.json({file_counts:counts}):remote.fetcher(url,options);
+    await assert.rejects(syncAttachments(plan,{key:'test-key-no-secret',apply:true,fetcher,sleep:async()=>{},attempts:2}),/niet volledig|niet worden geïndexeerd/);
+  }
+});
 test('koppelen bewaart bestaande bestanden en is herhaalbaar zonder duplicaten',async()=>{
   const remote=api();const opts={key:'test-key-no-secret',apply:true,...remote};
   assert.equal((await syncAttachments(plan,opts)).completed,2);
