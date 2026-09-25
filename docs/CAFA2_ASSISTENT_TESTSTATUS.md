@@ -2,7 +2,34 @@
 
 Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
-## Activering en echte API-proef, 25 september 2026
+## Actuele status na opwaarderen, 25 september 2026
+
+De testsite geeft echte antwoorden met `gpt-5.4-mini`. Na de opwaardering zijn 17 succesvolle modelverzoeken uitgevoerd: drie via de echte browserinterface en veertien via de beveiligde Cloudflare-chatroute, met de canonieke vraagcontext. Alle veertien vastgelegde HTTP-antwoorden hadden status 200, de verwachte `questionKey` en `incomplete: false`. De onderstaande inhoudelijke beoordeling is een beperkte steekproef tegen de bestaande vraagbank en antwoordmodellen, geen onafhankelijke audit van alle broninhoud.
+
+| Echte proef | Beoordeeld resultaat |
+| --- | --- |
+| Kapitaalbelangen 7: alleen een hint | Geeft de berekeningsaanpak zonder 60% of antwoord A te verklappen. |
+| Dezelfde vraag: daarna de volledige berekening | Behoudt de gesprekssamenhang en geeft direct 480 ÷ (1.000 − 200) × 100% = 60%, antwoord A. Geen verplichte poging of standwissel. |
+| Kapitaalbelangen 1: 'Waarom is B goed?' | Corrigeert de verkeerde aanname naar A en verklaart de verschillen met B vanuit het meegeleverde antwoordmodel. |
+| Kapitaalbelangen 13: volledige journaalpost | Deelneming 581.000 en goodwill 99.000 debet; bank 680.000 credit. |
+| Vervolgvraag over die 99.000 | Herleidt goodwill als 680.000 − 70% × 830.000 = 99.000 met de voorgaande gesprekstekst. |
+| Nettovermogenswaarde 6: volledige voorraadtabel | Geeft beginstand, eindstand en mutatie, met de juiste 80%-, 0%- en 20%-kolommen volgens het antwoordmodel. |
+| Kapitaalbelangen 7: eigen foutieve antwoord 48% | Legt uit waarom ingekochte eigen aandelen uit de noemer gaan en herleidt het juiste 60%. |
+| Volledig tentamen april 2021, vraag 1 | Geeft goodwill 87.500 en verklaart de correctie van 7.000 en het effect van 2.450 op het 35%-belang. |
+| Vraag om een originele repetitiedia te citeren | Zegt dat de originele slides niet zijn gelezen, onderscheidt een bronverwijzing van een gelezen passage en verzint geen documentcitaat. |
+
+De eerste ronde vond zichtbare LaTeX-code, boekhoudkundige tabelkoppen bij een gewone berekening, interne veldnamen en een dubbele voorraadtabel. Commit `b73731d` verduidelijkt gewone formuletekst, passende tabelkoppen, leerlingtaal en het vermijden van herhaling. Zes echte HTTP-proeven zijn herhaald: geen LaTeX of interne veldnamen, en de bedragen en tabelkolommen waren correct. De browser toonde daarna de berekening met `Stap | Berekening | Uitkomst` en leesbare rekentekens.
+
+Bij de herhaalde tentamenuitleg bleef een verwarrende tussenzin staan over een correctiesom, ondanks de juiste einduitkomst. Commit `aaea2a6` vraagt expliciete controle van tekens en tussentotalen vóór de uitleg. Dezelfde tentamenvraag is daarna opnieuw echt beantwoord met een consistente berekening: 265.300 + 8.750 − 6.300 − 5.250 = 262.500; goodwill 350.000 − 262.500 = 87.500. De afsluitende bronkennisvraag is op dezelfde versie getest. Deze herhaalde modelproeven zijn handmatige regressieproeven, geen vaste CI-tests of garantie voor alle toekomstige antwoorden.
+
+- Actuele uitvoerbare code: `aaea2a69720308ea43d13b7782efb004ce50d2ee`. Cloudflare-deployment `7db4b13e-3895-4aea-b0c6-4253e7197383` is geslaagd; de gepubliceerde commit is via de API gecontroleerd.
+- GitHub Actions op die commit: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36108603933) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36108608355) geslaagd. De assistentjoblog bevestigt 81 geslaagde Node-tests en 230 browsercontroles, 115 per engine, zonder JavaScript-runtimefouten. Build, deploycontrole, bestaande regressies en Function-bundeling slagen. De automatische modelantwoorden blijven gesimuleerd.
+- Lokaal na de eerste instructieaanpassing: 81 Node-tests, build/deploycontrole en `git diff --check` geslaagd. Na de laatste gerichte aanpassing: 49 kerntests en de integratie-dry-run geslaagd. De volledige suite is vervolgens op de uiteindelijke commit in CI uitgevoerd.
+- De veertien echte HTTP-antwoorden zijn lokaal bewaard in `C:\Users\HamudiAlkarradi\Documents\Claude\Projects\CAFA2-assistant-sources\qa-20260925-funded`: `results-before-prompt-change.json`, `results.json` en `results-final.json`. Deze bestanden bevatten geen toegangscode, cookies of API-sleutel. Browserproeven zijn hierboven afzonderlijk beschreven.
+- D1 bevat na deze proef 19 dagtellerplaatsen: 17 succesvolle modelverzoeken en twee eerdere tegoedfouten. De ingestelde limieten blijven 30 per UTC-dag en 20 per IP; geen teller is gereset en geen bestedingslimiet verhoogd. De exacte API-kosten zijn niet gemeten.
+- Originele documenten en File Search zijn nog niet gekoppeld. Geen API-sleutel uitgelezen of opgeslagen; geen merge naar `main` en geen activering op de oorspronkelijke productiesite.
+
+## Eerdere activering en API-proef zonder tegoed, 25 september 2026
 
 - Beide secrets zijn in Cloudflare Production van `cafa2-assistent-test` bevestigd, uitsluitend op aanwezigheid en type gecontroleerd. Geen API-sleutel uitgelezen of in Git opgeslagen. Activering staat nu op true.
 - Activeringsdeployment `1c88fb4f-678d-44a2-8605-25d97bb39c2d` vanaf `2524ae7` geslaagd; `/api/study-status` geeft 200/JSON met `ready: true` en zonder documentkoppeling.
@@ -14,7 +41,7 @@ Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Conc
 - GitHub Actions op `994a113`: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36100708946) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36100711313) geslaagd. Joblog gelezen: 81 Node-tests, 0 fouten; 115 Chromium- en 115 WebKit-browsercontroles, beide zonder runtimefouten. Deze modelantwoorden zijn gesimuleerd.
 - Het oude project slaat de nieuwe branchpush opnieuw over (`is_skipped=true`); oorspronkelijke productiedeployment `8022ca96-d53c-4a28-a5df-90b0c660b8d1` blijft actief. PR #13 blijft concept, niet gemerged.
 
-Resterend: eigenaar voegt OpenAI API-tegoed toe; daarna echte modelvragen voor hint, direct antwoord, onjuiste aanname, berekening, journaalpost, voorraad en vervolgvragen. Bronindexering, File Search en een fysiek mobiel toetsenbord blijven afzonderlijke controles. Geen geld besteed aan opwaarderen, geen bestedingslimiet aangepast en geen bronbestand geüpload.
+Op dat moment ontbrak nog API-tegoed. De eigenaar heeft dit daarna opgewaardeerd; de geslaagde vervolgproef staat bovenaan. Bronindexering, File Search en een fysiek mobiel toetsenbord blijven afzonderlijke controles. Codex heeft geen betaling uitgevoerd, geen bestedingslimiet aangepast en geen bronbestand geüpload.
 
 ## Eerdere online inrichting met uitgeschakelde dienst, 25 september 2026
 
@@ -74,11 +101,11 @@ Verder worden 320, 390 en 430 px breedte, liggend scherm, licht/donker, een verk
 
 ## Nog te valideren buiten deze branchcontrole
 
-Het bestaande Cloudflare-project blijft `exit 0` en output `.` gebruiken voor `main`. De werkbranch bouwt nu op het afzonderlijke `cafa2-assistent-test` met de juiste opdracht, `STUDY_DB` en beide secrets. Voor ontbrekend API-tegoed en de nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
+Het bestaande Cloudflare-project blijft `exit 0` en output `.` gebruiken voor `main`. De werkbranch bouwt nu op het afzonderlijke `cafa2-assistent-test` met de juiste opdracht, `STUDY_DB` en beide secrets. Modelaanroepen werken. Voor de nog niet gekoppelde bronbestanden en `OPENAI_COURSE_VECTOR_STORE_ID`: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
 
-Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, beveiligde cookie, D1-quota, een kleine set inhoudelijke modelvragen en indien toegestaan File Search. Beoordeel bij modelvragen vooral ongevraagde spoilers, directe uitwerkingen, een onjuiste veronderstelling zoals 'B is goed', herkomst van bedragen, vervolgstappen en een onvolledig antwoordmodel. De grens van 1.800 uitvoertokens omvat ook eventuele reasoning-tokens; controleer daarom of langere uitwerkingen worden afgebroken. Het huidige gesprek bewaart tekstberichten, niet alle interne reasoning-items. De invloed daarvan op vervolgvragen is nog niet gemeten.
+Echte login, cookie, D1-tellers en een kleine set inhoudelijke modelvragen zijn beproefd. Een live overschrijding van de quota, ontbrekende antwoordmodellen en File Search zijn niet getest. De grens van 1.800 uitvoertokens omvat ook eventuele reasoning-tokens; de geteste antwoorden waren compleet, maar zeer lange uitwerkingen zijn niet gevalideerd. Het gesprek bewaart tekstberichten, niet alle interne reasoning-items. De twee geteste korte vervolggesprekken bleven inhoudelijk samenhangend; langdurige gesprekken zijn niet beoordeeld.
 
-Een fysieke iPhone met geopend toetsenbord en een geactiveerde modelproef op de testsite blijven aparte controles. Er is niets naar `main` gemerged of op de bestaande productiesite geactiveerd.
+Een fysieke iPhone met geopend toetsenbord blijft een aparte controle. De echte modelproef dekt niet iedere oefen- of tentamenvraag. Er is niets naar `main` gemerged of op de bestaande productiesite geactiveerd.
 
 De nieuwe bronimporttest gebruikt een gesimuleerde API-respons. Er is geen echte OpenAI-vector store aangemaakt, geen origineel document geüpload en geen modelantwoord op deze documenten beoordeeld. De 2026-tentamenbestanden en het toegevoegde DOCX-tentamenpaar uit 2022 vragen nog controle van hun officiële status. Beeldinformatie in enkele PPTX-dia's en de overige 110 geconverteerde dia's zijn niet volledig visueel geverifieerd. Een bestand dat onder dezelfde naam inhoudelijk wordt vervangen, vereist handmatige herindexering; de huidige broncontrole vergelijkt geen vorige bestandsinhoud.
 

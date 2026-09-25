@@ -4,7 +4,7 @@ Bijgewerkt op 25 september 2026. De afzonderlijke testomgeving is op verzoek ing
 
 ## Ingerichte testomgeving
 
-De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is openbaar bereikbaar, met toegangscode voor de chat. Modelaanroepen staan aan maar worden momenteel door OpenAI geweigerd wegens ontbrekend API-tegoed.
+De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is openbaar bereikbaar, met toegangscode voor de chat. Na het opwaarderen door de eigenaar werken echte modelaanroepen: 17 antwoorden zijn ontvangen en inhoudelijk beoordeeld.
 
 | Onderdeel | Ingesteld |
 | --- | --- |
@@ -15,7 +15,7 @@ De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch
 | D1 | Aparte database `cafa2-assistent-test`, EU-jurisdictie, binding `STUDY_DB` |
 | Schema | `assistant/server/schema.sql` uitgevoerd; tabel en index bevestigd |
 | Sessieondertekening | `STUDY_SESSION_SECRET` willekeurig gegenereerd en rechtstreeks als Cloudflare-secret opgeslagen; waarde niet in Git of chat |
-| Voorlopig testmodel | `OPENAI_MODEL=gpt-5.4-mini`; accounttoegang en inhoudelijke kwaliteit nog niet getest |
+| Voorlopig testmodel | `OPENAI_MODEL=gpt-5.4-mini`; accounttoegang bevestigd en een beperkte inhoudelijke steekproef uitgevoerd |
 | Activering | `STUDY_ASSISTANT_ENABLED=true`, uitsluitend op de afzonderlijke testsite |
 | Toegang en API | `STUDY_ACCESS_CODE` en `OPENAI_API_KEY` door de eigenaar als secrets opgeslagen |
 | Testlimieten | `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20` |
@@ -28,17 +28,19 @@ Het bestaande project `cafa2` behoudt `main`, `exit 0` en output `.`. Alleen de 
 
 Bij beide vervolgpushes is op het oude project `is_skipped=true` bevestigd. De bestaande productiedeployment `8022ca96-d53c-4a28-a5df-90b0c660b8d1` bleef actief. Deze controle bevestigt ook de werking van de branchuitsluiting, niet alleen de opgeslagen instelling.
 
-## De eerstvolgende handmatige stap
+## Nu gebruiken en de volgende stap
 
 **Geen secrets opnieuw invullen.** Beide zijn op 25 september 2026 in Production van het testproject bevestigd. Inloggen, de sessiecookie en uitloggen werken. De testsite is opnieuw gepubliceerd en staat actief.
 
-Open [OpenAI Billing](https://platform.openai.com/settings/organization/billing/overview) in het account/de organisatie waartoe de ingestelde API-sleutel behoort en voeg prepaid API-tegoed toe. De eigenaar kiest en bevestigt het bedrag zelf. Cloudflare hoeft hiervoor niet opnieuw ingesteld of gepubliceerd te worden. Na verwerking van het tegoed volgt een nieuwe chatproef.
+De eigenaar heeft het API-tegoed opgewaardeerd. Open een vraag op de testsite, open de assistent en stel je vraag. Voor de bestaande vraagbank hoeft niets meer ingesteld te worden. De gebruikslimieten blijven 30 verzoeken per UTC-dag voor de site en 20 per IP. De kwaliteitsproef heeft op 25 september 19 dagtellerplaatsen gebruikt, inclusief twee eerdere verzoeken die wegens tegoed werden afgewezen. De limieten zijn niet verhoogd; exacte API-kosten zijn niet gemeten.
 
-Bewijs: op deployment `04952337-5210-4741-a222-fd1064def0e9`, code `994a113`, gaf een echte chatvraag de gerichte melding dat het API-tegoed op is. Deze melding wordt uitsluitend bij OpenAI-code `credit_balance_exhausted` getoond. De eerdere algemene 429-melding kon tegoed en tijdelijke drukte niet onderscheiden en is daarom verbeterd. Zie [OpenAI-foutcodes](https://developers.openai.com/api/docs/guides/error-codes). Er is geen modelantwoord gegenereerd en geen inhoudelijke modelkwaliteit vastgesteld. Originele documenten vragen daarna nog de broncontrole en volledige indexering hieronder.
+Actuele code: `aaea2a6`, geslaagde deployment `7db4b13e-3895-4aea-b0c6-4253e7197383`. Echte hints, berekeningen, journaalposten, een voorraadtabel, een tentamenvraag, correctie van een verkeerde antwoordletter en vervolgvragen zijn gecontroleerd. Formuleweergave, tabelkeuze en onduidelijke rekenuitleg zijn daarna gericht verbeterd en opnieuw beproefd. Zie [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor de beperkte reikwijdte en CI-resultaten.
+
+De eerdere deployment `04952337-5210-4741-a222-fd1064def0e9` gaf nog `credit_balance_exhausted`. Die blokkade is opgelost. De gerichte foutafhandeling blijft bestaan; zie [OpenAI-foutcodes](https://developers.openai.com/api/docs/guides/error-codes). De volgende bronstap is de controle en volledige indexering van de originele documenten hieronder, gevolgd door instelling van `OPENAI_COURSE_VECTOR_STORE_ID`. De huidige assistent heeft die documenten nog niet gelezen.
 
 Alleen bij een toekomstige nieuwe omgeving zijn de handmatige secrets `OPENAI_API_KEY` en een `STUDY_ACCESS_CODE` van minimaal 16 tekens opnieuw nodig, rechtstreeks in de beveiligde Cloudflare-instellingen. Plaats ze niet in Git of chat.
 
-De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Beschikbaarheid binnen het eigen API-project moet bij de eerste echte proef worden vastgesteld.
+De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Responses werkt binnen het ingestelde API-project; File Search is nog niet gekoppeld of echt getest.
 
 ## Achtergrond: oorspronkelijke Pages-fout op 24 september 2026
 
