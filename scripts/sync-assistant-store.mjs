@@ -67,8 +67,13 @@ export async function syncAttachments(plan,{key,storeId=plan?.storeId,apply=fals
     if(states.some(f=>f.status==='failed'||f.status==='cancelled'))throw new Error('Ten minste één bestand kon niet worden geïndexeerd.');
     if(states.every((f,i)=>f.id===plan.files[i].id&&f.status==='completed')){
       const store=await api('GET',`/vector_stores/${storeId}`);
-      return {storeId,added:missing.length,completed:states.length,total:store.file_counts?.total,
-        failed:store.file_counts?.failed,pending:store.file_counts?.in_progress};
+      if(!store.file_counts||!Number.isInteger(store.file_counts.in_progress)||!Number.isInteger(store.file_counts.failed))
+        throw new Error('De documentbank geeft geen geldige indexeerstatus.');
+      if(store.file_counts.failed)throw new Error('Ten minste één bestand in de documentbank kon niet worden geïndexeerd.');
+      // Another reviewed upload can still be indexing while all selected files are ready.
+      // Wait within the same bounded retry window instead of failing the build immediately.
+      if(!store.file_counts.in_progress)return {storeId,added:missing.length,completed:states.length,total:store.file_counts.total,
+        failed:0,pending:0};
     }
     if(attempt+1<attempts)await sleep(2000);
   }
