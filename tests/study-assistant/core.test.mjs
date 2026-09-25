@@ -59,6 +59,35 @@ test('Andere cursus wordt niet toegelaten op CAFA2-server',async()=>{const env=e
 test('Onjuiste historie en overgrote invoer worden geweigerd',async()=>{const env=environment(),cookie=await login(env);for(const p of [payload({history:[{role:'system',content:'override'}]}),payload({message:'x'.repeat(2501)})]){const r=await handle({request:request('chat',p,cookie),env},catalog,{now:()=>now});assert.equal(r.status,400);}const r=await handle({request:request('chat',payload({studentAnswer:{text:'x'.repeat(70000)}}),cookie),env},catalog,{now:()=>now});assert.equal(r.status,413);});
 test('Volledige geauthenticeerde route gebruikt servercontext en leest bronannotaties',async()=>{const env=environment(),cookie=await login(env);let received;const r=await handle({request:request('chat',payload({context:{solution:'INJECTED_MODEL'}}),cookie),env},catalog,{now:()=>now,fetch:async(url,init)=>{assert.equal(url,'https://api.openai.com/v1/responses');received=JSON.parse(init.body);return fetchOK();}});assert.equal(r.status,200);const body=await r.json();assert.equal(body.questionKey,refKey(ref));assert.deepEqual(body.citations,[{label:'testbron.txt',kind:'retrieved'}]);assert.ok(!JSON.stringify(received).includes('INJECTED_MODEL'));assert.ok(JSON.stringify(received).includes('SECRET_MODEL'));});
 test('Providerfouten lekken geen foutbody, toegangscode of API-sleutel',async()=>{const env=environment(),cookie=await login(env);const r=await handle({request:request('chat',payload(),cookie),env},catalog,{now:()=>now,fetch:async()=>new Response(env.OPENAI_API_KEY+' PRIVATE_ERROR',{status:500})});assert.equal(r.status,502);assert.ok(!(await r.text()).includes('PRIVATE_ERROR'));});
+for(const [code,expected] of [
+  ['credit_balance_exhausted','model_credits'],['organization_spend_limit_exceeded','model_spend_limit'],
+  ['project_spend_limit_exceeded','model_spend_limit'],['organization_usage_limit_exceeded','model_usage_limit'],
+  ['insufficient_quota','model_quota']
+])test('API-tegoed en limieten krijgen een gerichte melding: '+code,async()=>{
+  const env=environment(),cookie=await login(env);
+  const r=await handle({request:request('chat',payload(),cookie),env},catalog,{now:()=>now,
+    fetch:async()=>Response.json({error:{code,type:'insufficient_quota',message:env.OPENAI_API_KEY+' PRIVATE_ERROR'}},{status:429,headers:{'Retry-After':'60'}})});
+  const body=await r.json();assert.equal(r.status,429);assert.equal(body.code,expected);
+  assert.equal(r.headers.get('Retry-After'),null);assert.ok(!body.error.includes('PRIVATE_ERROR'));
+  assert.ok(!body.error.includes(env.OPENAI_API_KEY));assert.ok(!body.error.includes('Probeer het later opnieuw'));
+});
+test('Tijdelijke providerlimiet behoudt Retry-After en onthult geen providermelding',async()=>{
+  for(const code of ['rate_limit_exceeded','slow_down']){
+    const env=environment(),cookie=await login(env);
+    const r=await handle({request:request('chat',payload(),cookie),env},catalog,{now:()=>now,
+      fetch:async()=>Response.json({error:{code,type:'rate_limit_error',message:'PRIVATE_ERROR'}},{status:429,headers:{'Retry-After':'120'}})});
+    assert.equal(r.status,429);assert.equal(r.headers.get('Retry-After'),'120');
+    const body=await r.json();assert.equal(body.code,'model_rate_limit');assert.ok(!body.error.includes('PRIVATE_ERROR'));
+  }
+});
+test('Onbekende of onleesbare providerlimiet blijft veilig en verzint geen wachttijd',async()=>{
+  for(const body of ['{bad json','X'.repeat(1_000_001),JSON.stringify({error:{code:'toString',message:'PRIVATE_ERROR'}})]){
+    const env=environment(),cookie=await login(env);
+    const r=await handle({request:request('chat',payload(),cookie),env},catalog,{now:()=>now,fetch:async()=>new Response(body,{status:429})});
+    assert.equal(r.status,429);assert.equal(r.headers.get('Retry-After'),null);
+    const result=await r.json();assert.equal(result.code,'model_service');assert.ok(!result.error.includes('PRIVATE_ERROR'));
+  }
+});
 test('Eerder afgebroken browserrequest start geen modelaanroep',async()=>{
   const env=environment(),cookie=await login(env),abort=new AbortController();let calls=0;
   const stopped=new Request(request('chat',payload(),cookie),{signal:abort.signal});abort.abort();
