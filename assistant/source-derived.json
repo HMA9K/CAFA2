@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "filename": "CAFA2 Tentamenuitleg oktober 2022 - diatekst en ingesloten berekeningen.md",
+      "source": "Thieu Mooren/Slides Uitwerking Tentamen 2022 okt 6 copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "ae4c0bbe523c90a3df38bc2953dda5b205e12d791286ffc6f01db5f0f1e1a87b",
+      "uploadHash": "46d49b4c112149b32cef73664188350768e630c7571790f50109111955d5b6c5",
+      "generator": "scripts/extract-presentation-sources.py",
+      "slides": 42,
+      "uniqueEmbeddedWorkbooks": 19,
+      "note": "Diatekst en opgeslagen Excel-celwaarden met formules en herkomst. Geen herberekening of visuele transcriptie; geen vervanging van de oorspronkelijke presentatie."
+    }
+  ]
+}

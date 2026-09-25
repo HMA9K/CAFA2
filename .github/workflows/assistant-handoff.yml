@@ -37,8 +37,10 @@ jobs:
         run: npx --yes esbuild@0.25.10 functions/api/study-*.js --bundle --format=esm --platform=browser --outdir=/tmp/assistant-qa/functions
       - name: Install browser-test dependencies
         run: |
-          pip install playwright==1.57.0
+          pip install playwright==1.57.0 openpyxl==3.1.5
           python -m playwright install --with-deps chromium webkit
+      - name: Embedded presentation source regression
+        run: python tests/study-assistant/presentation-sources.py
       - name: Real interface with mocked answer service in Chromium
         env:
           ASSISTANT_QA_OUT: /tmp/assistant-qa/chromium

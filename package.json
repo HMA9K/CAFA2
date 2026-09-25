@@ -17,6 +17,6 @@
     "test:topics-layout": "node tests/topic-layout-browser.mjs",
     "build:assistant": "node scripts/build-study-assistant.mjs",
     "test:assistant": "node --test tests/study-assistant/*.test.mjs",
-    "check:assistant-sources": "node scripts/prepare-assistant-sources.mjs --check"
+    "check:assistant-sources": "node scripts/prepare-assistant-sources.mjs --check && node scripts/check-assistant-source-revisions.mjs --check"
   }
 }

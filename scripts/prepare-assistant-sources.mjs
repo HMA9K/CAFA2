@@ -157,6 +157,7 @@ export async function planSources({manifest,sourceRoot,convertedRoot,groups}={})
       const ext=path.posix.extname(relative).toLowerCase();
       const entry={group,relative,flags:manifest.reviewFlags?.[relative]||[],status:original.status,size:original.size||0};
       if(original.status!=='ready'){entries.push(entry);continue;}
+      entry.sourceAbsolute=original.absolute;
       if(ext==='.ppt'){
         entry.convertedRelative=convertedRelative(relative);
         const convertedFile=entry.convertedRelative?await inspect(converted,entry.convertedRelative):{status:'missing'};

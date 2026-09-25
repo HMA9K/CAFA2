@@ -17,6 +17,35 @@ function payload(extra={}){return {ref,revision:record.revision,mode:'hint',mess
 async function login(env,time=now){const response=await handle({request:request('auth',{code:env.STUDY_ACCESS_CODE}),env},catalog,{now:()=>time});assert.equal(response.status,200);return response.headers.get('Set-Cookie').split(';')[0];}
 const modelResponse={status:'completed',output:[{type:'message',content:[{type:'output_text',text:'TESTANTWOORD, geen vakinhoudelijke beoordeling.',annotations:[{type:'file_citation',filename:'testbron.txt'}]}]}]};
 const fetchOK=async()=>new Response(JSON.stringify(modelResponse),{headers:{'Content-Type':'application/json'}});
+test('twee bronvragen krijgen onafhankelijk passages en echte bronlabels in één antwoord',async()=>{
+  const env=environment({OPENAI_COURSE_VECTOR_STORE_ID:'vs_course'}),cookie=await login(env),queries=[];let model;
+  const r=await handle({request:request('chat',payload({message:'Zoek originele documenten. 1. Niedorp koers? 2. Zeevang journaalpost?'}),cookie),env},catalog,
+    {now:()=>now,fetch:async(url,options)=>{
+      const body=JSON.parse(options.body);
+      if(url.endsWith('/search')){queries.push(body.query);return Response.json({data:[{filename:body.query+'.pdf',file_id:'file-test',content:[{type:'text',text:body.query.startsWith('Niedorp')?'Slotkoers 0,94':'Deelneming 540.000'}]}]});}
+      model=body;return fetchOK();
+    }});
+  assert.equal(r.status,200);assert.deepEqual(queries,['Niedorp koers?','Zeevang journaalpost?']);
+  assert.match(model.input.at(-2).content,/Slotkoers 0,94/);assert.match(model.input.at(-2).content,/Deelneming 540.000/);
+  assert.equal(model.max_tool_calls,1);assert.equal((await r.json()).citations.length,3);
+});
+test('mislukte deelzoekactie wordt geen verzonnen bron en de andere blijft bruikbaar',async()=>{
+  const env=environment({OPENAI_COURSE_VECTOR_STORE_ID:'vs_course'}),cookie=await login(env);let model;
+  const r=await handle({request:request('chat',payload({message:'Zoek documenten. 1. Beschikbaar? 2. Ontbreekt?'}),cookie),env},catalog,
+    {now:()=>now,fetch:async(url,options)=>{
+      const body=JSON.parse(options.body);
+      if(url.endsWith('/search'))return body.query.startsWith('Ontbreekt')?new Response('PRIVATE PROVIDER ERROR',{status:500}):Response.json({data:[{filename:'Gevonden.pdf',file_id:'file-one',content:[{type:'text',text:'Brontekst'}]}]});
+      model=body;return fetchOK();
+    }});
+  assert.equal(r.status,200);assert.match(model.input.at(-2).content,/zoeken_mislukt/);assert.doesNotMatch(JSON.stringify(model),/PRIVATE PROVIDER ERROR/);
+  assert.deepEqual((await r.json()).citations.map(c=>c.label),['Gevonden.pdf','testbron.txt']);
+});
+test('server behoudt lange eerdere uitwerking in het echte modelverzoek',async()=>{
+  const env=environment(),cookie=await login(env),content='Berekening '.repeat(700)+'Goodwill = 99.000.';let sent;
+  const r=await handle({request:request('chat',payload({message:'Waar komt die 99.000 vandaan?',history:[{role:'assistant',content}]}),cookie),env},catalog,
+    {now:()=>now,fetch:async(url,options)=>{sent=JSON.parse(options.body);return fetchOK();}});
+  assert.equal(r.status,200);assert.ok(sent.input.some(x=>x.role==='assistant'&&x.content===content));
+});
 test('Catalogus bevat elke oefen- en tentamenvraag uit de fixture',()=>assert.deepEqual(catalog.counts,{practice:8,exam:4}));
 test('Vraagverwijzing weigert padmanipulatie en onbekend vak',()=>{assert.throws(()=>refKey({...ref,questionId:'../../secret'}));assert.throws(()=>refKey({...ref,course:'OTHER'}));});
 test('HTML-tabellen behouden rij- en kolomscheiding; scripts verdwijnen',()=>{assert.equal(plain('<table><tr><td>100</td><td>20</td></tr></table>'),'100\t20');assert.equal(plain('<script>alert(1)</script><p>A &amp; B &#8364;</p>'),'A & B €');});
