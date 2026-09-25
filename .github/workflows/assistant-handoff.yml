@@ -1,7 +1,7 @@
-name: CAFA2 assistant handoff checks
+name: CAFA2 assistant checks
 on:
   push:
-    branches: [codex/cafa2-assistant-handoff]
+    branches: [main, codex/cafa2-assistant-handoff]
   workflow_dispatch:
 permissions:
   contents: read
