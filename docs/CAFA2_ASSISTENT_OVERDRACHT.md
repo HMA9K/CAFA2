@@ -19,6 +19,8 @@ De recente code staat in `24b0faa`, `d99dbce`, `f337985` en `040222c`. De uitein
 
 De volgende secties zijn historische statusbeschrijvingen. Gebruik de bovenstaande status en de afzonderlijke bronstatus voor vervolgstappen.
 
+De afsluitende bronselectie `268574f` is gepubliceerd via deployment `d4bc7289-f931-4023-80c8-d0bcdf9c3255`: 115 bestanden, 38 expliciete koppelingen gereed, nul fouten en nul lopende indexeringen. Beide GitHub-workflows zijn geslaagd met 103 Node-tests, twee extractietests en 236 browsercontroles. Eén echte casus blijft inhoudelijk open: de koelcellenberekening van oktober 2022 geeft via de oorspronkelijke uitwerking de juiste bedragen, maar nog een verkeerde methodebenaming. Presenteer deze proef niet als geslaagd. De afgeleide presentatietekst is uit de kennisbank gehouden.
+
 ## Eerdere aanvulling: bronkoppeling hersteld
 
 Code `2c9e873` is op 25 september 2026 succesvol gepubliceerd op de testsite: deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7`. De bronbank `vs_6ab636fd5e9481919a1535a662158ed4` bevat 95 bestanden; de API-controle meldt 0 mislukte en 0 lopende indexeringen. Alle 18 bestanden uit `assistant/source-attachments.json` hebben status `completed`: acht repetitieopgaven, acht uitwerkingen, het repetitieprogramma en aanvullende literatuur over belastinglatenties. Deze uitvoering voegde geen dubbele bestanden toe (`added: 0`); de 18 bestanden waren bij de hercontrole al gekoppeld.
