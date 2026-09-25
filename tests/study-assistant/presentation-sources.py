@@ -3,6 +3,7 @@ import importlib.util
 import io
 import tempfile
 import unittest
+from openpyxl import Workbook
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -30,6 +31,20 @@ def fixture():
                       'ppt/embeddings/calc.xlsx': workbook})
 
 class PresentationSources(unittest.TestCase):
+    def test_unrelated_tabs_are_excluded_and_amounts_remain_searchable(self):
+        book=Workbook();book.active['A1']='Andere opgave die niet bij de dia hoort'
+        sheet=book.create_sheet('Geselecteerde berekening');sheet['A1']='Koelcellen';sheet['B1']=340250;book.active=1
+        output=io.BytesIO();book.save(output)
+        with ZipFile(io.BytesIO(fixture())) as z:
+            parts={name:z.read(name) for name in z.namelist()}
+        parts['ppt/embeddings/calc.xlsx']=output.getvalue()
+        with tempfile.TemporaryDirectory() as directory:
+            source=Path(directory)/'selected.pptx';source.write_bytes(zip_bytes(parts))
+            text,_=module.companion(source)
+            self.assertNotIn('Andere opgave die niet bij de dia hoort',text)
+            self.assertIn('B1: 340250 (340.250)',text)
+            self.assertIn('Bijbehorende oorspronkelijke diatekst, dia 1:\nVraag 1',text)
+
     def test_cached_values_formulas_and_provenance_without_duplicate_fallback(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / 'test.pptx'; source.write_bytes(fixture())

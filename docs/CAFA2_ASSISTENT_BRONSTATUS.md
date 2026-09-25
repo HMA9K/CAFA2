@@ -20,6 +20,8 @@ De afgeleide tekst wordt gemaakt met `scripts/extract-presentation-sources.py`. 
 
 De oorspronkelijke presentatie en de afgeleide versie blijven afzonderlijk herkenbaar. `assistant/source-derived.json` bevat herkomst en SHA-256-controlesommen, geen broninhoud. De afgeleide tekst staat lokaal in de aparte map `CAFA2-assistant-sources/prepared` en in de documentbank, niet in Git.
 
+De zoekbare presentatie is na een echte modelproef aangepast: alleen het actieve Excel-tabblad wordt uitgelezen. De eerdere versie bevatte ook meegekopieerde tabbladen van andere opgaven en is uit de documentbank ontkoppeld. Diatekst staat nu opnieuw bij het werkblad; gehele bedragen krijgen ook hun Nederlandse schrijfwijze, zodat bijvoorbeeld `340.250` als zoekterm past. Dit beperkt vermenging van casussen, maar bewijst nog geen foutloze interpretatie van alle alternatieve omrekenmethoden.
+
 ## Bewust nog niet als cursusbron opgenomen
 
 `Onderwijsmateriaal/Overzicht wetboek.docx` is een ongedateerd qua herkomst, niet als officiële cursuspublicatie herkenbaar overzicht met de aanduiding geldig in 2025 en kopieerartefacten. Er is geen onderbouwde controle van zijn wetsverwijzingen. Nodig voor opname: de oorspronkelijke, gedateerde cursusversie met herkomst, of inhoudelijke verificatie van dit overzicht. Het wordt niet als gezaghebbende wetsbron aangeboden. Het bronmanifest bewaart het als te beoordelen kandidaat.
