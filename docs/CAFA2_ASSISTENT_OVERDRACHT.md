@@ -1,22 +1,22 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.3. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.4. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
-## Actuele status: testsite actief, API-tegoed ontbreekt
+## Actuele status: testsite geeft echte modelantwoorden
 
-De eigenaar heeft beide secrets rechtstreeks in Cloudflare opgeslagen. De testsite staat nu op `STUDY_ASSISTANT_ENABLED=true`. Deployment `04952337-5210-4741-a222-fd1064def0e9` van codecommit `994a113` is geslaagd. Status, echte login, beveiligde sessiecookie, ingelogde status en uitloggen zijn gecontroleerd. D1 registreert de login- en chattellers. De oorspronkelijke CAFA2-productiesite is ongewijzigd.
+Na het opwaarderen door de eigenaar geeft [de testsite](https://cafa2-assistent-test.pages.dev) echte antwoorden met `gpt-5.4-mini`. Er zijn 17 geslaagde modelverzoeken uitgevoerd, via de browser en de echte Cloudflare-chatroute. Hints, directe uitwerkingen, een onjuiste antwoordletter, eigen antwoorden, journaalposten, voorraadtabellen, een vraag uit een volledig tentamen en vervolgvragen zijn inhoudelijk beoordeeld. Dit is een beperkte steekproef, geen volledige inhoudscontrole van alle vragen. Zie de [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor resultaten per geval.
 
-De eerste echte chatproef is geblokkeerd door OpenAI. Na een gerichte verbetering van de foutafhandeling bevestigt de browser `model_credits`, uitsluitend gekoppeld aan providercode `credit_balance_exhausted`: het OpenAI API-account heeft geen prepaid tegoed beschikbaar. De sleutel opnieuw invullen is niet nodig. De eigenaar moet tegoed toevoegen via [OpenAI Billing](https://platform.openai.com/settings/organization/billing/overview); er is geen betaling verricht of bestedingslimiet gewijzigd. Daarna kan dezelfde actieve testsite opnieuw worden beproefd, zonder wijziging van de Cloudflare-secrets.
+De proef vond zichtbare LaTeX-code, ongeschikte tabelkoppen, interne veldnamen en een verwarrende tussenzin bij een getekende correctiesom. De modelinstructies zijn gericht aangepast en de betreffende voorbeelden opnieuw beproefd. Op de uiteindelijke code `aaea2a6` is de tentamenberekening correct en helder; de assistent bevestigt ook eerlijk dat hij de originele repetitieslides niet heeft gelezen. Deployment `7db4b13e-3895-4aea-b0c6-4253e7197383` is geslaagd. Beide GitHub Actions-workflows zijn groen, met 81 Node-tests en 230 browsercontroles; de automatische browserantwoorden zijn gesimuleerd.
 
-De foutafhandeling onderscheidt nu tegoed, bestedingslimiet, gebruikslimiet en tijdelijke overbelasting. Alleen bekende foutcodes worden vertaald; providermeldingen, sleutels en invoer worden niet gelogd of teruggestuurd. Zeven nieuwe regressietests slagen, 81 Node-tests totaal. Echte modelkwaliteit is nog niet getest: beide verzonden modelverzoeken leverden een fout op. Zie de actuele teststatus voor de aanvullende controles en CI.
+Login, beveiligde sessiecookie, status, uitloggen en D1-tellers zijn gecontroleerd. Beide secrets staan al in Cloudflare en hoeven niet opnieuw te worden ingevuld. De eerdere blokkade door ontbrekend API-tegoed is opgelost. De bijbehorende foutafhandeling en zeven regressietests blijven behouden. Geen API-sleutel is uitgelezen, geen bestedingslimiet gewijzigd en geen origineel document geüpload. De oorspronkelijke productiesite en `main` zijn ongewijzigd.
 
-## Inrichting vóór activering
+## Eerdere inrichting vóór activering
 
 Op verzoek is [cafa2-assistent-test.pages.dev](https://cafa2-assistent-test.pages.dev) ingericht. Deze afzonderlijke site volgt de werkbranch automatisch, voert de assistentbuild en deploycontrole uit en publiceert `dist`. De eerste deployment van `c33f83a` is geslaagd, inclusief alle vier Functions. De statusroute geeft echte JSON en de browser koppelt het paneel aan de actuele vraag.
 
 Een afzonderlijke D1-testdatabase met EU-jurisdictie, schema, binding en willekeurig sessiegeheim staat klaar. Het voorlopige testmodel is `gpt-5.4-mini`; modelkwaliteit en accounttoegang zijn nog niet getest. `STUDY_ASSISTANT_ENABLED=false`. Alleen `OPENAI_API_KEY` en `STUDY_ACCESS_CODE` moeten voor de eerste modelproef nog rechtstreeks als secrets in Cloudflare worden ingevuld. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md) voor de korte handmatige stap.
 
-De actuele gepubliceerde codecommit is `b6bc210`, testdeployment `bc07d611-688e-4fe7-afd1-4deb99207a51`. Beide GitHub Actions-workflows zijn geslaagd: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36071283868) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36071288614). De afsluitende documentatiecommit publiceert geen nieuwe code.
+De toen gepubliceerde codecommit was `b6bc210`, testdeployment `bc07d611-688e-4fe7-afd1-4deb99207a51`. Beide GitHub Actions-workflows zijn geslaagd: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36071283868) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36071288614). De afsluitende documentatiecommit publiceerde geen nieuwe code.
 
 Op het bestaande project `cafa2` is uitsluitend deze werkbranch uitgesloten van automatische previews, zodat de oude `exit 0`-fout zich daar niet herhaalt bij een volgende push. De bestaande productiebuild en website volgen nog `main`. Niets is naar `main` gemerged. De repetitiecursus en andere originele documenten zijn nog niet extern geïndexeerd. De eerdere lokale/CI-browserantwoorden waren gesimuleerd; de nieuwe online controle test alleen de uitgezette dienst en echte vraagcontext.
 
@@ -40,7 +40,7 @@ Werk de voorbereide assistent verder uit en integreer hem in de bestaande CAFA2-
 
 Deze overdracht begon bij `main`-commit `dd813848fcb272e23dd54775642066843e91bfd9`. Latere wijzigingen uit `main` tot en met `f494ae7` zijn in de werkbranch opgenomen om de concept-PR samenvoegbaar te houden. De bestaande rekenmachine-, bronpaneel-, wetboek- en opgavereekswijzigingen blijven behouden. De oude branch `feature/study-assistant` en oudere ZIP-pakketten zijn niet het vertrekpunt.
 
-In de oorspronkelijke overdrachtscommit waren alleen nieuwe bestanden klaargezet. In deze werkronde zijn `index.html`, `package.json` en `.gitignore` gericht aangepast; de vier endpointtemplates zijn naar `functions/api/` gekopieerd. De assistentintegratie wijzigt geen vraagdata, scorelogica, timers of rekenmachinecode. De samenvoeging vanuit `main` neemt de daar intussen gemaakte wijzigingen aan de bestaande leeromgeving mee. Hostinginstellingen zijn niet gewijzigd; er is geen backend geactiveerd en geen API-tegoed gebruikt.
+In de oorspronkelijke overdrachtscommit waren alleen nieuwe bestanden klaargezet. Bij de integratie zijn `index.html`, `package.json` en `.gitignore` gericht aangepast; de vier endpointtemplates zijn naar `functions/api/` gekopieerd. De assistentintegratie wijzigt geen vraagdata, scorelogica, timers of rekenmachinecode. De samenvoeging vanuit `main` neemt de daar intussen gemaakte wijzigingen aan de bestaande leeromgeving mee. De latere testsite-inrichting en echte API-proef staan bovenaan dit document.
 
 ## Doorslaggevende gebruikerskeuze: hints zijn geen blokkade
 
@@ -129,12 +129,12 @@ De inmiddels aan `main` toegevoegde oefenreeks per tentamenopgave gebruikt samen
 
 Een routewissel controleert de actuele vraag ook wanneer een modelantwoord sneller terugkomt dan de vertraagde schermverversing. Op mobiel staat de zwevende assistentknop boven de vaste tentamenbalk. Bij een geopende rekenmachine is de assistent vanuit de rekenmachinekop bereikbaar. De server begrenst ook de modelrespons, verwerkt onvolledige en ongeldige antwoorden expliciet en geeft bij quota de werkelijke wachttijd terug. Nieuwe regressietests dekken deze fouten.
 
-## Nog nodig voor een echte modelproef
+## Resterende controles en bronkoppeling
 
-1. De afzonderlijke testsite, build en D1 zijn ingericht. Laat de twee resterende secrets rechtstreeks in Cloudflare invoeren volgens [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md), publiceer opnieuw en activeer alleen de testsite voor de echte proef.
-2. Controleer toegang tot het voorlopige Responses-model `gpt-5.4-mini` en voer een kleine, traceerbare reeks echte vragen uit. Beoordeel hints, expliciete volledige uitwerkingen, onjuiste aannames over antwoordletters, bedragherleiding, ontbrekende antwoordmodellen en vervolgvragen. De automatische tests gebruiken uitsluitend testreacties. De uitvoerlimiet van 1.800 tokens en het tekstgebaseerde gesprek verdienen daarbij aparte aandacht.
-3. Controleer welke originele CAFA2-bronbestanden extern mogen worden geïndexeerd, met name de repetitie- en collegeslides. Het manifest en de lokale conversies zijn klaar; de aangetroffen sets en de dry-run staan in het activatiedocument. Op dit moment is geen syllabus, slide of tentamen-PDF gekoppeld; bronlabels uit de vragenbank bewijzen geen bronpassage.
-4. Controleer daarna de echte Cloudflare-status, sessiecookie, D1-quota en File Search-resultaten op de preview. Een fysieke iPhone met geopend toetsenbord is nog een afzonderlijke gebruiksproef.
+1. Voor gebruik van de bestaande vraagbank ontbreken geen secrets of activeringsinstellingen. De testsite werkt; de limieten blijven 30 verzoeken per UTC-dag en 20 per IP. De proef heeft op 25 september 19 dagtellerplaatsen gebruikt, inclusief twee eerdere afgewezen modelverzoeken. De exacte API-kosten zijn niet gemeten.
+2. De 17 echte antwoorden vormen een steekproef. Nog niet inhoudelijk beproefd zijn alle overige vragen, zeer lange gesprekken, ontbrekende antwoordmodellen en uitwerkingen die de limiet van 1.800 uitvoertokens bereiken. De automatische suites blijven gesimuleerde antwoorden gebruiken.
+3. Rond de broncontrole af en indexeer de gewenste originele set, inclusief repetitieslides, volgens het activatiedocument. Het manifest bevat 116 lokale kandidaten, waaronder 40 repetitiecursusbestanden; er ontbreken geen bestanden in de laatste lokale inventarisatie. Er is nog geen documentbank. Daarna moet `OPENAI_COURSE_VECTOR_STORE_ID` worden ingesteld en moeten echte File Search-verwijzingen worden gecontroleerd. Bronlabels uit de vragenbank bewijzen geen gelezen bronpassage.
+4. Een live overschrijdingsproef van de quota en een fysieke iPhone met geopend toetsenbord blijven afzonderlijke controles. Status, cookie en tellers zijn wel echt getest.
 
 De repository wordt hier niet geherstructureerd. SRA en BELRE3 krijgen later hun eigen adapter en broncatalogus. Pull-request #13 blijft concept; er volgt geen zelfstandige merge naar `main` of productieactivering.
 
