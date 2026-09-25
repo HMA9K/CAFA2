@@ -50,7 +50,7 @@ try:
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
       if state['delay_once']:
         state['delay_once']=False;r.continue_();return
-      r.fulfill(json=mock_reply(data))
+      r.fulfill(json=mock_reply(data,'Berekening: '+ 'stap '*1500+'Goodwill = 99.000.') if data['message']=='Test lange uitwerking' else mock_reply(data))
     page.route('**/*',route)
     page.goto(base+'/index.html#kap-1')
     page.wait_for_function('window.CafaExams && window.StudyAssistant && !document.querySelector(".study-assistant-launch").hidden')
@@ -89,6 +89,8 @@ try:
     check('Same-question conversation survives style changes',any(m['content']=='Hoe begin ik?' for m in requests[-1]['history']))
     check('Assistant leaves stored answers and scores unchanged',page.evaluate('JSON.stringify({...localStorage})')==storage)
     page.screenshot(path=str(OUT/f'desktop-{engine}.png'))
+    send('Test lange uitwerking');send('Waar komt die 99.000 vandaan?')
+    check('Long previous calculation survives in follow-up context',any(len(m['content'])>6000 and m['content'].endswith('Goodwill = 99.000.') for m in requests[-1]['history']))
     page.evaluate("location.hash='kap-2'");page.wait_for_function('document.querySelector("[data-context-title]").textContent.includes("Vraag 2")')
     check('Question navigation isolates chat history',page.locator('.study-message').count()==0)
     send('Geef het antwoord.');check('New question uses its own context',requests[-1]['ref']['questionId']=='2' and requests[-1]['history']==[])

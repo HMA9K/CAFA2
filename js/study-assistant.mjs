@@ -1,4 +1,4 @@
-import {VERSION,refKey} from './study-assistant-schema.mjs';
+import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs';
 import {renderMarkdown} from './study-assistant-render.mjs';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
@@ -151,8 +151,7 @@ $('[data-login]').addEventListener('submit',async e=>{
 $('[data-chat-form]').addEventListener('submit',async e=>{
   e.preventDefault();refresh();controls();if($('[data-send]').disabled)return;
   const message=input.value.trim(),ctx=current,m=mode,chat=conversation(),id=++generation;
-  const history=chat.filter(x=>!x.failed&&x.content.length<=6000).slice(-8).map(x=>({role:x.role,content:x.content}));
-  while(history.reduce((n,x)=>n+x.content.length,0)>16000)history.shift();
+  const history=conversationHistory(chat);
   const userMessage={role:'user',content:message};pendingTurn={message:userMessage,scope:scope()};chat.push(userMessage);if(chat.length>24)chat.splice(0,chat.length-24);
   input.value='';drafts.delete(scope());running=true;controller=new AbortController();renderConversation();controls();banner('Antwoord wordt opgesteld…');
   try {

@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "relative": "Onderwijsmateriaal/Aanvullende literatuur - waarom van belastinglatenties.pdf",
+      "sourceHash": "90d4c9035d5e6cc3e536436ea4982ec9784a63f1a171156ecd6690586b7c90ea",
+      "uploadHash": "90d4c9035d5e6cc3e536436ea4982ec9784a63f1a171156ecd6690586b7c90ea"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Onderwijsprogramma CAFA2_VJ 2025.pdf",
+      "sourceHash": "38c44a4d3d168bb033f9ae994eb2e199592293e9fefec16a8b3f0fc3814dd99b",
+      "uploadHash": "38c44a4d3d168bb033f9ae994eb2e199592293e9fefec16a8b3f0fc3814dd99b"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Onderwijsprogramma CAFA2_VJ 2026.pdf",
+      "sourceHash": "404ebf05bd9b5c257634807e6c34a4707ebc451bdd82821892e6a8c59e7f9a2a",
+      "uploadHash": "404ebf05bd9b5c257634807e6c34a4707ebc451bdd82821892e6a8c59e7f9a2a"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Overzicht wetboek.docx",
+      "sourceHash": "1988290261213098684e6c41a33e86b84b0183aeac95921a534da55c3a73f2a7",
+      "uploadHash": "1988290261213098684e6c41a33e86b84b0183aeac95921a534da55c3a73f2a7"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+      "sourceHash": "86173f83ea246d29a9069feed69480319655f5376c2c0426c3857fba2487f629",
+      "uploadHash": "86173f83ea246d29a9069feed69480319655f5376c2c0426c3857fba2487f629"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+      "sourceHash": "c30a05eb60197648e8f15e45defcdc8eb7d23688121d2a098ff75bbf40a185be",
+      "uploadHash": "c30a05eb60197648e8f15e45defcdc8eb7d23688121d2a098ff75bbf40a185be"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2025/2025 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+      "sourceHash": "7a7f858b269fe81abd042eea873f26b72460372e1ed121eacc0917fe47c01cbd",
+      "uploadHash": "7a7f858b269fe81abd042eea873f26b72460372e1ed121eacc0917fe47c01cbd"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 1 Kapitaalbelangen.pdf",
+      "sourceHash": "464eba0773d5f6468de81408053aa2ca0fcbe3fd65b08e07b9b99f4f48c01f05",
+      "uploadHash": "464eba0773d5f6468de81408053aa2ca0fcbe3fd65b08e07b9b99f4f48c01f05"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 2 Vreemde valuta.pdf",
+      "sourceHash": "14a377723a04afe5b8cca627364ccf2f2fd9328da72f9de219256801df4d90ac",
+      "uploadHash": "14a377723a04afe5b8cca627364ccf2f2fd9328da72f9de219256801df4d90ac"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus CAFA 2/2026 Syllabus CAFA2 Deel 3 Consolideren.pdf",
+      "sourceHash": "34e34ede909ad481f0c6f9da947b59ff0116baf4367ef4a87351460bd9dfae85",
+      "uploadHash": "34e34ede909ad481f0c6f9da947b59ff0116baf4367ef4a87351460bd9dfae85"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 1a - opgaven kapitaalbelangen owp.pdf",
+      "sourceHash": "3186ca071aded0273f60bc6ba357e525ce593850256ba3d2a9ef25d7b69365c0",
+      "uploadHash": "3186ca071aded0273f60bc6ba357e525ce593850256ba3d2a9ef25d7b69365c0"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf",
+      "sourceHash": "026ab42dabbb765a198d2df37114dd871fbaf1e3a29cb0923dbc4376951cb434",
+      "uploadHash": "026ab42dabbb765a198d2df37114dd871fbaf1e3a29cb0923dbc4376951cb434"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 2a - opgaven vreemde valuta owp.pdf",
+      "sourceHash": "e5ed7b2704da895b71fd4077df0d6d810c6d7e2d392436a7b0fc0e1aec5dad12",
+      "uploadHash": "e5ed7b2704da895b71fd4077df0d6d810c6d7e2d392436a7b0fc0e1aec5dad12"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 2b - opgaven vreemde valuta extra.pdf",
+      "sourceHash": "afc9eef339b2694d7b7ef5eb12bb6fd5fa02d5f212bb0cec7a72ee8da2c8d504",
+      "uploadHash": "afc9eef339b2694d7b7ef5eb12bb6fd5fa02d5f212bb0cec7a72ee8da2c8d504"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 3a - opgaven consolidatie owp.pdf",
+      "sourceHash": "683b8bf3879e706e5a508d7b0e27216cdf56b81c86dff0f394bbb4fe05b978a4",
+      "uploadHash": "683b8bf3879e706e5a508d7b0e27216cdf56b81c86dff0f394bbb4fe05b978a4"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2025/2025 Syllabus CAFA2 deel 3b - opgaven consolidatie extra.pdf",
+      "sourceHash": "37def176cb62f349fe8b91c69bfdddc2fb7af0a7496022094bac65dec8eb010d",
+      "uploadHash": "37def176cb62f349fe8b91c69bfdddc2fb7af0a7496022094bac65dec8eb010d"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 1a - opgaven kapitaalbelangen owp.pdf",
+      "sourceHash": "a4bb9e52406f60a84850f8b0c14ba6c07d0434a2336ff9d89930690442df41d3",
+      "uploadHash": "a4bb9e52406f60a84850f8b0c14ba6c07d0434a2336ff9d89930690442df41d3"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 1b - opgaven kapitaalbelangen extra.pdf",
+      "sourceHash": "5ebae253bdaefeac6e7a7612359338c710c1c7824ac84e4daf492f01d94622be",
+      "uploadHash": "5ebae253bdaefeac6e7a7612359338c710c1c7824ac84e4daf492f01d94622be"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 2a - opgaven vreemde valuta owp.pdf",
+      "sourceHash": "8bbe0f47b9f76f96d4a9201583e0e78312484691b2c07d7be4e41dac419eb3b8",
+      "uploadHash": "8bbe0f47b9f76f96d4a9201583e0e78312484691b2c07d7be4e41dac419eb3b8"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 2b - opgaven vreemde valuta extra.pdf",
+      "sourceHash": "21fc34f8568af056ed2b3d11178f997edec446b6a266eaec48a718bfa10e7b1d",
+      "uploadHash": "21fc34f8568af056ed2b3d11178f997edec446b6a266eaec48a718bfa10e7b1d"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 3a - opgaven consolidatie owp.pdf",
+      "sourceHash": "f1530ed61732dc7bbadc36bfe248391c65c3af5ac6a21c5b51dfebe585bcb183",
+      "uploadHash": "f1530ed61732dc7bbadc36bfe248391c65c3af5ac6a21c5b51dfebe585bcb183"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus opgaven/2026 Syllabus CAFA2 deel 3b - opgaven consolidatie extra.pdf",
+      "sourceHash": "41e9dcde6dcc81fa65883f27674e9f7cbbcce72b8777bfc5141777d91699e90c",
+      "uploadHash": "41e9dcde6dcc81fa65883f27674e9f7cbbcce72b8777bfc5141777d91699e90c"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 1a - uitwerking opgaven kapitaalbelangen owp.pdf",
+      "sourceHash": "fdec1ad8ca0d4868e6bc58555f547743fcda2a7d399a482c5913c24476151fcd",
+      "uploadHash": "fdec1ad8ca0d4868e6bc58555f547743fcda2a7d399a482c5913c24476151fcd"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf",
+      "sourceHash": "ccbfca5a30a19b7fc8b5b72b56e3d3d36ea13933117d47e6b7977dabc9fba39d",
+      "uploadHash": "ccbfca5a30a19b7fc8b5b72b56e3d3d36ea13933117d47e6b7977dabc9fba39d"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 2a - uitwerking opgaven vreemde valuta owp.pdf",
+      "sourceHash": "b951dabbbbd6b6c5b9e8cb48fbf1e4014b28667655c089df2bc7771eb49d69a0",
+      "uploadHash": "b951dabbbbd6b6c5b9e8cb48fbf1e4014b28667655c089df2bc7771eb49d69a0"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 2b - uitwerking opgaven vreemde valuta extra.pdf",
+      "sourceHash": "bacceadead0873b2dee98f9efd1496d9143a00f8ffcd92425557d4a1973f2eb7",
+      "uploadHash": "bacceadead0873b2dee98f9efd1496d9143a00f8ffcd92425557d4a1973f2eb7"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf",
+      "sourceHash": "34743205abc8743859af7ab5c81ba9c912b1973ac62806cab73c5817fa8f1f8c",
+      "uploadHash": "34743205abc8743859af7ab5c81ba9c912b1973ac62806cab73c5817fa8f1f8c"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2025/2025 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf",
+      "sourceHash": "174f953ebe526e1b428a0744e8d2e7c62bcbb9387f12cbabc01fed0781ffc531",
+      "uploadHash": "174f953ebe526e1b428a0744e8d2e7c62bcbb9387f12cbabc01fed0781ffc531"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 1a - uitwerking opgaven kapitaalbelangen owp.pdf",
+      "sourceHash": "8ec992961bd04efa84fcf3f4688d8801e6eaa4ae630c5f37e52fca1e590b2910",
+      "uploadHash": "8ec992961bd04efa84fcf3f4688d8801e6eaa4ae630c5f37e52fca1e590b2910"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 1b - uitwerking opgaven kapitaalbelangen extra.pdf",
+      "sourceHash": "6bb8ccdfe5c9a97c346582f12e148c8ca0ea791f84b1270c3c01e002da18ed15",
+      "uploadHash": "6bb8ccdfe5c9a97c346582f12e148c8ca0ea791f84b1270c3c01e002da18ed15"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 2a - uitwerking opgaven vreemde valuta owp.pdf",
+      "sourceHash": "4307d689bdb45d97e07e5d0dfdeee18e2c9ee7fc16c18da854f1d692078cf244",
+      "uploadHash": "4307d689bdb45d97e07e5d0dfdeee18e2c9ee7fc16c18da854f1d692078cf244"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 2b - uitwerking opgaven vreemde valuta extra.pdf",
+      "sourceHash": "1a981d51b1c76c1fb0cd3111ac08adf45afaa189f5faac98e9a737e8fb7233ce",
+      "uploadHash": "1a981d51b1c76c1fb0cd3111ac08adf45afaa189f5faac98e9a737e8fb7233ce"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 3a - uitwerking opgaven consolidatie owp.pdf",
+      "sourceHash": "b0d56b3eca445e60421849f44997c4817e3a6ff680ee46f0cc4c9b2fceff42f3",
+      "uploadHash": "b0d56b3eca445e60421849f44997c4817e3a6ff680ee46f0cc4c9b2fceff42f3"
+    },
+    {
+      "relative": "Onderwijsmateriaal/Syllabus uitwerkingen/2026 Syllabus CAFA2 deel 3b - uitwerking opgaven consolidatie extra.pdf",
+      "sourceHash": "d6c4c9fc60de5a49e3c4d812d723c71310a414b345a78df065290458837be3e4",
+      "uploadHash": "d6c4c9fc60de5a49e3c4d812d723c71310a414b345a78df065290458837be3e4"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 1 - Silverpeil uitwerking.pdf",
+      "sourceHash": "1d05d145c588b39c4fa1d77859d694f3ae466a5a6ad022cb584610b4c8c23901",
+      "uploadHash": "1d05d145c588b39c4fa1d77859d694f3ae466a5a6ad022cb584610b4c8c23901"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 2 -  Zeevang uitwerking.pdf",
+      "sourceHash": "6589c7954a29b826c332feac81a97acffceb54c8c0a0ae42b414a43f05832f5d",
+      "uploadHash": "6589c7954a29b826c332feac81a97acffceb54c8c0a0ae42b414a43f05832f5d"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 3 - Obdam-Bobeldijk uitwerking.pdf",
+      "sourceHash": "f0e61fb2e98eb5ccd626feac576433c7b85ea8ceca219e4379e8873a82831fdf",
+      "uploadHash": "f0e61fb2e98eb5ccd626feac576433c7b85ea8ceca219e4379e8873a82831fdf"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 4 - Niedorp-Swaza  uitwerking (vv-balansmethode).pdf",
+      "sourceHash": "663556707bdc7acee9fc618de2c2899f0735ba296c1c50a8d6bcffa44a1ea10c",
+      "uploadHash": "663556707bdc7acee9fc618de2c2899f0735ba296c1c50a8d6bcffa44a1ea10c"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 5 - Corona uitwerking (vv-temporal en closing rate).pdf",
+      "sourceHash": "48298c776bd4bad24d8cbc52093e4078eb813427c1755596486ceeb847832938",
+      "uploadHash": "48298c776bd4bad24d8cbc52093e4078eb813427c1755596486ceeb847832938"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 6 - Schermer-Wormer uitwerking (consolidatie nvw en vp).pdf",
+      "sourceHash": "9b8cc7185c717f2555d0f5d0bb50a75312c9611ca6b84738543efaf742bfdf4d",
+      "uploadHash": "9b8cc7185c717f2555d0f5d0bb50a75312c9611ca6b84738543efaf742bfdf4d"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 7 - Runa uitwerking (conso us en ss en prop).pdf",
+      "sourceHash": "a0bb70a577d5da017cd78044a69d9288aae21b4b3bdb7f673543f4f22fb17600",
+      "uploadHash": "a0bb70a577d5da017cd78044a69d9288aae21b4b3bdb7f673543f4f22fb17600"
+    },
+    {
+      "relative": "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 8 - Obdam-Bobeldijk-Midwoud uitwerking (DS en SSa en USmva).pdf",
+      "sourceHash": "37bb31d0a1ea8d4d39333b65c1efb16d654ae036a3784ee827aadf3e5db9fb04",
+      "uploadHash": "37bb31d0a1ea8d4d39333b65c1efb16d654ae036a3784ee827aadf3e5db9fb04"
+    },
+    {
+      "relative": "Repetitiecursus/Onderwijsprogramma_Repetitiecursus CAFA2 NJ25.pdf",
+      "sourceHash": "5fc750027e3b1395cabb057e2fece842be4315486eea2fcc030668cd626bdc55",
+      "uploadHash": "5fc750027e3b1395cabb057e2fece842be4315486eea2fcc030668cd626bdc55"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 1 - Silverpeil (kapitaalbelangen).pdf",
+      "sourceHash": "e2c0223f95079d11e887d5f06be485d6ca01b0fc1b681f9a840152fb0c36f625",
+      "uploadHash": "e2c0223f95079d11e887d5f06be485d6ca01b0fc1b681f9a840152fb0c36f625"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 2 - Zeevang (kapitaalbelangen).pdf",
+      "sourceHash": "c2a012b6cca5a0d19f9b745254f78bb1ecce6fc9c5908696a3aaa3738b2b4d1d",
+      "uploadHash": "c2a012b6cca5a0d19f9b745254f78bb1ecce6fc9c5908696a3aaa3738b2b4d1d"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 3 - Opdam-Bobeldijk (kapitaalbelangen).pdf",
+      "sourceHash": "3a90f7485c22badf0421d1361ee445c0705b2f459570359722cad0c7eb9076e5",
+      "uploadHash": "3a90f7485c22badf0421d1361ee445c0705b2f459570359722cad0c7eb9076e5"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 4 - Niedorp-Swaza (vreemde valuta).pdf",
+      "sourceHash": "ed4c1aadbf7a82fe2b4fddb31109ca9a77d4e036fbda4a8d0aa2223c4f9c11b2",
+      "uploadHash": "ed4c1aadbf7a82fe2b4fddb31109ca9a77d4e036fbda4a8d0aa2223c4f9c11b2"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 5 - Corona (vreemde valuta).pdf",
+      "sourceHash": "0ce3d2d06119a3b3a949cb0ec69a4a16c2e4f9a527e20f929b7355e9f1e8674a",
+      "uploadHash": "0ce3d2d06119a3b3a949cb0ec69a4a16c2e4f9a527e20f929b7355e9f1e8674a"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 6 - Schermer-Wormer (consolidatie nvw en vp).pdf",
+      "sourceHash": "156d9d2c4ac173afedc97dfc5da8f8497ed78e8c01140c19ecce2b9f76f2f145",
+      "uploadHash": "156d9d2c4ac173afedc97dfc5da8f8497ed78e8c01140c19ecce2b9f76f2f145"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 7 - Runa (consolidatie us ss en prop).pdf",
+      "sourceHash": "6f4ff7a124b29fa67173146c253ee734e3fc4b9ec60b0a277c345ca8a6b95544",
+      "uploadHash": "6f4ff7a124b29fa67173146c253ee734e3fc4b9ec60b0a277c345ca8a6b95544"
+    },
+    {
+      "relative": "Repetitiecursus/Opgaven repetitiecursus/CAFA2 REP opgave 8 - Opdam-Bobeldijk-Midwoud (consolidatie nvw ds ss).pdf",
+      "sourceHash": "79dad1f0a9766535f0a908f5db8bf7cba783bf177123b967c6eb9be773e48971",
+      "uploadHash": "79dad1f0a9766535f0a908f5db8bf7cba783bf177123b967c6eb9be773e48971"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/09 Vreemde valuta.pptx",
+      "sourceHash": "761282b7fe6e10bc32c1f7d6b4d10087fbc61d11d65a04c5a8a0c06c6a6ff5ea",
+      "uploadHash": "761282b7fe6e10bc32c1f7d6b4d10087fbc61d11d65a04c5a8a0c06c6a6ff5ea"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/1. Kapitaalbelangen deel 1 Dochter, deelneming.pptx",
+      "sourceHash": "e60593b361da2b4b9fa10835f30327983b3a2084e95ccf8351c7c30a58c598fd",
+      "uploadHash": "e60593b361da2b4b9fa10835f30327983b3a2084e95ccf8351c7c30a58c598fd"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/10 Vreemde valuta Temporal method = Tijdstipmethode.pptx",
+      "sourceHash": "d9c8d0b255a444eb14b6228e904c49741f345bae1ebcc2c5cae32e6994a3e002",
+      "uploadHash": "d9c8d0b255a444eb14b6228e904c49741f345bae1ebcc2c5cae32e6994a3e002"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/11 Vreemde valuta Closing rate method = Slotkoersmethode.pptx",
+      "sourceHash": "76fd107ba269e9f82a086d9d2e371601f8c704a70c37553f627a8806daaca185",
+      "uploadHash": "76fd107ba269e9f82a086d9d2e371601f8c704a70c37553f627a8806daaca185"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/2. Kapitaalbelangen deel 2 Waardering met invloed van betekenis 2.pptx",
+      "sourceHash": "19203171f6718169fba04257c7296afca12d1cca694ef9cc790d07d97d178602",
+      "uploadHash": "19203171f6718169fba04257c7296afca12d1cca694ef9cc790d07d97d178602"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/3. Kapitaalbelangen deel 3 Wettelijke reserve deelneming.pptx",
+      "sourceHash": "8e225fa0282ae3260cd7682ddcd50ab585504190da91e460e70ac58593286b9e",
+      "uploadHash": "8e225fa0282ae3260cd7682ddcd50ab585504190da91e460e70ac58593286b9e"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/4. Kapitaalbelangen deel 4 Waardering zonder invloed van betekenis.pptx",
+      "sourceHash": "50b8febe6632afacb55e5dfc76557253b8e49d9ba35294224b4cf5fdb9209247",
+      "uploadHash": "50b8febe6632afacb55e5dfc76557253b8e49d9ba35294224b4cf5fdb9209247"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/5.  Kapitaalbelangen deel 5 Belegging.pptx",
+      "sourceHash": "8f1f6bc23c421d35e0987bd61efb15084843f9be2eead0c056677e6d54171514",
+      "uploadHash": "8f1f6bc23c421d35e0987bd61efb15084843f9be2eead0c056677e6d54171514"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/6. Kapitaalbelangen deel 6 Inkoop eigen aandelen.pptx",
+      "sourceHash": "d35e69bf35d24f516a24b873b1edffbe955b8fa949effec29de1c00873ddd7de",
+      "uploadHash": "d35e69bf35d24f516a24b873b1edffbe955b8fa949effec29de1c00873ddd7de"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/7 Consolidatie.pptx",
+      "sourceHash": "e839a1dcee35d6a6ec6487a456d981083fa698afddf51fb688f33f49535e542e",
+      "uploadHash": "e839a1dcee35d6a6ec6487a456d981083fa698afddf51fb688f33f49535e542e"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Down stream sales en 80% belang vaste activa NVW.ppt",
+      "sourceHash": "aca31631b92cb3448d05c4454abd50a66f3b096ea7cac08c3bb56f8e2b3c0220",
+      "uploadHash": "64b5e22126841eff4eca8703fc0ef0a5a1dbcac75be2cb07f6d28373e8e5cbb1"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Down stream sales en 80% belang vaste activa Verkrijgingsprijs.ppt",
+      "sourceHash": "1aa9681265e6d7dd499c35f935fc98cf150056e2cb80c693e731d3ac14ad54c5",
+      "uploadHash": "2b8efdc376ff77216b7e1cdddfbd1cf9bb6d5dbbee4486375703c8da54878899"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Down-stream sales en 100% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "143435e54fb455b9e0d25173cddebded4f399dc696e28f1e94e6b70fe245be29",
+      "uploadHash": "1ad6c34eef26b174bac873fa9750832de0fc3661df2ae0355a0571f27ba8e0be"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Down-stream sales en 80% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "f034997ef3d6145d1512f11b7cfaff3fc031e570ad45af2163ed529adf5212fb",
+      "uploadHash": "7390b20c8b17119d445ca46d6c98ab583e13ca0fe733d1bbc16c0c0fcfe7d850"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Intercompany leveringen JP's Nettovermogenswaarde.pdf",
+      "sourceHash": "8f8bb8ee4c289be8d24199a0483b91a50d061fb8513abd05c1cad562b89747d2",
+      "uploadHash": "8f8bb8ee4c289be8d24199a0483b91a50d061fb8513abd05c1cad562b89747d2"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Intercompany leveringen JP's Verkrijgingsprijs of Actuele waarde.pdf",
+      "sourceHash": "7f1b9c2d7daadc5f6157cb3005ca04d6f670939c5d511fbac7bafbf911fa372e",
+      "uploadHash": "7f1b9c2d7daadc5f6157cb3005ca04d6f670939c5d511fbac7bafbf911fa372e"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Sidestream sales van 70% naar 80% belang NVW.ppt",
+      "sourceHash": "fd6ae8e427e8865a25df536c8383e62101e3a9f1730afa0ec794eaede6b066a1",
+      "uploadHash": "84e2aa7f13db446d857bfce9ccb4fb9cb232df06c8a642200647decb0862087d"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Sidestream sales van 70% naar 80% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "4722eba0b12e7e748c1d3059d3f94d93ae4fc0ccb195fdcab57ea7824d6cb461",
+      "uploadHash": "0fa5b21033d4d1d518b1546ca7610f636d0656bd50694c834daffdab712b3922"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Sidestream sales van 80% naar 70% belang NVW.ppt",
+      "sourceHash": "3d7c1c22e169d4fd01eaaaf99135e5436df0a09089a52da1945b1912fb1e7fab",
+      "uploadHash": "f7a786466339caf43f2852b453608d6f6c0b255f153c22f145d8948e7c2cf26b"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Sidestream sales van 80% naar 70% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "1dd86ec9d6a2e6b2a1af983692c51e83fb111c7bfa795bcc7fa6a2f8f867d188",
+      "uploadHash": "30a5e15ebabc4a46899ccf235ab0482a8744d1a7be6472c82e9f9da1ba927426"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Up stream sales en 80% belang vaste activa NVW.ppt",
+      "sourceHash": "05ef860327287a2893957ec86c4d1d8d046244bb5caab146c2755fdf9296bd4b",
+      "uploadHash": "b87c3af7f8c1904186610a90b1c61c0bc6ef1a5af9ca67264b508732d6321b67"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Up-stream sales en 100% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "ebdecc1bbb0b2442900d2ddee3b79bcc8d18457af267c652d35834de24ba1d26",
+      "uploadHash": "f821109b7e0848a375e9422617a318b592226bcf22d6e6e6ed23269b6d552317"
+    },
+    {
+      "relative": "Repetitiecursus/Slides/Up-stream sales en 80% belang Verkrijgingsprijs.ppt",
+      "sourceHash": "a6790f8bb35baec3bb8943fb61ac519922b1cdd6b169bac5eb751c50c704b8e5",
+      "uploadHash": "c479d7f34e98d1f5fc047d6b8727cba69673cddfa7db2a743ed6d015d983372a"
+    },
+    {
+      "relative": "Tentamens/2021-04 CAFA2 - Tentamen.docx",
+      "sourceHash": "c734bd056bdcb85c6beaaf5e551c31cf380309e4d994057b1c5ee68dcd204ed4",
+      "uploadHash": "c734bd056bdcb85c6beaaf5e551c31cf380309e4d994057b1c5ee68dcd204ed4"
+    },
+    {
+      "relative": "Tentamens/2021-04 CAFA2 - Uitwerking tentamen.pdf",
+      "sourceHash": "5f75514f504ac05c6df7312cfcef5b3ac6842f1552535375e698cf825a8f56d1",
+      "uploadHash": "5f75514f504ac05c6df7312cfcef5b3ac6842f1552535375e698cf825a8f56d1"
+    },
+    {
+      "relative": "Tentamens/2021-10 CAFA2 - Tentamen.pdf",
+      "sourceHash": "2dccd62f057b46c195bdf3e29d648ecc8ce76a46094d123308b32dc04db604ae",
+      "uploadHash": "2dccd62f057b46c195bdf3e29d648ecc8ce76a46094d123308b32dc04db604ae"
+    },
+    {
+      "relative": "Tentamens/2021-10 CAFA2 - Uitwerking tentamen.pdf",
+      "sourceHash": "6795a007248ce893999540b992ca978ba975283333881caf405a450d2863eb74",
+      "uploadHash": "6795a007248ce893999540b992ca978ba975283333881caf405a450d2863eb74"
+    },
+    {
+      "relative": "Tentamens/2022-04 CAFA2 - Tentamen.pdf",
+      "sourceHash": "ddf0dfdaddac6380d970a15b69748f8336725b3383b955fe8cbb4c977bb35592",
+      "uploadHash": "ddf0dfdaddac6380d970a15b69748f8336725b3383b955fe8cbb4c977bb35592"
+    },
+    {
+      "relative": "Tentamens/2022-04 CAFA2 - Uitwerking tentamen.pdf",
+      "sourceHash": "e2f3e92451168fd5249ff8580271d19c5b1c306ec77507bfea4bbd00170b6b34",
+      "uploadHash": "e2f3e92451168fd5249ff8580271d19c5b1c306ec77507bfea4bbd00170b6b34"
+    },
+    {
+      "relative": "Tentamens/2022-10 CAFA2 - Tentamen.pdf",
+      "sourceHash": "e69077f3ea80d78cb7a07a7567a6327cdccefa5202ae5d774fdfc1fb3ead5f24",
+      "uploadHash": "e69077f3ea80d78cb7a07a7567a6327cdccefa5202ae5d774fdfc1fb3ead5f24"
+    },
+    {
+      "relative": "Tentamens/2022-10 CAFA2 - Uitwerking tentamen.pdf",
+      "sourceHash": "d2c70277330985a47ce78b378c50e4e014cb91c7ce2ada45e45511731012be16",
+      "uploadHash": "d2c70277330985a47ce78b378c50e4e014cb91c7ce2ada45e45511731012be16"
+    },
+    {
+      "relative": "Tentamens/20230411 Tentamen CAFA2.pdf",
+      "sourceHash": "b286b58532fb649627cbfc0ff4b0dfbfae3f289164d8431133fd0161aa989174",
+      "uploadHash": "b286b58532fb649627cbfc0ff4b0dfbfae3f289164d8431133fd0161aa989174"
+    },
+    {
+      "relative": "Tentamens/20230411 Uitwerking tentamen CAFA2.pdf",
+      "sourceHash": "cbb9c1581c827faa243026c4a14fde319e5023c017f8b3e89de0e4f439fe9062",
+      "uploadHash": "cbb9c1581c827faa243026c4a14fde319e5023c017f8b3e89de0e4f439fe9062"
+    },
+    {
+      "relative": "Tentamens/20231009 Tentamen CAFA2.pdf",
+      "sourceHash": "1bd66185301181229ea090a2b70d4becbc3a377d2199ca09328411e9f37b5144",
+      "uploadHash": "1bd66185301181229ea090a2b70d4becbc3a377d2199ca09328411e9f37b5144"
+    },
+    {
+      "relative": "Tentamens/20231009 Uitwerking tentamen CAFA2.pdf",
+      "sourceHash": "406318e0a8f7db7a9703a74d0be5ab2c776608d5dd4a32c3f99a1ba2256d62e0",
+      "uploadHash": "406318e0a8f7db7a9703a74d0be5ab2c776608d5dd4a32c3f99a1ba2256d62e0"
+    },
+    {
+      "relative": "Tentamens/20240422 Tentamen CAFA2.pdf",
+      "sourceHash": "a3e822402ce897c1d9c43b599bc71370f16d9e143879508ae90cf850a8478cd8",
+      "uploadHash": "a3e822402ce897c1d9c43b599bc71370f16d9e143879508ae90cf850a8478cd8"
+    },
+    {
+      "relative": "Tentamens/20240422 Uitwerking tentamen CAFA2.pdf",
+      "sourceHash": "27353409805e80b793071d2b066fe5904d769b5d9a3649f6e4d55f1aebb5bb7d",
+      "uploadHash": "27353409805e80b793071d2b066fe5904d769b5d9a3649f6e4d55f1aebb5bb7d"
+    },
+    {
+      "relative": "Tentamens/20240930 Tentamen CAFA2.pdf",
+      "sourceHash": "a3e71f67210eb7c9cff0fa1a331b1955f6e6682850cfa486057df3b371258651",
+      "uploadHash": "a3e71f67210eb7c9cff0fa1a331b1955f6e6682850cfa486057df3b371258651"
+    },
+    {
+      "relative": "Tentamens/20240930 Uitwerking tentamen CAFA2.pdf",
+      "sourceHash": "8ee3c3e166d5b7fdcfd219526292675386fea116bd506854967b1dfa3e975c98",
+      "uploadHash": "8ee3c3e166d5b7fdcfd219526292675386fea116bd506854967b1dfa3e975c98"
+    },
+    {
+      "relative": "Tentamens/20250417 Tentamen CAFA2.pdf",
+      "sourceHash": "ef4e8630f88d327a49196680493c4153e84c084aaf484f67ec991a396eb980d2",
+      "uploadHash": "ef4e8630f88d327a49196680493c4153e84c084aaf484f67ec991a396eb980d2"
+    },
+    {
+      "relative": "Tentamens/20250417 Uitwerking tentamen CAFA2.pdf",
+      "sourceHash": "be13e58baac993430906b6275ab1ee050dbe9778554f720a0ba9ce55dd2452dd",
+      "uploadHash": "be13e58baac993430906b6275ab1ee050dbe9778554f720a0ba9ce55dd2452dd"
+    },
+    {
+      "relative": "Tentamens/20250924 Tentamen CAFA2.pdf",
+      "sourceHash": "1c12e2cc371f462a936aee67733b6e82f65626d9daaa7d84527875e42a19c643",
+      "uploadHash": "1c12e2cc371f462a936aee67733b6e82f65626d9daaa7d84527875e42a19c643"
+    },
+    {
+      "relative": "Tentamens/20250924 Uitwerking tentamen CAFA2 (na normering).pdf",
+      "sourceHash": "81c01c681bfcc916de8a066be1d376a0858bb6d396c619cc4d26d21f73fe5dda",
+      "uploadHash": "81c01c681bfcc916de8a066be1d376a0858bb6d396c619cc4d26d21f73fe5dda"
+    },
+    {
+      "relative": "Tentamens/20260429 Tentamen CAFA2 def 2 (1).pdf",
+      "sourceHash": "dcccf2f525841116ed14144d58dd6f522ab2eae63c1bb478ab18f17cce1c5f30",
+      "uploadHash": "dcccf2f525841116ed14144d58dd6f522ab2eae63c1bb478ab18f17cce1c5f30"
+    },
+    {
+      "relative": "Tentamens/20260429 Uitwerking Tentamen CAFA2 (1).pdf",
+      "sourceHash": "bf862062cdcc8c2346fc37b100c1f3508c234e44fc2eeeda97448debecbd8914",
+      "uploadHash": "bf862062cdcc8c2346fc37b100c1f3508c234e44fc2eeeda97448debecbd8914"
+    },
+    {
+      "relative": "Thieu Mooren/PRESENTATIE CAFA 2 Voorjaar 2026 WIJNCURSUS.pptx",
+      "sourceHash": "c229b503c44ee2bc8469f979e8e71784467a798274af3fd969d424cba5f5b162",
+      "uploadHash": "c229b503c44ee2bc8469f979e8e71784467a798274af3fd969d424cba5f5b162"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 1 2025 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "86bd10b32806faca9c4039088a863fc9f1b66225755bc70d1c86e53a67f254a2",
+      "uploadHash": "86bd10b32806faca9c4039088a863fc9f1b66225755bc70d1c86e53a67f254a2"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 2 2025 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "b1d99db5bfe92a16bb86c9cba177c577459cb96813d793a0149414cf94d5a52e",
+      "uploadHash": "b1d99db5bfe92a16bb86c9cba177c577459cb96813d793a0149414cf94d5a52e"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 3 2025 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "d61bbdeaad1f9a87cd72ea64b73304b7a6377f34051d01ffe1b87f3077b2bd7d",
+      "uploadHash": "d61bbdeaad1f9a87cd72ea64b73304b7a6377f34051d01ffe1b87f3077b2bd7d"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 4 2025 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "e8b81a8ec11f50920b4c3fa069a77c17e9da3b097aa250d248470f6f78608d24",
+      "uploadHash": "e8b81a8ec11f50920b4c3fa069a77c17e9da3b097aa250d248470f6f78608d24"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 5 2025 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "ce148dea2c0ab5d5d3734d41fe78214bc367e7a0c1c366c641208e2118ce46cb",
+      "uploadHash": "ce148dea2c0ab5d5d3734d41fe78214bc367e7a0c1c366c641208e2118ce46cb"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 6 2025 CAFA2 II[copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "ccabd77cf0c434eeb761189427969ec87673175e2b795d50ffae7dcc1d365835",
+      "uploadHash": "ccabd77cf0c434eeb761189427969ec87673175e2b795d50ffae7dcc1d365835"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 6 2026 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "741210d043e4099e68adb2f70d63e48e331730f3736ba5e7006aefae88ff50b8",
+      "uploadHash": "741210d043e4099e68adb2f70d63e48e331730f3736ba5e7006aefae88ff50b8"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 7 2026 CAFA2 [copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "f537265b54539eada5db3c504e8f9963278228cdb07d7ae3896b0aabf23e2730",
+      "uploadHash": "f537265b54539eada5db3c504e8f9963278228cdb07d7ae3896b0aabf23e2730"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 1. Downstream NVW.pptx",
+      "sourceHash": "7168ca17bcb22da7de94ec8b40b6e34e9b7d0dfd2ae3ca813db4145a3a19f32d",
+      "uploadHash": "7168ca17bcb22da7de94ec8b40b6e34e9b7d0dfd2ae3ca813db4145a3a19f32d"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 2. Upstream NVW.pptx",
+      "sourceHash": "3e1fd9e84de6d5085faa1fe9f9d9923f5f3b1d682d63c0c48d4593ba928aee0f",
+      "uploadHash": "3e1fd9e84de6d5085faa1fe9f9d9923f5f3b1d682d63c0c48d4593ba928aee0f"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 3. Sidestream NVW.pptx",
+      "sourceHash": "12394692f1e81dc918a8e7ed947708a09ee2a424626258bec154ab7fcefa402c",
+      "uploadHash": "12394692f1e81dc918a8e7ed947708a09ee2a424626258bec154ab7fcefa402c"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 4. Consolidatie HK.pptx",
+      "sourceHash": "d7c58d393ed52e78299215848406854ebe4091db062ba26415e169fd0d727116",
+      "uploadHash": "d7c58d393ed52e78299215848406854ebe4091db062ba26415e169fd0d727116"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 5. Downstream HK.pptx",
+      "sourceHash": "d2d3b7c5987b3375a07db8b59545cf407d9750f787e2e0f56440309769541352",
+      "uploadHash": "d2d3b7c5987b3375a07db8b59545cf407d9750f787e2e0f56440309769541352"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2025 CAFA2 [copyright Nyenrode Business Universiteit] 6. Upstream NVW HK.pptx",
+      "sourceHash": "106cb4fd85eb879df65df2c98246a4803fe0d49e77a9f39d17c9d3964ee1721c",
+      "uploadHash": "106cb4fd85eb879df65df2c98246a4803fe0d49e77a9f39d17c9d3964ee1721c"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 8 2026 CAFA2 [copyright Nyenrode Business Universiteit.pptx",
+      "sourceHash": "1b78216eb06786d45611fd279ea8117f1174cd3de53d2af5009819a12fe97eeb",
+      "uploadHash": "1b78216eb06786d45611fd279ea8117f1174cd3de53d2af5009819a12fe97eeb"
+    },
+    {
+      "relative": "Thieu Mooren/Slides College 9 2025 CAFA2 [copyright Nyenrode Business Universiteit] 6. Actief Downstream NVW.pptx",
+      "sourceHash": "326fe4b6be7c75df1cb7107c3c52d1c9c42ea688fe1fd7ee8c69f90c8f2be7d4",
+      "uploadHash": "326fe4b6be7c75df1cb7107c3c52d1c9c42ea688fe1fd7ee8c69f90c8f2be7d4"
+    },
+    {
+      "relative": "Thieu Mooren/Slides Uitwerking Tentamen 2022 okt 6 copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "ae4c0bbe523c90a3df38bc2953dda5b205e12d791286ffc6f01db5f0f1e1a87b",
+      "uploadHash": "ae4c0bbe523c90a3df38bc2953dda5b205e12d791286ffc6f01db5f0f1e1a87b"
+    },
+    {
+      "relative": "Thieu Mooren/TENTAMEN CAFA2 20221006 (1).docx",
+      "sourceHash": "36d69ddeae2327520e12c2d65f11e11deb364d100610c151d28427364f0ba21b",
+      "uploadHash": "36d69ddeae2327520e12c2d65f11e11deb364d100610c151d28427364f0ba21b"
+    },
+    {
+      "relative": "Thieu Mooren/UITWERKINGEN tentamen CAFA2 20221006.docx",
+      "sourceHash": "50f8506d82848f4840f2cfe3d18358e2c272d8b8535ae245345c578d73304d51",
+      "uploadHash": "50f8506d82848f4840f2cfe3d18358e2c272d8b8535ae245345c578d73304d51"
+    }
+  ]
+}

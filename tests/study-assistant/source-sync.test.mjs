@@ -60,6 +60,14 @@ test('de volledige koppellijst gebruikt de letterlijke namen uit het bronmanifes
   const read=async name=>JSON.parse(await readFile(new URL('../../assistant/'+name,import.meta.url),'utf8'));
   const attachments=await read('source-attachments.json'),manifest=await read('source-manifest.json');
   const names=new Set(Object.values(manifest.groups).flat().map(p=>p.split('/').at(-1)));
+  const originals=new Set(Object.values(manifest.groups).flat()),snapshot=await read('source-snapshot.json');
+  const derived=await read('source-derived.json');
+  for(const file of derived.files){
+    assert.ok(originals.has(file.source),'Afgeleid document moet naar een echte oorspronkelijke bron verwijzen');
+    assert.equal(snapshot.files.find(x=>x.relative===file.source)?.sourceHash,file.sourceHash,'Genereer de zoekbare versie opnieuw bij een gewijzigde presentatie');
+    assert.match(file.uploadHash,/^[a-f0-9]{64}$/);assert.ok(!names.has(file.filename));
+    names.add(file.filename);
+  }
   validateAttachments(attachments);
   for(const file of attachments.files)assert.ok(names.has(file.filename),`Naam ontbreekt letterlijk in bronmanifest: ${file.filename}`);
 });

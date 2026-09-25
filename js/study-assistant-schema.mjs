@@ -1,6 +1,24 @@
 /** Shared, dependency-free normalization for the CAFA2 adapter and build step. */
 export const VERSION = '2026-09-24.2';
 export const COURSES = Object.freeze(['CAFA2', 'SRA', 'BELRE3']);
+export const HISTORY_LIMITS = Object.freeze({messages:8,characters:16000});
+export function conversationHistory(chat) {
+  const history=[];
+  let remaining=HISTORY_LIMITS.characters;
+  for(const entry of chat.filter(x=>!x.failed).slice(-HISTORY_LIMITS.messages).reverse()) {
+    if(typeof entry.content!=='string'||!['user','assistant'].includes(entry.role))continue;
+    let content=entry.content;
+    if(content.length>remaining) {
+      if(history.length)break;
+      const omitted='\n[Het middendeel van dit lange eerdere bericht is weggelaten.]\n';
+      const head=Math.floor((remaining-omitted.length)/2);
+      content=content.slice(0,head)+omitted+content.slice(-(remaining-omitted.length-head));
+    }
+    history.unshift({role:entry.role,content});remaining-=content.length;
+    if(!remaining)break;
+  }
+  return history;
+}
 export function plain(value) {
   const text = String(value ?? '');
   return text.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
