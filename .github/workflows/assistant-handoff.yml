@@ -1,0 +1,58 @@
+name: CAFA2 assistant checks
+on:
+  push:
+    branches: [main, codex/cafa2-assistant-handoff]
+  workflow_dispatch:
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: assistant-handoff-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assistant tests, including real question coverage
+        run: |
+          mkdir -p /tmp/assistant-qa
+          node --test tests/study-assistant/*.test.mjs 2>&1 | tee /tmp/assistant-qa/node-tests.log
+      - name: Integrate in runner only and build
+        run: |
+          node scripts/prepare-study-assistant.mjs --apply
+          node scripts/build-study-assistant.mjs | tee /tmp/assistant-qa/build.log
+          node scripts/verify-study-assistant-build.mjs | tee /tmp/assistant-qa/build-verification.log
+      - name: Existing repository regression tests
+        run: npm test 2>&1 | tee /tmp/assistant-qa/regression.log
+      - name: Bundle all Pages Functions
+        run: npx --yes esbuild@0.25.10 functions/api/study-*.js --bundle --format=esm --platform=browser --outdir=/tmp/assistant-qa/functions
+      - name: Install browser-test dependencies
+        run: |
+          pip install playwright==1.57.0 openpyxl==3.1.5
+          python -m playwright install --with-deps chromium webkit
+      - name: Embedded presentation source regression
+        run: python tests/study-assistant/presentation-sources.py
+      - name: Real interface with mocked answer service in Chromium
+        env:
+          ASSISTANT_QA_OUT: /tmp/assistant-qa/chromium
+        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser-chromium.log
+      - name: Real interface with mocked answer service in WebKit
+        env:
+          ASSISTANT_BROWSER: webkit
+          ASSISTANT_QA_OUT: /tmp/assistant-qa/webkit
+        run: python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser-webkit.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cafa2-assistant-handoff-checks
+          path: /tmp/assistant-qa
+          retention-days: 7

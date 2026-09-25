@@ -14,6 +14,9 @@
     "test:refinement-browser": "python tests/study-refinement-browser.py",
     "build:practice": "node scripts/build-exam-frequency.mjs && node scripts/build-practice-topics.mjs",
     "test:topics-browser": "node tests/practice-topics-browser.mjs",
-    "test:topics-layout": "node tests/topic-layout-browser.mjs"
+    "test:topics-layout": "node tests/topic-layout-browser.mjs",
+    "build:assistant": "node scripts/build-study-assistant.mjs",
+    "test:assistant": "node --test tests/study-assistant/*.test.mjs",
+    "check:assistant-sources": "node scripts/prepare-assistant-sources.mjs --check && node scripts/check-assistant-source-revisions.mjs --check"
   }
 }

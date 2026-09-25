@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "filename": "CAFA2 Tentamenuitleg oktober 2022 - diatekst en ingesloten berekeningen.md",
+      "status": "quarantined",
+      "reason": "De echte koelcellenproef bleef temporal- en closing-rate-bedragen verwarren. Niet opnieuw koppelen zonder inhoudelijke hercontrole. Beide geuploade versies zijn ontkoppeld; oorspronkelijke presentatie en Word/PDF-uitwerking blijven beschikbaar.",
+      "source": "Thieu Mooren/Slides Uitwerking Tentamen 2022 okt 6 copyright Nyenrode Business Universiteit].pptx",
+      "sourceHash": "ae4c0bbe523c90a3df38bc2953dda5b205e12d791286ffc6f01db5f0f1e1a87b",
+      "uploadHash": "4e2afc46e44640355bf14492466077d1fd2562a3a29759475a09da6f6d5b6206",
+      "generator": "scripts/extract-presentation-sources.py",
+      "slides": 42,
+      "uniqueEmbeddedWorkbooks": 19,
+      "note": "Diatekst en opgeslagen Excel-celwaarden uit alleen het actieve tabblad, met formules, herkomst en Nederlandse schrijfwijze van gehele bedragen. Andere meegekopieerde tabbladen zijn uitgesloten. Geen herberekening of visuele transcriptie; geen vervanging van de oorspronkelijke presentatie."
+    }
+  ]
+}

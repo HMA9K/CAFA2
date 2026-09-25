@@ -1,3 +1,12 @@
 node_modules/
 .DS_Store
 *.log
+
+dist/
+.env*
+.dev.vars*
+assistant/server/catalog.generated.mjs
+assistant/server/catalog-parts/
+.study-source-results*.json
+.study-assistant-backup/
+__pycache__/
