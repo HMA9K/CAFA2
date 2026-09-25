@@ -77,6 +77,8 @@ try:
         page.wait_for_function('!document.querySelector("#study-assistant").open')
     def current_ref(bank,question,kind):
       page.wait_for_function('!document.querySelector(".study-assistant-launch").hidden')
+      if kind=='practice':
+        page.wait_for_function('''([bank,q]) => document.querySelector('[data-context-title]').textContent===CAFA2_DATA.modules[bank].title+' · Vraag '+q''',arg=[bank,str(question)])
       ensure_open();send('Toon de actuele vraagcontext.')
       check(f'{kind} {bank} {question} uses its own question',requests[-1]['ref']=={'course':'CAFA2','kind':kind,'bankId':bank,'questionId':str(question)})
     storage=page.evaluate('JSON.stringify({...localStorage})')

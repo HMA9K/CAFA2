@@ -24,7 +24,11 @@ def readable(value):
     if value is None:
         return ''
     if isinstance(value, float):
+        if value.is_integer() and abs(value) >= 1000:
+            return f'{int(value)} (' + format(int(value), ',').replace(',', '.') + ')'
         return format(value, '.12g')
+    if isinstance(value, int) and not isinstance(value, bool) and abs(value) >= 1000:
+        return f'{value} (' + format(value, ',').replace(',', '.') + ')'
     return str(value).replace('\r', '').replace('\n', ' / ').replace('|', '\\|')
 
 def extract(source):
@@ -54,7 +58,9 @@ def extract(source):
                 values = load_workbook(io.BytesIO(raw), data_only=True, read_only=True, keep_links=False)
                 formulas = load_workbook(io.BytesIO(raw), data_only=False, read_only=True, keep_links=False)
                 sheets = []
-                for sheet in values:
+                # Embedded workbooks can carry unrelated exercise tabs. The active
+                # tab is the best stored evidence for the sheet selected in PowerPoint.
+                for sheet in [values.active]:
                     if sheet.max_row > 500 or sheet.max_column > 100:
                         raise ValueError(f'Werkblad te groot voor gecontroleerde extractie: {sheet.title}')
                     rows = []
@@ -91,6 +97,8 @@ def companion(source):
              'Deze aanvulling bevat de oorspronkelijke diatekst en opgeslagen waarden/formules uit ingesloten Excel-werkbladen. '
              'Formules zijn niet opnieuw berekend. Een ingesloten werkblad kan meer cellen bevatten dan de zichtbare uitsnede op de dia. '
              'Afbeeldingen en pijlen zijn niet automatisch vertaald naar tekst. Gebruik het origineel voor de visuele indeling. '
+             'Alleen het actieve tabblad per ingesloten werkboek is opgenomen; andere meegekopieerde tabbladen zijn niet gebruikt. '
+             'Bij gehele bedragen vanaf 1000 staat de Nederlandse schrijfwijze ook tussen haakjes. '
              'Dia-aanduidingen verwijzen naar de volgorde in het originele bestand. Titels en jaartallen zijn ongewijzigd overgenomen.', '']
     for slide in slides:
         lines.extend([f'## Dia {slide["number"]}', '', slide['text'], ''])
@@ -99,6 +107,9 @@ def companion(source):
     missing = 0
     for index, book in enumerate(books.values(), 1):
         lines.extend([f'## Ingesloten werkblad {index}, gekoppeld aan dia ' + ', '.join(map(str, book['slides'])), ''])
+        for number in book['slides']:
+            slide = next(s for s in slides if s['number'] == number)
+            lines.extend([f'Bijbehorende oorspronkelijke diatekst, dia {number}:', slide['text'], ''])
         for sheet in book['sheets']:
             lines.extend([f'### Blad {sheet["sheet"]}', '', 'Elke regel houdt de cellen uit één oorspronkelijke werkbladrij bij elkaar.', ''])
             for cells in sheet['rows']:
