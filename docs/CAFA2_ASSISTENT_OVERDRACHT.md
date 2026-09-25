@@ -1,8 +1,20 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.4. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.5. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
-## Actuele status: testsite geeft echte modelantwoorden
+## Actuele aanvulling: bronkoppeling hersteld
+
+Code `2c9e873` is op 25 september 2026 succesvol gepubliceerd op de testsite: deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7`. De bronbank `vs_6ab636fd5e9481919a1535a662158ed4` bevat 95 bestanden; de API-controle meldt 0 mislukte en 0 lopende indexeringen. Alle 18 bestanden uit `assistant/source-attachments.json` hebben status `completed`: acht repetitieopgaven, acht uitwerkingen, het repetitieprogramma en aanvullende literatuur over belastinglatenties. Deze uitvoering voegde geen dubbele bestanden toe (`added: 0`); de 18 bestanden waren bij de hercontrole al gekoppeld.
+
+De mislukte vorige publicatie kwam door twee verkeerd overgenomen bestandsnamen. De dubbele spaties in de originele uitwerkingen van Niedorp-Swaza en Zeevang ontbraken in de koppellijst. Beide namen zijn exact hersteld, zonder bestanden over te slaan of broninhoud te veranderen. De controle verzamelt voortaan alle afwijkende identiteiten vóór enige koppeling. Een nieuwe regressie vergelijkt de volledige koppellijst letterlijk met het bronmanifest, inclusief spaties.
+
+Lokaal slagen 88 Node-tests, de integratie-dry-run, build, deploycontrole en `git diff --check`. De testsite geeft HTTP 200 op `/api/study-status`, met `ready: true` en beide documentvlaggen aan. Deze vlaggen bewijzen de configuratie, niet de kwaliteit van elk antwoord. Zie de actuele sectie in de teststatus voor de afzonderlijke model- en CI-proeven.
+
+Beide GitHub Actions-workflows zijn geslaagd op `2c9e873`; de log bevestigt 88 Node-tests en 230 browsercontroles met gesimuleerde antwoorden. Twee afzonderlijke echte chatverzoeken hebben beide herstelde uitwerkingen teruggevonden: de closing rate-methode en slotkoers bij Niedorp-Swaza en de eerste journaalpost bij Zeevang zijn tegen pagina 1 van de originele PDF's gecontroleerd. Het eerste gecombineerde verzoek vond alleen Niedorp-Swaza; de gerichte vervolgvraag vond Zeevang. Zoeken naar meerdere documenten in één bericht en de consistente beschrijving van gevonden bronnen blijven een expliciet kwaliteitspunt.
+
+De passages hieronder beschrijven eerdere stappen. Uitspraken daarin dat nog geen documenten zijn gekoppeld zijn historische status en worden door deze aanvulling vervangen. De broncontrole is nog niet volledig afgerond voor alle 116 kandidaten: de drie afzonderlijk te beoordelen aanvullende documenten en de oudere/dubbele bronversies blijven open. De oorspronkelijke site `cafa2.pages.dev` is niet omgezet; PR #13 is niet gemerged. Geen secret hoeft opnieuw te worden ingevuld voor deze reparatie.
+
+## Eerdere status: testsite geeft echte modelantwoorden
 
 Na het opwaarderen door de eigenaar geeft [de testsite](https://cafa2-assistent-test.pages.dev) echte antwoorden met `gpt-5.4-mini`. Er zijn 17 geslaagde modelverzoeken uitgevoerd, via de browser en de echte Cloudflare-chatroute. Hints, directe uitwerkingen, een onjuiste antwoordletter, eigen antwoorden, journaalposten, voorraadtabellen, een vraag uit een volledig tentamen en vervolgvragen zijn inhoudelijk beoordeeld. Dit is een beperkte steekproef, geen volledige inhoudscontrole van alle vragen. Zie de [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor resultaten per geval.
 

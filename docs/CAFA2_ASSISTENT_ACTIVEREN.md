@@ -2,6 +2,14 @@
 
 Bijgewerkt op 25 september 2026. De afzonderlijke testomgeving is op verzoek ingericht. De oorspronkelijke CAFA2-productiesite is niet omgezet.
 
+## Actuele aanvulling na herstel van twee bronnamen
+
+De documentbank is ingesteld via `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`. Op 25 september bevestigt de echte API-controle 95 bestanden, zonder mislukte of lopende indexering. Alle 18 regels uit `assistant/source-attachments.json` zijn geïndexeerd, inclusief de uitwerkingen van Niedorp-Swaza en Zeevang. De eerdere fout betrof uitsluitend ontbrekende dubbele spaties in die twee geregistreerde namen. Niets is overgeslagen. Deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7` vanaf `2c9e873` is geslaagd.
+
+De bestaande secrets werken ook in de beveiligde buildomgeving en hoeven niet opnieuw te worden ingevuld. De extra synchronisatiestap controleert eerst alle geselecteerde identiteiten, koppelt uitsluitend ontbrekende bestaande uploads en wacht op indexering. Zij uploadt geen lokale documenten en verwijdert niets. In deze hercontrole waren alle 18 al aanwezig, dus `added: 0`. Nieuwe lokale documenten moeten nog steeds bewust door de broncontrole en uploadprocedure. Nieuwe bestandsnamen alleen in de lokale map zijn niet automatisch gekoppeld.
+
+De resterende broncontrole omvat onder meer `Overzicht wetboek.docx`, de wijnpresentatie en de tentamenuitleg van oktober 2022 met ingesloten berekeningstabellen. Oudere/dubbele bronversies vragen een expliciete selectie. De 95 geïndexeerde bestanden betekenen niet dat alle 116 kandidaten inhoudelijk gecontroleerd zijn. Zie de actuele [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
+
 ## Ingerichte testomgeving
 
 De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is openbaar bereikbaar, met toegangscode voor de chat. Na het opwaarderen door de eigenaar werken echte modelaanroepen: 17 antwoorden zijn ontvangen en inhoudelijk beoordeeld.
@@ -10,7 +18,7 @@ De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch
 | --- | --- |
 | Pages-project | `cafa2-assistent-test`, gekoppeld aan `HMA9K/CAFA2` |
 | Branch | `codex/cafa2-assistant-handoff` |
-| Build command | `node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs` |
+| Build command | `node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs && node scripts/sync-assistant-store.mjs --apply` |
 | Output / root / Node.js | `dist` / repository-root / `22` |
 | D1 | Aparte database `cafa2-assistent-test`, EU-jurisdictie, binding `STUDY_DB` |
 | Schema | `assistant/server/schema.sql` uitgevoerd; tabel en index bevestigd |
@@ -36,11 +44,11 @@ De eigenaar heeft het API-tegoed opgewaardeerd. Open een vraag op de testsite, o
 
 Actuele code: `aaea2a6`, geslaagde deployment `7db4b13e-3895-4aea-b0c6-4253e7197383`. Echte hints, berekeningen, journaalposten, een voorraadtabel, een tentamenvraag, correctie van een verkeerde antwoordletter en vervolgvragen zijn gecontroleerd. Formuleweergave, tabelkeuze en onduidelijke rekenuitleg zijn daarna gericht verbeterd en opnieuw beproefd. Zie [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor de beperkte reikwijdte en CI-resultaten.
 
-De eerdere deployment `04952337-5210-4741-a222-fd1064def0e9` gaf nog `credit_balance_exhausted`. Die blokkade is opgelost. De gerichte foutafhandeling blijft bestaan; zie [OpenAI-foutcodes](https://developers.openai.com/api/docs/guides/error-codes). De volgende bronstap is de controle en volledige indexering van de originele documenten hieronder, gevolgd door instelling van `OPENAI_COURSE_VECTOR_STORE_ID`. De huidige assistent heeft die documenten nog niet gelezen.
+De eerdere deployment `04952337-5210-4741-a222-fd1064def0e9` gaf nog `credit_balance_exhausted`. Die blokkade is opgelost. De gerichte foutafhandeling blijft bestaan; zie [OpenAI-foutcodes](https://developers.openai.com/api/docs/guides/error-codes). De documentbank is inmiddels ingesteld; de resterende broncontrole staat bovenaan dit document.
 
 Alleen bij een toekomstige nieuwe omgeving zijn de handmatige secrets `OPENAI_API_KEY` en een `STUDY_ACCESS_CODE` van minimaal 16 tekens opnieuw nodig, rechtstreeks in de beveiligde Cloudflare-instellingen. Plaats ze niet in Git of chat.
 
-De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Responses werkt binnen het ingestelde API-project; File Search is nog niet gekoppeld of echt getest.
+De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Responses werkt binnen het ingestelde API-project. De documentbank is gekoppeld; indexering en inhoudelijke antwoordproeven zijn afzonderlijke controles, vastgelegd in de teststatus.
 
 ## Achtergrond: oorspronkelijke Pages-fout op 24 september 2026
 
@@ -90,11 +98,11 @@ Plaats secrets alleen in de daarvoor bedoelde beveiligde runtime-instellingen. G
 
 ## Originele bronnen
 
-Er zijn nog geen oorspronkelijke syllabi, slides of tentamen-PDF's voor deze assistent geüpload. De huidige catalogus gebruikt de bestaande vraagdata en bijbehorende uitwerkingen uit deze repository. `OPENAI_COURSE_VECTOR_STORE_ID` ontbreekt, waardoor File Search nu geen documentbank heeft. De afzonderlijke bronmanifest- en importprocedure op deze branch legt vast welke lokale bestanden in aanmerking komen; de manifestregels zijn geen geïndexeerde inhoud.
+De vraagcatalogus gebruikt de vraagdata en bijbehorende uitwerkingen uit deze repository. Aanvullend is de originele documentbank met 95 bestanden gekoppeld. De afzonderlijke bronmanifest- en importprocedure legt vast welke 116 lokale bestanden in aanmerking komen; manifestregels alleen bewijzen geen indexering of inhoudelijke controle.
 
 Bij toekomstige toevoegingen gelden twee stappen. Nieuwe MC-vragen in `content/practice/new-*.json` moeten eerst met `node scripts/build-practice-topics.mjs` worden gegenereerd; de assistentbuild weigert een verouderde vraagbank. Nieuwe tentamenbestanden in `data/` moeten door `index.html` worden geladen; anders stopt de build. Daarna maakt iedere assistentbuild een actuele servercatalogus. Nieuwe of gewijzigde zelfstandige cursusdocumenten moeten apart door de onderstaande broncontrole en, na de vereiste broncontrole, opnieuw worden geïndexeerd. De lokale bronmap triggert zelf geen Cloudflare-deployment.
 
-In de lokale CAFA2-projectmap zijn als mogelijke CAFA2-bronnen aangetroffen, maar **niet geïndexeerd of geüpload**:
+Onderstaande tabel is de oorspronkelijke inventarisatie vóór upload, met de toen genoteerde aandachtspunten. De actuele technische indexeringsstatus staat bovenaan:
 
 | Bronset | Aangetroffen bestanden | Nog nodig voor koppeling |
 | --- | --- | --- |

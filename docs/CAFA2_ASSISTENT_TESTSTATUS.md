@@ -2,7 +2,20 @@
 
 Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
-## Actuele status na opwaarderen, 25 september 2026
+## Actuele bronreparatie, 25 september 2026
+
+- Twee afwijkende bestandsnamen gevonden door de exacte browser-DOM-tekst met het bronmanifest te vergelijken: dubbele spatie na `Niedorp-Swaza` en na `2 -` bij de uitwerking van Zeevang. De browserweergave had deze spaties visueel samengevoegd. Dit waren fouten in de koppellijst, geen aangetoonde inhoudsfouten in de PDF's.
+- Code `2c9e873` herstelt beide namen en meldt alle identiteitsafwijkingen voordat bestanden worden gekoppeld. Drie regressies toegevoegd: alle afwijkingen tegelijk melden, spaties strikt behouden, en alle 18 bestandsnamen letterlijk vergelijken met het bestaande bronmanifest.
+- Lokaal: 88 Node-tests geslaagd; integratie-dry-run zonder veranderingen; build (247 oefenvragen, 285 tentamenrecords waarvan 3 demo), deploycontrole (134 publieke bestanden, 4 routes) en `git diff --check` geslaagd.
+- Cloudflare-deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7` van `2c9e873` geslaagd. Echt API-resultaat uit het buildlog: `added: 0`, `completed: 18`, `total: 95`, `failed: 0`, `pending: 0`. Alle 18 geselecteerde documenten zijn dus gekoppeld en geïndexeerd; deze hercontrole heeft geen documenten toegevoegd, overgeslagen of verwijderd.
+- Live statusroute opnieuw HTTP 200/JSON, `ready: true`, `knowledge.questions`, `theoryFiles` en `reviewFiles` alle true. Geen secrets gelezen of opnieuw ingesteld. De oorspronkelijke productiesite is ongewijzigd.
+- GitHub Actions op `2c9e873`: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36127568103) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36127572328) geslaagd. De joblog bevestigt 88 Node-tests, 230 browsercontroles (115 Chromium, 115 WebKit), geen JavaScript-runtimefouten, bestaande regressies, build, deploycontrole en Function-bundeling. De automatische modelantwoorden zijn gesimuleerd.
+- Twee echte browserverzoeken met File Search uitgevoerd op de gepubliceerde versie. Niedorp-Swaza: closing rate-methode en koers 31 december 2023 `EUR 1 = SVE 0,94` correct volgens pagina 1 van de originele uitwerking. Zeevang, gericht vervolgverzoek: deelneming Etersheim 540.000 debet, geplaatst kapitaal 200.000 credit, agio 280.000 credit en liquide middelen 60.000 credit; ook de herleiding via 4.000 aandelen klopt met pagina 1 van de PDF. De bronuitklapper toont de Zeevang-uitwerking onder `Opgehaalde documenten`. Deze antwoorden zijn echt, niet gesimuleerd.
+- Beperking in diezelfde proef: het eerste verzoek vroeg beide documenten tegelijk, maar haalde alleen Niedorp-Swaza op. De opening beweerde ten onrechte dat beide gevonden waren; verderop meldde het antwoord wel dat Zeevang ontbrak. De gerichte vervolgvraag vond Zeevang vervolgens correct. De huidige limiet is één File Search-aanroep met maximaal vier resultaten per bericht. Dit is een open punt voor zoekstrategie en consistente formulering bij meerdere documenten, geen bewijs dat de Zeevang-upload ontbreekt. Deze ronde verandert de modelinstructies of zoeklimieten niet.
+
+Onderstaande secties leggen de eerdere proeven vast; uitspraken over ontbrekende documenten beschrijven het toenmalige moment. Indexering is afzonderlijk van inhoudelijke modelkwaliteit en controle van afbeeldingen/tabellen.
+
+## Eerdere status na opwaarderen, 25 september 2026
 
 De testsite geeft echte antwoorden met `gpt-5.4-mini`. Na de opwaardering zijn 17 succesvolle modelverzoeken uitgevoerd: drie via de echte browserinterface en veertien via de beveiligde Cloudflare-chatroute, met de canonieke vraagcontext. Alle veertien vastgelegde HTTP-antwoorden hadden status 200, de verwachte `questionKey` en `incomplete: false`. De onderstaande inhoudelijke beoordeling is een beperkte steekproef tegen de bestaande vraagbank en antwoordmodellen, geen onafhankelijke audit van alle broninhoud.
 
