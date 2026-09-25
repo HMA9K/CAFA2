@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
 import {syncAttachments,validateAttachments} from '../../scripts/sync-assistant-store.mjs';
 const plan={version:1,storeId:'vs_course',files:[{id:'file-one',filename:'Opgave.pdf'},{id:'file-two',filename:'Uitwerking.pdf'}]};
 function api({wrongName=false,fail=false}={}){
@@ -38,4 +39,27 @@ test('verkeerde bank of bestandsidentiteit blokkeert voordat er iets wordt gekop
 test('mislukte indexering en ruwe providerfouten worden niet als succes weergegeven',async()=>{
   await assert.rejects(syncAttachments(plan,{key:'test-key-no-secret',apply:true,...api({fail:true})}),/niet worden geïndexeerd/);
   await assert.rejects(syncAttachments(plan,{key:'test-key-no-secret',fetcher:async()=>new Response('SECRET INPUT',{status:403})}),e=>/HTTP 403/.test(e.message)&&!e.message.includes('SECRET'));
+});
+
+test('alle afwijkende bestanden worden tegelijk gemeld zonder iets te koppelen',async()=>{
+  const remote=api({wrongName:true});let checked=0;
+  const fetcher=async(url,options)=>{if(new URL(url).pathname.startsWith('/v1/files/'))checked++;return remote.fetcher(url,options);};
+  await assert.rejects(syncAttachments(plan,{key:'test-key-no-secret',apply:true,fetcher}),error=>
+    error.message.includes('(2)')&&error.message.includes('Opgave.pdf')&&error.message.includes('Uitwerking.pdf'));
+  assert.equal(checked,2);assert.equal(remote.writes.length,0);
+});
+
+test('dubbele spaties zijn onderdeel van de exacte bestandsidentiteit',async()=>{
+  const remote=api();
+  const spaced={...plan,files:[plan.files[0],{...plan.files[1],filename:'Uitwerking  .pdf'}]};
+  await assert.rejects(syncAttachments(spaced,{key:'test-key-no-secret',apply:true,...remote}),/identiteit/);
+  assert.equal(remote.writes.length,0);
+});
+
+test('de volledige koppellijst gebruikt de letterlijke namen uit het bronmanifest',async()=>{
+  const read=async name=>JSON.parse(await readFile(new URL('../../assistant/'+name,import.meta.url),'utf8'));
+  const attachments=await read('source-attachments.json'),manifest=await read('source-manifest.json');
+  const names=new Set(Object.values(manifest.groups).flat().map(p=>p.split('/').at(-1)));
+  validateAttachments(attachments);
+  for(const file of attachments.files)assert.ok(names.has(file.filename),`Naam ontbreekt letterlijk in bronmanifest: ${file.filename}`);
 });
