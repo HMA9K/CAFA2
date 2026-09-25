@@ -41,13 +41,19 @@ export async function syncAttachments(plan,{key,storeId=plan?.storeId,apply=fals
     after=result.last_id;
   }
   // Verify every identity before the first mutation. A stale ID must never attach another file.
+  const mismatches=[],failed=[];
   for(const f of plan.files){
     const actual=await api('GET',`/files/${f.id}`);
     if(actual.id!==f.id||actual.filename!==f.filename||actual.purpose!=='assistants')
-      throw new Error(`Bestandsidentiteit komt niet overeen: ${f.filename}`);
+      mismatches.push(f.filename);
     const status=current.get(f.id)?.status;
-    if(status==='failed'||status==='cancelled')throw new Error(`Indexering mislukt: ${f.filename}`);
+    if(status==='failed'||status==='cancelled')failed.push(f.filename);
   }
+  // Report the whole selection, not just the first mismatch. Never log provider bodies or secrets.
+  const problems=[];
+  if(mismatches.length)problems.push(`Bestandsidentiteit komt niet overeen (${mismatches.length}): ${JSON.stringify(mismatches)}`);
+  if(failed.length)problems.push(`Indexering mislukt (${failed.length}): ${JSON.stringify(failed)}`);
+  if(problems.length)throw new Error(problems.join('\n'));
   const missing=plan.files.filter(f=>!current.has(f.id));
   if(!apply)return {missing:missing.map(f=>f.filename),attached:plan.files.length-missing.length,
     pending:plan.files.filter(f=>current.get(f.id)?.status==='in_progress').length,total:current.size};
