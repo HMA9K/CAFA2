@@ -2,7 +2,21 @@
 
 Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
-## Online testomgeving, 25 september 2026
+## Activering en echte API-proef, 25 september 2026
+
+- Beide secrets zijn in Cloudflare Production van `cafa2-assistent-test` bevestigd, uitsluitend op aanwezigheid en type gecontroleerd. Geen API-sleutel uitgelezen of in Git opgeslagen. Activering staat nu op true.
+- Activeringsdeployment `1c88fb4f-678d-44a2-8605-25d97bb39c2d` vanaf `2524ae7` geslaagd; `/api/study-status` geeft 200/JSON met `ready: true` en zonder documentkoppeling.
+- Echte browserlogin geslaagd. Afzonderlijke HTTP-controle: auth 200; cookie met `__Host-`, `HttpOnly`, `Secure`, `SameSite=Strict`; ingelogde status true; logout 200 en `Max-Age=0`; daarna ingelogde status false. De browsersessie bleef na herladen geldig.
+- Een eerste echte hintvraag bij Kapitaalbelangen vraag 7 kreeg een algemene 429-melding. D1 bevatte daarna afzonderlijke login-, minuut-, IP- en dagtellers. Dit bewijst de tellers via de Function, nog geen live overschrijdingsproef.
+- De foutafhandeling is verbeterd in `994a113`: bekende tegoed-, bestedings- en gebruikslimietfouten onderscheiden zich van tijdelijke verzoeklimieten. Geen ruwe providermelding wordt weergegeven. Bij tegoedfouten wordt geen misleidende `Retry-After` meegestuurd. Zeven nieuwe regressietests, 81 Node-tests totaal, slagen.
+- Automatische testdeployment `04952337-5210-4741-a222-fd1064def0e9` van `994a113` geslaagd. Tweede echte browservraag geeft `Het OpenAI API-tegoed is op`, de vaste vertaling van `credit_balance_exhausted`. De vraag blijft in het invoerveld; opgeslagen oefenantwoorden blijven intact. Geen modelantwoord ontvangen.
+- Lokaal: 81 Node-tests, alle tien bestaande regressiescripts, JSDOM-opgaveroutes inclusief historische pogingen, integratie-dry-run, build en deploycontrole geslaagd. Chromium: 115 controles geslaagd, geen JavaScript-runtimefouten; de brede browserproef gebruikt nog steeds een gesimuleerde antwoorddienst.
+- GitHub Actions op `994a113`: [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36100708946) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36100711313) geslaagd. Joblog gelezen: 81 Node-tests, 0 fouten; 115 Chromium- en 115 WebKit-browsercontroles, beide zonder runtimefouten. Deze modelantwoorden zijn gesimuleerd.
+- Het oude project slaat de nieuwe branchpush opnieuw over (`is_skipped=true`); oorspronkelijke productiedeployment `8022ca96-d53c-4a28-a5df-90b0c660b8d1` blijft actief. PR #13 blijft concept, niet gemerged.
+
+Resterend: eigenaar voegt OpenAI API-tegoed toe; daarna echte modelvragen voor hint, direct antwoord, onjuiste aanname, berekening, journaalpost, voorraad en vervolgvragen. Bronindexering, File Search en een fysiek mobiel toetsenbord blijven afzonderlijke controles. Geen geld besteed aan opwaarderen, geen bestedingslimiet aangepast en geen bronbestand geüpload.
+
+## Eerdere online inrichting met uitgeschakelde dienst, 25 september 2026
 
 - Definitieve codecommit `b6bc210`: [CAFA2 assistant handoff checks](https://github.com/HMA9K/CAFA2/actions/runs/36071283868) en [Validate CAFA2](https://github.com/HMA9K/CAFA2/actions/runs/36071288614) geslaagd. Jobstappen en assistentlog gelezen: 74 Node-tests, build/deploycontrole, bestaande regressies, Function-bundeling en 115 browsercontroles in elk van Chromium en WebKit. De aanvullende documentatiecommit verandert geen uitvoerbare code en gebruikt `[skip ci]`.
 - [De afzonderlijke testsite](https://cafa2-assistent-test.pages.dev) is gepubliceerd vanaf `c33f83a`: deployment `7dee8e44-2d47-4cbd-a119-8030bed341a4` geslaagd. Cloudflare-log gelezen: Node.js 22.22.0, juiste build en deploycontrole, 247 oefenvragen, 134 tentamenrecords, 128 publieke bestanden en succesvolle Function-bundeling.
@@ -18,7 +32,7 @@ Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Conc
 - Automatische Git-publicatie na synchronisatie bevestigd op `b5883d8` en `b6bc210`; laatste testdeployment `bc07d611-688e-4fe7-afd1-4deb99207a51` geslaagd. Op beide commits slaat het oude project de branch aantoonbaar over (`is_skipped=true`). De online catalogus en het dashboard bevatten alle elf tentamens; het paneel is ook bij vraag 1 van april 2021 gecontroleerd.
 - Alle vier echte API-routes reageren met JSON: status 200; auth/chat/logout met dezelfde Origin geven bij de uitgeschakelde dienst correct 503 `not_configured`. Geen modelaanroep gedaan. De oude vaste telling van vijf tentamens op de startpagina is verwijderd en de gepubliceerde HTML is gecontroleerd.
 
-Nog niet getest: echte login en sessiecookie, D1-quota via de Function, modelbeschikbaarheid en inhoudelijke kwaliteit, File Search en een fysiek mobiel toetsenbord. Originele documenten zijn niet geüpload.
+Bij bovenstaande eerdere inrichting nog niet getest: echte login en sessiecookie, D1-quota via de Function, modelbeschikbaarheid en inhoudelijke kwaliteit, File Search en een fysiek mobiel toetsenbord. De vervolgstappen staan in de actuele activeringssectie bovenaan. Originele documenten zijn niet geüpload.
 
 ## Eerdere uitgevoerde controles
 
@@ -60,7 +74,7 @@ Verder worden 320, 390 en 430 px breedte, liggend scherm, licht/donker, een verk
 
 ## Nog te valideren buiten deze branchcontrole
 
-Het bestaande Cloudflare-project blijft `exit 0` en output `.` gebruiken voor `main`. De werkbranch bouwt nu op het afzonderlijke `cafa2-assistent-test` met de juiste opdracht en `STUDY_DB`. Voor de twee ontbrekende secrets en aangetroffen, nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
+Het bestaande Cloudflare-project blijft `exit 0` en output `.` gebruiken voor `main`. De werkbranch bouwt nu op het afzonderlijke `cafa2-assistent-test` met de juiste opdracht, `STUDY_DB` en beide secrets. Voor ontbrekend API-tegoed en de nog niet gekoppelde bronbestanden: [CAFA2_ASSISTENT_ACTIVEREN.md](CAFA2_ASSISTENT_ACTIVEREN.md).
 
 Voer na een geautoriseerde preview-inrichting een echte proef uit voor login, beveiligde cookie, D1-quota, een kleine set inhoudelijke modelvragen en indien toegestaan File Search. Beoordeel bij modelvragen vooral ongevraagde spoilers, directe uitwerkingen, een onjuiste veronderstelling zoals 'B is goed', herkomst van bedragen, vervolgstappen en een onvolledig antwoordmodel. De grens van 1.800 uitvoertokens omvat ook eventuele reasoning-tokens; controleer daarom of langere uitwerkingen worden afgebroken. Het huidige gesprek bewaart tekstberichten, niet alle interne reasoning-items. De invloed daarvan op vervolgvragen is nog niet gemeten.
 
