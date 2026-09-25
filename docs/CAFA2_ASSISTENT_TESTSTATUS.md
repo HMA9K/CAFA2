@@ -2,7 +2,43 @@
 
 Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
 
-## Actuele bronreparatie, 25 september 2026
+## Actuele vervolgimplementatie, 25 september 2026
+
+### Uitgevoerde controles
+
+- 103 Node-tests geslaagd, waaronder nieuwe proeven voor lange uitwerkingen in vervolgvragen, afzonderlijke bronzoekacties, uitval van één zoekactie, bronwijzigingen met dezelfde naam en bestandsgrootte, en wachten op gelijktijdige indexering.
+- Twee Python-tests controleren de presentatie-extractie: opgeslagen formulewaarden, ontbrekende caches, ongewijzigde originelen, herkomst per dia, dubbele OLE-verwijzingen en uitsluiting van niet-actieve werkbladen.
+- Integratie-dry-run zonder wijzigingen; build en deploycontrole geslaagd: 247 oefenvragen, 282 echte tentamenvragen plus drie demo's, 134 publieke bestanden en vier Functions. De tien bestaande regressiescripts slagen. De aanvullende JSDOM-route is in de lokale Node-run overgeslagen omdat JSDOM daar ontbreekt; de echte routes zijn afzonderlijk in de browserproef getest.
+- Lokaal 118 Chromium- en 118 WebKit-controles geslaagd, inclusief lange vervolgcontext en journaalposten zonder Markdown-scheidingsregel. Desktop, mobiel, donker/licht, een verkleinde toetsenbordviewport, historische inzage, antwoordvensters, alle vraagtypen, elf tentamens en de rekenmachine zijn meegenomen. De antwoorden in deze automatische proeven zijn gesimuleerd.
+- Een lokale WebKit-run typte te vroeg tijdens een routewissel. De test wacht nu op de exacte actuele vraagkop voordat hij invoer verstuurt; de herhaalde run slaagt. De regressies voor vertraagde antwoorden bij vraagwissels blijven behouden.
+
+### Echte modelproeven en gevonden beperkingen
+
+De instructieaanpassing in `31b6ea3` alleen loste de gecombineerde bronvraag niet op: het model vond opnieuw slechts één uitwerking en gaf een tegenstrijdige openingszin. Daarom voert `24b0faa` genummerde documentvragen afzonderlijk uit via Vector Store Search. Op `d99dbce` is dezelfde vraag opnieuw echt getest: Niedorp-Swaza werd juist uitgelegd met closing rate en EUR 1 = SVE 0,94; Zeevang gaf debet Deelneming 540.000 en credit aandelenkapitaal 200.000, agio 280.000 en liquide middelen 60.000. De bronuitklapper bevatte beide uitwerkingen. De berekening van de aankoopprijs kwam overeen met de oorspronkelijke PDF.
+
+Een echte vraag over koelcellen vond de nieuw toegevoegde Word-uitwerking van oktober 2022 en gaf 137.750 + 202.500 = 340.250 correct. Een latere proef met de eerste afgeleide presentatietekst verwarde de temporal- en closing-rate-uitwerking en corrigeerde de onjuiste casusnaam niet goed. Ook verscheen een onvolledige rekenregel. Dit is een inhoudelijke modelmisser, ondanks geslaagde indexering. De extractie is daarop beperkt tot het actieve tabblad, gekoppeld aan de diatekst en voorzien van doorzoekbare Nederlandse getalnotatie. De oude afgeleide zoekversie is ontkoppeld. Zie hieronder de afsluitende proef; het vinden van een bestand bewijst op zichzelf geen correcte interpretatie van iedere berekening.
+
+De tabelweergave met ontbrekende scheidingsregels is in het echte gecombineerde antwoord gezien en daarna gerepareerd met twee browserregressies. De gepubliceerde renderermodule is rechtstreeks op de testsite gecontroleerd.
+
+### Bron- en deploymentcontrole
+
+Deployment `a71a6997-d4ba-4c1f-9d5f-ea128eee9a74` op `f337985` is geslaagd. Het gelezen buildlog meldt `completed: 39`, `total: 116`, `added: 0`, `failed: 0`, `pending: 0`. De 116 bestaan uit 115 oorspronkelijke bronnen en één zoekbare aanvulling; het wetboekoverzicht blijft te beoordelen. De drie statusvlaggen zijn aan en `/api/study-status` geeft HTTP 200 met `ready: true`. De oorspronkelijke productiesite is niet omgezet.
+
+Een eerdere build op `24b0faa` stopte omdat zestien nieuw geüploade bestanden nog indexeerden. Er waren geen mislukte bestanden. De volgende deployment op `d99dbce` slaagde. De synchronisatie wacht sinds `f337985` binnen zijn bestaande wachttijd op zulke gelijktijdige uploads, met behoud van de foutcontrole.
+
+Op `f337985` zijn [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36132217574) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36132222426) geslaagd. Het definitieve resultaat na de vervanging van de afgeleide bron wordt hieronder vermeld.
+
+Open: fysieke telefoon met echt toetsenbord, volledige visuele interpretatie van dia-afbeeldingen en een brede inhoudelijke audit van modelantwoorden. De doelgerichte echte proeven zijn een steekproef. De limieten blijven 30 per UTC-dag en 20 per IP; er is geen teller gereset of limiet verhoogd. `main` is niet gemerged.
+
+### Afsluitende bronproef en keuze
+
+Na de aangepaste extractie gaf de echte koelcellenproef opnieuw een onjuiste splitsing: 225.000 + 115.250 in plaats van de onderbouwde 202.500 + 137.750. Ook de verkeerde casusnaam Rast werd niet duidelijk gecorrigeerd naar Kröne/Blatten. Beide afgeleide Markdown-versies zijn daarom uit de documentbank ontkoppeld; de oorspronkelijke presentatie en de Word/PDF-uitwerkingen blijven gekoppeld. `assistant/source-derived.json` markeert de afgeleide bron als `quarantined`; de regressie verhindert heropname in de koppellijst. Dit is een afgekeurde modelproef, geen geslaagde inhoudscontrole. De eindselectie bevat 115 oorspronkelijke bronbestanden en 38 expliciet gecontroleerde aanvullende koppelingen.
+
+De voorlaatste code `040222c` is gepubliceerd via deployment `330d9b3e-9da8-420a-afc2-6b8c3e8c0077`. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36132886903) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36132891449) zijn geslaagd. Joblog gelezen: 103 Node-tests, twee extractietests en 236 browsercontroles, geen JavaScript-runtimefouten. De afsluitende bronselectie wordt eveneens via de build gecontroleerd.
+
+De volgende secties zijn historische testresultaten.
+
+## Eerdere bronreparatie, 25 september 2026
 
 - Twee afwijkende bestandsnamen gevonden door de exacte browser-DOM-tekst met het bronmanifest te vergelijken: dubbele spatie na `Niedorp-Swaza` en na `2 -` bij de uitwerking van Zeevang. De browserweergave had deze spaties visueel samengevoegd. Dit waren fouten in de koppellijst, geen aangetoonde inhoudsfouten in de PDF's.
 - Code `2c9e873` herstelt beide namen en meldt alle identiteitsafwijkingen voordat bestanden worden gekoppeld. Drie regressies toegevoegd: alle afwijkingen tegelijk melden, spaties strikt behouden, en alle 18 bestandsnamen letterlijk vergelijken met het bestaande bronmanifest.

@@ -82,7 +82,8 @@ test('de volledige koppellijst gebruikt de letterlijke namen uit het bronmanifes
     assert.ok(originals.has(file.source),'Afgeleid document moet naar een echte oorspronkelijke bron verwijzen');
     assert.equal(snapshot.files.find(x=>x.relative===file.source)?.sourceHash,file.sourceHash,'Genereer de zoekbare versie opnieuw bij een gewijzigde presentatie');
     assert.match(file.uploadHash,/^[a-f0-9]{64}$/);assert.ok(!names.has(file.filename));
-    names.add(file.filename);
+    if(file.status==='quarantined')assert.ok(!attachments.files.some(x=>x.filename===file.filename),'Een afgekeurde afgeleide bron mag niet automatisch opnieuw worden gekoppeld');
+    else names.add(file.filename);
   }
   validateAttachments(attachments);
   for(const file of attachments.files)assert.ok(names.has(file.filename),`Naam ontbreekt letterlijk in bronmanifest: ${file.filename}`);

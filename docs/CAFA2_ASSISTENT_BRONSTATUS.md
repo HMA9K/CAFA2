@@ -4,23 +4,23 @@ Bijgewerkt op 25 september 2026. Dit beschrijft de bronselectie voor de afzonder
 
 ## Beschikbaar
 
-De documentbank bevat **116 bestanden: 115 oorspronkelijke bronbestanden, waarvan elf oude presentaties als PDF, en één afgeleide zoekbare tekstversie**. Dit is dus niet hetzelfde als alle 116 kandidaten uit het lokale bronmanifest. De actuele indexcontrole meldt nul mislukte en nul lopende indexeringen.
+De documentbank bevat **115 oorspronkelijke bronbestanden, waarvan elf oude presentaties als PDF**. Dit is dus niet hetzelfde als alle 116 kandidaten uit het lokale bronmanifest. De actuele indexcontrole meldt nul mislukte en nul lopende indexeringen.
 
 Beschikbaar zijn de syllabi, opgaven en uitwerkingen uit 2025 en 2026, de tentamenbronnen, alle 40 bestanden uit de repetitiecursus, de aanvullende literatuur over belastinglatenties en de aanvullende presentaties. De jaartallen blijven in de bestandsnamen staan. De 2025-versies zijn behouden ondanks grote overlap met 2026: bijna gelijke tekst is geen bewijs dat edities volledig uitwisselbaar zijn.
 
-De laatste toevoegingen zijn:
+De laatste toevoegingen en de beproefde aanvulling zijn:
 
 - `PRESENTATIE CAFA 2 Voorjaar 2026 WIJNCURSUS.pptx`: bevat ook CAFA2-theorie en boekingen. Het titelblad noemt 17 april 2025; de bestandsnaam noemt 2026. Dit verschil mag niet stilzwijgend worden gladgestreken.
 - `Slides Uitwerking Tentamen 2022 okt 6 copyright Nyenrode Business Universiteit].pptx`: 42 dia's. Het titelblad noemt 10 oktober 2022; de bestandsnaam noemt 6 oktober. Bewaar deze bronvermelding.
 - `TENTAMEN CAFA2 20221006 (1).docx` en `UITWERKINGEN tentamen CAFA2 20221006.docx`: ook opgenomen naast de eerder gekoppelde PDF-versies. Hun tekst is niet volledig identiek.
-- `CAFA2 Tentamenuitleg oktober 2022 - diatekst en ingesloten berekeningen.md`: automatisch uit de presentatie uitgelezen diatekst plus 19 unieke ingesloten Excel-werkboeken, gebruikt op 23 posities. Per berekening staan dia, werkblad, celadres, formule en opgeslagen celwaarde vermeld. Er waren in deze bron geen ontbrekende opgeslagen formule-uitkomsten.
+- **Niet actief gekoppeld:** `CAFA2 Tentamenuitleg oktober 2022 - diatekst en ingesloten berekeningen.md`: automatisch uit de presentatie uitgelezen diatekst plus 19 unieke ingesloten Excel-werkboeken, gebruikt op 23 posities. Per berekening staan dia, werkblad, celadres, formule en opgeslagen celwaarde vermeld. Er waren in deze bron geen ontbrekende opgeslagen formule-uitkomsten.
 - Zestien bestanden uit de editie 2025: drie theoriedelen, zes opgavensyllabi, zes uitwerkingssyllabi en het onderwijsprogramma.
 
 De afgeleide tekst wordt gemaakt met `scripts/extract-presentation-sources.py`. Deze voert geen formules, macro's of externe koppelingen uit. Opgeslagen celwaarden kunnen ouder zijn dan de formule. Een ingesloten werkboek kan meer cellen bevatten dan de zichtbare uitsnede op een dia. Pijlen, afbeeldingen en kleurmarkeringen zijn niet inhoudelijk getranscribeerd. De Windows-renderproef van de EMF-afbeeldingen leverde geen betrouwbare visuele controle op. Dat blijft een beperking; tekstextractie is geen bewijs dat elke afbeelding correct is gelezen.
 
-De oorspronkelijke presentatie en de afgeleide versie blijven afzonderlijk herkenbaar. `assistant/source-derived.json` bevat herkomst en SHA-256-controlesommen, geen broninhoud. De afgeleide tekst staat lokaal in de aparte map `CAFA2-assistant-sources/prepared` en in de documentbank, niet in Git.
+De oorspronkelijke presentatie en de afgeleide versie blijven afzonderlijk herkenbaar. `assistant/source-derived.json` bevat herkomst en SHA-256-controlesommen, geen broninhoud. De afgeleide tekst staat lokaal in de aparte map `CAFA2-assistant-sources/prepared` buiten de actieve documentbank, niet in Git.
 
-De zoekbare presentatie is na een echte modelproef aangepast: alleen het actieve Excel-tabblad wordt uitgelezen. De eerdere versie bevatte ook meegekopieerde tabbladen van andere opgaven en is uit de documentbank ontkoppeld. Diatekst staat nu opnieuw bij het werkblad; gehele bedragen krijgen ook hun Nederlandse schrijfwijze, zodat bijvoorbeeld `340.250` als zoekterm past. Dit beperkt vermenging van casussen, maar bewijst nog geen foutloze interpretatie van alle alternatieve omrekenmethoden.
+De zoekbare presentatie is na een echte modelproef aangepast: alleen het actieve Excel-tabblad wordt uitgelezen. De eerdere versie bevatte ook meegekopieerde tabbladen van andere opgaven en is uit de documentbank ontkoppeld. Diatekst staat nu opnieuw bij het werkblad; gehele bedragen krijgen ook hun Nederlandse schrijfwijze, zodat bijvoorbeeld `340.250` als zoekterm past. De afsluitende modelproef bleef echter de verkeerde bedragen combineren. Daarom zijn beide afgeleide versies ontkoppeld en staat deze bron op `quarantined`. De koppellijst en CI voorkomen heropname zonder bewuste herbeoordeling. Nodig voor heropname: een gecontroleerde transcriptie die de temporal- en closing-rate-berekeningen per dia scheidt, gevolgd door een geslaagde echte modelproef. De oorspronkelijke documenten blijven beschikbaar.
 
 ## Bewust nog niet als cursusbron opgenomen
 

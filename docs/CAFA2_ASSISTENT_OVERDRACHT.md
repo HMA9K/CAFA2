@@ -1,8 +1,25 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.5. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.6. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
-## Actuele aanvulling: bronkoppeling hersteld
+## Actueel: documenten, vervolgvragen en publicatiecontrole
+
+De assistent werkt op [de afzonderlijke testsite](https://cafa2-assistent-test.pages.dev). De documentbank bevat 115 oorspronkelijke bronnen, inclusief geconverteerde oude presentaties. Een extra afgeleide tekstversie is na een mislukte inhoudelijke proef ontkoppeld. Alle 40 repetitiebestanden, de bronedities 2025 en 2026 en de aanvullende tentamenpresentaties zijn opgenomen. De laatste 38 koppelingen worden bij publicatie afzonderlijk op identiteit en indexstatus gecontroleerd. Zie [bronstatus](CAFA2_ASSISTENT_BRONSTATUS.md) voor de volledige afbakening, herkomst en het ene nog te beoordelen wetboekoverzicht.
+
+De implementatie is verder uitgewerkt:
+
+- Genummerde vragen over meerdere documenten krijgen afzonderlijke zoekacties voordat het antwoord wordt opgesteld. Samen met eventueel zoeken door het model geldt een maximum van drie zoekacties per bericht. De echte herhaalde proef vindt nu Niedorp-Swaza én Zeevang met juiste methode, koers en journaalpost. Dit bewijst één concrete regressieproef, geen algemene foutloosheid.
+- Lange eerdere antwoorden worden niet meer geheel uit de gesprekshistorie verwijderd zodra ze meer dan 6.000 tekens bevatten. De nieuwste context blijft binnen acht berichten en 16.000 tekens behouden; uitzonderlijk lange berichten krijgen een expliciete weglatingsmarkering.
+- Een journaalpost of berekening met bekende kolomkoppen wordt ook als tabel getoond als de modeltekst de Markdown-scheidingsregel weglaat. Lege debet- of creditcellen houden hun plaats.
+- Nieuwe of gewijzigde lokale bronbytes worden met SHA-256 vergeleken, ook bij ongewijzigde bestandsnaam en bestandsgrootte. De bestaande cataloguscontrole blijft nieuwe MC- en tentameninhoud meenemen via de build. Losse documenten hebben daarnaast een bewuste uploadstap nodig.
+- De presentatie-extractie leest opgeslagen berekeningen uit het actieve tabblad, met diatekst, celadressen en formules. De eerste versie nam ook meegekopieerde tabbladen van andere opgaven mee; beide afgeleide zoekversies zijn inmiddels ontkoppeld, omdat de laatste modelproef nog verkeerde bedragen gaf. De originelen blijven beschikbaar. Er zijn twee Python-regressies voor de extractie; zij bewijzen geen modelkwaliteit.
+- Cloudflare wacht nu begrensd op nog lopende indexering in dezelfde documentbank. Een tussentijdse build faalde tijdens de upload van de 2025-bronnen; de volgende publicatie slaagde. De nieuwe regressies dekken wachten, blijvend wachten en echte indexeerfouten af.
+
+De recente code staat in `24b0faa`, `d99dbce`, `f337985` en `040222c`. De uiteindelijke test- en deploymentbewijzen staan bovenaan [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). Geen secrets hoeven opnieuw te worden ingevuld voor de testsite. De oorspronkelijke site volgt nog `main`; deze PR blijft concept. SRA, BELRE3, vraaginhoud, antwoordopslag, scores en timers zijn niet aangepast.
+
+De volgende secties zijn historische statusbeschrijvingen. Gebruik de bovenstaande status en de afzonderlijke bronstatus voor vervolgstappen.
+
+## Eerdere aanvulling: bronkoppeling hersteld
 
 Code `2c9e873` is op 25 september 2026 succesvol gepubliceerd op de testsite: deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7`. De bronbank `vs_6ab636fd5e9481919a1535a662158ed4` bevat 95 bestanden; de API-controle meldt 0 mislukte en 0 lopende indexeringen. Alle 18 bestanden uit `assistant/source-attachments.json` hebben status `completed`: acht repetitieopgaven, acht uitwerkingen, het repetitieprogramma en aanvullende literatuur over belastinglatenties. Deze uitvoering voegde geen dubbele bestanden toe (`added: 0`); de 18 bestanden waren bij de hercontrole al gekoppeld.
 
