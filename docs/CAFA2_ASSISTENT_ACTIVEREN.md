@@ -4,7 +4,7 @@ Bijgewerkt op 25 september 2026. De afzonderlijke testomgeving is op verzoek ing
 
 ## Ingerichte testomgeving
 
-De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is via zijn URL openbaar bereikbaar; echte modelaanroepen staan uit.
+De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch `codex/cafa2-assistant-handoff`. Cloudflare noemt deze branch binnen dit afzonderlijke project **Production**. Dat is de testsite, niet de bestaande website `cafa2.pages.dev`. De testsite is openbaar bereikbaar, met toegangscode voor de chat. Modelaanroepen staan aan maar worden momenteel door OpenAI geweigerd wegens ontbrekend API-tegoed.
 
 | Onderdeel | Ingesteld |
 | --- | --- |
@@ -16,7 +16,8 @@ De testsite staat op https://cafa2-assistent-test.pages.dev en volgt automatisch
 | Schema | `assistant/server/schema.sql` uitgevoerd; tabel en index bevestigd |
 | Sessieondertekening | `STUDY_SESSION_SECRET` willekeurig gegenereerd en rechtstreeks als Cloudflare-secret opgeslagen; waarde niet in Git of chat |
 | Voorlopig testmodel | `OPENAI_MODEL=gpt-5.4-mini`; accounttoegang en inhoudelijke kwaliteit nog niet getest |
-| Activering | `STUDY_ASSISTANT_ENABLED=false` |
+| Activering | `STUDY_ASSISTANT_ENABLED=true`, uitsluitend op de afzonderlijke testsite |
+| Toegang en API | `STUDY_ACCESS_CODE` en `OPENAI_API_KEY` door de eigenaar als secrets opgeslagen |
 | Testlimieten | `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20` |
 
 Eerste geslaagde deployment: `7dee8e44-2d47-4cbd-a119-8030bed341a4`, codecommit `c33f83a`. De log bevestigt Node.js 22.22.0, build plus deploycontrole, geslaagde Function-bundeling en publicatie. `/api/study-status` geeft HTTP 200 en JSON met `course: "CAFA2"`, `knowledge.questions: true` en `ready: false`. De assistent herkent in de echte browser vraag 1 en daarna vraag 2. Dit zijn technische controles zonder modelantwoorden.
@@ -29,12 +30,13 @@ Bij beide vervolgpushes is op het oude project `is_skipped=true` bevestigd. De b
 
 ## De eerstvolgende handmatige stap
 
-Open [de instellingen van de testsite](https://dash.cloudflare.com/6ecb240b5f34272ea699322f846c8158/workers-and-pages/pages/view/cafa2-assistent-test/settings/production). Kies binnen **Production**, onder **Variables and Secrets**, tweemaal **Add** met type **Secret**:
+**Geen secrets opnieuw invullen.** Beide zijn op 25 september 2026 in Production van het testproject bevestigd. Inloggen, de sessiecookie en uitloggen werken. De testsite is opnieuw gepubliceerd en staat actief.
 
-1. `OPENAI_API_KEY`: de sleutel van het eigen OpenAI API-project.
-2. `STUDY_ACCESS_CODE`: een zelfgekozen, unieke toegangscode van minimaal 16 tekens.
+Open [OpenAI Billing](https://platform.openai.com/settings/organization/billing/overview) in het account/de organisatie waartoe de ingestelde API-sleutel behoort en voeg prepaid API-tegoed toe. De eigenaar kiest en bevestigt het bedrag zelf. Cloudflare hoeft hiervoor niet opnieuw ingesteld of gepubliceerd te worden. Na verwerking van het tegoed volgt een nieuwe chatproef.
 
-Voer de waarden alleen rechtstreeks in Cloudflare in. De modelkeuze en het aparte sessiegeheim staan al klaar. Laat `STUDY_ASSISTANT_ENABLED` voorlopig op `false`. Daarna kan de testsite opnieuw worden gepubliceerd en gecontroleerd worden geactiveerd voor de echte login-, cookie-, D1- en modelproef. Een geslaagde statuscontrole bewijst nog geen modelkwaliteit. Originele documenten vragen daarna nog de broncontrole en volledige indexering hieronder.
+Bewijs: op deployment `04952337-5210-4741-a222-fd1064def0e9`, code `994a113`, gaf een echte chatvraag de gerichte melding dat het API-tegoed op is. Deze melding wordt uitsluitend bij OpenAI-code `credit_balance_exhausted` getoond. De eerdere algemene 429-melding kon tegoed en tijdelijke drukte niet onderscheiden en is daarom verbeterd. Zie [OpenAI-foutcodes](https://developers.openai.com/api/docs/guides/error-codes). Er is geen modelantwoord gegenereerd en geen inhoudelijke modelkwaliteit vastgesteld. Originele documenten vragen daarna nog de broncontrole en volledige indexering hieronder.
+
+Alleen bij een toekomstige nieuwe omgeving zijn de handmatige secrets `OPENAI_API_KEY` en een `STUDY_ACCESS_CODE` van minimaal 16 tekens opnieuw nodig, rechtstreeks in de beveiligde Cloudflare-instellingen. Plaats ze niet in Git of chat.
 
 De modeldocumentatie bevestigt Responses en File Search voor [GPT-5.4 mini](https://developers.openai.com/api/docs/models/gpt-5.4-mini). Beschikbaarheid binnen het eigen API-project moet bij de eerste echte proef worden vastgesteld.
 

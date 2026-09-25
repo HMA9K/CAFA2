@@ -1,8 +1,16 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.2. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.3. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
 
-## Actuele status: testsite ingericht
+## Actuele status: testsite actief, API-tegoed ontbreekt
+
+De eigenaar heeft beide secrets rechtstreeks in Cloudflare opgeslagen. De testsite staat nu op `STUDY_ASSISTANT_ENABLED=true`. Deployment `04952337-5210-4741-a222-fd1064def0e9` van codecommit `994a113` is geslaagd. Status, echte login, beveiligde sessiecookie, ingelogde status en uitloggen zijn gecontroleerd. D1 registreert de login- en chattellers. De oorspronkelijke CAFA2-productiesite is ongewijzigd.
+
+De eerste echte chatproef is geblokkeerd door OpenAI. Na een gerichte verbetering van de foutafhandeling bevestigt de browser `model_credits`, uitsluitend gekoppeld aan providercode `credit_balance_exhausted`: het OpenAI API-account heeft geen prepaid tegoed beschikbaar. De sleutel opnieuw invullen is niet nodig. De eigenaar moet tegoed toevoegen via [OpenAI Billing](https://platform.openai.com/settings/organization/billing/overview); er is geen betaling verricht of bestedingslimiet gewijzigd. Daarna kan dezelfde actieve testsite opnieuw worden beproefd, zonder wijziging van de Cloudflare-secrets.
+
+De foutafhandeling onderscheidt nu tegoed, bestedingslimiet, gebruikslimiet en tijdelijke overbelasting. Alleen bekende foutcodes worden vertaald; providermeldingen, sleutels en invoer worden niet gelogd of teruggestuurd. Zeven nieuwe regressietests slagen, 81 Node-tests totaal. Echte modelkwaliteit is nog niet getest: beide verzonden modelverzoeken leverden een fout op. Zie de actuele teststatus voor de aanvullende controles en CI.
+
+## Inrichting vóór activering
 
 Op verzoek is [cafa2-assistent-test.pages.dev](https://cafa2-assistent-test.pages.dev) ingericht. Deze afzonderlijke site volgt de werkbranch automatisch, voert de assistentbuild en deploycontrole uit en publiceert `dist`. De eerste deployment van `c33f83a` is geslaagd, inclusief alle vier Functions. De statusroute geeft echte JSON en de browser koppelt het paneel aan de actuele vraag.
 
