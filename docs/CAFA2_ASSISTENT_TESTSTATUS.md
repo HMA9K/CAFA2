@@ -1,8 +1,19 @@
 # CAFA2 Assistent: teststatus na integratie
 
-Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Concept-PR: [#13](https://github.com/HMA9K/CAFA2/pull/13).
+Bijgewerkt: 25 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
-## Actuele vervolgimplementatie, 25 september 2026
+## Actuele productiepublicatie
+
+- Mergecommit `13a49c6be9c165bc7376e9e8f6abde5ea2b9a620`; Cloudflare-deployment `a75f6b1a-5a89-47f4-bdf8-aa5374266397` op [cafa2.pages.dev](https://cafa2.pages.dev) geslaagd.
+- Gelezen buildlog bevestigt 134 publieke bestanden, 247 oefenvragen, 285 tentamenrecords inclusief drie demo's en vier Functions. Function-bundeling en publicatie geslaagd. De online broncontrole is expliciet overgeslagen omdat de productiechat nog uitstaat.
+- [Assistentcontrole op main](https://github.com/HMA9K/CAFA2/actions/runs/36135589490) en [bestaande validatie op main](https://github.com/HMA9K/CAFA2/actions/runs/36135589546) zijn geslaagd. Ook de twee workflows vóór de merge op `7fc8b9c` slaagden. De workflow is uitgebreid met `main`, zodat latere publicaties dezelfde assistentregressies krijgen.
+- De statusroute op de gewone site geeft HTTP 200 en JSON met `ready: false`, zoals verwacht bij de ontbrekende productie-API-sleutel. Het echte paneel opent en volgt oefenvraag 1 en daarna vraag 2. Mobiele paneelafmetingen passen binnen de geteste viewport; donker thema visueel bekeken.
+- Productie-D1, schema, binding, sessiegeheim, toegangscode, model, documentbank en limieten zijn ingericht. Alleen `OPENAI_API_KEY` ontbreekt nog. Er is daarom nog geen echte productie-login of modelantwoord getest.
+- De echte modelproeven hieronder zijn op de testsite uitgevoerd. De automatische CI-antwoorden zijn gesimuleerd. De bekende methodefout bij de koelcellenopgave blijft open en de afgeleide transcriptie blijft uitgesloten. De fysieke telefoon met echt toetsenbord is niet getest.
+
+De onderstaande secties beschrijven eerdere implementatie- en teststappen. Vermeldingen van een ongewijzigd `main` of concept-PR zijn historisch.
+
+## Eerdere vervolgimplementatie, 25 september 2026
 
 **Definitieve gecontroleerde bronselectie: `268574f1d91412df40a8d2748947799d789eb046`.** Deployment `d4bc7289-f931-4023-80c8-d0bcdf9c3255` is geslaagd. Gelezen Cloudflare-log: `completed: 38`, `total: 115`, `added: 0`, `failed: 0`, `pending: 0`. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36133383008) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36133387373) zijn geslaagd. De assistentjoblog bevestigt 103 Node-tests, twee extractietests en 236 browsercontroles, zonder JavaScript-runtimefouten. De afsluitende documentatiecommit wijzigt geen uitvoerbare code.
 

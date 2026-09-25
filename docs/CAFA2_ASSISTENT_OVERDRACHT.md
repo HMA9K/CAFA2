@@ -1,8 +1,18 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.6. Repository: HMA9K/CAFA2. Werkbranch: `codex/cafa2-assistant-handoff`. Pull-request: [#13](https://github.com/HMA9K/CAFA2/pull/13), concept.
+Versie 2026-09-25.7. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
-## Actueel: documenten, vervolgvragen en publicatiecontrole
+## Actueel: gepubliceerd op de gewone CAFA2-site
+
+De afgeronde implementatie staat op [cafa2.pages.dev](https://cafa2.pages.dev). Mergecommit `13a49c6be9c165bc7376e9e8f6abde5ea2b9a620` is succesvol gepubliceerd via Cloudflare-deployment `a75f6b1a-5a89-47f4-bdf8-aa5374266397`. Beide GitHub Actions-workflows op deze mergecommit zijn geslaagd. De assistentworkflow controleert voortaan ook iedere push naar `main`.
+
+Het paneel herkent de actuele oefenvraag op de gewone site. De chat staat daar nog uit: alleen de productie-secret `OPENAI_API_KEY` ontbreekt. De teruggevonden toegangscode is rechtstreeks als `STUDY_ACCESS_CODE` opgeslagen; een afzonderlijk sessiegeheim, productie-D1, schema, model, documentbank en limieten zijn ingericht. Bestaande testsecrets zijn niet uitgelezen. De eigenaar vult de API-sleutel rechtstreeks in Cloudflare in, waarna activering en een nieuwe publicatie met broncontrole nodig zijn. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md).
+
+De [testsite](https://cafa2-assistent-test.pages.dev) blijft intussen actief met 115 oorspronkelijke bronnen. De afgekeurde afgeleide transcriptie blijft uitgesloten. De bekende methodefout bij de koelcellenopgave en de nog ontbrekende fysieke toetsenbordproef zijn geen onderdeel van de geslaagde kwaliteitscontrole.
+
+De onderstaande secties beschrijven de eerdere implementatie. Uitspraken daarin over een concept-PR of een ongewijzigde productiesite zijn historisch.
+
+## Eerder: documenten, vervolgvragen en publicatiecontrole
 
 De assistent werkt op [de afzonderlijke testsite](https://cafa2-assistent-test.pages.dev). De documentbank bevat 115 oorspronkelijke bronnen, inclusief geconverteerde oude presentaties. Een extra afgeleide tekstversie is na een mislukte inhoudelijke proef ontkoppeld. Alle 40 repetitiebestanden, de bronedities 2025 en 2026 en de aanvullende tentamenpresentaties zijn opgenomen. De laatste 38 koppelingen worden bij publicatie afzonderlijk op identiteit en indexstatus gecontroleerd. Zie [bronstatus](CAFA2_ASSISTENT_BRONSTATUS.md) voor de volledige afbakening, herkomst en het ene nog te beoordelen wetboekoverzicht.
 

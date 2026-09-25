@@ -1,6 +1,6 @@
 # CAFA2: gekoppelde documenten en nieuwe bronnen
 
-Bijgewerkt op 25 september 2026. Dit beschrijft de bronselectie voor de afzonderlijke testsite.
+Bijgewerkt op 25 september 2026. Dit beschrijft de bronselectie die actief is op de testsite en is ingesteld voor de gewone CAFA2-site. De gewone site is inmiddels gepubliceerd; voor activering van haar chat ontbreekt alleen de productie-API-sleutel. Beide omgevingen verwijzen naar dezelfde documentbank, zodat er geen tweede documentupload nodig is.
 
 ## Beschikbaar
 
