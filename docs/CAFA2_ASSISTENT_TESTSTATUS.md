@@ -4,6 +4,8 @@ Bijgewerkt: 25 september 2026. Werkbranch: `codex/cafa2-assistant-handoff`. Conc
 
 ## Actuele vervolgimplementatie, 25 september 2026
 
+**Definitieve gecontroleerde bronselectie: `268574f1d91412df40a8d2748947799d789eb046`.** Deployment `d4bc7289-f931-4023-80c8-d0bcdf9c3255` is geslaagd. Gelezen Cloudflare-log: `completed: 38`, `total: 115`, `added: 0`, `failed: 0`, `pending: 0`. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36133383008) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36133387373) zijn geslaagd. De assistentjoblog bevestigt 103 Node-tests, twee extractietests en 236 browsercontroles, zonder JavaScript-runtimefouten. De afsluitende documentatiecommit wijzigt geen uitvoerbare code.
+
 ### Uitgevoerde controles
 
 - 103 Node-tests geslaagd, waaronder nieuwe proeven voor lange uitwerkingen in vervolgvragen, afzonderlijke bronzoekacties, uitval van één zoekactie, bronwijzigingen met dezelfde naam en bestandsgrootte, en wachten op gelijktijdige indexering.
@@ -31,6 +33,8 @@ Op `f337985` zijn [assistentcontrole](https://github.com/HMA9K/CAFA2/actions/run
 Open: fysieke telefoon met echt toetsenbord, volledige visuele interpretatie van dia-afbeeldingen en een brede inhoudelijke audit van modelantwoorden. De doelgerichte echte proeven zijn een steekproef. De limieten blijven 30 per UTC-dag en 20 per IP; er is geen teller gereset of limiet verhoogd. `main` is niet gemerged.
 
 ### Afsluitende bronproef en keuze
+
+De laatste proef na ontkoppeling van de afgeleide tekst vroeg uitdrukkelijk naar de oorspronkelijke Word-uitwerking. De assistent corrigeerde Rast naar Kröne/Blatten en gaf beide berekeningen correct: (250.000 − 25.000 − 80.000) × 0,95 = 137.750 en (250.000 − 25.000) × 0,90 = 202.500, samen 340.250. De tabel werd goed weergegeven. Hij benoemde deze berekening echter ten onrechte als slotkoersmethode door de toelichting van de voorgaande deelvraag over te nemen. De presentatie behandelt deze berekening onder temporal. De Word-uitwerking bespreekt beide methoden op opeenvolgende deelvragen. Deze ene inhoudelijke casus blijft dus **niet goedgekeurd voor modelkwaliteit**. De bedragen alleen zijn onvoldoende om de proef als geslaagd te tellen. Een vervolgcontrole moet vraagnummer, functionele valuta en gehanteerde koersen samen toetsen; pas daarna kan een gecontroleerde aanvullende transcriptie worden opgenomen.
 
 Na de aangepaste extractie gaf de echte koelcellenproef opnieuw een onjuiste splitsing: 225.000 + 115.250 in plaats van de onderbouwde 202.500 + 137.750. Ook de verkeerde casusnaam Rast werd niet duidelijk gecorrigeerd naar Kröne/Blatten. Beide afgeleide Markdown-versies zijn daarom uit de documentbank ontkoppeld; de oorspronkelijke presentatie en de Word/PDF-uitwerkingen blijven gekoppeld. `assistant/source-derived.json` markeert de afgeleide bron als `quarantined`; de regressie verhindert heropname in de koppellijst. Dit is een afgekeurde modelproef, geen geslaagde inhoudscontrole. De eindselectie bevat 115 oorspronkelijke bronbestanden en 38 expliciet gecontroleerde aanvullende koppelingen.
 
