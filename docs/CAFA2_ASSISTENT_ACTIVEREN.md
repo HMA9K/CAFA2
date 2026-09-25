@@ -2,19 +2,19 @@
 
 Bijgewerkt op 25 september 2026 na de uitdrukkelijke opdracht om het afgeronde werk te publiceren.
 
-## Actueel: gewone site gepubliceerd, nog één secret nodig
+## Actueel: assistent actief op de gewone site
 
-PR #13 is samengevoegd. [cafa2.pages.dev](https://cafa2.pages.dev) publiceert `main` met de assistentbuild en uitvoermap `dist`. Deployment `a75f6b1a-5a89-47f4-bdf8-aa5374266397` vanaf `13a49c6` is geslaagd. De chat staat voorlopig uit; de bestaande oefenomgeving en het nieuwe assistentpaneel werken.
+PR #13 is samengevoegd. [cafa2.pages.dev](https://cafa2.pages.dev) publiceert `main` met de assistentbuild en uitvoermap `dist`. De activeringsdeployment `5f9c1e58-6a27-4c9f-8880-778c80d2ab3c` vanaf `2957ecc2acaf038f05ca7f0c805eab96734b4f85` is geslaagd. De gewone site geeft nu echte modelantwoorden.
 
-**Alleen `OPENAI_API_KEY` ontbreekt nog in Production van Pages-project `cafa2`.** De toegangscode is inmiddels rechtstreeks als secret opgeslagen. De gebruiker hoeft geen toegangscode of sessiegeheim opnieuw in te vullen. Alle instellingen van de testsite blijven bestaan.
+**Er ontbreekt geen instelling meer.** De eigenaar heeft `OPENAI_API_KEY` rechtstreeks als secret opgeslagen. Aanwezigheid en type zijn gecontroleerd; de sleutel is niet uitgelezen. De toegangscode en het sessiegeheim stonden al gereed. `STUDY_ASSISTANT_ENABLED=true` is ingesteld en de site is opnieuw gepubliceerd.
 
-### Laatste handmatige stap
+### Nu gebruiken
 
-1. Open [OpenAI API keys](https://platform.openai.com/api-keys) in hetzelfde `Default project` als de bestaande documentbank. Gebruik een bewaarde sleutel of maak een nieuwe sleutel aan. Verwijder de bestaande testsleutel niet.
-2. Sla de volledige waarde rechtstreeks op bij [Cloudflare: cafa2, Production](https://dash.cloudflare.com/6ecb240b5f34272ea699322f846c8158/pages/view/cafa2/settings/production), type **Secret**, naam **OPENAI_API_KEY**. Zet de sleutel niet in Git of chat.
-3. Meld alleen dat de sleutel is opgeslagen. Daarna kan Codex de aanwezigheid controleren, `STUDY_ASSISTANT_ENABLED=true` instellen, opnieuw publiceren en broncontrole, login en een echte chatvraag controleren. De bestaande publicatie-opdracht geeft hiervoor toestemming.
+1. Open een oefen- of tentamenvraag op [cafa2.pages.dev](https://cafa2.pages.dev) en open de assistent.
+2. Vul de eerder afgesproken toegangscode in en geef toestemming om de vraagcontext te delen.
+3. Stel een vraag. Vernieuw de pagina als er nog een oude melding staat dat de assistent niet geactiveerd is.
 
-Een oude API-sleutel is slechts bij aanmaak volledig zichtbaar; zie de [officiële uitleg](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key).
+De statusroute geeft HTTP 200 met `ready: true`. De publicatielog bevestigt 38 gecontroleerde koppelingen, 115 bestanden, nul nieuwe koppelingen, nul mislukte en nul lopende indexeringen. Inloggen en één echt modelantwoord zijn in de productie-browser gecontroleerd: bij Kapitaalbelangen vraag 2 corrigeert de assistent de onjuiste veronderstelling over antwoord A naar B, met uitleg en twee opgehaalde oorspronkelijke syllabusbestanden. Dit is een concrete productieproef, geen volledige nieuwe inhoudsaudit.
 
 ### Al ingericht voor productie
 
@@ -22,7 +22,7 @@ Een oude API-sleutel is slechts bij aanmaak volledig zichtbaar; zie de [officië
 - D1 `cafa2-assistent-production`, EU-jurisdictie, ID `2012e335-1fce-4e7f-8d37-89d0d5ed96f6`, binding `STUDY_DB`; tabel en index uit `assistant/server/schema.sql` bevestigd.
 - `STUDY_ACCESS_CODE` en een afzonderlijk willekeurig `STUDY_SESSION_SECRET` als secrets opgeslagen. Geen waarden in de repository.
 - `OPENAI_MODEL=gpt-5.4-mini`, `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`, `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20`.
-- `STUDY_ASSISTANT_ENABLED=false` tot de API-sleutel gereed is. Previews blijven uitgeschakeld voor modelaanroepen.
+- `OPENAI_API_KEY` als secret en `STUDY_ASSISTANT_ENABLED=true`. Previews blijven uitgeschakeld voor modelaanroepen.
 
 De build controleert de publieke bestanden en canonieke vragen altijd. Online broncontrole vindt plaats zodra de assistent bewust is ingeschakeld:
 
@@ -30,9 +30,9 @@ De build controleert de publieke bestanden en canonieke vragen altijd. Online br
 node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs && if [ "$STUDY_ASSISTANT_ENABLED" = "true" ]; then node scripts/sync-assistant-store.mjs --apply; else echo "Assistent uitgeschakeld: online broncontrole overgeslagen."; fi
 ```
 
-Dit maakt publicatie van de pagina's mogelijk terwijl de chat uitstaat. Bij een ingeschakelde assistent blijven een ontbrekende of ongeldige API-sleutel, verkeerde bronidentiteit en mislukte indexering de build blokkeren. De eerste productiebuild heeft de online broncontrole expliciet overgeslagen en bewijst dus geen werkende productie-API.
+Dit maakt ook publicatie van de pagina's mogelijk wanneer de chat bewust wordt uitgezet. Bij de nu ingeschakelde assistent blijven een ontbrekende of ongeldige API-sleutel, verkeerde bronidentiteit en mislukte indexering de build blokkeren. De eerste productiebuild sloeg de online broncontrole over; de activeringsbuild heeft deze volledig uitgevoerd en is geslaagd.
 
-De [testsite](https://cafa2-assistent-test.pages.dev) is wel actief; haar laatste build heeft de 115 bronnen gecontroleerd. Zie [bronstatus](CAFA2_ASSISTENT_BRONSTATUS.md) en [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). De onderstaande secties zijn historisch.
+De [testsite](https://cafa2-assistent-test.pages.dev) blijft actief. Beide sites gebruiken dezelfde documentbank, met afzonderlijke gebruikstellers. De limieten zijn niet gewijzigd. Zie [bronstatus](CAFA2_ASSISTENT_BRONSTATUS.md) en [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). De onderstaande secties zijn historisch.
 
 ## Eerdere aanvulling na herstel van twee bronnamen
 

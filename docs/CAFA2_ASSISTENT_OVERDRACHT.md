@@ -1,12 +1,12 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.7. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-25.8. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
 ## Actueel: gepubliceerd op de gewone CAFA2-site
 
 De afgeronde implementatie staat op [cafa2.pages.dev](https://cafa2.pages.dev). Mergecommit `13a49c6be9c165bc7376e9e8f6abde5ea2b9a620` is succesvol gepubliceerd via Cloudflare-deployment `a75f6b1a-5a89-47f4-bdf8-aa5374266397`. Beide GitHub Actions-workflows op deze mergecommit zijn geslaagd. De assistentworkflow controleert voortaan ook iedere push naar `main`.
 
-Het paneel herkent de actuele oefenvraag op de gewone site. De chat staat daar nog uit: alleen de productie-secret `OPENAI_API_KEY` ontbreekt. De teruggevonden toegangscode is rechtstreeks als `STUDY_ACCESS_CODE` opgeslagen; een afzonderlijk sessiegeheim, productie-D1, schema, model, documentbank en limieten zijn ingericht. Bestaande testsecrets zijn niet uitgelezen. De eigenaar vult de API-sleutel rechtstreeks in Cloudflare in, waarna activering en een nieuwe publicatie met broncontrole nodig zijn. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md).
+De chat is inmiddels ook op de gewone site actief. Na invoer van de productie-API-sleutel door de eigenaar is deployment `5f9c1e58-6a27-4c9f-8880-778c80d2ab3c` vanaf `2957ecc` geslaagd met volledige broncontrole: 38 koppelingen, 115 bestanden, nul fouten en nul lopende indexeringen. De statusroute meldt `ready: true`. Inloggen en één echt modelantwoord zijn gecontroleerd: de assistent corrigeert de verkeerde antwoordletter A naar B bij Kapitaalbelangen vraag 2 en gebruikt twee oorspronkelijke syllabusbestanden. Er ontbreekt geen instelling meer. Geen API-sleutel uitgelezen of in Git opgeslagen. Zie [activering](CAFA2_ASSISTENT_ACTIVEREN.md) en [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
 
 De [testsite](https://cafa2-assistent-test.pages.dev) blijft intussen actief met 115 oorspronkelijke bronnen. De afgekeurde afgeleide transcriptie blijft uitgesloten. De bekende methodefout bij de koelcellenopgave en de nog ontbrekende fysieke toetsenbordproef zijn geen onderdeel van de geslaagde kwaliteitscontrole.
 
