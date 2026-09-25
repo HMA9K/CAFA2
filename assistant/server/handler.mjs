@@ -38,6 +38,23 @@ async function modelJSON(response) {
     data+=decoder.decode(value,{stream:true});}
   try{return JSON.parse(data+decoder.decode());}catch{throw new HttpError(502,'De modeldienst gaf geen leesbaar antwoord.','model_service');}
 }
+async function modelError(response) {
+  if(response.status!==429)return new HttpError(502,'De modeldienst kon de vraag niet verwerken. De beheerder kan de API-instelling controleren.','model_service');
+  // Only classify known provider codes. Never expose its message, credentials or request data.
+  let error;try{error=(await modelJSON(response))?.error;}catch{}
+  const billing={
+    credit_balance_exhausted:['Het OpenAI API-tegoed is op. De beheerder moet tegoed toevoegen in het OpenAI API-account.','model_credits'],
+    organization_spend_limit_exceeded:['De OpenAI API-bestedingslimiet van de organisatie is bereikt. De beheerder moet deze limiet controleren.','model_spend_limit'],
+    project_spend_limit_exceeded:['De OpenAI API-bestedingslimiet van het project is bereikt. De beheerder moet deze limiet controleren.','model_spend_limit'],
+    organization_usage_limit_exceeded:['De OpenAI API-gebruikslimiet van de organisatie is bereikt. De beheerder moet deze limiet controleren.','model_usage_limit']
+  };
+  if(Object.hasOwn(billing,error?.code))return new HttpError(429,...billing[error.code]);
+  if(error?.code==='insufficient_quota'||error?.type==='insufficient_quota')
+    return new HttpError(429,'OpenAI meldt onvoldoende API-tegoed of een bereikte bestedingslimiet. De beheerder moet Billing en Limits in het OpenAI API-account controleren. Opnieuw invoeren van de sleutel helpt hier niet.','model_quota');
+  if(['rate_limit_exceeded','slow_down'].includes(error?.code)||error?.type==='rate_limit_error')
+    return new HttpError(429,'OpenAI ontvangt tijdelijk te veel verzoeken. Wacht even en probeer het opnieuw.','model_rate_limit',boundedInt(response.headers.get('Retry-After'),60,1,86400));
+  return new HttpError(429,'OpenAI blokkeert het verzoek met een limietmelding. De beheerder moet het API-tegoed en de gebruikslimieten controleren.','model_service');
+}
 async function digest(secret,text) {
   const key=await crypto.subtle.importKey('raw',encode.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   return [...new Uint8Array(await crypto.subtle.sign('HMAC',key,encode.encode(text)))].map(b=>b.toString(16).padStart(2,'0')).join('');
@@ -172,12 +189,12 @@ export async function handle(context,catalog,dependencies={}) {
       if(controller.signal.aborted)throw new HttpError(504,'Het verzoek is gestopt. Stel de vraag opnieuw.','timeout');
       const upstream=await call('https://api.openai.com/v1/responses',{method:'POST',signal:controller.signal,
         headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.OPENAI_API_KEY}`},body:JSON.stringify(modelBody)});
-      if(!upstream.ok)throw new HttpError(upstream.status===429?429:502,upstream.status===429?'De modeldienst heeft tijdelijk geen capaciteit of API-tegoed. Probeer het later opnieuw.':'De modeldienst kon de vraag niet verwerken. De beheerder kan de API-instelling controleren.','model_service');
+      if(!upstream.ok)throw await modelError(upstream);
       return json(parseModelResponse(await modelJSON(upstream),payload.record,payload.mode));
     }catch(error){if(controller.signal.aborted)throw new HttpError(504,'Het antwoord duurde te lang of het verzoek is gestopt. Probeer een kortere vraag.','timeout');throw error;}
     finally {clearTimeout(timer);request.signal.removeEventListener('abort',cancel);}
   }catch(error) {
-    if(error instanceof HttpError)return json({error:error.message,code:error.code},error.status,error.status===429?{'Retry-After':String(error.retryAfter??60)}:{});
+    if(error instanceof HttpError)return json({error:error.message,code:error.code},error.status,error.status===429&&error.retryAfter!==undefined?{'Retry-After':String(error.retryAfter)}:{});
     // Do not log or echo the API key, prompt, student answer, code or provider error body.
     return json({error:'De assistent kon dit verzoek niet afronden. Je tentamenantwoord is niet gewijzigd.',code:'server_error'},500);
   }
