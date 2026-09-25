@@ -2,7 +2,24 @@
 
 Bijgewerkt op 25 september 2026. De afzonderlijke testomgeving is op verzoek ingericht. De oorspronkelijke CAFA2-productiesite is niet omgezet.
 
-## Actuele aanvulling na herstel van twee bronnamen
+## Actueel: testsite is actief, bronnen zijn gekoppeld
+
+Op de testsite zijn de API-sleutel, toegangscode, sessieondertekening, database en documentbank al ingesteld. Niets daarvan hoeft opnieuw te worden ingevuld. De bronbank bevat 115 oorspronkelijke bronbestanden; de afbakening en het beheer van nieuwe documenten staan in [bronstatus](CAFA2_ASSISTENT_BRONSTATUS.md). De actuele publicatie en uitgevoerde proeven staan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
+
+Bij een nieuwe upload wacht de build begrensd op indexering. Een foutieve bestandsidentiteit of werkelijk mislukte indexering blijft publicatie blokkeren met een concrete melding. De eerdere `exit 0`-configuratie geldt alleen nog voor het oorspronkelijke project dat `main` volgt.
+
+Voor gebruik van de huidige testsite ontbreekt geen instelling. Voor een latere overstap van `cafa2.pages.dev` zijn, na toestemming voor productie, precies deze stappen nodig:
+
+1. PR #13 beoordelen en samenvoegen naar `main`.
+2. In Pages-project `cafa2` de build instellen op `node scripts/build-study-assistant.mjs && node scripts/verify-study-assistant-build.mjs && node scripts/sync-assistant-store.mjs --apply`, output `dist`, Node.js 22.
+3. Een productie-D1-database met `assistant/server/schema.sql` aanmaken en binden als `STUDY_DB`.
+4. Rechtstreeks in dat Cloudflare-project de secrets `OPENAI_API_KEY`, `STUDY_ACCESS_CODE` en `STUDY_SESSION_SECRET` instellen. Bestaande versleutelde testsecrets worden niet uitgelezen of in Git gekopieerd.
+5. Tekstinstellingen kiezen: `OPENAI_MODEL=gpt-5.4-mini`, `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`, `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20`. Activering `STUDY_ASSISTANT_ENABLED=true` pas bij de bewuste productieoverstap.
+6. Publicatie, statusroute en een echte chatvraag op de oorspronkelijke URL controleren.
+
+Deze productiestappen zijn niet uitgevoerd. De testsite kan ondertussen worden gebruikt. Geen API-sleutel in de chat sturen.
+
+## Eerdere aanvulling na herstel van twee bronnamen
 
 De documentbank is ingesteld via `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`. Op 25 september bevestigt de echte API-controle 95 bestanden, zonder mislukte of lopende indexering. Alle 18 regels uit `assistant/source-attachments.json` zijn geïndexeerd, inclusief de uitwerkingen van Niedorp-Swaza en Zeevang. De eerdere fout betrof uitsluitend ontbrekende dubbele spaties in die twee geregistreerde namen. Niets is overgeslagen. Deployment `4ee08a58-1693-4b6e-a9f7-1b1a67b7b8d7` vanaf `2c9e873` is geslaagd.
 
