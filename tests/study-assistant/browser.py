@@ -4,6 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2]/'dist'
 OUT=Path(os.environ.get('ASSISTANT_QA_OUT','/tmp/cafa2-assistant-browser'));OUT.mkdir(parents=True,exist_ok=True)
+REVIEW_PROMPT='Kijk mijn ingevulde antwoord na aan de hand van de uitwerking. Geef aan wat klopt, welke fouten of ontbrekende stappen er zijn en hoe ik die kan verbeteren. Geef ook aan hoeveel punten mijn antwoord verdient.'
 checks=[];requests=[];errors=[]
 state={'ready':True,'authenticated':False,'fail':False,'delay_once':False}
 delayed_release=threading.Event()
@@ -59,7 +60,7 @@ try:
     page.locator('.study-assistant-launch').click();page.locator('[data-login]').wait_for(state='visible')
     check('No request before consent and login',page.locator('[data-send]').is_disabled() and not requests)
     page.get_by_role('button',name='Kijk mijn antwoord na',exact=True).click()
-    check('Review button does not send before login and consent',not requests and page.locator('#study-message').input_value().startswith('Kijk mijn ingevulde antwoord na'))
+    check('Review button does not send before login and consent',not requests and page.locator('#study-message').input_value()==REVIEW_PROMPT)
     page.locator('#study-code').fill('mock-test-code');page.wait_for_timeout(120)
     check('Opening a reserved column keeps the login form and typed input stable',page.locator('#study-code').input_value()=='mock-test-code' and page.locator('.study-assistant-layout').count()==1)
     check('The open column hides its launcher so it cannot cover the input controls',not page.locator('.study-assistant-launch').is_visible())
@@ -133,8 +134,12 @@ try:
     before=page.evaluate('JSON.stringify(CafaPractice.getAnswer("kap",1))')
     send('Licht mijn gekozen optie toe.')
     check('Practice choice B reaches the model as zero-based index 1',requests[-1]['studentAnswer']['choice']==1)
-    review_before=len(requests);page.get_by_role('button',name='Kijk mijn antwoord na',exact=True).click();page.wait_for_function('document.querySelector("[data-action=stop]").hidden')
-    check('Review button sends one direct check request with the current answer',len(requests)==review_before+1 and requests[-1]['message'].startswith('Kijk mijn ingevulde antwoord na') and requests[-1]['studentAnswer']['choice']==1)
+    review_before=len(requests);page.get_by_role('button',name='Kijk mijn antwoord na',exact=True).click();page.wait_for_timeout(250)
+    check('Review button drafts the complete points request without sending after login and consent',len(requests)==review_before and page.locator('#study-message').input_value()==REVIEW_PROMPT)
+    check('Review prompt is focused and can be sent manually',page.locator('#study-message').evaluate('e=>e===document.activeElement') and page.locator('[data-send]').is_enabled())
+    edited_review=REVIEW_PROMPT+' Licht de puntenverdeling toe.'
+    page.locator('#study-message').fill(edited_review);page.locator('[data-send]').click();page.wait_for_function('document.querySelector("[data-action=stop]").hidden')
+    check('Manual send keeps the edited review request and current answer',len(requests)==review_before+1 and requests[-1]['message']==edited_review and requests[-1]['studentAnswer']['choice']==1)
     check('Practice answer remains unchanged after assistant reply',page.evaluate('JSON.stringify(CafaPractice.getAnswer("kap",1))')==before)
     page.locator('label[for="own-kap-1"]').click()
     page.locator('#kap-1 .cae-content').fill('Mijn eigen berekening: 125.000 euro.')

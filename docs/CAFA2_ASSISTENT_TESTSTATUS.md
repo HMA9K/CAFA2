@@ -2,6 +2,16 @@
 
 Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
+## Actueel: nakijkverzoek als bewerkbaar concept
+
+De knop **Kijk mijn antwoord na** zet het controleverzoek in de chatbalk klaar en verstuurt niets. Dit geldt ook na ontgrendeling en toestemming. De instructie vraagt om vergelijking met de uitwerking, uitleg over wat klopt en wat ontbreekt, verbeteringen en een puntenbeoordeling. De tekst kan worden aangepast; alleen **Versturen** stuurt het verzoek met het dan actuele antwoord. De puntenbeoordeling is chatfeedback en verandert de opgeslagen toetsscore niet.
+
+- Nieuwe browserregressies controleren de volledige concepttekst, geen automatische verzending, invoerfocus, handmatig versturen van aangepaste tekst en behoud van het actuele eigen antwoord. De bestaande directe antwoordknop behoudt haar werking.
+- Lokaal geslaagd: 108 Node-tests, alle dertien regressiescripts, integratie-dry-run zonder wijzigingen, build en deploycontrole. Build: 627 oefenvragen, 285 tentamenrecords, 181 publieke bestanden en vier Functions.
+- Publicatie en volledige browserproeven worden hieronder bijgewerkt na uitvoering. Reacties zijn gesimuleerd; geen nieuwe uitspraak over inhoudelijke modelkwaliteit en geen echte modelaanroepen.
+
+De onderstaande sectie over automatische verzending beschrijft de eerdere bediening en is vervangen door het bewerkbare concept.
+
 ## Knop Kijk mijn antwoord na, 26 september 2026
 
 **Gepubliceerd en live zichtbaar op [cafa2.pages.dev](https://cafa2.pages.dev).** Code [cf2cd37](https://github.com/HMA9K/CAFA2/commit/cf2cd37263565c708ba46943cf0afbed74d64e74), met regressiesnapshotcorrectie [753c655](https://github.com/HMA9K/CAFA2/commit/753c6551bae4bbc2cb63cf97f1a1d0925bc3ea64). Cloudflare-deployment `4ac20858-1d4c-4639-85f2-dcdd14c20c62` is geslaagd.
