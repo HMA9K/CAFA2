@@ -56,7 +56,7 @@ try{
  await page.screenshot({path:path.join(out,'assistant-mc-desktop.png'),fullPage:true});
  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
  await page.screenshot({path:path.join(out,'assistant-mc-mobile.png'),fullPage:true});
- await close.click();assert.equal(await q.locator('.study-assistant-layout').count(),0);
+ await close.click();await q.locator('.study-assistant-layout').waitFor({state:'detached'});
  assert.equal(await q.locator('[data-stock-cell="r1-c2"]').inputValue(),'30.000');
  assert.equal(errors.length,0,errors.join('\n'));
  console.log('Livecontrole geslaagd: 627 vragen, echte MC-tabellen, stock/journal-invoer, toelichting en herladen, vraaggerichte patroonherkenning, syllabusmatrix en mobiel/donker.');
