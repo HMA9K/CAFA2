@@ -37,7 +37,7 @@ try:
     browser_type=getattr(p,engine)
     browser=browser_type.launch(headless=True,**({'executable_path':executable} if executable and engine=='chromium' else {}),
                                 **({'args':['--no-sandbox']} if engine=='chromium' else {}))
-    page=browser.new_page(viewport={'width':1366,'height':950});page.set_default_timeout(12000)
+    page=browser.new_page(viewport={'width':1366,'height':950});page.set_default_timeout(int(os.environ.get('ASSISTANT_QA_TIMEOUT_MS','12000')))
     page.on('pageerror',lambda e:errors.append(str(e)))
     def route(r):
       if not r.request.url.startswith(base): r.abort();return
@@ -124,6 +124,8 @@ try:
       check(f'Practice type {sample["type"]} opens in its actual route',
             page.evaluate('''([code,id])=>document.querySelector('#'+code+'-'+id)?.querySelector('.type-label')?.textContent.trim()''',
                           [sample['code'],str(sample['id'])])==sample['type'])
+      if sample['type']=='Voorraadtabel':
+        check('Practice case and question share the primary column beside the assistant',page.locator('.question:target .study-assistant-layout>.practice-case-layout').count()==1)
     visit('#kap-1');page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 1")')
     page.locator('#option-kap-1-1').click()
     before=page.evaluate('JSON.stringify(CafaPractice.getAnswer("kap",1))')

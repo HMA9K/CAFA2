@@ -29,6 +29,7 @@
 @media screen and (min-width:900px){
  .exam-running .frame>.study-assistant-layout,.practice-question-frame>.study-assistant-layout{flex:1 1 auto;height:auto;min-height:0}
  .exam-running .study-assistant-layout:not(.is-stacked)>.exam-case-layout{height:100%;overflow:hidden}
+ .practice-surface .study-assistant-layout:not(.is-stacked)>.practice-case-layout{height:100%;overflow:hidden}
  .exam-running .study-assistant-layout>.exam-question-body{min-height:0;height:100%;overflow:auto}
  .question.study-assistant-page{height:var(--sa-page-height,calc(100dvh - 122px));min-height:0}
  .study-assistant-page .practice-question-frame{min-height:0;overflow:hidden}
@@ -39,6 +40,8 @@
 }
 .study-assistant-short .question-nav,.study-assistant-short .exam-footer{position:static!important}
 .exam-running.study-assistant-stacked main{height:auto;overflow:visible}
+.practice-surface.study-assistant-stacked main{height:auto;overflow:visible}
+.practice-surface.study-assistant-stacked .question:target,.practice-surface.study-assistant-stacked .practice-question-frame{height:auto;overflow:visible}
 .exam-running.study-assistant-stacked .frame>.study-assistant-layout{flex:none;height:auto}
 .exam-running.study-assistant-stacked .study-assistant-layout>.exam-question-body,.exam-running.study-assistant-stacked .study-assistant-primary>.exam-question-body{height:auto;overflow:visible;min-height:0}
 .exam-running.study-assistant-stacked .study-assistant-primary>.exam-case-panel{height:auto;max-height:45dvh;overflow:auto}

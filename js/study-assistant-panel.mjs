@@ -39,7 +39,7 @@ export function createAssistantPanel(panel){
     if(row)return {element:row};
     if(hash===win.location.hash&&primary?.isConnected&&!modal&&primary.matches('.result-expanded,article.exam-review-item'))return {element:primary};
     const question=doc.getElementById(win.location.hash.slice(1));
-    if(question?.matches('.question'))return {element:question.querySelector('.qbody'),page:question};
+    if(question?.matches('.question'))return {element:question.querySelector('.practice-case-layout')||question.querySelector('.qbody'),page:question};
     const host=doc.getElementById('exam-app');if(!host||host.hidden)return null;
     return {element:host.querySelector('.exam-case-layout,.exam-question-body,.review-detail-layout,.exam-results-panel')};
   }
@@ -85,7 +85,7 @@ export function createAssistantPanel(panel){
     if(!panel.open)return;
     const destination=target();if(destination)attach(destination);
     if(!layout?.isConnected)return;
-    const v=viewport(),casePanel=primary.querySelector('#exam-case-panel:not([hidden])');
+    const v=viewport(),casePanel=primary.querySelector('.exam-case-panel:not([hidden])');
     const fraction=casePanel?(parseFloat(primary.style.getPropertyValue('--case-width'))||100/3)/100:false;
     const metrics=panelMetrics(layout.getBoundingClientRect().width,width,fraction);
     const stacked=metrics.stacked||v.w<900;
