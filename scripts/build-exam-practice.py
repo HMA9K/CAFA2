@@ -7,9 +7,9 @@ ROOT=Path(__file__).resolve().parent.parent
 NODE=os.environ.get('NODE_BINARY') or shutil.which('node')
 if not NODE:raise RuntimeError('Node.js ontbreekt; stel NODE_BINARY in.')
 exams=json.loads(subprocess.check_output([str(NODE),str(ROOT/'scripts/exam-practice-source.mjs'),'--json']))
-guidance=json.loads((ROOT/'content/practice/topic-guidance.json').read_text(encoding='utf-8',newline='\n'))
-overrides=json.loads((ROOT/'content/practice/exam-text-options.json').read_text(encoding='utf-8',newline='\n'))
-topic_overrides=json.loads((ROOT/'content/practice/exam-topic-overrides.json').read_text(encoding='utf-8',newline='\n'))
+guidance=json.loads((ROOT/'content/practice/topic-guidance.json').read_text(encoding='utf-8'))
+overrides=json.loads((ROOT/'content/practice/exam-text-options.json').read_text(encoding='utf-8'))
+topic_overrides=json.loads((ROOT/'content/practice/exam-topic-overrides.json').read_text(encoding='utf-8'))
 
 def clean(html):
     soup=BeautifulSoup(html,'html.parser')

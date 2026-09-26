@@ -30,8 +30,10 @@ Het filter staat rechtsboven onder Werkwijze en geldt voor deel-/onderwerpkeuze,
 
 - De gehele bestaande Node-testset, inclusief bestaande opgaveroutes met jsdom, is geslaagd.
 - `tests/exam-practice.mjs`: 282/282 bronkoppelingen, 529 unieke vragen, unieke opties, juiste antwoordrotatie, behoud van oorspronkelijke vraag en antwoordmodel, 807 geldige eerdere casusverwijzingen, oorspronkelijke MC-inhoud behouden.
-- Browsercontrole: bronfilter, start per deel en onderwerp, linkerpositie, slepen, toetsenbord, verbergen/tonen, goed antwoord en feedback, eerdere uitkomsten, filter-/breedtebehoud na herladen, desktop, mobiel en donkere modus.
+- Browsercontrole lokaal én op `https://cafa2.pages.dev`: bronfilter, start per deel en onderwerp, doorgaan voorbij de laatste bestaande vraag, afronden van een gefilterde reeks, linkerpositie, slepen, toetsenbord, verbergen/tonen, goed antwoord en feedback, eerdere uitkomsten, filter-/breedtebehoud na herladen, desktop, mobiel en donkere modus.
 - Assistent: 108 bestaande tests geslaagd; build en grenscontrole van de publicatiemap geslaagd met 529 MC-records. Nieuwe tentamen-MC-records krijgen ook de volledige casus en eerdere bronuitkomsten als context.
+
+Publicatie: codecommit `8632743eda43078296e0d6e2f923792cb008350b`, Cloudflare-deployment `9efb3059-4ccb-42dc-8b4d-157486430a65`, status **success** op 26 september 2026. Live JS/CSS, MC-dekkingsdata en een vraagfragment komen byte-voor-byte overeen. De hoofd-HTML en vier `fallback/*.html`-pagina's geven HTTP 200 en komen overeen na weglaten van de door Cloudflare toegevoegde Analytics-scriptregel.
 
 Rekenkundige controle bestaat hier uit aansluiting op het reeds ingevoerde officiële model en de bronbedragen waarop de afleiders zijn gebaseerd. De oorspronkelijke tentamencasus is niet opnieuw integraal onafhankelijk doorgerekend. De toegevoegde MC-vragen veranderen geen geconstateerde broninconsistenties stilzwijgend.
 
