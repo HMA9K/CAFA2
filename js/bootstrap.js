@@ -11,6 +11,17 @@
     'fragments/practice-additions-val.html',
     'fragments/practice-additions-nvw.html',
     'fragments/practice-additions-hk.html',
+    'fragments/exam-practice-20210419.html',
+'fragments/exam-practice-20211006.html',
+'fragments/exam-practice-20220411.html',
+'fragments/exam-practice-20221006.html',
+'fragments/exam-practice-20230411.html',
+'fragments/exam-practice-20231009.html',
+'fragments/exam-practice-20240422.html',
+'fragments/exam-practice-20240930.html',
+'fragments/exam-practice-20250417.html',
+'fragments/exam-practice-20250924.html',
+'fragments/exam-practice-20260429.html',
     'fragments/shared.html'
   ];
   function getText(url) {
@@ -59,6 +70,8 @@
     return loadScript('js/practice-upgrades.js');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
+    return loadScript('js/practice-case-panel.js?v=20260926-mc');
+  }).then(function () {
     return loadScript('js/exams.js?v=20260925-topics1');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');

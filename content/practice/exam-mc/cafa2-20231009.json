@@ -1,0 +1,1895 @@
+[
+  {
+    "key": "cafa2-20231009/vraag-1",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-1",
+    "sectionId": "opgave-1",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 1",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "1. Geef, gemotiveerd aan de hand van de wet, aan of de volgende kapitaalbelangen kwalificeren als vermoede deelneming én welke waarderingsgrondslag hierbij hoort: a. Gela bv van Carini bv; b. Noto bv van v.o.f. Lentini.",
+    "promptHtml": "<p>1. Geef, gemotiveerd aan de hand van de wet, aan of de volgende kapitaalbelangen kwalificeren als vermoede deelneming én welke waarderingsgrondslag hierbij hoort: a. Gela bv van Carini bv; b. Noto bv van v.o.f. Lentini.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "text": "Beide belangen zijn vermoede deelnemingen. Gela volgt volgens het model verkrijgingsprijs/actuele waarde; voor Noto accepteert het gecorrigeerde model zowel de vermogensmutatiemethode als de gemotiveerde conclusie dat artikel 2:389 lid 1 BW niet op een v.o.f. van toepassing is.",
+        "why": "Deze conclusie en motivering volgen het oorspronkelijke antwoordmodel."
+      },
+      {
+        "text": "Gela en Noto zijn geen vermoede deelnemingen omdat de belangen onder 50% liggen; beide worden uitsluitend als kortlopende belegging behandeld.",
+        "why": "Deze redenering gebruikt een ander criterium of een andere verwerking dan de oorspronkelijke casus vereist."
+      },
+      {
+        "text": "Gela moet uitsluitend tegen NVW worden gewaardeerd en bij Noto vervalt het vermoeden van deelneming omdat de aandeelhouder een v.o.f. is.",
+        "why": "Deze redenering laat een beslissend casusgegeven buiten beschouwing."
+      },
+      {
+        "text": "Gela wordt integraal geconsolideerd op grond van het 30%-belang; Noto wordt proportioneel geconsolideerd uitsluitend op grond van het 45%-belang.",
+        "why": "Deze conclusie verwart de aard van het belang met de bijbehorende verwerking."
+      }
+    ],
+    "solutionHtml": "<p>1.</p><p>Geef, gemotiveerd aan de hand van de wet, aan of de volgende kapitaalbelangen<br>kwalificeren als vermoede deelneming én welke waarderingsgrondslag hierbij hoort:<br>a. Gela bv van Carini bv;<br>b. Noto bv van v.o.f. Lentini.<br>(7 punten)</p><p>1a. Gela bv van Carini bv<br>deelneming<br>Wet: Art. 2:24c-1 geeft o.a. weer “…Indien een vijfde of meer van het geplaatste kapitaal wordt<br>verschaft wordt het bestaan van een deelneming vermoed.” (½)<br>Motivering: Carini bv bezit 30% aandeel in het geplaatste aandelenkapitaal van Gela bv. (½)<br>Conclusie: Gela bv is een vermoede deelneming van Carini bv. (½)<br>waardering<br>Wet: Art. 389-1 geeft o.a. weer “ Indien een rechtspersoon…een vijfde of meer van de stemmen<br>van de aandeelhouders naar eigen inzicht kunnen uitbrengen, wordt vermoed dat de rechtspersoon<br>invloed van betekenis uitoefent.” (½)<br>Motivering: Carini bv kan 30% van de stemrechten uitbrengen waardoor wordt vermoed dat invloed<br>van betekenis op het zakelijk en financieel beleid kan worden uitgeoefend (½). Dit vermoeden<br>wordt echter tenietgedaan omdat de andere aandeelhouder Alcamo bv 70% bezit en zij derhalve<br>overheersende zeggenschap heeft. (½)<br>Conclusie: Waarderen op basis van art. 384-1 (verkrijgingsprijs of actuele waarde) (½)<br>(df indien student concludeert dat sprake is van invloed van betekenis door Carini bv)<br>1b. Noto bv van v.o.f. Lentini<br>deelneming<br>Wet: Art. 2:24c-1 geeft o.a. weer:<br>“Een…vennootschap heeft een deelneming in een rechtspersoon…” (½) en<br>“…Indien een vijfde of meer van het geplaatste kapitaal wordt verschaft wordt het bestaan van een<br>deelneming vermoed.” (½)<br>Motivering: v.o.f. Lentini bezit 45% in het geplaatste aandelenkapitaal van Noto bv. (½)<br>Conclusie: Noto bv is een vermoede deelneming van v.o.f. Lentini. (½)<br>waardering<br>Wet: Art. 389-1 geeft o.a. weer “ Indien een rechtspersoon…een vijfde of meer van de stemmen<br>van de aandeelhouders naar eigen inzicht kunnen uitbrengen, wordt vermoed dat de rechtspersoon<br>invloed van betekenis uitoefent.” (½)<br>Motivering: v.o.f Lentini kan 45% van de stemrechten uitbrengen waardoor wordt vermoed dat<br>invloed van betekenis op het zakelijk en financieel beleid kan worden uitgeoefend. Dit vermoeden<br>wordt echter tenietgedaan omdat de andere aandeelhouder Carini bv 55% bezit en zij derhalve<br>overheersende zeggenschap heeft. Echter heeft Carini bv 10% van haar stemrechten<br>overgedragen aan v.o.f. Lentini waardoor zij overheersende zeggenschap verkrijgt. (½)<br>Conclusie: Waarderen op basis van art. 389-2/3/9 (een vorm van de vermogensmutatiemethode)<br>(½)<br>(df indien student concludeert dat geen sprake is van invloed van betekenis door v.o.f. Lentini)<br>Naar aanleiding van corectie: In art. 389-1 wordt expliciet gesproken over “waarin de<br>rechtspersoon”. Een v.o.f. is geen rechtspersoon. Kandidaten die aangeven dat een v.o.f. geen<br>rechtspersoon is en daarom art. 389-1 niet van toepassing is ontvangen de volle (1½) punten.</p>",
+    "practiceSolutionHtml": "<p>1.</p><p>Geef, gemotiveerd aan de hand van de wet, aan of de volgende kapitaalbelangen<br/>kwalificeren als vermoede deelneming én welke waarderingsgrondslag hierbij hoort:<br/>a. Gela bv van Carini bv;<br/>b. Noto bv van v.o.f. Lentini.<br/></p><p>1a. Gela bv van Carini bv<br/>deelneming<br/>Wet: Art. 2:24c-1 geeft o.a. weer “…Indien een vijfde of meer van het geplaatste kapitaal wordt<br/>verschaft wordt het bestaan van een deelneming vermoed.” <br/>Motivering: Carini bv bezit 30% aandeel in het geplaatste aandelenkapitaal van Gela bv. <br/>Conclusie: Gela bv is een vermoede deelneming van Carini bv. <br/>waardering<br/>Wet: Art. 389-1 geeft o.a. weer “ Indien een rechtspersoon…een vijfde of meer van de stemmen<br/>van de aandeelhouders naar eigen inzicht kunnen uitbrengen, wordt vermoed dat de rechtspersoon<br/>invloed van betekenis uitoefent.” <br/>Motivering: Carini bv kan 30% van de stemrechten uitbrengen waardoor wordt vermoed dat invloed<br/>van betekenis op het zakelijk en financieel beleid kan worden uitgeoefend . Dit vermoeden<br/>wordt echter tenietgedaan omdat de andere aandeelhouder Alcamo bv 70% bezit en zij derhalve<br/>overheersende zeggenschap heeft. <br/>Conclusie: Waarderen op basis van art. 384-1 (verkrijgingsprijs of actuele waarde) <br/>(df indien student concludeert dat sprake is van invloed van betekenis door Carini bv)<br/>1b. Noto bv van v.o.f. Lentini<br/>deelneming<br/>Wet: Art. 2:24c-1 geeft o.a. weer:<br/>“Een…vennootschap heeft een deelneming in een rechtspersoon…”  en<br/>“…Indien een vijfde of meer van het geplaatste kapitaal wordt verschaft wordt het bestaan van een<br/>deelneming vermoed.” <br/>Motivering: v.o.f. Lentini bezit 45% in het geplaatste aandelenkapitaal van Noto bv. <br/>Conclusie: Noto bv is een vermoede deelneming van v.o.f. Lentini. <br/>waardering<br/>Wet: Art. 389-1 geeft o.a. weer “ Indien een rechtspersoon…een vijfde of meer van de stemmen<br/>van de aandeelhouders naar eigen inzicht kunnen uitbrengen, wordt vermoed dat de rechtspersoon<br/>invloed van betekenis uitoefent.” <br/>Motivering: v.o.f Lentini kan 45% van de stemrechten uitbrengen waardoor wordt vermoed dat<br/>invloed van betekenis op het zakelijk en financieel beleid kan worden uitgeoefend. Dit vermoeden<br/>wordt echter tenietgedaan omdat de andere aandeelhouder Carini bv 55% bezit en zij derhalve<br/>overheersende zeggenschap heeft. Echter heeft Carini bv 10% van haar stemrechten<br/>overgedragen aan v.o.f. Lentini waardoor zij overheersende zeggenschap verkrijgt. <br/>Conclusie: Waarderen op basis van art. 389-2/3/9 (een vorm van de vermogensmutatiemethode)<br/><br/>(df indien student concludeert dat geen sprake is van invloed van betekenis door v.o.f. Lentini)<br/>Naar aanleiding van corectie: In art. 389-1 wordt expliciet gesproken over “waarin de<br/>rechtspersoon”. Een v.o.f. is geen rechtspersoon. Kandidaten die aangeven dat een v.o.f. geen<br/>rechtspersoon is en daarom art. 389-1 niet van toepassing is ontvangen de volle (1½) punten.</p>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "kwalificatie",
+      "title": "Kapitaalbelangen en zeggenschap",
+      "rules": "Beoordeel deelneming, dochtermaatschappij en groepsmaatschappij afzonderlijk aan de hand van het doel van het belang en de daadwerkelijk uit te oefenen rechten.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-1"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 1",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "authored-text"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-2",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-2",
+    "sectionId": "opgave-1",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 2",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "2. Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft gemaakt van de verwerving van het 70% kapitaalbelang in Gela.",
+    "promptHtml": "<p>2. Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft gemaakt van de verwerving van het 70% kapitaalbelang in Gela.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br/>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. </p><p>aan<br/>aan</p><p>0..<br/>0..<br/>0..<br/>0..</p><p>Deelneming Gela bv<br/>Goodwill<br/>Aandelenkapitaal<br/>Agio</p><p>€ 3.850.000<br/>€ 2.870.000</p><p><br/><br/><br/></p><p>€ 5.000.000<br/>€ 1.720.000</p><p><br/><br/><br/></p><p>Toelichting:<br/>Deelneming: 70% x € 5.500.000<br/>Goodwill: € 6.720.000 - € 3.850.000<br/>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br/>Aandelenkapitaal: 20.000 x € 250<br/>Agio: saldopost</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br/>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. </p><p>aan<br/>aan</p><p>0..<br/>0..<br/>0..<br/>0..</p><p>Deelneming Gela bv<br/>Goodwill<br/>Aandelenkapitaal<br/>Agio</p><p>€ 3.850.000<br/>€ 2.870.000</p><p><br/><br/><br/></p><p>€ 5.000.000<br/>€ 1.720.000</p><p><br/><br/><br/></p><p>Toelichting:<br/>Deelneming: 70% x € 5.500.000<br/>Goodwill: € 6.720.000 - € 3.850.000<br/>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br/>Aandelenkapitaal: 21.000 x € 250<br/>Agio: saldopost</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 21.000; het antwoordmodel geeft 20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br/>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. </p><p>aan<br/>aan</p><p>0..<br/>0..<br/>0..<br/>0..</p><p>Deelneming Gela bv<br/>Goodwill<br/>Aandelenkapitaal<br/>Agio</p><p>€ 3.850.000<br/>€ 2.870.000</p><p><br/><br/><br/></p><p>€ 5.000.000<br/>€ 1.720.000</p><p><br/><br/><br/></p><p>Toelichting:<br/>Deelneming: 70% x € 5.500.000<br/>Goodwill: € 6.720.000 - € 3.850.000<br/>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br/>Aandelenkapitaal: 19.000 x € 250<br/>Agio: saldopost</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 19.000; het antwoordmodel geeft 20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br/>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. </p><p>aan<br/>aan</p><p>0..<br/>0..<br/>0..<br/>0..</p><p>Deelneming Gela bv<br/>Goodwill<br/>Aandelenkapitaal<br/>Agio</p><p>€ 3.850.000<br/>€ 2.870.000</p><p><br/><br/><br/></p><p>€ 5.000.000<br/>€ 1.720.000</p><p><br/><br/><br/></p><p>Toelichting:<br/>Deelneming: 70% x € 5.500.000<br/>Goodwill: € 6.720.000 - € 3.850.000<br/>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br/>Aandelenkapitaal: 40.000 x € 250<br/>Agio: saldopost</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 40.000; het antwoordmodel geeft 20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. (4 punten)</p><p>aan<br>aan</p><p>0..<br>0..<br>0..<br>0..</p><p>Deelneming Gela bv<br>Goodwill<br>Aandelenkapitaal<br>Agio</p><p>€ 3.850.000<br>€ 2.870.000</p><p>(½)<br>(½)<br>(½)<br>(½)</p><p>€ 5.000.000<br>€ 1.720.000</p><p>(½)<br>(½)<br>(½)<br>(½)</p><p>Toelichting:<br>Deelneming: 70% x € 5.500.000<br>Goodwill: € 6.720.000 - € 3.850.000<br>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br>Aandelenkapitaal: 20.000 x € 250<br>Agio: saldopost</p>",
+    "practiceSolutionHtml": "<p>2.</p><p>Geef de journaalpost(en) die Alcamo op 1 januari 2022 in haar administratie heeft<br/>gemaakt van de verwerving van het 70% kapitaalbelang in Gela. </p><p>aan<br/>aan</p><p>0..<br/>0..<br/>0..<br/>0..</p><p>Deelneming Gela bv<br/>Goodwill<br/>Aandelenkapitaal<br/>Agio</p><p>€ 3.850.000<br/>€ 2.870.000</p><p><br/><br/><br/></p><p>€ 5.000.000<br/>€ 1.720.000</p><p><br/><br/><br/></p><p>Toelichting:<br/>Deelneming: 70% x € 5.500.000<br/>Goodwill: € 6.720.000 - € 3.850.000<br/>€ 1.200.000 / € 50 = 24.000 aandelen x 70% x € 400 = € 6.720.000 (aankoopbedrag).<br/>Aandelenkapitaal: 20.000 x € 250<br/>Agio: saldopost</p>",
+    "dependencyQuestionIds": [
+      "vraag-1"
+    ],
+    "guidance": {
+      "lesson": "goodwill",
+      "title": "Verwerving en het verschil met de koopsom",
+      "rules": "Vergelijk de tegenprestatie met het verworven aandeel in de aangepaste netto-activa en volg het verschil afzonderlijk volgens de waarderingsgrondslag en de expliciete casusregels.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-2"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 2",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 20000.0,
+      "incorrectValues": [
+        21000.0,
+        19000.0,
+        40000.0
+      ],
+      "sourceToken": "20.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-3",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-3",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 3",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "3. Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december 2021 zoals opgenomen in de jaarrekening van Carini.",
+    "promptHtml": "<p>3. Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december 2021 zoals opgenomen in de jaarrekening van Carini.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. </p><p>Zichtbaar eigen vermogen Noto<br/>€ 3.000.000<br/>Fout in administratie<br/>€ 100.000 - <br/>Gecorrigeerd zichtbaar eigen vermogen Noto<br/>€ 2.900.000<br/>Fair value correcties:<br/>- aanpassing gebouwen<br/>€ 600.000 + <br/>- aanpassing incourante voorraad<br/>€ 100.000 - <br/>- aanpassing dubieuze debiteur<br/>€ 200.000 - <br/>Totaal<br/>€ 300.000 +<br/>Netttovermogenswaarde<br/>€ 3.200.000<br/>€ 1.760.000 <br/>€ 2.000.000<br/>€ 240.000</p><p>Aandeel 55% <br/>Betaald<br/>Goodwill</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. </p><p>Zichtbaar eigen vermogen Noto<br/>€ 3.000.000<br/>Fout in administratie<br/>€ 100.000 - <br/>Gecorrigeerd zichtbaar eigen vermogen Noto<br/>€ 2.900.000<br/>Fair value correcties:<br/>- aanpassing gebouwen<br/>€ 600.000 + <br/>- aanpassing incourante voorraad<br/>€ 100.000 - <br/>- aanpassing dubieuze debiteur<br/>€ 200.000 - <br/>Totaal<br/>€ 300.000 +<br/>Netttovermogenswaarde<br/>€ 3.200.000<br/>€ 1.760.000 <br/>€ 2.000.000<br/>€ 250.000</p><p>Aandeel 55% <br/>Betaald<br/>Goodwill</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 250.000; het antwoordmodel geeft € 240.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. </p><p>Zichtbaar eigen vermogen Noto<br/>€ 3.000.000<br/>Fout in administratie<br/>€ 100.000 - <br/>Gecorrigeerd zichtbaar eigen vermogen Noto<br/>€ 2.900.000<br/>Fair value correcties:<br/>- aanpassing gebouwen<br/>€ 600.000 + <br/>- aanpassing incourante voorraad<br/>€ 100.000 - <br/>- aanpassing dubieuze debiteur<br/>€ 200.000 - <br/>Totaal<br/>€ 300.000 +<br/>Netttovermogenswaarde<br/>€ 3.200.000<br/>€ 1.760.000 <br/>€ 2.000.000<br/>€ 230.000</p><p>Aandeel 55% <br/>Betaald<br/>Goodwill</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 230.000; het antwoordmodel geeft € 240.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. </p><p>Zichtbaar eigen vermogen Noto<br/>€ 3.000.000<br/>Fout in administratie<br/>€ 100.000 - <br/>Gecorrigeerd zichtbaar eigen vermogen Noto<br/>€ 2.900.000<br/>Fair value correcties:<br/>- aanpassing gebouwen<br/>€ 600.000 + <br/>- aanpassing incourante voorraad<br/>€ 100.000 - <br/>- aanpassing dubieuze debiteur<br/>€ 200.000 - <br/>Totaal<br/>€ 300.000 +<br/>Netttovermogenswaarde<br/>€ 3.200.000<br/>€ 1.760.000 <br/>€ 2.000.000<br/>€ 480.000</p><p>Aandeel 55% <br/>Betaald<br/>Goodwill</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 480.000; het antwoordmodel geeft € 240.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br>2021 zoals opgenomen in de jaarrekening van Carini. (4 punten)</p><p>Zichtbaar eigen vermogen Noto<br>€ 3.000.000<br>Fout in administratie<br>€ 100.000 - (½)<br>Gecorrigeerd zichtbaar eigen vermogen Noto<br>€ 2.900.000<br>Fair value correcties:<br>- aanpassing gebouwen<br>€ 600.000 + (½)<br>- aanpassing incourante voorraad<br>€ 100.000 - (1)<br>- aanpassing dubieuze debiteur<br>€ 200.000 - (1)<br>Totaal<br>€ 300.000 +<br>Netttovermogenswaarde<br>€ 3.200.000<br>€ 1.760.000 (½)<br>€ 2.000.000<br>€ 240.000</p><p>Aandeel 55% (½)<br>Betaald<br>Goodwill</p>",
+    "practiceSolutionHtml": "<p>3.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. </p><p>Zichtbaar eigen vermogen Noto<br/>€ 3.000.000<br/>Fout in administratie<br/>€ 100.000 - <br/>Gecorrigeerd zichtbaar eigen vermogen Noto<br/>€ 2.900.000<br/>Fair value correcties:<br/>- aanpassing gebouwen<br/>€ 600.000 + <br/>- aanpassing incourante voorraad<br/>€ 100.000 - <br/>- aanpassing dubieuze debiteur<br/>€ 200.000 - <br/>Totaal<br/>€ 300.000 +<br/>Netttovermogenswaarde<br/>€ 3.200.000<br/>€ 1.760.000 <br/>€ 2.000.000<br/>€ 240.000</p><p>Aandeel 55% <br/>Betaald<br/>Goodwill</p>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-3"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 3",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 240000.0,
+      "incorrectValues": [
+        250000.0,
+        230000.0,
+        480000.0
+      ],
+      "sourceToken": "€ 240.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-4",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-4",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 4",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "4. Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december 2022 zoals opgenomen in de jaarrekening van Carini.",
+    "promptHtml": "<p>4. Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december 2022 zoals opgenomen in de jaarrekening van Carini.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. <br/>€ 1.760.000<br/>€ 357.500 +<br/>€<br/>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br/>Resultaat boekjaar<br/>Interim-dividend<br/>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br/>Fair value aanpassingen:<br/>- Afschrijving gebouwen<br/>€ 60.000 -/- <br/>- Voorziening incourante voorraad<br/>01-01<br/>€ 100.000 31-12<br/>€ 40.000 € 60.000 + <br/>- Voorziening dubieuze debiteur<br/>€ 200.000 + </p><p>(1; df van 3)<br/>(3; specificatie hieronder)<br/></p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br/>€ 650.000</p><p>Aandeel 55% </p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br/>Eigen vermogen Noto 31-12-2021<br/>Resultaat Noto 2022<br/>Interim dividend</p><p>€ 2.900.000<br/>€ 450.000<br/>€ 100.000 -</p><p>Waarderingsverschil gebouw<br/>Waarderingsverschil voorraad<br/>Berekend eigen vermogen grondslagen Carini<br/>Aandeel 55%</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. <br/>€ 1.760.000<br/>€ 357.500 +<br/>€<br/>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br/>Resultaat boekjaar<br/>Interim-dividend<br/>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br/>Fair value aanpassingen:<br/>- Afschrijving gebouwen<br/>€ 60.000 -/- <br/>- Voorziening incourante voorraad<br/>01-01<br/>€ 100.000 31-12<br/>€ 40.000 € 60.000 + <br/>- Voorziening dubieuze debiteur<br/>€ 200.000 + </p><p>(1; df van 3)<br/>(3; specificatie hieronder)<br/></p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br/>€ 650.000</p><p>Aandeel 55% </p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br/>Eigen vermogen Noto 31-12-2021<br/>Resultaat Noto 2022<br/>Interim dividend</p><p>€ 2.900.000<br/>€ 450.000<br/>€ 110.000 -</p><p>Waarderingsverschil gebouw<br/>Waarderingsverschil voorraad<br/>Berekend eigen vermogen grondslagen Carini<br/>Aandeel 55%</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 110.000; het antwoordmodel geeft € 100.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. <br/>€ 1.760.000<br/>€ 357.500 +<br/>€<br/>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br/>Resultaat boekjaar<br/>Interim-dividend<br/>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br/>Fair value aanpassingen:<br/>- Afschrijving gebouwen<br/>€ 60.000 -/- <br/>- Voorziening incourante voorraad<br/>01-01<br/>€ 100.000 31-12<br/>€ 40.000 € 60.000 + <br/>- Voorziening dubieuze debiteur<br/>€ 200.000 + </p><p>(1; df van 3)<br/>(3; specificatie hieronder)<br/></p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br/>€ 650.000</p><p>Aandeel 55% </p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br/>Eigen vermogen Noto 31-12-2021<br/>Resultaat Noto 2022<br/>Interim dividend</p><p>€ 2.900.000<br/>€ 450.000<br/>€ 90.000 -</p><p>Waarderingsverschil gebouw<br/>Waarderingsverschil voorraad<br/>Berekend eigen vermogen grondslagen Carini<br/>Aandeel 55%</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 90.000; het antwoordmodel geeft € 100.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. <br/>€ 1.760.000<br/>€ 357.500 +<br/>€<br/>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br/>Resultaat boekjaar<br/>Interim-dividend<br/>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br/>Fair value aanpassingen:<br/>- Afschrijving gebouwen<br/>€ 60.000 -/- <br/>- Voorziening incourante voorraad<br/>01-01<br/>€ 100.000 31-12<br/>€ 40.000 € 60.000 + <br/>- Voorziening dubieuze debiteur<br/>€ 200.000 + </p><p>(1; df van 3)<br/>(3; specificatie hieronder)<br/></p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br/>€ 650.000</p><p>Aandeel 55% </p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br/>Eigen vermogen Noto 31-12-2021<br/>Resultaat Noto 2022<br/>Interim dividend</p><p>€ 2.900.000<br/>€ 450.000<br/>€ 200.000 -</p><p>Waarderingsverschil gebouw<br/>Waarderingsverschil voorraad<br/>Berekend eigen vermogen grondslagen Carini<br/>Aandeel 55%</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 200.000; het antwoordmodel geeft € 100.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br>2021 zoals opgenomen in de jaarrekening van Carini. (6 punten)<br>€ 1.760.000<br>€ 357.500 +<br>€<br>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br>Resultaat boekjaar<br>Interim-dividend<br>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br>Fair value aanpassingen:<br>- Afschrijving gebouwen<br>€ 60.000 -/- (½)<br>- Voorziening incourante voorraad<br>01-01<br>€ 100.000 31-12<br>€ 40.000 € 60.000 + (1)<br>- Voorziening dubieuze debiteur<br>€ 200.000 + (1)</p><p>(1; df van 3)<br>(3; specificatie hieronder)<br>(2)</p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br>€ 650.000</p><p>Aandeel 55% (½)</p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br>Eigen vermogen Noto 31-12-2021<br>Resultaat Noto 2022<br>Interim dividend</p><p>€ 2.900.000<br>€ 450.000<br>€ 100.000 -</p><p>Waarderingsverschil gebouw<br>Waarderingsverschil voorraad<br>Berekend eigen vermogen grondslagen Carini<br>Aandeel 55%</p>",
+    "practiceSolutionHtml": "<p>4.</p><p>Bereken de nettovermogenswaarde (boekwaarde) van de deelneming Noto per 31 december<br/>2021 zoals opgenomen in de jaarrekening van Carini. <br/>€ 1.760.000<br/>€ 357.500 +<br/>€<br/>55.000 € 2.062.500</p><p>Boekwaarde 31-12-2021<br/>Resultaat boekjaar<br/>Interim-dividend<br/>Boekwaarde 31-12-2022</p><p>Resultaat Noto volgens eigen grondslagen<br/>Fair value aanpassingen:<br/>- Afschrijving gebouwen<br/>€ 60.000 -/- <br/>- Voorziening incourante voorraad<br/>01-01<br/>€ 100.000 31-12<br/>€ 40.000 € 60.000 + <br/>- Voorziening dubieuze debiteur<br/>€ 200.000 + </p><p>(1; df van 3)<br/>(3; specificatie hieronder)<br/></p><p>€ 450.000</p><p>Resultaat Noto volgens grondslagen Carini</p><p>€ 200.000 +<br/>€ 650.000</p><p>Aandeel 55% </p><p>€ 357.500</p><p>Controle via eigen vermogen Noto 31-12-2022:<br/>Eigen vermogen Noto 31-12-2021<br/>Resultaat Noto 2022<br/>Interim dividend</p><p>€ 2.900.000<br/>€ 450.000<br/>€ 100.000 -</p><p>Waarderingsverschil gebouw<br/>Waarderingsverschil voorraad<br/>Berekend eigen vermogen grondslagen Carini<br/>Aandeel 55%</p>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-4"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 4",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 100000.0,
+      "incorrectValues": [
+        110000.0,
+        90000.0,
+        200000.0
+      ],
+      "sourceToken": "€ 100.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-5",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-5",
+    "sectionId": "opgave-1",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 5",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "5. Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van Gela.",
+    "promptHtml": "<p>5. Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van Gela.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>5.</p><p>€</p><p>€ 540.000 +<br/>40.000 € 3.750.000<br/>€ 2.062.500</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br/>Gela. </p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br/>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br/>vergadering (van aandeelhouders) kan uitoefenen. <br/>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br/>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br/>algemene vergadering van Patti uitoefenen. <br/>Conclusie: Patti is een dochtermaatschappij van Gela. </p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>5.</p><p>€</p><p>€ 540.000 +<br/>40.000 € 3.750.000<br/>€ 2.162.500</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br/>Gela. </p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br/>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br/>vergadering (van aandeelhouders) kan uitoefenen. <br/>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br/>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br/>algemene vergadering van Patti uitoefenen. <br/>Conclusie: Patti is een dochtermaatschappij van Gela. </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.162.500; het antwoordmodel geeft € 2.062.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>5.</p><p>€</p><p>€ 540.000 +<br/>40.000 € 3.750.000<br/>€ 1.962.500</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br/>Gela. </p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br/>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br/>vergadering (van aandeelhouders) kan uitoefenen. <br/>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br/>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br/>algemene vergadering van Patti uitoefenen. <br/>Conclusie: Patti is een dochtermaatschappij van Gela. </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.962.500; het antwoordmodel geeft € 2.062.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>5.</p><p>€</p><p>€ 540.000 +<br/>40.000 € 3.750.000<br/>€ 4.125.000</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br/>Gela. </p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br/>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br/>vergadering (van aandeelhouders) kan uitoefenen. <br/>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br/>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br/>algemene vergadering van Patti uitoefenen. <br/>Conclusie: Patti is een dochtermaatschappij van Gela. </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 4.125.000; het antwoordmodel geeft € 2.062.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>5.</p><p>€</p><p>€ 540.000 +<br>40.000 € 3.750.000<br>€ 2.062.500</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br>Gela. (2 punten)</p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br>vergadering (van aandeelhouders) kan uitoefenen. (½)<br>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br>algemene vergadering van Patti uitoefenen. (1)<br>Conclusie: Patti is een dochtermaatschappij van Gela. (½)</p>",
+    "practiceSolutionHtml": "<p>5.</p><p>€</p><p>€ 540.000 +<br/>40.000 € 3.750.000<br/>€ 2.062.500</p><p>Geef, gemotiveerd aan de hand van de wet, aan of Patti een dochtermaatschappij is van<br/>Gela. </p><p>Wet: artikel 2:24a lid 1a bepaalt o.a. dat sprake is van een dochtermaatschappij indien een<br/>rechtspersoon in een rechtspersoon meer dan de helft van de stemrechten in de algemene<br/>vergadering (van aandeelhouders) kan uitoefenen. <br/>Motivering: Patti heeft in totaal 65 stemrechtaandelen uitgegeven. Gela beschikt over 35<br/>stemrechtaandelen. Dit is 53,8% en derhalve kan Gela meer dan de helft van de stemrechten in de<br/>algemene vergadering van Patti uitoefenen. <br/>Conclusie: Patti is een dochtermaatschappij van Gela. </p>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4"
+    ],
+    "guidance": {
+      "lesson": "kwalificatie",
+      "title": "Kapitaalbelangen en zeggenschap",
+      "rules": "Beoordeel deelneming, dochtermaatschappij en groepsmaatschappij afzonderlijk aan de hand van het doel van het belang en de daadwerkelijk uit te oefenen rechten.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-5"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 5",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 2062500.0,
+      "incorrectValues": [
+        2162500.0,
+        1962500.0,
+        4125000.0
+      ],
+      "sourceToken": "€ 2.062.500"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-6",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-6",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 6",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "6. Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat opneemt in haar jaarrekening.",
+    "promptHtml": "<p>6. Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat opneemt in haar jaarrekening.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br/>opneemt in haar jaarrekening. </p><p>Gela waardeert tegen nettovermogenswaarde:<br/>Gewone aandelen<br/>30 x € 150<br/>€ 4.500 <br/>Winstrechtaandelen<br/>20 x € 150<br/>€ 3.000 <br/>Stemrechtaandelen<br/>5 x € 100<br/>€ 500 <br/>Totaal<br/>€ 8.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br/>opneemt in haar jaarrekening. </p><p>Gela waardeert tegen nettovermogenswaarde:<br/>Gewone aandelen<br/>30 x € 150<br/>€ 4.500 <br/>Winstrechtaandelen<br/>20 x € 150<br/>€ 3.000 <br/>Stemrechtaandelen<br/>5 x € 100<br/>€ 500 <br/>Totaal<br/>€ 8.100</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 8.100; het antwoordmodel geeft € 8.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br/>opneemt in haar jaarrekening. </p><p>Gela waardeert tegen nettovermogenswaarde:<br/>Gewone aandelen<br/>30 x € 150<br/>€ 4.500 <br/>Winstrechtaandelen<br/>20 x € 150<br/>€ 3.000 <br/>Stemrechtaandelen<br/>5 x € 100<br/>€ 500 <br/>Totaal<br/>€ 7.900</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 7.900; het antwoordmodel geeft € 8.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br/>opneemt in haar jaarrekening. </p><p>Gela waardeert tegen nettovermogenswaarde:<br/>Gewone aandelen<br/>30 x € 150<br/>€ 4.500 <br/>Winstrechtaandelen<br/>20 x € 150<br/>€ 3.000 <br/>Stemrechtaandelen<br/>5 x € 100<br/>€ 500 <br/>Totaal<br/>€ 16.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 16.000; het antwoordmodel geeft € 8.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br>opneemt in haar jaarrekening. (3 punten)</p><p>Gela waardeert tegen nettovermogenswaarde:<br>Gewone aandelen<br>30 x € 150<br>€ 4.500 (1)<br>Winstrechtaandelen<br>20 x € 150<br>€ 3.000 (1)<br>Stemrechtaandelen<br>5 x € 100<br>€ 500 (1)<br>Totaal<br>€ 8.000</p>",
+    "practiceSolutionHtml": "<p>6.</p><p>Bereken de boekwaarde van het kapitaalbelang in Patti per 31 december 2022 zoals Gela dat<br/>opneemt in haar jaarrekening. </p><p>Gela waardeert tegen nettovermogenswaarde:<br/>Gewone aandelen<br/>30 x € 150<br/>€ 4.500 <br/>Winstrechtaandelen<br/>20 x € 150<br/>€ 3.000 <br/>Stemrechtaandelen<br/>5 x € 100<br/>€ 500 <br/>Totaal<br/>€ 8.000</p>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4",
+      "vraag-5"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-6"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 6",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 8000.0,
+      "incorrectValues": [
+        8100.0,
+        7900.0,
+        16000.0
+      ],
+      "sourceToken": "€ 8.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-7",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-7",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 7",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "7. Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt gemaakt door: a. Gela b. Noto",
+    "promptHtml": "<p>7. Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt gemaakt<br>door:<br>a. Gela<br>b. Noto</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br/>gemaakt door:<br/>a. Gela<br/>b. Noto<br/></p><p>Gela<br/>aan</p><p>€ 40.000</p><p>1..<br/>0..</p><p>Bank<br/>Deelneming Patti</p><p>1..</p><p>Bank<br/>Resultaat deelneming Patti<br/>(of: dividendopbrengst)</p><p>€ 40.000</p><p></p><p><br/>50/75 x € 60.000</p><p>Noto<br/>aan</p><p>9..</p><p>€ 20.000<br/></p><p><br/>€ 20.000</p><p>25/75 x € 60.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br/>gemaakt door:<br/>a. Gela<br/>b. Noto<br/></p><p>Gela<br/>aan</p><p>€ 40.000</p><p>1..<br/>0..</p><p>Bank<br/>Deelneming Patti</p><p>1..</p><p>Bank<br/>Resultaat deelneming Patti<br/>(of: dividendopbrengst)</p><p>€ 40.000</p><p></p><p><br/>50/75 x € 60.000</p><p>Noto<br/>aan</p><p>9..</p><p>€ 20.000<br/></p><p><br/>€ 20.000</p><p>25/75 x € 61.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 61.000; het antwoordmodel geeft € 60.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br/>gemaakt door:<br/>a. Gela<br/>b. Noto<br/></p><p>Gela<br/>aan</p><p>€ 40.000</p><p>1..<br/>0..</p><p>Bank<br/>Deelneming Patti</p><p>1..</p><p>Bank<br/>Resultaat deelneming Patti<br/>(of: dividendopbrengst)</p><p>€ 40.000</p><p></p><p><br/>50/75 x € 60.000</p><p>Noto<br/>aan</p><p>9..</p><p>€ 20.000<br/></p><p><br/>€ 20.000</p><p>25/75 x € 59.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 59.000; het antwoordmodel geeft € 60.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br/>gemaakt door:<br/>a. Gela<br/>b. Noto<br/></p><p>Gela<br/>aan</p><p>€ 40.000</p><p>1..<br/>0..</p><p>Bank<br/>Deelneming Patti</p><p>1..</p><p>Bank<br/>Resultaat deelneming Patti<br/>(of: dividendopbrengst)</p><p>€ 40.000</p><p></p><p><br/>50/75 x € 60.000</p><p>Noto<br/>aan</p><p>9..</p><p>€ 20.000<br/></p><p><br/>€ 20.000</p><p>25/75 x € 120.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 120.000; het antwoordmodel geeft € 60.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br>gemaakt door:<br>a. Gela<br>b. Noto<br>(4 punten)</p><p>Gela<br>aan</p><p>€ 40.000</p><p>1..<br>0..</p><p>Bank<br>Deelneming Patti</p><p>1..</p><p>Bank<br>Resultaat deelneming Patti<br>(of: dividendopbrengst)</p><p>€ 40.000</p><p>(1)</p><p>(1)<br>50/75 x € 60.000</p><p>Noto<br>aan</p><p>9..</p><p>€ 20.000<br>(1)</p><p>(1)<br>€ 20.000</p><p>25/75 x € 60.000</p>",
+    "practiceSolutionHtml": "<p>7.</p><p>Geef ten aanzien van het uitgekeerde dividend de journaalpost die in 2022 wordt<br/>gemaakt door:<br/>a. Gela<br/>b. Noto<br/></p><p>Gela<br/>aan</p><p>€ 40.000</p><p>1..<br/>0..</p><p>Bank<br/>Deelneming Patti</p><p>1..</p><p>Bank<br/>Resultaat deelneming Patti<br/>(of: dividendopbrengst)</p><p>€ 40.000</p><p></p><p><br/>50/75 x € 60.000</p><p>Noto<br/>aan</p><p>9..</p><p>€ 20.000<br/></p><p><br/>€ 20.000</p><p>25/75 x € 60.000</p>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4",
+      "vraag-5",
+      "vraag-6"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-7"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 1 Voorn (kapitaalbelangen) (30 punten) · Vraag 7",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 60000.0,
+      "incorrectValues": [
+        61000.0,
+        59000.0,
+        120000.0
+      ],
+      "sourceToken": "€ 60.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-8",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-8",
+    "sectionId": "opgave-2",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 8",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "8. Stel onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van goederen (intercompanyleveringen) van Gluton aan Seal-it. NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen u moet invullen.",
+    "promptHtml": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van goederen (intercompanyleveringen) van Gluton aan Seal-it.</p><table><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij …</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst in voorraad bij …</th><th scope=\"col\">Interne correctie bij …</th><th scope=\"col\">Eliminatie t.l.v. aandeel derden</th><th scope=\"col\">Eliminatie t.l.v. geconsolideerd resultaat</th></tr></thead><tbody><tr><th scope=\"row\">31-12-2021</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th scope=\"row\">31-12-2022</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th scope=\"row\">Toe/afname</th><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen u moet invullen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br/>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br/>Seal-it<br/>(PNT)</p><p>Interne correctie<br/>Eliminatie t.l.v.<br/>bij Gluton<br/>gecons. resultaat<br/>(PNT)<br/>(PNT)<br/>100 per vat<br/>70%<br/>30%</p><p>Niet-gerealiseerde IC<br/>bij Seal-it (PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 3.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br/>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br/>Seal-it<br/>(PNT)</p><p>Interne correctie<br/>Eliminatie t.l.v.<br/>bij Gluton<br/>gecons. resultaat<br/>(PNT)<br/>(PNT)<br/>100 per vat<br/>70%<br/>30%</p><p>Niet-gerealiseerde IC<br/>bij Seal-it (PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 3.100</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 3.100; het antwoordmodel geeft 3.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br/>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br/>Seal-it<br/>(PNT)</p><p>Interne correctie<br/>Eliminatie t.l.v.<br/>bij Gluton<br/>gecons. resultaat<br/>(PNT)<br/>(PNT)<br/>100 per vat<br/>70%<br/>30%</p><p>Niet-gerealiseerde IC<br/>bij Seal-it (PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 2.900</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 2.900; het antwoordmodel geeft 3.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br/>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br/>Seal-it<br/>(PNT)</p><p>Interne correctie<br/>Eliminatie t.l.v.<br/>bij Gluton<br/>gecons. resultaat<br/>(PNT)<br/>(PNT)<br/>100 per vat<br/>70%<br/>30%</p><p>Niet-gerealiseerde IC<br/>bij Seal-it (PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 6.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 6.000; het antwoordmodel geeft 3.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br>Seal-it<br>(½ PNT)</p><p>Interne correctie<br>Eliminatie t.l.v.<br>bij Gluton<br>gecons. resultaat<br>(½ PNT)<br>(½ PNT)<br>100 per vat<br>70%<br>30%</p><p>Niet-gerealiseerde IC<br>bij Seal-it (½ PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 3.000</p>",
+    "practiceSolutionHtml": "<p>8. Stel onderstaande voorraadtabel samen met betrekking tot de intercompanyleveringen van<br/>Gluton aan Seal-it. (2 PNT)</p><p>Datum</p><p>Voorraad bij<br/>Seal-it<br/>(PNT)</p><p>Interne correctie<br/>Eliminatie t.l.v.<br/>bij Gluton<br/>gecons. resultaat<br/>(PNT)<br/>(PNT)<br/>100 per vat<br/>70%<br/>30%</p><p>Niet-gerealiseerde IC<br/>bij Seal-it (PNT)</p><p>31-12-2021</p><p>150 x 600 = 90.000</p><p>150 x 100 = 15.000</p><p>10.500</p><p>4.500</p><p>31-12-2022</p><p>50 x 600 = 30.000</p><p>50 x 100 = 5.000</p><p>3.500</p><p>1.500</p><p>Afname</p><p>(-) 60.000</p><p>(-) 10.000</p><p>(-) 7.000</p><p>(-) 3.000</p>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "downstream-nvw",
+      "title": "Downstream bij nettovermogenswaarde",
+      "rules": "Volg de goederen van moeder naar dochter en onderscheid de interne correctie in de moederadministratie van de aanvullende eliminaties voor balans en jaarresultaat.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-8"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 8",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 3000.0,
+      "incorrectValues": [
+        3100.0,
+        2900.0,
+        6000.0
+      ],
+      "sourceToken": "3.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-9",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-9",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 9",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "9. Bepaal de stand van de grootboekrekening 180 Overlopende passiva per 1 januari 2022 en geef aan of het bedrag debet of credit voorkomt op de balans.",
+    "promptHtml": "<p>9. Bepaal de stand van de grootboekrekening 180 Overlopende passiva per 1 januari 2022 en<br>geef aan of het bedrag debet of credit voorkomt op de balans.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br/>2022. (2 PNT)<br/>Deze bedraagt € 10.500 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br/>enkelvoudige balans.</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br/>2022. (2 PNT)<br/>Deze bedraagt € 11.500 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br/>enkelvoudige balans.</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 11.500; het antwoordmodel geeft € 10.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br/>2022. (2 PNT)<br/>Deze bedraagt € 9.500 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br/>enkelvoudige balans.</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 9.500; het antwoordmodel geeft € 10.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br/>2022. (2 PNT)<br/>Deze bedraagt € 21.000 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br/>enkelvoudige balans.</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 21.000; het antwoordmodel geeft € 10.500. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br>2022. (2 PNT)<br>Deze bedraagt € 10.500 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br>enkelvoudige balans.</p>",
+    "practiceSolutionHtml": "<p>9. Bepaal de stand van de grootboekrekening 140 Overlopende passiva per 1 januari<br/>2022. (2 PNT)<br/>Deze bedraagt € 10.500 (150 x € 100 x 70%)</p><p>1</p><p>1</p><p>Rekening 180 staat credit op de<br/>enkelvoudige balans.</p>",
+    "dependencyQuestionIds": [
+      "vraag-8"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-9"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 9",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 10500.0,
+      "incorrectValues": [
+        11500.0,
+        9500.0,
+        21000.0
+      ],
+      "sourceToken": "€ 10.500"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-10",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-10",
+    "sectionId": "opgave-2",
+    "topicId": "downstream-nvw",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "09-10-2023 · Vraag 10",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "10. Geef de journaalpost(en) die eind 2022 is (zijn) gemaakt in de enkelvoudige jaarrekening van Gluton in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele correctieboeking(en)).",
+    "promptHtml": "<p>10. Geef de journaalpost(en) die eind 2022 is (zijn) gemaakt in de enkelvoudige jaarrekening van<br>Gluton in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele<br>correctieboeking(en)).</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br/>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br/>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br/>GEVRAAGD 10 (4 PNT)<br/>180 Overlopende passiva<br/>941 Aan Gerealiseerde winst op leveringen aan<br/>Seal-it</p><p><br/></p><p>980 Belastinglast<br/>075 Aan Voorziening belastingen<br/>(20% * € 7.000)</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 7.000</p><p>Cr<br/>1<br/>€ 7.000</p><p>€ 1.400</p><p>1<br/>€ 1.400</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br/>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br/>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br/>GEVRAAGD 10 (4 PNT)<br/>180 Overlopende passiva<br/>941 Aan Gerealiseerde winst op leveringen aan<br/>Seal-it</p><p><br/></p><p>980 Belastinglast<br/>075 Aan Voorziening belastingen<br/>(20% * € 7.000)</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 7.000</p><p>Cr<br/>1<br/>€ 7.000</p><p>€ 1.500</p><p>1<br/>€ 1.400</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.500; het antwoordmodel geeft € 1.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br/>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br/>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br/>GEVRAAGD 10 (4 PNT)<br/>180 Overlopende passiva<br/>941 Aan Gerealiseerde winst op leveringen aan<br/>Seal-it</p><p><br/></p><p>980 Belastinglast<br/>075 Aan Voorziening belastingen<br/>(20% * € 7.000)</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 7.000</p><p>Cr<br/>1<br/>€ 7.000</p><p>€ 1.300</p><p>1<br/>€ 1.400</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.300; het antwoordmodel geeft € 1.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br/>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br/>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br/>GEVRAAGD 10 (4 PNT)<br/>180 Overlopende passiva<br/>941 Aan Gerealiseerde winst op leveringen aan<br/>Seal-it</p><p><br/></p><p>980 Belastinglast<br/>075 Aan Voorziening belastingen<br/>(20% * € 7.000)</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 7.000</p><p>Cr<br/>1<br/>€ 7.000</p><p>€ 2.800</p><p>1<br/>€ 1.400</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.800; het antwoordmodel geeft € 1.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br>GEVRAAGD 10 (4 PNT)<br>180 Overlopende passiva<br>941 Aan Gerealiseerde winst op leveringen aan<br>Seal-it</p><p>½<br>½</p><p>980 Belastinglast<br>075 Aan Voorziening belastingen<br>(20% * € 7.000)</p><p>½<br>½</p><p>Journaalpost<br>Db<br>€ 7.000</p><p>Cr<br>1<br>€ 7.000</p><p>€ 1.400</p><p>1<br>€ 1.400</p>",
+    "practiceSolutionHtml": "<p>10. Geef de journaalpost(en) die eind 2022 is(zijn) gemaakt in de enkelvoudige<br/>jaarrekening van Gluton in verband met de nog niet gerealiseerde<br/>intercompanyresultaten (intracomptabele correctieboeking(en)). (4 PNT)<br/>GEVRAAGD 10 (4 PNT)<br/>180 Overlopende passiva<br/>941 Aan Gerealiseerde winst op leveringen aan<br/>Seal-it</p><p><br/></p><p>980 Belastinglast<br/>075 Aan Voorziening belastingen<br/>(20% * € 7.000)</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 7.000</p><p>Cr<br/>1<br/>€ 7.000</p><p>€ 1.400</p><p>1<br/>€ 1.400</p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9"
+    ],
+    "guidance": {
+      "lesson": "downstream-nvw",
+      "title": "Downstream bij nettovermogenswaarde",
+      "rules": "Volg de goederen van moeder naar dochter en onderscheid de interne correctie in de moederadministratie van de aanvullende eliminaties voor balans en jaarresultaat.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-10"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 10",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1400.0,
+      "incorrectValues": [
+        1500.0,
+        1300.0,
+        2800.0
+      ],
+      "sourceToken": "€ 1.400"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-11",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-11",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "09-10-2023 · Vraag 11",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "11. Geef de journaalpost(en) die Gluton in 2022 heeft gemaakt in haar enkelvoudige jaarrekening met betrekking tot het door Seal-it behaalde resultaat na belastingen.",
+    "promptHtml": "<p>11. Geef de journaalpost(en) die Gluton in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br>met betrekking tot het door Seal-it behaalde resultaat na belastingen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br/>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br/>GEVRAAGD 11(2 PNT)<br/>050 Deelneming in Seal-it<br/>920 Aan Resultaat deelneming in Seal-it<br/>70% * € 224.000</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 156.800</p><p>Cr<br/>1<br/>€ 156.800</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br/>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br/>GEVRAAGD 11(2 PNT)<br/>050 Deelneming in Seal-it<br/>920 Aan Resultaat deelneming in Seal-it<br/>70% * € 224.000</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 166.800</p><p>Cr<br/>1<br/>€ 156.800</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 166.800; het antwoordmodel geeft € 156.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br/>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br/>GEVRAAGD 11(2 PNT)<br/>050 Deelneming in Seal-it<br/>920 Aan Resultaat deelneming in Seal-it<br/>70% * € 224.000</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 146.800</p><p>Cr<br/>1<br/>€ 156.800</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 146.800; het antwoordmodel geeft € 156.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br/>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br/>GEVRAAGD 11(2 PNT)<br/>050 Deelneming in Seal-it<br/>920 Aan Resultaat deelneming in Seal-it<br/>70% * € 224.000</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 313.600</p><p>Cr<br/>1<br/>€ 156.800</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 313.600; het antwoordmodel geeft € 156.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br>GEVRAAGD 11(2 PNT)<br>050 Deelneming in Seal-it<br>920 Aan Resultaat deelneming in Seal-it<br>70% * € 224.000</p><p>½<br>½</p><p>Journaalpost<br>Db<br>€ 156.800</p><p>Cr<br>1<br>€ 156.800</p>",
+    "practiceSolutionHtml": "<p>11. Geef de journaalposten die Gluton BV in 2022 heeft gemaakt in haar enkelvoudige jaarrekening<br/>met betrekking tot het door Seal-it behaalde resultaat na belastingen. (2 PNT)<br/>GEVRAAGD 11(2 PNT)<br/>050 Deelneming in Seal-it<br/>920 Aan Resultaat deelneming in Seal-it<br/>70% * € 224.000</p><p><br/></p><p>Journaalpost<br/>Db<br/>€ 156.800</p><p>Cr<br/>1<br/>€ 156.800</p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9",
+      "vraag-10"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-11"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 11",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 156800.0,
+      "incorrectValues": [
+        166800.0,
+        146800.0,
+        313600.0
+      ],
+      "sourceToken": "€ 156.800"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-12",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-12",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "09-10-2023 · Vraag 12",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "12. Geef alle eliminatieposten ten behoeve van de samenstelling van de geconsolideerde winst-enverliesrekening over 2022.",
+    "promptHtml": "<p>12. Geef alle eliminatieposten ten behoeve van de samenstelling van de geconsolideerde winst-enverliesrekening over 2022.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br/>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br/>GEVRAAGD 12A: (3,5 PNT)<br/>Resultaat deelneming in Seal-it (Gluton) (70%)<br/>Aandeel derden (30%)<br/>Aan Resultaat na belastingen (Seal-it)</p><p><br/><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 156.800<br/>€ 67.200<br/>€ 224.000</p><p>1<br/>1</p><p>Eliminatieboeking</p><p><br/></p><p>Db<br/>€ 200.000</p><p>Cr<br/><br/>€ 200.000</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 105.000<br/>€ 105.000</p><p>Omzet (7.500 x € 600)<br/>Aan kostprijs omzet</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 4.500.000<br/>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br/>Resultaat na belastingen (80% x € 3.000)<br/>Belastinglast (20% x € 3.000)<br/>Aan kostprijs omzet</p><p><br/><br/><br/></p><p>Rente lening u/g (Gluton)<br/>Aan Rentekosten lening o/g</p><p>€ 7.000<br/>€ 2.400<br/>€ 600<br/>€ 10.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br/>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br/>GEVRAAGD 12A: (3,5 PNT)<br/>Resultaat deelneming in Seal-it (Gluton) (70%)<br/>Aandeel derden (30%)<br/>Aan Resultaat na belastingen (Seal-it)</p><p><br/><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 156.800<br/>€ 67.200<br/>€ 224.000</p><p>1<br/>1</p><p>Eliminatieboeking</p><p><br/></p><p>Db<br/>€ 200.000</p><p>Cr<br/><br/>€ 200.000</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 105.000<br/>€ 105.000</p><p>Omzet (7.500 x € 600)<br/>Aan kostprijs omzet</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 4.500.000<br/>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br/>Resultaat na belastingen (80% x € 3.000)<br/>Belastinglast (20% x € 3.000)<br/>Aan kostprijs omzet</p><p><br/><br/><br/></p><p>Rente lening u/g (Gluton)<br/>Aan Rentekosten lening o/g</p><p>€ 7.000<br/>€ 2.400<br/>€ 600<br/>€ 11.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 11.000; het antwoordmodel geeft € 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br/>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br/>GEVRAAGD 12A: (3,5 PNT)<br/>Resultaat deelneming in Seal-it (Gluton) (70%)<br/>Aandeel derden (30%)<br/>Aan Resultaat na belastingen (Seal-it)</p><p><br/><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 156.800<br/>€ 67.200<br/>€ 224.000</p><p>1<br/>1</p><p>Eliminatieboeking</p><p><br/></p><p>Db<br/>€ 200.000</p><p>Cr<br/><br/>€ 200.000</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 105.000<br/>€ 105.000</p><p>Omzet (7.500 x € 600)<br/>Aan kostprijs omzet</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 4.500.000<br/>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br/>Resultaat na belastingen (80% x € 3.000)<br/>Belastinglast (20% x € 3.000)<br/>Aan kostprijs omzet</p><p><br/><br/><br/></p><p>Rente lening u/g (Gluton)<br/>Aan Rentekosten lening o/g</p><p>€ 7.000<br/>€ 2.400<br/>€ 600<br/>€ 9.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 9.000; het antwoordmodel geeft € 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br/>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br/>GEVRAAGD 12A: (3,5 PNT)<br/>Resultaat deelneming in Seal-it (Gluton) (70%)<br/>Aandeel derden (30%)<br/>Aan Resultaat na belastingen (Seal-it)</p><p><br/><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 156.800<br/>€ 67.200<br/>€ 224.000</p><p>1<br/>1</p><p>Eliminatieboeking</p><p><br/></p><p>Db<br/>€ 200.000</p><p>Cr<br/><br/>€ 200.000</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 105.000<br/>€ 105.000</p><p>Omzet (7.500 x € 600)<br/>Aan kostprijs omzet</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 4.500.000<br/>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br/>Resultaat na belastingen (80% x € 3.000)<br/>Belastinglast (20% x € 3.000)<br/>Aan kostprijs omzet</p><p><br/><br/><br/></p><p>Rente lening u/g (Gluton)<br/>Aan Rentekosten lening o/g</p><p>€ 7.000<br/>€ 2.400<br/>€ 600<br/>€ 20.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 20.000; het antwoordmodel geeft € 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br>GEVRAAGD 12A: (3,5 PNT)<br>Resultaat deelneming in Seal-it (Gluton) (70%)<br>Aandeel derden (30%)<br>Aan Resultaat na belastingen (Seal-it)</p><p>½<br>½<br>½</p><p>Eliminatieboeking<br>Db<br>Cr<br>€ 156.800<br>€ 67.200<br>€ 224.000</p><p>1<br>1</p><p>Eliminatieboeking</p><p>GEVRAAGD 12B (1,5 PNT)<br>Doorberekende directiekosten aan Seal-it (Gluton)<br>Aan Directiekosten (Seal-it)</p><p>½<br>½</p><p>GEVRAAGD 12C (1,5 PNT)</p><p>Db<br>€ 200.000</p><p>Cr<br>½<br>€ 200.000</p><p>½<br>½</p><p>Eliminatieboeking<br>Db<br>Cr<br>€ 105.000<br>€ 105.000</p><p>Omzet (7.500 x € 600)<br>Aan kostprijs omzet</p><p>½<br>½</p><p>Eliminatieboeking<br>Db<br>Cr<br>€ 4.500.000<br>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br>Resultaat na belastingen (80% x € 3.000)<br>Belastinglast (20% x € 3.000)<br>Aan kostprijs omzet</p><p>½<br>½<br>½<br>½</p><p>Rente lening u/g (Gluton)<br>Aan Rentekosten lening o/g</p><p>GEVRAAGD 12D (5,5 PNT)</p><p>€ 7.000<br>€ 2.400<br>€ 600<br>€ 10.000</p>",
+    "practiceSolutionHtml": "<p>12. Geef alle eliminatieboeking(en) die ten behoeve van de samenstelling van de<br/>geconsolideerde winst-en-verliesrekening over 2022 moeten worden gemaakt.(12 PNT)<br/>GEVRAAGD 12A: (3,5 PNT)<br/>Resultaat deelneming in Seal-it (Gluton) (70%)<br/>Aandeel derden (30%)<br/>Aan Resultaat na belastingen (Seal-it)</p><p><br/><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 156.800<br/>€ 67.200<br/>€ 224.000</p><p>1<br/>1</p><p>Eliminatieboeking</p><p><br/></p><p>Db<br/>€ 200.000</p><p>Cr<br/><br/>€ 200.000</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 105.000<br/>€ 105.000</p><p>Omzet (7.500 x € 600)<br/>Aan kostprijs omzet</p><p><br/></p><p>Eliminatieboeking<br/>Db<br/>Cr<br/>€ 4.500.000<br/>€ 4.500.000</p><p>Gerealiseerde winst op leveringen aan Seal-it<br/>Resultaat na belastingen (80% x € 3.000)<br/>Belastinglast (20% x € 3.000)<br/>Aan kostprijs omzet</p><p><br/><br/><br/></p><p>Rente lening u/g (Gluton)<br/>Aan Rentekosten lening o/g</p><p>€ 7.000<br/>€ 2.400<br/>€ 600<br/>€ 10.000</p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9",
+      "vraag-10",
+      "vraag-11"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-12"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 12",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 10000.0,
+      "incorrectValues": [
+        11000.0,
+        9000.0,
+        20000.0
+      ],
+      "sourceToken": "€ 10.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-13",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-13",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 13",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen (gedefinieerd als: omzet -/- kostprijs omzet).",
+    "promptHtml": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br>(gedefinieerd als: omzet -/- kostprijs omzet).</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br/>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br/>de posten op de enkelvoudige winst-en-verliesrekeningen;<br/>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br/>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 1.520.000</p><p></p><p></p><p><br/><br/><br/></p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br/>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br/>de posten op de enkelvoudige winst-en-verliesrekeningen;<br/>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br/>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 1.620.000</p><p></p><p></p><p><br/><br/><br/></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.620.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br/>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br/>de posten op de enkelvoudige winst-en-verliesrekeningen;<br/>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br/>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 1.420.000</p><p></p><p></p><p><br/><br/><br/></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.420.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br/>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br/>de posten op de enkelvoudige winst-en-verliesrekeningen;<br/>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br/>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 3.040.000</p><p></p><p></p><p><br/><br/><br/></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 3.040.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br>de posten op de enkelvoudige winst-en-verliesrekeningen;<br>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 1.520.000</p><p>½</p><p>½</p><p>½<br>½<br>½<br>½</p>",
+    "practiceSolutionHtml": "<p>13. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 de brutowinst op verkopen<br/>(gedefinieerd als: omzet -/- kostprijs omzet). Maak hiervoor gebruik van:<br/>de posten op de enkelvoudige winst-en-verliesrekeningen;<br/>en de (eventueel) gemaakte eliminatieposten bij gevraag 5.</p><p>GEVRAAGD 13.(2 PNT)<br/>Omzet, geconsolideerd: 7.600 verkochte vaten x € 700</p><p>€ 5.320.000</p><p>1</p><p>Kostprijs omzet, geconsolideerd: 7.600 verkochte vaten x € 500</p><p>€ 3.800.000</p><p>1</p><p>Brutowinst op verkopen</p><p>€ 1.520.000</p><p></p><p></p><p><br/><br/><br/></p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9",
+      "vraag-10",
+      "vraag-11",
+      "vraag-12"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-13"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 13",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1520000.0,
+      "incorrectValues": [
+        1620000.0,
+        1420000.0,
+        3040000.0
+      ],
+      "sourceToken": "€ 1.520.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-14",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-14",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 14",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de inkoopprijs van een vat lijm en de verkoopprijs van een vat lijm.",
+    "promptHtml": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br>inkoopprijs van een vat lijm en de verkoopprijs van een vat lijm.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br/>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br/>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br/>GEVRAAGD 14. (3 PNT)<br/>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p></p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p></p><p>€ 1.510.000</p><p>Totaal<br/>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br/>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 1.520.000</p><p>1</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br/>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br/>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br/>GEVRAAGD 14. (3 PNT)<br/>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p></p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p></p><p>€ 1.510.000</p><p>Totaal<br/>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br/>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 1.620.000</p><p>1</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.620.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br/>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br/>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br/>GEVRAAGD 14. (3 PNT)<br/>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p></p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p></p><p>€ 1.510.000</p><p>Totaal<br/>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br/>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 1.420.000</p><p>1</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.420.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br/>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br/>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br/>GEVRAAGD 14. (3 PNT)<br/>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p></p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p></p><p>€ 1.510.000</p><p>Totaal<br/>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br/>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 3.040.000</p><p>1</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 3.040.000; het antwoordmodel geeft € 1.520.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br>GEVRAAGD 14. (3 PNT)<br>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p>½</p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p>½</p><p>€ 1.510.000</p><p>Totaal<br>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 1.520.000</p><p>1</p>",
+    "practiceSolutionHtml": "<p>14. Geef een controleberekening van de bij vraag 13 berekende brutowinst op verkopen. Maak<br/>hiervoor gebruik van de navolgende concerngegevens: het aantal verkochte vaten lijm, de<br/>verkoopprijs van een vat lijm en de inkoopprijs van een vat lijm.<br/>GEVRAAGD 14. (3 PNT)<br/>Brutowinst Gluton (omzet – kostprijs omzet; 4.500.000 – 3.750.000)</p><p>€ 750.000</p><p></p><p>Brutowinst Seal-it (omzet – kostprijs omzet: 5.320.000 – 4.560.000)</p><p>€ 760.000</p><p></p><p>€ 1.510.000</p><p>Totaal<br/>Correcties (omzet 4.500.000 -/-; kostprijs 4.500.000 +/+; kostprijs<br/>10.000 +/+)</p><p>€ 10.000</p><p>1</p><p>€ 1.520.000</p><p>1</p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9",
+      "vraag-10",
+      "vraag-11",
+      "vraag-12",
+      "vraag-13"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-14"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 14",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1520000.0,
+      "incorrectValues": [
+        1620000.0,
+        1420000.0,
+        3040000.0
+      ],
+      "sourceToken": "€ 1.520.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-15",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-15",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "09-10-2023 · Vraag 15",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde resultaat na belastingen.",
+    "promptHtml": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde resultaat na belastingen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br/>resultaat na belastingen.<br/>GEVRAAGD 15. (3 PNT)<br/>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br/>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 130.400</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br/>resultaat na belastingen.<br/>GEVRAAGD 15. (3 PNT)<br/>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br/>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 140.400</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 140.400; het antwoordmodel geeft € 130.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br/>resultaat na belastingen.<br/>GEVRAAGD 15. (3 PNT)<br/>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br/>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 120.400</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 120.400; het antwoordmodel geeft € 130.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br/>resultaat na belastingen.<br/>GEVRAAGD 15. (3 PNT)<br/>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br/>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 260.800</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 260.800; het antwoordmodel geeft € 130.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br>resultaat na belastingen.<br>GEVRAAGD 15. (3 PNT)<br>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 130.400</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+    "practiceSolutionHtml": "<p>15. Bepaal voor de geconsolideerde winst-en-verliesrekening over 2022 het geconsolideerde<br/>resultaat na belastingen.<br/>GEVRAAGD 15. (3 PNT)<br/>Vennootschappelijk resultaat na belastingen van Gluton bv</p><p>€ 128.000</p><p>1</p><p>Bij: Netto gerealiseerde winst door leveringen aan Seal-it bv,<br/>= deel aandeel derden € 3.000 x (100%-20%=)80%</p><p>€ 2.400</p><p>1</p><p>€ 130.400</p><p>1</p><p>Geconsolideerd resultaat na belastingen</p>",
+    "dependencyQuestionIds": [
+      "vraag-8",
+      "vraag-9",
+      "vraag-10",
+      "vraag-11",
+      "vraag-12",
+      "vraag-13",
+      "vraag-14"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-15"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 2 Gluton bv (Consolidatie nettovermogenswaarde) (30 punten) · Vraag 15",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 130400.0,
+      "incorrectValues": [
+        140400.0,
+        120400.0,
+        260800.0
+      ],
+      "sourceToken": "€ 130.400"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-16",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-16",
+    "sectionId": "opgave-3",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 16",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "16. Bereken het bedrag van de door Norch betaalde goodwill.",
+    "promptHtml": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. <br/>€ 5.800.000</p><p>Betaald<br/>Aandeel in eigen vermogen: 60% x € 8.400.000<br/>Goodwill</p><p> € 5.040.000<br/> € 760.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. <br/>€ 5.800.000</p><p>Betaald<br/>Aandeel in eigen vermogen: 60% x € 8.400.000<br/>Goodwill</p><p> € 5.040.000<br/> € 770.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 770.000; het antwoordmodel geeft € 760.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. <br/>€ 5.800.000</p><p>Betaald<br/>Aandeel in eigen vermogen: 60% x € 8.400.000<br/>Goodwill</p><p> € 5.040.000<br/> € 750.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 750.000; het antwoordmodel geeft € 760.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. <br/>€ 5.800.000</p><p>Betaald<br/>Aandeel in eigen vermogen: 60% x € 8.400.000<br/>Goodwill</p><p> € 5.040.000<br/> € 1.520.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.520.000; het antwoordmodel geeft € 760.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. (2 punten)<br>€ 5.800.000</p><p>Betaald<br>Aandeel in eigen vermogen: 60% x € 8.400.000<br>Goodwill</p><p>(1) € 5.040.000<br>(1) € 760.000</p>",
+    "practiceSolutionHtml": "<p>16. Bereken het bedrag van de door Norch betaalde goodwill. <br/>€ 5.800.000</p><p>Betaald<br/>Aandeel in eigen vermogen: 60% x € 8.400.000<br/>Goodwill</p><p> € 5.040.000<br/> € 760.000</p>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "goodwill",
+      "title": "Verwerving en het verschil met de koopsom",
+      "rules": "Vergelijk de tegenprestatie met het verworven aandeel in de aangepaste netto-activa en volg het verschil afzonderlijk volgens de waarderingsgrondslag en de expliciete casusregels.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-16"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 16",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 760000.0,
+      "incorrectValues": [
+        770000.0,
+        750000.0,
+        1520000.0
+      ],
+      "sourceToken": "€ 760.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-17",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-17",
+    "sectionId": "opgave-3",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 17",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële akte van aandelenoverdracht heeft gemaakt.",
+    "promptHtml": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële akte van aandelenoverdracht heeft gemaakt.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br/>van aandelenoverdracht heeft gemaakt. :<br/>Intracomptabele journaalpost (* 1 €)<br/>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p></p><p>5.800.000</p><p>Aan 1.. Bank</p><p></p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p></p><p>2.000.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br/>van aandelenoverdracht heeft gemaakt. :<br/>Intracomptabele journaalpost (* 1 €)<br/>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p></p><p>5.800.000</p><p>Aan 1.. Bank</p><p></p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p></p><p>2.100.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 2.100.000; het antwoordmodel geeft 2.000.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br/>van aandelenoverdracht heeft gemaakt. :<br/>Intracomptabele journaalpost (* 1 €)<br/>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p></p><p>5.800.000</p><p>Aan 1.. Bank</p><p></p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p></p><p>1.900.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 1.900.000; het antwoordmodel geeft 2.000.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br/>van aandelenoverdracht heeft gemaakt. :<br/>Intracomptabele journaalpost (* 1 €)<br/>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p></p><p>5.800.000</p><p>Aan 1.. Bank</p><p></p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p></p><p>4.000.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 4.000.000; het antwoordmodel geeft 2.000.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br>van aandelenoverdracht heeft gemaakt. (2 punten):<br>Intracomptabele journaalpost (* 1 €)<br>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p>(1)</p><p>5.800.000</p><p>Aan 1.. Bank</p><p>(1/2)</p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p>(1/2)</p><p>2.000.000</p>",
+    "practiceSolutionHtml": "<p>17. Geef de journaalpost die Norch naar aanleiding van het passeren van de notariële acte<br/>van aandelenoverdracht heeft gemaakt. :<br/>Intracomptabele journaalpost (* 1 €)<br/>Db</p><p>Cr</p><p>0.. Deelneming in Roon</p><p></p><p>5.800.000</p><p>Aan 1.. Bank</p><p></p><p>3.800.000</p><p>Aan 0.. Langlopende lening DGF</p><p></p><p>2.000.000</p>",
+    "dependencyQuestionIds": [
+      "vraag-16"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-17"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 17",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 2000000.0,
+      "incorrectValues": [
+        2100000.0,
+        1900000.0,
+        4000000.0
+      ],
+      "sourceToken": "2.000.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-18",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-18",
+    "sectionId": "opgave-3",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 18",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van Roon.",
+    "promptHtml": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br>Roon.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br/>Roon. <br/>Intracomptabele journaalpost (* 1 €)<br/>Db<br/>1.. Bank</p><p></p><p>Aan 0.. Deelneming in Roon</p><p></p><p>Cr<br/>360.000<br/>360.000</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br/>Roon. <br/>Intracomptabele journaalpost (* 1 €)<br/>Db<br/>1.. Bank</p><p></p><p>Aan 0.. Deelneming in Roon</p><p></p><p>Cr<br/>370.000<br/>360.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 370.000; het antwoordmodel geeft 360.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br/>Roon. <br/>Intracomptabele journaalpost (* 1 €)<br/>Db<br/>1.. Bank</p><p></p><p>Aan 0.. Deelneming in Roon</p><p></p><p>Cr<br/>350.000<br/>360.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 350.000; het antwoordmodel geeft 360.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br/>Roon. <br/>Intracomptabele journaalpost (* 1 €)<br/>Db<br/>1.. Bank</p><p></p><p>Aan 0.. Deelneming in Roon</p><p></p><p>Cr<br/>720.000<br/>360.000</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 720.000; het antwoordmodel geeft 360.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br>Roon. (2 punten)<br>Intracomptabele journaalpost (* 1 €)<br>Db<br>1.. Bank</p><p>(1)</p><p>Aan 0.. Deelneming in Roon</p><p>(1)</p><p>Cr<br>360.000<br>360.000</p>",
+    "practiceSolutionHtml": "<p>18. Geef de journaalpost die Norch heeft gemaakt met betrekking tot de winstverdeling 2021 van<br/>Roon. <br/>Intracomptabele journaalpost (* 1 €)<br/>Db<br/>1.. Bank</p><p></p><p>Aan 0.. Deelneming in Roon</p><p></p><p>Cr<br/>360.000<br/>360.000</p>",
+    "dependencyQuestionIds": [
+      "vraag-16",
+      "vraag-17"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-18"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 18",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 360000.0,
+      "incorrectValues": [
+        370000.0,
+        350000.0,
+        720000.0
+      ],
+      "sourceToken": "360.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-19",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-19",
+    "sectionId": "opgave-3",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 19",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van goederen (intercompanyleveringen) van Roon aan Norch. NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen u moet invullen.",
+    "promptHtml": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van goederen (intercompanyleveringen) van Roon aan Norch.</p><table><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij …</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst in voorraad bij …</th><th scope=\"col\">Interne correctie bij …</th><th scope=\"col\">Eliminatie t.l.v. aandeel derden</th><th scope=\"col\">Eliminatie t.l.v. geconsolideerd resultaat</th></tr></thead><tbody><tr><th scope=\"row\">31-12-2021</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th scope=\"row\">31-12-2022</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th scope=\"row\">Toe/afname</th><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>NB. Dit voorraadoverzicht is in de meest uitgebreide vorm weergegeven. U dient zelf te bepalen welke kolommen u moet invullen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br/>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br/>Datum</p><p>Voorraad<br/>bij N</p><p>Niet-gerealiseerde<br/>Interne<br/>intercompany winst correctie bij…<br/>in voorraad bij N<br/>31-12-2021<br/>0<br/>0<br/>31-12-2022<br/>540.000<br/>54.000<br/>---------------------------------Toename<br/>540.000<br/>54.000<br/>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br/>aandeel derden<br/>(40%)<br/>0<br/>21.600<br/>--------21.600</p><p>Eliminatie t.l.v.<br/>geconsolideerd<br/>resultaat (60%)<br/>0<br/>32.400<br/>--------32.400</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br/>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br/>Datum</p><p>Voorraad<br/>bij N</p><p>Niet-gerealiseerde<br/>Interne<br/>intercompany winst correctie bij…<br/>in voorraad bij N<br/>31-12-2021<br/>0<br/>0<br/>31-12-2022<br/>540.000<br/>54.000<br/>---------------------------------Toename<br/>540.000<br/>54.000<br/>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br/>aandeel derden<br/>(40%)<br/>0<br/>21.600<br/>--------21.600</p><p>Eliminatie t.l.v.<br/>geconsolideerd<br/>resultaat (60%)<br/>0<br/>32.400<br/>--------33.400</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 33.400; het antwoordmodel geeft 32.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br/>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br/>Datum</p><p>Voorraad<br/>bij N</p><p>Niet-gerealiseerde<br/>Interne<br/>intercompany winst correctie bij…<br/>in voorraad bij N<br/>31-12-2021<br/>0<br/>0<br/>31-12-2022<br/>540.000<br/>54.000<br/>---------------------------------Toename<br/>540.000<br/>54.000<br/>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br/>aandeel derden<br/>(40%)<br/>0<br/>21.600<br/>--------21.600</p><p>Eliminatie t.l.v.<br/>geconsolideerd<br/>resultaat (60%)<br/>0<br/>32.400<br/>--------31.400</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 31.400; het antwoordmodel geeft 32.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br/>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br/>Datum</p><p>Voorraad<br/>bij N</p><p>Niet-gerealiseerde<br/>Interne<br/>intercompany winst correctie bij…<br/>in voorraad bij N<br/>31-12-2021<br/>0<br/>0<br/>31-12-2022<br/>540.000<br/>54.000<br/>---------------------------------Toename<br/>540.000<br/>54.000<br/>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br/>aandeel derden<br/>(40%)<br/>0<br/>21.600<br/>--------21.600</p><p>Eliminatie t.l.v.<br/>geconsolideerd<br/>resultaat (60%)<br/>0<br/>32.400<br/>--------64.800</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 64.800; het antwoordmodel geeft 32.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br>Datum</p><p>Voorraad<br>bij N</p><p>Niet-gerealiseerde<br>Interne<br>intercompany winst correctie bij…<br>in voorraad bij N<br>31-12-2021<br>0<br>0<br>31-12-2022<br>540.000<br>54.000<br>---------------------------------Toename<br>540.000<br>54.000<br>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br>aandeel derden<br>(40%)<br>0<br>21.600<br>--------21.600</p><p>Eliminatie t.l.v.<br>geconsolideerd<br>resultaat (60%)<br>0<br>32.400<br>--------32.400</p>",
+    "practiceSolutionHtml": "<p>19. Stel de onderstaande voorraadtabel samen met betrekking tot de onderlinge levering van<br/>goederen (intercompanyleveringen) van Roon aan Norch. (1 punt):<br/>Datum</p><p>Voorraad<br/>bij N</p><p>Niet-gerealiseerde<br/>Interne<br/>intercompany winst correctie bij…<br/>in voorraad bij N<br/>31-12-2021<br/>0<br/>0<br/>31-12-2022<br/>540.000<br/>54.000<br/>---------------------------------Toename<br/>540.000<br/>54.000<br/>Kolomkoppen en bedragen goed ingevuld 1 punt g/f.</p><p>Eliminatie t.l.v.<br/>aandeel derden<br/>(40%)<br/>0<br/>21.600<br/>--------21.600</p><p>Eliminatie t.l.v.<br/>geconsolideerd<br/>resultaat (60%)<br/>0<br/>32.400<br/>--------32.400</p>",
+    "dependencyQuestionIds": [
+      "vraag-16",
+      "vraag-17",
+      "vraag-18"
+    ],
+    "guidance": {
+      "lesson": "upstream-hk",
+      "title": "Upstream bij verkrijgingsprijs",
+      "rules": "Bepaal de ongerealiseerde winst bij de verkopende dochter en werk de consolidatiecorrectie uit naar moeder, derden en belasting, zonder een interne NVW-correctie mee te nemen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-19"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 19",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 32400.0,
+      "incorrectValues": [
+        33400.0,
+        31400.0,
+        64800.0
+      ],
+      "sourceToken": "32.400"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-20",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-20",
+    "sectionId": "opgave-3",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "09-10-2023 · Vraag 20",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2022 de eliminatieposten met betrekking tot: a. de deelneming in Roon; b. het belang van derden in Roon; c. de afschrijving van de (consolidatie)goodwill; d. de intercompanyleveringen van Roon aan Norch.",
+    "promptHtml": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2022<br>de eliminatieposten met betrekking tot:<br>a. de deelneming in Roon;<br>b. het belang van derden in Roon;<br>c. de afschrijving van de (consolidatie)goodwill;<br>d. de intercompanyleveringen van Roon aan Norch.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br/>2022 de eliminatieposten met betrekking tot :<br/>a. de deelneming in Roon;<br/>b. het belang van derden in Roon;<br/>c. de afschrijving van de (consolidatie)goodwill;<br/>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Goodwill<br/>Deelneming</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>300.000<br/>420.000<br/>3.960.000<br/>760.000<br/>5.440.000</p><p><br/><br/></p><p>b. het belang van derden in Roon</p><p>aan</p><p></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>200.000<br/>280.000<br/>2.640.000<br/>48.000<br/>3.168.000</p><p></p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>152.000<br/>152.000</p><p></p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Resultaat boekjaar 2022<br/>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br/>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br/>Voorziening latente belastingen<br/>Belang derden<br/>Voorziening latente belastingen<br/>Voorraad</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>25.920<br/>6.480<br/>17.280<br/>4.320</p><p><br/><br/>54.000</p><p></p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br/>2022 de eliminatieposten met betrekking tot :<br/>a. de deelneming in Roon;<br/>b. het belang van derden in Roon;<br/>c. de afschrijving van de (consolidatie)goodwill;<br/>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Goodwill<br/>Deelneming</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>300.000<br/>420.000<br/>3.960.000<br/>760.000<br/>5.440.000</p><p><br/><br/></p><p>b. het belang van derden in Roon</p><p>aan</p><p></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>200.000<br/>280.000<br/>2.640.000<br/>48.000<br/>3.168.000</p><p></p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>152.000<br/>152.000</p><p></p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Resultaat boekjaar 2022<br/>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br/>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br/>Voorziening latente belastingen<br/>Belang derden<br/>Voorziening latente belastingen<br/>Voorraad</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>25.920<br/>6.480<br/>17.280<br/>4.320</p><p><br/><br/>55.000</p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 55.000; het antwoordmodel geeft 54.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br/>2022 de eliminatieposten met betrekking tot :<br/>a. de deelneming in Roon;<br/>b. het belang van derden in Roon;<br/>c. de afschrijving van de (consolidatie)goodwill;<br/>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Goodwill<br/>Deelneming</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>300.000<br/>420.000<br/>3.960.000<br/>760.000<br/>5.440.000</p><p><br/><br/></p><p>b. het belang van derden in Roon</p><p>aan</p><p></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>200.000<br/>280.000<br/>2.640.000<br/>48.000<br/>3.168.000</p><p></p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>152.000<br/>152.000</p><p></p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Resultaat boekjaar 2022<br/>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br/>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br/>Voorziening latente belastingen<br/>Belang derden<br/>Voorziening latente belastingen<br/>Voorraad</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>25.920<br/>6.480<br/>17.280<br/>4.320</p><p><br/><br/>53.000</p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 53.000; het antwoordmodel geeft 54.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br/>2022 de eliminatieposten met betrekking tot :<br/>a. de deelneming in Roon;<br/>b. het belang van derden in Roon;<br/>c. de afschrijving van de (consolidatie)goodwill;<br/>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Goodwill<br/>Deelneming</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>300.000<br/>420.000<br/>3.960.000<br/>760.000<br/>5.440.000</p><p><br/><br/></p><p>b. het belang van derden in Roon</p><p>aan</p><p></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>200.000<br/>280.000<br/>2.640.000<br/>48.000<br/>3.168.000</p><p></p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>152.000<br/>152.000</p><p></p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Resultaat boekjaar 2022<br/>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br/>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br/>Voorziening latente belastingen<br/>Belang derden<br/>Voorziening latente belastingen<br/>Voorraad</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>25.920<br/>6.480<br/>17.280<br/>4.320</p><p><br/><br/>108.000</p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 108.000; het antwoordmodel geeft 54.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br>2022 de eliminatieposten met betrekking tot (10 punten):<br>a. de deelneming in Roon;<br>b. het belang van derden in Roon;<br>c. de afschrijving van de (consolidatie)goodwill;<br>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p>(½)</p><p>Aandelenkapitaal<br>Agio<br>Overige reserves<br>Goodwill<br>Deelneming</p><p>(½)<br>(½)</p><p>eliminatieboeking<br>Db<br>Cr<br>300.000<br>420.000<br>3.960.000<br>760.000<br>5.440.000</p><p>(½)<br>(½)<br>(½)</p><p>b. het belang van derden in Roon</p><p>aan</p><p>(½)</p><p>eliminatieboeking<br>Db<br>Cr<br>200.000<br>280.000<br>2.640.000<br>48.000<br>3.168.000</p><p>(½)</p><p>(½)<br>(½)</p><p>eliminatieboeking<br>Db<br>Cr<br>152.000<br>152.000</p><p>(1)</p><p>(1)</p><p>Aandelenkapitaal<br>Agio<br>Overige reserves<br>Resultaat boekjaar 2022<br>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br>Voorziening latente belastingen<br>Belang derden<br>Voorziening latente belastingen<br>Voorraad</p><p>(½)<br>(½)</p><p>eliminatieboeking<br>Db<br>Cr<br>25.920<br>6.480<br>17.280<br>4.320</p><p>(½)<br>(½)<br>54.000</p><p>(½)</p>",
+    "practiceSolutionHtml": "<p>20. Geef ten behoeve van de samenstelling van de geconsolideerde balans per 31 december<br/>2022 de eliminatieposten met betrekking tot :<br/>a. de deelneming in Roon;<br/>b. het belang van derden in Roon;<br/>c. de afschrijving van de (consolidatie)goodwill;<br/>d. de intercompanyleveringen van Roon aan Norch.</p><p>a. de deelneming in Roon</p><p>aan</p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Goodwill<br/>Deelneming</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>300.000<br/>420.000<br/>3.960.000<br/>760.000<br/>5.440.000</p><p><br/><br/></p><p>b. het belang van derden in Roon</p><p>aan</p><p></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>200.000<br/>280.000<br/>2.640.000<br/>48.000<br/>3.168.000</p><p></p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>152.000<br/>152.000</p><p></p><p></p><p>Aandelenkapitaal<br/>Agio<br/>Overige reserves<br/>Resultaat boekjaar 2022<br/>Belang derden</p><p>c. de afschrijving van de (consolidatie)goodwill;</p><p>aan</p><p>Resultaat boekjaar<br/>Goodwill</p><p>d. de intercompanyleveringen van Roon aan Norch.</p><p>aan</p><p>Resultaat boekjaar<br/>Voorziening latente belastingen<br/>Belang derden<br/>Voorziening latente belastingen<br/>Voorraad</p><p><br/></p><p>eliminatieboeking<br/>Db<br/>Cr<br/>25.920<br/>6.480<br/>17.280<br/>4.320</p><p><br/><br/>54.000</p><p></p>",
+    "dependencyQuestionIds": [
+      "vraag-16",
+      "vraag-17",
+      "vraag-18",
+      "vraag-19"
+    ],
+    "guidance": {
+      "lesson": "upstream-hk",
+      "title": "Upstream bij verkrijgingsprijs",
+      "rules": "Bepaal de ongerealiseerde winst bij de verkopende dochter en werk de consolidatiecorrectie uit naar moeder, derden en belasting, zonder een interne NVW-correctie mee te nemen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-20"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 20",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 54000.0,
+      "incorrectValues": [
+        55000.0,
+        53000.0,
+        108000.0
+      ],
+      "sourceToken": "54.000"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-21",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-21",
+    "sectionId": "opgave-3",
+    "topicId": "upstream-vp",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 21",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "21. Bereken het geconsolideerde eigen vermogen per 31 december 2022.",
+    "promptHtml": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. </p><p>Eigen vermogen Norch per 1-1-2022<br/>+ Resultaat boekjaar 2022 Norch<br/>+ Resultaat boekjaar 2022 Roon<br/>-/- Belang derden resultaat boekjaar 2022 Roon<br/>-/- Afschrijving goodwill<br/>-/- Ongerealiseerde winst in voorraad Norch<br/>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br/>330.000<br/>120.000<br/>-/- 48.000<br/>-/- 152.000<br/>-/- 25.920<br/>----------------5.224.080</p><p><br/><br/><br/><br/><br/></p><p></p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. </p><p>Eigen vermogen Norch per 1-1-2022<br/>+ Resultaat boekjaar 2022 Norch<br/>+ Resultaat boekjaar 2022 Roon<br/>-/- Belang derden resultaat boekjaar 2022 Roon<br/>-/- Afschrijving goodwill<br/>-/- Ongerealiseerde winst in voorraad Norch<br/>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br/>330.000<br/>120.000<br/>-/- 48.000<br/>-/- 152.000<br/>-/- 25.920<br/>----------------5.324.080</p><p><br/><br/><br/><br/><br/></p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 5.324.080; het antwoordmodel geeft 5.224.080. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. </p><p>Eigen vermogen Norch per 1-1-2022<br/>+ Resultaat boekjaar 2022 Norch<br/>+ Resultaat boekjaar 2022 Roon<br/>-/- Belang derden resultaat boekjaar 2022 Roon<br/>-/- Afschrijving goodwill<br/>-/- Ongerealiseerde winst in voorraad Norch<br/>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br/>330.000<br/>120.000<br/>-/- 48.000<br/>-/- 152.000<br/>-/- 25.920<br/>----------------5.124.080</p><p><br/><br/><br/><br/><br/></p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 5.124.080; het antwoordmodel geeft 5.224.080. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. </p><p>Eigen vermogen Norch per 1-1-2022<br/>+ Resultaat boekjaar 2022 Norch<br/>+ Resultaat boekjaar 2022 Roon<br/>-/- Belang derden resultaat boekjaar 2022 Roon<br/>-/- Afschrijving goodwill<br/>-/- Ongerealiseerde winst in voorraad Norch<br/>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br/>330.000<br/>120.000<br/>-/- 48.000<br/>-/- 152.000<br/>-/- 25.920<br/>----------------10.448.160</p><p><br/><br/><br/><br/><br/></p><p></p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 10.448.160; het antwoordmodel geeft 5.224.080. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. (3 punten)</p><p>Eigen vermogen Norch per 1-1-2022<br>+ Resultaat boekjaar 2022 Norch<br>+ Resultaat boekjaar 2022 Roon<br>-/- Belang derden resultaat boekjaar 2022 Roon<br>-/- Afschrijving goodwill<br>-/- Ongerealiseerde winst in voorraad Norch<br>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br>330.000<br>120.000<br>-/- 48.000<br>-/- 152.000<br>-/- 25.920<br>----------------5.224.080</p><p>(½)<br>(½)<br>(½)<br>(½)<br>(½)<br>(½)</p><p>(½)</p>",
+    "practiceSolutionHtml": "<p>21. Bereken het geconsolideerde eigen vermogen per 31 december 2022. </p><p>Eigen vermogen Norch per 1-1-2022<br/>+ Resultaat boekjaar 2022 Norch<br/>+ Resultaat boekjaar 2022 Roon<br/>-/- Belang derden resultaat boekjaar 2022 Roon<br/>-/- Afschrijving goodwill<br/>-/- Ongerealiseerde winst in voorraad Norch<br/>Geconsolideerd eigen vermogen per 31-12-2022</p><p>5.000.0000<br/>330.000<br/>120.000<br/>-/- 48.000<br/>-/- 152.000<br/>-/- 25.920<br/>----------------5.224.080</p><p><br/><br/><br/><br/><br/></p><p></p>",
+    "dependencyQuestionIds": [
+      "vraag-16",
+      "vraag-17",
+      "vraag-18",
+      "vraag-19",
+      "vraag-20"
+    ],
+    "guidance": {
+      "lesson": "upstream-hk",
+      "title": "Upstream bij verkrijgingsprijs",
+      "rules": "Bepaal de ongerealiseerde winst bij de verkopende dochter en werk de consolidatiecorrectie uit naar moeder, derden en belasting, zonder een interne NVW-correctie mee te nemen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-21"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 3 Norch bv (Consolidatie verkrijgingsprijs) (20 punten) · Vraag 21",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 5224080.0,
+      "incorrectValues": [
+        5324080.0,
+        5124080.0,
+        10448160.0
+      ],
+      "sourceToken": "5.224.080"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-22",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-22",
+    "sectionId": "opgave-4",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 22",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022.",
+    "promptHtml": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br/><br/>GBP 660.000.000 x € 1,14</p><p>€ 752.400 </p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br/><br/>GBP 660.000.000 x € 1,14</p><p>€ 762.400 </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 762.400; het antwoordmodel geeft € 752.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br/><br/>GBP 660.000.000 x € 1,14</p><p>€ 742.400 </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 742.400; het antwoordmodel geeft € 752.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br/><br/>GBP 660.000.000 x € 1,14</p><p>€ 1.504.800 </p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.504.800; het antwoordmodel geeft € 752.400. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br>(2 punten g/f)<br>GBP 660.000.000 x € 1,14</p><p>€ 752.400 (2)</p>",
+    "practiceSolutionHtml": "<p>22. Bereken in euro’s de boekwaarde van de machines per 31 december 2022<br/><br/>GBP 660.000.000 x € 1,14</p><p>€ 752.400 </p>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "slotkoersmethode",
+      "title": "Balans, resultaat en omrekeningsreserve",
+      "rules": "Reken balans en resultaat met hun eigen toepasselijke koersen om en sluit het eindvermogen aan op beginvermogen, resultaat en overige vermogensmutaties.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-22"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 4 Neige bv (Vreemde valuta) (20 punten) · Vraag 22",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 752400.0,
+      "incorrectValues": [
+        762400.0,
+        742400.0,
+        1504800.0
+      ],
+      "sourceToken": "€ 752.400"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-23",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-23",
+    "sectionId": "opgave-4",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 23",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar deelneming in TCC.",
+    "promptHtml": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar deelneming in TCC.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br/>deelneming in TCC <br/>Deelneming TCC</p><p></p><p>Aan Reserve<br/>omrekeningsverschillen<br/>Aan Resultaat deelneming</p><p></p><p>€ 70.250</p><p> GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br/>Vermogen 1-1-2022<br/>Dividend 1-5-2022<br/>Resultaat<br/>Totaal</p><p>Verloop eigen vermogen<br/>Stand 31-12-2021<br/>Af dividend (1-5-2022)<br/>Bij: resultaat boekjaar<br/>Totaal<br/>Stand 31-12-2022<br/>Omrekenverschil</p><p>€<br/>239.000</p><p>3.550.000 x (1,14 – 1,12)<br/>-100.000 x (1,14 - 1,11)<br/>+150.000 x (1,14 – 1,125)<br/>3.600.000</p><p><br/><br/></p><p>GBP<br/>3.550.000<br/>-100.000<br/>+150.000</p><p>Koers<br/>1,12<br/>1,11<br/>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br/>168.750</p><p></p><p>€ 71.000<br/>€ -3.000<br/>€ +2.250<br/>€ 70.250<br/>€<br/>3.976.000<br/>-111.000<br/>+168.750<br/>4.033.750<br/>4.104.000<br/>70.250</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br/>deelneming in TCC <br/>Deelneming TCC</p><p></p><p>Aan Reserve<br/>omrekeningsverschillen<br/>Aan Resultaat deelneming</p><p></p><p>€ 70.250</p><p> GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br/>Vermogen 1-1-2022<br/>Dividend 1-5-2022<br/>Resultaat<br/>Totaal</p><p>Verloop eigen vermogen<br/>Stand 31-12-2021<br/>Af dividend (1-5-2022)<br/>Bij: resultaat boekjaar<br/>Totaal<br/>Stand 31-12-2022<br/>Omrekenverschil</p><p>€<br/>239.000</p><p>3.550.000 x (1,14 – 1,12)<br/>-100.000 x (1,14 - 1,11)<br/>+150.000 x (1,14 – 1,125)<br/>3.600.000</p><p><br/><br/></p><p>GBP<br/>3.550.000<br/>-100.000<br/>+150.000</p><p>Koers<br/>1,12<br/>1,11<br/>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br/>168.750</p><p></p><p>€ 71.000<br/>€ -3.000<br/>€ +2.250<br/>€ 70.250<br/>€<br/>3.976.000<br/>-111.000<br/>+168.750<br/>4.033.750<br/>4.104.000<br/>71.250</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 71.250; het antwoordmodel geeft 70.250. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br/>deelneming in TCC <br/>Deelneming TCC</p><p></p><p>Aan Reserve<br/>omrekeningsverschillen<br/>Aan Resultaat deelneming</p><p></p><p>€ 70.250</p><p> GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br/>Vermogen 1-1-2022<br/>Dividend 1-5-2022<br/>Resultaat<br/>Totaal</p><p>Verloop eigen vermogen<br/>Stand 31-12-2021<br/>Af dividend (1-5-2022)<br/>Bij: resultaat boekjaar<br/>Totaal<br/>Stand 31-12-2022<br/>Omrekenverschil</p><p>€<br/>239.000</p><p>3.550.000 x (1,14 – 1,12)<br/>-100.000 x (1,14 - 1,11)<br/>+150.000 x (1,14 – 1,125)<br/>3.600.000</p><p><br/><br/></p><p>GBP<br/>3.550.000<br/>-100.000<br/>+150.000</p><p>Koers<br/>1,12<br/>1,11<br/>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br/>168.750</p><p></p><p>€ 71.000<br/>€ -3.000<br/>€ +2.250<br/>€ 70.250<br/>€<br/>3.976.000<br/>-111.000<br/>+168.750<br/>4.033.750<br/>4.104.000<br/>69.250</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 69.250; het antwoordmodel geeft 70.250. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br/>deelneming in TCC <br/>Deelneming TCC</p><p></p><p>Aan Reserve<br/>omrekeningsverschillen<br/>Aan Resultaat deelneming</p><p></p><p>€ 70.250</p><p> GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br/>Vermogen 1-1-2022<br/>Dividend 1-5-2022<br/>Resultaat<br/>Totaal</p><p>Verloop eigen vermogen<br/>Stand 31-12-2021<br/>Af dividend (1-5-2022)<br/>Bij: resultaat boekjaar<br/>Totaal<br/>Stand 31-12-2022<br/>Omrekenverschil</p><p>€<br/>239.000</p><p>3.550.000 x (1,14 – 1,12)<br/>-100.000 x (1,14 - 1,11)<br/>+150.000 x (1,14 – 1,125)<br/>3.600.000</p><p><br/><br/></p><p>GBP<br/>3.550.000<br/>-100.000<br/>+150.000</p><p>Koers<br/>1,12<br/>1,11<br/>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br/>168.750</p><p></p><p>€ 71.000<br/>€ -3.000<br/>€ +2.250<br/>€ 70.250<br/>€<br/>3.976.000<br/>-111.000<br/>+168.750<br/>4.033.750<br/>4.104.000<br/>140.500</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 140.500; het antwoordmodel geeft 70.250. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br>deelneming in TCC (5 punten)<br>Deelneming TCC</p><p>(1/2)</p><p>Aan Reserve<br>omrekeningsverschillen<br>Aan Resultaat deelneming</p><p>(1/2)</p><p>€ 70.250</p><p>(1/2) GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br>Vermogen 1-1-2022<br>Dividend 1-5-2022<br>Resultaat<br>Totaal</p><p>Verloop eigen vermogen<br>Stand 31-12-2021<br>Af dividend (1-5-2022)<br>Bij: resultaat boekjaar<br>Totaal<br>Stand 31-12-2022<br>Omrekenverschil</p><p>€<br>239.000</p><p>3.550.000 x (1,14 – 1,12)<br>-100.000 x (1,14 - 1,11)<br>+150.000 x (1,14 – 1,125)<br>3.600.000</p><p>(1)<br>(1)<br>(1)</p><p>GBP<br>3.550.000<br>-100.000<br>+150.000</p><p>Koers<br>1,12<br>1,11<br>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br>168.750</p><p>(1/2)</p><p>€ 71.000<br>€ -3.000<br>€ +2.250<br>€ 70.250<br>€<br>3.976.000<br>-111.000<br>+168.750<br>4.033.750<br>4.104.000<br>70.250</p>",
+    "practiceSolutionHtml": "<p>23. Geef de journaalpost die Neige per 31 december 2022 maakt ten aanzien van haar<br/>deelneming in TCC <br/>Deelneming TCC</p><p></p><p>Aan Reserve<br/>omrekeningsverschillen<br/>Aan Resultaat deelneming</p><p></p><p>€ 70.250</p><p> GBP 150.000 x 1,125</p><p>Berekening omrekenverschil<br/>Vermogen 1-1-2022<br/>Dividend 1-5-2022<br/>Resultaat<br/>Totaal</p><p>Verloop eigen vermogen<br/>Stand 31-12-2021<br/>Af dividend (1-5-2022)<br/>Bij: resultaat boekjaar<br/>Totaal<br/>Stand 31-12-2022<br/>Omrekenverschil</p><p>€<br/>239.000</p><p>3.550.000 x (1,14 – 1,12)<br/>-100.000 x (1,14 - 1,11)<br/>+150.000 x (1,14 – 1,125)<br/>3.600.000</p><p><br/><br/></p><p>GBP<br/>3.550.000<br/>-100.000<br/>+150.000</p><p>Koers<br/>1,12<br/>1,11<br/>1,125</p><p>3.600.000</p><p>1,14</p><p>€<br/>168.750</p><p></p><p>€ 71.000<br/>€ -3.000<br/>€ +2.250<br/>€ 70.250<br/>€<br/>3.976.000<br/>-111.000<br/>+168.750<br/>4.033.750<br/>4.104.000<br/>70.250</p>",
+    "dependencyQuestionIds": [
+      "vraag-22"
+    ],
+    "guidance": {
+      "lesson": "slotkoersmethode",
+      "title": "Balans, resultaat en omrekeningsreserve",
+      "rules": "Reken balans en resultaat met hun eigen toepasselijke koersen om en sluit het eindvermogen aan op beginvermogen, resultaat en overige vermogensmutaties.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-23"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 4 Neige bv (Vreemde valuta) (20 punten) · Vraag 23",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 70250.0,
+      "incorrectValues": [
+        71250.0,
+        69250.0,
+        140500.0
+      ],
+      "sourceToken": "70.250"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-24",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-24",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 24",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31 december 2022 in euro’s van de volgende posten: - Gebouwen - Vervoermiddelen - Voorraad",
+    "promptHtml": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per<br>31 december 2022 in euro’s van de volgende posten:<br>- Gebouwen<br>- Vervoermiddelen<br>- Voorraad</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br/>december 2022 in euro’s van de volgende posten :<br/>a. Gebouwen </p><p>Boekwaarde<br/>Afschrijving oud</p><p>Datum<br/>31-12-2021<br/>Historische koers</p><p>NOK<br/>860.000<br/>-40.000<br/>820.000</p><p>Koers<br/>0,11<br/>0,11</p><p><br/></p><p>Aankoop loods<br/>Afschrijving loods</p><p>1-7-2022<br/>1-7-2022</p><p>200.000<br/>-10.000<br/>190.000</p><p>0,12<br/>0,12</p><p><br/></p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br/>94.600<br/>-4.400<br/>90.200<br/>24.000<br/>-1.200<br/>22.800<br/>113.000</p><p>b. Vervoersmiddelen </p><p>Boekwaarde<br/>Afschrijving<br/>Afboeking vrachtwagen<br/>Boekwaarde</p><p>Datum<br/>31-12-2021<br/>Historische koers<br/>31-12-2022<br/>31-12-2022</p><p>NOK<br/>1.440.000<br/>-480.000<br/>-160.000<br/>800.000</p><p>Koers<br/>0,11<br/>0,11<br/>0,11</p><p>Euro’s<br/>158.400<br/>-52.800<br/>-17.600<br/>88.000</p><p><br/><br/></p><p>c. Voorraad <br/>Inkoopdatum<br/>02-01-2022<br/>31-12-2022<br/>afwaardering<br/>15-08-2022<br/>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br/>10.000</p><p>NOK 4,50<br/>NOK 1,50</p><p>80.000<br/>110.000</p><p>NOK 5,00</p><p>Bedrag in<br/>NOK<br/>90.000<br/>15.000</p><p>400.000<br/>505..000</p><p>Bedrag in €</p><p>Koers<br/>€ 0,10<br/>€ 0,13</p><p><br/></p><p>9.000<br/>1.950</p><p>€ 0,12</p><p></p><p>48.000<br/>58.950</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br/>december 2022 in euro’s van de volgende posten :<br/>a. Gebouwen </p><p>Boekwaarde<br/>Afschrijving oud</p><p>Datum<br/>31-12-2021<br/>Historische koers</p><p>NOK<br/>860.000<br/>-40.000<br/>820.000</p><p>Koers<br/>0,11<br/>0,11</p><p><br/></p><p>Aankoop loods<br/>Afschrijving loods</p><p>1-7-2022<br/>1-7-2022</p><p>200.000<br/>-10.000<br/>190.000</p><p>0,12<br/>0,12</p><p><br/></p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br/>94.600<br/>-4.400<br/>90.200<br/>24.000<br/>-1.200<br/>22.800<br/>113.000</p><p>b. Vervoersmiddelen </p><p>Boekwaarde<br/>Afschrijving<br/>Afboeking vrachtwagen<br/>Boekwaarde</p><p>Datum<br/>31-12-2021<br/>Historische koers<br/>31-12-2022<br/>31-12-2022</p><p>NOK<br/>1.440.000<br/>-480.000<br/>-160.000<br/>800.000</p><p>Koers<br/>0,11<br/>0,11<br/>0,11</p><p>Euro’s<br/>158.400<br/>-52.800<br/>-17.600<br/>88.000</p><p><br/><br/></p><p>c. Voorraad <br/>Inkoopdatum<br/>02-01-2022<br/>31-12-2022<br/>afwaardering<br/>15-08-2022<br/>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br/>10.000</p><p>NOK 4,50<br/>NOK 1,50</p><p>80.000<br/>110.000</p><p>NOK 5,00</p><p>Bedrag in<br/>NOK<br/>90.000<br/>15.000</p><p>400.000<br/>505..000</p><p>Bedrag in €</p><p>Koers<br/>€ 0,10<br/>€ 0,13</p><p><br/></p><p>9.000<br/>1.950</p><p>€ 0,12</p><p></p><p>48.000<br/>59.950</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 59.950; het antwoordmodel geeft 58.950. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br/>december 2022 in euro’s van de volgende posten :<br/>a. Gebouwen </p><p>Boekwaarde<br/>Afschrijving oud</p><p>Datum<br/>31-12-2021<br/>Historische koers</p><p>NOK<br/>860.000<br/>-40.000<br/>820.000</p><p>Koers<br/>0,11<br/>0,11</p><p><br/></p><p>Aankoop loods<br/>Afschrijving loods</p><p>1-7-2022<br/>1-7-2022</p><p>200.000<br/>-10.000<br/>190.000</p><p>0,12<br/>0,12</p><p><br/></p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br/>94.600<br/>-4.400<br/>90.200<br/>24.000<br/>-1.200<br/>22.800<br/>113.000</p><p>b. Vervoersmiddelen </p><p>Boekwaarde<br/>Afschrijving<br/>Afboeking vrachtwagen<br/>Boekwaarde</p><p>Datum<br/>31-12-2021<br/>Historische koers<br/>31-12-2022<br/>31-12-2022</p><p>NOK<br/>1.440.000<br/>-480.000<br/>-160.000<br/>800.000</p><p>Koers<br/>0,11<br/>0,11<br/>0,11</p><p>Euro’s<br/>158.400<br/>-52.800<br/>-17.600<br/>88.000</p><p><br/><br/></p><p>c. Voorraad <br/>Inkoopdatum<br/>02-01-2022<br/>31-12-2022<br/>afwaardering<br/>15-08-2022<br/>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br/>10.000</p><p>NOK 4,50<br/>NOK 1,50</p><p>80.000<br/>110.000</p><p>NOK 5,00</p><p>Bedrag in<br/>NOK<br/>90.000<br/>15.000</p><p>400.000<br/>505..000</p><p>Bedrag in €</p><p>Koers<br/>€ 0,10<br/>€ 0,13</p><p><br/></p><p>9.000<br/>1.950</p><p>€ 0,12</p><p></p><p>48.000<br/>57.950</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 57.950; het antwoordmodel geeft 58.950. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br/>december 2022 in euro’s van de volgende posten :<br/>a. Gebouwen </p><p>Boekwaarde<br/>Afschrijving oud</p><p>Datum<br/>31-12-2021<br/>Historische koers</p><p>NOK<br/>860.000<br/>-40.000<br/>820.000</p><p>Koers<br/>0,11<br/>0,11</p><p><br/></p><p>Aankoop loods<br/>Afschrijving loods</p><p>1-7-2022<br/>1-7-2022</p><p>200.000<br/>-10.000<br/>190.000</p><p>0,12<br/>0,12</p><p><br/></p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br/>94.600<br/>-4.400<br/>90.200<br/>24.000<br/>-1.200<br/>22.800<br/>113.000</p><p>b. Vervoersmiddelen </p><p>Boekwaarde<br/>Afschrijving<br/>Afboeking vrachtwagen<br/>Boekwaarde</p><p>Datum<br/>31-12-2021<br/>Historische koers<br/>31-12-2022<br/>31-12-2022</p><p>NOK<br/>1.440.000<br/>-480.000<br/>-160.000<br/>800.000</p><p>Koers<br/>0,11<br/>0,11<br/>0,11</p><p>Euro’s<br/>158.400<br/>-52.800<br/>-17.600<br/>88.000</p><p><br/><br/></p><p>c. Voorraad <br/>Inkoopdatum<br/>02-01-2022<br/>31-12-2022<br/>afwaardering<br/>15-08-2022<br/>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br/>10.000</p><p>NOK 4,50<br/>NOK 1,50</p><p>80.000<br/>110.000</p><p>NOK 5,00</p><p>Bedrag in<br/>NOK<br/>90.000<br/>15.000</p><p>400.000<br/>505..000</p><p>Bedrag in €</p><p>Koers<br/>€ 0,10<br/>€ 0,13</p><p><br/></p><p>9.000<br/>1.950</p><p>€ 0,12</p><p></p><p>48.000<br/>117.900</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 117.900; het antwoordmodel geeft 58.950. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br>december 2022 in euro’s van de volgende posten (8 punten):<br>a. Gebouwen (3 punten)</p><p>Boekwaarde<br>Afschrijving oud</p><p>Datum<br>31-12-2021<br>Historische koers</p><p>NOK<br>860.000<br>-40.000<br>820.000</p><p>Koers<br>0,11<br>0,11</p><p>(1)<br>(1/2)</p><p>Aankoop loods<br>Afschrijving loods</p><p>1-7-2022<br>1-7-2022</p><p>200.000<br>-10.000<br>190.000</p><p>0,12<br>0,12</p><p>(1)<br>(1/2)</p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br>94.600<br>-4.400<br>90.200<br>24.000<br>-1.200<br>22.800<br>113.000</p><p>b. Vervoersmiddelen (2.5 punten)</p><p>Boekwaarde<br>Afschrijving<br>Afboeking vrachtwagen<br>Boekwaarde</p><p>Datum<br>31-12-2021<br>Historische koers<br>31-12-2022<br>31-12-2022</p><p>NOK<br>1.440.000<br>-480.000<br>-160.000<br>800.000</p><p>Koers<br>0,11<br>0,11<br>0,11</p><p>Euro’s<br>158.400<br>-52.800<br>-17.600<br>88.000</p><p>(1)<br>(1/2)<br>(1)</p><p>c. Voorraad (2.5 punten)<br>Inkoopdatum<br>02-01-2022<br>31-12-2022<br>afwaardering<br>15-08-2022<br>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br>10.000</p><p>NOK 4,50<br>NOK 1,50</p><p>80.000<br>110.000</p><p>NOK 5,00</p><p>Bedrag in<br>NOK<br>90.000<br>15.000</p><p>400.000<br>505..000</p><p>Bedrag in €</p><p>Koers<br>€ 0,10<br>€ 0,13</p><p>(1)<br>(1)</p><p>9.000<br>1.950</p><p>€ 0,12</p><p>(1/2)</p><p>48.000<br>58.950</p>",
+    "practiceSolutionHtml": "<p>24. Geef een gespecificeerde berekening van de boekwaarde op de balans van Genser per 31<br/>december 2022 in euro’s van de volgende posten :<br/>a. Gebouwen </p><p>Boekwaarde<br/>Afschrijving oud</p><p>Datum<br/>31-12-2021<br/>Historische koers</p><p>NOK<br/>860.000<br/>-40.000<br/>820.000</p><p>Koers<br/>0,11<br/>0,11</p><p><br/></p><p>Aankoop loods<br/>Afschrijving loods</p><p>1-7-2022<br/>1-7-2022</p><p>200.000<br/>-10.000<br/>190.000</p><p>0,12<br/>0,12</p><p><br/></p><p>Boekwaarde</p><p>31-12-2022</p><p>1.010.000</p><p>Euro’s<br/>94.600<br/>-4.400<br/>90.200<br/>24.000<br/>-1.200<br/>22.800<br/>113.000</p><p>b. Vervoersmiddelen </p><p>Boekwaarde<br/>Afschrijving<br/>Afboeking vrachtwagen<br/>Boekwaarde</p><p>Datum<br/>31-12-2021<br/>Historische koers<br/>31-12-2022<br/>31-12-2022</p><p>NOK<br/>1.440.000<br/>-480.000<br/>-160.000<br/>800.000</p><p>Koers<br/>0,11<br/>0,11<br/>0,11</p><p>Euro’s<br/>158.400<br/>-52.800<br/>-17.600<br/>88.000</p><p><br/><br/></p><p>c. Voorraad <br/>Inkoopdatum<br/>02-01-2022<br/>31-12-2022<br/>afwaardering<br/>15-08-2022<br/>Totaal</p><p>Aantal</p><p>Prijs</p><p>20.000<br/>10.000</p><p>NOK 4,50<br/>NOK 1,50</p><p>80.000<br/>110.000</p><p>NOK 5,00</p><p>Bedrag in<br/>NOK<br/>90.000<br/>15.000</p><p>400.000<br/>505..000</p><p>Bedrag in €</p><p>Koers<br/>€ 0,10<br/>€ 0,13</p><p><br/></p><p>9.000<br/>1.950</p><p>€ 0,12</p><p></p><p>48.000<br/>58.950</p>",
+    "dependencyQuestionIds": [
+      "vraag-22",
+      "vraag-23"
+    ],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-24"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 4 Neige bv (Vreemde valuta) (20 punten) · Vraag 24",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 58950.0,
+      "incorrectValues": [
+        59950.0,
+        57950.0,
+        117900.0
+      ],
+      "sourceToken": "58.950"
+    }
+  },
+  {
+    "key": "cafa2-20231009/vraag-25",
+    "examId": "cafa2-20231009",
+    "questionId": "vraag-25",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "09-10-2023 · Vraag 25",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of dit resultaat positief of negatief is.",
+    "promptHtml": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of dit<br>resultaat positief of negatief is.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br/>dit resultaat positief of negatief is .<br/>datum<br/>Monetaire positie:<br/>Lening u/g<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren<br/>Mutaties:<br/>Inkoop eerste halfjaar<br/>Verkoop eerste halfjaar<br/>Inkoop tweede halfjaar<br/>Verkoop tweede halfjaar<br/>Aankoop loods<br/>Overige kosten<br/>Monetaire positie theoretisch<br/>Monetaire positie:<br/>Lening<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren</p><p>bedrag koers €<br/>NOK</p><p>punt bedrag €</p><p>1-1-2022<br/>100.000<br/>76.000<br/>-/-380.000<br/>-/-375.000<br/>-579.000<br/>02-01-2022<br/>15-02-2022<br/>15-08-2022<br/>30-11-2022<br/>01-07-2022<br/>Verspreid</p><p>-/-360.000<br/>1.650.000<br/>-/-400.000<br/>640.000<br/>-200.000<br/>-/- 475.000<br/>--------------31-12-2022<br/>276.000</p><p>0,11<br/>0,10<br/>0,10<br/>0,12<br/>0,12<br/>0,12<br/>0,11</p><p> -/- 63.690<br/><br/><br/><br/><br/><br/></p><p>-/-36.000<br/>165.000<br/>-/- 48.000<br/>76.800<br/>-/-24.000<br/>-/- 52.250<br/>-------------17.860</p><p>31-12-2022<br/>130.000<br/>651.000<br/>-/-380.000<br/>-/-125.000<br/>276.000</p><p>Koerswinst  in w&amp;v</p><p>0,13</p><p> 35.880<br/>--------------18.020</p>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br/>dit resultaat positief of negatief is .<br/>datum<br/>Monetaire positie:<br/>Lening u/g<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren<br/>Mutaties:<br/>Inkoop eerste halfjaar<br/>Verkoop eerste halfjaar<br/>Inkoop tweede halfjaar<br/>Verkoop tweede halfjaar<br/>Aankoop loods<br/>Overige kosten<br/>Monetaire positie theoretisch<br/>Monetaire positie:<br/>Lening<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren</p><p>bedrag koers €<br/>NOK</p><p>punt bedrag €</p><p>1-1-2022<br/>100.000<br/>76.000<br/>-/-380.000<br/>-/-375.000<br/>-579.000<br/>02-01-2022<br/>15-02-2022<br/>15-08-2022<br/>30-11-2022<br/>01-07-2022<br/>Verspreid</p><p>-/-360.000<br/>1.650.000<br/>-/-400.000<br/>640.000<br/>-200.000<br/>-/- 475.000<br/>--------------31-12-2022<br/>276.000</p><p>0,11<br/>0,10<br/>0,10<br/>0,12<br/>0,12<br/>0,12<br/>0,11</p><p> -/- 63.690<br/><br/><br/><br/><br/><br/></p><p>-/-36.000<br/>165.000<br/>-/- 48.000<br/>76.800<br/>-/-24.000<br/>-/- 52.250<br/>-------------17.860</p><p>31-12-2022<br/>130.000<br/>651.000<br/>-/-380.000<br/>-/-125.000<br/>276.000</p><p>Koerswinst  in w&amp;v</p><p>0,13</p><p> 35.880<br/>--------------19.020</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 19.020; het antwoordmodel geeft 18.020. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br/>dit resultaat positief of negatief is .<br/>datum<br/>Monetaire positie:<br/>Lening u/g<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren<br/>Mutaties:<br/>Inkoop eerste halfjaar<br/>Verkoop eerste halfjaar<br/>Inkoop tweede halfjaar<br/>Verkoop tweede halfjaar<br/>Aankoop loods<br/>Overige kosten<br/>Monetaire positie theoretisch<br/>Monetaire positie:<br/>Lening<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren</p><p>bedrag koers €<br/>NOK</p><p>punt bedrag €</p><p>1-1-2022<br/>100.000<br/>76.000<br/>-/-380.000<br/>-/-375.000<br/>-579.000<br/>02-01-2022<br/>15-02-2022<br/>15-08-2022<br/>30-11-2022<br/>01-07-2022<br/>Verspreid</p><p>-/-360.000<br/>1.650.000<br/>-/-400.000<br/>640.000<br/>-200.000<br/>-/- 475.000<br/>--------------31-12-2022<br/>276.000</p><p>0,11<br/>0,10<br/>0,10<br/>0,12<br/>0,12<br/>0,12<br/>0,11</p><p> -/- 63.690<br/><br/><br/><br/><br/><br/></p><p>-/-36.000<br/>165.000<br/>-/- 48.000<br/>76.800<br/>-/-24.000<br/>-/- 52.250<br/>-------------17.860</p><p>31-12-2022<br/>130.000<br/>651.000<br/>-/-380.000<br/>-/-125.000<br/>276.000</p><p>Koerswinst  in w&amp;v</p><p>0,13</p><p> 35.880<br/>--------------17.020</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 17.020; het antwoordmodel geeft 18.020. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br/>dit resultaat positief of negatief is .<br/>datum<br/>Monetaire positie:<br/>Lening u/g<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren<br/>Mutaties:<br/>Inkoop eerste halfjaar<br/>Verkoop eerste halfjaar<br/>Inkoop tweede halfjaar<br/>Verkoop tweede halfjaar<br/>Aankoop loods<br/>Overige kosten<br/>Monetaire positie theoretisch<br/>Monetaire positie:<br/>Lening<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren</p><p>bedrag koers €<br/>NOK</p><p>punt bedrag €</p><p>1-1-2022<br/>100.000<br/>76.000<br/>-/-380.000<br/>-/-375.000<br/>-579.000<br/>02-01-2022<br/>15-02-2022<br/>15-08-2022<br/>30-11-2022<br/>01-07-2022<br/>Verspreid</p><p>-/-360.000<br/>1.650.000<br/>-/-400.000<br/>640.000<br/>-200.000<br/>-/- 475.000<br/>--------------31-12-2022<br/>276.000</p><p>0,11<br/>0,10<br/>0,10<br/>0,12<br/>0,12<br/>0,12<br/>0,11</p><p> -/- 63.690<br/><br/><br/><br/><br/><br/></p><p>-/-36.000<br/>165.000<br/>-/- 48.000<br/>76.800<br/>-/-24.000<br/>-/- 52.250<br/>-------------17.860</p><p>31-12-2022<br/>130.000<br/>651.000<br/>-/-380.000<br/>-/-125.000<br/>276.000</p><p>Koerswinst  in w&amp;v</p><p>0,13</p><p> 35.880<br/>--------------36.040</p>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 36.040; het antwoordmodel geeft 18.020. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br>dit resultaat positief of negatief is (5 punten).<br>datum<br>Monetaire positie:<br>Lening u/g<br>Liquide middelen<br>Langlopende lening<br>Crediteuren<br>Mutaties:<br>Inkoop eerste halfjaar<br>Verkoop eerste halfjaar<br>Inkoop tweede halfjaar<br>Verkoop tweede halfjaar<br>Aankoop loods<br>Overige kosten<br>Monetaire positie theoretisch<br>Monetaire positie:<br>Lening<br>Liquide middelen<br>Langlopende lening<br>Crediteuren</p><p>bedrag koers €<br>NOK</p><p>punt bedrag €</p><p>1-1-2022<br>100.000<br>76.000<br>-/-380.000<br>-/-375.000<br>-579.000<br>02-01-2022<br>15-02-2022<br>15-08-2022<br>30-11-2022<br>01-07-2022<br>Verspreid</p><p>-/-360.000<br>1.650.000<br>-/-400.000<br>640.000<br>-200.000<br>-/- 475.000<br>--------------31-12-2022<br>276.000</p><p>0,11<br>0,10<br>0,10<br>0,12<br>0,12<br>0,12<br>0,11</p><p>(1/2) -/- 63.690<br>(1/2)<br>(1/2)<br>(1/2)<br>(1/2)<br>(1/2)<br>(1/2)</p><p>-/-36.000<br>165.000<br>-/- 48.000<br>76.800<br>-/-24.000<br>-/- 52.250<br>-------------17.860</p><p>31-12-2022<br>130.000<br>651.000<br>-/-380.000<br>-/-125.000<br>276.000</p><p>Koerswinst (1) in w&amp;v</p><p>0,13</p><p>(1/2) 35.880<br>--------------18.020</p>",
+    "practiceSolutionHtml": "<p>25. Geef een gespecificeerde berekening van het koersverschil over 2022. Geef hierbij aan of<br/>dit resultaat positief of negatief is .<br/>datum<br/>Monetaire positie:<br/>Lening u/g<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren<br/>Mutaties:<br/>Inkoop eerste halfjaar<br/>Verkoop eerste halfjaar<br/>Inkoop tweede halfjaar<br/>Verkoop tweede halfjaar<br/>Aankoop loods<br/>Overige kosten<br/>Monetaire positie theoretisch<br/>Monetaire positie:<br/>Lening<br/>Liquide middelen<br/>Langlopende lening<br/>Crediteuren</p><p>bedrag koers €<br/>NOK</p><p>punt bedrag €</p><p>1-1-2022<br/>100.000<br/>76.000<br/>-/-380.000<br/>-/-375.000<br/>-579.000<br/>02-01-2022<br/>15-02-2022<br/>15-08-2022<br/>30-11-2022<br/>01-07-2022<br/>Verspreid</p><p>-/-360.000<br/>1.650.000<br/>-/-400.000<br/>640.000<br/>-200.000<br/>-/- 475.000<br/>--------------31-12-2022<br/>276.000</p><p>0,11<br/>0,10<br/>0,10<br/>0,12<br/>0,12<br/>0,12<br/>0,11</p><p> -/- 63.690<br/><br/><br/><br/><br/><br/></p><p>-/-36.000<br/>165.000<br/>-/- 48.000<br/>76.800<br/>-/-24.000<br/>-/- 52.250<br/>-------------17.860</p><p>31-12-2022<br/>130.000<br/>651.000<br/>-/-380.000<br/>-/-125.000<br/>276.000</p><p>Koerswinst  in w&amp;v</p><p>0,13</p><p> 35.880<br/>--------------18.020</p>",
+    "dependencyQuestionIds": [
+      "vraag-22",
+      "vraag-23",
+      "vraag-24"
+    ],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20231009/vraag-25"
+    ],
+    "sources": [
+      {
+        "label": "2023-10-09 · Opgave 4 Neige bv (Vreemde valuta) (20 punten) · Vraag 25",
+        "file": "data/exam-20231009.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 18020.0,
+      "incorrectValues": [
+        19020.0,
+        17020.0,
+        36040.0
+      ],
+      "sourceToken": "18.020"
+    }
+  }
+]

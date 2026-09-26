@@ -1,0 +1,1724 @@
+[
+  {
+    "key": "cafa2-20211006/vraag-1",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-1",
+    "sectionId": "opgave-1",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 1",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "1. Bereken per 1 januari 2021 de goodwill die door Ahorn wordt betaald voor de aankoop van het 60% kapitaalbelang in Eben.",
+    "promptHtml": "<p>1. Bereken per 1 januari 2021 de goodwill die door Ahorn wordt betaald voor de aankoop van het 60% kapitaalbelang in Eben.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben \nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 \n  •  In contanten                 € 150.000 \n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 \n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         \n Voorziening voorraden                -30.000        \n Voorziening op debiteuren            -10.000        \n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                      60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            120.000 </pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben \nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 \n  •  In contanten                 € 150.000 \n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 \n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         \n Voorziening voorraden                -30.000        \n Voorziening op debiteuren            -10.000        \n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                      60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            130.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 130.000; het antwoordmodel geeft 120.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben \nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 \n  •  In contanten                 € 150.000 \n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 \n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         \n Voorziening voorraden                -30.000        \n Voorziening op debiteuren            -10.000        \n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                      60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            110.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 110.000; het antwoordmodel geeft 120.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben \nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 \n  •  In contanten                 € 150.000 \n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 \n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         \n Voorziening voorraden                -30.000        \n Voorziening op debiteuren            -10.000        \n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                      60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            240.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 240.000; het antwoordmodel geeft 120.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben (7 punten)\nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 (1)\n  •  In contanten                 € 150.000 (1)\n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 (1)\n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         (1/2)\n Voorziening voorraden                -30.000        (1)\n Voorziening op debiteuren            -10.000        (1)\n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                     (1/2) 60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            120.000 (1)</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 1 Bereken de goodwill die door Ahorn wordt betaald voor de aankoop van het 60%\n         kapitaalbelang in Eben \nAankoop door middel van aandelenruil en contanten\n\n100 aandelen Eben = 15 aandelen Ahorn. Door Eben zijn 75.000 / 75 =1.000 aandelen geplaats.\nAhorn koopt 60% van deze aandelen hetgeen 600 aandelen betreft. Om deze aandelen 600 aandelen\nte kopen moet Ahorn 600 / 100 x 15 = 90 aandelen uitgeven.\nDaarnaast moet Ahorn 600 x € 250 = € 150.000 contant betalen.\n\nIn totaal wordt door Ahorn betaald:\n  •  Uitgifte aandelen: 90 x € 1.100 = € 99.000 \n  •  In contanten                 € 150.000 \n  •  Totaal                       € 249.000\n\nHiervoor verkrijgt Ahorn het volgende:\n Zichtbaar intrinsieke waarde van Eben volgens de voorlopige balans 295.000\n Correctie actuele waarde gebouwen / herwaarderingsreserve -40.000 \n Gecorrigeerd eigen vermogen Eben             255.000\n\n Fair value correcties:\n Gebouw waarderen tegen historische kosten -         \n Voorziening voorraden                -30.000        \n Voorziening op debiteuren            -10.000        \n                                               -40.000\n Netto vermogenswaarde                        215.000\n                                      60% 129.000\n Betaald aan aandeelhouders Eben              249.000\n Betaalde goodwill                            120.000 </pre>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "goodwill",
+      "title": "Verwerving en het verschil met de koopsom",
+      "rules": "Vergelijk de tegenprestatie met het verworven aandeel in de aangepaste netto-activa en volg het verschil afzonderlijk volgens de waarderingsgrondslag en de expliciete casusregels.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-1"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 1",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 120000.0,
+      "incorrectValues": [
+        130000.0,
+        110000.0,
+        240000.0
+      ],
+      "sourceToken": "120.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-2",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-2",
+    "sectionId": "opgave-1",
+    "topicId": "goodwill",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 2",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "2. Geeft de journaalpost(en) die worden gemaakt als gevolg van de door Ahorn aangekochte aandelen in Eben door:\na. de administrateur van Eben;\nb. de administrateur van Ahorn.",
+    "promptHtml": "<p>2. Geeft de journaalpost(en) die worden gemaakt als gevolg van de door Ahorn aangekochte aandelen in Eben door:<br>a. de administrateur van Eben;<br>b. de administrateur van Ahorn.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben \n\n Herwaarderingsreserve                  40.000       \n Aan Gebouwen                                  40.000\n\nb. de administrateur van Ahorn \n Goodwill                              120.000\n Deelneming Eben                       129.000\n Aan Geplaatst aandelenkapitaal  90 x € 500     45.000 \n Aan Agioreserve        90 x (€ 1.100-€ 500)    54.000 \n Aan Bank                                           150.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben \n\n Herwaarderingsreserve                  40.000       \n Aan Gebouwen                                  40.000\n\nb. de administrateur van Ahorn \n Goodwill                              120.000\n Deelneming Eben                       129.000\n Aan Geplaatst aandelenkapitaal  90 x € 500     45.000 \n Aan Agioreserve        90 x (€ 1.100-€ 500)    54.000 \n Aan Bank                                           160.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 160.000; het antwoordmodel geeft 150.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben \n\n Herwaarderingsreserve                  40.000       \n Aan Gebouwen                                  40.000\n\nb. de administrateur van Ahorn \n Goodwill                              120.000\n Deelneming Eben                       129.000\n Aan Geplaatst aandelenkapitaal  90 x € 500     45.000 \n Aan Agioreserve        90 x (€ 1.100-€ 500)    54.000 \n Aan Bank                                           140.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 140.000; het antwoordmodel geeft 150.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben \n\n Herwaarderingsreserve                  40.000       \n Aan Gebouwen                                  40.000\n\nb. de administrateur van Ahorn \n Goodwill                              120.000\n Deelneming Eben                       129.000\n Aan Geplaatst aandelenkapitaal  90 x € 500     45.000 \n Aan Agioreserve        90 x (€ 1.100-€ 500)    54.000 \n Aan Bank                                           300.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 300.000; het antwoordmodel geeft 150.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben (2 punten)\n\n Herwaarderingsreserve  (1/2)                40.000       (1)\n Aan Gebouwen           (1/2)                       40.000\n\nb. de administrateur van Ahorn (3 punten)\n Goodwill              (1/2)                120.000\n Deelneming Eben       (1/2)                129.000\n Aan Geplaatst aandelenkapitaal (1/2) 90 x € 500     45.000 (1/2)\n Aan Agioreserve       (1/2) 90 x (€ 1.100-€ 500)    54.000 (1/2)\n Aan Bank                                           150.000</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 2 Geeft de journaalpost(en) die eventueel dienen te worden gemaakt voor de\n         verkoop / aankoop van de aandelen in Eben door:\na. de administrateur van Eben \n\n Herwaarderingsreserve                  40.000       \n Aan Gebouwen                                  40.000\n\nb. de administrateur van Ahorn \n Goodwill                              120.000\n Deelneming Eben                       129.000\n Aan Geplaatst aandelenkapitaal  90 x € 500     45.000 \n Aan Agioreserve        90 x (€ 1.100-€ 500)    54.000 \n Aan Bank                                           150.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1"
+    ],
+    "guidance": {
+      "lesson": "goodwill",
+      "title": "Verwerving en het verschil met de koopsom",
+      "rules": "Vergelijk de tegenprestatie met het verworven aandeel in de aangepaste netto-activa en volg het verschil afzonderlijk volgens de waarderingsgrondslag en de expliciete casusregels.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-2"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 2",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 150000.0,
+      "incorrectValues": [
+        160000.0,
+        140000.0,
+        300000.0
+      ],
+      "sourceToken": "150.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-3",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-3",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 3",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "3. Aan welke voorwaarden moet zijn voldaan zodat Ahorn haar deelneming in Eben mag waarderen tegen nettovermogenswaarde. Motiveer uw antwoord aan de hand van het toepasselijke wetsartikel.",
+    "promptHtml": "<p>3. Aan welke voorwaarden moet zijn voldaan zodat Ahorn haar deelneming in Eben mag waarderen tegen nettovermogenswaarde. Motiveer uw antwoord aan de hand van het toepasselijke wetsartikel.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "text": "Invloed van betekenis op het zakelijke en financiële beleid bepaalt de NVW-waardering volgens artikel 2:389 BW; de verworven 60% stemrechten ondersteunen die invloed.",
+        "why": "Deze conclusie en motivering volgen het oorspronkelijke antwoordmodel."
+      },
+      {
+        "text": "Artikel 2:389 BW staat NVW uitsluitend toe bij een 100%-dochtermaatschappij; een 60%-belang voldoet niet.",
+        "why": "Deze redenering gebruikt een ander criterium of een andere verwerking dan de oorspronkelijke casus vereist."
+      },
+      {
+        "text": "De koopsom bepaalt de waarderingsmethode; invloed op het zakelijke en financiële beleid is daarvoor niet relevant.",
+        "why": "Deze redenering laat een beslissend casusgegeven buiten beschouwing."
+      },
+      {
+        "text": "Een 60%-deelneming wordt altijd tegen verkrijgingsprijs gewaardeerd, omdat NVW alleen voor belangen onder 20% geldt.",
+        "why": "Deze conclusie verwart de aard van het belang met de bijbehorende verwerking."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 3 Aan welke voorwaarde moet zijn voldaan zodat Ahorn haar deelneming in Eben\n         mag waarderen tegen nettovermogenswaarde. Motiveer uw antwoord aan de\n         hand van de toepasselijke wetsartikelen. (2 punten)\nArt 389 (1/2) geeft de waardering van deelnemingen met invloed van betekenis aan.\n\nDeelnemingen in maatschappijen waarin rechtspersonen invloed van betekenis uitoefent op het\nzakelijke en financiële beleid, worden verantwoord overeenkomstig de nettovermogenswaarde. Indien\nde rechtspersoon of een of meer van zijn dochtermaatschappijen alleen of samen een vijfde of meer\nvan de stemmen van de leden, vennoten of aandeelhouders naar eigen inzicht kunnen uitbrengen of\ndoen uitbrengen, wordt vermoed dat de rechtspersoon invloed van betekenis uitoefent.\nDoordat Ahorn 60% (1/2) van de stemrechten heeft verworven is er sprake van invloed van betekenis\nop het zakelijk en financieel beleid. (1)\n\n.</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 3 Aan welke voorwaarde moet zijn voldaan zodat Ahorn haar deelneming in Eben\n         mag waarderen tegen nettovermogenswaarde. Motiveer uw antwoord aan de\n         hand van de toepasselijke wetsartikelen. \nArt 389  geeft de waardering van deelnemingen met invloed van betekenis aan.\n\nDeelnemingen in maatschappijen waarin rechtspersonen invloed van betekenis uitoefent op het\nzakelijke en financiële beleid, worden verantwoord overeenkomstig de nettovermogenswaarde. Indien\nde rechtspersoon of een of meer van zijn dochtermaatschappijen alleen of samen een vijfde of meer\nvan de stemmen van de leden, vennoten of aandeelhouders naar eigen inzicht kunnen uitbrengen of\ndoen uitbrengen, wordt vermoed dat de rechtspersoon invloed van betekenis uitoefent.\nDoordat Ahorn 60%  van de stemrechten heeft verworven is er sprake van invloed van betekenis\nop het zakelijk en financieel beleid. \n\n.</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-3"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 3",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "authored-text"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-4",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-4",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 4",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "4. Geeft de journaalpost(en) die worden gemaakt naar aanleiding van de winstbestemming en het dividendbesluit door:\na. de administrateur van Eben;\nb. de administrateur van Ahorn.",
+    "promptHtml": "<p>4. Geeft de journaalpost(en) die worden gemaakt naar aanleiding van de winstbestemming en het dividendbesluit door:<br>a. de administrateur van Eben;<br>b. de administrateur van Ahorn.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben \n Winstbestemming\n Overige reserves                       50.000       \n Aan Resultaat boekjaar                         50.000\n\n Dividendbesluit\n Overige reserves                       30.000       \n Aan Te betalen dividend / bank                 30.000\n\nb. de administrateur van Ahorn \n\n Winstbestemming\n Geen boeking         \n\n Dividendbesluit\n Bank / te ontvangen dividend  30.000 x 60% 18.000   \n Aan Deelneming                                 18.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben \n Winstbestemming\n Overige reserves                       50.000       \n Aan Resultaat boekjaar                         50.000\n\n Dividendbesluit\n Overige reserves                       30.000       \n Aan Te betalen dividend / bank                 30.000\n\nb. de administrateur van Ahorn \n\n Winstbestemming\n Geen boeking         \n\n Dividendbesluit\n Bank / te ontvangen dividend  30.000 x 60% 18.000   \n Aan Deelneming                                 19.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 19.000; het antwoordmodel geeft 18.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben \n Winstbestemming\n Overige reserves                       50.000       \n Aan Resultaat boekjaar                         50.000\n\n Dividendbesluit\n Overige reserves                       30.000       \n Aan Te betalen dividend / bank                 30.000\n\nb. de administrateur van Ahorn \n\n Winstbestemming\n Geen boeking         \n\n Dividendbesluit\n Bank / te ontvangen dividend  30.000 x 60% 18.000   \n Aan Deelneming                                 17.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 17.000; het antwoordmodel geeft 18.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben \n Winstbestemming\n Overige reserves                       50.000       \n Aan Resultaat boekjaar                         50.000\n\n Dividendbesluit\n Overige reserves                       30.000       \n Aan Te betalen dividend / bank                 30.000\n\nb. de administrateur van Ahorn \n\n Winstbestemming\n Geen boeking         \n\n Dividendbesluit\n Bank / te ontvangen dividend  30.000 x 60% 18.000   \n Aan Deelneming                                 36.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 36.000; het antwoordmodel geeft 18.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben (3 punten)\n Winstbestemming\n Overige reserves     (1/2)                  50.000       (1/2)\n Aan Resultaat boekjaar (1/2)                        50.000\n\n Dividendbesluit\n Overige reserves     (1/2)                  30.000       (1/2)\n Aan Te betalen dividend / bank (1/2)                30.000\n\nb. de administrateur van Ahorn (2 punten)\n\n Winstbestemming\n Geen boeking         (1/2)\n\n Dividendbesluit\n Bank / te ontvangen dividend (1/2) 30.000 x 60% 18.000   (1/2)\n Aan Deelneming       (1/2)                          18.000</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 4 Geeft de journaalpost(en) die dienen te worden gemaakt naar aanleiding van de\n         winstbestemming en het dividendbesluit door:\n\na. de administrateur van Eben \n Winstbestemming\n Overige reserves                       50.000       \n Aan Resultaat boekjaar                         50.000\n\n Dividendbesluit\n Overige reserves                       30.000       \n Aan Te betalen dividend / bank                 30.000\n\nb. de administrateur van Ahorn \n\n Winstbestemming\n Geen boeking         \n\n Dividendbesluit\n Bank / te ontvangen dividend  30.000 x 60% 18.000   \n Aan Deelneming                                 18.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-4"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 4",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 18000.0,
+      "incorrectValues": [
+        19000.0,
+        17000.0,
+        36000.0
+      ],
+      "sourceToken": "18.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-5",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-5",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 5",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "5. Bereken het resultaat deelneming Eben over het eerste halfjaar van 2021 zoals Ahorn dat in haar enkelvoudige winst-en-verliesrekening verantwoordt.",
+    "promptHtml": "<p>5. Bereken het resultaat deelneming Eben over het eerste halfjaar van 2021 zoals Ahorn dat in haar enkelvoudige winst-en-verliesrekening verantwoordt.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt \n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 \n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 \n Vrijval voorziening voorraden              +30.000       \n Vrijval voorziening debiteuren              +8.000       \n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                            60% 43.800</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt \n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 \n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 \n Vrijval voorziening voorraden              +30.000       \n Vrijval voorziening debiteuren              +8.000       \n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                            60% 44.800</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 44.800; het antwoordmodel geeft 43.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt \n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 \n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 \n Vrijval voorziening voorraden              +30.000       \n Vrijval voorziening debiteuren              +8.000       \n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                            60% 42.800</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 42.800; het antwoordmodel geeft 43.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt \n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 \n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 \n Vrijval voorziening voorraden              +30.000       \n Vrijval voorziening debiteuren              +8.000       \n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                            60% 87.600</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 87.600; het antwoordmodel geeft 43.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt (4 punten)\n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 (1/2)\n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 (1)\n Vrijval voorziening voorraden              +30.000       (1)\n Vrijval voorziening debiteuren              +8.000       (1)\n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                           (1/2) 60% 43.800</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 5 Bereken het resultaat deelneming Eben per 30 juni 2021 zoals Ahorn dat in haar\n         enkelvoudige jaarrekening verantwoordt \n\n Resultaat eerste halfjaar Eben volgens eigen grondslagen 30.000 \n\n Fair value correcties:\n Lagere afschrijving gebouwen a.g.v. historische kosten +5.000 \n Vrijval voorziening voorraden              +30.000       \n Vrijval voorziening debiteuren              +8.000       \n                                                     43.000\n Resultaat op netto vermogenswaarde                  73.000\n                                            60% 43.800</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-5"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 5",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 43800.0,
+      "incorrectValues": [
+        44800.0,
+        42800.0,
+        87600.0
+      ],
+      "sourceToken": "43.800"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-6",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-6",
+    "sectionId": "opgave-1",
+    "topicId": "zeggenschap",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 6",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "6. Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw antwoord aan de hand van het geldende wetsartikel.",
+    "promptHtml": "<p>6. Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw antwoord aan de hand van het geldende wetsartikel.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. \nIn art 24a Titel 1 BW 2  wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+10.000) = 50% \n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen  dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. \nIn art 24a Titel 1 BW 2  wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+11.000) = 50% \n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen  dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 11.000; het antwoordmodel geeft 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. \nIn art 24a Titel 1 BW 2  wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+9.000) = 50% \n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen  dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 9.000; het antwoordmodel geeft 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. \nIn art 24a Titel 1 BW 2  wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+20.000) = 50% \n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen  dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 20.000; het antwoordmodel geeft 10.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. (2 punten)\nIn art 24a Titel 1 BW 2 (1/2) wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+10.000) = 50% (1)\n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen (1/2) dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 6 Kwalificeert Finken als een dochtermaatschappij van Ahorn? Motiveer uw\n         antwoord aan de hand van de geldende wetsartikelen. \nIn art 24a Titel 1 BW 2  wordt bepaald wanneer sprake is van een dochtermaatschappij.\n\nLid 1. Een dochtermaatschappij van een rechtspersoon is:\na. Een rechtspersoon waarin de rechtspersoon of een of meer van zijn dochtermaatschappijen, al dan\nniet krachtens overeenkomst met andere stemgerechtigden, alleen of samen meer dan de helft van de\nstemrechten in de algemene vergadering kunnen uitoefenen;\n\nb. Een rechtspersoon waarvan de rechtspersoon of een of meer van zijn dochtermaatschappijen lid of\naandeelhouder zijn en, al dan niet krachtens overeenkomst met andere stemgerechtigden, alleen of\nsamen meer dan de helft van de bestuurders kunnen benoemen of ontslaan, ook indien alle\nstemgerechtigden stemmen in de algemene vergadering kunnen uitoefenen.\nLid 2. Met een dochtermaatschappij wordt gelijk gesteld onder een onder eigen naam optredende\nvennootschap, waarvan de vennoot volledig aansprakelijk vennoot is.\n\nAHORN heeft het volgende aandelen belang:\nStemrechten: (2.000+5.000) / (4.000+10.000) = 50% \n\nDit houdt in dat zijn geen meerderheid van stemmen in de algemene vergadering van aandeelhouders\nheeft. Op basis van art 24a lid 1 is Finken geen  dochtermaatschappij van Ahorn.\nEr is geen verdere informatie gegeven over de aandelen relatie, waardoor er ook niet sprake is van\neen dochtermaatschappij op basis van art 24a lid b.</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4",
+      "vraag-5"
+    ],
+    "guidance": {
+      "lesson": "kwalificatie",
+      "title": "Kapitaalbelangen en zeggenschap",
+      "rules": "Beoordeel deelneming, dochtermaatschappij en groepsmaatschappij afzonderlijk aan de hand van het doel van het belang en de daadwerkelijk uit te oefenen rechten.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-6"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 6",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 10000.0,
+      "incorrectValues": [
+        11000.0,
+        9000.0,
+        20000.0
+      ],
+      "sourceToken": "10.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-7",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-7",
+    "sectionId": "opgave-1",
+    "topicId": "waardering",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 7",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "7. Bereken het bedrag waartegen Ahorn haar kapitaalbelang in Finken per 31 december 2020 op haar balans waardeert.",
+    "promptHtml": "<p>7. Bereken het bedrag waartegen Ahorn haar kapitaalbelang in Finken per 31 december 2020 op haar balans waardeert.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. \n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% \n                   60% x (€ 350.000+€ 80.000)  +9.600 x € 100  = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 \n\nTotaal             € 1.418.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. \n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% \n                   60% x (€ 350.000+€ 80.000)  +9.600 x € 100  = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 \n\nTotaal             € 1.518.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.518.000; het antwoordmodel geeft € 1.418.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. \n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% \n                   60% x (€ 350.000+€ 80.000)  +9.600 x € 100  = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 \n\nTotaal             € 1.318.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.318.000; het antwoordmodel geeft € 1.418.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. \n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% \n                   60% x (€ 350.000+€ 80.000)  +9.600 x € 100  = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 \n\nTotaal             € 2.836.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.836.000; het antwoordmodel geeft € 1.418.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. (3 punten)\n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% (1)\n                   60% x (€ 350.000+€ 80.000) (1/2) +9.600 x € 100 (1/2) = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 (1)\n\nTotaal             € 1.418.000</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 7 Bereken het bedrag waartegen Ahorn het kapitaalbelang in Finken per 31\n         december 2020 op haar balans presenteert. \n\nWinst en stemrechten: (4.600 + 5000) / (6.000+10.000) = 60% \n                   60% x (€ 350.000+€ 80.000)  +9.600 x € 100  = € 1.218.000\n\nAlleen stemrechten 2.000 x € 100 = € 200.000 \n\nTotaal             € 1.418.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4",
+      "vraag-5",
+      "vraag-6"
+    ],
+    "guidance": {
+      "lesson": "waardering",
+      "title": "Waardering van kapitaalbelangen",
+      "rules": "Bepaal eerst de aard van het belang en de invloed van betekenis; de gekozen waarderingsgrondslag bepaalt vervolgens de verwerking van resultaat, dividend en waardeveranderingen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-7"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 7",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1418000.0,
+      "incorrectValues": [
+        1518000.0,
+        1318000.0,
+        2836000.0
+      ],
+      "sourceToken": "€ 1.418.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-8",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-8",
+    "sectionId": "opgave-1",
+    "topicId": "consolidatiekader",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 8",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "8. Kan Finken worden aangemerkt als een groepsmaatschappij van Ahorn? Motiveer uw antwoord aan de hand van het geldende wetsartikel.",
+    "promptHtml": "<p>8. Kan Finken worden aangemerkt als een groepsmaatschappij van Ahorn? Motiveer uw antwoord aan de hand van het geldende wetsartikel.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "text": "Finken is een groepsmaatschappij: Ahorn heeft via aandelen en stemrechtovereenkomst 60% van de stemmen en is door de verbondenheid en directiebevoegdheid beleidsbepalend (artikel 2:24b BW).",
+        "why": "Deze conclusie en motivering volgen het oorspronkelijke antwoordmodel."
+      },
+      {
+        "text": "Finken is geen groepsmaatschappij: alleen het directe aandelenbezit telt, zodat de stemrechtovereenkomst buiten beschouwing blijft.",
+        "why": "Deze redenering gebruikt een ander criterium of een andere verwerking dan de oorspronkelijke casus vereist."
+      },
+      {
+        "text": "Finken is geen groepsmaatschappij: een achtergestelde lening sluit een economische en organisatorische eenheid uit.",
+        "why": "Deze redenering laat een beslissend casusgegeven buiten beschouwing."
+      },
+      {
+        "text": "Finken is alleen door de 60% winstrechten al een groepsmaatschappij; centrale leiding en organisatorische verbondenheid hoeven niet te worden beoordeeld.",
+        "why": "Deze conclusie verwart de aard van het belang met de bijbehorende verwerking."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 8 Kan Finken worden aangemerkt als een groepsmaatschappij van Ahorn?\n         Motiveer uw antwoord aan de hand van de geldende wetsartikel. (2 punten)\nArt 24b (1/2) geeft aan wanneer sprake is van een groepsmaatschappij:\n\n  Een groep is een economische eenheid waarin rechtspersonen en vennootschappen\n  organisatorisch zijn verbonden. Groepsmaatschappijen zijn rechtspersonen en vennootschappen\n  die met elkaar in een groep verbonden zijn.\nAhorn heeft op basis van haar eigen aandelen bezit in Finken 50% van stemmen in de algemene\nvergadering van aandeelhouders en door middel van de stemrechtovereenkomst nog eens 10%,\nwaardoor zij 60% van de stemmen in de algemene vergadering heeft.\n\nDaarnaast heeft Ahorn ook 60 % van de winstrechten en door het verstrekken van een achtergestelde\nlening met de voorwaarde deel te nemen aan de directievergaderingen van Finken. In de\ndirectievergaderingen heeft Ahorn hierdoor beslissingsbevoegdheid verkregen en is zij\nbeleidsbepalend voor Finken. (1)\nDit duidt op een economische en organisatorische verbondenheid. Finken is aan te merken als een\ngroepsmaatschappij (1/2) van Ahorn.\n\nLet op doorwerkfout uit vraag 6</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 8 Kan Finken worden aangemerkt als een groepsmaatschappij van Ahorn?\n         Motiveer uw antwoord aan de hand van de geldende wetsartikel. \nArt 24b  geeft aan wanneer sprake is van een groepsmaatschappij:\n\n  Een groep is een economische eenheid waarin rechtspersonen en vennootschappen\n  organisatorisch zijn verbonden. Groepsmaatschappijen zijn rechtspersonen en vennootschappen\n  die met elkaar in een groep verbonden zijn.\nAhorn heeft op basis van haar eigen aandelen bezit in Finken 50% van stemmen in de algemene\nvergadering van aandeelhouders en door middel van de stemrechtovereenkomst nog eens 10%,\nwaardoor zij 60% van de stemmen in de algemene vergadering heeft.\n\nDaarnaast heeft Ahorn ook 60 % van de winstrechten en door het verstrekken van een achtergestelde\nlening met de voorwaarde deel te nemen aan de directievergaderingen van Finken. In de\ndirectievergaderingen heeft Ahorn hierdoor beslissingsbevoegdheid verkregen en is zij\nbeleidsbepalend voor Finken. \nDit duidt op een economische en organisatorische verbondenheid. Finken is aan te merken als een\ngroepsmaatschappij  van Ahorn.\n\nLet op doorwerkfout uit vraag 6</pre>",
+    "dependencyQuestionIds": [
+      "vraag-1",
+      "vraag-2",
+      "vraag-3",
+      "vraag-4",
+      "vraag-5",
+      "vraag-6",
+      "vraag-7"
+    ],
+    "guidance": {
+      "lesson": "consolidatieplicht",
+      "title": "Consolidatieplicht, kring en vrijstellingen",
+      "rules": "Toets achtereenvolgens wie moet consolideren, welke maatschappijen binnen de consolidatiekring vallen en of aan alle voorwaarden van een toepasselijke vrijstelling wordt voldaan.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-8"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Ahorn bv (kapitaalbelangen) · Vraag 8",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "authored-text"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-9",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-9",
+    "sectionId": "opgave-2",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 9",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "1. Stel de bovenstaande voorraadtabel samen aan de hand van:\na. de goederenleveringen over 2020 van Moderna aan ChargeIT;\nb. de goederenleveringen over 2020 van Power4You aan ChargeIT.",
+    "promptHtml": "<p>1. Stel de bovenstaande voorraadtabel samen aan de hand van:<br>a. de goederenleveringen over 2020 van Moderna aan ChargeIT;<br>b. de goederenleveringen over 2020 van Power4You aan ChargeIT.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 2.400.000,00</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 2.500.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.500.000; het antwoordmodel geeft € 2.400.000,00. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 2.300.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.300.000; het antwoordmodel geeft € 2.400.000,00. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 4.800.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 4.800.000; het antwoordmodel geeft € 2.400.000,00. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 2.400.000,00</pre>",
+    "practiceSolutionHtml": "<pre>1. A. Downstreamleveringen van Moderna aan ChargeIT: (1 punt)\n\nModerna --&gt; ChargeIT € 4.000.000,00\nEV toename            € 160.000,00\n\nDoorlevering        € 3.840.000,00\n\n1. B. Sidestreamleveringen van Power4You aan ChargeIT: (1 punt)\n\nPower4You --&gt; ChargeIT  € 2.400.000,00\n\nEV afname                 € 160.000,00\nDoorlevering            € 2.400.000,00</pre>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "sidestream-ab",
+      "title": "Sidestream bij afnemend belang",
+      "rules": "Vergelijk het belang in verkoper en koper en houd de interne correctie, het derdenaandeel en de aanvullende concerncorrectie afzonderlijk zichtbaar in de voorraadtabel.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-9"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Moderna bv (consolidatie nettovermogenswaarde) · Vraag 9",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 2400000.0,
+      "incorrectValues": [
+        2500000.0,
+        2300000.0,
+        4800000.0
+      ],
+      "sourceToken": "€ 2.400.000,00"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-10",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-10",
+    "sectionId": "opgave-2",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 10",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "2. Geef de journaalpost(en) die in 2020 dan wel per 31 december 2020 is (zijn) gemaakt in de enkelvoudige jaarrekening van Moderna in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele correctieboeking(en)).",
+    "promptHtml": "<p>2. Geef de journaalpost(en) die in 2020 dan wel per 31 december 2020 is (zijn) gemaakt in de enkelvoudige jaarrekening van Moderna in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele correctieboeking(en)).</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). \n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 21.600 1/2</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). \n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 22.600 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 22.600; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). \n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 20.600 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 20.600; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). \n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 43.200 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 43.200; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). (5 punten)\n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 21.600 1/2</pre>",
+    "practiceSolutionHtml": "<pre>2.  Welke journaalposten zijn per 31 december 2020 gemaakt in de\n    enkelvoudigej aarrekening van Moderna in verband met de nog niet\n    gerealiseerde intercompanyresultaten (intracomptabele\n    correctieboekingen). \n\nDownstreamleveringen van Moderna aan ChargeIT:\n\n                                         Debet     Credit\n 9..        Niet gerealiseerde winst door 1/2 € 19.200       1/2\n            transacties met ChargeIT\n 1..  aan   Overlopende passiva      1/2              € 19.200\n\n                                         Debet     Credit\n 0..        Voorziening belastingen   1/2    € 4.800         1/2\n 9..  aan   Belastinglast            1/2               € 4.880\n\nSidestreamleveringen (afnemend belang) van Power4You aan ChargeIT:\n\n                                         Debet     Credit\n 0..        Deelnemingen              1/2   € 21.600         1/2\n\n 9..  aan   Resultaat deelnemingen   1/2              € 21.600 1/2</pre>",
+    "dependencyQuestionIds": [
+      "vraag-9"
+    ],
+    "guidance": {
+      "lesson": "sidestream-ab",
+      "title": "Sidestream bij afnemend belang",
+      "rules": "Vergelijk het belang in verkoper en koper en houd de interne correctie, het derdenaandeel en de aanvullende concerncorrectie afzonderlijk zichtbaar in de voorraadtabel.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-10"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Moderna bv (consolidatie nettovermogenswaarde) · Vraag 10",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 21600.0,
+      "incorrectValues": [
+        22600.0,
+        20600.0,
+        43200.0
+      ],
+      "sourceToken": "€ 21.600"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-11",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-11",
+    "sectionId": "opgave-2",
+    "topicId": "basisconsolidatie",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 11",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "3. Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen van Power4You en ChargeIT is (zijn) gemaakt ten behoeve van de samenstelling van de geconsolideerde winsten-verliesrekening over 2020.",
+    "promptHtml": "<p>3. Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen van Power4You en ChargeIT is (zijn) gemaakt ten behoeve van de samenstelling van de geconsolideerde winsten-verliesrekening over 2020.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. \n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 21.600 (antwoord vraag 1)</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. \n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 22.600 (antwoord vraag 1)</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 22.600; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. \n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 20.600 (antwoord vraag 1)</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 20.600; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. \n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 43.200 (antwoord vraag 1)</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 43.200; het antwoordmodel geeft € 21.600. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. (4 punten)\n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 21.600 (antwoord vraag 1)</pre>",
+    "practiceSolutionHtml": "<pre>3.  Geef de eliminatieboeking(en) die in verband met het resultaat deelnemingen\n    van Power4You en ChargeIT zijn gemaakt ten behoeve van de samenstelling van\n    de geconsolideerde winst-en-verliesrekening over 2020. \n\n                                         Debet     Credit\n            Resultaat deelnemingen    1/2  € 363.600         1/2\n            Aandeel derden           1/2   € 178.000         1/2\n      Aan   Resultaat na belastingen (Power4You) 1/2 € 221.600 1/2\n      Aan   Resultaat na belastingen (ChargeIT) 1/2  € 320.000 1/2\n\nAandeel derden = 25% x € 200.000 + 40% x € 320.000 = € 178.000\n\nResultaat na belastingen Power4You = € 200.000 + € 21.600 (antwoord vraag 1)</pre>",
+    "dependencyQuestionIds": [
+      "vraag-9",
+      "vraag-10"
+    ],
+    "guidance": {
+      "lesson": "onderlinge-posten",
+      "title": "Basiseliminaties en toerekening aan derden",
+      "rules": "Bepaal eerst welke bedragen in de consolidatie zijn opgenomen en verwijder vervolgens de onderlinge relaties; houd vermogenseliminatie en resultaattoerekening gescheiden.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-11"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Moderna bv (consolidatie nettovermogenswaarde) · Vraag 11",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 21600.0,
+      "incorrectValues": [
+        22600.0,
+        20600.0,
+        43200.0
+      ],
+      "sourceToken": "€ 21.600"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-12",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-12",
+    "sectionId": "opgave-2",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 12",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "4. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening over 2020 moet(en) worden gemaakt:\na. in verband met de onderlinge levering van goederen van Moderna aan ChargeIT;\nb. in verband met de onderlinge levering van goederen van Power4You aan ChargeIT.",
+    "promptHtml": "<p>4. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening over 2020 moet(en) worden gemaakt:<br>a. in verband met de onderlinge levering van goederen van Moderna aan ChargeIT;<br>b. in verband met de onderlinge levering van goederen van Power4You aan ChargeIT.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. \n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 48.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. \n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 49.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 49.000; het antwoordmodel geeft € 48.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. \n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 47.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 47.000; het antwoordmodel geeft € 48.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. \n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 96.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 96.000; het antwoordmodel geeft € 48.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. (6 punten)\n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n(6 punten)\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 48.000</pre>",
+    "practiceSolutionHtml": "<pre>4.  A. Geef met betrekking tot de intercompanyleveringen van goederen\n     van Moderna aan ChargeIT de eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde winst-en-verliesrekening over\n     2020. \n\n                                          Debet     Credit\n\n             Omzet                     1/2 € 3.840.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 3.840.000\n\n                                          Debet     Credit\n             Omzet                     1/2  € 160.000\n\n       Aan   Kostprijs van de omzet   1/2            € 128.000,00 1/2\n       Aan   Niet gerealiseerde winst door 1/2                1/2\n                                                      € 19.200,00\n             transacties met ChargeIT\n       Aan   Resultaat na belastingen 1/2              € 9.600,00 1/2\n       Aan   Belastinglast            1/2              € 3.200,00 1/2\n\n4B. Geef met betrekking tot de intercompanyleveringen van goederen van\nPower4You aan ChargeIT de eliminatieboekingen ten behoeve van de\nsamenstelling van de geconsolideerde winst-en-verliesrekening over 2020.\n\n\n                                          Debet     Credit\n             Omzet                     1/2 € 2.400.000        1/2\n       Aan   Kostprijs van de omzet   1/2            € 2.400.000\n\n                                          Debet     Credit\n                                       1/2                    1/2\n             Resultaat na belastingen         € 21.600\n             Belastinglast                     € 7.200\n             Aandeel derden           1/2      € 9.000        1/2\n             Belastinglast                     € 3.000\n             Resultaat na belastingen 1/2      € 5.400        1/2\n             Belastinglast            1/2      € 1.800        1/2\n       Aan   Kostprijs van de omzet   1/2              € 48.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-9",
+      "vraag-10",
+      "vraag-11"
+    ],
+    "guidance": {
+      "lesson": "sidestream-ab",
+      "title": "Sidestream bij afnemend belang",
+      "rules": "Vergelijk het belang in verkoper en koper en houd de interne correctie, het derdenaandeel en de aanvullende concerncorrectie afzonderlijk zichtbaar in de voorraadtabel.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-12"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Moderna bv (consolidatie nettovermogenswaarde) · Vraag 12",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 48000.0,
+      "incorrectValues": [
+        49000.0,
+        47000.0,
+        96000.0
+      ],
+      "sourceToken": "€ 48.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-13",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-13",
+    "sectionId": "opgave-2",
+    "topicId": "sidestream-afnemend",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 13",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "5. Geef de eliminatieboeking(en) ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2020 die moet(en) worden gemaakt in verband met de onderlinge levering van goederen van Power4You aan ChargeIT.",
+    "promptHtml": "<p>5. Geef de eliminatieboeking(en) ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2020 die moet(en) worden gemaakt in verband met de onderlinge levering van goederen van Power4You aan ChargeIT.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. \n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 25.650 1/2</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. \n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 26.650 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 26.650; het antwoordmodel geeft € 25.650. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. \n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 24.650 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 24.650; het antwoordmodel geeft € 25.650. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. \n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 51.300 1/2</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 51.300; het antwoordmodel geeft € 25.650. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. (7 punten)\n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 25.650 1/2</pre>",
+    "practiceSolutionHtml": "<pre>5.  Geef met betrekking tot de intercompanyleveringen van goederen van\n     Power4You aan ChargeIT alle eliminatieboekingen ten behoeve van de\n     samenstelling van de geconsolideerde balans per 31 december 2020. \n\n                                          Debet     Credit\n             Deelnemingen              1/2   € 81.000          1/2\n\n             Voorziening belastingen         € 27.000\n             Belang derden            1/2    € 33.750          1/2\n             Voorziening belastingen         € 11.250\n             Resultaat boekjaar       1/2    € 20.250          1/2\n\n             Voorziening belastingen  1/2     € 6.750          1/2\n       Aan   Voorraden                1/2             € 180.000 1/2\n\n                                          Debet     Credit\n             Overige reserves          1/2   € 25.650         1/2\n\n       Aan   Resultaat boekjaar       1/2              € 25.650 1/2</pre>",
+    "dependencyQuestionIds": [
+      "vraag-9",
+      "vraag-10",
+      "vraag-11",
+      "vraag-12"
+    ],
+    "guidance": {
+      "lesson": "sidestream-ab",
+      "title": "Sidestream bij afnemend belang",
+      "rules": "Vergelijk het belang in verkoper en koper en houd de interne correctie, het derdenaandeel en de aanvullende concerncorrectie afzonderlijk zichtbaar in de voorraadtabel.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-13"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Moderna bv (consolidatie nettovermogenswaarde) · Vraag 13",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 25650.0,
+      "incorrectValues": [
+        26650.0,
+        24650.0,
+        51300.0
+      ],
+      "sourceToken": "€ 25.650"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-14",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-14",
+    "sectionId": "opgave-3",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 14",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "1. Stel onderstaande voorraadtabel samen met betrekking tot de intercompany-leveringen van Baldetti aan Vinsanto.",
+    "promptHtml": "<p>1. Stel onderstaande voorraadtabel samen met betrekking tot de intercompany-leveringen van Baldetti aan Vinsanto.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       080.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname                  0       0     </pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       81.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname                  0       0     </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 81.000; het antwoordmodel geeft 080.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       79.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname                  0       0     </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 79.000; het antwoordmodel geeft 080.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       160.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname                  0       0     </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 160.000; het antwoordmodel geeft 080.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       0      80.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname (100.000)              (20.000)   0       0     (20.000)</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 1. (1 punt)\n Datum  Voorraad Niet-                Interne Eliminatie Eliminatie t.l.v.\n        bij    gerealiseerde intercompany winst correctie t.l.v. geconsolideerd\n        Vinsanto in voorraad bij Vinsanto (100%) bij aandeel resultaat\n                                      Baldetti derden (100%)\n                                      (0%)   (0%)\n 31-12-  500.000               100.000    0       0     100.000\n 2019\n 31-12-  400.000               80.000     0       080.000\n 2020\n        ------------          ------------ ----------- --------- ---------\n                                          -\n Afname                  0       0     </pre>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "downstream-hk",
+      "title": "Downstream bij verkrijgingsprijs",
+      "rules": "Stel vast welke winst de moeder heeft geboekt en welk deel nog binnen de groep aanwezig is; werk bij verkrijgingsprijs vanuit de consolidatie zonder een interne NVW-correctie te veronderstellen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-14"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Baldetti bv (consolidatie verkrijgingsprijs) · Vraag 14",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 80000.0,
+      "incorrectValues": [
+        81000.0,
+        79000.0,
+        160000.0
+      ],
+      "sourceToken": "080.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-15",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-15",
+    "sectionId": "opgave-3",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 15",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "2. Geef de journaalpost(en) die in 2020 dan wel per 31 december 2020 is (zijn) gemaakt in de enkelvoudige jaarrekening van Baldetti in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele correctieboeking(en)).",
+    "promptHtml": "<p>2. Geef de journaalpost(en) die in 2020 dan wel per 31 december 2020 is (zijn) gemaakt in de enkelvoudige jaarrekening van Baldetti in verband met de nog niet gerealiseerde intercompanyresultaten (intracomptabele correctieboeking(en)).</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "text": "Geen intracomptabele correctie voor de niet-gerealiseerde intercompanywinst in de enkelvoudige jaarrekening bij waardering tegen verkrijgingsprijs.",
+        "why": "De oorspronkelijke uitwerking geeft geen intracomptabele correctie bij verkrijgingsprijs. De correcties worden in de consolidatie verwerkt."
+      },
+      {
+        "text": "Debiteer resultaat deelneming en crediteer deelneming voor de niet-gerealiseerde intercompanywinst in de enkelvoudige jaarrekening.",
+        "why": "Deze verwerking hoort bij een andere waarderingsgrondslag; de vraag gaat over verkrijgingsprijs in de enkelvoudige jaarrekening."
+      },
+      {
+        "text": "Debiteer het enkelvoudige resultaat en crediteer overlopende passiva voor het volledige niet-gerealiseerde intercompanyresultaat.",
+        "why": "Dit neemt een correctie uit de NVW-systematiek over terwijl de casus verkrijgingsprijs voorschrijft."
+      },
+      {
+        "text": "Debiteer de enkelvoudige voorraad en crediteer het resultaat voor de nog niet-gerealiseerde intercompanywinst.",
+        "why": "Dit verhoogt voorraad en resultaat met interne winst en vormt geen correcte verwerking volgens het antwoordmodel."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 2. (1 punt)                 Intracomptabele journaalpost\n                                        Db          Cr\n\nGeen, er wordt gewaardeerd tegen (1)\nverkrijgingsprijs.</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 2. (1 punt)                 Intracomptabele journaalpost\n                                        Db          Cr\n\nGeen, er wordt gewaardeerd tegen \nverkrijgingsprijs.</pre>",
+    "dependencyQuestionIds": [
+      "vraag-14"
+    ],
+    "guidance": {
+      "lesson": "downstream-hk",
+      "title": "Downstream bij verkrijgingsprijs",
+      "rules": "Stel vast welke winst de moeder heeft geboekt en welk deel nog binnen de groep aanwezig is; werk bij verkrijgingsprijs vanuit de consolidatie zonder een interne NVW-correctie te veronderstellen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-15"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Baldetti bv (consolidatie verkrijgingsprijs) · Vraag 15",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "authored-text"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-16",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-16",
+    "sectionId": "opgave-3",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 16",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "3. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2020 moet(en) worden gemaakt:\na. in verband met de deelneming in Vinsanto;\nb. in verband met het belang derden;\nc. in verband met de goodwill;\nd. in verband met de onderlinge leveringen van goederen.",
+    "promptHtml": "<p>3. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans per 31 december 2020 moet(en) worden gemaakt:<br>a. in verband met de deelneming in Vinsanto;<br>b. in verband met het belang derden;<br>c. in verband met de goodwill;<br>d. in verband met de onderlinge leveringen van goederen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 3.A.I              Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal                 € 400.000              \n\nOverige reserves                 € 1.200.000            \n\nGoodwill                         € 400.000              \nAan Deelneming in Vinsanto (80%)              € 2.000.000\n\nGevraagd 3.A.II             Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar               € 200.000              \n\nAan Belang derden (20%)                       €  600.000\n\nGevraagd 3.B.               Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves                 €  40.000              \n\nResultaat boekjaar               €  40.000              \nAan Goodwill                                  €  80.000\n\nGevraagd 3.C.I              Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar               €  60.000              \nVoorziening latente belastingen  €  20.000              \n\nAan Voorraad                                  €  80.000\n\nGevraagd 3.C.II             Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves                 €  75.000              \n\nAan Resultaat boekjaar                        €  75.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 3.A.I              Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal                 € 400.000              \n\nOverige reserves                 € 1.200.000            \n\nGoodwill                         € 400.000              \nAan Deelneming in Vinsanto (80%)              € 2.000.000\n\nGevraagd 3.A.II             Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar               € 200.000              \n\nAan Belang derden (20%)                       €  600.000\n\nGevraagd 3.B.               Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves                 €  40.000              \n\nResultaat boekjaar               €  40.000              \nAan Goodwill                                  €  80.000\n\nGevraagd 3.C.I              Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar               €  60.000              \nVoorziening latente belastingen  €  20.000              \n\nAan Voorraad                                  €  80.000\n\nGevraagd 3.C.II             Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves                 €  75.000              \n\nAan Resultaat boekjaar                        €  76.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  76.000; het antwoordmodel geeft €  75.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 3.A.I              Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal                 € 400.000              \n\nOverige reserves                 € 1.200.000            \n\nGoodwill                         € 400.000              \nAan Deelneming in Vinsanto (80%)              € 2.000.000\n\nGevraagd 3.A.II             Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar               € 200.000              \n\nAan Belang derden (20%)                       €  600.000\n\nGevraagd 3.B.               Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves                 €  40.000              \n\nResultaat boekjaar               €  40.000              \nAan Goodwill                                  €  80.000\n\nGevraagd 3.C.I              Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar               €  60.000              \nVoorziening latente belastingen  €  20.000              \n\nAan Voorraad                                  €  80.000\n\nGevraagd 3.C.II             Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves                 €  75.000              \n\nAan Resultaat boekjaar                        €  74.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  74.000; het antwoordmodel geeft €  75.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 3.A.I              Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal                 € 400.000              \n\nOverige reserves                 € 1.200.000            \n\nGoodwill                         € 400.000              \nAan Deelneming in Vinsanto (80%)              € 2.000.000\n\nGevraagd 3.A.II             Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar               € 200.000              \n\nAan Belang derden (20%)                       €  600.000\n\nGevraagd 3.B.               Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves                 €  40.000              \n\nResultaat boekjaar               €  40.000              \nAan Goodwill                                  €  80.000\n\nGevraagd 3.C.I              Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar               €  60.000              \nVoorziening latente belastingen  €  20.000              \n\nAan Voorraad                                  €  80.000\n\nGevraagd 3.C.II             Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves                 €  75.000              \n\nAan Resultaat boekjaar                        €  150.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  150.000; het antwoordmodel geeft €  75.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 3.A.I (3.5 punten)             Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal               (½)  € 400.000              (½)\n\nOverige reserves               (½)  € 1.200.000            (½)\n\nGoodwill                       (½)  € 400.000              (½)\nAan Deelneming in Vinsanto (80%) (½)             € 2.000.000\n\nGevraagd 3.A.II (1.5 punten)            Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar             (½)  € 200.000              (½)\n\nAan Belang derden (20%)        (½)               €  600.000\n\nGevraagd 3.B. (2,5 punten)              Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves               (½)  €  40.000              (½)\n\nResultaat boekjaar             (½)  €  40.000              (½)\nAan Goodwill                   (½)               €  80.000\n\nGevraagd 3.C.I (2,5 punten)             Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar             (½)  €  60.000              (½)\nVoorziening latente belastingen (½) €  20.000              (½)\n\nAan Voorraad                   (½)               €  80.000\n\nGevraagd 3.C.II (1,5 punten)            Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves               (½)  €  75.000              (½)\n\nAan Resultaat boekjaar         (½)               €  75.000</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 3.A.I              Eliminatieboeking\n\n                                        Db            Cr\nAandelenkapitaal                 € 400.000              \n\nOverige reserves                 € 1.200.000            \n\nGoodwill                         € 400.000              \nAan Deelneming in Vinsanto (80%)              € 2.000.000\n\nGevraagd 3.A.II             Eliminatieboeking\n                                        Db            Cr\n\nAandelenkapitaal                    € 100.000\nOverige reserves                    € 300.000\n\nResultaat boekjaar               € 200.000              \n\nAan Belang derden (20%)                       €  600.000\n\nGevraagd 3.B.               Eliminatieboeking\n                                        Db            Cr\n\nOverige reserves                 €  40.000              \n\nResultaat boekjaar               €  40.000              \nAan Goodwill                                  €  80.000\n\nGevraagd 3.C.I              Eliminatieboeking\n                                        Db            Cr\n\nResultaat boekjaar               €  60.000              \nVoorziening latente belastingen  €  20.000              \n\nAan Voorraad                                  €  80.000\n\nGevraagd 3.C.II             Eliminatieboeking\n\n                                        Db            Cr\nOverige reserves                 €  75.000              \n\nAan Resultaat boekjaar                        €  75.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-14",
+      "vraag-15"
+    ],
+    "guidance": {
+      "lesson": "downstream-hk",
+      "title": "Downstream bij verkrijgingsprijs",
+      "rules": "Stel vast welke winst de moeder heeft geboekt en welk deel nog binnen de groep aanwezig is; werk bij verkrijgingsprijs vanuit de consolidatie zonder een interne NVW-correctie te veronderstellen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-16"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Baldetti bv (consolidatie verkrijgingsprijs) · Vraag 16",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 75000.0,
+      "incorrectValues": [
+        76000.0,
+        74000.0,
+        150000.0
+      ],
+      "sourceToken": "€  75.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-17",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-17",
+    "sectionId": "opgave-3",
+    "topicId": "downstream-vp",
+    "secondaryTopicIds": [
+      "belastingen"
+    ],
+    "title": "06-10-2021 · Vraag 17",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "4. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening over 2020 moet(en) worden gemaakt:\na. in verband met de aandeel derden;\nb. in verband met de afschrijving goodwill;\nc. in verband met de onderlinge leveringen van goederen.",
+    "promptHtml": "<p>4. Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening over 2020 moet(en) worden gemaakt:<br>a. in verband met de aandeel derden;<br>b. in verband met de afschrijving goodwill;<br>c. in verband met de onderlinge leveringen van goederen.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>Gevraagd 4.A.                Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                   € 200.000              \n\nAan Resultaat na belastingen                  € 200.000\n\nGevraagd 4.B.                Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill     €  40.000              \n\nAan Resultaat na belastingen                  €  40.000\n\nGevraagd 4.C.      Eliminatieboeking\n                                       Db           Cr\n\nOmzet                            € 2.000.000            \nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%)  € 15.000     \nBelastinglast   (€ 20.000 * 25%)  €  5.000              \n\nAan Kostprijs van de omzet                   €  20.000</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>Gevraagd 4.A.                Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                   € 200.000              \n\nAan Resultaat na belastingen                  € 200.000\n\nGevraagd 4.B.                Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill     €  40.000              \n\nAan Resultaat na belastingen                  €  40.000\n\nGevraagd 4.C.      Eliminatieboeking\n                                       Db           Cr\n\nOmzet                            € 2.000.000            \nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%)  € 15.000     \nBelastinglast   (€ 20.000 * 25%)  €  5.000              \n\nAan Kostprijs van de omzet                   €  21.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  21.000; het antwoordmodel geeft €  20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 4.A.                Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                   € 200.000              \n\nAan Resultaat na belastingen                  € 200.000\n\nGevraagd 4.B.                Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill     €  40.000              \n\nAan Resultaat na belastingen                  €  40.000\n\nGevraagd 4.C.      Eliminatieboeking\n                                       Db           Cr\n\nOmzet                            € 2.000.000            \nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%)  € 15.000     \nBelastinglast   (€ 20.000 * 25%)  €  5.000              \n\nAan Kostprijs van de omzet                   €  19.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  19.000; het antwoordmodel geeft €  20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>Gevraagd 4.A.                Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                   € 200.000              \n\nAan Resultaat na belastingen                  € 200.000\n\nGevraagd 4.B.                Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill     €  40.000              \n\nAan Resultaat na belastingen                  €  40.000\n\nGevraagd 4.C.      Eliminatieboeking\n                                       Db           Cr\n\nOmzet                            € 2.000.000            \nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%)  € 15.000     \nBelastinglast   (€ 20.000 * 25%)  €  5.000              \n\nAan Kostprijs van de omzet                   €  40.000</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier €  40.000; het antwoordmodel geeft €  20.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>Gevraagd 4.A. (1,5 punten)               Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                 (½)  € 200.000              (½)\n\nAan Resultaat na belastingen   (½)               € 200.000\n\nGevraagd 4.B. (1,5 punten)               Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill   (½)  €  40.000              (½)\n\nAan Resultaat na belastingen   (½)               €  40.000\n\nGevraagd 4.C. (3,5 punten, 1 + 2,5)     Eliminatieboeking\n                                       Db           Cr\n\nOmzet                          (½)  € 2.000.000            (½)\nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%) (½) € 15.000     (½)\nBelastinglast   (€ 20.000 * 25%) (½) €  5.000              (½)\n\nAan Kostprijs van de omzet     (½)              €  20.000</pre>",
+    "practiceSolutionHtml": "<pre>Gevraagd 4.A.                Eliminatieboeking\n\n                                        Db          Cr\nAandeel derden                   € 200.000              \n\nAan Resultaat na belastingen                  € 200.000\n\nGevraagd 4.B.                Eliminatieboeking\n                                        Db          Cr\n\nAfschrijvingskosten goodwill     €  40.000              \n\nAan Resultaat na belastingen                  €  40.000\n\nGevraagd 4.C.      Eliminatieboeking\n                                       Db           Cr\n\nOmzet                            € 2.000.000            \nAan Kostprijs van de omzet                      € 2.000.000\n\nResultaat na belastingen (€ 20.000 * 75%)  € 15.000     \nBelastinglast   (€ 20.000 * 25%)  €  5.000              \n\nAan Kostprijs van de omzet                   €  20.000</pre>",
+    "dependencyQuestionIds": [
+      "vraag-14",
+      "vraag-15",
+      "vraag-16"
+    ],
+    "guidance": {
+      "lesson": "downstream-hk",
+      "title": "Downstream bij verkrijgingsprijs",
+      "rules": "Stel vast welke winst de moeder heeft geboekt en welk deel nog binnen de groep aanwezig is; werk bij verkrijgingsprijs vanuit de consolidatie zonder een interne NVW-correctie te veronderstellen.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-17"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Baldetti bv (consolidatie verkrijgingsprijs) · Vraag 17",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 20000.0,
+      "incorrectValues": [
+        21000.0,
+        19000.0,
+        40000.0
+      ],
+      "sourceToken": "€  20.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-18",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-18",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 18",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van het per 31 december 2019 aangekochte kapitaalbelang in The Knight.",
+    "promptHtml": "<p>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van het per 31 december 2019 aangekochte kapitaalbelang in The Knight.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 784.000\n\n1 punt g/f</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 794.000\n\n1 punt g/f</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 794.000; het antwoordmodel geeft € 784.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 774.000\n\n1 punt g/f</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 774.000; het antwoordmodel geeft € 784.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 1.568.000\n\n1 punt g/f</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.568.000; het antwoordmodel geeft € 784.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 784.000\n\n1 punt g/f</pre>",
+    "practiceSolutionHtml": "<pre>1. Geef de journaalpost die Norbertijner in haar grootboek heeft gemaakt naar aanleiding van\n   het per 31 december 2019 aangekochte kapitaalbelang in The Knight. (1 punt)\n\n                                      Debet     Credit\n      0.. Deelneming (£ 511.000 x € 1,12) € 572.320\n      0.. Goodwill (£ 189.000 x € 1,12) € 211.680\n aan  1.. Bank (£ 700.000 x € 1,12)           € 784.000\n\n1 punt g/f</pre>",
+    "dependencyQuestionIds": [],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-18"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 18",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 784000.0,
+      "incorrectValues": [
+        794000.0,
+        774000.0,
+        1568000.0
+      ],
+      "sourceToken": "€ 784.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-19",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-19",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 19",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s.",
+    "promptHtml": "<p>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. \n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 \nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- \nInvestering        £ 150.000      £ 1,09    € 163.500 \nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- \n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 \nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 \n31-12-2020                                  € 195.750</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. \n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 \nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- \nInvestering        £ 150.000      £ 1,09    € 163.500 \nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- \n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 \nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 \n31-12-2020                                  € 205.750</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 205.750; het antwoordmodel geeft € 195.750. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. \n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 \nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- \nInvestering        £ 150.000      £ 1,09    € 163.500 \nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- \n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 \nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 \n31-12-2020                                  € 185.750</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 185.750; het antwoordmodel geeft € 195.750. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. \n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 \nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- \nInvestering        £ 150.000      £ 1,09    € 163.500 \nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- \n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 \nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 \n31-12-2020                                  € 391.500</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 391.500; het antwoordmodel geeft € 195.750. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. (3 punten)\n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 (½)\nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- (½)\nInvestering        £ 150.000      £ 1,09    € 163.500 (½)\nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- (½)\n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 (½)\nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 (½)\n31-12-2020                                  € 195.750</pre>",
+    "practiceSolutionHtml": "<pre>2. Geef een gespecificeerde berekening van de boekwaarde van de posten gebouwen en\n   voorraad fusten in de balans van The Knight per 31 december 2020 in euro’s. \n\nGebouw\n31-12-2019         £ 500.000      £ 1,12    € 560.000 \nAfschrijving oud bouw £ 35.000    £ 1,12    € 39.200 -/- \nInvestering        £ 150.000      £ 1,09    € 163.500 \nAfschrijving nieuwbouw £ 15.000   £ 1,09    € 16.350 -/- \n31-12-2020                                  € 667.950\n\nVoorraad fusten\nInkoop 01-03-2020  4.000 £ 35 £ 140.000 £ 1,20 € 168.000 \nInkoop 01-11-2020  1.000 £ 25 £ 25.000 £ 1,09 € 27.750 \n31-12-2020                                  € 195.750</pre>",
+    "dependencyQuestionIds": [
+      "vraag-18"
+    ],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-19"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 19",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 195750.0,
+      "incorrectValues": [
+        205750.0,
+        185750.0,
+        391500.0
+      ],
+      "sourceToken": "€ 195.750"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-20",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-20",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 20",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "3. Geef een gespecificeerde berekening van de posten kostprijs van de omzet en afwaardering voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.",
+    "promptHtml": "<p>3. Geef een gespecificeerde berekening van de posten kostprijs van de omzet en afwaardering voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   \n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 \n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 \n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 \nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 42.000 </pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   \n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 \n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 \n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 \nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 43.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 43.000; het antwoordmodel geeft € 42.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   \n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 \n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 \n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 \nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 41.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 41.000; het antwoordmodel geeft € 42.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   \n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 \n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 \n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 \nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 84.000 </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 84.000; het antwoordmodel geeft € 42.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   (2 punten)\n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 (½)\n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 (½)\n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 (½)\nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 42.000 (½)</pre>",
+    "practiceSolutionHtml": "<pre>3. Geef een gespecificeerde berekening van de post kostprijs van de omzet en afwaardering\n   voorraad fusten in de winst-en-verliesrekening van The Knight over 2020 in euro’s.\n   \n\nKostprijs omzet\n01-02-2020 5.000 fusten £ 30 £ 150.000 € 1,12 € 168.000 \n01-08-2020 3.000 fusten £ 30 £ 90.000 € 1,12 € 100.800 \n          1.000 fusten £ 35 £ 35.000 € 1,09 € 38.150 \nTotaal                  £ 275.000           € 306.950\n\nAfwaardering voorraad fusten\n£ 35.000 x € 1,20 € 42.000 </pre>",
+    "dependencyQuestionIds": [
+      "vraag-18",
+      "vraag-19"
+    ],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-20"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 20",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 42000.0,
+      "incorrectValues": [
+        43000.0,
+        41000.0,
+        84000.0
+      ],
+      "sourceToken": "€ 42.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-21",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-21",
+    "sectionId": "opgave-4",
+    "topicId": "tijdstip",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 21",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020. Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat wordt verwerkt.",
+    "promptHtml": "<p>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020. Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat wordt verwerkt.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   \n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12  -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09    -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20       360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20   -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09       218.000\n Inkoop tweede halfjaar -/- 75.000 1,09     -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11      -/- 33.300\n Overige kosten        -/- 110.000 1,13    -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20      -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11  -/- 149.850\n\n                                              ---------------\n Koersverlies  in w&amp;v                     -/- 1.800</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   \n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12  -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09    -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20       360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20   -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09       218.000\n Inkoop tweede halfjaar -/- 75.000 1,09     -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11      -/- 33.300\n Overige kosten        -/- 110.000 1,13    -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20      -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11  -/- 149.850\n\n                                              ---------------\n Koersverlies  in w&amp;v                     -/- 1.900</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 1.900; het antwoordmodel geeft 1.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   \n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12  -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09    -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20       360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20   -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09       218.000\n Inkoop tweede halfjaar -/- 75.000 1,09     -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11      -/- 33.300\n Overige kosten        -/- 110.000 1,13    -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20      -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11  -/- 149.850\n\n                                              ---------------\n Koersverlies  in w&amp;v                     -/- 1.700</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 1.700; het antwoordmodel geeft 1.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   \n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12  -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09    -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20       360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20   -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09       218.000\n Inkoop tweede halfjaar -/- 75.000 1,09     -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11      -/- 33.300\n Overige kosten        -/- 110.000 1,13    -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20      -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11  -/- 149.850\n\n                                              ---------------\n Koersverlies  in w&amp;v                     -/- 3.600</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier 3.600; het antwoordmodel geeft 1.800. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   (6 punten)\n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12 (½) -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09 (½)   -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20 (½)      360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20 (½)  -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09 (½)      218.000\n Inkoop tweede halfjaar -/- 75.000 1,09 (½)    -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11 (½)     -/- 33.300\n Overige kosten        -/- 110.000 1,13 (½)   -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20 (½)     -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11 (½) -/- 149.850\n\n                                              ---------------\n Koersverlies (½) in w&amp;v (½)                    -/- 1.800</pre>",
+    "practiceSolutionHtml": "<pre>4. Geef een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt.\n   \n\n                     bedrag GBP koers € punt   bedrag €\n 01-01-2020 monetaire positie -/- 10.000 1,12  -/- 11.200\n Mutaties:\n Verbouwing            -/- 150.000 1,09    -/- 163.500\n Verkoop eerste halfjaar 300.000  1,20       360.000\n\n Inkoop eerste halfjaar -/- 210.000 1,20   -/- 252.000\n Verkoop tweede halfjaar 200.000  1,09       218.000\n Inkoop tweede halfjaar -/- 75.000 1,09     -/- 81.750\n Afwaardering debiteur -/- 30.000 1,11      -/- 33.300\n Overige kosten        -/- 110.000 1,13    -/- 124.300\n\n Uitgekeerd dividend   -/- 50.000 1,20      -/- 60.000\n                      ----------------        --------------\n monetaire positie theoretisch -/- 135.000    -/- 148.050\n\n 31-12-2020 monetaire positie -/- 135.000 1,11  -/- 149.850\n\n                                              ---------------\n Koersverlies  in w&amp;v                     -/- 1.800</pre>",
+    "dependencyQuestionIds": [
+      "vraag-18",
+      "vraag-19",
+      "vraag-20"
+    ],
+    "guidance": {
+      "lesson": "tijdstipmethode",
+      "title": "Koerskeuze bij de tijdstipmethode",
+      "rules": "Maak onderscheid tussen monetaire en niet-monetaire posten en leg per post het relevante waarderingsmoment vast voordat je de bijbehorende koers toepast.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-21"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 21",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1800.0,
+      "incorrectValues": [
+        1900.0,
+        1700.0,
+        3600.0
+      ],
+      "sourceToken": "1.800"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-22",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-22",
+    "sectionId": "opgave-4",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 22",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "Geef voor het gebouw een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020. Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat wordt verwerkt.",
+    "promptHtml": "<p>Geef voor het gebouw een gespecificeerde berekening van het koersverschil/omrekenverschil over 2020. Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat wordt verwerkt.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. \n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- \nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + \nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + \nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen \n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 \n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 \nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- \nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 \nKoersverschil           € 1.000 -/-  (verwerken in eigen vermogen) </pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. \n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- \nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + \nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + \nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen \n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 \n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 \nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- \nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 \nKoersverschil           € 1.100 -/-  (verwerken in eigen vermogen) </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 1.100; het antwoordmodel geeft € 1.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. \n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- \nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + \nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + \nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen \n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 \n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 \nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- \nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 \nKoersverschil           € 900 -/-  (verwerken in eigen vermogen) </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 900; het antwoordmodel geeft € 1.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. \n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- \nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + \nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + \nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen \n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 \n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 \nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- \nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 \nKoersverschil           € 2.000 -/-  (verwerken in eigen vermogen) </pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 2.000; het antwoordmodel geeft € 1.000. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. (3 punten)\n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- (1)\nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +(½)\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + (½)\nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + (½)\nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen (½)\n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 (½)\n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 (½)\nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- (½)\nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 (½)\nKoersverschil           € 1.000 -/- (½) (verwerken in eigen vermogen) (½)</pre>",
+    "practiceSolutionHtml": "<pre>5. Geef voor het gebouw een gespecificeerde berekening van het\n   koersverschil/omrekenverschil over 2020.\n   Geef hierbij aan of dit resultaat positief of negatief is én in het eigen vermogen of resultaat\n   wordt verwerkt. \n\nMutaties op het vermogen:\nOudbouw       £ 500.000 (€ 1,12 -/- € 1,11) € 5.000 -/- \nAfschrijving oudbouw £ 35.000 -/- (€ 1,13 -/- € 1,11) € 700 +\nVerbouwing    £ 150.000 (€ 1,09 -/- € 1,11) € 3.000 + \nAfschrijving nieuwbouw £ 15.000 -/- (€ 1,13 -/- € 1,11) € 300 + \nTotaal                                 € 1.000 -/-\nVerwerken in eigen vermogen \n\nAlternatief:\n01-01-2020: oudbouw £ 500.000 x 1,12 € 560.000 \n2e hj: nieuwbouw £ 150.000 x 1,09 € 163.500 \nAfschrijving oudbouw -/- £ 35.000 x 1,13 € 39.550 -/- \nAfschrijving nieuwbouw -/- £ 15.000 x 1,13 € 16.950 -/-\n31-12-2020 balans gebouw € 667.000\n31-12-2020 gebouw tegen slotkoers € 666.000 \nKoersverschil           € 1.000 -/-  (verwerken in eigen vermogen) </pre>",
+    "dependencyQuestionIds": [
+      "vraag-18",
+      "vraag-19",
+      "vraag-20",
+      "vraag-21"
+    ],
+    "guidance": {
+      "lesson": "slotkoersmethode",
+      "title": "Balans, resultaat en omrekeningsreserve",
+      "rules": "Reken balans en resultaat met hun eigen toepasselijke koersen om en sluit het eindvermogen aan op beginvermogen, resultaat en overige vermogensmutaties.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-22"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 22",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 1000.0,
+      "incorrectValues": [
+        1100.0,
+        900.0,
+        2000.0
+      ],
+      "sourceToken": "€ 1.000"
+    }
+  },
+  {
+    "key": "cafa2-20211006/vraag-23",
+    "examId": "cafa2-20211006",
+    "questionId": "vraag-23",
+    "sectionId": "opgave-4",
+    "topicId": "slotkoers",
+    "secondaryTopicIds": [],
+    "title": "06-10-2021 · Vraag 23",
+    "type": "Tentamenvraag als MC",
+    "intro": "Oorspronkelijke tentamenvraag. Kies de juiste volledige uitwerking.",
+    "task": "Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met betrekking tot haar deelneming in The Knight.",
+    "promptHtml": "<p>Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met betrekking tot haar deelneming in The Knight.</p>",
+    "facts": [],
+    "caseTables": [],
+    "correct": 0,
+    "options": [
+      {
+        "html": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. \n\n                                                Debet     Credit\n      9.. Resultaat deelneming  (£ 50.000 -/- x € 1,13)  € 56.500\n      0.. Reserve omrekeningsverschillen   € 1.260\n aan  1.. Deelneming                                  € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- \nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + \nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + \nTotaal                                      € 1.800 -/-\nAandeel 70%                              € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 489.510</pre>",
+        "why": "Alle gevraagde onderdelen volgen het oorspronkelijke antwoordmodel. Vergelijk hieronder de berekening en de verwerking."
+      },
+      {
+        "html": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. \n\n                                                Debet     Credit\n      9.. Resultaat deelneming  (£ 50.000 -/- x € 1,13)  € 56.500\n      0.. Reserve omrekeningsverschillen   € 1.260\n aan  1.. Deelneming                                  € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- \nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + \nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + \nTotaal                                      € 1.800 -/-\nAandeel 70%                              € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 499.510</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 499.510; het antwoordmodel geeft € 489.510. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. \n\n                                                Debet     Credit\n      9.. Resultaat deelneming  (£ 50.000 -/- x € 1,13)  € 56.500\n      0.. Reserve omrekeningsverschillen   € 1.260\n aan  1.. Deelneming                                  € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- \nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + \nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + \nTotaal                                      € 1.800 -/-\nAandeel 70%                              € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 479.510</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 479.510; het antwoordmodel geeft € 489.510. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      },
+      {
+        "html": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. \n\n                                                Debet     Credit\n      9.. Resultaat deelneming  (£ 50.000 -/- x € 1,13)  € 56.500\n      0.. Reserve omrekeningsverschillen   € 1.260\n aan  1.. Deelneming                                  € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- \nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + \nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + \nTotaal                                      € 1.800 -/-\nAandeel 70%                              € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 979.020</pre>",
+        "why": "Het bedrag bij “uitkomst in de berekening” is hier € 979.020; het antwoordmodel geeft € 489.510. De overige onderdelen veranderen die uitkomst niet. Controleer de volledige berekening hieronder."
+      }
+    ],
+    "solutionHtml": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. (5 punten)\n\n                                                Debet     Credit\n      9.. Resultaat deelneming (½) (£ 50.000 -/- x € 1,13) (½) € 56.500\n      0.. Reserve omrekeningsverschillen (½) (3) € 1.260\n aan  1.. Deelneming (½)                                 € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- (½)\nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + (1)\nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + (1)\nTotaal                                      € 1.800 -/-\nAandeel 70% (½)                             € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 489.510</pre>",
+    "practiceSolutionHtml": "<pre>6. Geef de journaalpost(en) die Norbertijner eind 2020 in haar grootboek heeft gemaakt met\n   betrekking tot haar deelneming in The Knight. \n\n                                                Debet     Credit\n      9.. Resultaat deelneming  (£ 50.000 -/- x € 1,13)  € 56.500\n      0.. Reserve omrekeningsverschillen   € 1.260\n aan  1.. Deelneming                                  € 57.760\n\nSpecificatie omrekeningsverschillen (toedeling 3 punten):\nVermogen 31-12-2019 £ 730.000 (€ 1,11 -/- € 1,12) € 7.300 -/- \nDividend           £ 50.000 -/- (€ 1,11 -/- € 1,20) € 4.500 + \nResultaat 2020     £ 50.000 -/- (€ 1,11 -/- € 1,13) € 1.000 + \nTotaal                                      € 1.800 -/-\nAandeel 70%                              € 1.260 -/-\n\nControle:\n31-12-2019         £ 730.000 € 1,12    € 817.600 70% € 572.320\nResultaat          £ 50.000 -/- € 1,13 € 56.500 -/- 70% € 39.550 -/-\nDividend           £ 50.000 -/- € 1,20 € 60.000 -/- 70% € 42.000 -/-\n                                       € 701.100 70% € 490.770\nReserve omrekeningsverschillen         € 1.800 -/- 70% € 1.260 -/-\n31-12-2020         £ 630.000 € 1,11    € 699.300 70% € 489.510</pre>",
+    "dependencyQuestionIds": [
+      "vraag-18",
+      "vraag-19",
+      "vraag-20",
+      "vraag-21",
+      "vraag-22"
+    ],
+    "guidance": {
+      "lesson": "slotkoersmethode",
+      "title": "Balans, resultaat en omrekeningsreserve",
+      "rules": "Reken balans en resultaat met hun eigen toepasselijke koersen om en sluit het eindvermogen aan op beginvermogen, resultaat en overige vermogensmutaties.",
+      "pattern": [
+        "Bepaal de waarderingsgrondslag en de verslaggeving waarop de vraag betrekking heeft.",
+        "Gebruik de oorspronkelijke casus en open zo nodig de gegevens uit eerdere deelvragen.",
+        "Controleer alle gevraagde onderdelen, de bedragen en de richting van de verwerking."
+      ]
+    },
+    "pattern": "Gebruik de oorspronkelijke casus, de juiste waarderingsgrondslag en de benodigde eerdere uitkomsten.",
+    "explanation": [
+      "Het oorspronkelijke antwoordmodel staat hieronder. De verkeerde antwoordopties zijn oefenafleiders; zij behoren niet tot het officiële tentamen."
+    ],
+    "refs": [
+      "cafa2-20211006/vraag-23"
+    ],
+    "sources": [
+      {
+        "label": "2021-10-06 · Norbertijner bv (vreemde valuta) · Vraag 23",
+        "file": "data/exam-20211006.js",
+        "pages": "bestaande tentamenomgeving"
+      }
+    ],
+    "mutation": {
+      "kind": "amount",
+      "label": "uitkomst in de berekening",
+      "correctValue": 489510.0,
+      "incorrectValues": [
+        499510.0,
+        479510.0,
+        979020.0
+      ],
+      "sourceToken": "€ 489.510"
+    }
+  }
+]

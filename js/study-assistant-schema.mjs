@@ -69,7 +69,8 @@ export function normalizePractice(course, code, bank, q) {
   const refs = (q.refs || []).map(id => bank.sources?.[id]).filter(Boolean);
   const context = {
     ref, title:plain(q.title), subject:plain(bank.title), number:q.id, type:plain(q.type || 'open'),
-    prompt:plain(q.task || q.promptHtml || q.prompt), caseText:plain(q.intro || ''),
+    prompt:plain(q.task || q.promptHtml || q.prompt), caseText:plain(q.caseHtml || q.intro || ''),
+    ...(q.sourceType==='exam'?{examInstructions:plain(q.examInstructions || ''),referencedSolutions:cleanData(q.referencedSolutions || [])}:{}),
     facts:cleanData(q.facts || []), caseTables:cleanData(q.caseTables || []),
     options:labelledOptions(q.options || []), references:sources(refs),
     answerColumns:(q.options || []).some(option => Array.isArray(option.journal))

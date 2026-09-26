@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/validate.mjs && node tests/exam-engine.mjs && node tests/exam-content.mjs && node tests/opgave-practice.mjs && node tests/content-revision.mjs && node tests/summary-reader.mjs && node tests/study-upgrade.mjs && node tests/study-refinement.mjs && node tests/dark-contrast.mjs && node tests/practice-topics.mjs",
+    "test": "node tests/validate.mjs && node tests/exam-engine.mjs && node tests/exam-content.mjs && node tests/opgave-practice.mjs && node tests/content-revision.mjs && node tests/summary-reader.mjs && node tests/study-upgrade.mjs && node tests/study-refinement.mjs && node tests/dark-contrast.mjs && node tests/practice-topics.mjs && node tests/exam-practice.mjs",
     "test:opgaven-browser": "node tests/opgave-practice-browser.cjs",
     "test:exam-scroll-browser": "node tests/exam-scroll-browser.cjs",
     "test:law-browser": "node tests/law-references-browser.cjs",
@@ -12,11 +12,12 @@
     "build:study": "node scripts/build-learning-revision.mjs && node scripts/build-summary-reader.mjs && node scripts/build-study-upgrade.mjs && python scripts/build-study-dark.py",
     "test:study-browser": "python tests/study-upgrade-browser.py",
     "test:refinement-browser": "python tests/study-refinement-browser.py",
-    "build:practice": "node scripts/build-exam-frequency.mjs && node scripts/build-practice-topics.mjs",
+    "build:practice": "node scripts/build-exam-frequency.mjs && node scripts/build-practice-topics.mjs && node scripts/build-exam-practice.mjs",
     "test:topics-browser": "node tests/practice-topics-browser.mjs",
     "test:topics-layout": "node tests/topic-layout-browser.mjs",
     "build:assistant": "node scripts/build-study-assistant.mjs",
     "test:assistant": "node --test tests/study-assistant/*.test.mjs",
-    "check:assistant-sources": "node scripts/prepare-assistant-sources.mjs --check && node scripts/check-assistant-source-revisions.mjs --check"
+    "check:assistant-sources": "node scripts/prepare-assistant-sources.mjs --check && node scripts/check-assistant-source-revisions.mjs --check",
+    "test:exam-practice-browser": "node tests/exam-practice-browser.mjs"
   }
 }
