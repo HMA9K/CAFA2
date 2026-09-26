@@ -5,7 +5,9 @@
   var course = counter.dataset.goatcounter.indexOf('cafa2.') !== -1 ? 'CAFA2' : 'SRA';
   var productionHost = course === 'CAFA2' ? 'cafa2.pages.dev' : 'sra-2xt.pages.dev';
   // Preview deployments and downloaded copies must not pollute production statistics.
-  if (location.hostname !== productionHost) return;
+  function status(value) { document.documentElement.setAttribute('data-study-analytics-state', value); }
+  if (location.hostname !== productionHost) { status('preview'); return; }
+  status('waiting');
   var lastPath = null, pending = null;
 
   function pagePath() {
@@ -36,18 +38,21 @@
 
   function countPage() {
     pending = null;
-    if (document.readyState === 'loading' || document.visibilityState === 'hidden') return;
+    if (document.readyState === 'loading' || document.visibilityState === 'hidden') { status('waiting for visible page'); return; }
     // CAFA2 loads its screens asynchronously; wait for the rendered route.
-    if (document.querySelector('#app-content #load-status')) return;
+    if (document.querySelector('#app-content #load-status')) { status('waiting for route'); return; }
     var gc = window.goatcounter, path = pagePath();
-    if (!path || path === lastPath || !gc || typeof gc.count !== 'function') return;
+    if (!path || path === lastPath) return;
+    if (!gc || typeof gc.count !== 'function') { status('waiting for GoatCounter'); return; }
     try {
       // Keep GoatCounter's own browser exclusion and local/bot filters intact.
-      if (gc.filter && gc.filter()) return;
+      var reason = gc.filter && gc.filter();
+      if (reason) { status('excluded: ' + reason); return; }
       gc.count({ path: path, title: pageTitle() });
       lastPath = path;
+      status('sent: ' + path);
     } catch (e) {
-      // Analytics must never interrupt learning when browser storage is unavailable.
+      status('browser storage unavailable');
     }
   }
 
@@ -56,6 +61,7 @@
     pending = setTimeout(countPage, 0);
   }
   counter.addEventListener('load', schedule);
+  counter.addEventListener('error', function () { status('GoatCounter could not load'); });
   document.addEventListener('DOMContentLoaded', schedule);
   document.addEventListener('visibilitychange', schedule);
   window.addEventListener('hashchange', schedule);
