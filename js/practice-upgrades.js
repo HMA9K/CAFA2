@@ -47,7 +47,17 @@
     textarea.insertAdjacentElement('afterend', host);
     textarea.hidden = true;
     textarea.classList.add('practice-plain-hidden');
-    var editor = window.CafaAnswerEditor.mount(host, {
+    var q=window.CAFA2_DATA.modules[code].questions[id-1],editorHost=host,stock=window.CafaStockTable&&window.CafaStockTable.template(q);
+    var journal=window.CafaJournalTable&&window.CafaJournalTable.supports(q);
+    if(stock||journal){
+      var fields=document.createElement('div');host.append(fields);
+      if(stock)window.CafaStockTable.mount(fields,stock,answer.stockCells,function(cells){api.setStructuredAnswer(code,id,'stock',cells);});
+      else window.CafaJournalTable.mount(fields,answer.journalRows.length?answer.journalRows:answer.rows,function(rows){api.setStructuredAnswer(code,id,'journal',rows);});
+      var oldTable=question.querySelector('.own-area .entry-table');if(oldTable)oldTable.closest('.table-wrap').hidden=true;
+      var notes=document.createElement('details');notes.className='stock-notes';notes.open=!!answer.text;
+      notes.innerHTML='<summary>Toelichting of berekening toevoegen</summary><div></div>';host.append(notes);editorHost=notes.querySelector('div');
+    }
+    var editor = window.CafaAnswerEditor.mount(editorHost, {
       label: 'Eigen uitwerking bij vraag ' + id,
       html: answer.html || escape(answer.text).replace(/\r?\n/g, '<br>'),
       onChange: function (html) { api.setRichAnswer(code, id, html); }
@@ -58,6 +68,12 @@
   Array.prototype.forEach.call(document.querySelectorAll('.question[data-code][data-q]'), function (question) {
     var code = question.dataset.code, id = Number(question.dataset.q);
     var topic = window.CAFA2_DATA.modules[code];
+    var previous=api.getPreviousAnswer(code,id);
+    if(previous){
+      var old=document.createElement('details');old.className='practice-previous-answer';
+      old.innerHTML='<summary>Je bewaarde antwoord vóór het opsplitsen</summary><p>Dit antwoord en de eerdere score horen bij de oorspronkelijke volledige vraag. Elk onderdeel heeft nu een eigen antwoord en score.</p>'+(previous.firstMC?'<p>Eerdere MC-beoordeling: '+(previous.firstMC.correct?'goed':'fout')+' · antwoord '+String.fromCharCode(65+previous.firstMC.choice)+'</p>':'')+(previous.html?window.CafaAnswerEditor.sanitize(previous.html):previous.text?'<p>'+escape(previous.text)+'</p>':'')+(previous.journalRows&&previous.journalRows.some(function(r){return r.some(Boolean);})?window.CafaJournalTable.render(previous.journalRows,true):'');
+      question.querySelector('.source').after(old);
+    }
     question.classList.add('practice-question-page');
     var pageTitle = document.createElement('h1');
     pageTitle.className = 'practice-page-title';

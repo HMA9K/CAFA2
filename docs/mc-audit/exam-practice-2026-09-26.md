@@ -2,6 +2,8 @@
 
 Datum: 26 september 2026.
 
+Dit document beschrijft de eerste invoer met 529 oefeningen. De [vervolgrevisie voor tabellen, splitsingen en patroonherkenning](exam-layout-2026-09-26.md) bevat de huidige stand met 627 oefeningen.
+
 De eerdere bank bevatte 247 syllabusgerichte oefeningen en eigen varianten. Er was geen volledige één-op-éénkoppeling van die oefeningen naar alle tentamendeelvragen. Nu zijn alle **282 deelvragen uit 11 tentamens** afzonderlijk als MC oefenbaar. De bank bevat **529 unieke vragen**. De bestaande 247 vragen, antwoordopties, juiste antwoordposities en opgeslagen vraag-ID's zijn behouden.
 
 ## Dekking en bronnen

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {root,loadSources} from './exam-practice-source.mjs';
 import {question} from './practice-question-renderer.mjs';
+import {applyQuestionPattern} from './question-pattern.mjs';
 const {exams,banks,topics}=loadSources();
 const registryFile=path.join(root,'content/practice/exam-question-registry.json');
 const registry=fs.existsSync(registryFile)?JSON.parse(fs.readFileSync(registryFile,'utf8')):{};
@@ -16,8 +17,8 @@ for(const raw of authored){
  if(assigned.code!==code)throw Error('Gewijzigde deelindeling: '+raw.key);
  const rotation=(assigned.id+Object.keys(banks).indexOf(code))%4;
  const options=raw.options.map((_,i)=>raw.options[(i+rotation)%4]);
- const q={...raw,id:assigned.id,options,correct:(4-rotation)%4,sourceType:'exam',variant:false,stage:0,related:[],code};
- rows.push(q);count[code]++;
+ const q={...raw,id:assigned.id,options,correct:(4-rotation)%4,sourceType:'exam',contentVersion:2,variant:false,stage:0,related:[],code};
+ rows.push(applyQuestionPattern(q));count[code]++;
 }
 const byCode=Object.fromEntries(Object.keys(banks).map(c=>[c,rows.filter(q=>q.code===c).sort((a,b)=>a.id-b.id)]));
 for(const[c,qs]of Object.entries(byCode))qs.forEach((q,i)=>{if(q.id!==banks[c].questions.length+i+1)throw Error('Niet-aaneengesloten ID: '+q.key);});
@@ -30,7 +31,8 @@ for(const exam of exams){
  fs.writeFileSync(path.join(root,fragment),qs.map(q=>question(q,q.code,count[q.code])).join('\n').replace(/[ \t]+$/gm,''));
  manifest.push({examId:exam.id,file,fragment,count:qs.length});
 }
-const meta={total:247+rows.length,syllabus:247,exam:rows.length,exams:manifest,modules:count,mapping:rows.map(q=>({examId:q.examId,questionId:q.questionId,practiceId:q.code+'-'+q.id,topicId:q.topicId,secondaryTopicIds:q.secondaryTopicIds,sectionId:q.sectionId,dependencies:q.dependencyQuestionIds}))};
-fs.writeFileSync(path.join(root,'data/exam-practice.js'),`window.CAFA2_EXAM_PRACTICE=${JSON.stringify(meta)};Object.values(window.CAFA2_DATA.modules).forEach(function(b){b.questions.sort(function(a,b){return a.id-b.id;});});\n`);
+const practiceOrder=Object.fromEntries(Object.keys(banks).map(c=>[c,[...banks[c].questions.map(q=>c+'-'+q.id),...rows.filter(q=>q.code===c).map(q=>c+'-'+q.id)]]));
+const meta={version:2,practiceOrder,total:247+rows.length,syllabus:247,exam:rows.length,sourceQuestions:exams.reduce((n,e)=>n+e.questions.length,0),splitQuestions:new Set(rows.filter(q=>q.part).map(q=>q.sourceKey)).size,exams:manifest,modules:count,mapping:rows.map(q=>({examId:q.examId,questionId:q.questionId,part:q.part,partCount:q.partCount,practiceId:q.code+'-'+q.id,topicId:q.topicId,secondaryTopicIds:q.secondaryTopicIds,sectionId:q.sectionId,dependencies:q.dependencyQuestionIds,siblings:q.siblingSourceKeys}))};
+fs.writeFileSync(path.join(root,'data/exam-practice.js'),`window.CAFA2_EXAM_PRACTICE=${JSON.stringify(meta)};Object.values(window.CAFA2_DATA.modules).forEach(function(b){b.questions.sort(function(a,b){return a.id-b.id;});});var all=Object.values(window.CAFA2_DATA.modules).flatMap(function(b){return b.questions;});all.filter(function(q){return q.sourceType==='exam';}).forEach(function(q){q.siblingSourceKeys.forEach(function(key){var source=all.find(function(x){return x.key===key;});q.referencedSolutions.push({id:source.key,prompt:source.task,solution:source.solutionHtml});});});\n`);
 fs.writeFileSync(path.join(root,'docs/mc-audit/exam-practice-coverage.json'),JSON.stringify(meta,null,2)+'\n');
-console.log(`MC-dekking: ${rows.length}/${exams.reduce((n,e)=>n+e.questions.length,0)} tentamenvragen; ${meta.total} MC-vragen totaal.`);
+console.log(`MC-dekking: ${meta.sourceQuestions} bronvragen in ${rows.length} afzonderlijke vragen; ${meta.splitQuestions} vragen opgesplitst; ${meta.total} MC-vragen totaal.`);

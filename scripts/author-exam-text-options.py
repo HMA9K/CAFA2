@@ -206,5 +206,142 @@ add('20250924/vraag-12','functionele-valuta',[
  'Omberg vormt uitsluitend een verlengstuk van Dole en kan haar verplichtingen alleen betalen met kasstromen van Dole.',
  'De transacties met Dole bepalen vrijwel alle activiteiten van Omberg en Omberg draagt al haar opbrengsten periodiek aan Dole af.',
  'Omberg heeft een andere functionele valuta uitsluitend doordat zij in een ander land gevestigd is; zelfstandigheid en kasstromen spelen geen rol.'])
+
+# Each qualitative part has its own answer and distractors, grounded in its model.
+add('20220411/vraag-1#a','zeggenschap',[
+ 'Stein is een kortlopende belegging: de verbondenheid is niet duurzaam en het belang dient niet de eigen werkzaamheden van Rosen.',
+ 'Stein is een deelneming omdat ieder kapitaalbelang, ook zonder duurzame verbondenheid, een deelneming vormt.',
+ 'Stein is een dochtermaatschappij omdat het aandelenbelang van 18% overheersende zeggenschap geeft.',
+ 'Stein is een joint venture uitsluitend doordat Rosen minder dan 20% van de aandelen bezit.'])
+add('20220411/vraag-1#b','waardering',[
+ 'Verkrijgingsprijs of actuele waarde volgens artikel 2:384 lid 1 BW; Stein kwalificeert als belegging.',
+ 'Uitsluitend nettovermogenswaarde volgens artikel 2:389 BW, ongeacht de kwalificatie als belegging.',
+ 'Uitsluitend de nominale waarde van de aandelen; waarderingsgrondslagen spelen geen rol.',
+ 'Uitsluitend zichtbaar eigen vermogen, omdat een belang beneden 20% deze grondslag verplicht maakt.'])
+add('20220411/vraag-8#a','consolidatiekader',[
+ 'Rosen consolideert als groepshoofd op grond van artikel 2:406 lid 1 BW; Wald als groepsdeelhoofd op grond van lid 2.',
+ 'Alleen Rosen consolideert; een groepsdeelhoofd hoeft nooit een geconsolideerde jaarrekening op te stellen.',
+ 'Alleen Wald consolideert; de consolidatieplicht geldt uitsluitend voor de direct gehouden dochter.',
+ 'Rosen, Wald, Ram en Pols consolideren ieder afzonderlijk de gehele groep, ongeacht hun positie.'])
+add('20220411/vraag-8#b','consolidatiekader',[
+ 'Rosen neemt Rosen, Wald, Ram en Pols op; Wald neemt Wald en Pols op.',
+ 'Rosen neemt alleen Rosen en Wald op; de indirecte dochter Pols blijft buiten iedere consolidatie.',
+ 'Wald neemt Wald, Rosen en Ram op; Rosen neemt alleen zijn eigen financiële gegevens op.',
+ 'Rosen en Wald nemen uitsluitend ondernemingen op waarvan zij rechtstreeks 100% van de aandelen bezitten.'])
+add('20221006/vraag-4#a','consolidatiekader',[
+ 'De controller heeft ongelijk: de natuurlijke persoon als andere aandeelhouder verhindert de consolidatie door Rast Holding niet.',
+ 'De controller heeft gelijk: een natuurlijke persoon als aandeelhouder sluit iedere vorm van consolidatie uit.',
+ 'Alleen de natuurlijke persoon moet consolideren; Rast Holding wordt daardoor vrijgesteld.',
+ 'Consolidatie is alleen toegestaan wanneer alle aandeelhouders rechtspersonen met dezelfde rechtsvorm zijn.'])
+add('20221006/vraag-4#b','consolidatiekader',[
+ 'Wieder is geen groepsmaatschappij: Rast Holding heeft geen overheersende zeggenschap en geeft geen centrale leiding; de zeggenschap is gelijkelijk verdeeld.',
+ 'Wieder is een groepsmaatschappij omdat een belang van 50% altijd overheersende zeggenschap geeft.',
+ 'Wieder is een groepsmaatschappij uitsluitend doordat de andere aandeelhouder een natuurlijk persoon is.',
+ 'Wieder is een groepsmaatschappij omdat een vennootschap met meerdere aandeelhouders altijd tot één groep behoort.'])
+add('20230411/vraag-1#a','zeggenschap',[
+ 'Rapallo is via dochter Toane een dochter van Moneglia en is ook een vermoede deelneming van Moneglia.',
+ 'Rapallo is geen dochter en geen deelneming omdat Moneglia geen rechtstreeks belang in Rapallo houdt.',
+ 'Rapallo is alleen een dochter van Cavola omdat een belang van 40% altijd meerderheid van stemmen geeft.',
+ 'Rapallo is uitsluitend een belegging omdat middellijk gehouden kapitaalbelangen nooit deelnemingen kunnen zijn.'])
+add('20230411/vraag-1#b','zeggenschap',[
+ 'Farneta is volgens het model geen dochter van Moneglia via v.o.f. Levante, maar wel een vermoede deelneming via die vennootschap.',
+ 'Farneta is automatisch een dochter van Moneglia omdat iedere v.o.f. als directe moederrechtspersoon geldt.',
+ 'Farneta is geen deelneming omdat een vennootschap zonder rechtspersoonlijkheid nooit een deelneming kan houden.',
+ 'Farneta is een rechtstreeks gehouden dochter van Moneglia omdat middellijke aandelen direct aan het groepshoofd worden toegerekend.'])
+add('20231009/vraag-1#a','waardering',[
+ 'Gela is een vermoede deelneming van Carini; volgens de casus wordt zij tegen verkrijgingsprijs gewaardeerd omdat Alcamo met 70% overheersende zeggenschap heeft.',
+ 'Gela is een kortlopende belegging omdat Carini minder dan 50% van de aandelen houdt.',
+ 'Gela is een dochter van Carini en wordt daarom verplicht tegen nominale waarde gewaardeerd.',
+ 'Gela wordt verplicht tegen nettovermogenswaarde gewaardeerd, ook wanneer het vermoeden van invloed van betekenis volgens de casus is weerlegd.'])
+add('20231009/vraag-1#b','waardering',[
+ 'Noto is een vermoede deelneming van v.o.f. Lentini; het bronmodel accepteert verkrijgingsprijs en ook nettovermogenswaarde indien gemotiveerd dat Titel 9 van toepassing is.',
+ 'Noto is geen deelneming omdat een v.o.f. nooit aandelen in een rechtspersoon kan houden.',
+ 'Noto is uitsluitend een dochtermaatschappij van Lentini en moet op nominale waarde worden gesteld.',
+ 'Noto wordt verplicht tegen zichtbaar eigen vermogen gewaardeerd; een andere grondslag is volgens het model uitgesloten.'])
+add('20240930/vraag-1#a','zeggenschap',[
+ 'Pienza is een vermoede deelneming: Mulini houdt 35% van het geplaatste kapitaal, meer dan een vijfde volgens artikel 2:24c lid 1 BW.',
+ 'Pienza is geen deelneming omdat alleen belangen van meer dan 50% als deelneming kunnen kwalificeren.',
+ 'Pienza is een dochter van Mulini omdat iedere deelneming automatisch een dochtermaatschappij is.',
+ 'Pienza is uitsluitend een belegging omdat één andere aandeelhouder de overige aandelen houdt.'])
+add('20240930/vraag-1#b','waardering',[
+ 'Verkrijgingsprijs: volgens het bronmodel wordt het vermoeden van invloed van betekenis van Mulini weerlegd door de andere aandeelhouder met 65% overheersende zeggenschap.',
+ 'Nettovermogenswaarde is altijd verplicht bij een belang van 35%, ongeacht de omstandigheden in de casus.',
+ 'Nominale waarde is verplicht omdat Mulini de minderheidsaandeelhouder is.',
+ 'Zichtbaar eigen vermogen is verplicht omdat iedere deelneming zonder volledige zeggenschap zo wordt gewaardeerd.'])
+add('20250417/vraag-6#a','reserves',[
+ 'Geen wettelijke reserve deelneming voor Terni: Montone kan met 80% van de stemrechten uitkeringen zonder beperking bewerkstelligen.',
+ 'Een wettelijke reserve voor het volledige vermogen van Terni, ongeacht de uitkeerbaarheid.',
+ 'Een wettelijke reserve voor alle ontvangen dividenden, omdat een dividend de reserveplicht steeds verhoogt.',
+ 'Een wettelijke reserve ter grootte van de aankoopprijs, omdat die altijd het gebonden vermogen van een deelneming bepaalt.'])
+add('20250417/vraag-6#b','reserves',[
+ 'Geen wettelijke reserve deelneming voor Todi: bij verkrijgingsprijs is artikel 2:389 lid 6 BW volgens het model niet van toepassing.',
+ 'Een wettelijke reserve voor de gehele verkrijgingsprijs van Todi.',
+ 'Een wettelijke reserve voor het aandeel in het resultaat van Todi, ook als dat niet volgens de vermogensmutatiemethode is verwerkt.',
+ 'Een wettelijke reserve uitsluitend omdat Montone geen overheersende zeggenschap over Todi heeft.'])
+add('20250417/vraag-7#a','zeggenschap',[
+ 'Spoleto is geen dochtermaatschappij van dhr. Rieti volgens artikel 2:24a BW: Rieti is een natuurlijk persoon en geen rechtspersoon.',
+ 'Spoleto is een dochtermaatschappij van Rieti omdat iedere meerderheidsaandeelhouder een moederrechtspersoon is.',
+ 'Rieti is een dochtermaatschappij van Spoleto omdat Spoleto rechtspersoonlijkheid heeft.',
+ 'Spoleto en Rieti zijn automatisch wederzijds dochtermaatschappijen zodra zij economisch verbonden zijn.'])
+add('20250417/vraag-7#b','zeggenschap',[
+ 'Gubbio is geen dochter van Spoleto: voor het benoemingscriterium van artikel 2:24a lid 1 onder b BW moet Spoleto ook lid of aandeelhouder zijn, en dat is niet het geval.',
+ 'Gubbio is een dochter omdat benoemingsmacht altijd voldoende is, ook zonder lidmaatschap of aandeelhouderschap.',
+ 'Gubbio is een dochter omdat iedere vennootschap onder centrale leiding automatisch een dochter is.',
+ 'Spoleto is een dochter van Gubbio omdat de bestuurders door Spoleto kunnen worden benoemd.'])
+add('20250417/vraag-7#c','zeggenschap',[
+ 'Spello is een dochter van Spoleto: de stemrechtovereenkomst geeft Spoleto meer dan de helft van de stemrechten volgens artikel 2:24a lid 1 onder a BW.',
+ 'Spello is geen dochter omdat alleen het rechtstreeks gehouden aandelenpercentage meetelt, zonder stemrechtovereenkomsten.',
+ 'Spello is uitsluitend een belegging omdat een buitenlandse rechtsvorm nooit dochtermaatschappij kan zijn.',
+ 'Spello is een dochter uitsluitend omdat het aandelenpercentage precies 20% bedraagt.'])
+add('20250417/vraag-7#d','zeggenschap',[
+ 'Cesi kwalificeert via dochter Foligno als dochter van Spoleto: Foligno is volledig aansprakelijk voor de schulden van de v.o.f.',
+ 'Cesi kan nooit dochtermaatschappij zijn omdat een v.o.f. geen rechtspersoon is.',
+ 'Cesi is alleen een dochter wanneer zij meer dan de helft van de aandelen van Spoleto bezit.',
+ 'Cesi is een dochter uitsluitend op grond van haar handelsnaam; aansprakelijkheid en de relatie met Foligno spelen geen rol.'])
+add('20250417/vraag-7#e','zeggenschap',[
+ 'Corvia is een dochter van Assisi: na inkoop van 25% eigen aandelen kan Assisi 40% / 75% = 53,33% van de stemrechten uitoefenen.',
+ 'Corvia is geen dochter omdat altijd 100% van alle uitgegeven aandelen in de noemer van de stemrechtberekening blijft staan.',
+ 'Corvia is een dochter omdat 40% aandelenbezit zonder verdere omstandigheden altijd een stemrechtmeerderheid oplevert.',
+ 'Assisi is een dochter van Corvia omdat Corvia eigen aandelen heeft ingekocht.'])
+add('20250417/vraag-8#a','consolidatiekader',[
+ 'Spoleto en Assisi consolideren als groepshoofden op grond van artikel 2:406 lid 1 BW; Foligno als groepsdeelhoofd op grond van lid 2.',
+ 'Alleen dhr. Rieti consolideert omdat hij uiteindelijk boven de betrokken vennootschappen staat.',
+ 'Alleen Spoleto consolideert; Assisi en Foligno zijn zonder verdere toets vrijgesteld.',
+ 'Elke vennootschap consolideert steeds de gehele groep, ongeacht groepshoofd of groepsdeelhoofd.'])
+add('20250417/vraag-8#b','consolidatiekader',[
+ 'Spoleto neemt Spoleto, Foligno, Spello en Cesi op; Assisi neemt Assisi en Corvia op; Foligno neemt Foligno en Cesi op.',
+ 'Spoleto neemt alle vennootschappen van beide groepen op, inclusief Assisi en Corvia; Foligno neemt alleen zichzelf op.',
+ 'Assisi neemt alleen Corvia op en laat zijn eigen financiële gegevens weg; Spoleto neemt alleen directe belangen van 100% op.',
+ 'De consolidatiekringen omvatten uitsluitend rechtspersonen en sluiten Cesi automatisch uit.'])
+add('20250924/vraag-5#a','eigen-aandelen',[
+ 'Palau is vanaf 1 januari 2024 een dochter van Monserrato: Monserrato kan na de inkoop 80% / 90% = 88,9% van de stemrechten uitoefenen.',
+ 'Palau is geen dochter omdat de ingekochte eigen aandelen altijd volledig stemrecht behouden.',
+ 'Monserrato is automatisch een dochter van Palau uitsluitend door het wederzijdse aandelenbelang.',
+ 'De relatie kwalificeert uitsluitend als joint venture omdat beide vennootschappen aandelen in elkaar houden.'])
+add('20250924/vraag-5#b','eigen-aandelen',[
+ 'De boekwaarde of verkrijgingsprijs van de ingekochte eigen aandelen wordt op het eigen vermogen van Monserrato in mindering gebracht; zij wordt niet geactiveerd en vermindert het geplaatste kapitaal niet.',
+ 'De ingekochte eigen aandelen worden als nieuwe deelneming geactiveerd zonder wijziging van het eigen vermogen.',
+ 'De ingekochte eigen aandelen worden uitsluitend van het geplaatste kapitaal afgetrokken, ook zonder intrekking.',
+ 'De ingekochte eigen aandelen worden als opbrengst verantwoord omdat zij binnen de groep zijn verworven.'])
+add('20230411/vraag-6','waardering',[
+ 'Volgens het bronmodel heeft Cavola feitelijk geen invloed van betekenis omdat Toane de overige 60% bezit. Waardering geschiedt tegen verkrijgingsprijs of actuele waarde volgens artikel 2:384 BW.',
+ 'Een belang van 40% moet altijd tegen nettovermogenswaarde worden gewaardeerd, ook wanneer het vermoeden van invloed van betekenis in de casus is weerlegd.',
+ 'Nominale waarde is verplicht omdat Cavola een minderheidsbelang bezit.',
+ 'De boekwaarde is altijd gelijk aan 40% van het geplaatste kapitaal, zonder rekening te houden met de waarderingsgrondslag.'])
+add('20230411/vraag-20','functionele-valuta',[
+ 'Bora heeft de euro als functionele valuta: inkoop en financiering lopen via Alten in euro’s, de activiteiten zijn een verlengstuk van Alten en de kasstromen zijn direct beschikbaar voor Alten.',
+ 'Bora heeft altijd de Noorse kroon als functionele valuta omdat alleen het vestigingsland bepalend is.',
+ 'Beide buitenlandse belangen hebben altijd de euro als functionele valuta omdat Alten in Nederland gevestigd is.',
+ 'De functionele valuta wordt elk jaar uitsluitend gekozen op basis van de hoogste slotkoers.'])
+add('20231009/vraag-5','zeggenschap',[
+ 'Patti is dochter van Gela: Gela beschikt over 35 van de 65 stemgerechtigde aandelen, dus 53,8% van de stemmen volgens artikel 2:24a lid 1 onder a BW.',
+ 'Patti is geen dochter omdat aandelen zonder stemrecht ook volledig in de noemer van de stemrechtberekening moeten blijven staan.',
+ 'Gela is dochter van Patti omdat Gela een belang in Patti houdt.',
+ 'Patti is alleen dochter bij 100% aandelenbezit; een stemrechtmeerderheid is onvoldoende.'])
+add('20211006/vraag-6 20260429/vraag-6','zeggenschap',[
+ 'Geen dochtermaatschappij: (2.000 + 5.000) / (4.000 + 10.000) = 50% van de stemrechten, geen meerderheid. Ook is geen benoemingsmacht volgens artikel 2:24a lid 1 onder b BW gegeven.',
+ 'Wel een dochtermaatschappij: precies 50% van de stemmen is volgens het model al meer dan de helft.',
+ 'Wel een dochtermaatschappij omdat uitsluitend de winstrechten bepalend zijn voor de stemrechtmeerderheid.',
+ 'Geen dochtermaatschappij omdat alleen 100% aandelenbezit voor artikel 2:24a BW in aanmerking komt.'])
 (root/'content/practice/exam-text-options.json').write_text(json.dumps(entries,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(len(entries),'tekstvragen met brongebonden opties')

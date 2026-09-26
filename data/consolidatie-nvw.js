@@ -159,7 +159,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De consolidatiemethode is integraal: de posten worden voor 100% samengevoegd.",
         "“Belang derden” is een balanspost; “aandeel derden” hoort bij de winst-en-verliesrekening."
       ],
-      "pattern": "Herken: de consolidatiemethode is integraal, terwijl het kapitaalbelang lager is dan 100%. Aanpak: scheid de omvang van de opname van de verdeling tussen moeder en derden. Controle: presenteer derden niet uitsluitend op de balans; ook de winsttoerekening moet zichtbaar worden.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "basis"
       ],
@@ -175,9 +175,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke posten van Delta neemt Atlas bij integrale consolidatie voor 100% op en hoe wordt het resterende belang van derden gepresenteerd?",
         "rules": "Bij integrale consolidatie worden activa, verplichtingen, baten en lasten volledig samengevoegd, na de vereiste eliminaties. Een kapitaalbelang van 80% betekent dus niet dat iedere post voor 80% wordt opgenomen. Het overige aandeel verschijnt afzonderlijk als belang derden op de balans en aandeel derden in het resultaat.",
         "pattern": [
-          "Herken: de consolidatiemethode is integraal, terwijl het kapitaalbelang lager is dan 100%.",
-          "Aanpak: scheid de omvang van de opname van de verdeling tussen moeder en derden.",
-          "Controle: presenteer derden niet uitsluitend op de balans; ook de winsttoerekening moet zichtbaar worden."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -225,7 +225,7 @@ window.CAFA2_DATA.modules["nvw"]={
       "explanation": [
         "Downstream loopt van moeder naar deelneming. Upstream loopt van deelneming naar moeder. Sidestream loopt tussen deelnemingen."
       ],
-      "pattern": "Herken: drie concrete verkoper-kopercombinaties. Aanpak: teken voor iedere transactie een goederenpijl en benoem de positie van beide partijen in de groep. Controle: een levering tussen twee dochters blijft sidestream, ook wanneer hun deelnemingspercentages verschillen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "down",
         "up",
@@ -243,9 +243,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke leveringsrichting hoort achtereenvolgens bij Atlas naar Delta, Delta naar Atlas en Delta naar Sigma?",
         "rules": "Downstream loopt van moeder naar deelneming, upstream van deelneming naar moeder en sidestream tussen deelnemingen. Bepaal de richting vanuit de verkoper en koper van de goederen, niet vanuit de aandelenpijl. Het deelnemingspercentage bepaalt daarna de verdeling van winstcorrecties, maar verandert de richting van de levering niet.",
         "pattern": [
-          "Herken: drie concrete verkoper-kopercombinaties.",
-          "Aanpak: teken voor iedere transactie een goederenpijl en benoem de positie van beide partijen in de groep.",
-          "Controle: een levering tussen twee dochters blijft sidestream, ook wanneer hun deelnemingspercentages verschillen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -314,7 +314,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De winst is € 20 per stuk. In de eindvoorraad zit daarom 2.350 × € 20 = € 47.000.",
         "De € 47.000 is vóór toepassing van een deelnemingspercentage of winstbelasting."
       ],
-      "pattern": "Herken: aantallen en twee prijzen zijn gegeven, maar nog geen correctiepercentage wordt gevraagd. Aanpak: winst per stuk maal resterende stuks. Controle: pas geen deelnemingspercentage toe op de totale voorraadwinst en verwissel opslag op kostprijs niet met marge in verkoopprijs.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de interne transactie. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "down",
         "old"
@@ -331,9 +331,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Hoeveel niet-gerealiseerde intercompanywinst vóór belasting bevat Delta's eindvoorraad van 2.350 stuks, uitgaande van de gegeven inkoop- en onderlinge verkoopprijs per stuk?",
         "rules": "De voorraad bij de koper bevat de winstopslag van de groepsverkoper. Bereken eerst de winst per stuk als onderlinge verkoopprijs minus inkoopprijs van de verkoper en vermenigvuldig met de resterende hoeveelheid. Dit is de volledige winst vóór verdeling naar interne correctie, derden en aanvullende consolidatiecorrectie. Belasting wordt pas bij de boekingen verwerkt.",
         "pattern": [
-          "Herken: aantallen en twee prijzen zijn gegeven, maar nog geen correctiepercentage wordt gevraagd.",
-          "Aanpak: winst per stuk maal resterende stuks.",
-          "Controle: pas geen deelnemingspercentage toe op de totale voorraadwinst en verwissel opslag op kostprijs niet met marge in verkoopprijs."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de interne transactie. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -600,7 +600,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Elimineer het volledige eigen vermogen van Delta: € 500.000.",
         "Daartegenover staan de deelneming van € 400.000 en belang derden van € 100.000."
       ],
-      "pattern": "Herken: NVW, een niet-100%-belang en geen verdere waarderings- of IC-verschillen. Aanpak: debiteer alle eigen-vermogenscomponenten van Delta en crediteer deelneming plus belang derden. Controle: de creditbedragen samen moeten gelijk zijn aan 100% van Delta's eigen vermogen.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "old",
         "basis"
@@ -616,9 +616,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke balanseliminatie verwijdert het volledige eigen vermogen van Delta tegenover Atlas' deelneming van € 400.000 en het 20%-belang van derden, zonder IC- of waarderingsverschillen?",
         "rules": "De post deelneming bij Atlas en het overeenkomstige eigen vermogen van Delta vertegenwoordigen dezelfde onderliggende netto-activa. Bij integrale consolidatie wordt het gehele eigen vermogen van Delta geëlimineerd. Het gedeelte dat niet door Atlas wordt gehouden, wordt als belang derden gepresenteerd. Deze vraag betreft uitsluitend balansposten.",
         "pattern": [
-          "Herken: NVW, een niet-100%-belang en geen verdere waarderings- of IC-verschillen.",
-          "Aanpak: debiteer alle eigen-vermogenscomponenten van Delta en crediteer deelneming plus belang derden.",
-          "Controle: de creditbedragen samen moeten gelijk zijn aan 100% van Delta's eigen vermogen."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -899,7 +899,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Onderlinge baten en lasten vallen volledig weg. Onderlinge vorderingen en schulden eveneens.",
         "Balansposten en resultaatposten staan in afzonderlijke eliminatieboekingen."
       ],
-      "pattern": "Herken: de fee hoort bij het resultaat, de rekening-courant bij de balans. Aanpak: elimineer de geboekte fee voor het hele bedrag en elimineer daarna schuld tegenover vordering. Controle: de twee eliminaties veranderen op zichzelf het groepsresultaat niet wanneer bedragen en perioden aan beide kanten gelijk zijn.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "lok",
         "basis"
@@ -915,9 +915,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee afzonderlijke eliminatieboekingen verwijderen de managementfee uit de geconsolideerde winst-en-verliesrekening en de rekening-courantverhouding uit de geconsolideerde balans?",
         "rules": "Onderlinge opbrengsten en kosten worden bij integrale consolidatie volledig tegen elkaar geëlimineerd. Hetzelfde geldt voor onderlinge vorderingen en schulden. Gebruik daarvoor aparte boekingen: de eerste bevat uitsluitend resultaatposten, de tweede uitsluitend balansposten. Het kapitaalbelang beperkt deze eliminaties niet tot een evenredig deel.",
         "pattern": [
-          "Herken: de fee hoort bij het resultaat, de rekening-courant bij de balans.",
-          "Aanpak: elimineer de geboekte fee voor het hele bedrag en elimineer daarna schuld tegenover vordering.",
-          "Controle: de twee eliminaties veranderen op zichzelf het groepsresultaat niet wanneer bedragen en perioden aan beide kanten gelijk zijn."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1179,7 +1179,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Interne correctie: 80% hiervan. Het restant van 20% gaat ten laste van het geconsolideerd resultaat; derden blijven buiten deze winstcorrectie.",
         "De mutatie in de winst is € 18.000: intern € 14.400 en aanvullend € 3.600."
       ],
-      "pattern": "Herken: de moeder verkoopt, de dochter houdt voorraad en wordt tegen NVW gewaardeerd. Aanpak: vul eerst de 100%-winstkolom en daarna intern 80%, derden niet van toepassing en aanvullend 20% in. Controle: de drie correctiekolommen moeten per regel samen de volledige winst vóór belasting verklaren.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "down",
         "thdown",
@@ -1198,9 +1198,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke volledig ingevulde voorraadtabel hoort bij Atlas' downstreamlevering aan Delta bij NVW en een belang van 80%? Bereken beginstand, eindstand en mutatie vóór belasting.",
         "rules": "Bepaal de ongerealiseerde winst door beide voorraden tegen onderlinge prijs met de marge in die verkoopprijs te vermenigvuldigen. Bij downstream NVW is in deze syllabus de interne correctie gelijk aan het moederbelang. Het resterende deel wordt aanvullend ten laste van het geconsolideerde resultaat van de meerderheid geëlimineerd. De winst van de moeder wordt niet op derden afgewenteld.",
         "pattern": [
-          "Herken: de moeder verkoopt, de dochter houdt voorraad en wordt tegen NVW gewaardeerd.",
-          "Aanpak: vul eerst de 100%-winstkolom en daarna intern 80%, derden niet van toepassing en aanvullend 20% in.",
-          "Controle: de drie correctiekolommen moeten per regel samen de volledige winst vóór belasting verklaren."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -1532,7 +1532,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De toename van de intercompanywinst is € 18.000.",
         "De interne correctie is 80% × € 18.000 = € 14.400. De belastingcorrectie is 25% × € 14.400 = € 3.600."
       ],
-      "pattern": "Herken: Atlas vraagt uitsluitend een interne correctie en houdt 80% van de voorraadkoper. Aanpak: bereken de winstmutatie, neem daarvan 80% en bepaal op dit interne bedrag de belastingcorrectie. Controle: de overlopende passiefpost volgt de bruto interne winst; verwerk de belasting niet tweemaal.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "kis",
         "down"
@@ -1548,9 +1548,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee interne journaalposten maakt Atlas voor de toename van de downstreamwinst in het boekjaar en het bijbehorende belastingeffect in haar enkelvoudige administratie?",
         "rules": "Voor een resultaatcorrectie gebruik je de verandering in ongerealiseerde winst, niet alleen de eindstand. Bij downstream NVW wordt het moederdeel vóór belasting geboekt op niet-gerealiseerde winst tegenover overlopende passiva. De bijbehorende belastingcorrectie wordt afzonderlijk verwerkt. De extra consolidatiecorrectie behoort niet tot deze enkelvoudige boeking.",
         "pattern": [
-          "Herken: Atlas vraagt uitsluitend een interne correctie en houdt 80% van de voorraadkoper.",
-          "Aanpak: bereken de winstmutatie, neem daarvan 80% en bepaal op dit interne bedrag de belastingcorrectie.",
-          "Controle: de overlopende passiefpost volgt de bruto interne winst; verwerk de belasting niet tweemaal."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -1884,7 +1884,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "80% × € 18.000 = € 14.400 komt vrij. De bijbehorende belastingcorrectie is € 3.600.",
         "Deze variant gebruikt “Gerealiseerde winst”, zoals de genoemde Nyenrode-uitwerkingen. Het college-Excel gebruikt bij afname de creditzijde van “Niet gerealiseerde ICW”; de rekeningbenaming is in deze vraag dus bronafhankelijk."
       ],
-      "pattern": "Herken: voorraad en ongerealiseerde winst dalen; de deelnemingsgrondslag blijft NVW. Aanpak: neem het 80%-deel van de vrijval en boek overlopende passiva aan gerealiseerde winst, met de bijbehorende belastinglast. Controle: verwissel de richting niet met de correctie bij voorraadtoename en volg de in de opgave voorgeschreven rekeningnaam.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "brug",
         "down",
@@ -1902,9 +1902,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke interne journaalposten boekt Atlas voor de afname van de downstreamwinst? Gebruik in deze oefenvariant de rekening Gerealiseerde winst op transacties met deelnemingen en verwerk de belasting afzonderlijk.",
         "rules": "Een afname van ongerealiseerde winst geeft een eerder uitgesteld deel vrij. De overlopende passiefpost neemt af en de winst neemt toe. Deze oefenvariant gebruikt daarvoor de rekening Gerealiseerde winst; in het college-Excel komt ook creditering van Niet-gerealiseerde ICW voor. De vraag schrijft de rekeningnaam daarom expliciet voor. De belastingboeking draait eveneens om.",
         "pattern": [
-          "Herken: voorraad en ongerealiseerde winst dalen; de deelnemingsgrondslag blijft NVW.",
-          "Aanpak: neem het 80%-deel van de vrijval en boek overlopende passiva aan gerealiseerde winst, met de bijbehorende belastinglast.",
-          "Controle: verwissel de richting niet met de correctie bij voorraadtoename en volg de in de opgave voorgeschreven rekeningnaam."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -2318,7 +2318,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Beginstand: € 30.000 × 20% × 75% = € 4.500 van overige reserves naar resultaat boekjaar.",
         "Netto daalt het geconsolideerd resultaat ten opzichte van het al gecorrigeerde enkelvoudige resultaat met € 2.700."
       ],
-      "pattern": "Herken: er is zowel een beginvoorraad als een eindvoorraad en de interne correctie is al verwerkt. Aanpak: gebruik de eindregel voor uitvoeging en de beginregel voor de aanvullende invoegboeking. Controle: de netto verandering van resultaat boekjaar moet aansluiten op het aanvullende percentage van de winstmutatie na belasting.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "old",
         "down",
@@ -2336,9 +2336,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee aanvullende balanseliminaties maakt Atlas voor deze downstreamstroom: het uitvoegen van de winst uit de eindvoorraad en het invoegen van het aanvullende moederdeel uit de beginvoorraad, nadat de interne correcties zijn geboekt?",
         "rules": "De balanscorrectie verwijdert de volledige winst uit de eindvoorraad en neemt de reeds geboekte overlopende passiefpost terug. Alleen het nog niet intern gecorrigeerde deel raakt aanvullend resultaat boekjaar en belastinglatentie. De netto aanvullende winst uit de beginvoorraad wordt afzonderlijk van overige reserves naar resultaat boekjaar gebracht. Beide boekingen bevatten uitsluitend balansposten.",
         "pattern": [
-          "Herken: er is zowel een beginvoorraad als een eindvoorraad en de interne correctie is al verwerkt.",
-          "Aanpak: gebruik de eindregel voor uitvoeging en de beginregel voor de aanvullende invoegboeking.",
-          "Controle: de netto verandering van resultaat boekjaar moet aansluiten op het aanvullende percentage van de winstmutatie na belasting."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -2750,7 +2750,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De voorraadmutatie van € 18.000 verhoogt de geconsolideerde kostprijs. Credit staan de enkelvoudige correctie van € 14.400 en het aanvullende deel: € 2.700 resultaat en € 900 belasting.",
         "Dit is de Thieu-aanpak. De syllabus splitst bij voorraadtoename de omzet in doorlevering en voorraadtoename; beide boekingssets mogen niet worden gemengd."
       ],
-      "pattern": "Herken: de vraag schrijft de volledige-omzet-plus-winstmutatie-aanpak voor. Aanpak: boek omzet aan kostprijs voor alle interne leveringen en voeg daarna de aparte winstmutatieboeking toe. Controle: neem niet óók de voorraadgroei als extra omzeteliminatie op; dat zou de omzet dubbel verminderen.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "thdown",
         "down"
@@ -2767,9 +2767,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee W&V-eliminaties volgen de hier gevraagde college-aanpak: eerst de volledige onderlinge omzet van € 1.200.000 elimineren en daarna uitsluitend de mutatie in de ongerealiseerde voorraadwinst, na de al geboekte interne correctie?",
         "rules": "Deze vraag gebruikt de collegepresentatie waarin eerst de volledige onderlinge omzet tegenover kostprijs wordt geëlimineerd. Daarna wordt de kostprijs gecorrigeerd voor de mutatie in ongerealiseerde winst. Bij downstream NVW bestaat de tegenzijde uit de reeds geboekte interne winstcorrectie en het aanvullende resultaat- en belastingdeel. De syllabus kent daarnaast een splitsing in doorlevering en voorraadgroei; meng beide presentaties niet.",
         "pattern": [
-          "Herken: de vraag schrijft de volledige-omzet-plus-winstmutatie-aanpak voor.",
-          "Aanpak: boek omzet aan kostprijs voor alle interne leveringen en voeg daarna de aparte winstmutatieboeking toe.",
-          "Controle: neem niet óók de voorraadgroei als extra omzeteliminatie op; dat zou de omzet dubbel verminderen."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3078,7 +3078,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Winst begin € 40.000, winst eind € 60.000, toename € 20.000.",
         "Intern wordt 75% gecorrigeerd; de resterende 25% komt ten laste van derden. Er is geen aanvullende correctie ten laste van het resultaat van de meerderheid."
       ],
-      "pattern": "Herken: Delta verkoopt aan haar moeder en heeft zelf minderheidsaandeelhouders. Aanpak: bereken begin- en eindwinst en verdeel die in 75% intern en 25% derden. Controle: de kolom aanvullende eliminatie ten laste van het geconsolideerde meerderheidsresultaat blijft hier zonder bedrag.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "up",
         "thup"
@@ -3096,9 +3096,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke voorraadtabel is juist voor Delta's upstreamlevering aan Atlas bij NVW, een 75%-belang en de gegeven 25%-marge in de verkoopprijs? Toon alle winstbedragen vóór belasting.",
         "rules": "De verkopende dochter heeft de nog niet gerealiseerde winst verantwoord. Bij upstream NVW corrigeert de moeder intern haar aandeel in die winst. Het resterende deel betreft het minderheidsbelang in de verkoper en wordt bij consolidatie aan derden toegerekend. Na de interne correctie is in deze systematiek geen aanvullend meerderheidsdeel nodig.",
         "pattern": [
-          "Herken: Delta verkoopt aan haar moeder en heeft zelf minderheidsaandeelhouders.",
-          "Aanpak: bereken begin- en eindwinst en verdeel die in 75% intern en 25% derden.",
-          "Controle: de kolom aanvullende eliminatie ten laste van het geconsolideerde meerderheidsresultaat blijft hier zonder bedrag."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -3294,7 +3294,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Toename winst in voorraad € 20.000 × 75% belang × 75% na belasting = € 11.250.",
         "Resultaat deelneming en de boekwaarde van de deelneming worden beide verlaagd."
       ],
-      "pattern": "Herken: de dochter heeft winst gemaakt en de moeder heeft haar reguliere winstaandeel al verwerkt. Aanpak: verminder resultaat deelneming en deelneming met het moederdeel van de winsttoename na belasting. Controle: gebruik voor een jaarboeking de mutatie en niet de gehele winst in de eindvoorraad.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "up",
         "thup",
@@ -3312,9 +3312,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke aanvullende interne journaalpost maakt Atlas voor de upstreamwinstmutatie in haar enkelvoudige administratie, nadat het reguliere resultaat deelneming Delta al is geboekt?",
         "rules": "Bij upstream NVW wordt het winstaandeel van de moeder gecorrigeerd op resultaat deelneming tegenover de deelneming in de verkoper. Gebruik de jaarmutatie in ongerealiseerde winst, het aandeel in de verkoper en het bedrag na winstbelasting. Dit is niet de downstreamboeking met overlopende passiva. De eindstand blijft nodig voor de latere balanswaardering.",
         "pattern": [
-          "Herken: de dochter heeft winst gemaakt en de moeder heeft haar reguliere winstaandeel al verwerkt.",
-          "Aanpak: verminder resultaat deelneming en deelneming met het moederdeel van de winsttoename na belasting.",
-          "Controle: gebruik voor een jaarboeking de mutatie en niet de gehele winst in de eindvoorraad."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3511,7 +3511,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Afname van € 60.000 naar € 40.000 geeft € 20.000 vrijval vóór belasting.",
         "75% × € 20.000 × 75% = € 11.250: deelneming debet en resultaat deelneming credit."
       ],
-      "pattern": "Herken: dezelfde upstreamrichting, maar een dalende ongerealiseerde winst. Aanpak: bereken de vrijval vóór belasting en neem daarvan het 75%-moederdeel na 25% belasting. Controle: draai alleen de boekingsrichting om; verander het deelnemingspercentage of de belastinggrondslag niet.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "up",
         "thup"
@@ -3527,9 +3527,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke interne correctie boekt Atlas voor de afname van de upstreamwinst in de voorraad, bij 75% NVW-waardering en 25% winstbelasting?",
         "rules": "Bij afname van ongerealiseerde upstreamwinst komt een deel van het eerder gecorrigeerde resultaat van de verkopende deelneming vrij. Het moederdeel wordt na belasting berekend. Deelneming wordt gedebiteerd en resultaat deelneming gecrediteerd. De rechtsvorm, waarderingsgrondslag en het aandeel veranderen in deze variant niet.",
         "pattern": [
-          "Herken: dezelfde upstreamrichting, maar een dalende ongerealiseerde winst.",
-          "Aanpak: bereken de vrijval vóór belasting en neem daarvan het 75%-moederdeel na 25% belasting.",
-          "Controle: draai alleen de boekingsrichting om; verander het deelnemingspercentage of de belastinggrondslag niet."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3847,7 +3847,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Het derdenaandeel na belasting is € 11.250 en de bijbehorende latentie € 3.750. Samen € 60.000 credit op voorraad.",
         "Voor upstream-NVW is hier geen extra invoegboeking ten laste van overige reserves nodig."
       ],
-      "pattern": "Herken: upstream NVW, een reeds intern gecorrigeerde deelneming en een gevraagde balanspost. Aanpak: verdeel de eindwinst over deelneming, latentie en belang derden; crediteer voorraad voor 100% van de winst. Controle: gebruik belang derden in de balans, niet aandeel derden; neem geen extra downstream-invoeging over.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "up",
         "thup"
@@ -3864,9 +3864,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke aanvullende balanseliminatie verwijdert de volledige upstreamwinst uit Atlas' eindvoorraad, volgens de syllabuscombinatie met een afzonderlijke eliminatie van Delta's eigen vermogen en de interne correctie in Atlas?",
         "rules": "De gehele ongerealiseerde eindwinst moet uit de geconsolideerde voorraad verdwijnen. De reeds intern verwerkte verlaging van de deelneming wordt in de IC-balanseliminatie teruggenomen; daarnaast worden belastinglatenties en het netto derdenaandeel verwerkt. Deze IC-post moet worden gecombineerd met de bijbehorende basiseliminatie van het eigen vermogen, zodat de daadwerkelijk geboekte deelneming per saldo verdwijnt.",
         "pattern": [
-          "Herken: upstream NVW, een reeds intern gecorrigeerde deelneming en een gevraagde balanspost.",
-          "Aanpak: verdeel de eindwinst over deelneming, latentie en belang derden; crediteer voorraad voor 100% van de winst.",
-          "Controle: gebruik belang derden in de balans, niet aandeel derden; neem geen extra downstream-invoeging over."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -4004,7 +4004,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De correctie op basis van de eindvoorraad is € 60.000 × 75% × 75% = € 33.750.",
         "De deelneming bedraagt € 866.250."
       ],
-      "pattern": "Herken: een eigen vermogen op einddatum en een gevraagde enkelvoudige deelnemingswaarde. Aanpak: neem 75% van het eindvermogen en trek de netto interne eindcorrectie af. Controle: het aftrekken van uitsluitend de jaarmutatie laat een eerdere ongerealiseerde winst ten onrechte in de deelneming zitten.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "up",
         "brug"
@@ -4020,9 +4020,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Voor welk bedrag neemt Atlas de 75%-deelneming Delta op haar enkelvoudige eindbalans op na correctie voor de nog ongerealiseerde upstreamwinst in de eindvoorraad?",
         "rules": "De eindwaarde van de deelneming begint bij het aandeel in het eigen vermogen volgens moedergrondslagen. Verminder dat met het moederdeel van de ongerealiseerde winst die op einddatum nog aanwezig is, na belasting. Een eindbalanswaarde gebruikt de totale resterende eindwinst; alleen voor de resultaatboeking van het jaar gebruik je de mutatie.",
         "pattern": [
-          "Herken: een eigen vermogen op einddatum en een gevraagde enkelvoudige deelnemingswaarde.",
-          "Aanpak: neem 75% van het eindvermogen en trek de netto interne eindcorrectie af.",
-          "Controle: het aftrekken van uitsluitend de jaarmutatie laat een eerdere ongerealiseerde winst ten onrechte in de deelneming zitten."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -4119,7 +4119,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Stroom 1 gaat van 70% naar 90%: het belang van de moeder in de goederen neemt niet af.",
         "Stroom 2 gaat van 90% naar 70%: het belang in de goederen neemt wel af."
       ],
-      "pattern": "Herken: twee zustermaatschappijen met verschillende moederbelangen. Aanpak: schrijf bij iedere goederenpijl eerst het verkoperspercentage en daarna het koperspercentage. Controle: afnemend belang en afnemende voorraad zijn twee onafhankelijke beslissingen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "nab",
         "ab"
@@ -4136,9 +4136,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke van de twee leveringen is sidestream niet-afnemend belang en welke sidestream afnemend belang, op basis van Atlas' 70%- en 90%-belangen in de verkoper en koper?",
         "rules": "Beide leveringen vinden tussen deelnemingen plaats en zijn daarom sidestream. Vergelijk vervolgens het moederbelang in de verkoper met het moederbelang in de koper langs de goederenpijl. Een lager belang bij de koper heet in deze systematiek afnemend belang. Dat zegt niets over een wijziging van aandelen gedurende het jaar of over groei of daling van voorraad.",
         "pattern": [
-          "Herken: twee zustermaatschappijen met verschillende moederbelangen.",
-          "Aanpak: schrijf bij iedere goederenpijl eerst het verkoperspercentage en daarna het koperspercentage.",
-          "Controle: afnemend belang en afnemende voorraad zijn twee onafhankelijke beslissingen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -4399,7 +4399,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Winst begin € 40.000; winst eind € 52.000; mutatie € 12.000.",
         "Intern geldt 70%, het belang in Sigma. De overige 30% komt bij derden."
       ],
-      "pattern": "Herken: de goederen gaan van een 70%- naar een 90%-deelneming. Aanpak: bereken de 100%-voorraadwinst en verdeel die in 70% intern en 30% derden. Controle: het percentage in de koper is hier alleen nodig om niet-afnemend belang te herkennen.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "nab",
         "brug",
@@ -4417,9 +4417,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke verdeling in de voorraadtabel hoort bij Sigma naar Delta wanneer Atlas 70% van Sigma en 90% van Delta houdt, beide tegen NVW? Bereken de winst vóór belasting.",
         "rules": "Bij sidestream niet-afnemend belang volgt de interne correctie in het gebruikte materiaal het aandeel in de verkopende deelneming. De overige winst behoort bij het minderheidsbelang in die verkoper. Het hogere belang in de voorraadkoper leidt niet tot een hoger intern correctiepercentage. Er is in deze verdeling geen aanvullend meerderheidsdeel.",
         "pattern": [
-          "Herken: de goederen gaan van een 70%- naar een 90%-deelneming.",
-          "Aanpak: bereken de 100%-voorraadwinst en verdeel die in 70% intern en 30% derden.",
-          "Controle: het percentage in de koper is hier alleen nodig om niet-afnemend belang te herkennen."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -4615,7 +4615,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "70% × (€ 52.000 − € 40.000) × 75% = € 6.300.",
         "De correctie wordt bij Atlas geboekt op het resultaat en de boekwaarde van de verkopende deelneming Sigma."
       ],
-      "pattern": "Herken: de winst is bij Sigma ontstaan, maar de goederen liggen bij Delta. Aanpak: koppel de rekeningnaam aan de verkoper en bereken het 70%-deel van de jaarmutatie na belasting. Controle: verwissel de entiteit waarop de rekening betrekking heeft niet met de entiteit waarin de voorraad ligt.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "nab",
         "brug",
@@ -4632,9 +4632,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke aanvullende interne journaalpost boekt Atlas voor de winsttoename op Sigma's levering aan Delta, nadat het gewone resultaat uit Sigma al is verwerkt?",
         "rules": "Sigma is de deelneming die de interne winst heeft gemaakt. De correctie wordt daarom in Atlas' administratie geboekt op resultaat deelneming Sigma en deelneming Sigma. Bij niet-afnemend belang wordt het verkoperspercentage gebruikt en wordt de winstmutatie na belasting genomen. Er wordt niet rechtstreeks in de administratie van Delta gecorrigeerd.",
         "pattern": [
-          "Herken: de winst is bij Sigma ontstaan, maar de goederen liggen bij Delta.",
-          "Aanpak: koppel de rekeningnaam aan de verkoper en bereken het 70%-deel van de jaarmutatie na belasting.",
-          "Controle: verwissel de entiteit waarop de rekening betrekking heeft niet met de entiteit waarin de voorraad ligt."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -4951,7 +4951,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Interne eindcorrectie vóór belasting: 70% × € 52.000 = € 36.400. Dit splitst in € 27.300 deelneming en € 9.100 belastinglatentie.",
         "Het resterende deel van € 15.600 splitst in € 11.700 belang derden en € 3.900 belastinglatentie."
       ],
-      "pattern": "Herken: de vraag betreft eindvoorraad en balans, niet de interne jaarboeking. Aanpak: gebruik de eindregel van de voorraadtabel en splits intern en derden elk in netto bedrag en belasting. Controle: alle debetdelen moeten samen gelijk zijn aan de creditboeking op voorraad.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "nab",
         "thnab"
@@ -4967,9 +4967,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke aanvullende IC-balanseliminatie verwijdert de eindwinst uit Delta's voorraad en neemt de interne correctie op Sigma terug, volgens de afzonderlijke syllabus-basiseliminatie?",
         "rules": "De voorraad wordt voor de volledige ongerealiseerde eindwinst verlaagd. Het interne netto deel wordt teruggenomen op deelneming Sigma; het niet door Atlas gehouden deel wordt op belang derden verwerkt. De belastinglatentie wordt op de volledige gecorrigeerde winst zichtbaar, eventueel uitgesplitst per deel. Een jaarmutatie alleen is voor deze eindbalanscorrectie onvoldoende.",
         "pattern": [
-          "Herken: de vraag betreft eindvoorraad en balans, niet de interne jaarboeking.",
-          "Aanpak: gebruik de eindregel van de voorraadtabel en splits intern en derden elk in netto bedrag en belasting.",
-          "Controle: alle debetdelen moeten samen gelijk zijn aan de creditboeking op voorraad."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -5243,7 +5243,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Aandeel derden in deze eerste post: 30% × € 240.000 + 10% × € 160.000 = € 88.000.",
         "Van Sigma wordt eerst € 233.700 resultaat geëlimineerd. De afzonderlijke goedereneliminatie verwerkt de resterende aansluiting."
       ],
-      "pattern": "Herken: de vraag schrijft de volgorde van resultaateliminatie en goedereneliminatie expliciet voor. Aanpak: bepaal het gecorrigeerde resultaat deelnemingen en daarnaast het gewone aandeel derden. Controle: laat in de latere goederenpost de aansluiting op het nog niet volledig geëlimineerde dochterresultaat terugkomen; corrigeer niet dubbel.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "nab",
         "mod",
@@ -5261,9 +5261,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke eerste W&V-eliminatie verwijdert Atlas' werkelijk geboekte resultaat deelnemingen, met het derdenaandeel berekend op de nog ongecorrigeerde dochterresultaten, terwijl de afzonderlijke goedereneliminatie later volgt?",
         "rules": "De syllabus elimineert hier het bedrag dat daadwerkelijk als resultaat deelnemingen bij de moeder is geboekt. Door een interne IC-correctie kan dat afwijken van het gewone aandeel in de dochterresultaten. De eerste eliminatie en de latere goedereneliminatie vormen samen één sluitende set. Het resterende deel van het dochterresultaat wordt daarom niet willekeurig in het aandeel derden ondergebracht.",
         "pattern": [
-          "Herken: de vraag schrijft de volgorde van resultaateliminatie en goedereneliminatie expliciet voor.",
-          "Aanpak: bepaal het gecorrigeerde resultaat deelnemingen en daarnaast het gewone aandeel derden.",
-          "Controle: laat in de latere goederenpost de aansluiting op het nog niet volledig geëlimineerde dochterresultaat terugkomen; corrigeer niet dubbel."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -5524,7 +5524,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Interne correctie: 70%, het belang in de koper. Derden: 10%, het minderheidsbelang in de verkoper. Aanvullend geconsolideerd: 90% − 70% = 20%.",
         "De winst stijgt van € 90.000 naar € 120.000; de € 30.000 mutatie wordt verdeeld in € 21.000, € 3.000 en € 6.000."
       ],
-      "pattern": "Herken: de goederen gaan van een 90%- naar een 70%-deelneming. Aanpak: intern 70%, derden 10% en aanvullend 20%; pas deze verdeling toe op beginwinst, eindwinst en mutatie. Controle: gebruik niet het 30%-minderheidsbelang in de koper als volledig derdenpercentage van deze winst.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "ab",
         "kis",
@@ -5543,9 +5543,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke voorraadtabel hoort bij Sigma naar Delta wanneer Atlas 90% van de verkoper en 70% van de koper houdt, beide tegen NVW? Vul intern, derden en aanvullend meerderheidsdeel vóór belasting in.",
         "rules": "Bij sidestream afnemend belang gebruikt de interne correctie het lagere belang in de koper. Het derdenpercentage volgt juist het minderheidsbelang in de verkoper. Het verschil tussen verkopers- en kopersbelang vormt de aanvullende correctie voor de meerderheid. Deze drie percentages verklaren samen de volledige winst in de voorraad.",
         "pattern": [
-          "Herken: de goederen gaan van een 90%- naar een 70%-deelneming.",
-          "Aanpak: intern 70%, derden 10% en aanvullend 20%; pas deze verdeling toe op beginwinst, eindwinst en mutatie.",
-          "Controle: gebruik niet het 30%-minderheidsbelang in de koper als volledig derdenpercentage van deze winst."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -5741,7 +5741,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "70% × € 30.000 × 80% = € 16.800.",
         "De rekening is deelneming Sigma: Sigma heeft de winst gemaakt. Het percentage is 70%: het belang in de koper."
       ],
-      "pattern": "Herken: verkoper Sigma is 90%, koper Delta 70%. Aanpak: bereken 70% van de winsttoename na belasting en boek dat op de deelneming in de verkoper. Controle: boek niet op deelneming Delta alleen omdat haar percentage in de berekening wordt gebruikt.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "ab",
         "kis",
@@ -5759,9 +5759,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke interne journaalpost boekt Atlas voor de toename van de winst op Sigma's levering aan Delta bij afnemend belang en 20% winstbelasting?",
         "rules": "De winst is door Sigma behaald, zodat resultaat deelneming Sigma en deelneming Sigma de betrokken rekeningen blijven. Het interne correctiepercentage is bij deze afnemende route echter het 70%-belang in de koper. Bereken de jaarmutatie en neem dit interne deel na belasting. Rekeningkeuze en percentagekeuze zijn dus afzonderlijke stappen.",
         "pattern": [
-          "Herken: verkoper Sigma is 90%, koper Delta 70%.",
-          "Aanpak: bereken 70% van de winsttoename na belasting en boek dat op de deelneming in de verkoper.",
-          "Controle: boek niet op deelneming Delta alleen omdat haar percentage in de berekening wordt gebruikt."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -6295,7 +6295,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Invoeging: € 90.000 × 20% × 80% = € 14.400.",
         "Het aanvullende saldo op resultaat boekjaar is € 19.200 debet − € 14.400 credit = € 4.800 debet."
       ],
-      "pattern": "Herken: afnemend belang creëert naast intern en derden ook een aanvullend resultaatdeel. Aanpak: gebruik de eindregel voor de uitvoeging en het aanvullende percentage op de beginregel voor de invoeging. Controle: het netto saldo op resultaat boekjaar sluit aan op 20% van de winstmutatie na belasting.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "ab",
         "kis",
@@ -6313,9 +6313,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee balanseliminaties horen bij deze afnemende sidestream: uitvoegen van de eindwinst en invoegen van het aanvullende meerderheidsdeel uit de beginvoorraad, na de interne NVW-correcties?",
         "rules": "Splits de volledige eindwinst volgens de tabel in intern deel, derden en aanvullend meerderheidsdeel. Bij de balanseliminatie staan tegenover voorraad de terugname van de interne deelnemingscorrectie, belang derden, resultaat boekjaar en belastinglatenties. Alleen voor het aanvullende meerderheidsdeel wordt de netto beginwinst vanuit overige reserves in resultaat boekjaar ingevoegd.",
         "pattern": [
-          "Herken: afnemend belang creëert naast intern en derden ook een aanvullend resultaatdeel.",
-          "Aanpak: gebruik de eindregel voor de uitvoeging en het aanvullende percentage op de beginregel voor de invoeging.",
-          "Controle: het netto saldo op resultaat boekjaar sluit aan op 20% van de winstmutatie na belasting."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -6512,7 +6512,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De winst in voorraad daalt met € 30.000.",
         "70% × € 30.000 × 80% = € 16.800 komt vrij op deelneming Sigma en resultaat deelneming Sigma."
       ],
-      "pattern": "Herken: de casus noemt zowel afnemend belang als afnemende voorraad. Aanpak: bepaal eerst het 70%-interne deel en draai voor de vrijval de boekingsrichting om. Controle: de deelnemingsrekening blijft die van verkoper Sigma; een voorraadmutatie maakt Delta niet tot verkoper.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "ab",
         "kis",
@@ -6530,9 +6530,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke interne journaalpost boekt Atlas voor de vrijval van ongerealiseerde winst bij Sigma naar Delta, wanneer de voorraad afneemt maar de belangen 90% en 70% blijven?",
         "rules": "Het afnemende belang bepaalt het interne percentage: het lagere belang in de koper. De afname van de voorraadwinst bepaalt dat eerder uitgesteld resultaat vrijvalt. De correctie verhoogt daarom deelneming Sigma en resultaat deelneming Sigma, voor het interne deel na belasting. De belangenverhouding hoeft tijdens het boekjaar niet te veranderen.",
         "pattern": [
-          "Herken: de casus noemt zowel afnemend belang als afnemende voorraad.",
-          "Aanpak: bepaal eerst het 70%-interne deel en draai voor de vrijval de boekingsrichting om.",
-          "Controle: de deelnemingsrekening blijft die van verkoper Sigma; een voorraadmutatie maakt Delta niet tot verkoper."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -7050,7 +7050,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "De interne correctie na belasting is € 16.800, derden € 2.400 en de aanvullende meerderheidswinst € 4.800. De bijbehorende belastingen zijn € 4.200, € 600 en € 1.200.",
         "De twee resultaatregels hebben verschillende functies: aansluiting met het resultaat van Sigma en de aanvullende consolidatiecorrectie."
       ],
-      "pattern": "Herken: de interne correctie én de eerste resultaateliminatie zijn al verwerkt. Aanpak: elimineer de omzet en verdeel daarna de bruto vrijval over intern aansluitingsdeel, derden, aanvullend resultaat en belasting. Controle: vervang resultaat na belastingen Sigma niet zomaar door opnieuw resultaat deelneming; dan sluit de voorgeschreven boekingsset niet meer aan.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mod",
         "ab"
@@ -7067,9 +7067,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke twee eliminaties ronden de goederenstroom in de W&V af na de al geboekte interne correctie en eerste resultaateliminatie: € 900.000 onderlinge omzet en de vrijval van voorraadwinst? Volg de beschreven Nyenrode-volgorde.",
         "rules": "Na eliminatie van het werkelijk geboekte resultaat deelnemingen kan een deel van het dochterresultaat nog via de goederenpost moeten aansluiten. Daarom bevat deze boeking resultaat na belastingen Sigma, naast aandeel derden en het aanvullende meerderheidsresultaat. Bij vrijval wordt de kostprijs gecrediteerd. De bijbehorende belastingdelen worden afzonderlijk verwerkt.",
         "pattern": [
-          "Herken: de interne correctie én de eerste resultaateliminatie zijn al verwerkt.",
-          "Aanpak: elimineer de omzet en verdeel daarna de bruto vrijval over intern aansluitingsdeel, derden, aanvullend resultaat en belasting.",
-          "Controle: vervang resultaat na belastingen Sigma niet zomaar door opnieuw resultaat deelneming; dan sluit de voorgeschreven boekingsset niet meer aan."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -7402,7 +7402,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Boekwaarde bij verkoop: € 120.000 − 4 × € 15.000 = € 60.000.",
         "De interne boekwinst is € 90.000 − € 60.000 = € 30.000. Atlas corrigeert 80% hiervan: € 24.000, met € 6.000 belasting."
       ],
-      "pattern": "Herken: moeder verkoopt een gebruikt actief aan een dochter, niet een nieuwe voorraadpartij. Aanpak: oorspronkelijke boekwaarde, interne boekwinst, moederdeel en belasting in die volgorde. Controle: stel niet de volledige verkoopopbrengst uit; alleen de winst boven de groepsboekwaarde is ongerealiseerd.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mol",
         "mva"
@@ -7418,9 +7418,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke interne correctiejournaalposten maakt Atlas op 31 december 2024 voor de verkoopwinst op de machine aan Delta en de bijbehorende belasting bij NVW-waardering?",
         "rules": "Bepaal de boekwaarde van de machine direct vóór de interne verkoop op basis van oorspronkelijke aanschafprijs en afschrijving. De interne boekwinst is de verkoopprijs minus die boekwaarde. Bij downstream NVW wordt het moederdeel van die boekwinst vóór belasting uitgesteld via overlopende passiva, met een afzonderlijke belastingcorrectie. Consolidatie corrigeert vervolgens ook het resterende deel.",
         "pattern": [
-          "Herken: moeder verkoopt een gebruikt actief aan een dochter, niet een nieuwe voorraadpartij.",
-          "Aanpak: oorspronkelijke boekwaarde, interne boekwinst, moederdeel en belasting in die volgorde.",
-          "Controle: stel niet de volledige verkoopopbrengst uit; alleen de winst boven de groepsboekwaarde is ongerealiseerd."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -7673,7 +7673,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Delta schrijft € 90.000 / 4 = € 22.500 af. Voor de groep is de afschrijving € 60.000 / 4 = € 15.000.",
         "Het verschil is € 7.500. Intern is 80% × € 7.500 = € 6.000 al gerealiseerd. Aanvullend resteert 20% × € 7.500, gesplitst in € 1.125 resultaat en € 375 belasting."
       ],
-      "pattern": "Herken: de machine is een jaar later nog in gebruik en wordt door de koper op de hogere interne waarde afgeschreven. Aanpak: bereken de extra afschrijving en verdeel die in het al intern verwerkte deel en het aanvullende deel. Controle: de geconsolideerde afschrijvingslast moet terug naar de last op de oorspronkelijke groepsboekwaarde.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mol",
         "mva"
@@ -7689,9 +7689,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Welke W&V-eliminatie corrigeert in 2025 de extra afschrijving op de intern verkochte machine, nadat Atlas haar enkelvoudige vrijval en belasting al heeft geboekt?",
         "rules": "Vergelijk de afschrijving bij de koper met de afschrijving die de groep zonder interne verkoop zou hebben gehad. Het verschil realiseert gedurende de gebruiksduur een deel van de interne boekwinst. Na de al geboekte interne vrijval blijven de tegenboeking daarvan en het aanvullende meerderheids- en belastingdeel over. Bij downstream wordt deze winst niet aan derden toegerekend.",
         "pattern": [
-          "Herken: de machine is een jaar later nog in gebruik en wordt door de koper op de hogere interne waarde afgeschreven.",
-          "Aanpak: bereken de extra afschrijving en verdeel die in het al intern verwerkte deel en het aanvullende deel.",
-          "Controle: de geconsolideerde afschrijvingslast moet terug naar de last op de oorspronkelijke groepsboekwaarde."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -7799,7 +7799,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Voorraden vóór eliminatie: € 1.000.000.",
         "Elimineer de volledige eindwinst van alle stromen: € 68.000. De geconsolideerde voorraad is € 932.000."
       ],
-      "pattern": "Herken: gevraagd is één groepsvoorraad, niet het resultaat of de deelnemingswaarde. Aanpak: som van alle eindvoorraden minus som van de vier eindwinsten. Controle: gebruik geen beginwinsten of jaarmutaties en tel dezelfde interne partij niet tweemaal mee.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "old",
         "down",
@@ -7848,9 +7848,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Hoe hoog is de totale geconsolideerde voorraad op einddatum nadat de vier afzonderlijke eindwinsten uit de casustabel volledig zijn geëlimineerd?",
         "rules": "Tel de voorraden van alle integraal geconsolideerde ondernemingen op. Trek vervolgens de volledige ongerealiseerde winst af die in de eindvoorraad van iedere afzonderlijke goederenstroom zit. Het moeder- of derdenpercentage verandert deze totale voorraadcorrectie niet. Belasting wordt elders op de balans verwerkt en verlaagt het uit voorraad te elimineren winstbedrag niet.",
         "pattern": [
-          "Herken: gevraagd is één groepsvoorraad, niet het resultaat of de deelnemingswaarde.",
-          "Aanpak: som van alle eindvoorraden minus som van de vier eindwinsten.",
-          "Controle: gebruik geen beginwinsten of jaarmutaties en tel dezelfde interne partij niet tweemaal mee."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -7966,7 +7966,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Aanvullend sidestream afnemend: € 8.000 × 20% × 75% = € 1.200 verlaging.",
         "Upstream en sidestream niet-afnemend vereisen na de interne correctie geen verdere correctie op de winst van de meerderheid. Uitkomst € 477.300."
       ],
-      "pattern": "Herken: het uitgangsresultaat is uitdrukkelijk al intern gecorrigeerd. Aanpak: bepaal per stroom of de laatste correctiekolom een aanvullend meerderheidsdeel bevat en pas dat op de jaarmutatie toe. Controle: upstream en niet-afnemend sidestream vereisen na hun interne NVW-correctie hier geen tweede correctie op de meerderheidswinst.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "down",
         "up",
@@ -8015,9 +8015,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Hoe hoog is het geconsolideerde resultaat toekomend aan de meerderheid, uitgaande van Atlas' resultaat van € 480.000 waarin alle interne NVW-correcties al zijn verwerkt?",
         "rules": "Wanneer het resultaat deelnemingen en alle interne NVW-correcties al in het moederresultaat zitten, mogen die niet opnieuw worden afgetrokken. Bereken uitsluitend de aanvullende meerderheidsdelen uit de goederenstromen. In deze casus zijn dat downstream en sidestream afnemend belang. Gebruik de winstmutaties na belasting, niet de eindwinsten.",
         "pattern": [
-          "Herken: het uitgangsresultaat is uitdrukkelijk al intern gecorrigeerd.",
-          "Aanpak: bepaal per stroom of de laatste correctiekolom een aanvullend meerderheidsdeel bevat en pas dat op de jaarmutatie toe.",
-          "Controle: upstream en niet-afnemend sidestream vereisen na hun interne NVW-correctie hier geen tweede correctie op de meerderheidswinst."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -8142,7 +8142,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Upstreamvrijval: + € 750. Sidestream afnemend: − € 1.200. Sidestream niet-afnemend: − € 900.",
         "Het definitieve aandeel derden is € 102.650. Downstream geeft geen correctie op derden."
       ],
-      "pattern": "Herken: er zijn zowel upstream- als sidestreamstromen, met verschillende verkopers. Aanpak: maak per dochter een gewoon winstaandeel plus of minus het derdenaandeel in haar IC-mutaties. Controle: de som van meerderheidsresultaat en definitief aandeel derden moet aansluiten op het groepsresultaat vóór winsttoerekening.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "up",
         "ab",
@@ -8190,9 +8190,9 @@ window.CAFA2_DATA.modules["nvw"]={
         "task": "Hoeveel bedraagt het totale aandeel derden in de geconsolideerde W&V na verwerking van de vier goederenstromen, de gegeven dochterresultaten en 25% winstbelasting?",
         "rules": "Begin bij het minderheidsaandeel in de resultaten van Delta en Sigma. Corrigeer daarna voor de winstmutaties die door een verkopende dochter zijn veroorzaakt. Een toename van ongerealiseerde winst verlaagt haar derdenaandeel; een vrijval verhoogt dat aandeel. Gebruik voor iedere stroom het derdenpercentage in de verkoper en de mutatie na belasting. Downstreamwinst van Atlas raakt derden niet.",
         "pattern": [
-          "Herken: er zijn zowel upstream- als sidestreamstromen, met verschillende verkopers.",
-          "Aanpak: maak per dochter een gewoon winstaandeel plus of minus het derdenaandeel in haar IC-mutaties.",
-          "Controle: de som van meerderheidsresultaat en definitief aandeel derden moet aansluiten op het groepsresultaat vóór winsttoerekening."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [

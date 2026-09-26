@@ -1,4 +1,5 @@
 import {question} from './practice-question-renderer.mjs';
+import {applyQuestionPattern} from './question-pattern.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -37,7 +38,7 @@ for(const raw of authored){
   const refs=raw.sources.map((_,i)=>`topic-${raw.key}-${i}`);
   const q={...raw,id,options,correct:(raw.correct-rotation+4)%4,refs,related:[],variant:true,stage:0,
     pattern:raw.pattern.join(' '),guidance:{lesson:raw.lesson||topicGuidance[raw.topicId].lesson,title:topicGuidance[raw.topicId].title,rules:raw.rules||topicGuidance[raw.topicId].rules,pattern:raw.pattern},caseTables:raw.caseTables||[]};
-  additions[code].push(q);
+  additions[code].push(applyQuestionPattern({...q,code}));
   mapping.push({questionId:`${code}-${id}`,topicId:raw.topicId,secondaryTopicIds:raw.secondaryTopicIds||[],reason:raw.skill||raw.task});
 }
 for(const c of Object.keys(files))additions[c].sort((a,b)=>a.id-b.id);

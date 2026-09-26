@@ -6,6 +6,11 @@
   }
   function esc(value) { return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
   function template(question) {
+    if(question && question.answerSchema)return question.answerSchema;
+    if(question && question.type==='Voorraadtabel' && question.caseTables){
+      var exercise=question.caseTables.find(function(t){return t.headers&&t.headers.length===6&&/datum/i.test(t.headers[0])&&/voorraad/i.test(t.headers[1]);});
+      if(exercise)return {headers:exercise.headers,rows:exercise.rows};
+    }
     if(!question || question.type!=='open' || !question.promptHtml)return null;
     var box=document.createElement('div');box.innerHTML=window.CafaAnswerEditor.sanitize(question.promptHtml);
     var table=Array.from(box.querySelectorAll('table')).find(isStock);
@@ -32,7 +37,7 @@
       return '<th scope="col">'+(placeholder?esc(label.replace(placeholder[0],''))+field('h-'+c,label,'Naam'):esc(label))+'</th>';
     }).join('');
     var rows=schema.rows.map(function(row,r){
-      var percentage=row.some(function(cell){return /%/.test(cell);}),total=/toe\s*\/\s*afname/i.test(row[0]);
+      var percentage=row.some(function(cell){return /%/.test(cell);}),total=/toe\s*\/\s*afname|toename|afname/i.test(row[0]);
       return '<tr'+(total?' class="stock-total"':'')+'>'+row.map(function(value,c){
         if(c===0)return '<th scope="row">'+esc(value)+'</th>';
         var editable=percentage?/…|\.{3}/.test(value):!value || /…|\.{3}/.test(value);

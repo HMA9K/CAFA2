@@ -11,7 +11,7 @@ export function createCafa2Adapter(win=window) {
     return {choice:selected ?? (q ? null : a.choice ?? null),
       optionId:a.optionId ?? (selected===null ? null : String.fromCharCode(65+selected)),
       text:plain(a.html || a.text || ''),
-      rows:cleanData(a.journalRows || a.rows || []),
+      rows:cleanData(a.journalRows?.some(row=>row.some(Boolean)) ? a.journalRows : a.rows || []),
       tables:a.stockCells ? [{kind:'voorraadtabel',cells:cleanData(a.stockCells)}] : []};
   }
   function practice(code,id,archived=null) {
@@ -27,10 +27,11 @@ export function createCafa2Adapter(win=window) {
     const lastReset=study.history?.at(-1)?.at || 'start';
     const topicRun=topic ? `|topic:${topic}:${study.history?.length||0}:${lastReset}` : '';
     const attempt=String(archived?.id || `${code}-${module.attempt||1}${topicRun}`);
+    const studentAnswer=answerValue(a,q);if(q.answerSchema)studentAnswer.tables=[{kind:'voorraadtabel',schema:cleanData(q.answerSchema),cells:cleanData(a.stockCells||{})}];
     return {ref,revision:recordRevision(normalizePractice('CAFA2',code,bank,q)),attempt,title:`${bank.title} · Vraag ${q.id}`,questionTitle:q.title,type:q.type||'Vraag',
       prompt:plain(q.task||q.prompt),hasCase:!!(q.intro||q.facts?.length||q.caseTables?.length),
       canReview:true,
-      defaultReview:!!archived || !!study.finished || !!a.checked || checked.has(key(ref,attempt)),studentAnswer:answerValue(a,q)};
+      defaultReview:!!archived || !!study.finished || !!a.checked || checked.has(key(ref,attempt)),studentAnswer};
   }
   function exam(attemptId,index) {
     const a=win.CafaExams?.getAttempts().find(x=>x.id===attemptId);

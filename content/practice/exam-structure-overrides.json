@@ -1,0 +1,899 @@
+{
+  "cafa2-20210419/vraag-13": {
+    "prompts": [
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans van Clinimed per 31 december 2020 moet(en) worden \nOnderdeel a: het eigen vermogen van ApeldoornMedical",
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans van Clinimed per 31 december 2020 moet(en) worden \nOnderdeel b: de onderlinge leveringen van goederen"
+    ],
+    "starts": [
+      "GEVRAAGD 5\\.A",
+      "GEVRAAGD 5\\.B"
+    ]
+  },
+  "cafa2-20210419/vraag-14": {
+    "prompts": [
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening van Clinimed over 2020 moet(en) worden \nOnderdeel a: het resultaat deelneming ApeldoornMedical",
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde winst-en-verliesrekening van Clinimed over 2020 moet(en) worden \nOnderdeel b: de onderlinge leveringen van goederen"
+    ],
+    "starts": [
+      "GEVRAAGD 6\\.A",
+      "GEVRAAGD 6\\.B"
+    ]
+  },
+  "cafa2-20210419/vraag-21": {
+    "prompts": [
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans van Future per 31 december 2020 moet(en) worden \nOnderdeel a: de goodwill",
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans van Future per 31 december 2020 moet(en) worden \nOnderdeel b: het eigen vermogen van Modern en het belang derden",
+      "Geef de eliminatieboeking(en) die ten behoeve van de samenstelling van de geconsolideerde balans van Future per 31 december 2020 moet(en) worden \nOnderdeel c: de onderlinge leveringen van goederen"
+    ],
+    "starts": [
+      "GEVRAAGD 4\\.A",
+      "GEVRAAGD 4\\.B\\.1",
+      "GEVRAAGD 4\\.C\\.1"
+    ]
+  },
+  "cafa2-20210419/vraag-28": {
+    "prompts": [
+      "Geef de journaalposten die Mondovi in en eind 2020 in haar grootboek maakt met \nOnderdeel a: resultaat deelneming Helena",
+      "Geef de journaalposten die Mondovi in en eind 2020 in haar grootboek maakt met \nOnderdeel b: uitgekeerd dividend",
+      "Geef de journaalposten die Mondovi in en eind 2020 in haar grootboek maakt met \nOnderdeel c: omrekeningsverschillen. Geef ook B of WV aan"
+    ],
+    "starts": [
+      "^a\\. Resultaat",
+      "^b\\. Uitgekeerde",
+      "^c\\. Omrekenings"
+    ]
+  },
+  "cafa2-20211006/vraag-16": {
+    "starts": [
+      "Gevraagd 3\\.A\\.I\\s",
+      "Gevraagd 3\\.A\\.II",
+      "Gevraagd 3\\.B\\.",
+      "Gevraagd 3\\.C\\.I"
+    ]
+  },
+  "cafa2-20220411/vraag-12": {
+    "starts": [
+      "GEVRAAGD 4A",
+      "GEVRAAGD 4B"
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelnemingen</td><td>690.000</td><td></td></tr><tr><td>Resultaat uit deelnemingen</td><td></td><td>690.000</td></tr></tbody></table></div><p>70% × € 600.000 + 60% × € 450.000 = € 690.000.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Te vorderen dividend / Bank</td><td>105.000</td><td></td></tr><tr><td>Deelnemingen</td><td></td><td>105.000</td></tr></tbody></table></div><p>70% × € 150.000 = € 105.000.</p>"
+    ]
+  },
+  "cafa2-20220411/vraag-14": {
+    "starts": [
+      "GEVRAAGD 6\\.A",
+      "GEVRAAGD 6\\.B\\.1",
+      "GEVRAAGD 6\\.C"
+    ]
+  },
+  "cafa2-20220411/vraag-18": {
+    "starts": [
+      "^\\s*4\\.A\\. Deelneming",
+      "^\\s*4\\.B\\. Afschrijving"
+    ]
+  },
+  "cafa2-20221006/vraag-14": {
+    "starts": [
+      "GEVRAAGD 14\\.A\\.1",
+      "GEVRAAGD 14\\.B\\.1"
+    ]
+  },
+  "cafa2-20221006/vraag-20": {
+    "starts": [
+      "^a\\. Eliminatie - deelneming",
+      "^b\\. Eliminatie",
+      "^c\\. Eliminatie"
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Deelneming</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Geplaatst kapitaal</td><td>40.000</td><td></td></tr><tr><td>Agioreserve</td><td>80.000</td><td></td></tr><tr><td>Overige reserves</td><td>160.000</td><td></td></tr><tr><td>Goodwill</td><td>220.000</td><td></td></tr><tr><td>Deelneming in Predore</td><td></td><td>500.000</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Belang derden</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Geplaatst kapitaal</td><td>60.000</td><td></td></tr><tr><td>Agioreserve</td><td>120.000</td><td></td></tr><tr><td>Overige reserves</td><td>300.000</td><td></td></tr><tr><td>Resultaat boekjaar</td><td>150.000</td><td></td></tr><tr><td>Belang derden</td><td></td><td>630.000</td></tr></tbody></table></div><p>Het model accepteert ook één gecombineerde journaalpost met dezelfde totalen.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overige reserves</td><td>44.000</td><td></td></tr><tr><td>Resultaat boekjaar</td><td>44.000</td><td></td></tr><tr><td>Goodwill</td><td></td><td>88.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat boekjaar</td><td>20.000</td><td></td></tr><tr><td>Overige reserves</td><td></td><td>20.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20240930/vraag-1": {
+    "nodeStarts": [
+      "^Deelneming$",
+      "^Waardering$"
+    ]
+  },
+  "cafa2-20240930/vraag-17": {
+    "nodeStarts": [
+      "^Eliminatie: resultaat van",
+      "^Eliminatie: managementfee",
+      "^Eliminatie: intercompanyleveringen"
+    ]
+  },
+  "cafa2-20230411/vraag-2": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Zichtbaar eigen vermogen</td><td>1.950.000</td></tr><tr><td>Fout in administratie</td><td>+60.000</td></tr><tr><td>Gecorrigeerd eigen vermogen</td><td>2.010.000</td></tr><tr><td>Fair value gebouw</td><td>+500.000</td></tr><tr><td>Fair value onderhanden projecten</td><td>+130.000</td></tr><tr><td>Voorziening groot onderhoud</td><td>−80.000</td></tr><tr><td>Nettovermogenswaarde</td><td>2.560.000</td></tr><tr><td>Aandeel 80%</td><td>2.048.000</td></tr><tr><td>Betaald</td><td>2.500.000</td></tr><tr><td>Goodwill</td><td>452.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-3": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming Cavola</td><td>2.048.000</td><td></td></tr><tr><td>Goodwill</td><td>452.000</td><td></td></tr><tr><td>Aandelenkapitaal</td><td></td><td>1.000.000</td></tr><tr><td>Agio</td><td></td><td>500.000</td></tr><tr><td>Bank</td><td></td><td>1.000.000</td></tr></tbody></table></div><p>10.000 uitgegeven aandelen Moneglia × € 100 nominaal = € 1.000.000 kapitaal. Reële waarde € 150: agio € 500.000. Bijbetaling € 1.000.000. De bronbedragen bij deze journaalpost waren in de bestaande transcriptie onder vraag 4 terechtgekomen.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-4": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Resultaat Cavola volgens eigen grondslagen</td><td>500.000</td></tr><tr><td>Extra afschrijving gebouw</td><td>−25.000</td></tr><tr><td>Voorziening groot onderhoud</td><td>+80.000</td></tr><tr><td>Onderhanden projecten</td><td>−30.000</td></tr><tr><td>Gecorrigeerd resultaat</td><td>525.000</td></tr><tr><td>Aandeel 80%</td><td>420.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-5": {
+    "prompts": [
+      "Geef de journaalpost van het resultaat deelneming Cavola in de enkelvoudige jaarrekening van Moneglia over 2022.",
+      "Geef de journaalpost van het ontvangen dividend van Cavola in de enkelvoudige jaarrekening van Moneglia over 2022.",
+      "Geef de journaalpost van de afschrijving goodwill Cavola in de enkelvoudige jaarrekening van Moneglia over 2022."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming Cavola</td><td>420.000</td><td></td></tr><tr><td>Resultaat deelneming Cavola</td><td></td><td>420.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>140.000</td><td></td></tr><tr><td>Deelneming Cavola</td><td></td><td>140.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Afschrijvingskosten goodwill</td><td>45.200</td><td></td></tr><tr><td>Goodwill Cavola</td><td></td><td>45.200</td></tr></tbody></table></div><p>€ 452.000 goodwill uit vraag 2 / 10 jaar volgens de casus = € 45.200. Het bedrag ontbrak naast de rekeningen in de bestaande transcriptie.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-7": {
+    "prompts": [
+      "Geef de journaalposten die Rapallo maakt van de inkoop van haar eigen aandelen.",
+      "Geef de journaalposten die Toane maakt van de door Rapallo ingekochte eigen aandelen."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overige reserves</td><td>220.000</td><td></td></tr><tr><td>Bank</td><td></td><td>220.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Verkoop aandelen aan Rapallo</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>220.000</td><td></td></tr><tr><td>Deelneming Rapallo</td><td></td><td>190.000</td></tr><tr><td>Resultaat deelneming</td><td></td><td>30.000</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Aanpassing resterend belang</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overige reserves (alternatief: resultaat deelneming Rapallo)</td><td>14.000</td><td></td></tr><tr><td>Deelneming Rapallo</td><td></td><td>14.000</td></tr></tbody></table></div><p>Toane: 60% × € 760.000 − € 190.000 = € 266.000; na inkoop 46,67% × € 540.000 = € 252.000. Afname € 14.000. Beide debetrekeningen zijn volgens het bronmodel toegestaan.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-11": {
+    "prompts": [
+      "Geef de intracomptabele journaalpost inzake de sidestreamleveringen van Gieterij aan Assemblage.",
+      "Geef de intracomptabele journaalposten inzake de downstreamleveringen van Bruggeman aan Assemblage."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat deelnemingen</td><td>11.200</td><td></td></tr><tr><td>Deelneming in Gieterij</td><td></td><td>11.200</td></tr></tbody></table></div><p>80% × € 14.000 = € 11.200.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overlopende passiva</td><td>18.000</td><td></td></tr><tr><td>Gerealiseerde winst door transacties met deelnemingen</td><td></td><td>18.000</td></tr><tr><td>Belastinglast</td><td>3.600</td><td></td></tr><tr><td>Voorziening belastingen</td><td></td><td>3.600</td></tr></tbody></table></div><p>20% × € 18.000 = € 3.600.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-12": {
+    "prompts": [
+      "Geef de eliminatieboeking voor de doorlevering aan derden in de geconsolideerde winst-en-verliesrekening over 2022.",
+      "Geef de eliminatieboeking voor de toename van de voorraad in de geconsolideerde winst-en-verliesrekening over 2022."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Netto omzet</td><td>500.000</td><td></td></tr><tr><td>Kostprijs netto omzet</td><td></td><td>500.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Netto omzet</td><td>100.000</td><td></td></tr><tr><td>Kostprijs netto omzet</td><td></td><td>80.000</td></tr><tr><td>Resultaat na belastingen</td><td></td><td>11.200</td></tr><tr><td>Belastinglast</td><td></td><td>2.800</td></tr><tr><td>Aandeel derden</td><td></td><td>4.800</td></tr><tr><td>Belastinglast</td><td></td><td>1.200</td></tr></tbody></table></div><p>Bij aandeel derden staat in de transcriptie D. De toename van de niet-gerealiseerde winst vereist hier credit: € 80.000 + € 11.200 + € 2.800 + € 4.800 + € 1.200 = € 100.000. Deze herkenbare bronafwijking is expliciet gecorrigeerd; het oorspronkelijke model blijft bij Bron beschikbaar.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-13": {
+    "prompts": [
+      "Geef de eliminatieboeking voor de winst in de eindvoorraad bij de geconsolideerde balans over 2022.",
+      "Geef de eliminatieboeking voor het invoegen van de winst in de beginvoorraad bij de geconsolideerde balans over 2022."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overlopende passiva</td><td>108.000</td><td></td></tr><tr><td>Resultaat boekjaar</td><td>9.600</td><td></td></tr><tr><td>Voorziening belastingen</td><td>2.400</td><td></td></tr><tr><td>Voorraden</td><td></td><td>120.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overige reserves</td><td>11.200</td><td></td></tr><tr><td>Resultaat boekjaar</td><td></td><td>11.200</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-14": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Lening o/g Bruggeman</td><td>225.000</td><td></td></tr><tr><td>Lening u/g Gieterij</td><td></td><td>225.000</td></tr></tbody></table></div><p>€ 250.000 − € 25.000 = € 225.000.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Rentebaten Bruggeman</td><td>4.791,66</td><td></td></tr><tr><td>Rentekosten Gieterij</td><td></td><td>4.791,66</td></tr></tbody></table></div><p>2% × € 250.000 × 7/12 + 2% × € 225.000 × 5/12. De bedragen voor de vragen 12, 13 en 14 waren samengevoegd in de bestaande transcriptie; zij zijn hier aan hun bijbehorende rekeningen gekoppeld.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-16": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Verwerving 25% belang</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Aandelenkapitaal</td><td>50.000</td><td></td></tr><tr><td>Agio</td><td>100.000</td><td></td></tr><tr><td>Overige reserves</td><td>850.000</td><td></td></tr><tr><td>Goodwill</td><td>200.000</td><td></td></tr><tr><td>Deelneming</td><td></td><td>1.200.000</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Verwerving 55% belang</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Aandelenkapitaal</td><td>110.000</td><td></td></tr><tr><td>Agio</td><td>220.000</td><td></td></tr><tr><td>Overige reserves</td><td>2.310.000</td><td></td></tr><tr><td>Goodwill</td><td>360.000</td><td></td></tr><tr><td>Deelneming</td><td></td><td>3.000.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overige reserves</td><td>272.000</td><td></td></tr><tr><td>Resultaat boekjaar</td><td>72.000</td><td></td></tr><tr><td>Goodwill</td><td></td><td>344.000</td></tr></tbody></table></div><p>Oude goodwill € 200.000 ten laste van reserves; goodwill nieuwe verwerving € 360.000 / 5 jaar = € 72.000 per jaar.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-18": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Dividendopbrengst</td><td>240.000</td><td></td></tr><tr><td>Resultaat na belastingen</td><td></td><td>240.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Doorlevering in het boekjaar</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Omzet</td><td>2.600.000</td><td></td></tr><tr><td>Kostprijs</td><td></td><td>2.600.000</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Vrijval winst in afname voorraad</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat na belastingen</td><td>10.240</td><td></td></tr><tr><td>Belastinglast</td><td>2.560</td><td></td></tr><tr><td>Aandeel derden</td><td>2.560</td><td></td></tr><tr><td>Belastinglast</td><td>640</td><td></td></tr><tr><td>Kostprijs</td><td></td><td>16.000</td></tr></tbody></table></div><p>De bronkop noemt “toename voorraad”; de voorraadtabel toont een afname. De bedragen en boekingsrichting volgen het bronmodel.</p>"
+    ]
+  },
+  "cafa2-20230411/vraag-25": {
+    "prompts": [
+      "Geef de journaalpost voor het resultaat deelneming van Alten over 2022.",
+      "Geef de journaalpost voor het uitgekeerde dividend dat Alten over 2022 ontvangt."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming (bron: Bora)</td><td>46.250</td><td></td></tr><tr><td>Reserve omrekeningsverschillen</td><td></td><td>29.750</td></tr><tr><td>Resultaat deelneming</td><td></td><td>16.500</td></tr></tbody></table></div><p>Resultaat: 150.000 × € 0,11 = € 16.500. De oorspronkelijke vraag noemt Store; het bronmodel noemt Bora. Deze bronafwijking is behouden.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>2.500</td><td></td></tr><tr><td>Deelneming</td><td></td><td>2.500</td></tr></tbody></table></div><p>25.000 × € 0,10 = € 2.500.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-2": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming Gela bv</td><td>3.850.000</td><td></td></tr><tr><td>Goodwill</td><td>2.870.000</td><td></td></tr><tr><td>Aandelenkapitaal</td><td></td><td>5.000.000</td></tr><tr><td>Agio</td><td></td><td>1.720.000</td></tr></tbody></table></div><p>Deelneming 70% × € 5.500.000; goodwill € 6.720.000 − € 3.850.000; aandelenkapitaal 20.000 × € 250; agio saldopost.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-7": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>40.000</td><td></td></tr><tr><td>Deelneming Patti</td><td></td><td>40.000</td></tr></tbody></table></div><p>50/75 × € 60.000 = € 40.000.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>20.000</td><td></td></tr><tr><td>Resultaat deelneming Patti / Dividendopbrengst</td><td></td><td>20.000</td></tr></tbody></table></div><p>25/75 × € 60.000 = € 20.000.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-10": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Overlopende passiva</td><td>7.000</td><td></td></tr><tr><td>Gerealiseerde winst op leveringen aan Seal-it</td><td></td><td>7.000</td></tr><tr><td>Belastinglast</td><td>1.400</td><td></td></tr><tr><td>Voorziening belastingen</td><td></td><td>1.400</td></tr></tbody></table></div><p>20% × € 7.000 = € 1.400.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-11": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming in Seal-it</td><td>156.800</td><td></td></tr><tr><td>Resultaat deelneming in Seal-it</td><td></td><td>156.800</td></tr></tbody></table></div><p>70% × € 224.000 = € 156.800.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-12": {
+    "prompts": [
+      "Geef de eliminatieboeking voor het resultaat deelneming in de geconsolideerde winst-en-verliesrekening over 2022.",
+      "Geef de eliminatieboeking voor de onderling doorberekende directiekosten over 2022.",
+      "Geef de eliminatieboeking voor de onderlinge rente over 2022.",
+      "Geef de eliminatieboekingen voor de intercompanyleveringen over 2022."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat deelneming in Seal-it</td><td>156.800</td><td></td></tr><tr><td>Aandeel derden</td><td>67.200</td><td></td></tr><tr><td>Resultaat na belastingen Seal-it</td><td></td><td>224.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Doorberekende directiekosten aan Seal-it</td><td>200.000</td><td></td></tr><tr><td>Directiekosten Seal-it</td><td></td><td>200.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Rente lening u/g Gluton</td><td>105.000</td><td></td></tr><tr><td>Rentekosten lening o/g</td><td></td><td>105.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Doorlevering</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Omzet</td><td>4.500.000</td><td></td></tr><tr><td>Kostprijs omzet</td><td></td><td>4.500.000</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Afname intercompanywinst</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Gerealiseerde winst op leveringen aan Seal-it</td><td>7.000</td><td></td></tr><tr><td>Resultaat na belastingen</td><td>2.400</td><td></td></tr><tr><td>Belastinglast</td><td>600</td><td></td></tr><tr><td>Kostprijs omzet</td><td></td><td>10.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-17": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming in Roon</td><td>5.800.000</td><td></td></tr><tr><td>Bank</td><td></td><td>3.800.000</td></tr><tr><td>Langlopende lening DGF</td><td></td><td>2.000.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-18": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Bank</td><td>360.000</td><td></td></tr><tr><td>Deelneming in Roon</td><td></td><td>360.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-20": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Aandelenkapitaal</td><td>300.000</td><td></td></tr><tr><td>Agio</td><td>420.000</td><td></td></tr><tr><td>Overige reserves</td><td>3.960.000</td><td></td></tr><tr><td>Goodwill</td><td>760.000</td><td></td></tr><tr><td>Deelneming</td><td></td><td>5.440.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Aandelenkapitaal</td><td>200.000</td><td></td></tr><tr><td>Agio</td><td>280.000</td><td></td></tr><tr><td>Overige reserves</td><td>2.640.000</td><td></td></tr><tr><td>Resultaat boekjaar 2022</td><td>48.000</td><td></td></tr><tr><td>Belang derden</td><td></td><td>3.168.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat boekjaar</td><td>152.000</td><td></td></tr><tr><td>Goodwill</td><td></td><td>152.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat boekjaar</td><td>25.920</td><td></td></tr><tr><td>Voorziening latente belastingen</td><td>6.480</td><td></td></tr><tr><td>Belang derden</td><td>17.280</td><td></td></tr><tr><td>Voorziening latente belastingen</td><td>4.320</td><td></td></tr><tr><td>Voorraad</td><td></td><td>54.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-23": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming TCC</td><td>239.000</td><td></td></tr><tr><td>Reserve omrekeningsverschillen</td><td></td><td>70.250</td></tr><tr><td>Resultaat deelneming</td><td></td><td>168.750</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Eigen vermogen begin: 3.550.000 × (1,14 − 1,12)</td><td>71.000</td></tr><tr><td>Dividend: −100.000 × (1,14 − 1,11)</td><td>−3.000</td></tr><tr><td>Resultaat: 150.000 × (1,14 − 1,125)</td><td>2.250</td></tr><tr><td>Totaal omrekeningsverschil</td><td>70.250</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-8": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Gieterij aan Assemblage, sidestream niet afnemend</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2021</td><td>250.000</td><td>50.000</td><td>35.000</td><td>15.000</td><td>0</td></tr><tr><td>31-12-2022</td><td>350.000</td><td>70.000</td><td>49.000</td><td>21.000</td><td>0</td></tr><tr><td>Toename</td><td>100.000</td><td>20.000</td><td>14.000</td><td>6.000</td><td>0</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20230411/vraag-9": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Bruggeman aan Assemblage, downstream</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2021</td><td>350.000</td><td>140.000</td><td>126.000</td><td>0</td><td>14.000</td></tr><tr><td>31-12-2022</td><td>300.000</td><td>120.000</td><td>108.000</td><td>0</td><td>12.000</td></tr><tr><td>Afname</td><td>50.000</td><td>20.000</td><td>18.000</td><td>0</td><td>2.000</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20230411/vraag-17": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Norch aan Langeloo, upstream</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2021</td><td>400.000</td><td>40.000</td><td>0</td><td>8.000</td><td>32.000</td></tr><tr><td>31-12-2022</td><td>240.000</td><td>24.000</td><td>0</td><td>4.800</td><td>19.200</td></tr><tr><td>Afname</td><td>160.000</td><td>16.000</td><td>0</td><td>3.200</td><td>12.800</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20231009/vraag-8": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Gluton aan Seal-it, downstream</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2021</td><td>90.000</td><td>15.000</td><td>10.500</td><td>0</td><td>4.500</td></tr><tr><td>31-12-2022</td><td>30.000</td><td>5.000</td><td>3.500</td><td>0</td><td>1.500</td></tr><tr><td>Afname</td><td>60.000</td><td>10.000</td><td>7.000</td><td>0</td><td>3.000</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20231009/vraag-19": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Roon aan Norch, upstream</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2021</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>31-12-2022</td><td>540.000</td><td>54.000</td><td>0</td><td>21.600</td><td>32.400</td></tr><tr><td>Toename</td><td>540.000</td><td>54.000</td><td>0</td><td>21.600</td><td>32.400</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2022",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20210419/vraag-10": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat deelneming ApeldoornMedical</td><td>7.680</td><td></td></tr><tr><td>Deelneming in ApeldoornMedical</td><td></td><td>7.680</td></tr></tbody></table></div><p>€ 9.600 × (100% − 20%) = € 7.680.</p>"
+    ]
+  },
+  "cafa2-20211006/vraag-11": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat deelnemingen</td><td>363.600</td><td></td></tr><tr><td>Aandeel derden</td><td>178.000</td><td></td></tr><tr><td>Resultaat na belastingen Power4You</td><td></td><td>221.600</td></tr><tr><td>Resultaat na belastingen ChargeIT</td><td></td><td>320.000</td></tr></tbody></table></div><p>Aandeel derden = 25% × € 200.000 + 40% × € 320.000 = € 178.000.</p>"
+    ]
+  },
+  "cafa2-20211006/vraag-23": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Resultaat deelneming</td><td>56.500</td><td></td></tr><tr><td>Reserve omrekeningsverschillen</td><td>1.260</td><td></td></tr><tr><td>Deelneming</td><td></td><td>57.760</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Vermogen 31-12-2019: £ 730.000 × (1,11 − 1,12)</td><td>−7.300</td></tr><tr><td>Dividend: −£ 50.000 × (1,11 − 1,20)</td><td>+4.500</td></tr><tr><td>Resultaat: −£ 50.000 × (1,11 − 1,13)</td><td>+1.000</td></tr><tr><td>Totaal omrekeningsverschil</td><td>−1.800</td></tr><tr><td>Aandeel 70%</td><td>−1.260</td></tr></tbody></table></div><p>De journaalpost is met de bronbedragen weergegeven. De controleberekening in hetzelfde model gebruikt voor het resultaat het aandeel 70% (€ 39.550); die afwijking is niet stilzwijgend verwerkt in deze bronjournaalpost.</p>"
+    ]
+  },
+  "cafa2-20221006/vraag-10": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Niet-gerealiseerde boekwinst verkochte machine</td><td>13.500</td><td></td></tr><tr><td>Overlopende passiva</td><td></td><td>13.500</td></tr><tr><td>Voorziening belastingen</td><td>2.700</td><td></td></tr><tr><td>Belastinglast</td><td></td><td>2.700</td></tr></tbody></table></div><p>20% × € 13.500 = € 2.700.</p>"
+    ]
+  },
+  "cafa2-20221006/vraag-26": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Journaalpost</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelneming Kröne Blatten</td><td>218.720</td><td></td></tr><tr><td>Resultaat deelneming</td><td></td><td>171.080</td></tr><tr><td>Reserve omrekenverschillen</td><td></td><td>47.640</td></tr></tbody></table></div><p>Resultaat deelneming: CHF 182.000 × € 0,94 = € 171.080.</p>"
+    ]
+  },
+  "cafa2-20211006/vraag-9": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Moderna aan ChargeIT</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>320.000</td><td>64.000</td><td>38.400</td><td>0</td><td>25.600</td></tr><tr><td>31-12-2020</td><td>480.000</td><td>96.000</td><td>57.600</td><td>0</td><td>38.400</td></tr><tr><td>Toename</td><td>160.000</td><td>32.000</td><td>19.200</td><td>0</td><td>12.800</td></tr></tbody></table></div><p>Interne correctie 60%, aandeel derden 0%, geconsolideerd resultaat 40%. Doorlevering volgens het model: € 4.000.000 − € 160.000 = € 3.840.000. De ingevulde matrix is uit de casusbedragen en deze verdeling opgebouwd; het bestaande antwoordmodel bevatte alleen de doorleveringsberekening.</p>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Power4You aan ChargeIT</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>760.000</td><td>228.000</td><td>136.800</td><td>57.000</td><td>34.200</td></tr><tr><td>31-12-2020</td><td>600.000</td><td>180.000</td><td>108.000</td><td>45.000</td><td>27.000</td></tr><tr><td>Afname</td><td>160.000</td><td>48.000</td><td>28.800</td><td>12.000</td><td>7.200</td></tr></tbody></table></div><p>Interne correctie 60%, aandeel derden 25%, geconsolideerd resultaat 15%. Het belang neemt af van 75% bij de leverancier naar 60% bij de afnemer. De matrix is uit de casusbedragen opgebouwd; de bron noemt bij de doorlevering € 2.400.000.</p>"
+    ]
+  },
+  "cafa2-20210419/vraag-9": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>ApeldoornMedical aan Clinimed</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>160.000</td><td>32.000</td><td>19.200</td><td>12.800</td><td>0</td></tr><tr><td>31-12-2020</td><td>240.000</td><td>48.000</td><td>28.800</td><td>19.200</td><td>0</td></tr><tr><td>Toename</td><td>80.000</td><td>16.000</td><td>9.600</td><td>6.400</td><td>0</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2019",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20210419/vraag-15": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Inpakmachine Clinimed aan ApeldoornMedical</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>31-12-2020</td><td>21.000</td><td>3.000</td><td>1.800</td><td>0</td><td>1.200</td></tr><tr><td>Toename</td><td>21.000</td><td>3.000</td><td>1.800</td><td>0</td><td>1.200</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2019",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20211006/vraag-14": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Baldetti aan Vinsanto</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>500.000</td><td>100.000</td><td>0</td><td>0</td><td>100.000</td></tr><tr><td>31-12-2020</td><td>400.000</td><td>80.000</td><td>0</td><td>0</td><td>80.000</td></tr><tr><td>Afname</td><td>100.000</td><td>20.000</td><td>0</td><td>0</td><td>20.000</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2019",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20220411/vraag-15": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Bisseling aan Energizer</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2020</td><td>600.000</td><td>120.000</td><td>0</td><td>48.000</td><td>72.000</td></tr><tr><td>31-12-2021</td><td>800.000</td><td>160.000</td><td>0</td><td>64.000</td><td>96.000</td></tr><tr><td>Toename</td><td>200.000</td><td>40.000</td><td>0</td><td>16.000</td><td>24.000</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20221006/vraag-9": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Machine Molina aan Domenico</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2019</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>31-12-2020</td><td>60.000</td><td>15.000</td><td>13.500</td><td>1.500</td></tr><tr><td>Toename</td><td>60.000</td><td>15.000</td><td>13.500</td><td>1.500</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2019",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20221006/vraag-11": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Machine Molina aan Domenico</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2020</td><td>60.000</td><td>15.000</td><td>13.500</td><td>1.500</td></tr><tr><td>31-12-2021</td><td>40.000</td><td>10.000</td><td>9.000</td><td>1.000</td></tr><tr><td>Afname</td><td>−20.000</td><td>−5.000</td><td>−4.500</td><td>−500</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20221006/vraag-12": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Goederen Molina aan Domenico</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2020</td><td>160.000</td><td>16.000</td><td>14.400</td><td>1.600</td></tr><tr><td>31-12-2021</td><td>180.000</td><td>18.000</td><td>16.200</td><td>1.800</td></tr><tr><td>Toename</td><td>20.000</td><td>2.000</td><td>1.800</td><td>200</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Toename",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20221006/vraag-17": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Predore aan Collina</caption><thead><tr><th scope=\"col\">Datum</th><th scope=\"col\">Voorraad bij afnemer</th><th scope=\"col\">Niet-gerealiseerde intercompanywinst</th><th scope=\"col\">Interne correctie</th><th scope=\"col\">Eliminatie aandeel derden</th><th scope=\"col\">Eliminatie geconsolideerd resultaat</th></tr></thead><tbody><tr><td>31-12-2020</td><td>200.000</td><td>75.000</td><td>0</td><td>45.000</td><td>30.000</td></tr><tr><td>31-12-2021</td><td>160.000</td><td>60.000</td><td>0</td><td>36.000</td><td>24.000</td></tr><tr><td>Afname</td><td>40.000</td><td>15.000</td><td>0</td><td>9.000</td><td>6.000</td></tr></tbody></table></div>"
+    ],
+    "schemas": [
+      {
+        "headers": [
+          "Datum",
+          "Voorraad bij afnemer",
+          "Niet-gerealiseerde intercompanywinst",
+          "Interne correctie",
+          "Eliminatie aandeel derden",
+          "Eliminatie geconsolideerd resultaat"
+        ],
+        "rows": [
+          [
+            "31-12-2020",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "31-12-2021",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Afname",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "cafa2-20230411/vraag-10": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Deelneming Gieterij: 70% × € 4.000.000</td><td>2.800.000</td></tr><tr><td>Intracomptabele correctie: 80% × € 35.000</td><td>−28.000</td></tr><tr><td>Boekwaarde Gieterij</td><td>2.772.000</td></tr><tr><td>Boekwaarde Assemblage: 90% × € 6.000.000</td><td>5.400.000</td></tr><tr><td>Totaal deelnemingen</td><td>8.172.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-15": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Verwerving 25%: € 1.200.000 − 25% × € 4.000.000</td><td>200.000</td></tr><tr><td>Verwerving 55%: € 3.000.000 − 55% × € 4.800.000</td><td>360.000</td></tr><tr><td>Totale goodwill</td><td>560.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-21": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Machines</td><td>300.000</td><td>0,11</td><td>33.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Inkoopdatum</th><th scope=\"col\">Aantal</th><th scope=\"col\">Prijs (NOK)</th><th scope=\"col\">Bedrag (NOK)</th><th scope=\"col\">Koers</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>10-01-2022</td><td>10.000</td><td>2,00</td><td>20.000</td><td>0,13</td><td>2.600</td></tr><tr><td>01-09-2022</td><td>60.000</td><td>4,75</td><td>285.000</td><td>0,12</td><td>34.200</td></tr><tr><td>Totaal</td><td>70.000</td><td></td><td>305.000</td><td></td><td>36.800</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-22": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Inkoopdatum</th><th scope=\"col\">Aantal</th><th scope=\"col\">Prijs (NOK)</th><th scope=\"col\">Bedrag (NOK)</th><th scope=\"col\">Koers</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Beginvoorraad</td><td>50.000</td><td>4,00</td><td>200.000</td><td>0,11</td><td>22.000</td></tr><tr><td>10-01-2022</td><td>50.000</td><td>4,50</td><td>225.000</td><td>0,10</td><td>22.500</td></tr><tr><td>Totaal</td><td>100.000</td><td></td><td>425.000</td><td></td><td>44.500</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Afwaardering: 10.000 × (NOK 4,50 − NOK 2,00) × € 0,10</td><td>2.500</td></tr><tr><td>Koersverschil: NOK 20.000 × (€ 0,10 − € 0,13)</td><td>−600</td></tr><tr><td>Totaal</td><td>1.900</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Afschrijving machines</td><td>100.000</td><td>0,11</td><td>11.000</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-23": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Monetaire posten begin: 300.000 + 100.000 − 450.000</td><td>−50.000</td><td>0,11</td><td>−5.500</td></tr><tr><td>Inkoop 10-01-2022</td><td>−270.000</td><td>0,10</td><td>−27.000</td></tr><tr><td>Verkoop 20-04-2022</td><td>700.000</td><td>0,10</td><td>70.000</td></tr><tr><td>Inkoop 01-09-2022</td><td>−285.000</td><td>0,12</td><td>−34.200</td></tr><tr><td>Verkoop 13-11-2022</td><td>375.000</td><td>0,12</td><td>45.000</td></tr><tr><td>Overige kosten</td><td>−350.000</td><td>0,11</td><td>−38.500</td></tr><tr><td>Theoretische eindstand</td><td>120.000</td><td></td><td>9.800</td></tr><tr><td>Werkelijke eindstand: 275.000 + 205.000 − 360.000</td><td>120.000</td><td>0,13</td><td>15.600</td></tr><tr><td>Koerswinst</td><td></td><td></td><td>5.800</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20230411/vraag-24": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Berekening</caption><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Eigen vermogen begin: 1.375.000 × (0,13 − 0,11)</td><td>27.500</td></tr><tr><td>Dividend: −25.000 × (0,13 − 0,10)</td><td>−750</td></tr><tr><td>Resultaat: 150.000 × (0,13 − 0,11)</td><td>3.000</td></tr><tr><td>Positief omrekeningsverschil</td><td>29.750</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-22": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving</th><th scope=\"col\">Bedrag (GBP)</th><th scope=\"col\">Koers</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>Machines per 31-12-2022</td><td>660.000</td><td>1,14</td><td>752.400</td></tr></tbody></table></div><p>De casus vermeldt GBP 660.000. In de berekeningsregel van het bronmodel staat abusievelijk GBP 660.000.000; de gegeven uitkomst € 752.400 sluit aan op het casusbedrag.</p>"
+    ]
+  },
+  "cafa2-20231009/vraag-24": {
+    "prompts": [
+      "Geef een gespecificeerde berekening van de boekwaarde van de gebouwen van Genser per 31 december 2022 in euro’s.",
+      "Geef een gespecificeerde berekening van de boekwaarde van de vervoermiddelen van Genser per 31 december 2022 in euro’s.",
+      "Geef een gespecificeerde berekening van de boekwaarde van de voorraad van Genser per 31 december 2022 in euro’s."
+    ],
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Gebouwen begin 31-12-2021</td><td>860.000</td><td>0,11</td><td>94.600</td></tr><tr><td>Afschrijving bestaande gebouwen</td><td>−40.000</td><td>0,11</td><td>−4.400</td></tr><tr><td>Boekwaarde bestaande gebouwen</td><td>820.000</td><td></td><td>90.200</td></tr><tr><td>Aankoop loods 01-07-2022</td><td>200.000</td><td>0,12</td><td>24.000</td></tr><tr><td>Afschrijving loods</td><td>−10.000</td><td>0,12</td><td>−1.200</td></tr><tr><td>Boekwaarde loods</td><td>190.000</td><td></td><td>22.800</td></tr><tr><td>Totale boekwaarde 31-12-2022</td><td>1.010.000</td><td></td><td>113.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Boekwaarde begin 31-12-2021</td><td>1.440.000</td><td>0,11</td><td>158.400</td></tr><tr><td>Afschrijving</td><td>−480.000</td><td>0,11</td><td>−52.800</td></tr><tr><td>Afboeking vrachtwagen</td><td>−160.000</td><td>0,11</td><td>−17.600</td></tr><tr><td>Boekwaarde 31-12-2022</td><td>800.000</td><td></td><td>88.000</td></tr></tbody></table></div>",
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Inkoopdatum / mutatie</th><th scope=\"col\">Aantal</th><th scope=\"col\">Prijs (NOK)</th><th scope=\"col\">Bedrag (NOK)</th><th scope=\"col\">Koers</th><th scope=\"col\">Bedrag (€)</th></tr></thead><tbody><tr><td>02-01-2022</td><td>20.000</td><td>4,50</td><td>90.000</td><td>0,10</td><td>9.000</td></tr><tr><td>Beschadigde voorraad 31-12-2022</td><td>10.000</td><td>1,50</td><td>15.000</td><td>0,13</td><td>1.950</td></tr><tr><td>15-08-2022</td><td>80.000</td><td>5,00</td><td>400.000</td><td>0,12</td><td>48.000</td></tr><tr><td>Totaal</td><td>110.000</td><td></td><td>505.000</td><td></td><td>58.950</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20231009/vraag-25": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><thead><tr><th scope=\"col\">Omschrijving / datum</th><th scope=\"col\">Bedrag in NOK</th><th scope=\"col\">Koers (€ per NOK)</th><th scope=\"col\">Bedrag in €</th></tr></thead><tbody><tr><td>Monetaire posten begin: 100.000 + 76.000 − 380.000 − 375.000</td><td>−579.000</td><td>0,11</td><td>−63.690</td></tr><tr><td>Inkoop 02-01-2022</td><td>−360.000</td><td>0,10</td><td>−36.000</td></tr><tr><td>Verkoop 15-02-2022</td><td>1.650.000</td><td>0,10</td><td>165.000</td></tr><tr><td>Inkoop 15-08-2022</td><td>−400.000</td><td>0,12</td><td>−48.000</td></tr><tr><td>Verkoop 30-11-2022</td><td>640.000</td><td>0,12</td><td>76.800</td></tr><tr><td>Aankoop loods 01-07-2022</td><td>−200.000</td><td>0,12</td><td>−24.000</td></tr><tr><td>Overige kosten</td><td>−475.000</td><td>0,11</td><td>−52.250</td></tr><tr><td>Theoretische eindstand</td><td>276.000</td><td></td><td>17.860</td></tr><tr><td>Werkelijke eindstand: 130.000 + 651.000 − 380.000 − 125.000</td><td>276.000</td><td>0,13</td><td>35.880</td></tr><tr><td>Positief koersverschil</td><td></td><td></td><td>18.020</td></tr></tbody></table></div>"
+    ]
+  },
+  "cafa2-20211006/vraag-10": {
+    "display": [
+      "<div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Downstream</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Niet-gerealiseerde winst door transacties met ChargeIT</td><td>19.200</td><td></td></tr><tr><td>Overlopende passiva</td><td></td><td>19.200</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Winstbelasting</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Voorziening belastingen</td><td>4.800</td><td></td></tr><tr><td>Belastinglast</td><td></td><td>4.800</td></tr></tbody></table></div><div class=\"table-wrap\"><table class=\"practice-answer-table\"><caption>Sidestream afnemend</caption><thead><tr><th scope=\"col\">Omschrijving grootboekrekening</th><th scope=\"col\">Debet (€)</th><th scope=\"col\">Credit (€)</th></tr></thead><tbody><tr><td>Deelnemingen</td><td>21.600</td><td></td></tr><tr><td>Resultaat deelnemingen</td><td></td><td>21.600</td></tr></tbody></table></div><p>Het bronmodel vermeldt aan de creditzijde belastinglast € 4.880. Bij 25% van € 19.200 hoort € 4.800, overeenkomstig de debetzijde. Deze bronafwijking is expliciet gecorrigeerd.</p>"
+    ]
+  }
+}

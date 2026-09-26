@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {questionPattern} from '../scripts/question-pattern.mjs';
+const stock=questionPattern({task:'Stel de voorraadtabel samen voor de intercompanyleveringen.',answerKind:'stock',topicId:'upstream-nvw'}).join(' ');
+assert.match(stock,/beginvoorraad, eindvoorraad/);assert.match(stock,/wie levert aan wie/);assert.match(stock,/Vul de gevraagde rijen en kolommen/);
+const journal={task:'Geef de eliminatieboeking in verband met de goodwill in de geconsolideerde balans.',answerKind:'journal',part:'b'};
+const pattern=questionPattern(journal).join(' ');
+assert.match(pattern,/goodwill in de geconsolideerde balans/);assert.match(pattern,/cumulatieve balanscorrectie/);assert.match(pattern,/debet- en creditbedragen/);assert.match(pattern,/alleen onderdeel b/);
+assert.deepEqual(questionPattern({...journal,correct:0,solutionHtml:'Antwoord 100.000'}),questionPattern({...journal,correct:3,solutionHtml:'Antwoord 999.999'}),'Herkenning mag niet afhankelijk zijn van het juiste antwoord');
+assert.match(questionPattern({task:'Kwalificeert Fort als dochtermaatschappij? Motiveer.',topicId:'zeggenschap'}).join(' '),/stemrechten apart van winstrechten/);
+assert.match(questionPattern({task:'Bereken de boekwaarde van machines per 31 december 2022.',topicId:'tijdstip'}).join(' '),/historische.*slotkoers/);
+assert.notDeepEqual(questionPattern(journal),questionPattern({task:'Geef de journaalpost voor dividend.',answerKind:'journal'}),'Goodwill en dividend vragen verschillende herkenning');
+console.log('Patroonherkenning: vraagsoort, beslissende gegevens, antwoordvorm en onderdeelscope; onafhankelijk van antwoordletter en modelbedrag.');

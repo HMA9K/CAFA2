@@ -145,7 +145,7 @@ window.CAFA2_DATA.modules["val"]={
         "De functionele valuta sluit aan op de economische omgeving waarin de onderneming geldmiddelen ontvangt en uitgeeft.",
         "De lokale valuta en de presentatievaluta kunnen daarvan afwijken."
       ],
-      "pattern": "Herken: de vraag gaat om begrippen, nog niet om wisselkoersen. Aanpak: koppel vestigingsland, economische activiteit en presentatie ieder aan de juiste valuta. Controle: de valuta waarin lokaal wordt geboekt is niet automatisch de functionele valuta.",
+      "pattern": "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "s2def"
       ],
@@ -160,9 +160,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke omschrijving geeft de functionele valuta van een onderneming correct weer?",
         "rules": "De lokale valuta hoort bij het vestigingsland. De functionele valuta weerspiegelt de economische omgeving waarin de onderneming geldmiddelen ontvangt en uitgeeft. De presentatievaluta is de valuta waarin de jaarrekening wordt gepresenteerd. Deze drie hoeven niet gelijk te zijn; stel ze daarom eerst afzonderlijk vast voordat je een omrekenmethode kiest.",
         "pattern": [
-          "Herken: de vraag gaat om begrippen, nog niet om wisselkoersen.",
-          "Aanpak: koppel vestigingsland, economische activiteit en presentatie ieder aan de juiste valuta.",
-          "Controle: de valuta waarin lokaal wordt geboekt is niet automatisch de functionele valuta."
+          "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -215,7 +215,7 @@ window.CAFA2_DATA.modules["val"]={
         "De aangeleverde cijfers luiden in NOK en moeten dus worden omgerekend.",
         "De functionele valuta van beide ondernemingen is de euro. De syllabus koppelt die situatie aan de tijdstipmethode."
       ],
-      "pattern": "Herken: lokale valuta NOK, maar functionele valuta EUR bij zowel dochter als moeder. Aanpak: vertrek van de functionele valuta, niet van het land of de naam van de munt. Controle: de tijdstipmethode vereist vervolgens een onderscheid tussen monetaire en niet-monetaire posten.",
+      "pattern": "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "s2method"
       ],
@@ -231,9 +231,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke omrekenmethode past Noord volgens de syllabus toe op Oslo's NOK-jaarrekening wanneer de functionele valuta van zowel Noord als Oslo de euro is?",
         "rules": "Bepaal eerst de functionele valuta van beide ondernemingen. In de in de syllabus behandelde situaties wordt de tijdstipmethode gebruikt wanneer de buitenlandse boekhouding in een andere lokale valuta luidt, maar de functionele valuta gelijk is aan die van de moeder. Een afwijkende lokale valuta is op zichzelf geen argument voor de slotkoersmethode.",
         "pattern": [
-          "Herken: lokale valuta NOK, maar functionele valuta EUR bij zowel dochter als moeder.",
-          "Aanpak: vertrek van de functionele valuta, niet van het land of de naam van de munt.",
-          "Controle: de tijdstipmethode vereist vervolgens een onderscheid tussen monetaire en niet-monetaire posten."
+          "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -290,7 +290,7 @@ window.CAFA2_DATA.modules["val"]={
         "Verkoopprijzen en kosten wijzen op SEK. Zelfstandige financiering en kasstromen ondersteunen die beoordeling.",
         "De functionele valuta wijkt af van die van de moeder. Daarom volgt de slotkoersmethode."
       ],
-      "pattern": "Herken: verkoop en kosten worden lokaal bepaald en de buitenlandse onderneming heeft eigen financiering en kasstromen. Aanpak: motiveer de functionele valuta aan de hand van de concrete factoren; vergelijk die daarna met die van de moeder. Controle: zelfstandigheid is een aanwijzing binnen de beoordeling, geen vervanging van alle primaire factoren.",
+      "pattern": "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "s2def",
         "s2method"
@@ -307,9 +307,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke functionele valuta volgt voor de Zweedse onderneming uit de gegeven verkoop-, kosten-, financierings- en kasstroomgegevens, en welke methode is vervolgens nodig voor presentatie door de euromoeder?",
         "rules": "RJ 122.106 geeft de primaire factoren: valuta die de verkoopprijzen en kosten hoofdzakelijk bepalen. RJ 122.107 en 108 voegen onder meer financiering, aangehouden middelen en zelfstandigheid ten opzichte van de moeder toe. Weeg de feiten samen; bij een onduidelijk beeld hebben de primaire factoren het meeste gewicht. Kies daarna de omrekenmethode binnen de syllabuscasus.",
         "pattern": [
-          "Herken: verkoop en kosten worden lokaal bepaald en de buitenlandse onderneming heeft eigen financiering en kasstromen.",
-          "Aanpak: motiveer de functionele valuta aan de hand van de concrete factoren; vergelijk die daarna met die van de moeder.",
-          "Controle: zelfstandigheid is een aanwijzing binnen de beoordeling, geen vervanging van alle primaire factoren."
+          "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -345,7 +345,7 @@ window.CAFA2_DATA.modules["val"]={
         "Vorderingen en liquide middelen zijn monetaire activa. Schulden, zoals een langlopende lening, zijn monetaire passiva.",
         "Voorraden, machines en goodwill horen niet in deze combinatie van monetaire posten."
       ],
-      "pattern": "Herken: gevraagd is de indeling van posten, niet een keuze tussen omrekenmethoden. Aanpak: scheid geldmiddelen en geldvorderingen of -verplichtingen van niet-monetaire activa. Controle: afschrijvingen en voorraadverbruik zijn geen afzonderlijke monetaire kasmutaties.",
+      "pattern": "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "s2temp"
       ],
@@ -361,9 +361,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke groep balansposten bestaat volgens de tijdstipmethode in de syllabus uitsluitend uit monetaire posten?",
         "rules": "De syllabus rekent vorderingen, liquide middelen, voorzieningen en schulden tot de monetaire posten. Deze worden op balansdatum tegen de slotkoers omgerekend. Voorraad, gebouwen en machines worden bij historische-kostenwaardering tegen hun relevante historische koers omgerekend. Het onderscheid is nodig voor zowel de balans als de analyse van het omrekeningsverschil.",
         "pattern": [
-          "Herken: gevraagd is de indeling van posten, niet een keuze tussen omrekenmethoden.",
-          "Aanpak: scheid geldmiddelen en geldvorderingen of -verplichtingen van niet-monetaire activa.",
-          "Controle: afschrijvingen en voorraadverbruik zijn geen afzonderlijke monetaire kasmutaties."
+          "Herken de vraag: Deze vraag vraagt om herkenning van de functionele valuta of de passende omrekeningsmethode. De economische omstandigheden bepalen de keuze.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -440,7 +440,7 @@ window.CAFA2_DATA.modules["val"]={
         "Debiteuren zijn monetair. De balanswaardering volgt daarom de slotkoers.",
         "SEK 480.000 × € 0,0895 = € 42.960."
       ],
-      "pattern": "Herken: een openstaande geldvordering en een gevraagde eindbalanswaarde. Aanpak: vermenigvuldig de SEK-eindstand met de gegeven europrijs van één SEK op balansdatum. Controle: gebruik niet de gemiddelde jaarkoers of de koers op de oorspronkelijke factuurdatum.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp"
       ],
@@ -455,9 +455,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Voor welk eurobedrag wordt de vordering van SEK 480.000 op de eindbalans opgenomen bij toepassing van de tijdstipmethode en de gegeven slotkoers?",
         "rules": "Een nog openstaande debiteur is een monetaire actiefpost. Bij de tijdstipmethode wordt de nominale eindstand in vreemde valuta tegen de koers op balansdatum omgerekend. Een historische verkoopkoers kan nodig zijn voor het oorspronkelijke omzetbedrag of het koersverschil, maar niet voor de eurobalanswaarde van deze vordering op einddatum.",
         "pattern": [
-          "Herken: een openstaande geldvordering en een gevraagde eindbalanswaarde.",
-          "Aanpak: vermenigvuldig de SEK-eindstand met de gegeven europrijs van één SEK op balansdatum.",
-          "Controle: gebruik niet de gemiddelde jaarkoers of de koers op de oorspronkelijke factuurdatum."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -540,7 +540,7 @@ window.CAFA2_DATA.modules["val"]={
         "Zowel de boekwaarde als de afschrijving hoort bij de historische koers van € 0,910.",
         "USD 420.000 × € 0,910 = € 382.200."
       ],
-      "pattern": "Herken: historische-kostenwaardering, een beginboekwaarde en een afschrijving. Aanpak: trek de afschrijving van de beginboekwaarde af en reken de resterende waarde tegen de historische koers om. Controle: de euroafschrijving moet aansluiten op de koers van de betrokken machine, niet op de gemiddelde koers.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp",
         "t25building"
@@ -557,9 +557,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Wat is de euroboekwaarde van Liva's machine op de eindbalans volgens de tijdstipmethode, na aftrek van de gegeven jaarlijkse afschrijving?",
         "rules": "Een machine gewaardeerd tegen historische kosten wordt bij de tijdstipmethode met de relevante historische koers omgerekend. Bereken eerst de resterende boekwaarde in vreemde valuta en gebruik voor aanschafwaarde en bijbehorende afschrijving dezelfde koers. De gemiddelde koers en de slotkoers veranderen deze historische kostprijs niet.",
         "pattern": [
-          "Herken: historische-kostenwaardering, een beginboekwaarde en een afschrijving.",
-          "Aanpak: trek de afschrijving van de beginboekwaarde af en reken de resterende waarde tegen de historische koers om.",
-          "Controle: de euroafschrijving moet aansluiten op de koers van de betrokken machine, niet op de gemiddelde koers."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -641,7 +641,7 @@ window.CAFA2_DATA.modules["val"]={
         "De relevante historische koers is vanuit de moeder bezien daarom de koers op verwervingsdatum: € 0,910.",
         "USD 60.000 × € 0,910 = € 54.600."
       ],
-      "pattern": "Herken: de aanschafdatum van de machine ligt vóór de aankoop van de deelneming. Aanpak: bepaal welke historische koers voor de moeder relevant is en pas die op de afschrijving toe. Controle: kies niet automatisch de oudste koers die in de casus staat.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp"
       ],
@@ -657,9 +657,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel euroafschrijving verwerkt Noord voor Liva's reeds vóór de overname aanwezige machine bij toepassing van de tijdstipmethode in deze deelnemingswaardering?",
         "rules": "De syllabus maakt een onderscheid tussen een aanschaf na de verwerving van de deelneming en een actief dat op het verwervingsmoment al aanwezig was. Voor dat laatste actief wordt bij de omrekening ten behoeve van de moeder aangesloten op de koers op het moment waarop de moeder de deelneming verwierf. Volg die koers ook voor de bijbehorende afschrijving.",
         "pattern": [
-          "Herken: de aanschafdatum van de machine ligt vóór de aankoop van de deelneming.",
-          "Aanpak: bepaal welke historische koers voor de moeder relevant is en pas die op de afschrijving toe.",
-          "Controle: kies niet automatisch de oudste koers die in de casus staat."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -742,7 +742,7 @@ window.CAFA2_DATA.modules["val"]={
         "Bij de slotkoersmethode volgt ook deze niet-monetaire balanspost de slotkoers.",
         "USD 420.000 × € 0,914 = € 383.880."
       ],
-      "pattern": "Herken: de methode is veranderd, terwijl hetzelfde type actief wordt gewaardeerd. Aanpak: bereken de resterende buitenlandse boekwaarde en vermenigvuldig met de slotkoers. Controle: pas de historische-koersregel van de tijdstipmethode niet toe in een slotkoersvraag.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2close"
       ],
@@ -758,9 +758,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Voor welk eurobedrag staat Liva's machine op de eindbalans wanneer nu de slotkoersmethode wordt toegepast?",
         "rules": "Bij de slotkoersmethode worden de activa en verplichtingen op de eindbalans tegen de slotkoers omgerekend. Voor een machine geldt dan niet de historische koers die de tijdstipmethode bij historische kosten gebruikt. Bepaal wel eerst de juiste resterende boekwaarde in de functionele valuta van de buitenlandse eenheid.",
         "pattern": [
-          "Herken: de methode is veranderd, terwijl hetzelfde type actief wordt gewaardeerd.",
-          "Aanpak: bereken de resterende buitenlandse boekwaarde en vermenigvuldig met de slotkoers.",
-          "Controle: pas de historische-koersregel van de tijdstipmethode niet toe in een slotkoersvraag."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -841,7 +841,7 @@ window.CAFA2_DATA.modules["val"]={
         "Het resultaat wordt hier omgerekend tegen de gemiddelde koers van € 0,912.",
         "USD 80.000 × € 0,912 = € 72.960."
       ],
-      "pattern": "Herken: de winst is gelijkmatig ontstaan en een gemiddelde koers is expliciet gegeven. Aanpak: reken het buitenlandse jaarresultaat om met die gemiddelde koers. Controle: tel een omrekeningsreserve niet bij dit resultaat op en gebruik niet enkel de slotkoers.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2close"
       ],
@@ -857,9 +857,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel bedraagt Liva's jaarresultaat in euro's volgens de slotkoersmethode wanneer de winst gelijkmatig is ontstaan en de gegeven gemiddelde koers wordt gebruikt?",
         "rules": "De posten van de winst-en-verliesrekening worden bij de slotkoersmethode omgerekend tegen de koersen van de transacties. De casus mag daarvoor een passende gemiddelde koers voorschrijven. Het aldus omgerekende resultaat is niet hetzelfde als de verandering in het eigen vermogen omgerekend tegen slotkoersen; het resterende omrekenverschil wordt afzonderlijk verwerkt.",
         "pattern": [
-          "Herken: de winst is gelijkmatig ontstaan en een gemiddelde koers is expliciet gegeven.",
-          "Aanpak: reken het buitenlandse jaarresultaat om met die gemiddelde koers.",
-          "Controle: tel een omrekeningsreserve niet bij dit resultaat op en gebruik niet enkel de slotkoers."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1021,7 +1021,7 @@ window.CAFA2_DATA.modules["val"]={
         "Aandeel moeder: 80% × € 72.960 = € 58.368.",
         "Deelneming debet; resultaat deelneming credit."
       ],
-      "pattern": "Herken: de vraag gaat van een buitenlandse jaarrekening naar een boeking in de moederadministratie. Aanpak: gebruik het euroresultaat en neem daarvan het 80%-aandeel. Controle: boek niet het volledige dochterresultaat bij de moeder en combineer de omrekenreserve niet ongemerkt met de winst.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "md",
         "t25close"
@@ -1039,9 +1039,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke journaalpost maakt Noord voor haar 80%-aandeel in Liva's in euro's omgerekende jaarresultaat bij waardering van de deelneming tegen NVW?",
         "rules": "Reken het resultaat van de buitenlandse deelneming eerst om volgens de gevraagde methode. Pas daarna het winstaandeel van de moeder toe. Bij NVW leidt een positief resultaat uit deelneming tot een debitering van deelneming en een creditering van resultaat deelneming. Een eventuele omrekenreserve bij de slotkoersmethode is een afzonderlijke vermogensmutatie.",
         "pattern": [
-          "Herken: de vraag gaat van een buitenlandse jaarrekening naar een boeking in de moederadministratie.",
-          "Aanpak: gebruik het euroresultaat en neem daarvan het 80%-aandeel.",
-          "Controle: boek niet het volledige dochterresultaat bij de moeder en combineer de omrekenreserve niet ongemerkt met de winst."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1131,7 +1131,7 @@ window.CAFA2_DATA.modules["val"]={
         "Aanbouw: een halfjaar afschrijving van USD 10.000; resterend USD 230.000 × € 0,920 = € 211.600.",
         "Samen: € 1.003.300."
       ],
-      "pattern": "Herken: een bestaand actief wordt tijdens het jaar uitgebreid en er zijn twee historische koersen. Aanpak: maak per laag een verloop van beginwaarde, investering en tijdsevenredige afschrijving. Controle: reken een halfjaarafschrijving op de nieuwe investering niet als een volledig jaar en gebruik geen gezamenlijke gemiddelde koers.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "t25building",
         "s2temp"
@@ -1148,9 +1148,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Wat is de totale euroboekwaarde van Noords buitenlandse gebouw op einddatum volgens de tijdstipmethode, gesplitst naar het bestaande gebouw en de investering op 1 juli?",
         "rules": "Activa met verschillende relevante aanschafmomenten kunnen verschillende historische koersen hebben. Houd het bestaande gebouw en de nieuwe investering daarom in afzonderlijke lagen bij. Bereken de afschrijving van iedere laag volgens de gegeven gebruiksduur en periode. Reken iedere netto laag om tegen haar eigen historische koers en tel daarna op.",
         "pattern": [
-          "Herken: een bestaand actief wordt tijdens het jaar uitgebreid en er zijn twee historische koersen.",
-          "Aanpak: maak per laag een verloop van beginwaarde, investering en tijdsevenredige afschrijving.",
-          "Controle: reken een halfjaarafschrijving op de nieuwe investering niet als een volledig jaar en gebruik geen gezamenlijke gemiddelde koers."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1239,7 +1239,7 @@ window.CAFA2_DATA.modules["val"]={
         "Aanbouw: USD 10.000 × € 0,920 = € 9.200.",
         "Totale last: € 36.500."
       ],
-      "pattern": "Herken: alleen de jaarlast wordt gevraagd, niet de eindboekwaarde. Aanpak: bereken de afschrijving per actieflaag, reken die tegen de eigen koers om en tel de lasten op. Controle: neem geen investeringsbedrag als last op en neem de gemiddelde koers niet over uit een slotkoersvraag.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "t25building",
         "s2temp"
@@ -1256,9 +1256,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel euroafschrijving hoort over het boekjaar bij het bestaande gebouw en de investering op 1 juli samen, volgens de tijdstipmethode?",
         "rules": "Bij historische kosten volgt de afschrijvingslast de historische koers van het betreffende actief. Het bestaande gebouw en de nieuwe investering houden dus hun eigen koers. Voor een investering gedurende het jaar wordt de afschrijving volgens de casus tijdsevenredig bepaald. De slotkoers speelt in deze berekening van de afschrijvingslast geen rol.",
         "pattern": [
-          "Herken: alleen de jaarlast wordt gevraagd, niet de eindboekwaarde.",
-          "Aanpak: bereken de afschrijving per actieflaag, reken die tegen de eigen koers om en tel de lasten op.",
-          "Controle: neem geen investeringsbedrag als last op en neem de gemiddelde koers niet over uit een slotkoersvraag."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1335,7 +1335,7 @@ window.CAFA2_DATA.modules["val"]={
         "September: USD 88.000 × € 0,920 = € 80.960.",
         "Samen: € 190.160."
       ],
-      "pattern": "Herken: er liggen partijen uit verschillende inkoopmaanden in de eindvoorraad. Aanpak: werk met de partijentabel in deze casus en tel de eurobedragen per laag op. Controle: de slotkoers hoort pas bij een andere waarderingssituatie, bijvoorbeeld een deel dat naar lagere waarde wordt afgewaardeerd.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp",
         "t25stock"
@@ -1352,9 +1352,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Voor welk totaalbedrag staan de twee gegeven, niet-afgewaardeerde voorraadpartijen op de eindbalans in euro's volgens de tijdstipmethode?",
         "rules": "Bij historische kosten wordt iedere resterende voorraadpartij omgerekend tegen de relevante koers van haar aanschafmoment. Vermenigvuldig de hoeveelheid per partij eerst met de buitenlandse inkoopprijs en daarna met die historische koers. Een gewogen of gemiddelde koers mag hier niet zonder casusgrond de afzonderlijke historische koersen vervangen.",
         "pattern": [
-          "Herken: er liggen partijen uit verschillende inkoopmaanden in de eindvoorraad.",
-          "Aanpak: werk met de partijentabel in deze casus en tel de eurobedragen per laag op.",
-          "Controle: de slotkoers hoort pas bij een andere waarderingssituatie, bijvoorbeeld een deel dat naar lagere waarde wordt afgewaardeerd."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -1464,7 +1464,7 @@ window.CAFA2_DATA.modules["val"]={
         "Resteert: 1.000 uit maart en alle 2.000 uit september.",
         "1.000 × USD 42 × € 0,920 + 2.000 × USD 44 × € 0,930 = € 120.480."
       ],
-      "pattern": "Herken: de casus bevat een chronologische reeks beginvoorraad, inkopen en verkopen. Aanpak: werk de verkopen van oud naar nieuw weg en reken vervolgens de resterende partijen in euro's om. Controle: beginvoorraad plus inkopen minus verkochte aantallen moet gelijk zijn aan de resterende hoeveelheid in de partijentabel.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "t25stock",
         "wijo"
@@ -1480,9 +1480,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoe hoog is Nova's eindvoorraad in euro's volgens de tijdstipmethode nadat de verkopen volgens FIFO aan de inkooplagen in de casustabel zijn toegerekend?",
         "rules": "Bij FIFO worden de oudste voorraadlagen het eerst verbruikt. Bepaal daarom eerst welke hoeveelheden van iedere partij na de gegeven verkopen overblijven. Waardeer alleen die resterende aantallen tegen hun eigen inkoopprijs en historische koers. De verkoopprijs en de koers op verkoopdatum bepalen niet de historische kostprijs van de resterende voorraad.",
         "pattern": [
-          "Herken: de casus bevat een chronologische reeks beginvoorraad, inkopen en verkopen.",
-          "Aanpak: werk de verkopen van oud naar nieuw weg en reken vervolgens de resterende partijen in euro's om.",
-          "Controle: beginvoorraad plus inkopen minus verkochte aantallen moet gelijk zijn aan de resterende hoeveelheid in de partijentabel."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -1692,7 +1692,7 @@ window.CAFA2_DATA.modules["val"]={
         "USD 32.000 × € 0,920 = € 29.440.",
         "Bank debet en deelneming credit. De winst was bij NVW al via het resultaat verwerkt."
       ],
-      "pattern": "Herken: een concrete uitkeringsdatum en koers, naast het deelnemingspercentage. Aanpak: buitenlandse dividenduitkering maal winstaandeel maal dividendkoers. Controle: gebruik niet de gemiddelde winstkoers en vermenigvuldig een al gegeven moederbedrag niet nogmaals met het aandeel.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "s1nvw",
         "t24close",
@@ -1710,9 +1710,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke journaalpost maakt Noord voor het in vreemde valuta gedeclareerde en direct betaalde dividend waarop zij voor 80% recht heeft, bij NVW-waardering?",
         "rules": "Het dividend wordt in deze casus gedeclareerd en betaald op hetzelfde moment. Bereken het aandeel van Noord en reken dit om tegen de koers op dat moment. Bij NVW verlaagt de uitkering de deelneming; het is geen nieuwe dividendopbrengst. Bij de slotkoersmethode kan dit dividendbedrag tevens nodig zijn voor de afzonderlijke aansluiting van de omrekenreserve.",
         "pattern": [
-          "Herken: een concrete uitkeringsdatum en koers, naast het deelnemingspercentage.",
-          "Aanpak: buitenlandse dividenduitkering maal winstaandeel maal dividendkoers.",
-          "Controle: gebruik niet de gemiddelde winstkoers en vermenigvuldig een al gegeven moederbedrag niet nogmaals met het aandeel."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1795,7 +1795,7 @@ window.CAFA2_DATA.modules["val"]={
         "Die lagere waarde volgt de koers van 31 december, de datum van afwaardering.",
         "USD 60.000 × € 0,935 = € 56.100."
       ],
-      "pattern": "Herken: een lagere waarde per stuk en een koers op de afwaarderingsdatum. Aanpak: hoeveelheid maal nieuwe lagere waarde maal koers op het afwaarderingsmoment. Controle: gevraagd is de nieuwe balanswaarde, niet het verschil met de oorspronkelijke boekwaarde.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp",
         "t25stock"
@@ -1811,9 +1811,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Voor welk eurobedrag wordt de afgewaardeerde partij van 2.000 stuks op de eindbalans opgenomen volgens de tijdstipmethode?",
         "rules": "De syllabus schrijft voor dat het deel van een niet-monetaire voorraad dat naar lagere waarde wordt afgewaardeerd, wordt omgerekend tegen de koers op het afwaarderingsmoment. Dit is een andere berekening dan de historische waarde vóór afwaardering. De oorspronkelijke historische koers blijft nodig om het totale afwaarderingsverlies in euro's te berekenen.",
         "pattern": [
-          "Herken: een lagere waarde per stuk en een koers op de afwaarderingsdatum.",
-          "Aanpak: hoeveelheid maal nieuwe lagere waarde maal koers op het afwaarderingsmoment.",
-          "Controle: gevraagd is de nieuwe balanswaarde, niet het verschil met de oorspronkelijke boekwaarde."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -1918,7 +1918,7 @@ window.CAFA2_DATA.modules["val"]={
         "Afwaarderingslast: € 73.600 − € 56.100 = € 17.500.",
         "Dezelfde uitkomst volgt uit € 18.400 afwaardering minus € 900 positief koersverschil op de resterende lagere waarde."
       ],
-      "pattern": "Herken: zowel een prijsdaling als een koerswijziging bij dezelfde voorraadpartij. Aanpak: oude euroboekwaarde minus nieuwe euroboekwaarde. Controle: uitsluitend het prijsverschil in vreemde valuta tegen één koers omrekenen mist het koerseffect op de resterende waarde.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp",
         "t25stock"
@@ -1934,9 +1934,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel afwaarderingsverlies in euro's ontstaat op de gegeven voorraadpartij volgens de tijdstipmethode, inclusief het koerseffect binnen deze afwaardering?",
         "rules": "Bereken de oude boekwaarde met de historische inkoopprijs en historische koers. Bereken de nieuwe lagere waarde met de waarde per stuk en de koers op de afwaarderingsdatum. Het verschil tussen die twee eurobedragen is de afwaarderingslast. Het koersdeel van deze niet-monetaire correctie wordt in de syllabus in dezelfde afwaarderingspost verwerkt en niet nogmaals in de monetaire positie.",
         "pattern": [
-          "Herken: zowel een prijsdaling als een koerswijziging bij dezelfde voorraadpartij.",
-          "Aanpak: oude euroboekwaarde minus nieuwe euroboekwaarde.",
-          "Controle: uitsluitend het prijsverschil in vreemde valuta tegen één koers omrekenen mist het koerseffect op de resterende waarde."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -2043,7 +2043,7 @@ window.CAFA2_DATA.modules["val"]={
         "Courante partij B: € 81.840.",
         "Gehele voorraad: € 180.960."
       ],
-      "pattern": "Herken: één partij heeft zowel afgewaardeerde als niet-afgewaardeerde eenheden. Aanpak: maak drie waarderingsregels: regulier A, afgewaardeerd A en regulier B. Controle: de som van de gesplitste aantallen moet nog steeds overeenkomen met de totale eindvoorraad.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "t25stock",
         "s2temp"
@@ -2061,9 +2061,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Wat is de totale euro-eindvoorraad wanneer van partij A alleen 1.000 stuks worden afgewaardeerd en de overige stuks van A en partij B tegen historische kosten blijven staan?",
         "rules": "Splits een partij zodra slechts een deel naar lagere waarde moet worden gebracht. Het onaangetaste deel houdt zijn historische inkoopprijs en koers; het afgewaardeerde deel krijgt de lagere waarde en koers op het afwaarderingsmoment. Andere voorraadpartijen houden hun eigen historische koers. Een koers voor alle resterende voorraad is hier dus onjuist.",
         "pattern": [
-          "Herken: één partij heeft zowel afgewaardeerde als niet-afgewaardeerde eenheden.",
-          "Aanpak: maak drie waarderingsregels: regulier A, afgewaardeerd A en regulier B.",
-          "Controle: de som van de gesplitste aantallen moet nog steeds overeenkomen met de totale eindvoorraad."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -2175,7 +2175,7 @@ window.CAFA2_DATA.modules["val"]={
         "Af te boeken boekwaarde: USD 80.000 × € 0,910 = € 72.800.",
         "Boekwinst: € 73.872 − € 72.800 = € 1.072."
       ],
-      "pattern": "Herken: de boekwaarde en de verkoopopbrengst hebben verschillende koersgrondslagen. Aanpak: reken beide bedragen afzonderlijk om en trek de euroboekwaarde van de euroopbrengst af. Controle: gebruik voor de historische boekwaarde niet de verkoopkoers.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2sale"
       ],
@@ -2191,9 +2191,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel boekwinst in euro's ontstaat bij verkoop van het gegeven actief volgens de tijdstipmethode, met historische euroboekwaarde en opbrengst tegen de verkoopkoers?",
         "rules": "De boekwaarde van een historisch gewaardeerd actief blijft gebaseerd op de relevante historische koers. De verkoopopbrengst wordt omgerekend tegen de koers op de transactiedatum. Het resultaat in euro's is het verschil tussen deze beide eurobedragen. Het buitenlandse boekresultaat tegen één koers omrekenen is niet hetzelfde.",
         "pattern": [
-          "Herken: de boekwaarde en de verkoopopbrengst hebben verschillende koersgrondslagen.",
-          "Aanpak: reken beide bedragen afzonderlijk om en trek de euroboekwaarde van de euroopbrengst af.",
-          "Controle: gebruik voor de historische boekwaarde niet de verkoopkoers."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2308,7 +2308,7 @@ window.CAFA2_DATA.modules["val"]={
         "Lagere waarde: 2.000 × USD 30 × € 0,935 = € 56.100.",
         "De totale afwaarderingslast is € 17.500. Die last wordt gedebiteerd; de voorraad wordt voor hetzelfde bedrag gecrediteerd."
       ],
-      "pattern": "Herken: de vraag vraagt een boeking nadat beide waarderingsgrondslagen zijn gegeven. Aanpak: debiteer afwaarderingskosten en crediteer voorraad voor het berekende euroverlies. Controle: de journaalpost moet de oude voorraadwaarde exact naar de nieuwe lagere waarde brengen.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "s2temp",
         "t25stock"
@@ -2325,9 +2325,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke journaalpost verwerkt het totale afwaarderingsverlies van de voorraadpartij in de euroadministratie, uitgaande van de gegeven historische en lagere euroboekwaarde?",
         "rules": "Een afwaardering verlaagt de voorraad en wordt als last verwerkt. Gebruik het verschil tussen de oorspronkelijke euroboekwaarde en de nieuwe lagere euroboekwaarde. Volgens de syllabus is het bijbehorende koersdeel onderdeel van deze afwaarderingslast. Splits het niet nogmaals af als een tweede verlies op monetaire posten.",
         "pattern": [
-          "Herken: de vraag vraagt een boeking nadat beide waarderingsgrondslagen zijn gegeven.",
-          "Aanpak: debiteer afwaarderingskosten en crediteer voorraad voor het berekende euroverlies.",
-          "Controle: de journaalpost moet de oude voorraadwaarde exact naar de nieuwe lagere waarde brengen."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -2433,7 +2433,7 @@ window.CAFA2_DATA.modules["val"]={
         "Monetaire passiva: USD 360.000 + USD 140.000 + USD 6.000 = USD 506.000.",
         "Monetaire positie: USD 200.000 − USD 506.000 = USD −306.000. De voorraad telt niet mee."
       ],
-      "pattern": "Herken: meerdere balansposten staan door elkaar, maar alleen de monetaire positie wordt gevraagd. Aanpak: classificeer elke post vóór je gaat optellen. Controle: voeg voorraad niet toe alleen omdat die op dezelfde balans staat; de historische waarde daarvan wordt elders omgerekend.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2temp",
         "t25mon"
@@ -2451,9 +2451,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoe groot is de netto monetaire positie in vreemde valuta aan het begin van het boekjaar, met monetaire activa positief en monetaire passiva negatief?",
         "rules": "Tel liquide middelen en monetaire vorderingen op en trek monetaire schulden en de in de syllabus als monetair behandelde voorzieningen af. Voorraad en andere niet-monetaire activa blijven buiten deze optelling. Een negatief saldo betekent een netto monetaire verplichtingenpositie. Houd deze tekenafspraak ook in het verdere verloop vast.",
         "pattern": [
-          "Herken: meerdere balansposten staan door elkaar, maar alleen de monetaire positie wordt gevraagd.",
-          "Aanpak: classificeer elke post vóór je gaat optellen.",
-          "Controle: voeg voorraad niet toe alleen omdat die op dezelfde balans staat; de historische waarde daarvan wordt elders omgerekend."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2508,7 +2508,7 @@ window.CAFA2_DATA.modules["val"]={
         "Contante aankoop machine: bank daalt, terwijl een niet-monetair actief stijgt; de monetaire positie daalt.",
         "Afschrijving: alleen het niet-monetaire actief en het resultaat veranderen."
       ],
-      "pattern": "Herken: de vraag gaat over netto-effecten, niet over iedere afzonderlijke bankbeweging. Aanpak: bepaal voor elke transactie welke monetaire activa én passiva wijzigen. Controle: neem een aflossing of ontvangst van een debiteur niet nogmaals als zelfstandige netto mutatie op.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "s2mon",
         "corona",
@@ -2526,9 +2526,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke van de genoemde gebeurtenissen verandert de netto monetaire positie en welke verschuift uitsluitend bedragen tussen monetaire posten?",
         "rules": "Een aflossing verlaagt zowel liquide middelen als de monetaire schuld en verandert het netto saldo daardoor niet. Ontvangst van een debiteur verschuift een monetaire vordering naar bank. Een contante investering in een niet-monetair actief verlaagt wel de netto monetaire positie. Afschrijving op dat actief is vervolgens geen nieuwe kasmutatie.",
         "pattern": [
-          "Herken: de vraag gaat over netto-effecten, niet over iedere afzonderlijke bankbeweging.",
-          "Aanpak: bepaal voor elke transactie welke monetaire activa én passiva wijzigen.",
-          "Controle: neem een aflossing of ontvangst van een debiteur niet nogmaals als zelfstandige netto mutatie op."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -2622,7 +2622,7 @@ window.CAFA2_DATA.modules["val"]={
         "Dezelfde eindpositie tegen slotkoers is € −139.500.",
         "Werkelijk minus theoretisch: € −139.500 − (€ −132.900) = € −6.600; een koersverlies."
       ],
-      "pattern": "Herken: beginpositie, mutatiekoersen en slotkoers zijn allemaal gegeven. Aanpak: maak twee kolommen, vreemde valuta en euro, en sluit eerst de vreemde-valutakolom. Controle: een sluitend saldo in vreemde valuta kan toch een koersverschil in euro's opleveren.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "s2mon",
         "t25mon",
@@ -2641,9 +2641,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welk valutaomrekeningsresultaat in euro's ontstaat uit de gegeven monetaire beginpositie, ontvangsten en uitgaven, vergeleken met de monetaire eindpositie tegen slotkoers?",
         "rules": "Reken de monetaire beginpositie om tegen de beginkoers en de netto monetaire mutaties tegen hun eigen transactiekoersen. Dit geeft de theoretische euro-eindpositie. Vergelijk die met het buitenlandse eindsaldo omgerekend tegen slotkoers. Leg vooraf vast welk teken je winst of verlies noemt; in de toelichting wordt een verslechtering van de europositie als verlies verwerkt.",
         "pattern": [
-          "Herken: beginpositie, mutatiekoersen en slotkoers zijn allemaal gegeven.",
-          "Aanpak: maak twee kolommen, vreemde valuta en euro, en sluit eerst de vreemde-valutakolom.",
-          "Controle: een sluitend saldo in vreemde valuta kan toch een koersverschil in euro's opleveren."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2755,7 +2755,7 @@ window.CAFA2_DATA.modules["val"]={
         "Eindpositie: USD −196.000 × € 0,930 = € −182.280.",
         "Koersverlies: € −182.280 − (€ −175.480) = € −6.800."
       ],
-      "pattern": "Herken: de mutatielijst bevat zowel echte saldoveranderingen als verschuivingen en niet-monetaire lasten. Aanpak: markeer per regel het netto effect; reken alleen dat effect in de monetaire verloopstaat op. Controle: de aankoop van een machine en de afschrijving daarop mogen niet beide als kasuitgave worden opgenomen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "corona",
         "t25mon",
@@ -2773,9 +2773,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel omrekeningsverlies in euro's volgt uit alle gegeven monetaire mutaties, inclusief de contante investering en debiteurenafboeking maar zonder een dubbele opname van aflossing of afschrijving?",
         "rules": "Een contante investering verlaagt de netto monetaire positie, terwijl afschrijving op het gekochte actief niet monetair is. Een leningaflossing verlaagt bank én schuld en is per saldo geen monetaire mutatie. Een afboeking op een ongedekte debiteur verlaagt de monetaire vordering. Gebruik de expliciet bij de gebeurtenissen gegeven koersen en sluit de vreemde-valutapositie vóór de koersberekening.",
         "pattern": [
-          "Herken: de mutatielijst bevat zowel echte saldoveranderingen als verschuivingen en niet-monetaire lasten.",
-          "Aanpak: markeer per regel het netto effect; reken alleen dat effect in de monetaire verloopstaat op.",
-          "Controle: de aankoop van een machine en de afschrijving daarop mogen niet beide als kasuitgave worden opgenomen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2929,7 +2929,7 @@ window.CAFA2_DATA.modules["val"]={
         "Aandeel moeder: 80% × € 83.200 = € 66.560.",
         "Deelneming debet; resultaat deelneming credit."
       ],
-      "pattern": "Herken: resultaat vóór koersverschillen plus een afzonderlijk berekend verlies. Aanpak: trek het verlies eerst af en pas daarna het 80%-winstaandeel toe. Controle: controleer of het opgegeven resultaat het koersverschil al bevat; in deze vraag uitdrukkelijk nog niet.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "md",
         "s2temp"
@@ -2947,9 +2947,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welk resultaat uit deelneming boekt Noord voor haar 80%-belang wanneer het euroresultaat vóór koersverschillen en het omrekeningsverlies volgens de tijdstipmethode zijn gegeven?",
         "rules": "Bij de tijdstipmethode wordt het omrekeningsverschil in het resultaat van de buitenlandse deelneming verwerkt. Corrigeer daarom het resultaat vóór omrekeningsverschillen voordat je het winstaandeel van de moeder berekent. Vorm voor dit verschil niet de omrekeningsreserve die bij de slotkoersmethode hoort.",
         "pattern": [
-          "Herken: resultaat vóór koersverschillen plus een afzonderlijk berekend verlies.",
-          "Aanpak: trek het verlies eerst af en pas daarna het 80%-winstaandeel toe.",
-          "Controle: controleer of het opgegeven resultaat het koersverschil al bevat; in deze vraag uitdrukkelijk nog niet."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3047,7 +3047,7 @@ window.CAFA2_DATA.modules["val"]={
         "Dividend: −USD 40.000 × (€ 0,930 − € 0,925) = € −200.",
         "Totaal: € 20.000 + € 1.200 − € 200 = € 21.000 positief."
       ],
-      "pattern": "Herken: een vermogensaansluiting met drie verschillende koersen. Aanpak: eindvermogen in euro minus beginvermogen in euro minus omgerekende winst plus omgerekend dividend. Controle: het dividend wordt in het vermogensverloop afgetrokken; voorkom een omgekeerd teken in de aansluitingsberekening.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het valuta- of omrekeningsverschil. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "t24close",
         "s2close"
@@ -3066,9 +3066,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoe groot is het totale omrekeningsverschil in het eigen vermogen van de buitenlandse eenheid volgens de slotkoersmethode, op basis van beginvermogen, jaarwinst en dividend?",
         "rules": "Vergelijk het eindvermogen tegen slotkoers met beginvermogen tegen de eerdere koers, resultaat tegen de toepasselijke resultaatkoers en dividend tegen de uitkeringskoers. Het resterende verschil behoort bij de slotkoersmethode tot het eigen vermogen. Een alternatieve controle rekent de koersverschillen op beginvermogen, resultaat en dividend afzonderlijk uit.",
         "pattern": [
-          "Herken: een vermogensaansluiting met drie verschillende koersen.",
-          "Aanpak: eindvermogen in euro minus beginvermogen in euro minus omgerekende winst plus omgerekend dividend.",
-          "Controle: het dividend wordt in het vermogensverloop afgetrokken; voorkom een omgekeerd teken in de aansluitingsberekening."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het valuta- of omrekeningsverschil. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -3259,7 +3259,7 @@ window.CAFA2_DATA.modules["val"]={
         "Positieve reservemutatie voor de moeder: 80% × € 21.000 = € 16.800.",
         "De deelneming neemt door beide samen toe met € 105.120."
       ],
-      "pattern": "Herken: slotkoersmethode, een positief koersverschil en al geboekt dividend. Aanpak: bereken beide moederdelen afzonderlijk en boek hun gezamenlijke toename debet op deelneming. Controle: de winst-en-verliesrekening bevat alleen het winstaandeel, niet de positieve omrekenreserve.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "t25close",
         "md"
@@ -3277,9 +3277,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke journaalpost boekt Noord voor haar 80%-aandeel in het jaarresultaat en het positieve omrekeningsverschil bij de slotkoersmethode, wanneer het dividend al is verwerkt?",
         "rules": "Bij NVW neemt de deelneming zowel toe door het winstaandeel als door het aandeel in een positieve rechtstreekse vermogensmutatie. De tegenrekeningen verschillen: resultaat deelneming voor de winst en reserve omrekeningsverschillen voor de koersmutatie in het eigen vermogen. Het reeds verwerkte dividend wordt niet opnieuw geboekt.",
         "pattern": [
-          "Herken: slotkoersmethode, een positief koersverschil en al geboekt dividend.",
-          "Aanpak: bereken beide moederdelen afzonderlijk en boek hun gezamenlijke toename debet op deelneming.",
-          "Controle: de winst-en-verliesrekening bevat alleen het winstaandeel, niet de positieve omrekenreserve."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3502,7 +3502,7 @@ window.CAFA2_DATA.modules["val"]={
         "Resultaat deelneming: 80% × USD 120.000 × € 0,920 = € 88.320.",
         "Deelneming stijgt per saldo met € 71.520. De negatieve reserve wordt gedebiteerd."
       ],
-      "pattern": "Herken: positieve jaarwinst en dalende omrekenkoersen komen tegelijk voor. Aanpak: houd resultaat en eigen-vermogensmutatie in afzonderlijke regels en bepaal daarna het saldo op deelneming. Controle: de reserveboeking draait ten opzichte van een positief omrekenverschil om; de resultaatboeking niet.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "t24close",
         "md"
@@ -3519,9 +3519,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke journaalpost maakt Noord voor haar 80%-winstaandeel en het negatieve omrekeningsverschil bij de slotkoersmethode, zonder het reeds verwerkte dividend opnieuw te boeken?",
         "rules": "Een buitenlandse deelneming kan winst maken terwijl haar vermogen door de koersontwikkeling in euro's daalt. Boek het winstaandeel op resultaat deelneming en de negatieve rechtstreekse koersmutatie debet op de omrekeningsreserve. De netto mutatie van de deelneming is de combinatie van beide. Verwerk dit reserveverschil niet als koersverlies in de winst-en-verliesrekening.",
         "pattern": [
-          "Herken: positieve jaarwinst en dalende omrekenkoersen komen tegelijk voor.",
-          "Aanpak: houd resultaat en eigen-vermogensmutatie in afzonderlijke regels en bepaal daarna het saldo op deelneming.",
-          "Controle: de reserveboeking draait ten opzichte van een positief omrekenverschil om; de resultaatboeking niet."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het valuta- of omrekeningsverschil. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3624,7 +3624,7 @@ window.CAFA2_DATA.modules["val"]={
         "Na koersverlies: € 89.200.",
         "Resultaat deelneming bij de moeder: 80% × € 89.200 = € 71.360."
       ],
-      "pattern": "Herken: niet alle regels in de winst-en-verliesrekening hebben dezelfde koersgrondslag. Aanpak: reken iedere resultaatpost afzonderlijk om en neem de aanvullende fair-valueafschrijving mee. Controle: verwar de extra afschrijving op een waarderingsverschil niet met een nieuwe investering of een reserveboeking.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het resultaat uit deelneming. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "md",
         "corona",
@@ -3643,9 +3643,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Hoeveel resultaat uit deelneming verantwoordt Noord voor haar 80%-belang in Miro volgens de tijdstipmethode, inclusief de gegeven fair-valueafschrijving en het koersresultaat?",
         "rules": "Omzet en overige transacties worden tegen hun toepasselijke transactiekoersen omgerekend. Kostprijs en afschrijving op historisch gewaardeerde activa volgen de koers van de betrokken voorraad- of actieflaag. Verwerk tevens de aanpassing naar moedergrondslagen en het koersresultaat. Pas het deelnemingspercentage pas op het volledig aangepaste euroresultaat toe.",
         "pattern": [
-          "Herken: niet alle regels in de winst-en-verliesrekening hebben dezelfde koersgrondslag.",
-          "Aanpak: reken iedere resultaatpost afzonderlijk om en neem de aanvullende fair-valueafschrijving mee.",
-          "Controle: verwar de extra afschrijving op een waarderingsverschil niet met een nieuwe investering of een reserveboeking."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het resultaat uit deelneming. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Herken de voorgeschreven omrekeningsmethode. Onderscheid monetaire posten, historische aanschafbedragen, transacties en resultaten. Koppel elk bedrag aan de passende historische, transactie-, gemiddelde of slotkoers en houd valutaresultaat en reserve gescheiden.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -3878,7 +3878,7 @@ window.CAFA2_DATA.modules["val"]={
         "Controle boekwaarde: 80% × (USD 600.000 + USD 96.000 − USD 30.000) × € 0,930 = € 495.504.",
         "Controle via verloop: begin € 432.000 + resultaat € 70.272 + reserve € 15.264 − dividend € 22.032 = € 495.504."
       ],
-      "pattern": "Herken: deze eindcasus vraagt zowel boekingen als een sluitende balanswaarde. Aanpak: scheid resultaat, dividend en reserve in een verloopstaat met bij iedere regel de juiste koers. Controle: beginwaarde plus alle mutaties moet exact gelijk zijn aan het aandeel in het omgerekende eindvermogen.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "corona",
         "t24close",
@@ -3899,9 +3899,9 @@ window.CAFA2_DATA.modules["val"]={
         "task": "Welke resultaat- en reserveboeking maakt Noord voor Miro bij de slotkoersmethode, en op welke euroboekwaarde sluit de 80%-deelneming aan na het al geboekte dividend?",
         "rules": "Maak een volledig verloop van de deelneming: beginwaarde, winstaandeel, dividend en aandeel in het omrekeningsverschil. Het winstaandeel volgt de resultaatkoers, het dividend de uitkeringskoers en de eindwaarde de slotkoers. Het verschil dat de aansluiting sluit is de reserve-mutatie, niet extra winst. Controleer dit met 80% van het eindvermogen tegen slotkoers.",
         "pattern": [
-          "Herken: deze eindcasus vraagt zowel boekingen als een sluitende balanswaarde.",
-          "Aanpak: scheid resultaat, dividend en reserve in een verloopstaat met bij iedere regel de juiste koers.",
-          "Controle: beginwaarde plus alle mutaties moet exact gelijk zijn aan het aandeel in het omgerekende eindvermogen."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []

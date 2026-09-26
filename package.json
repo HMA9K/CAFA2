@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/validate.mjs && node tests/exam-engine.mjs && node tests/exam-content.mjs && node tests/opgave-practice.mjs && node tests/content-revision.mjs && node tests/summary-reader.mjs && node tests/study-upgrade.mjs && node tests/study-refinement.mjs && node tests/dark-contrast.mjs && node tests/practice-topics.mjs && node tests/exam-practice.mjs",
+    "test": "node tests/validate.mjs && node tests/exam-engine.mjs && node tests/exam-content.mjs && node tests/opgave-practice.mjs && node tests/content-revision.mjs && node tests/summary-reader.mjs && node tests/study-upgrade.mjs && node tests/study-refinement.mjs && node tests/dark-contrast.mjs && node tests/practice-topics.mjs && node tests/exam-practice.mjs && node tests/question-pattern.mjs",
     "test:opgaven-browser": "node tests/opgave-practice-browser.cjs",
     "test:exam-scroll-browser": "node tests/exam-scroll-browser.cjs",
     "test:law-browser": "node tests/law-references-browser.cjs",

@@ -164,7 +164,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De vier criteria staan in art. 2:24c lid 1 BW. Bij een vijfde of meer van het geplaatste kapitaal wordt het bestaan van een deelneming vermoed."
       ],
-      "pattern": "Herken: de vraag gaat over de aard van het kapitaalbelang, niet over de zeggenschap of de boekwaarde. Aanpak: toets kapitaalverschaffing, eigen rekening, duurzame verbondenheid en dienstbaarheid afzonderlijk. Controle: gebruik artikel 2:24c voor deelneming; artikel 2:24a voor dochtermaatschappij en artikel 2:389 voor waardering.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "qual",
         "montone"
@@ -181,9 +181,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke omschrijving bevat de vier kwalitatieve criteria voor een deelneming volgens artikel 2:24c lid 1 BW?",
         "rules": "Beoordeel of voor eigen rekening kapitaal wordt verschaft om duurzaam verbonden te zijn ten dienste van de eigen werkzaamheid. Het wettelijke vermoeden vanaf een vijfde van het geplaatste kapitaal ondersteunt deze beoordeling, maar vervangt de kwalitatieve criteria niet. De kwalificatie deelneming is een andere beslissing dan de waardering tegen nettovermogenswaarde.",
         "pattern": [
-          "Herken: de vraag gaat over de aard van het kapitaalbelang, niet over de zeggenschap of de boekwaarde.",
-          "Aanpak: toets kapitaalverschaffing, eigen rekening, duurzame verbondenheid en dienstbaarheid afzonderlijk.",
-          "Controle: gebruik artikel 2:24c voor deelneming; artikel 2:24a voor dochtermaatschappij en artikel 2:389 voor waardering."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -231,7 +231,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De kapitaalverschaffing dient duurzaam de eigen werkzaamheid en geschiedt voor eigen rekening. Een belang onder 20% kan dus een deelneming zijn."
       ],
-      "pattern": "Herken: het lage percentage staat naast concrete informatie over strategische samenwerking. Aanpak: verbind de feiten over Lever aan de vier wettelijke criteria in plaats van uitsluitend een grenspercentage te noemen. Controle: leid uit de kwalificatie deelneming nog niet automatisch waardering tegen NVW af; daarvoor is invloed van betekenis nodig.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "qual"
       ],
@@ -247,9 +247,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoe kwalificeert Merwede het 15%-kapitaalbelang in Lever op basis van de beschreven samenwerking en het doel van het belang?",
         "rules": "Bij minder dan 20% bestaat niet het wettelijke vermoeden van een deelneming. Een deelneming kan echter wel aanwezig zijn wanneer de vier kwalitatieve criteria van artikel 2:24c lid 1 BW zijn vervuld. Kijk daarom naar de duurzame samenwerking en de betekenis voor de eigen bedrijfsactiviteiten; het percentage alleen geeft geen afdoende antwoord.",
         "pattern": [
-          "Herken: het lage percentage staat naast concrete informatie over strategische samenwerking.",
-          "Aanpak: verbind de feiten over Lever aan de vier wettelijke criteria in plaats van uitsluitend een grenspercentage te noemen.",
-          "Controle: leid uit de kwalificatie deelneming nog niet automatisch waardering tegen NVW af; daarvoor is invloed van betekenis nodig."
+          "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -293,7 +293,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Zowel duurzame verbondenheid als dienstbaarheid aan de eigen werkzaamheid ontbreekt. De officiële Rosen-uitwerking kwalificeert de vergelijkbare situatie als kortlopende belegging."
       ],
-      "pattern": "Herken: de casus benadrukt snelle verkoop en geen bedrijfsmatige samenwerking. Aanpak: toets vooral de ontbrekende duurzame en functionele verbondenheid aan artikel 2:24c lid 1 BW. Controle: een percentage onder 20% is niet zelfstandig de reden; een strategisch belang met hetzelfde percentage kan anders kwalificeren.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "qual",
         "rosen"
@@ -309,9 +309,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoe kwalificeert Merwede het 18%-belang in Tour, gezien het voornemen tot snelle verkoop en het ontbreken van een verbinding met de eigen bedrijfsactiviteiten?",
         "rules": "De bedoeling bij het aanhouden van een belang is relevant voor de kwalificatie. Een belang dat uitsluitend tijdelijk voor verkoopwinst wordt gehouden, voldoet niet zonder meer aan duurzame verbondenheid ten dienste van de eigen werkzaamheid. Onderscheid de kwalificatie belegging van de daaropvolgende keuze van waarderingsgrondslag.",
         "pattern": [
-          "Herken: de casus benadrukt snelle verkoop en geen bedrijfsmatige samenwerking.",
-          "Aanpak: toets vooral de ontbrekende duurzame en functionele verbondenheid aan artikel 2:24c lid 1 BW.",
-          "Controle: een percentage onder 20% is niet zelfstandig de reden; een strategisch belang met hetzelfde percentage kan anders kwalificeren."
+          "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -346,7 +346,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Het vermoeden in art. 2:389 lid 1 is gebaseerd op stemmen. Art. 2:24c lid 1 gebruikt voor het vermoeden van een deelneming juist het geplaatste kapitaal."
       ],
-      "pattern": "Herken: de vraag noemt waardering en invloed op het beleid. Aanpak: bepaal de uit te oefenen stemrechten en beoordeel daarna aanwijzingen voor feitelijke invloed. Controle: verwissel 20% van de stemmen niet met 20% van het kapitaal en maak van een vermoeden geen onweerlegbare regel.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "qual",
         "valuation"
@@ -363,9 +363,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welk wettelijk vermoeden van invloed van betekenis gebruikt artikel 2:389 lid 1 BW voor toepassing van de vermogensmutatiemethode?",
         "rules": "Voor de vermogensmutatiemethode moet invloed van betekenis op het zakelijke en financiële beleid bestaan. Vanaf een vijfde van de naar eigen inzicht uit te brengen stemmen wordt die invloed vermoed. Het gaat hier dus om stemrechten, terwijl het vermoeden van een deelneming in artikel 2:24c betrekking heeft op kapitaalverschaffing. Feitelijke invloed blijft beslissend.",
         "pattern": [
-          "Herken: de vraag noemt waardering en invloed op het beleid.",
-          "Aanpak: bepaal de uit te oefenen stemrechten en beoordeel daarna aanwijzingen voor feitelijke invloed.",
-          "Controle: verwissel 20% van de stemmen niet met 20% van het kapitaal en maak van een vermoeden geen onweerlegbare regel."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -413,7 +413,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Art. 2:389 lid 3 geeft de uitzondering bij onvoldoende gegevens. Het is nog steeds een vermogensmutatiemethode."
       ],
-      "pattern": "Herken: invloed staat vast; alleen de informatie voor herrekening naar moedergrondslagen ontbreekt. Aanpak: onderscheid de hoofdregel van lid 2 en het alternatief van lid 3. Controle: stap niet zonder nadere grond over op verkrijgingsprijs; ook de alternatieve vermogensmutatiemethode verwerkt resultaten en dividend.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "valuation"
       ],
@@ -429,9 +429,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke waarderingsmogelijkheid biedt artikel 2:389 lid 3 BW wanneer invloed van betekenis bestaat, maar onvoldoende gegevens beschikbaar zijn om de nettovermogenswaarde te bepalen?",
         "rules": "Invloed van betekenis bepaalt eerst dat de vermogensmutatiemethode aan de orde is. Als gegevens voor de nettovermogenswaarde ontbreken, laat artikel 2:389 lid 3 BW een op andere wijze bepaalde waarde toe. In de syllabus wordt dit uitgewerkt met zichtbaar intrinsieke waarde als uitgangspunt, gevolgd door verwerking van het aandeel in resultaat en uitkeringen. Gebrek aan NVW-gegevens is niet hetzelfde als geen invloed van betekenis.",
         "pattern": [
-          "Herken: invloed staat vast; alleen de informatie voor herrekening naar moedergrondslagen ontbreekt.",
-          "Aanpak: onderscheid de hoofdregel van lid 2 en het alternatief van lid 3.",
-          "Controle: stap niet zonder nadere grond over op verkrijgingsprijs; ook de alternatieve vermogensmutatiemethode verwerkt resultaten en dividend."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -475,7 +475,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De uitkomst is precies 50%. De hoofdregel van art. 2:24a lid 1 onder a vereist meer dan 50%. Een andere grond voor een dochterrelatie is niet gegeven."
       ],
-      "pattern": "Herken: eigen stemmen worden aangevuld met overgedragen stemmen. Aanpak: tel beide bevoegdheden op en vergelijk de uitkomst strikt met 50%. Controle: controleer apart of de casus benoemingsrechten geeft; vermeng dat criterium niet met het stemrechtencriterium.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de aard van het kapitaalbelang. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "daughter",
         "rosen"
@@ -492,9 +492,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Is Merwede op grond van artikel 2:24a lid 1 onderdeel a BW moedermaatschappij wanneer zij zelf 45% van de stemmen heeft en via een stemrechtovereenkomst nog 5% kan uitoefenen?",
         "rules": "Tel de stemrechten op die de rechtspersoon zelf en via toepasselijke overeenkomsten kan uitoefenen. Voor artikel 2:24a lid 1 onderdeel a BW moet dit meer dan de helft zijn. Precies de helft voldoet niet. Een afzonderlijk recht om de meerderheid van bestuurders of commissarissen te benoemen of ontslaan kan tot een andere beoordeling leiden, maar mag niet zonder casusinformatie worden aangenomen.",
         "pattern": [
-          "Herken: eigen stemmen worden aangevuld met overgedragen stemmen.",
-          "Aanpak: tel beide bevoegdheden op en vergelijk de uitkomst strikt met 50%.",
-          "Controle: controleer apart of de casus benoemingsrechten geeft; vermeng dat criterium niet met het stemrechtencriterium."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de aard van het kapitaalbelang. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -566,7 +566,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Op 800 aandelen kan worden gestemd. Merwede kan 480/800 = 60% uitoefenen, zodat aan het stemrechtcriterium is voldaan."
       ],
-      "pattern": "Herken: de vennootschap heeft een deel van haar eigen aandelen ingekocht. Aanpak: trek de stemloze eigen aandelen af van het totaal voordat je het percentage van Merwede berekent. Controle: wijzig niet automatisch de teller; Merwede houdt nog steeds haar eigen aantal aandelen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "daughter",
         "west"
@@ -583,9 +583,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welk percentage van de uit te brengen stemmen kan Merwede in Haven uitoefenen, rekening houdend met de 200 door Haven ingekochte eigen aandelen?",
         "rules": "Voor de stemrechtenverhouding tellen aandelen waarop geen stem kan worden uitgebracht niet mee in de noemer. Bepaal eerst het aantal aandelen met uitoefenbare stemmen en deel daarna de door Merwede uit te oefenen stemmen door dit aantal. Het nominale kapitaalpercentage en het effectieve stemrechtenpercentage kunnen daardoor verschillen.",
         "pattern": [
-          "Herken: de vennootschap heeft een deel van haar eigen aandelen ingekocht.",
-          "Aanpak: trek de stemloze eigen aandelen af van het totaal voordat je het percentage van Merwede berekent.",
-          "Controle: wijzig niet automatisch de teller; Merwede houdt nog steeds haar eigen aantal aandelen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -633,7 +633,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Art. 2:24a lid 1 onder b vereist zowel lidmaatschap/aandeelhouderschap als de daarin genoemde benoemings- of ontslagmacht. Dit volgt ook uit Westerheuvel/Koekang."
       ],
-      "pattern": "Herken: de casus geeft benoemingsmacht, maar ontkent het aandeelhouderschap. Aanpak: toets beide voorwaarden van onderdeel b afzonderlijk. Controle: vervang de voorwaarde lid of aandeelhouder niet door een economisch belang dat niet in de casus staat.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "daughter",
         "west"
@@ -650,9 +650,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Voldoet Merwede voor haar verhouding tot Kade aan artikel 2:24a lid 1 onderdeel b BW wanneer zij drie van de vijf bestuurders kan benoemen, maar geen aandeelhouder of lid is?",
         "rules": "Bij het criterium van benoemen en ontslaan moeten twee voorwaarden samen worden onderzocht: lid of aandeelhouder zijn én de meerderheid van bestuurders of commissarissen kunnen benoemen of ontslaan. Alleen een contractueel benoemingsrecht is dus niet de volledige toets. Het ontbreken van een dochterrelatie beantwoordt nog niet automatisch een afzonderlijke vraag over centrale leiding of consolidatie.",
         "pattern": [
-          "Herken: de casus geeft benoemingsmacht, maar ontkent het aandeelhouderschap.",
-          "Aanpak: toets beide voorwaarden van onderdeel b afzonderlijk.",
-          "Controle: vervang de voorwaarde lid of aandeelhouder niet door een economisch belang dat niet in de casus staat."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -724,7 +724,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Sluis is een dochter van Merwede. Daardoor worden haar 27% stemrechten in Veer volledig bij Merwedes 28% opgeteld."
       ],
-      "pattern": "Herken: Merwede heeft een rechtstreeks én een via een dochter gehouden stemrecht in Veer. Aanpak: bewijs eerst de eerste dochterrelatie en tel vervolgens de directe en indirect beschikbare stemmen op. Controle: een vermenigvuldiging van deelnemingspercentages berekent niet de wettelijke zeggenschap in dit schema.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "daughter"
       ],
@@ -740,9 +740,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Kan Merwede alleen of samen met dochtermaatschappij Sluis meer dan de helft van de stemmen in Veer uitoefenen, en kwalificeert Veer daarmee als dochtermaatschappij van Merwede?",
         "rules": "Stel eerst vast dat Sluis een dochtermaatschappij is. Voor de moeder-dochtertoets worden vervolgens de door Sluis gehouden stemrechten in Veer volledig opgeteld bij de rechtstreeks door Merwede gehouden stemmen. Je vermenigvuldigt deze stemmen niet met het kapitaalbelang van Merwede in Sluis. Een economisch winstaandeel volgt een andere berekening.",
         "pattern": [
-          "Herken: Merwede heeft een rechtstreeks én een via een dochter gehouden stemrecht in Veer.",
-          "Aanpak: bewijs eerst de eerste dochterrelatie en tel vervolgens de directe en indirect beschikbare stemmen op.",
-          "Controle: een vermenigvuldiging van deelnemingspercentages berekent niet de wettelijke zeggenschap in dit schema."
+          "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -794,7 +794,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Polder is het groepshoofd. Sluis is geen groepshoofd, maar heeft in haar groepsdeel een dochtermaatschappij. Dit zijn afzonderlijke gronden voor consolidatieplicht."
       ],
-      "pattern": "Herken: onder een groepshoofd staat nog een rechtspersoon met een eigen dochter in de groep. Aanpak: bepaal eerst het groepshoofd en daarna welke tussenhoudster een te consolideren groepsdeel heeft. Controle: een hogere consolidatie neemt de eigen verplichting van een tussenholding niet zonder vrijstellingsvoorwaarden weg.",
+      "pattern": "Herken de vraag: Herken twee afzonderlijke beslissingen: wie een geconsolideerde jaarrekening opstelt en welke ondernemingen daarin worden opgenomen. Beantwoord de beslissing die hier wordt gevraagd. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "group",
         "groepsvraag"
@@ -810,9 +810,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke van Polder, Sluis en Delta moeten volgens artikel 2:406 BW een geconsolideerde jaarrekening opstellen, gegeven de groepsverhoudingen en het ontbreken van vrijstellingen?",
         "rules": "Het groepshoofd wordt getoetst aan artikel 2:406 lid 1 BW. Een rechtspersoon die niet het groepshoofd is, kan op grond van lid 2 toch consolidatieplichtig zijn voor zijn groepsdeel. Beoordeel daarom iedere rechtspersoon afzonderlijk. Consolidatievrijstellingen zijn een volgende toets en worden hier uitdrukkelijk niet toegepast.",
         "pattern": [
-          "Herken: onder een groepshoofd staat nog een rechtspersoon met een eigen dochter in de groep.",
-          "Aanpak: bepaal eerst het groepshoofd en daarna welke tussenhoudster een te consolideren groepsdeel heeft.",
-          "Controle: een hogere consolidatie neemt de eigen verplichting van een tussenholding niet zonder vrijstellingsvoorwaarden weg."
+          "Herken de vraag: Herken twee afzonderlijke beslissingen: wie een geconsolideerde jaarrekening opstelt en welke ondernemingen daarin worden opgenomen. Beantwoord de beslissing die hier wordt gevraagd.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -884,7 +884,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Het aandeel in NVW is € 450.000. Het meerdere van de koopprijs, € 50.000, is goodwill."
       ],
-      "pattern": "Herken: een prijs voor 75% wordt naast een waarde van 100% van de vennootschap gezet. Aanpak: vermenigvuldig alleen de totale NVW met het verworven aandeel en trek dit bedrag van de koopsom af. Controle: de deelneming en afzonderlijke goodwill moeten samen aansluiten op de betaalde prijs.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "acquisition"
       ],
@@ -900,9 +900,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoeveel goodwill betaalt Merwede bij de aankoop van het 75%-belang in Veer op 1 januari, uitgaande van de gegeven totale nettovermogenswaarde?",
         "rules": "Vergelijk de prijs voor het gekochte belang met het overeenkomstige aandeel in de nettovermogenswaarde op verkrijgingsdatum. De koopsom heeft al betrekking op het gekochte percentage en wordt niet nogmaals daarmee vermenigvuldigd. Bij NVW-waardering wordt positieve goodwill afzonderlijk geactiveerd volgens artikel 2:389 lid 7 BW.",
         "pattern": [
-          "Herken: een prijs voor 75% wordt naast een waarde van 100% van de vennootschap gezet.",
-          "Aanpak: vermenigvuldig alleen de totale NVW met het verworven aandeel en trek dit bedrag van de koopsom af.",
-          "Controle: de deelneming en afzonderlijke goodwill moeten samen aansluiten op de betaalde prijs."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -983,7 +983,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Gecorrigeerd zichtbaar eigen vermogen: € 800.000. Fair value-correcties: + € 80.000 − € 15.000 − € 35.000 = + € 30.000.",
         "100% NVW bedraagt € 830.000; het 70%-belang wordt geactiveerd voor € 581.000."
       ],
-      "pattern": "Herken: de gegevens combineren een gemiste kostenpost met verschillen in gebouwen, voorraad en een voorziening. Aanpak: maak een brug van zichtbaar eigen vermogen naar gecorrigeerd vermogen en vervolgens naar totale NVW. Controle: goodwill hoort niet in de afzonderlijke post deelneming tegen NVW.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "acquisition",
         "olbia"
@@ -1000,9 +1000,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Voor welk bedrag neemt Merwede het 70%-belang in Riet bij verwerving op als deelneming tegen nettovermogenswaarde, exclusief afzonderlijke goodwill?",
         "rules": "Corrigeer eerst het zichtbare eigen vermogen voor de nog te verwerken administratiefout. Breng daarna de verschillen naar reële waarde en moedergrondslagen aan. Hogere activa verhogen de nettovermogenswaarde, extra voorzieningen verlagen die waarde. Pas pas op het aldus aangepaste totale eigen vermogen het deelnemingspercentage toe.",
         "pattern": [
-          "Herken: de gegevens combineren een gemiste kostenpost met verschillen in gebouwen, voorraad en een voorziening.",
-          "Aanpak: maak een brug van zichtbaar eigen vermogen naar gecorrigeerd vermogen en vervolgens naar totale NVW.",
-          "Controle: goodwill hoort niet in de afzonderlijke post deelneming tegen NVW."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1173,7 +1173,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Deelneming: 70% × € 830.000 = € 581.000. Goodwill: € 680.000 − € 581.000 = € 99.000.",
         "De deelneming en goodwill staan debet; de betaling per bank staat credit."
       ],
-      "pattern": "Herken: NVW is expliciet de enkelvoudige waarderingsgrondslag. Aanpak: bereken eerst de deelneming, bepaal daarna goodwill als sluitpost en boek het betaalde totaal credit op bank. Controle: tel de twee debetbedragen op; dit moet exact de koopsom opleveren.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "acquisition",
         "olbia"
@@ -1190,9 +1190,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke journaalpost verwerkt Merwede bij aankoop van Riet: de deelneming tegen 70% van de gegeven totale NVW, de afzonderlijke goodwill en de betaling per bank?",
         "rules": "In de enkelvoudige aankoopboeking bij NVW worden deelneming en goodwill afzonderlijk gedebiteerd. De deelneming is het verworven aandeel in de aangepaste netto-activa; goodwill is het verschil met de koopsom. De creditboeking volgt de feitelijke tegenprestatie, hier betaling via de bank. Gebruik niet de aankoopboeking die bij verkrijgingsprijs wordt toegepast.",
         "pattern": [
-          "Herken: NVW is expliciet de enkelvoudige waarderingsgrondslag.",
-          "Aanpak: bereken eerst de deelneming, bepaal daarna goodwill als sluitpost en boek het betaalde totaal credit op bank.",
-          "Controle: tel de twee debetbedragen op; dit moet exact de koopsom opleveren."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1462,7 +1462,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Koopprijs: 180 × € 1.100 + 1.200 × € 250 = € 498.000. Aandeel NVW: 60% × € 620.000 = € 372.000. Goodwill: € 126.000.",
         "Aandelenkapitaal: 180 × € 500 = € 90.000. Agio: 180 × € 600 = € 108.000."
       ],
-      "pattern": "Herken: de ruilverhouding, nominale waarde en beurs- of reële waarde hebben ieder een andere functie. Aanpak: reken aantallen vóór bedragen uit; bepaal daarna tegenprestatie, deelneming en goodwill. Controle: kapitaal plus agio moet gelijk zijn aan de reële waarde van de uitgegeven aandelen, niet aan de hele koopsom inclusief contanten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "ruil",
         "acquisition"
@@ -1479,9 +1479,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke aankoopjournaalpost maakt Merwede voor het 60%-belang in Brug, betaald met nieuw uitgegeven eigen aandelen en de gegeven contante bijbetaling?",
         "rules": "Bepaal eerst hoeveel aandelen Brug worden gekocht en hoeveel eigen aandelen daartegenover worden uitgegeven. De reële waarde van de uitgegeven aandelen plus de contante bijbetaling vormt de tegenprestatie. Splits bij Merwede de emissie in nominale waarde van het aandelenkapitaal en agio. De debetzijde volgt de NVW van het belang en eventuele goodwill.",
         "pattern": [
-          "Herken: de ruilverhouding, nominale waarde en beurs- of reële waarde hebben ieder een andere functie.",
-          "Aanpak: reken aantallen vóór bedragen uit; bepaal daarna tegenprestatie, deelneming en goodwill.",
-          "Controle: kapitaal plus agio moet gelijk zijn aan de reële waarde van de uitgegeven aandelen, niet aan de hele koopsom inclusief contanten."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1549,7 +1549,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De volledige jaarlast bedraagt € 12.600. Voor zes maanden is de last € 6.300. Dit is al de goodwill van het verworven pakket."
       ],
-      "pattern": "Herken: de aankoop vindt halverwege het boekjaar plaats. Aanpak: bereken eerst een volledig jaar en daarna het aantal maanden sinds 1 juli. Controle: verwar de afschrijving van het boekjaar niet met de totale afschrijving over meerdere jaren.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "amort",
         "mulini"
@@ -1566,9 +1566,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoeveel goodwillafschrijving verwerkt Merwede in het aankoopjaar wanneer de goodwill op 1 juli ontstaat en volgens de casus in tien jaar lineair wordt afgeschreven?",
         "rules": "Volg de in de casus gegeven gebruiksduur en afschrijvingswijze. Bereken de jaarafschrijving op de geactiveerde goodwill en pas deze voor een deel van het jaar tijdsevenredig toe. De goodwill heeft al betrekking op het verworven belang. Vermenigvuldig de afschrijving daarom niet nogmaals met het deelnemingspercentage.",
         "pattern": [
-          "Herken: de aankoop vindt halverwege het boekjaar plaats.",
-          "Aanpak: bereken eerst een volledig jaar en daarna het aantal maanden sinds 1 juli.",
-          "Controle: verwar de afschrijving van het boekjaar niet met de totale afschrijving over meerdere jaren."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1645,7 +1645,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Extra afschrijving: € 6.000 negatief. Het voorraadwaarderingsverschil wordt € 12.000 kleiner en de extra garantievoorziening valt € 40.000 vrij.",
         "Herrekende winst: € 286.000. Resultaat deelneming: 80% × € 286.000 = € 228.800."
       ],
-      "pattern": "Herken: naast het dochterresultaat staan verschillen op begin- en einddatum. Aanpak: bereken per verschil de invloed op het lopende jaar; een afgenomen extra voorziening leidt hier tot vrijval. Controle: sluit het aangepaste resultaat aan op het verloop van de deelneming en de resterende verschillen op de eindbalans.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "acquisition",
         "olbia"
@@ -1662,9 +1662,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welk resultaat uit de 80%-deelneming Fenn verantwoordt Merwede over het boekjaar na verwerking van alle gegeven fair-valueverschillen?",
         "rules": "Begin met het resultaat van Fenn volgens haar eigen grondslagen. Verwerk het afschrijvingsverschil op gebouwen en de veranderingen in resterende waarderingsverschillen bij voorraad en voorzieningen. Een eerder bij de verwerving verwerkte last mag niet nogmaals in het resultaat uit deelneming blijven zitten. Pas het winstaandeel pas na deze resultaatcorrecties toe.",
         "pattern": [
-          "Herken: naast het dochterresultaat staan verschillen op begin- en einddatum.",
-          "Aanpak: bereken per verschil de invloed op het lopende jaar; een afgenomen extra voorziening leidt hier tot vrijval.",
-          "Controle: sluit het aangepaste resultaat aan op het verloop van de deelneming en de resterende verschillen op de eindbalans."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1945,7 +1945,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Resultaat: 80% × € 286.000 = € 228.800. Dividendvordering: 80% × € 50.000 = € 40.000.",
         "Het dividend verlaagt de deelneming. De bank muteert pas bij de betaling."
       ],
-      "pattern": "Herken: resultaat is behaald en dividend is wel vastgesteld maar nog niet ontvangen. Aanpak: boek eerst de resultaatmutatie en vervolgens dividendvordering aan deelneming. Controle: gebruik bank pas bij betaling; door dividend daalt de deelneming, niet het reeds verantwoorde resultaat.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "dividend",
         "montone"
@@ -1962,9 +1962,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke twee journaalposten maakt Merwede voor haar aandeel in het aangepaste resultaat van Fenn en het gedeclareerde, nog niet betaalde dividend?",
         "rules": "Bij NVW verhoogt het aandeel in het aangepaste resultaat de post deelneming, tegenover resultaat deelneming. Het gedeclareerde dividend verlaagt de deelneming en schept een vordering zolang nog niet is betaald. Boek hetzelfde dividend niet daarnaast als dividendopbrengst. De casus vermeldt dat geen aanvullende beperking tot vorming van een wettelijke reserve leidt.",
         "pattern": [
-          "Herken: resultaat is behaald en dividend is wel vastgesteld maar nog niet ontvangen.",
-          "Aanpak: boek eerst de resultaatmutatie en vervolgens dividendvordering aan deelneming.",
-          "Controle: gebruik bank pas bij betaling; door dividend daalt de deelneming, niet het reeds verantwoorde resultaat."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2104,7 +2104,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "10% × € 75.000 = € 7.500. Bij verkrijgingsprijs is dit dividend opbrengst, te verwerken zodra het is gedeclareerd."
       ],
-      "pattern": "Herken: verkrijgingsprijs, een dividendbesluit in december en een latere betaaldatum. Aanpak: bereken het dividend waarop Merwede recht heeft en boek dit als vordering en opbrengst. Controle: laat het tijdstip van de bankontvangst niet bepalen in welk boekjaar de gedeclareerde opbrengst thuishoort.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "dividend",
         "flexdiv"
@@ -2120,9 +2120,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke journaalpost maakt Merwede in december voor het gedeclareerde dividend op haar 10%-deelneming Sloot tegen verkrijgingsprijs, wanneer betaling pas in januari volgt?",
         "rules": "Bij verkrijgingsprijs worden gewone resultaten van de deelneming niet via vermogensmutaties verwerkt. Regulier dividend wordt als opbrengst verantwoord wanneer het recht daarop ontstaat. Is nog niet betaald, dan staat tegenover de opbrengst een dividendvordering. Deze vraag betreft uitdrukkelijk geen meegekocht dividend.",
         "pattern": [
-          "Herken: verkrijgingsprijs, een dividendbesluit in december en een latere betaaldatum.",
-          "Aanpak: bereken het dividend waarop Merwede recht heeft en boek dit als vordering en opbrengst.",
-          "Controle: laat het tijdstip van de bankontvangst niet bepalen in welk boekjaar de gedeclareerde opbrengst thuishoort."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2263,7 +2263,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Het meegekochte dividend is een terugontvangst van een deel van de aankoopprijs. Daarom wordt € 15.000 op de deelneming gecrediteerd.",
         "De aankoopprijs na declaratie wordt € 210.000 − € 15.000 = € 195.000."
       ],
-      "pattern": "Herken: niet alleen de korte tijd na aankoop, maar vooral de expliciete vermelding meegekocht dividend is beslissend. Aanpak: boek dividendvordering aan deelneming voor het verworven aandeel. Controle: behandel een regulier dividend uit na aankoop behaalde winst niet met dezelfde tegenrekening.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "dividend"
       ],
@@ -2278,9 +2278,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke journaalpost maakt Merwede voor het kort na aankoop gedeclareerde dividend op Sloot, dat volgens de casus volledig in de aankoopprijs is meegekocht?",
         "rules": "De casus kwalificeert het dividend expliciet als meegekocht: het bij aankoop betaalde bedrag omvatte het recht op deze uitkering. In de gebruikte syllabusmethodiek wordt dit bedrag daarom op de deelneming afgeboekt en niet als nieuwe dividendopbrengst behandeld. Bereken alleen Merwedes aandeel in het totale dividend. Bij nog niet betalen ontstaat een vordering.",
         "pattern": [
-          "Herken: niet alleen de korte tijd na aankoop, maar vooral de expliciete vermelding meegekocht dividend is beslissend.",
-          "Aanpak: boek dividendvordering aan deelneming voor het verworven aandeel.",
-          "Controle: behandel een regulier dividend uit na aankoop behaalde winst niet met dezelfde tegenrekening."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2352,7 +2352,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Aandeel in resultaat: € 216.000. Aandeel in dividend: € 36.000. Het gebonden deel bedraagt € 180.000."
       ],
-      "pattern": "Herken: NVW én een beperking op de mogelijkheid tot uitkeren. Aanpak: bereken het aandeel in de winst en verminder dat met het aandeel in de relevante uitkeringen. Controle: de reserve is geen extra kostenpost en verandert niet de totale omvang van het eigen vermogen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de gebonden reserve. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "reserve",
         "rosen"
@@ -2368,9 +2368,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoe hoog is de wettelijke reserve deelneming van Merwede voor haar 45%-belang na verwerking van het gegeven resultaat en dividend, wanneer zij verdere uitkeringen niet vrij kan bewerkstelligen?",
         "rules": "Artikel 2:389 lid 6 BW ziet op het aandeel in cumulatief positieve resultaten en rechtstreekse vermogensvermeerderingen sinds de eerste vermogensmutatiewaardering. Breng verkregen uitkeringsrechten en vrij te bewerkstelligen uitkeringen in mindering. Werk per deelneming en let erop of bedragen voor de gehele deelneming of al voor het moederdeel zijn gegeven.",
         "pattern": [
-          "Herken: NVW én een beperking op de mogelijkheid tot uitkeren.",
-          "Aanpak: bereken het aandeel in de winst en verminder dat met het aandeel in de relevante uitkeringen.",
-          "Controle: de reserve is geen extra kostenpost en verandert niet de totale omvang van het eigen vermogen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de gebonden reserve. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2506,7 +2506,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De vorming is een overboeking binnen het eigen vermogen. De overige reserves dalen en de wettelijke reserve stijgt met hetzelfde bedrag."
       ],
-      "pattern": "Herken: het vereiste reservebedrag is gegeven en de gewone deelnemingsmutaties zijn al geboekt. Aanpak: debiteer de vrije reserve en crediteer de wettelijke reserve voor de benodigde toename. Controle: totaal eigen vermogen en totaal resultaat blijven door de reservering gelijk.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de gebonden reserve. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "reserve",
         "rosen"
@@ -2522,9 +2522,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke aanvullende journaalpost vormt de vereiste wettelijke reserve deelneming van € 180.000 wanneer resultaat en dividend al zijn verwerkt en de reserve voordien nihil was?",
         "rules": "De wettelijke reserve deelneming wordt binnen het eigen vermogen afgezonderd. Als de resultaat- en dividendboekingen al zijn gemaakt, moeten die niet opnieuw worden uitgevoerd. Deze vraag vraagt uitsluitend de overheveling van vrije reserves naar de wettelijke reserve. De boekwaarde van de deelneming verandert door deze reserveringsboeking niet.",
         "pattern": [
-          "Herken: het vereiste reservebedrag is gegeven en de gewone deelnemingsmutaties zijn al geboekt.",
-          "Aanpak: debiteer de vrije reserve en crediteer de wettelijke reserve voor de benodigde toename.",
-          "Controle: totaal eigen vermogen en totaal resultaat blijven door de reservering gelijk."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de gebonden reserve. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2601,7 +2601,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Het eigen vermogen volgens de eigen grondslagen wordt € 900.000. Na toevoeging van € 76.000 resterende meerwaarde is de NVW € 976.000.",
         "70% × € 976.000 = € 683.200. Hetzelfde volgt uit € 581.000 beginwaarde + € 116.200 herrekend resultaataandeel − € 14.000 dividend."
       ],
-      "pattern": "Herken: gevraagd is een stand op de eindbalans, niet alleen het resultaat van het jaar. Aanpak: beginvermogen plus resultaat minus totale uitkering, daarna resterende waarderingsverschillen en het aandeel van Merwede. Controle: dezelfde uitkomst moet volgen uit beginboekwaarde deelneming plus aangepast winstaandeel minus ontvangen dividend.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over dividend. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "acquisition",
         "olbia"
@@ -2618,9 +2618,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Voor welk bedrag neemt Merwede haar 70%-deelneming Riet op de eindbalans op, rekening houdend met het gecorrigeerde beginvermogen, het jaarresultaat, dividend en het resterende gebouwverschil?",
         "rules": "Voor een eindbalanswaarde bepaal je eerst het eigen vermogen van Riet op einddatum. Voeg de op die datum nog resterende waarderingsverschillen naar moedergrondslagen toe. Pas daarna het deelnemingspercentage toe. Gebruik niet de oorspronkelijke fair-valuecorrectie als daarop inmiddels is afgeschreven. Goodwill wordt afzonderlijk gevolgd.",
         "pattern": [
-          "Herken: gevraagd is een stand op de eindbalans, niet alleen het resultaat van het jaar.",
-          "Aanpak: beginvermogen plus resultaat minus totale uitkering, daarna resterende waarderingsverschillen en het aandeel van Merwede.",
-          "Controle: dezelfde uitkomst moet volgen uit beginboekwaarde deelneming plus aangepast winstaandeel minus ontvangen dividend."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over dividend. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2680,7 +2680,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Totaal 600 stemmen; Merwede beschikt over 320 stemmen. Het percentage is 53,33%, dus meer dan 50%."
       ],
-      "pattern": "Herken: de tabel onderscheidt drie aandelensoorten. Aanpak: maak een stemrechtenteller voor Merwede en een stemrechtennoemer voor Vaart. Controle: gebruik voor deze vraag niet de aandelen met uitsluitend winstrecht en niet het totale nominale kapitaal.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "daughter",
         "flexdiv"
@@ -2721,9 +2721,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Is Vaart een dochtermaatschappij van Merwede op basis van de aantallen stemgerechtigde aandelen in de tabel? Motiveer de keuze met het effectieve stemrechtenpercentage.",
         "rules": "Bij een flex-bv kunnen winst- en stemrechten verschillen. Voor de dochtertoets tel je de aandelen met stemrecht, inclusief aandelen met zowel stem- als winstrecht. Aandelen met uitsluitend winstrecht blijven buiten deze stemmenberekening. De toets is meer dan de helft van de uitoefenbare stemmen.",
         "pattern": [
-          "Herken: de tabel onderscheidt drie aandelensoorten.",
-          "Aanpak: maak een stemrechtenteller voor Merwede en een stemrechtennoemer voor Vaart.",
-          "Controle: gebruik voor deze vraag niet de aandelen met uitsluitend winstrecht en niet het totale nominale kapitaal."
+          "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": [
@@ -2901,7 +2901,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Alleen de 340 winstrechtgevende aandelen van Merwede delen mee in de 800 winstrechtgevende aandelen. Het ontvangen dividend is € 51.000."
       ],
-      "pattern": "Herken: de vraag verschuift van zeggenschap naar een uitkering. Aanpak: tel de gewone en uitsluitend winstgerechtigde aandelen van Merwede en deel door alle winstgerechtigde aandelen. Controle: boek het ontvangen bedrag niet nogmaals als opbrengst wanneer het belang tegen NVW wordt gewaardeerd.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "dividend",
         "flexdiv"
@@ -2918,9 +2918,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke journaalpost maakt Merwede bij ontvangst van haar aandeel in Vaarts dividend, berekend volgens de winstrechten in de tabel en bij waardering tegen NVW?",
         "rules": "Bereken een dividenduitkering met de aandelen die winstrecht dragen. Het percentage kan afwijken van het stemrechtenpercentage uit een dochtertoets. Bij NVW komt ontvangen dividend tegenover een afname van de deelneming. Gebruik alleen de in deze vraag beschikbare aandelen- en dividendgegevens.",
         "pattern": [
-          "Herken: de vraag verschuift van zeggenschap naar een uitkering.",
-          "Aanpak: tel de gewone en uitsluitend winstgerechtigde aandelen van Merwede en deel door alle winstgerechtigde aandelen.",
-          "Controle: boek het ontvangen bedrag niet nogmaals als opbrengst wanneer het belang tegen NVW wordt gewaardeerd."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3020,7 +3020,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Nominaal kapitaal in bezit: 470 × € 100 = € 47.000. Aandeel in reserves en resultaat: 340/800 × € 200.000 = € 85.000.",
         "Totale boekwaarde: € 132.000. Deze splitsing sluit aan op de officiële Ahorn/Finken-uitwerking."
       ],
-      "pattern": "Herken: alleen-stemrechtaandelen delen niet op dezelfde manier in de winstreserves. Aanpak: bereken eerst het nominale aandeel en voeg daarna het aandeel in de winstreserves toe. Controle: gebruik voor de winstreserves niet het percentage van de stemmen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "finken",
         "valuation"
@@ -3036,9 +3036,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoe hoog is de boekwaarde van Merwedes belang in Vaart wanneer de nominale kapitaalinbreng per gehouden aandeel en het aandeel in de winstreserves volgens de winstrechten afzonderlijk worden berekend?",
         "rules": "Volg de rechten van de in de casus onderscheiden aandelen. De kapitaalinbreng hangt samen met het gehouden nominale kapitaal; het aandeel in winstreserves volgt de winstrechten. Eén enkel percentage op het gehele eigen vermogen kan daardoor onjuist zijn. De vraag sluit aan op de afzonderlijke waardering van de aandelensoorten in de genoemde tentamenuitwerking.",
         "pattern": [
-          "Herken: alleen-stemrechtaandelen delen niet op dezelfde manier in de winstreserves.",
-          "Aanpak: bereken eerst het nominale aandeel en voeg daarna het aandeel in de winstreserves toe.",
-          "Controle: gebruik voor de winstreserves niet het percentage van de stemmen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -3215,7 +3215,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De verkrijgingsprijs van de eigen aandelen komt ten laste van het eigen vermogen. Het aandelenkapitaal blijft hier ongewijzigd."
       ],
-      "pattern": "Herken: eigen aandelen worden ingekocht, maar niet ingetrokken. Aanpak: verwerk de volledige betaalde prijs als afname van overige reserves en bank. Controle: er ontstaat geen deelnemingsactief in de eigen vennootschap en geen afzonderlijk aankoopresultaat.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "eigen",
         "rapallo"
@@ -3231,9 +3231,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke journaalpost verwerkt Vaart voor de inkoop van eigen aandelen tegen € 210.000 ten laste van de overige reserves, zonder intrekking van de aandelen?",
         "rules": "Ingekochte eigen aandelen worden niet als actief opgenomen. De verkrijgingsprijs komt ten laste van het eigen vermogen; in deze vraag zijn daarvoor de overige reserves aangewezen. Omdat geen intrekking plaatsvindt, verlaag je het geplaatste kapitaal niet met de nominale waarde. Onderscheid de betaalde prijs van de nominale omvang van de aandelen.",
         "pattern": [
-          "Herken: eigen aandelen worden ingekocht, maar niet ingetrokken.",
-          "Aanpak: verwerk de volledige betaalde prijs als afname van overige reserves en bank.",
-          "Controle: er ontstaat geen deelnemingsactief in de eigen vennootschap en geen afzonderlijk aankoopresultaat."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3554,7 +3554,7 @@ window.CAFA2_DATA.modules["kap"]={
         "De aankoop wordt gesplitst in € 540.000 deelneming en € 60.000 goodwill. De voorgeschreven evenredige correctie is € 72.000.",
         "Resterende boekwaarde deelneming: € 468.000. In het oorspronkelijke Palau-model worden 100% en evenredige correctie beide geaccepteerd; hier is de evenredige variant uitdrukkelijk voorgeschreven."
       ],
-      "pattern": "Herken: de dochter bezit aandelen in de moeder en de correctievariant is expliciet gegeven. Aanpak: begin bij de deelneming exclusief goodwill en trek de voorgeschreven eigen-aandelencorrectie af. Controle: corrigeer niet nogmaals de goodwill en wissel niet ongemerkt tussen een 100%- en 80%-correctie.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "eigen",
         "palau"
@@ -3570,9 +3570,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke combinatie van aankoopboeking en evenredige correctie van 80% verwerkt Merwede voor de door Vliet gehouden aandelen Merwede?",
         "rules": "Splits eerst de aankoopprijs in deelneming tegen NVW en afzonderlijke goodwill. De door de dochter gehouden aandelen in de moeder leiden vervolgens tot een correctie op het eigen vermogen en de deelneming. De bronuitwerking accepteert verschillende omvangvarianten; deze eigen oefenvraag schrijft daarom uitdrukkelijk de evenredige 80%-variant voor. Volg die variant consequent.",
         "pattern": [
-          "Herken: de dochter bezit aandelen in de moeder en de correctievariant is expliciet gegeven.",
-          "Aanpak: begin bij de deelneming exclusief goodwill en trek de voorgeschreven eigen-aandelencorrectie af.",
-          "Controle: corrigeer niet nogmaals de goodwill en wissel niet ongemerkt tussen een 100%- en 80%-correctie."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3898,7 +3898,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Nieuw pakket: goodwill bij aankoop € 650.000 − 25% × € 1.400.000 = € 300.000; resterende goodwill € 270.000.",
         "Deelneming nieuw pakket wordt € 400.000, dus € 250.000 lager. Het verschil van € 20.000 komt in de overige reserves. Totale deelneming na de overgang: € 960.000."
       ],
-      "pattern": "Herken: twee aankoopmomenten en een latere wijziging van waarderingsgrondslag. Aanpak: maak twee aansluitingen en voeg de uitkomsten pas daarna samen. Controle: de eindwaarde van de deelneming moet aansluiten op het totale belang in het opgegeven eindvermogen; goodwill staat daarnaast afzonderlijk.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mulini",
         "valuation",
@@ -3916,9 +3916,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke aanpassingsjournaalposten zijn nodig bij de overgang van verkrijgingsprijs naar zichtbaar-intrinsieke-waardewaardering per 31 december, afzonderlijk voor het oude 35%-belang en de nieuwe 25%-aankoop?",
         "rules": "Werk iedere verwerving uit vanaf haar eigen aankoopdatum en vermogensbasis. Bepaal de goodwill per aankooplaag, de volgens de casus verstreken afschrijving en het aandeel in het eindvermogen. De overgang wordt in de gebruikte tentamenuitwerking verwerkt met afzonderlijke deelnemings-, goodwill- en reservemutaties. Pas geen nieuwe goodwillberekening toe op basis van alleen het gezamenlijke eindpercentage.",
         "pattern": [
-          "Herken: twee aankoopmomenten en een latere wijziging van waarderingsgrondslag.",
-          "Aanpak: maak twee aansluitingen en voeg de uitkomsten pas daarna samen.",
-          "Controle: de eindwaarde van de deelneming moet aansluiten op het totale belang in het opgegeven eindvermogen; goodwill staat daarnaast afzonderlijk."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -3991,7 +3991,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Voor A is € 210.000 gebonden. B heeft cumulatief geen positief resultaat en wordt voor deze berekening niet meegenomen.",
         "Je mag B dus niet met de gebonden winst van A salderen."
       ],
-      "pattern": "Herken: de casus zet een winstgevende en een verliesgevende deelneming naast elkaar. Aanpak: bereken de reserve per belang en tel uitsluitend de positieve vereisten op. Controle: voorkom saldering van het negatieve cumulatieve resultaat van B met de gebonden winst van A.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de gebonden reserve. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "reserve"
       ],
@@ -4006,9 +4006,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Hoe hoog is Merwedes totale wettelijke reserve deelneming wanneer het cumulatieve resultaat van deelneming A positief is en dat van deelneming B negatief, en verdere uitkeringen niet vrij kunnen worden bewerkstelligd?",
         "rules": "De wettelijke reserve wordt per deelneming beoordeeld. Een deelneming waarvan het cumulatieve resultaat sinds de eerste vermogensmutatiewaardering niet positief is, telt voor deze berekening niet mee. Een verlies bij B verlaagt daarom niet zonder meer de voor A vereiste reserve. Trek de relevante uitkeringsrechten af bij de deelneming waarop zij betrekking hebben.",
         "pattern": [
-          "Herken: de casus zet een winstgevende en een verliesgevende deelneming naast elkaar.",
-          "Aanpak: bereken de reserve per belang en tel uitsluitend de positieve vereisten op.",
-          "Controle: voorkom saldering van het negatieve cumulatieve resultaat van B met de gebonden winst van A."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de gebonden reserve. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -4163,7 +4163,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Deelneming ultimo: € 690.000 + € 192.000 − € 48.000 = € 834.000. Goodwill ultimo: € 16.000.",
         "Balanscontrole: (gecorrigeerd beginvermogen € 820.000 + winst € 210.000 − dividend € 64.000 + resterende gebouwenmeerwaarde € 152.000 − voorraadverschil € 6.000) × 75% = € 834.000."
       ],
-      "pattern": "Herken: een eindcasus combineert aankoopcorrecties en latere vrijvallen of afschrijvingen. Aanpak: werk met een aankoopstaat, een resultaatbrug en twee afzonderlijke verloopstaten voor deelneming en goodwill. Controle: het aandeel in het aangepaste eindvermogen en het verloop van de deelnemingsrekening moeten op hetzelfde bedrag uitkomen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "acquisition",
         "olbia",
@@ -4181,9 +4181,9 @@ window.CAFA2_DATA.modules["kap"]={
         "task": "Welke combinatie geeft de boekwaarde van Merwedes 75%-deelneming Water en de afzonderlijke goodwill per einde boekjaar, na alle genoemde fouten-, fair-value-, resultaat- en dividendcorrecties?",
         "rules": "Scheid drie berekeningen: de nettovermogenswaarde op aankoopdatum, het aangepaste resultaat gedurende het jaar en de resterende verschillen op einddatum. Houd goodwill in een eigen verloopstaat met haar eigen afschrijving. Dividend verlaagt bij NVW de deelneming. Toets de eindwaarde zowel via de mutaties als via het aangepaste eigen vermogen van Water.",
         "pattern": [
-          "Herken: een eindcasus combineert aankoopcorrecties en latere vrijvallen of afschrijvingen.",
-          "Aanpak: werk met een aankoopstaat, een resultaatbrug en twee afzonderlijke verloopstaten voor deelneming en goodwill.",
-          "Controle: het aandeel in het aangepaste eindvermogen en het verloop van de deelnemingsrekening moeten op hetzelfde bedrag uitkomen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []

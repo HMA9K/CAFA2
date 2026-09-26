@@ -29,6 +29,11 @@
         var dependencies=document.createElement('details');dependencies.className='practice-case-dependencies';dependencies.innerHTML='<summary>Eerdere deelvragen en uitkomsten bij deze casus</summary><p>Open de uitkomst die je nodig hebt om deze vraag zelfstandig te oefenen. Dit zijn de bronuitwerkingen, onafhankelijk van je eigen eerdere antwoorden.</p>';
         previous.forEach(function(source){var detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent=source.title;detail.append(summary);var prompt=document.createElement('p');prompt.textContent=source.prompt;detail.append(prompt);detail.insertAdjacentHTML('beforeend',CafaExamDocument.render(exam,'solution',source.solutionHtml,source.solution));dependencies.append(detail);});panel.append(dependencies);
       }
+      if(q.siblingSourceKeys&&q.siblingSourceKeys.length){
+        var siblings=document.createElement('details');siblings.className='practice-case-siblings';siblings.innerHTML='<summary>Eerdere onderdelen van deze vraag</summary>';
+        var questions=Object.values(window.CAFA2_DATA.modules).flatMap(function(b){return b.questions;});
+        q.siblingSourceKeys.forEach(function(key){var source=questions.find(function(x){return x.key===key;});if(!source)return;var detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent=source.title;detail.append(summary);detail.insertAdjacentHTML('beforeend',source.solutionHtml);siblings.append(detail);});panel.append(siblings);
+      }
       // The original prompt stays in the answer column, the complete case is on the left.
       body.querySelectorAll(':scope > .intro,:scope > .facts').forEach(function(n){n.remove();});
       panel.dataset.sourceExamId=q.examId;panel.dataset.sourceSectionId=q.sectionId;

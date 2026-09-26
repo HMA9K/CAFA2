@@ -133,7 +133,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Het winstaandeel wordt bij verkrijgingsprijs niet door een enkelvoudige resultaatboeking aan de deelneming toegevoegd.",
         "De volledige baten en lasten van Duin worden wel in de integrale consolidatie betrokken."
       ],
-      "pattern": "Herken: verkrijgingsprijs en wel winst, maar geen dividendbesluit. Aanpak: beoordeel alleen de gevraagde enkelvoudige gebeurtenis; neem geen NVW-resultaatboeking over. Controle: geen enkelvoudige winstboeking betekent niet dat Duins resultaat ook buiten de consolidatie blijft.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "basis",
         "boit"
@@ -150,9 +150,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke journaalpost maakt Haven uitsluitend vanwege Duins behaalde winst in haar enkelvoudige administratie bij waardering tegen verkrijgingsprijs, zonder dividendbesluit of bijzondere waardevermindering?",
         "rules": "Bij verkrijgingsprijs wordt de boekwaarde van een deelneming niet jaarlijks verhoogd met het aandeel in haar winst. Een regulier dividendbesluit kan wel tot opbrengst leiden. De consolidatie is een afzonderlijke bewerking: daar worden Duins baten en lasten integraal opgenomen. Houd daarom enkelvoudige administratie en geconsolideerde jaarrekening uit elkaar.",
         "pattern": [
-          "Herken: verkrijgingsprijs en wel winst, maar geen dividendbesluit.",
-          "Aanpak: beoordeel alleen de gevraagde enkelvoudige gebeurtenis; neem geen NVW-resultaatboeking over.",
-          "Controle: geen enkelvoudige winstboeking betekent niet dat Duins resultaat ook buiten de consolidatie blijft."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -313,7 +313,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De deelneming wordt voor de volledige koopsom van € 735.000 geactiveerd.",
         "Er wordt enkelvoudig geen aparte post goodwill geboekt."
       ],
-      "pattern": "Herken: de prijs is inclusief goodwill en de moeder waardeert tegen verkrijgingsprijs. Aanpak: boek de volledige koopsom op deelneming tegenover bank. Controle: tel de genoemde goodwill niet boven op de koopsom en splits haar hier niet af zoals bij NVW.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 1 januari 2023. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "balans",
         "orvelde"
@@ -329,9 +329,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke enkelvoudige aankoopjournaalpost maakt Haven op 1 januari 2023 voor de per bank betaalde 75%-deelneming Duin, bij waardering tegen verkrijgingsprijs?",
         "rules": "De volledige betaalde koopsom wordt bij deze grondslag in de post deelneming opgenomen. Goodwill is daarin begrepen en wordt niet daarnaast nogmaals enkelvoudig geactiveerd. Bij consolidatie wordt de goodwill wel afzonderlijk zichtbaar gemaakt. Dezelfde economische aankoop levert daardoor een andere enkelvoudige boeking op dan waardering tegen NVW.",
         "pattern": [
-          "Herken: de prijs is inclusief goodwill en de moeder waardeert tegen verkrijgingsprijs.",
-          "Aanpak: boek de volledige koopsom op deelneming tegenover bank.",
-          "Controle: tel de genoemde goodwill niet boven op de koopsom en splits haar hier niet af zoals bij NVW."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 1 januari 2023.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -398,7 +398,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Het aandeel in het eigen vermogen is 75% × € 860.000 = € 645.000.",
         "Goodwill: € 735.000 − € 645.000 = € 90.000."
       ],
-      "pattern": "Herken: een koopsom voor 75% en een vermogensbedrag voor de gehele dochter. Aanpak: koopsom minus 75% van het vermogen op aankoopdatum. Controle: gebruik niet het eindvermogen van een later boekjaar voor de oorspronkelijke goodwill.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "balans",
         "hoza"
@@ -415,9 +415,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoeveel consolidatiegoodwill is begrepen in de aankoopprijs van € 735.000 voor 75% van Duin, uitgaande van het gegeven eigen vermogen bij verwerving?",
         "rules": "Goodwill is het verschil tussen de koopsom van het gekochte belang en het overeenkomstige aandeel in de netto-activa op verkrijgingsdatum. In deze casus zijn geen verschillen tussen NVW en zichtbaar eigen vermogen gegeven. Het eigen vermogen moet daarom met het 75%-belang worden vermenigvuldigd; de prijs voor dat belang niet nogmaals.",
         "pattern": [
-          "Herken: een koopsom voor 75% en een vermogensbedrag voor de gehele dochter.",
-          "Aanpak: koopsom minus 75% van het vermogen op aankoopdatum.",
-          "Controle: gebruik niet het eindvermogen van een later boekjaar voor de oorspronkelijke goodwill."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -562,7 +562,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Ontvangen bedrag: 75% × € 40.000 = € 30.000.",
         "Het meegekochte dividend verlaagt de boekwaarde van de deelneming van € 735.000 naar € 705.000."
       ],
-      "pattern": "Herken: de koopsom omvatte het recht op deze uitkering uit de aankoopbasis. Aanpak: bereken Havens aandeel en boek bank aan deelneming. Controle: de aankoopprijs neemt met het ontvangen moederbedrag af, niet met het totale dividend van Duin.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "orvelde",
@@ -580,9 +580,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke journaalpost maakt Haven bij ontvangst van haar 75%-aandeel in het expliciet meegekochte dividend over 2022, gedeclareerd en betaald in april 2023?",
         "rules": "Volgens de gebruikte syllabus- en tentamenmethodiek verlaagt meegekocht dividend de verkrijgingsprijs van de deelneming. De ontvangst wordt daarom tegenover deelneming verwerkt en niet tegenover dividendopbrengst. De casus vermeldt expliciet dat de uitkering is meegekocht; alleen een korte periode tussen aankoop en dividend zou daarvoor geen voldoende aanwijzing zijn.",
         "pattern": [
-          "Herken: de koopsom omvatte het recht op deze uitkering uit de aankoopbasis.",
-          "Aanpak: bereken Havens aandeel en boek bank aan deelneming.",
-          "Controle: de aankoopprijs neemt met het ontvangen moederbedrag af, niet met het totale dividend van Duin."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -727,7 +727,7 @@ window.CAFA2_DATA.modules["hk"]={
         "75% × € 48.000 = € 36.000 wordt ontvangen.",
         "Bij verkrijgingsprijs is dit een opbrengst in de enkelvoudige winst-en-verliesrekening."
       ],
-      "pattern": "Herken: de uitkering komt uit resultaten na aankoop en is uitdrukkelijk niet meegekocht. Aanpak: totaal dividend maal Havens aandeel; boek dit als ontvangst en opbrengst. Controle: verlaag de deelneming niet alsof de uitkering nog onderdeel van de betaalde aankoopbasis was.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "schier"
@@ -744,9 +744,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke enkelvoudige journaalpost maakt Haven in 2024 bij ontvangst van het reguliere dividend uit de door Duin na de verwerving behaalde winst?",
         "rules": "Regulier dividend uit resultaten na verwerving is bij verkrijgingsprijs een opbrengst voor de moeder. Bereken het winstaandeel in de totale uitkering en boek de bankontvangst tegenover opbrengst deelneming. Meegekocht dividend volgt een andere verwerking. De aard van het dividend bepaalt hier dus de tegenrekening.",
         "pattern": [
-          "Herken: de uitkering komt uit resultaten na aankoop en is uitdrukkelijk niet meegekocht.",
-          "Aanpak: totaal dividend maal Havens aandeel; boek dit als ontvangst en opbrengst.",
-          "Controle: verlaag de deelneming niet alsof de uitkering nog onderdeel van de betaalde aankoopbasis was."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1020,7 +1020,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Overige reserves: 75% × (€ 600.000 − € 40.000) = € 420.000.",
         "Met goodwill € 90.000 bedraagt de eliminatie € 705.000. Afschrijving is een afzonderlijke eliminatie."
       ],
-      "pattern": "Herken: de actuele verkrijgingsprijs is lager dan de aanvankelijke koopsom door meegekocht dividend. Aanpak: corrigeer de bij aankoop aanwezige reserves voor dit dividend en voeg de oorspronkelijke goodwill toe. Controle: de debetbedragen moeten op de huidige deelnemingswaarde aansluiten; verlaag niet de goodwill om een verschil weg te werken.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "college"
@@ -1038,9 +1038,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke balanseliminatie verwijdert Duins deelnemingswaarde van € 705.000 en activeert de oorspronkelijke goodwill, vóór goodwillafschrijving en los van belang derden, rekening houdend met het afgeboekte meegekochte dividend?",
         "rules": "Het moederdeel van de kapitaaleliminatie volgt de verkrijgingssituatie. Een daarna ontvangen meegekocht dividend verlaagt de relevante aankoopreserves en de enkelvoudige deelnemingswaarde. De oorspronkelijke goodwill verandert daardoor niet. De afschrijving op goodwill en het belang derden op einddatum worden in afzonderlijke balanseliminaties verwerkt.",
         "pattern": [
-          "Herken: de actuele verkrijgingsprijs is lager dan de aanvankelijke koopsom door meegekocht dividend.",
-          "Aanpak: corrigeer de bij aankoop aanwezige reserves voor dit dividend en voeg de oorspronkelijke goodwill toe.",
-          "Controle: de debetbedragen moeten op de huidige deelnemingswaarde aansluiten; verlaag niet de goodwill om een verschil weg te werken."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1285,7 +1285,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Derden houden 25%. Het eigen vermogen ultimo bedraagt € 1.140.000.",
         "25% × € 1.140.000 = € 285.000. De samenstellende vermogensposten worden gedebiteerd."
       ],
-      "pattern": "Herken: gevraagd wordt belang derden op de eindbalans. Aanpak: neem het minderheidspercentage van kapitaal, agio, reserves en resultaat boekjaar op einddatum. Controle: gebruik niet uitsluitend de verkrijgingsreserves en vergeet het lopende jaarresultaat niet.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "balans",
         "hoza",
@@ -1303,9 +1303,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke balanseliminatie presenteert het 25%-belang van derden in Duins volledige eigen vermogen per 31 december 2024, zonder IC- of fair-valuecorrecties?",
         "rules": "Bij de HK-consolidatie worden twee momenten onderscheiden. Het moederdeel van de aankoopeliminatie volgt de verkrijgingsbasis; het belang derden volgt het eigen vermogen op consolidatiedatum. Tot dat eindvermogen behoort ook het resultaat boekjaar. Elimineer het derdenaandeel in de afzonderlijke vermogenscomponenten tegenover de balanspost belang derden.",
         "pattern": [
-          "Herken: gevraagd wordt belang derden op de eindbalans.",
-          "Aanpak: neem het minderheidspercentage van kapitaal, agio, reserves en resultaat boekjaar op einddatum.",
-          "Controle: gebruik niet uitsluitend de verkrijgingsreserves en vergeet het lopende jaarresultaat niet."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1372,7 +1372,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Jaarafschrijving: € 90.000 ÷ 5 = € 18.000.",
         "Na twee jaren resteert € 90.000 − € 36.000 = € 54.000."
       ],
-      "pattern": "Herken: een balanswaarde na twee volledige boekjaren. Aanpak: oorspronkelijke goodwill minus twee jaarafschrijvingen. Controle: een enkele jaarlast is niet hetzelfde als cumulatieve afschrijving; controleer het aantal verstreken jaren.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024 en 1 januari 2023. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "orvelde",
         "hoza"
@@ -1390,9 +1390,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe hoog is de afzonderlijke consolidatiegoodwill per 31 december 2024 na twee volledige jaren lineaire afschrijving op de op 1 januari 2023 ontstane goodwill?",
         "rules": "Volg de oorspronkelijke goodwill en de in de casus gegeven afschrijvingstermijn. Bereken de cumulatieve afschrijving tot de balansdatum en trek deze van de oorspronkelijke goodwill af. Het goodwillbedrag heeft al betrekking op het verworven belang. Het resterende bedrag wordt dus niet nogmaals met 75% vermenigvuldigd.",
         "pattern": [
-          "Herken: een balanswaarde na twee volledige boekjaren.",
-          "Aanpak: oorspronkelijke goodwill minus twee jaarafschrijvingen.",
-          "Controle: een enkele jaarlast is niet hetzelfde als cumulatieve afschrijving; controleer het aantal verstreken jaren."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024 en 1 januari 2023.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -1547,7 +1547,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De afschrijving over 2023 van € 18.000 wordt ten laste van overige reserves gebracht.",
         "De afschrijving over 2024 van € 18.000 wordt ten laste van resultaat boekjaar gebracht."
       ],
-      "pattern": "Herken: de volledige goodwill staat nog in de balansconsolidatie en er zijn twee jaren verstreken. Aanpak: splits cumulatieve afschrijving in vorig jaar en lopend jaar. Controle: neem in een balanseliminatie geen afschrijvingskostenrekening op en breng niet beide jaren ten laste van het huidige resultaat.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "college"
@@ -1563,9 +1563,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke balanseliminatie verwerkt de goodwillafschrijving tot en met 31 december 2024 wanneer de oorspronkelijke goodwill van € 90.000 al in de consolidatiestaat is geactiveerd en nog niets is afgeschreven?",
         "rules": "De balanseliminatie moet zowel eerdere als lopende afschrijvingen verwerken. Het deel uit eerdere boekjaren komt ten laste van overige reserves; het lopende jaar raakt resultaat boekjaar. De creditboeking verlaagt goodwill met het cumulatieve bedrag. In de afzonderlijke W&V-consolidatie wordt alleen de jaarlast opgenomen.",
         "pattern": [
-          "Herken: de volledige goodwill staat nog in de balansconsolidatie en er zijn twee jaren verstreken.",
-          "Aanpak: splits cumulatieve afschrijving in vorig jaar en lopend jaar.",
-          "Controle: neem in een balanseliminatie geen afschrijvingskostenrekening op en breng niet beide jaren ten laste van het huidige resultaat."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1706,7 +1706,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De jaarlast is € 90.000 ÷ 5 = € 18.000.",
         "De officiële consolidatiesystematiek debiteert afschrijvingskosten goodwill en crediteert resultaat na belastingen."
       ],
-      "pattern": "Herken: uitsluitend de W&V van 2024 wordt opgesteld. Aanpak: bereken één jaarafschrijving en gebruik alleen resultaatrekeningen in deze eliminatie. Controle: crediteer hier niet de balanspost goodwill en verwerk geen afschrijving uit eerdere jaren.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "orvelde",
         "basis"
@@ -1723,9 +1723,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke afzonderlijke W&V-eliminatie verwerkt de goodwillafschrijving over uitsluitend 2024 volgens de consolidatiestaatmethodiek van de uitwerking?",
         "rules": "In de winst-en-verliesrekeningconsolidatie hoort alleen de afschrijvingslast van het lopende boekjaar. De gebruikte uitwerking debiteert afschrijvingskosten goodwill en crediteert resultaat na belastingen. Dat is een resultaatwerkstaat, niet een gewone gecombineerde balans-en-resultaatjournaalpost. De goodwillbalans wordt via de aparte balanseliminatie aangepast.",
         "pattern": [
-          "Herken: uitsluitend de W&V van 2024 wordt opgesteld.",
-          "Aanpak: bereken één jaarafschrijving en gebruik alleen resultaatrekeningen in deze eliminatie.",
-          "Controle: crediteer hier niet de balanspost goodwill en verwerk geen afschrijving uit eerdere jaren."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -1870,7 +1870,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Haven heeft enkelvoudig € 36.000 dividendopbrengst opgenomen.",
         "Die opbrengst wordt geëlimineerd, omdat de baten en lasten van Duin al integraal worden opgenomen."
       ],
-      "pattern": "Herken: regulier dividend staat al in de enkelvoudige opbrengsten van de moeder. Aanpak: debiteer die opbrengst en gebruik de tegenrekening van de afzonderlijke W&V-consolidatiestaat. Controle: verlaag niet de deelnemingsbalans in een vraag die uitsluitend de W&V-eliminatie vraagt.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "orvelde",
         "boit"
@@ -1887,9 +1887,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke W&V-eliminatie verwijdert Havens reeds geboekte reguliere dividendopbrengst van Duin over 2024?",
         "rules": "De baten en lasten van Duin worden integraal in de geconsolideerde winst-en-verliesrekening opgenomen. Havens afzonderlijk geboekte dividendopbrengst moet daarom worden geëlimineerd om dubbeltelling te voorkomen. Gebruik het bedrag dat Haven daadwerkelijk als opbrengst heeft verwerkt, niet de totale dividenduitkering van Duin.",
         "pattern": [
-          "Herken: regulier dividend staat al in de enkelvoudige opbrengsten van de moeder.",
-          "Aanpak: debiteer die opbrengst en gebruik de tegenrekening van de afzonderlijke W&V-consolidatiestaat.",
-          "Controle: verlaag niet de deelnemingsbalans in een vraag die uitsluitend de W&V-eliminatie vraagt."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt dividend in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2033,7 +2033,7 @@ window.CAFA2_DATA.modules["hk"]={
       "explanation": [
         "Derden hebben recht op 25% × € 160.000 = € 40.000."
       ],
-      "pattern": "Herken: resultaatverdeling zonder aanvullende IC-mutaties. Aanpak: bereken het minderheidspercentage van het resultaat na belastingen en boek de afzonderlijke toerekening. Controle: gebruik 25%, niet het 75%-moederdeel, en kies aandeel derden in plaats van belang derden.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "orvelde",
         "basis"
@@ -2050,9 +2050,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke W&V-eliminatie rekent 25% van Duins resultaat na belastingen toe aan derden, vóór eventuele IC-correcties?",
         "rules": "De geconsolideerde winst-en-verliesrekening bevat bij integrale consolidatie het volledige resultaat van Duin. Het niet aan Haven toekomende gedeelte wordt afzonderlijk gepresenteerd als aandeel derden. Deze rekening verschilt van belang derden op de balans. In deze vraag zijn geen ongerealiseerde winsten gegeven die het aandeel nog wijzigen.",
         "pattern": [
-          "Herken: resultaatverdeling zonder aanvullende IC-mutaties.",
-          "Aanpak: bereken het minderheidspercentage van het resultaat na belastingen en boek de afzonderlijke toerekening.",
-          "Controle: gebruik 25%, niet het 75%-moederdeel, en kies aandeel derden in plaats van belang derden."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -2131,7 +2131,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Begin bij het resultaat van Haven, tel haar aandeel in de winst van Duin erbij op en verwijder het reeds geboekte dividend.",
         "Trek vervolgens de afschrijving over het lopende jaar af. Het resultaat is € 316.000."
       ],
-      "pattern": "Herken: moederresultaat inclusief dividend, dochterwinst en afzonderlijke consolidatiegoodwill. Aanpak: moederresultaat plus winstaandeel minus geboekt dividend minus jaarafschrijving goodwill. Controle: het dividend één keer verwijderen; geen afschrijving uit eerdere jaren in de jaarwinst opnemen.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "orvelde",
@@ -2148,9 +2148,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, na toevoeging van haar winstaandeel in Duin, eliminatie van ontvangen dividend en goodwillafschrijving?",
         "rules": "Bij verkrijgingsprijs bevat Havens resultaat niet automatisch haar aandeel in Duins winst. Voeg dat aandeel toe, maar verwijder het reguliere dividend dat al in het moederresultaat is verwerkt. Trek de goodwillafschrijving van het lopende jaar af. De gegeven dividendopbrengst en goodwillafschrijving zijn al moederbedragen en worden niet nogmaals met 75% vermenigvuldigd.",
         "pattern": [
-          "Herken: moederresultaat inclusief dividend, dochterwinst en afzonderlijke consolidatiegoodwill.",
-          "Aanpak: moederresultaat plus winstaandeel minus geboekt dividend minus jaarafschrijving goodwill.",
-          "Controle: het dividend één keer verwijderen; geen afschrijving uit eerdere jaren in de jaarwinst opnemen."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": []
@@ -2203,7 +2203,7 @@ window.CAFA2_DATA.modules["hk"]={
         "In opgave Boit, vraag 3, luidt de uitwerking: geen intracomptabele correctie bij verkrijgingsprijs.",
         "De volledige groepscorrectie komt terug in de consolidatie; de verdeling verschilt bij upstream en downstream."
       ],
-      "pattern": "Herken: expliciet verkrijgingsprijs, niet de vermogensmutatiemethode. Aanpak: stel eerst vast wat in de enkelvoudige administratie wel en niet wordt verwerkt. Controle: kopieer niet de NVW-boeking via overlopende passiva of resultaat deelneming naar deze HK-vraag.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de interne transactie. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "boit",
         "up",
@@ -2220,9 +2220,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke intracomptabele correctie maakt Haven voor de ongerealiseerde IC-winst bij verkrijgingsprijs, gegeven dat een bijzondere waardevermindering niet aan de orde is?",
         "rules": "In de aangehaalde HK-opgaven wordt geen intracomptabele correctie voor ongerealiseerde IC-winst gemaakt zoals bij NVW. De groepscorrectie vindt bij consolidatie plaats. De verdeling verschilt vervolgens tussen upstream en downstream. De uitgesloten bijzondere waardevermindering is een andere beoordeling en mag niet als vervangende IC-boeking worden ingevoerd.",
         "pattern": [
-          "Herken: expliciet verkrijgingsprijs, niet de vermogensmutatiemethode.",
-          "Aanpak: stel eerst vast wat in de enkelvoudige administratie wel en niet wordt verwerkt.",
-          "Controle: kopieer niet de NVW-boeking via overlopende passiva of resultaat deelneming naar deze HK-vraag."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de interne transactie. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -2423,7 +2423,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De ongerealiseerde winst neemt af van € 60.000 naar € 48.000, een mutatie van −€ 12.000.",
         "Het moederdeel bedraagt 75%; derden dragen 25%. Er is geen interne correctie."
       ],
-      "pattern": "Herken: de voorraad is tegen onderlinge prijs gegeven, de marge als opslag op kostprijs. Aanpak: herleid eerst de marge en verdeel daarna de volledige winst in 75% meerderheid en 25% derden. Controle: vermenigvuldig de voorraad niet rechtstreeks met 25% en vul geen interne NVW-correctie in.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "hoza",
         "boit"
@@ -2441,9 +2441,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke voorraadtabel hoort bij Duins upstreamlevering aan Haven bij HK en een 75%-belang? Zet de opslag van 25% op kostprijs om naar winst in de onderlinge verkoopprijs en toon alle bedragen vóór belasting.",
         "rules": "Een opslag van 25% op kostprijs betekent dat een verkoopprijs van 125 bestaat uit kostprijs 100 en winst 25. De winst is dus 25/125 van de onderlinge verkoopprijs. Bij HK is de interne correctie niet van toepassing. De upstreamwinst wordt in consolidatie verdeeld tussen het moederdeel en het minderheidsbelang in de verkoper.",
         "pattern": [
-          "Herken: de voorraad is tegen onderlinge prijs gegeven, de marge als opslag op kostprijs.",
-          "Aanpak: herleid eerst de marge en verdeel daarna de volledige winst in 75% meerderheid en 25% derden.",
-          "Controle: vermenigvuldig de voorraad niet rechtstreeks met 25% en vul geen interne NVW-correctie in."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -2724,7 +2724,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Moeder: 75% × € 48.000 = € 36.000 bruto, dus € 28.800 netto en € 7.200 belasting.",
         "Derden: 25% × € 48.000 = € 12.000 bruto, dus € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Herken: upstream HK en een vraag over alleen de eindvoorraad. Aanpak: neem de eindregel van de casustabel, verdeel de bruto winst naar moeder en derden en splits beide delen in netto en belasting. Controle: gebruik geen beginwinst en leg niet de hele netto correctie bij de moeder.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "up"
@@ -2741,9 +2741,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde winst in Havens eindvoorraad, met belasting en het derdenaandeel? Laat de aparte beginvoorraad-invoeging buiten beschouwing.",
         "rules": "Bij HK is vooraf geen interne winstcorrectie op de deelneming verwerkt. De volledige eindwinst wordt daarom in de consolidatie verdeeld over resultaat boekjaar van de meerderheid, belang derden en belastinglatenties. De voorraad neemt vóór belasting af. De beginvoorraadcorrectie is in deze vraag uitdrukkelijk een aparte vervolgstap.",
         "pattern": [
-          "Herken: upstream HK en een vraag over alleen de eindvoorraad.",
-          "Aanpak: neem de eindregel van de casustabel, verdeel de bruto winst naar moeder en derden en splits beide delen in netto en belasting.",
-          "Controle: gebruik geen beginwinst en leg niet de hele netto correctie bij de moeder."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -2945,7 +2945,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Moederdeel netto: € 60.000 × 75% × 80% = € 36.000.",
         "Overige reserves worden gedebiteerd en resultaat boekjaar wordt gecrediteerd."
       ],
-      "pattern": "Herken: de opdracht vraagt specifiek de beginvoorraad en alleen het moederdeel. Aanpak: beginwinst maal 75% maal één minus het belastingtarief; debiteer reserves en crediteer resultaat boekjaar. Controle: wijzig de voorraad of belastinglatentie niet nogmaals in deze invoegboeking.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "hoza",
         "boit"
@@ -2962,9 +2962,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke aanvullende balanseliminatie brengt uitsluitend het 75%-moederdeel van de ongerealiseerde winst in de beginvoorraad, na 20% belasting, van overige reserves naar resultaat boekjaar?",
         "rules": "De uitvoeging van de eindwinst is apart geregeld. Voor de meerderheidswinst moet de eerder uitgestelde beginwinst nog vanuit overige reserves in resultaat boekjaar worden ingevoegd. Gebruik bij upstream het moederpercentage in de verkoper en neem het netto bedrag. Dit is een verschuiving binnen het eigen vermogen en geen nieuwe voorraadboeking.",
         "pattern": [
-          "Herken: de opdracht vraagt specifiek de beginvoorraad en alleen het moederdeel.",
-          "Aanpak: beginwinst maal 75% maal één minus het belastingtarief; debiteer reserves en crediteer resultaat boekjaar.",
-          "Controle: wijzig de voorraad of belastinglatentie niet nogmaals in deze invoegboeking."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3245,7 +3245,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Vrijval netto: € 12.000 × 80% = € 9.600. Daarvan komt 75% = € 7.200 aan Haven toe en 25% = € 2.400 aan derden.",
         "Door de afname van ongerealiseerde winst wordt de kostprijs van de omzet voor € 12.000 gecrediteerd."
       ],
-      "pattern": "Herken: ongerealiseerde upstreamwinst daalt en de vraag is beperkt tot de winstmutatie. Aanpak: splits de bruto vrijval in moederdeel, derdenaandeel en belasting. Controle: een debitering van kostprijs zou juist winst uitstellen; de vrijval vraagt de omgekeerde richting.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "up",
         "boit",
@@ -3264,9 +3264,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke afzonderlijke W&V-eliminatie verwerkt de vrijval van € 12.000 upstreamwinst, inclusief het aandeel van derden en belasting, nadat de onderlinge omzet al is geëlimineerd?",
         "rules": "Bij vrijval van ongerealiseerde winst neemt de groepswinst toe en wordt de kostprijs gecrediteerd. Omdat de verkoper een niet-volledig gehouden dochter is, wordt het netto effect verdeeld over moeder en derden. Het belastingeffect wordt afzonderlijk opgenomen. De omzeteliminatie hoeft hier niet opnieuw te worden gemaakt.",
         "pattern": [
-          "Herken: ongerealiseerde upstreamwinst daalt en de vraag is beperkt tot de winstmutatie.",
-          "Aanpak: splits de bruto vrijval in moederdeel, derdenaandeel en belasting.",
-          "Controle: een debitering van kostprijs zou juist winst uitstellen; de vrijval vraagt de omgekeerde richting."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -3397,7 +3397,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Zonder correctie is het aandeel derden 25% × € 160.000 = € 40.000.",
         "Hun aandeel in de vrijval is 25% × € 12.000 × 80% = € 2.400. Totaal € 42.400."
       ],
-      "pattern": "Herken: het definitieve winstaandeel wordt gevraagd na een upstreamafname. Aanpak: gewoon aandeel derden plus 25% van de vrijval na belasting. Controle: trek de vrijval niet af en gebruik de belasting niet opnieuw op het al na belasting gegeven dochterresultaat.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Gebruik het percentage van de derden en het juiste eigen vermogen of resultaat van de dochter. Controleer of eerdere consolidatiecorrecties en winstbelasting eerst moeten worden verwerkt en of de vraag een balansbedrag of jaarresultaat verlangt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "orvelde",
         "boit"
@@ -3414,9 +3414,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe groot is het aandeel derden in Duins resultaat in de geconsolideerde W&V na de vrijval van upstreamwinst, uitgaande van Duins enkelvoudige resultaat van € 160.000?",
         "rules": "Begin met het gewone minderheidsaandeel in Duins resultaat na belastingen. De afname van ongerealiseerde upstreamwinst verhoogt vervolgens de aan die verkoper toegerekende groepswinst. Voeg het derdenaandeel in de netto vrijval toe. Gebruik voor de W&V de verandering van begin- naar eindwinst, niet alleen de winst in de eindvoorraad.",
         "pattern": [
-          "Herken: het definitieve winstaandeel wordt gevraagd na een upstreamafname.",
-          "Aanpak: gewoon aandeel derden plus 25% van de vrijval na belasting.",
-          "Controle: trek de vrijval niet af en gebruik de belasting niet opnieuw op het al na belasting gegeven dochterresultaat."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Gebruik het percentage van de derden en het juiste eigen vermogen of resultaat van de dochter. Controleer of eerdere consolidatiecorrecties en winstbelasting eerst moeten worden verwerkt en of de vraag een balansbedrag of jaarresultaat verlangt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -3555,7 +3555,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Zonder intercompanycorrectie is het resultaat € 316.000.",
         "Haven krijgt 75% van de netto vrijval van € 9.600, dus € 7.200 erbij. Totaal € 323.200."
       ],
-      "pattern": "Herken: de gewone HK-resultaatbrug wordt uitgebreid met dalende upstreamwinst. Aanpak: bereken de basisbrug en tel daarna 75% van de netto vrijval erbij op. Controle: tel niet 100% van de vrijval bij Haven op en neem niet uitsluitend het bruto bedrag zonder belasting.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "orvelde"
@@ -3572,9 +3572,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Haven over 2024, inclusief uitsluitend Havens 75%-deel van de netto upstreamvrijval?",
         "rules": "Maak eerst de HK-aansluiting: moederresultaat plus aandeel in dochterwinst, minus het al geboekte dividend en de jaarafschrijving goodwill. Verwerk daarna het moederdeel van de upstreamwinstmutatie na belasting. De overige vrijval behoort aan derden en wordt niet in de meerderheidswinst opgenomen.",
         "pattern": [
-          "Herken: de gewone HK-resultaatbrug wordt uitgebreid met dalende upstreamwinst.",
-          "Aanpak: bereken de basisbrug en tel daarna 75% van de netto vrijval erbij op.",
-          "Controle: tel niet 100% van de vrijval bij Haven op en neem niet uitsluitend het bruto bedrag zonder belasting."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -3823,7 +3823,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Winst beginvoorraad: € 36.000. Winst eindvoorraad: € 48.000. Toename € 12.000.",
         "Bij verkrijgingsprijs is geen interne correctie van toepassing. De downstreamwinst komt volledig ten laste van het geconsolideerde resultaat van de moeder."
       ],
-      "pattern": "Herken: de verkoper is Haven en de deelneming staat tegen verkrijgingsprijs. Aanpak: bereken 100% van de winst en zet intern en derden op niet van toepassing. Controle: pas niet de NVW-verdeling 75% intern en 25% aanvullend toe; bij HK komt de volledige correctie in consolidatie.",
+      "pattern": "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat.",
       "refs": [
         "schier",
         "boit",
@@ -3842,9 +3842,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke voorraadtabel hoort bij Havens downstreamleveringen aan Duin bij verkrijgingsprijs? Toon begin- en eindwinst en de mutatie, met de juiste verdeling over intern, derden en meerderheidsresultaat.",
         "rules": "De moeder heeft de downstreamwinst geboekt. Bij HK bestaat geen interne NVW-correctie en de minderheid in de voorraadkoper draagt niet in die moederwinst mee. De volledige ongerealiseerde winst wordt daarom bij consolidatie ten laste van de meerderheid gecorrigeerd. De voorraadtabel toont de verdeling vóór belasting.",
         "pattern": [
-          "Herken: de verkoper is Haven en de deelneming staat tegen verkrijgingsprijs.",
-          "Aanpak: bereken 100% van de winst en zet intern en derden op niet van toepassing.",
-          "Controle: pas niet de NVW-verdeling 75% intern en 25% aanvullend toe; bij HK komt de volledige correctie in consolidatie."
+          "Herken de vraag: Een voorraadtabel vraagt om het verband tussen beginvoorraad, eindvoorraad, niet-gerealiseerde winst en de verdeling van de correctie.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Vul de gevraagde rijen en kolommen in. Laat zien hoe de niet-gerealiseerde winst aansluit op interne correctie, aandeel derden en geconsolideerd resultaat."
         ]
       },
       "caseTables": [
@@ -4094,7 +4094,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De gehele eindwinst van € 48.000 moet uit de voorraad.",
         "De netto correctie van € 38.400 komt voor rekening van de moeder; € 9.600 wordt als belastinglatentie verwerkt."
       ],
-      "pattern": "Herken: downstream HK, een eindvoorraad en geen intracomptabele winstcorrectie. Aanpak: eindwinst splitsen in netto meerderheidsresultaat en belasting; voorraad voor de bruto eindwinst crediteren. Controle: gebruik geen upstreamverdeling en pas niet slechts 75% toe op de voorraadwinst.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "down",
         "boit"
@@ -4111,9 +4111,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke balanseliminatie verwijdert uitsluitend de ongerealiseerde downstreamwinst uit Duins eindvoorraad, met verwerking van 20% winstbelasting?",
         "rules": "De hele winst van de moeder moet uit de eindvoorraad verdwijnen. Het netto deel komt ten laste van resultaat boekjaar van de meerderheid en het belastingdeel wordt als latentie verwerkt. Er is geen terug te nemen interne overlopende passiefpost en geen correctie op belang derden. De beginwinst wordt zo nodig apart ingevoegd.",
         "pattern": [
-          "Herken: downstream HK, een eindvoorraad en geen intracomptabele winstcorrectie.",
-          "Aanpak: eindwinst splitsen in netto meerderheidsresultaat en belasting; voorraad voor de bruto eindwinst crediteren.",
-          "Controle: gebruik geen upstreamverdeling en pas niet slechts 75% toe op de voorraadwinst."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -4314,7 +4314,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Netto beginwinst: € 180.000 × 20% × 80% = € 28.800.",
         "De gehele netto beginwinst gaat van overige reserves naar resultaat boekjaar."
       ],
-      "pattern": "Herken: gevraagde beginvoorraad-invoeging bij een door de moeder gemaakte winst. Aanpak: neem de bruto beginwinst maal één minus het belastingtarief. Controle: resultaat boekjaar wordt gecrediteerd; een extra vermindering met het deelnemingspercentage is onjuist.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "boit",
         "down"
@@ -4331,9 +4331,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke aanvullende balanseliminatie brengt de volledige netto downstreamwinst uit de beginvoorraad van overige reserves naar resultaat boekjaar, los van de eindvoorraadcorrectie?",
         "rules": "Bij downstream HK draagt de meerderheid de volledige winstcorrectie. Daarom wordt ook de gehele beginwinst na belasting vanuit de reserves ingevoegd in resultaat boekjaar. Het 75%-belang in de koper beperkt deze boeking niet. Gebruik geen kostprijsrekening in deze afzonderlijke balanseliminatie.",
         "pattern": [
-          "Herken: gevraagde beginvoorraad-invoeging bij een door de moeder gemaakte winst.",
-          "Aanpak: neem de bruto beginwinst maal één minus het belastingtarief.",
-          "Controle: resultaat boekjaar wordt gecrediteerd; een extra vermindering met het deelnemingspercentage is onjuist."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal wie levert aan wie, waar de voorraad ligt en welk belang moeder in leverancier en afnemer heeft. Gebruik de winstopslag of marge met de juiste noemer. Houd beginstand, eindstand en toe- of afname apart; pas de gegeven waarderingsgrondslag en winstbelasting toe.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -4765,7 +4765,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Doorlevering: € 900.000 − € 60.000 = € 840.000.",
         "Voorraadgroei bestaat uit kostprijs € 48.000 en winst € 12.000. De winst wordt gesplitst in € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Herken: de opgave vraagt uitdrukkelijk twee delen: doorlevering en voorraadgroei. Aanpak: trek de voorraadtoename van de omzet af; splits de groei daarna in kostprijs en winst. Controle: beide omzetdebetbedragen moeten samen € 900.000 zijn; anders wordt de voorraadgroei dubbel geëlimineerd.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "schier",
         "down"
@@ -4782,9 +4782,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke twee W&V-eliminaties volgen hier de syllabus-aanpak: het doorgeleverde deel van de interne omzet van € 900.000 en daarnaast de groei van de eindvoorraad tegen onderlinge prijs, inclusief winst en belasting?",
         "rules": "Bepaal eerst de voorraadtoename tegen de onderlinge verkoopprijs. Het doorgeleverde deel is de interne omzet minus die voorraadtoename. De tweede boeking elimineert de omzet in de voorraadgroei tegenover oorspronkelijke kostprijs, netto meerderheidsresultaat en belasting. Dit is een andere presentatie dan eerst de volledige omzet elimineren en daarna uitsluitend de winstmutatie boeken.",
         "pattern": [
-          "Herken: de opgave vraagt uitdrukkelijk twee delen: doorlevering en voorraadgroei.",
-          "Aanpak: trek de voorraadtoename van de omzet af; splits de groei daarna in kostprijs en winst.",
-          "Controle: beide omzetdebetbedragen moeten samen € 900.000 zijn; anders wordt de voorraadgroei dubbel geëlimineerd."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -5039,7 +5039,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Winstvrijval: (€ 240.000 − € 180.000) × 20% = € 12.000.",
         "Deze vrijval komt volledig bij de moeder: € 9.600 netto en € 2.400 belasting."
       ],
-      "pattern": "Herken: de voorraad tegen onderlinge prijs daalt en de omzeteliminatie is al uitgevoerd. Aanpak: bereken de winstvrijval en splits deze in netto resultaat en belasting. Controle: neem niet slechts 75% van de vrijval en voeg geen derdenregel toe.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "boit",
         "down"
@@ -5056,9 +5056,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke W&V-eliminatie verwerkt uitsluitend de vrijval van Havens downstreamwinst in 2025, nadat de onderlinge omzet apart is geëlimineerd?",
         "rules": "De daling van de ongerealiseerde downstreamwinst verhoogt het geconsolideerde resultaat van de meerderheid. De kostprijs wordt voor de bruto vrijval gecrediteerd. Aan debetzijde worden het netto meerderheidsresultaat en het belastingeffect verwerkt. Omdat de moeder de winst maakte, ontstaat geen aandeel derden in deze vrijval.",
         "pattern": [
-          "Herken: de voorraad tegen onderlinge prijs daalt en de omzeteliminatie is al uitgevoerd.",
-          "Aanpak: bereken de winstvrijval en splits deze in netto resultaat en belasting.",
-          "Controle: neem niet slechts 75% van de vrijval en voeg geen derdenregel toe."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": [
@@ -5192,7 +5192,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Tweede tranche: goodwill € 180.000; in 2024 drie maanden afschrijving, dus € 9.000.",
         "Jaarlast € 27.000. De balans bevat € 36.000 + € 171.000 = € 207.000."
       ],
-      "pattern": "Herken: een oude tranche en een extra aankoop op 1 oktober, met een eigen afschrijvingsregel. Aanpak: maak per tranche een goodwillberekening, afschrijving van 2024 en cumulatieve afschrijving. Controle: de oude tranche loopt een volledig jaar mee; de nieuwe tranche niet.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "schier"
       ],
@@ -5208,9 +5208,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke combinatie geeft Kades goodwillafschrijving over 2024 en resterende consolidatiegoodwill per 31 december 2024, met de in deze casus voorgeschreven afschrijving vanaf iedere eigen aankoopdatum?",
         "rules": "Bereken goodwill per aankooplaag met de eigen koopsom, het verworven percentage en het vermogen op die datum. Volg vervolgens de in deze vraag expliciet voorgeschreven afschrijving per laag vanaf haar verwerving. Een latere aankoop loopt in het jaar van aankoop slechts tijdsevenredig mee. Voeg de afzonderlijke jaarlasten en resterende boekwaarden pas aan het einde samen.",
         "pattern": [
-          "Herken: een oude tranche en een extra aankoop op 1 oktober, met een eigen afschrijvingsregel.",
-          "Aanpak: maak per tranche een goodwillberekening, afschrijving van 2024 en cumulatieve afschrijving.",
-          "Controle: de oude tranche loopt een volledig jaar mee; de nieuwe tranche niet."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Gevraagd tijdstip: 31 december 2024.",
+          "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
       "caseTables": []
@@ -5689,7 +5689,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Eerste tranche: 20% × [€ 700.000 + (€ 200.000 − € 100.000)] = € 160.000 overige reserves. Samen met € 100.000 kapitaal en € 90.000 goodwill: € 350.000.",
         "Tweede tranche: € 200.000 kapitaal + € 440.000 reserves + € 80.000 resultaat boekjaar + € 180.000 goodwill = € 900.000."
       ],
-      "pattern": "Herken: twee aankoopdata, verschillende vermogenssamenstellingen en een dividend uit de eerste aankoopbasis. Aanpak: elimineer iedere tranche apart voor haar huidige enkelvoudige boekwaarde. Controle: houd historische goodwill onveranderd bij het verwerken van meegekocht dividend en verplaats winst van het lopende jaar niet naar oude reserves.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "schier",
         "hoza"
@@ -5706,9 +5706,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Welke twee balanseliminaties verwijderen Kades aankooplagen in Zand en activeren de oorspronkelijke goodwill, exclusief goodwillafschrijving en belang derden, met verwerking van het meegekochte dividend op de eerste laag?",
         "rules": "Iedere aankooplaag houdt haar eigen verkrijgingsvermogen. Corrigeer de eerste laag voor het ontvangen meegekochte dividend en de bestemming van de bij die aankoop aanwezige winst. De tweede laag bevat resultaat dat vóór de aankoop in het lopende boekjaar is behaald; dat blijft in deze balanswerkstaat een component resultaat boekjaar. Goodwillafschrijving en derden worden later apart verwerkt.",
         "pattern": [
-          "Herken: twee aankoopdata, verschillende vermogenssamenstellingen en een dividend uit de eerste aankoopbasis.",
-          "Aanpak: elimineer iedere tranche apart voor haar huidige enkelvoudige boekwaarde.",
-          "Controle: houd historische goodwill onveranderd bij het verwerken van meegekocht dividend en verplaats winst van het lopende jaar niet naar oude reserves."
+          "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt goodwill bij de consolidatie. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
       "caseTables": []
@@ -5800,7 +5800,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Volledig te elimineren eindwinsten: € 70.000 + € 60.000 = € 130.000.",
         "De geconsolideerde voorraad bedraagt € 930.000."
       ],
-      "pattern": "Herken: de vraag vraagt een groepsbalanspost en geeft de interne eindwinsten al. Aanpak: som van de drie voorraden minus beide volledige eindwinsten. Controle: gebruik niet de winstmutaties en vermenigvuldig de eindwinsten niet met deelnemingspercentages.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "up",
@@ -5819,9 +5819,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoeveel bedraagt de geconsolideerde voorraad van Moer, Delta en Eko op einddatum nadat de gegeven upstream- en downstream-eindwinsten volledig zijn verwijderd?",
         "rules": "Bij integrale consolidatie worden de volledige eindvoorraden opgeteld. Verwijder daarna de volle ongerealiseerde winst per interne stroom, ongeacht de verdeling tussen moeder en derden. Deze voorraadcorrectie is vóór belasting. Een belastinglatentie en de resultaattoerekening veranderen het bruto uit voorraad te elimineren bedrag niet.",
         "pattern": [
-          "Herken: de vraag vraagt een groepsbalanspost en geeft de interne eindwinsten al.",
-          "Aanpak: som van de drie voorraden minus beide volledige eindwinsten.",
-          "Controle: gebruik niet de winstmutaties en vermenigvuldig de eindwinsten niet met deelnemingspercentages."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het gevraagde onderwerp. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -5963,7 +5963,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Het gewone aandeel derden is € 40.000 + € 54.000 = € 94.000. Na correctie resteert € 90.800.",
         "Bij de downstreamlevering door Moer wordt derden niet gecorrigeerd."
       ],
-      "pattern": "Herken: twee goederenstromen, maar slechts één verkopende dochter. Aanpak: corrigeer het derdenaandeel in Delta voor haar netto winsttoename en laat Eko's gewone derdenaandeel staan. Controle: koppel de derdenregel aan de verkoper, niet aan de onderneming die de voorraad houdt.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Gebruik het percentage van de derden en het juiste eigen vermogen of resultaat van de dochter. Controleer of eerdere consolidatiecorrecties en winstbelasting eerst moeten worden verwerkt en of de vraag een balansbedrag of jaarresultaat verlangt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "orvelde"
@@ -5981,9 +5981,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe groot is het totale aandeel derden in de geconsolideerde W&V van Moer na de gegeven upstreamtoename en downstreamafname, met 20% winstbelasting?",
         "rules": "Bereken eerst de gewone minderheidsaandelen in Delta's en Eko's resultaten. De upstreamwinst is door Delta gemaakt, zodat de verandering in die winst ook haar derdenaandeel raakt. De downstreamwinst is door Moer gemaakt en heeft geen correctie op Eko's derdenaandeel tot gevolg. Pas belasting alleen toe op de nog vóór belasting gegeven IC-mutatie.",
         "pattern": [
-          "Herken: twee goederenstromen, maar slechts één verkopende dochter.",
-          "Aanpak: corrigeer het derdenaandeel in Delta voor haar netto winsttoename en laat Eko's gewone derdenaandeel staan.",
-          "Controle: koppel de derdenregel aan de verkoper, niet aan de onderneming die de voorraad houdt."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Gebruik het percentage van de derden en het juiste eigen vermogen of resultaat van de dochter. Controleer of eerdere consolidatiecorrecties en winstbelasting eerst moeten worden verwerkt en of de vraag een balansbedrag of jaarresultaat verlangt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [
@@ -6128,7 +6128,7 @@ window.CAFA2_DATA.modules["hk"]={
         "De upstreamtoename verlaagt Moers resultaat met € 12.800; de downstreamafname verhoogt het met € 16.000.",
         "Uitkomst: € 683.200. Controle: groepsresultaat vóór toerekening € 774.000 minus derden € 90.800 = € 683.200."
       ],
-      "pattern": "Herken: de eindcasus combineert de HK-basisbrug met twee tegengestelde IC-mutaties. Aanpak: werk dividend, goodwill, upstream en downstream in afzonderlijke aansluitingsregels uit. Controle: meerderheidsresultaat plus definitief aandeel derden moet hetzelfde groepsresultaat opleveren als een berekening vóór winsttoerekening.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "college",
@@ -6147,9 +6147,9 @@ window.CAFA2_DATA.modules["hk"]={
         "task": "Hoe hoog is het geconsolideerde resultaat na belastingen toekomend aan Moer, inclusief eliminatie van dividend, goodwillafschrijving en de juiste netto moederdelen van beide IC-mutaties?",
         "rules": "Voeg bij verkrijgingsprijs de winstaandelen van de dochters aan het moederresultaat toe. Verwijder ontvangen dividend dat daarin al als opbrengst zit en trek de jaarafschrijving van consolidatiegoodwill af. De upstreamtoename raakt het moederdeel in de verkoper; de downstreamafname komt volledig aan de moeder toe. Reken beide IC-mutaties na belasting.",
         "pattern": [
-          "Herken: de eindcasus combineert de HK-basisbrug met twee tegengestelde IC-mutaties.",
-          "Aanpak: werk dividend, goodwill, upstream en downstream in afzonderlijke aansluitingsregels uit.",
-          "Controle: meerderheidsresultaat plus definitief aandeel derden moet hetzelfde groepsresultaat opleveren als een berekening vóór winsttoerekening."
+          "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over goodwill. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
+          "Let op de beslissende gegevens: Houd verwervingsdatum, betaald bedrag, aandeel in het relevante eigen vermogen en afschrijvingstermijn uit elkaar. Bepaal of de vraag de goodwill bij aankoop, jaarlijkse afschrijving of een cumulatieve balanscorrectie vraagt.",
+          "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
       "caseTables": [

@@ -1126,5 +1126,397 @@
   "cafa2-20260429/vraag-23": {
     "code": "hk",
     "id": 99
+  },
+  "cafa2-20210419/vraag-13#b": {
+    "code": "nvw",
+    "id": 173
+  },
+  "cafa2-20210419/vraag-14#b": {
+    "code": "nvw",
+    "id": 174
+  },
+  "cafa2-20210419/vraag-21#b": {
+    "code": "hk",
+    "id": 100
+  },
+  "cafa2-20210419/vraag-21#c": {
+    "code": "hk",
+    "id": 101
+  },
+  "cafa2-20210419/vraag-28#b": {
+    "code": "val",
+    "id": 110
+  },
+  "cafa2-20210419/vraag-28#c": {
+    "code": "val",
+    "id": 111
+  },
+  "cafa2-20211006/vraag-2#b": {
+    "code": "kap",
+    "id": 150
+  },
+  "cafa2-20211006/vraag-4#b": {
+    "code": "kap",
+    "id": 151
+  },
+  "cafa2-20211006/vraag-9#b": {
+    "code": "nvw",
+    "id": 175
+  },
+  "cafa2-20211006/vraag-12#b": {
+    "code": "nvw",
+    "id": 176
+  },
+  "cafa2-20211006/vraag-16#b": {
+    "code": "hk",
+    "id": 102
+  },
+  "cafa2-20211006/vraag-16#c": {
+    "code": "hk",
+    "id": 103
+  },
+  "cafa2-20211006/vraag-16#d": {
+    "code": "hk",
+    "id": 104
+  },
+  "cafa2-20211006/vraag-17#b": {
+    "code": "hk",
+    "id": 105
+  },
+  "cafa2-20211006/vraag-17#c": {
+    "code": "hk",
+    "id": 106
+  },
+  "cafa2-20220411/vraag-1#b": {
+    "code": "kap",
+    "id": 152
+  },
+  "cafa2-20220411/vraag-8#b": {
+    "code": "kap",
+    "id": 153
+  },
+  "cafa2-20220411/vraag-12#b": {
+    "code": "nvw",
+    "id": 177
+  },
+  "cafa2-20220411/vraag-14#b": {
+    "code": "nvw",
+    "id": 178
+  },
+  "cafa2-20220411/vraag-14#c": {
+    "code": "nvw",
+    "id": 179
+  },
+  "cafa2-20220411/vraag-18#b": {
+    "code": "hk",
+    "id": 107
+  },
+  "cafa2-20221006/vraag-4#b": {
+    "code": "kap",
+    "id": 154
+  },
+  "cafa2-20221006/vraag-13#b": {
+    "code": "nvw",
+    "id": 180
+  },
+  "cafa2-20221006/vraag-14#b": {
+    "code": "nvw",
+    "id": 181
+  },
+  "cafa2-20221006/vraag-15#b": {
+    "code": "nvw",
+    "id": 182
+  },
+  "cafa2-20221006/vraag-16#b": {
+    "code": "hk",
+    "id": 108
+  },
+  "cafa2-20221006/vraag-20#b": {
+    "code": "hk",
+    "id": 109
+  },
+  "cafa2-20221006/vraag-20#c": {
+    "code": "hk",
+    "id": 110
+  },
+  "cafa2-20230411/vraag-1#b": {
+    "code": "kap",
+    "id": 155
+  },
+  "cafa2-20230411/vraag-5#b": {
+    "code": "kap",
+    "id": 156
+  },
+  "cafa2-20230411/vraag-5#c": {
+    "code": "kap",
+    "id": 157
+  },
+  "cafa2-20230411/vraag-7#b": {
+    "code": "kap",
+    "id": 158
+  },
+  "cafa2-20230411/vraag-11#b": {
+    "code": "nvw",
+    "id": 183
+  },
+  "cafa2-20230411/vraag-12#b": {
+    "code": "nvw",
+    "id": 184
+  },
+  "cafa2-20230411/vraag-13#b": {
+    "code": "nvw",
+    "id": 185
+  },
+  "cafa2-20230411/vraag-14#b": {
+    "code": "nvw",
+    "id": 186
+  },
+  "cafa2-20230411/vraag-16#b": {
+    "code": "hk",
+    "id": 111
+  },
+  "cafa2-20230411/vraag-18#b": {
+    "code": "hk",
+    "id": 112
+  },
+  "cafa2-20230411/vraag-21#b": {
+    "code": "val",
+    "id": 112
+  },
+  "cafa2-20230411/vraag-22#b": {
+    "code": "val",
+    "id": 113
+  },
+  "cafa2-20230411/vraag-22#c": {
+    "code": "val",
+    "id": 114
+  },
+  "cafa2-20230411/vraag-25#b": {
+    "code": "val",
+    "id": 115
+  },
+  "cafa2-20231009/vraag-1#b": {
+    "code": "kap",
+    "id": 159
+  },
+  "cafa2-20231009/vraag-7#b": {
+    "code": "kap",
+    "id": 160
+  },
+  "cafa2-20231009/vraag-12#b": {
+    "code": "nvw",
+    "id": 187
+  },
+  "cafa2-20231009/vraag-12#c": {
+    "code": "nvw",
+    "id": 188
+  },
+  "cafa2-20231009/vraag-12#d": {
+    "code": "nvw",
+    "id": 189
+  },
+  "cafa2-20231009/vraag-20#b": {
+    "code": "hk",
+    "id": 113
+  },
+  "cafa2-20231009/vraag-20#c": {
+    "code": "hk",
+    "id": 114
+  },
+  "cafa2-20231009/vraag-20#d": {
+    "code": "hk",
+    "id": 115
+  },
+  "cafa2-20240422/vraag-10#b": {
+    "code": "val",
+    "id": 116
+  },
+  "cafa2-20240422/vraag-11#b": {
+    "code": "val",
+    "id": 117
+  },
+  "cafa2-20240422/vraag-11#c": {
+    "code": "val",
+    "id": 118
+  },
+  "cafa2-20240422/vraag-11#d": {
+    "code": "val",
+    "id": 119
+  },
+  "cafa2-20240422/vraag-12#b": {
+    "code": "val",
+    "id": 120
+  },
+  "cafa2-20240422/vraag-12#c": {
+    "code": "val",
+    "id": 121
+  },
+  "cafa2-20240422/vraag-12#d": {
+    "code": "val",
+    "id": 122
+  },
+  "cafa2-20240422/vraag-18#b": {
+    "code": "nvw",
+    "id": 190
+  },
+  "cafa2-20240422/vraag-18#c": {
+    "code": "nvw",
+    "id": 191
+  },
+  "cafa2-20240422/vraag-18#d": {
+    "code": "nvw",
+    "id": 192
+  },
+  "cafa2-20240422/vraag-23#b": {
+    "code": "hk",
+    "id": 116
+  },
+  "cafa2-20240422/vraag-23#c": {
+    "code": "hk",
+    "id": 117
+  },
+  "cafa2-20240930/vraag-1#b": {
+    "code": "kap",
+    "id": 161
+  },
+  "cafa2-20240930/vraag-2#b": {
+    "code": "kap",
+    "id": 162
+  },
+  "cafa2-20240930/vraag-3#b": {
+    "code": "kap",
+    "id": 163
+  },
+  "cafa2-20240930/vraag-10#b": {
+    "code": "val",
+    "id": 123
+  },
+  "cafa2-20240930/vraag-11#b": {
+    "code": "val",
+    "id": 124
+  },
+  "cafa2-20240930/vraag-12#b": {
+    "code": "val",
+    "id": 125
+  },
+  "cafa2-20240930/vraag-12#c": {
+    "code": "val",
+    "id": 126
+  },
+  "cafa2-20240930/vraag-17#b": {
+    "code": "nvw",
+    "id": 193
+  },
+  "cafa2-20240930/vraag-17#c": {
+    "code": "nvw",
+    "id": 194
+  },
+  "cafa2-20240930/vraag-23#b": {
+    "code": "hk",
+    "id": 118
+  },
+  "cafa2-20240930/vraag-25#b": {
+    "code": "hk",
+    "id": 119
+  },
+  "cafa2-20240930/vraag-25#c": {
+    "code": "hk",
+    "id": 120
+  },
+  "cafa2-20240930/vraag-25#d": {
+    "code": "hk",
+    "id": 121
+  },
+  "cafa2-20240930/vraag-25#e": {
+    "code": "hk",
+    "id": 122
+  },
+  "cafa2-20250417/vraag-5#b": {
+    "code": "kap",
+    "id": 164
+  },
+  "cafa2-20250417/vraag-6#b": {
+    "code": "kap",
+    "id": 165
+  },
+  "cafa2-20250417/vraag-7#b": {
+    "code": "kap",
+    "id": 166
+  },
+  "cafa2-20250417/vraag-7#c": {
+    "code": "kap",
+    "id": 167
+  },
+  "cafa2-20250417/vraag-7#d": {
+    "code": "kap",
+    "id": 168
+  },
+  "cafa2-20250417/vraag-7#e": {
+    "code": "kap",
+    "id": 169
+  },
+  "cafa2-20250417/vraag-8#b": {
+    "code": "kap",
+    "id": 170
+  },
+  "cafa2-20250417/vraag-24#b": {
+    "code": "hk",
+    "id": 123
+  },
+  "cafa2-20250417/vraag-27#b": {
+    "code": "hk",
+    "id": 124
+  },
+  "cafa2-20250417/vraag-27#c": {
+    "code": "hk",
+    "id": 125
+  },
+  "cafa2-20250417/vraag-28#b": {
+    "code": "hk",
+    "id": 126
+  },
+  "cafa2-20250924/vraag-5#b": {
+    "code": "kap",
+    "id": 171
+  },
+  "cafa2-20250924/vraag-8#b": {
+    "code": "kap",
+    "id": 172
+  },
+  "cafa2-20260429/vraag-4#b": {
+    "code": "kap",
+    "id": 173
+  },
+  "cafa2-20260429/vraag-18#b": {
+    "code": "nvw",
+    "id": 195
+  },
+  "cafa2-20260429/vraag-22#b": {
+    "code": "hk",
+    "id": 127
+  },
+  "cafa2-20260429/vraag-22#c": {
+    "code": "hk",
+    "id": 128
+  },
+  "cafa2-20260429/vraag-22#d": {
+    "code": "hk",
+    "id": 129
+  },
+  "cafa2-20260429/vraag-23#b": {
+    "code": "hk",
+    "id": 130
+  },
+  "cafa2-20260429/vraag-23#c": {
+    "code": "hk",
+    "id": 131
+  },
+  "cafa2-20231009/vraag-24#b": {
+    "code": "val",
+    "id": 127
+  },
+  "cafa2-20231009/vraag-24#c": {
+    "code": "val",
+    "id": 128
   }
 }
