@@ -1,10 +1,12 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-26.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-26.3. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
 ## Aanvulling: knop Kijk mijn antwoord na
 
 De startersknop **Bespreek mijn antwoord** is vervangen door **Kijk mijn antwoord na**. Na inloggen en toestemming stuurt deze knop direct het verzoek met het actuele eigen antwoord en de bestaande vraagcontext. De instructie vraagt wat klopt, welke fouten of stappen ontbreken en hoe die te verbeteren. Bij een leeg antwoord wordt dat benoemd. Er is geen standwissel of inlevering nodig; opgeslagen antwoord en score blijven behouden.
+
+De knop staat live op [cafa2.pages.dev](https://cafa2.pages.dev), met code `cf2cd37` en deployment `4ac20858-1d4c-4639-85f2-dcdd14c20c62`. De bijbehorende controles en de correctie van de bestaande UI-nulmeting staan bovenaan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). Geen aanvullende configuratie nodig.
 
 ## Actueel: assistent in een rechterkolom, 26 september 2026
 
