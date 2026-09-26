@@ -19,8 +19,13 @@ export function createAssistantPanel(panel){
     if(!layout)return;
     drag=null;
     resizeObserver?.unobserve(layout);
-    if(panel.parentElement===layout)doc.body.append(panel);
-    if(primary?.parentElement===layout)layout.before(primary);
+    if(layout.contains(panel))doc.body.append(panel);
+    // A question route can mount its case wrapper after a queued resize has
+    // already docked the answer body. Preserve that new wrapper before removal.
+    if(primary&&layout.contains(primary)){
+      let content=primary;while(content.parentElement!==layout)content=content.parentElement;
+      layout.before(content);
+    }
     primary?.classList.remove('study-assistant-primary');
     page?.classList.remove('study-assistant-page','study-assistant-short-page');page?.style.removeProperty('--sa-page-height');
     modal?.classList.remove('study-assistant-modal-host');

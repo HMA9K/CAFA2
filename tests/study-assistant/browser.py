@@ -51,6 +51,8 @@ try:
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
       if state['delay_once']:
         state['delay_once']=False;r.continue_();return
+      if data['message']=='Test gekleurde feedback':
+        r.fulfill(json=mock_reply(data,'## Controle\n- **Goed:** het percentage van 80% klopt.\n- **Fout:** 8% geeft een te laag bedrag; gebruik 80%.\n- **Ontbreekt:** vermeld de grondslag van € 100.\n\n| Onderdeel | Beoordeling |\n| --- | --- |\n| Methode | Goed: juiste formule |\n| Uitkomst | Fout: € 8; dit moet € 80 zijn |\n| Toelichting | Ontbreekt: onderbouw de grondslag |\n\nDit is gewone uitleg zonder beoordeling.'));return
       if data['message']=='Test leesbare opmaak':
         r.fulfill(json=mock_reply(data,'## Conclusie\n**Uitkomst: *juist***\n\n### Berekening\n| Stap | Berekening | Uitkomst |\n| --- | --- | --- |\n| 1 | 100 × 80% | **€ 80** |\n\n## Controle\n- **Correct:** het percentage.\n- *Verbetering:* vermeld de grondslag.\n\n3. Bepaal de grondslag.\n4. Bereken het aandeel.\n\n> Dit is een toelichting.\n\n`100 × 80%`\n<img src=x onerror="alert(1)">'));return
       if data['message']=='Proeftabel zonder scheidingsregel':
@@ -115,7 +117,28 @@ try:
     check('Formatted calculation table keeps amounts and formula visible',formatted.locator('table').count()==1 and formatted.locator('td').all_text_contents()==['1','100 × 80%','€ 80'])
     check('Formatted notes and code stay safe without executable images',formatted.locator('blockquote').count()==1 and formatted.locator('code').inner_text()=='100 × 80%' and formatted.locator('img').count()==0)
     page.screenshot(path=str(OUT/f'formatted-answer-{engine}.png'))
-    page.evaluate("location.hash='kap-2'");page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 2")')
+    send('Test gekleurde feedback')
+    feedback=page.locator('.study-message.is-assistant').last.locator('.study-message-body')
+    check('Review labels preserve text and map to green red and missing statuses',all(feedback.locator('.study-review-status.is-'+status).count()==2 for status in ['good','wrong','missing']) and feedback.locator('p').last.get_attribute('class') is None and '€ 80' in feedback.inner_text())
+    def feedback_contrast():
+      return feedback.evaluate(r"""e=>{
+        const luminance=color=>{const rgb=color.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];};
+        const colors=[...e.querySelectorAll('.study-review-status')].map(n=>{const s=getComputedStyle(n),a=luminance(s.color),b=luminance(s.backgroundColor);return {color:s.color,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};});
+        return colors.length===6 && new Set(colors.map(c=>c.color)).size===3 && colors.every(c=>c.ratio>=4.5);
+      }""")
+    check('Review colors in light mode have at least 4.5 to 1 text contrast',feedback_contrast())
+    page.screenshot(path=str(OUT/f'colored-feedback-light-{engine}.png'))
+    page.evaluate("CafaTheme.setMode('dark')");page.wait_for_timeout(100)
+    check('Review colors in dark mode have at least 4.5 to 1 text contrast',feedback_contrast())
+    page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(100)
+    check('Mobile colored feedback keeps its labels and table inside the panel',feedback.locator('li').count()==3 and feedback.evaluate('e=>e.scrollWidth<=e.clientWidth+1') and feedback.locator('table').count()==1)
+    feedback.locator('li').first.scroll_into_view_if_needed()
+    page.screenshot(path=str(OUT/f'colored-feedback-dark-mobile-{engine}.png'))
+    page.set_viewport_size({'width':1366,'height':950});page.evaluate("CafaTheme.setMode('light')")
+
+    page.evaluate("location.hash='kap-2'")
+    page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 2")')
+    check('Question switch during a queued viewport resize preserves one dock and its new case wrapper',page.locator('#study-assistant').count()==1 and page.locator('.study-assistant-layout').count()==1 and page.locator('#kap-2 .practice-case-layout').count()==1 and page.locator('#kap-2 #study-assistant').count()==1)
     check('Question navigation isolates chat history',page.locator('.study-message').count()==0)
     send('Geef het antwoord.');check('New question uses its own context',requests[-1]['ref']['questionId']=='2' and requests[-1]['history']==[])
     state['fail']=True;send('Leg dit uit.')

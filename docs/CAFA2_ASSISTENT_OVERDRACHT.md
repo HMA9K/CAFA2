@@ -1,6 +1,10 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-26.5. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-26.6. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+
+## Kleuren bij nakijkfeedback
+
+Nakijkfeedback gebruikt expliciete labels: **Goed:** (groen), **Fout:** (rood) en **Ontbreekt:** (amber). De weergave kleurt alleen gelabelde onderdelen van assistentantwoorden, inclusief tabelcellen. De labels blijven leesbaar zonder kleur. Gewone uitleg en eigen chatberichten krijgen geen automatische beoordeling. Bij een onzekere beoordeling moet dit in neutrale tekst worden benoemd. Lichte en donkere thema's hebben afzonderlijke kleuren; de contrast- en browserproeven staan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). Opgeslagen antwoorden, scores en timers blijven behouden.
 
 ## Antwoordopmaak
 

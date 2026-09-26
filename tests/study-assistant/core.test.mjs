@@ -59,6 +59,10 @@ test('Antwoordopmaak is ingeschakeld in beide stijlen zonder verplichte volledig
     for(const part of ['leesbare Markdown-opmaak','**vet**','*cursief*','witregels','Markdown-tabel','Een korte hint mag kort blijven','geen HTML'])assert.ok(value.instructions.includes(part),part);
   }
 });
+test('Nakijkinstructie onderscheidt juist, onjuist, ontbrekend en onzeker zonder hints te kleuren',()=>{
+  const value=makeModelRequest({record,mode:'hint',history:[],answer:{},message:'Controleer het antwoord.'},environment());
+  for(const part of ['**Goed:**','**Fout:**','**Ontbreekt:**','groen, rood of amber','niet betrouwbaar kunt beoordelen','Kleur geen algemene uitleg of hints'])assert.ok(value.instructions.includes(part),part);
+});
 test('Promptcontract vraagt controle van antwoordletter en herleiding van bedrag',()=>{
   const exam=catalog.records['CAFA2:exam:cafa2-test:vraag-4'];
   for(const [current,message] of [[record,'Waarom is B goed?'],[exam,'Waar komt dit bedrag uit de uitwerking vandaan?']]){

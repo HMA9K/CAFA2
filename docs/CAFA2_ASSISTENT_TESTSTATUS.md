@@ -2,6 +2,16 @@
 
 Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
+## Actueel: kleuren bij nakijkfeedback
+
+- Expliciete nakijklabels worden gekleurd: Goed groen, Fout rood, Ontbreekt amber. Ook herkenbare synoniemen met dubbele punt worden ondersteund. De tekstlabels blijven zichtbaar en alleen assistentberichten krijgen deze statusopmaak; eigen beweringen en neutrale uitleg blijven neutraal.
+- De modelinstructie vraagt één beoordelingspunt per regel, vergelijking met uitwerking en puntenverdeling, concrete verbetering bij fouten of ontbrekende stappen en een neutrale melding wanneer beoordeling onzeker is.
+- Nieuwe regressies bewaken labelherkenning, inhoudsbehoud, geen beoordeling van eigen tekst of gewone uitleg, lichte/donkere kleuren met tekstcontrast van minimaal 4,5:1 en mobiel behoud van lijsten en tabellen.
+- Lokaal geslaagd: 116 Node-tests, alle dertien regressiescripts, integratie-dry-run zonder wijzigingen, build en deploycontrole: 627 oefenvragen, 285 tentamenrecords, 183 publieke bestanden, vier Functions.
+- De eerste uitgebreide browserproef vond een bestaande samenloop van schermformaatwijziging en casusopbouw bij een vraagwissel: het paneel kon in een verwijderde layout belanden. Verplaatsing bewaart nu de nieuw opgebouwde casuscontainer, ook als die de oorspronkelijke vraaginhoud inmiddels omsluit. Een regressie controleert precies één aangesloten paneel, een behouden casus en correcte nieuwe vraagcontext.
+- REVIEW_COLORS_STATUS_PENDING
+- Automatische reacties zijn gesimuleerd; geen nieuwe echte modelkwaliteitsproef. Geen nieuwe secret, instelling of bronbestand nodig. Kleuren zijn chatfeedback en veranderen geen opgeslagen antwoord, score of timer.
+
 ## Actueel: opmaak in assistentantwoorden
 
 - Markdown-opmaak expliciet ingeschakeld in de antwoordinstructie. Kopjes, vet, cursief, echte opsommingen en genummerde stappen, toelichtingsblokken en tabellen worden leesbaar weergegeven. Korte hints hoeven geen volledige controlestructuur te krijgen.

@@ -2,6 +2,10 @@
 
 Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
 
+## Kleuren bij nakijkfeedback
+
+Voor gekleurde nakijkfeedback is geen extra configuratie nodig. Nieuwe modelantwoorden krijgen de instructie om beoordelingspunten te labelen met Goed, Fout of Ontbreekt; het paneel toont die groen, rood of amber. De labels blijven tekst en behouden hun betekenis zonder kleur. Oude antwoorden krijgen alleen kleur als zij al zo'n expliciet label bevatten. De kleur is een presentatie van modelfeedback en verandert geen toetsscore.
+
 ## Leesbare antwoorden
 
 Nieuwe antwoorden kunnen kopjes, vet, cursief, opsommingen, genummerde stappen en rekentabellen gebruiken. De assistent krijgt daarvoor een expliciete opmaakinstructie. Oude antwoorden zonder opmaakmarkeringen blijven hun oorspronkelijke tekst behouden. Vernieuw de pagina om de bijgewerkte weergave te laden. Er is geen aanvullende instelling nodig.

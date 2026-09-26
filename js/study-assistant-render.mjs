@@ -15,7 +15,17 @@ function inline(target,text,doc) {
   }
   target.append(doc.createTextNode(text.slice(cursor)));
 }
-export function renderMarkdown(target,text,doc=document) {
+// Only explicit review labels receive a status; ordinary prose stays neutral.
+function reviewColors(target) {
+  for(const node of target.querySelectorAll('p,li,th,td,h3,h4')) {
+    if(node.firstElementChild?.tagName==='CODE'&&node.textContent===node.firstElementChild.textContent)continue;
+    const label=node.textContent.match(/^\s*(goed|correct|juist|fout|onjuist|incorrect|ontbreekt|onvolledig|deels goed|verbetering)\s*:/i)?.[1].toLowerCase();
+    if(!label)continue;
+    const status=['goed','correct','juist'].includes(label)?'good':['fout','onjuist','incorrect'].includes(label)?'wrong':'missing';
+    node.classList.add('study-review-status',`is-${status}`);
+  }
+}
+export function renderMarkdown(target,text,doc=document,{feedback=false}={}) {
   target.replaceChildren();const lines=String(text).replace(/\r/g,'').split('\n');
   const cells=s=>s.trim().replace(/^\||\|$/g,'').split(/(?<!\\)\|/).map(x=>x.trim().replace(/\\\|/g,'|'));
   for(let i=0;i<lines.length;) {
@@ -55,4 +65,5 @@ export function renderMarkdown(target,text,doc=document) {
     }
     const p=doc.createElement('p');inline(p,lines[i++],doc);target.append(p);
   }
+  if(feedback)reviewColors(target);
 }
