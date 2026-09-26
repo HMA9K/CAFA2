@@ -25,6 +25,6 @@ assert.match(html,/zeven aangeleverde tentamens/);
 assert.equal(html.match(/reader-brand cafa-wordmark/g)?.length,1);
 const homeSVG=read('js/bootstrap.js').match(/brand.innerHTML = '(<svg[\s\S]*?<\/svg>)/)?.[1];
 assert.equal(summaryBrand.match(/<svg[\s\S]*?<\/svg>/)?.[0],homeSVG,'Identical homepage mark');
-assert.ok(html.includes('css/study-clarity.css?v=20260926-hometools1'));
+assert.ok(html.includes('css/study-clarity.css?v=20260926-hometools2'));
 for(const[a,b]of [[803000+75000-30000+20000,868000],[800000-868000*.8,105600],[(125000-7500+25000-20000)*.8,98000],[(49000-35000)*.8,11200],[25920+6480+17280+4320,54000]])assert.equal(a,b);
 console.log('Didactic clarity verified: currency interpretation, explicit VOF/CV, 7 prerequisites, 4 methods / 7 exam sources, shared SVG and worked arithmetic.');

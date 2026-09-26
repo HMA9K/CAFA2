@@ -60,7 +60,7 @@ html[data-study-theme=dark] .reader-layout .reader-brand.cafa-wordmark{color:#f4
 @media print{.reader-layout .reader-topbar{display:none!important}.method-detail{break-inside:auto}.exam-method[hidden],.exam-route-card[hidden]{display:block!important}.exam-route-tabs{display:none!important}.currency-worked,.exam-command,.method-warning{background:none}}
 
 .reader-layout .study-note>p strong{display:inline}
-.cafa-home .study-home-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 0}
+.cafa-home .study-home-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 0}
 .cafa-home .study-home-links a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:58px;min-width:0;padding:12px 16px;border:1px solid var(--study-line);border-radius:8px;background:var(--study-surface);color:var(--study-muted);font-size:14px;line-height:1.4;text-decoration:none}
 .cafa-home .study-home-links a:hover{color:var(--study-accent);border-color:var(--study-accent);background:var(--study-wash)}
 .cafa-home .study-home-links a:focus-visible{outline:2px solid var(--study-accent);outline-offset:3px}

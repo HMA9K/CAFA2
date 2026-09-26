@@ -125,7 +125,7 @@
     var base=/\/fallback\//.test(path)?'../':'';
     var practice=/\/(?:index\.html)?$/.test(path)?'':base+'index.html';
     var menu=document.createElement('details');menu.id='study-tools-menu';menu.className='study-tools-menu';
-    menu.innerHTML='<summary aria-label="Hulpmiddelen openen">Meer <span aria-hidden="true">⌄</span></summary><nav aria-label="Studiehulpmiddelen"><a href="'+base+'samenvatting.html#kernschema">IC-kernschema</a><a href="'+practice+'#voortgang">Voortgang</a><a href="'+base+'samenvatting.html#begrippen">Begrippen</a><a href="'+base+'samenvatting.html#bronnen">Bronnen</a><a href="'+base+'samenvatting.html#wetsartikelen">Wetsartikelen</a><a data-tool-link="kapitaalboom" href="'+base+'samenvatting.html#kapitaalboom">Stroomdiagram Kapitaalbelangen in drie stappen</a></nav>';
+    menu.innerHTML='<summary aria-label="Hulpmiddelen openen">Meer <span aria-hidden="true">⌄</span></summary><nav aria-label="Studiehulpmiddelen"><a href="'+base+'samenvatting.html#kernschema">IC-kernschema</a><a href="'+practice+'#voortgang">Voortgang</a><a href="'+base+'samenvatting.html#begrippen">Begrippen</a><a href="'+base+'samenvatting.html#bronnen">Bronnen</a><a href="'+base+'samenvatting.html#wetsartikelen">Wetsartikelen</a><a data-tool-link="kapitaalboom" href="'+base+'samenvatting.html#kapitaalboom">Stroomdiagram Kapitaalbelangen</a></nav>';
     bar.append(menu);
     menu.addEventListener('click',function(e){if(e.target.closest('a'))closeTools(false);});
   }
