@@ -58,7 +58,7 @@
     record.button.setAttribute('aria-expanded', 'true');
   }
   function checkPractice(record) {
-    if (!allowed(record.question)) return;
+    if (!allowed(record.question)) return;if(window.StudyMeasure)window.StudyMeasure.activity('Uitwerking bekeken');if(!record.mc&&window.CafaPractice){var c=record.question.dataset.code,id=Number(record.question.dataset.q);if(window.CafaPractice.hasOwnAnswer(window.CafaPractice.getAnswer(c,id)))window.CafaPractice.measureAnswer(c,id,true);}
     // The original details toggle handler owns scoring and preserves the first attempt.
     record.source.open = true;
     showPractice(record);
@@ -203,7 +203,7 @@
     prepareExam();
     var context = examContext();
     if (!context || !examUI || !examUI.answer.isConnected) return;
-    var q = context.question, answer = context.answer, box = examUI.feedback;
+    var q = context.question, answer = context.answer, box = examUI.feedback;if(window.StudyMeasure){if(window.CafaExamEngine.answeredCount({exam:{questions:[q]},answers:context.attempt.answers}))window.StudyMeasure.answer('exam:'+context.attempt.id+':'+q.id,answer,window.StudyMeasure.examNames(context.attempt.exam,q),true);window.StudyMeasure.activity('Uitwerking bekeken',window.StudyMeasure.examNames(context.attempt.exam,q));}
     box.replaceChildren();
     examUI.answer.insertAdjacentElement('afterend', box);
     if (q.type === 'mc') {

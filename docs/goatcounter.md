@@ -1,15 +1,36 @@
-# GoatCounter: paginametingen
+# GoatCounter: herkenbare pagina's en oefenactiviteit
 
-De online CAFA2-oefenomgeving en interactieve samenvatting registreren de eerste geopende pagina en wijzigingen van de hashroute. Een hashroute is het adresdeel na `#`, bijvoorbeeld `#oefenen`. Alleen de standaard GoatCounter-tag toevoegen registreert zulke paginawisselingen niet.
+Iedere weergegeven pagina krijgt bovenaan een naam. Diezelfde naam is de browserpaginatitel en het meetpad in GoatCounter. Bijvoorbeeld `CAFA2 / Tentamens / Tentamen 24-09-2025 / Opgave 1 / Vraag 1`. Onderwerpen, lessen, vragen, resultaten, samenvattingen en specifieke tentamens worden onderscheiden. Tijdstempels en persoonlijke pogingcodes komen niet in de meetnaam.
 
-`js/page-analytics.js` registreert na het renderen het paginapad en de titel. `no_onload` voorkomt dat de standaardclient daarnaast een tweede meting zonder hash verstuurt. De twee samenvattingsbouwers nemen dezelfde instelling en hetzelfde script op.
+`js/page-names.js` volgt de gerenderde route. De oorspronkelijke `page-analytics.js` is vervangen als actieve adapter. `no_onload` voorkomt dubbele automatische metingen. Voorviews en lokale bestanden tellen niet mee. De losse leesversies hebben dezelfde naamgeving.
 
-`/index.html` en `/` worden samengevoegd; `/samenvatting.html` en `/samenvatting` eveneens. Persoonlijke tijdstempels in tentamenpogingen worden uit het meetpad verwijderd. Previewdomeinen en lokale bestanden leveren geen productiemetingen op. Bestaande samengestelde bezoeken kunnen achteraf niet worden uitgesplitst naar de niet-geregistreerde onderdelen.
+| Gebeurtenis | Betekenis |
+| --- | --- |
+| Onderdeel geopend / Vraag geopend | Bereik van het onderdeel of de vraag, met GoatCounters sessieontdubbeling |
+| Oefenreeks gestart / Tentamen gestart | Een expliciete start via de leeromgeving |
+| Vraag beantwoord / Vraag geoefend | Een geldig antwoord is gecontroleerd of het tentamen is ingeleverd |
+| Antwoord nagekeken | Het antwoord is beoordeeld, ook bij direct nakijken |
+| Uitwerking bekeken | Een antwoordmodel of uitgeklapt antwoord is geopend |
+| Oefenreeks afgerond / Tentamen afgerond | De expliciete afsluitactie is uitgevoerd |
 
-GoatCounters `filter()` blijft actief, waaronder uitsluiting van de eigen browser. Open eenmalig [de uitsluitingslink](https://cafa2.pages.dev/#toggle-goatcounter) en controleer de melding `DISABLED`. Herhaal dit voor iedere gebruikte browser en ieder apparaat. Dezelfde link zet de meting bij een volgend bezoek weer aan. Bij het wissen van websiteopslag vervalt deze instelling. SRA heeft [een afzonderlijke uitsluitingslink](https://sra-2xt.pages.dev/#toggle-goatcounter).
+Oefenvolume wordt geteld met `event: true` en `no_session: true`, zodat verschillende echte pogingen op dezelfde dag blijven meetellen. Alleen typen, een antwoord kiezen zonder controle en het herstellen van bewaarde antwoorden tellen niet als oefenen. Een lokaal antwoordvingerafdrukregister voorkomt dubbel tellen bij opnieuw laden of opnieuw controleren van hetzelfde bewaarde antwoord. Antwoordtekst, scores, persoonsnamen en lokale pogingcodes worden niet naar GoatCounter verstuurd.
 
-Een alternatief is **Instellingen → Tracking → Negeer IPs** in ieder GoatCounter-account. Dit sluit ook andere bezoekers op dat openbare IP-adres uit. Een wisselend IP-adres vereist onderhoud. De browseruitsluiting is daarom geschikter wanneer alleen de beheerder uitgesloten moet worden.
+BELRE3 heeft leesbare opgaven met uitklapbare antwoorden, zonder antwoordinvoer of tentameninlevering. Daarom registreert deze omgeving opgave/vraag geopend en uitwerking bekeken; zij verzint geen ingediende antwoorden of afgeronde tentamens.
 
-Controle: eerste bezoek, rechtstreekse links, paginawisselingen, herhaalde route-events, terugnavigatie, vertraagd laden van de client, verborgen tabs, uitgesloten browsers, previewdomeinen, tentamenpogingen en asynchrone CAFA2-schermen. De echte GoatCounter-client is gebruikt met onderschepte beacons; zulke technische tests versturen geen bezoeken naar productie.
+## Dashboard lezen
 
-Bronnen: [GoatCounter voor hash-navigatie](https://www.goatcounter.com/help/spa), [JavaScript-API](https://www.goatcounter.com/help/js), [eigen bezoeken uitsluiten](https://www.goatcounter.com/help/skip-dev), [sessies en bezoeken](https://www.goatcounter.com/help/sessions).
+Gebruik `is:pageview` voor bereik. Gebruik `Vraag geoefend` voor oefenvolume, `Uitwerking bekeken` voor bekeken oplossingen en een tentamendatum zoals `Tentamen 24-09-2025` om alle activiteit van die toets te vinden. Tel de afzonderlijke gebeurtenissen niet op als personen: één gecontroleerd antwoord heeft meerdere stappen. Oude technische meetpaden blijven historische rijen; nieuwe gegevens staan onder de leesbare namen.
+
+## Eigen browser uitsluiten
+
+Open eenmalig de link van de betreffende omgeving en controleer de melding **DISABLED**:
+
+- [CAFA2](https://cafa2.pages.dev/#toggle-goatcounter)
+- [SRA](https://sra-2xt.pages.dev/#toggle-goatcounter)
+- [BELRE3](https://belre3.pages.dev/#toggle-goatcounter)
+
+Dit geldt per browser, apparaat en website. Dezelfde link schakelt de telling bij een volgend bezoek weer in. Wissen van websiteopslag verwijdert de instelling. Alle metingen blijven GoatCounters oorspronkelijke `filter()` respecteren, inclusief `skipgc`.
+
+Het alternatief **Instellingen > Tracking > Negeer IPs** sluit ook andere bezoekers op hetzelfde openbare IP-adres uit. Gebruik dit alleen als dat gewenste gedrag is. Een wisselend IP-adres vereist onderhoud.
+
+Bronnen: [JavaScript-API](https://www.goatcounter.com/help/js), [gebeurtenissen](https://www.goatcounter.com/help/events), [sessies](https://www.goatcounter.com/help/sessions), [eigen bezoeken uitsluiten](https://www.goatcounter.com/help/skip-dev).
