@@ -2,6 +2,10 @@
 
 Versie 2026-09-26.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
+## Aanvulling: knop Kijk mijn antwoord na
+
+De startersknop **Bespreek mijn antwoord** is vervangen door **Kijk mijn antwoord na**. Na inloggen en toestemming stuurt deze knop direct het verzoek met het actuele eigen antwoord en de bestaande vraagcontext. De instructie vraagt wat klopt, welke fouten of stappen ontbreken en hoe die te verbeteren. Bij een leeg antwoord wordt dat benoemd. Er is geen standwissel of inlevering nodig; opgeslagen antwoord en score blijven behouden.
+
 ## Actueel: assistent in een rechterkolom, 26 september 2026
 
 Op verzoek van de eigenaar krijgt de assistent dezelfde kolomindeling als de casus, aan de rechterkant. De vraag wordt smaller binnen de beschikbare ruimte. Koppen, antwoordvelden, ondernavigatie en modale sluitknoppen worden niet door het paneel bedekt. Een brede casus krijgt extra ruimte; wanneer drie bruikbare kolommen niet passen, staat de assistent boven de vraag in de gewone paginastroom.

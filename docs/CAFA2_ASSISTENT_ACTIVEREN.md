@@ -5,6 +5,7 @@ Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
 ## Paneel rechts bedienen
 
 - Open de assistent met **Vraag over deze vraag**.
+- Met **Kijk mijn antwoord na** stuur je direct een verzoek om je actuele antwoord met de uitwerking te vergelijken. Je krijgt uitleg over wat klopt, fouten en ontbrekende stappen. Inloggen en toestemming voor delen blijven nodig; de knop verandert je opgeslagen antwoord of score niet.
 - De assistent krijgt een eigen kolom rechts. Bij tentamens staat de casus links en de vraag in het midden; de kop en navigatie blijven erbuiten.
 - Sleep de verticale schuifrand naar links voor een bredere assistent en naar rechts voor een smallere assistent. De schuifrand werkt ook met pijltoetsen; Home herstelt een derde van de ruimte.
 - Gebruik × of Escape om de assistent te verbergen. De vraag krijgt de vrijgekomen ruimte terug.
