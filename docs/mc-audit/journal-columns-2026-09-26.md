@@ -10,7 +10,7 @@ Dit geldt voor MC-opties, bijbehorende uitwerkingen en tentamenmodellen. De afzo
 
 - `node --run test`: de volledige bestaande regressiecontrole is geslaagd.
 - `node scripts/build-study-assistant.mjs` en `node scripts/verify-study-assistant-build.mjs`: publicatiepakket gecontroleerd.
-- `node tests/journal-display-browser.mjs`: geslaagd op 1672 × 1148 en 390 × 844, met een versmald casuspaneel en donkere modus.
+- `node tests/journal-display-browser.mjs`: geslaagd op 1672 × 1148 en 390 × 844, met een versmald casuspaneel, vergroten via A+ en donkere modus.
 - Rapallo, 11 april 2023 vraag 7 onderdeel b: alle acht MC-tabellen hebben dezelfde kolomgrenzen, inclusief de lange alternatieve rekeningomschrijving.
 - SchierGlas, 24 september 2025 vraag 31: MC-opties en het tentamenmodel met afzonderlijke rode puntenkolom zijn gecontroleerd.
 - Eigen journaalinvoer blijft bewaard na herladen. Credit en punten zijn op mobiel bereikbaar door horizontaal te verschuiven.
@@ -21,3 +21,11 @@ De schermafbeeldingen staan in `docs/mc-audit/qa-journal-columns/`. Deze tonen h
 Dezelfde eis staat in [SRA als openstaande taak](https://github.com/HMA9K/SRA/blob/main/docs/cafa2-mc-vervolgtaken-2026-09-26.md). Die taak is bedoeld voor de latere SRA-uitvoering.
 
 Bronnen: bestaande CAFA2-vraagbank en officiële transcripties in `data/` en `content/practice/exam-mc/`; de [CAFA2-oefenomgeving](https://cafa2.pages.dev/index.html#oefenen).
+
+## Live publicatie
+
+- Codecommit `07beba4` is gepubliceerd met Cloudflare-deployment `cd1bf8a8-4e9e-476a-9db1-638608d4720b`, status success.
+- Zes live-bestanden komen exact overeen met het publicatiepakket: index, de gedeelde journaalstylesheet en de vier gewijzigde runtimebestanden. Bij HTML is uitsluitend de door Cloudflare toegevoegde analyticsbeacon buiten de vergelijking gehouden.
+- De volledige gerichte browsercontrole is ook op de live website geslaagd, inclusief vergroten met A+, vaste kolomgrenzen, mobiel verschuiven, rode punten en behoud van eigen invoer na herladen. De schermafbeeldingen in dit verslag tonen de live schermen.
+- [GitHub-validatie](https://github.com/HMA9K/CAFA2/actions/runs/36252963008) is geslaagd. De bestaande regressiecontrole en de controle voor paginagrootte zijn ook lokaal op de geïntegreerde versie geslaagd.
+- De SRA-eis is vastgelegd in commit `483b4ea` en blijft openstaand voor de latere uitvoering.

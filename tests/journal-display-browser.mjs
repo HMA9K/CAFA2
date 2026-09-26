@@ -55,6 +55,7 @@ try{
  const aid=page.locator('.study-assistant-launch');assert.ok(await aid.evaluate(e=>e.getBoundingClientRect().bottom<document.querySelector('.question:target .mc-area table').getBoundingClientRect().top),'Vraagknop staat boven de tabellen');
  await q.locator('.qbody').evaluate(e=>{e.scrollTop=460;});await page.screenshot({path:path.join(out,'rapallo-desktop.png')});
  await q.locator('.exam-case-resizer').focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');await aligned(journal());await page.screenshot({path:path.join(out,'rapallo-narrow-pane.png')});
+ await page.locator('[data-font="1"]').click();await page.locator('[data-font="1"]').click();await aligned(journal());await page.screenshot({path:path.join(out,'rapallo-enlarged.png')});await page.locator('[data-font="0"]').click();
  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
  const scroll=q.locator('.mc-area .journal-display-scroll').first();await scroll.scrollIntoViewIfNeeded();await scroll.evaluate(e=>{e.scrollLeft=e.scrollWidth;});
  assert.ok(await scroll.evaluate(e=>e.scrollLeft>0&&e.querySelector('th:nth-child(3)').getBoundingClientRect().right<=e.getBoundingClientRect().right+1),'Credit is bereikbaar op mobiel');await page.screenshot({path:path.join(out,'rapallo-mobile-credit.png')});
