@@ -2,7 +2,23 @@
 
 Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
-## Zwevend en aanpasbaar venster, 26 september 2026
+## Rechter assistentkolom, 26 september 2026
+
+**Lokaal gereed; publicatie en live controle volgen na de codepush.** De eerdere zwevende bediening is op verzoek vervangen door een eigen rechterkolom met verticale schuifrand. Deze statussectie vervangt de vensterbediening hieronder.
+
+- 108 Node-tests geslaagd, waaronder vijf kolomproeven voor standaardbreedte, minimale vraagruimte, brede casus, tijdelijk klein scherm en ongeldige opgeslagen voorkeuren. Twee presentatie-extractietests geslaagd.
+- Integratie-dry-run zonder wijzigingen, build en deploycontrole geslaagd: 247 oefenvragen, 285 tentamenrecords inclusief drie demo's, 135 publieke bestanden en vier Functions. De tien bestaande regressiescripts slagen, ook na het meenemen van de recente naslagtegelwijziging `9587e9c`. JSDOM blijft lokaal niet geïnstalleerd; echte routes worden in de browser beproefd.
+- 150 Chromium- en 150 WebKit-controles geslaagd, zonder JavaScript-runtimefouten. De bestaande routeproeven blijven behouden: alle twaalf oefenvraagtypen, elf tentamens, eigen antwoorden, journaalposten, voorraadtabellen, historische inzage, antwoordvensters, vertraagde antwoorden en timers.
+- Nieuwe browserregressies controleren drie kolommen, een casus op 60%, tabletstapeling, geen overlap met kop/footer, stabiele logininvoer, verborgen launcher bij open chat, slepen en pijltoetsen, sluiten/heropenen, herladen, breedtevoorkeuren en werken met de echte rekenmachineknoppen.
+- Mobiele invoer is met hit-tests gecontroleerd op 320 × 740, 390 × 844, 430 × 932 en 740 × 390. De vaste ondernavigatie bedekte aanvankelijk de invoer; de openingspositie is hersteld. Een afzonderlijke gridrij voor de invoer voorkomt afsnijden wanneer de compacte contextkop wegvalt.
+- Desktop-, drie-kolommen-, donker-mobiel- en 390 × 260-screenshots uit beide browsers visueel bekeken. In een verkort scherm blijft de invoer bereikbaar. Dit is een viewportsimulatie; een fysieke telefoon met daadwerkelijk geopend toetsenbord is nog niet beproefd.
+- De vakadapter, casuscode, rekenmachinecode, vraaginhoud, opslag, scores en timers zijn niet gewijzigd. Alleen de gekozen paneelbreedte wordt apart opgeslagen.
+- Alle chatreacties in deze UI-ronde zijn gesimuleerd; nul echte modelaanroepen. Dit geeft geen nieuw bewijs voor modelkwaliteit. De eerdere bronselectie en koelcellenbeperking blijven van toepassing.
+
+Lokale bewijsbestanden staan buiten Git onder `CAFA2-assistant-sources/qa-20260926-column`, met afzonderlijke rapporten en screenshots per browser. Publicatiebewijs en Actions-links worden na controle toegevoegd.
+
+## Eerder: zwevend en aanpasbaar venster, 26 september 2026
+
 
 **Gepubliceerd en live gecontroleerd op [cafa2.pages.dev](https://cafa2.pages.dev).** Code `0c3186cd6492cb57eca5cb2fb357b4e48567b28d`, Cloudflare-deployment `706c09ba-f90c-4a02-8d52-e10c8b75d91a`, geslaagd. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36235642662) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36235642683) zijn geslaagd. Alle jobstappen bekeken, inclusief beide browsers, Function-bundeling en extractietests.
 

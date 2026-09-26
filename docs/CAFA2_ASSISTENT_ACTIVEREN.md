@@ -1,17 +1,18 @@
 # CAFA2 Assistent: activering na integratie
 
-Bijgewerkt op 26 september 2026, inclusief het zwevende assistentvenster.
+Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
 
-## Venster bedienen
+## Paneel rechts bedienen
 
-- Sleep de titelbalk om de assistent te verplaatsen.
-- Sleep de hoek rechtsonder om het venster groter of kleiner te maken.
-- Gebruik ↙ om te verkleinen en ↗ om het gekozen formaat te herstellen.
-- Gebruik − om in te klappen en + om uit te klappen; × sluit het venster.
-- De positie en grootte worden in deze browser onthouden. De chat blijft tijdens verplaatsen en vergroten bij dezelfde vraag.
-- De rekenmachine en de oefenpagina blijven bedienbaar. Verplaats of klap de assistent in als hij een knop bedekt.
+- Open de assistent met **Vraag over deze vraag**.
+- De assistent krijgt een eigen kolom rechts. Bij tentamens staat de casus links en de vraag in het midden; de kop en navigatie blijven erbuiten.
+- Sleep de verticale schuifrand naar links voor een bredere assistent en naar rechts voor een smallere assistent. De schuifrand werkt ook met pijltoetsen; Home herstelt een derde van de ruimte.
+- Gebruik × of Escape om de assistent te verbergen. De vraag krijgt de vrijgekomen ruimte terug.
+- De gekozen breedte wordt in deze browser onthouden. Je conceptbericht en gesprek blijven tijdens aanpassen bij dezelfde vraag.
+- Op kleine schermen staan assistent en vraag onder elkaar. De chatinvoer houdt ruimte voor de bovenbalk en de navigatie. Bij een kort scherm wordt de chatbediening compacter en staat de navigatie in de gewone paginastroom.
+- De rekenmachine blijft als apart zwevend venster bruikbaar. Haar eigen verplaatsing en formaatbediening blijven behouden.
 
-Deze bediening staat live op [cafa2.pages.dev](https://cafa2.pages.dev), code `0c3186c`, geslaagde deployment `706c09ba-f90c-4a02-8d52-e10c8b75d91a`. Beide Actions-workflows en de live browsercontrole zijn geslaagd. Voor deze wijziging is geen nieuwe instelling of secret nodig. Vernieuw de pagina om de nieuwe bediening te laden.
+Deze indeling vervangt de eerdere zwevende assistent. Er is geen nieuwe instelling of secret nodig. Publicatie en browserbewijs worden vastgelegd in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
 
 ## Actueel: assistent actief op de gewone site
 

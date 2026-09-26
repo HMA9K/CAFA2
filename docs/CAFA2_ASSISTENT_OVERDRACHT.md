@@ -1,8 +1,20 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-26.1. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-26.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
-## Vervolg: zwevend assistentvenster, 26 september 2026
+## Actueel: assistent in een rechterkolom, 26 september 2026
+
+Op verzoek van de eigenaar krijgt de assistent dezelfde kolomindeling als de casus, aan de rechterkant. De vraag wordt smaller binnen de beschikbare ruimte. Koppen, antwoordvelden, ondernavigatie en modale sluitknoppen worden niet door het paneel bedekt. Een brede casus krijgt extra ruimte; wanneer drie bruikbare kolommen niet passen, staat de assistent boven de vraag in de gewone paginastroom.
+
+De verticale schuifrand bedient de breedte met slepen of pijltoetsen. Home herstelt een derde. × en Escape sluiten het paneel en herstellen de volledige vraagruimte. Alleen de breedte wordt bewaard onder `cafa2-assistant-panel-v1`; deze voorkeur bevat geen gesprek, antwoord of toegangscode. Een tijdelijke smalle viewport overschrijft de desktopvoorkeur niet. De oude vensterpositie wordt niet meer toegepast.
+
+De kolomlogica staat afzonderlijk in `js/study-assistant-panel.mjs`. De bestaande casuskolom en rekenmachine behouden hun eigen bediening. De vakadapter en alle vraagdata, opgeslagen antwoorden, scores en timers blijven behouden. Bij een modaal tentamenvenster wordt de assistent in het inhoudsdeel opgenomen, onder de bestaande sluitknoppen, en bij sluiten weer teruggezet.
+
+Nieuwe browserregressies bewaken het behoud van de logininvoer bij het monteren, verbergen van de launcher tijdens chatten, drie kolommen met een brede casus, bereikbare mobiele chatinvoer, sluiten en herstel van ruimte, breedtevoorkeuren en rekenmachinegebruik. Antwoorden in deze UI-proeven zijn gesimuleerd. Een fysieke telefoon met werkelijk geopend toetsenbord blijft een aparte controle. Zie [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor uitgevoerde proeven en publicatiebewijs.
+
+De volgende venstersectie is historisch; de schuifrand van de rechterkolom vervangt de zwevende bediening.
+
+## Eerder: zwevend assistentvenster, 26 september 2026
 
 De assistent heeft dezelfde vensterbediening als de rekenmachine: slepen via de titelbalk, formaat wijzigen met de hoek rechtsonder, verkleinen/herstellen en inklappen/uitklappen. Pijltoetsen bedienen de verplaats- en formaatgrepen; Shift geeft grotere stappen en Home herstelt de standaard. Escape sluit alleen de assistent.
 
