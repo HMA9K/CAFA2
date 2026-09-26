@@ -11,7 +11,7 @@ Bijgewerkt op 26 september 2026, inclusief het zwevende assistentvenster.
 - De positie en grootte worden in deze browser onthouden. De chat blijft tijdens verplaatsen en vergroten bij dezelfde vraag.
 - De rekenmachine en de oefenpagina blijven bedienbaar. Verplaats of klap de assistent in als hij een knop bedekt.
 
-Voor deze wijziging is geen nieuwe instelling of secret nodig. Vernieuw de pagina na de publicatie om de nieuwe bediening te laden.
+Deze bediening staat live op [cafa2.pages.dev](https://cafa2.pages.dev), code `0c3186c`, geslaagde deployment `706c09ba-f90c-4a02-8d52-e10c8b75d91a`. Beide Actions-workflows en de live browsercontrole zijn geslaagd. Voor deze wijziging is geen nieuwe instelling of secret nodig. Vernieuw de pagina om de nieuwe bediening te laden.
 
 ## Actueel: assistent actief op de gewone site
 

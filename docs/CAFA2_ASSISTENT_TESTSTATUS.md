@@ -4,7 +4,9 @@ Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) 
 
 ## Zwevend en aanpasbaar venster, 26 september 2026
 
-**Lokale controles geslaagd; nieuwe publicatie nog te controleren.**
+**Gepubliceerd en live gecontroleerd op [cafa2.pages.dev](https://cafa2.pages.dev).** Code `0c3186cd6492cb57eca5cb2fb357b4e48567b28d`, Cloudflare-deployment `706c09ba-f90c-4a02-8d52-e10c8b75d91a`, geslaagd. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36235642662) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36235642683) zijn geslaagd. Alle jobstappen bekeken, inclusief beide browsers, Function-bundeling en extractietests.
+
+De productie-browser bevestigt verplaatsen (x 813 naar 363), compact formaat (340 × 500), vergroten (430 × 570), inklappen en gelijktijdig rekenmachinegebruik via de echte knoppen: 1 + 2 = 3 terwijl de assistent open blijft. Donker mobiel beeld gecontroleerd. In een viewport van 390 × 260 blijft de invoer onderaan bereikbaar (composer-bottom 251). De tijdelijke viewportinstelling is hersteld. Statusroute HTTP 200 met `ready: true` en alle drie kennisvlaggen aan. De publicatielog bevestigt 135 publieke bestanden, vier Functions, 38 gecontroleerde bronkoppelingen en 115 bestanden, `added: 0`, `failed: 0`, `pending: 0`. Geen secrets gewijzigd of gelezen.
 
 - Titelbalk slepen, formaatgreep, compacte stand, inklappen/uitklappen en toetsenbordbediening toegevoegd. Positie/formaat blijven behouden bij opnieuw openen en herladen. Tijdelijke viewportbeperking overschrijft het gekozen desktopformaat niet. Alleen venstergeometrie wordt apart opgeslagen.
 - Het paneel is niet modaal en de pagina en rekenmachine blijven bedienbaar. Bij een bestaand modaal tentamenoverzicht wordt het paneel daarin opgenomen en bij sluiten weer teruggezet. De browserproef verplaatst het paneel om de onderliggende sluitknop te bereiken; dat bedekken is het normale gedrag van zwevende vensters.
