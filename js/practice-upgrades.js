@@ -101,12 +101,6 @@
     actions.classList.add('practice-question-actions');
     var overview = actions.querySelector('[data-overview]');
     if (overview) overview.classList.add('practice-action');
-    var intro = document.createElement('a');
-    intro.href = '#welkom/practice';
-    intro.className = 'practice-action practice-introduction';
-    intro.textContent = 'Introductie';
-    if (overview) overview.insertAdjacentElement('afterend', intro);
-    else actions.appendChild(intro);
     var oldFlag = actions.querySelector('.flag-label');
     var mark = document.createElement('button');
     mark.type = 'button';

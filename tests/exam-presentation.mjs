@@ -30,11 +30,16 @@ const cases=JSON.parse(read('content/practice/exam-case-presentation.json'));
 assert.deepEqual(JSON.parse(JSON.stringify(c.window.CAFA2_CASE_PRESENTATION)),cases);
 for(const [eid,sections] of Object.entries(cases))for(const [sid,p] of Object.entries(sections)){
  const source=exams.find(e=>e.id===eid).sections.find(s=>s.id===sid);assert.equal(hash(source.contentHtml),p.sourceSha256);
- assert.equal((p.html.match(/<h3>OPGAVE/g)||[]).length,1);
+ const numbers=html=>new Set(html.replace(/<[^>]*>/g,' ').match(/\d+(?:[.,]\d+)*(?:%)?/g)||[]),shown=numbers(p.html);
+ for(const value of numbers(source.contentHtml))assert.ok(shown.has(value),'Casuswaarde behouden: '+eid+'/'+sid+' '+value);
+ assert.equal((p.html.match(/<h3>OPGAVE/g)||[]).length,/OPGAVE/.test(source.contentHtml)?1:0);
  assert.ok(!/<p>\d+%<\/p>/.test(p.html),'Geen los uitgelezen diagrampercentages');
  assert.ok(!/<h3>[^<]*(?:NB:|Toelichting:)/.test(p.html),'Casusinhoud is geen lange koptekst');
- assert.ok(p.html.indexOf('<h3>OPGAVE')<p.html.indexOf('<table'));
+ if(p.html.includes('<h3>OPGAVE')&&p.html.includes('<table'))assert.ok(p.html.indexOf('<h3>OPGAVE')<p.html.indexOf('<table'));
+ assert.ok(!p.html.includes('<pre'),'Geen afgekapt tekstblok met vaste regelbreedte');
+ assert.ok(!/<p>(?:€\s*)?\d+[.,\d%]*<\/p>/.test(p.html),'Geen losse bedragen of percentages uit platgelezen tabellen');
 }
+assert.equal(Object.values(cases).reduce((n,s)=>n+Object.keys(s).length,0),44);
 const m=cases['cafa2-20230411']['opgave-1'].html;
 assert.equal((m.match(/<table/g)||[]).length,3);assert.equal((m.match(/€ 1.950.000/g)||[]).length,1);
 assert.equal((m.match(/€ 760.000/g)||[]).length,1);
@@ -42,4 +47,4 @@ assert.ok(m.indexOf('Van Moneglia')<m.indexOf('Organisatieschema'));
 assert.ok(m.indexOf('Eind 2021 heeft Moneglia')<m.indexOf('Eigen vermogen Cavola'));
 assert.ok(m.includes('3 van de 5 bestuurders')&&m.includes('volledig aansprakelijk'));
 assert.ok(m.includes('<p>De financiering van')&&m.includes('<p>Begin 2023 koopt'),'Nieuwe casusgegevens blijven afzonderlijke alinea\'s');
-console.log('Financiële presentatie: 25 brongebonden uitwerkingen, echte percentage-/valutakolommen, Toren-aansluiting en 2 casussen zonder dubbele diagram- of tabeltekst.');
+console.log('Financiële presentatie: 25 brongebonden uitwerkingen, echte percentage-/valutakolommen, Toren-aansluiting en 44 leesbaar opgemaakte casussecties.');

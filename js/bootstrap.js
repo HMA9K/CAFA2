@@ -67,12 +67,12 @@
   }).then(function () {
     return loadScript('js/calculator.js?v=20260922-3');
   }).then(function () {
-    return loadScript('js/practice-upgrades.js');
+    return loadScript('js/practice-upgrades.js?v=20260926-nav3');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
-    return loadScript('js/practice-case-panel.js?v=20260926-mc');
+    return loadScript('js/practice-case-panel.js?v=20260926-complete3');
   }).then(function () {
-    return loadScript('js/exams.js?v=20260925-topics1');
+    return loadScript('js/exams.js?v=20260926-complete3');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {

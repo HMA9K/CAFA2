@@ -5,6 +5,15 @@
     return !!(header && header.cells.length===6 && /datum/i.test(header.cells[0].textContent) && /voorraad/i.test(header.cells[1].textContent) && /intercompany/i.test(header.cells[2].textContent));
   }
   function esc(value) { return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function removeBlankTemplate(root) {
+    root.querySelectorAll('table').forEach(function(table){
+      if(!isStock(table)||!table.tBodies.length)return;
+      var blank=Array.from(table.tBodies[0].rows).every(function(row){return Array.from(row.cells).slice(1).every(function(c){return /^(?:\s*|100%|…%?|\.{3,}%?)$/.test(c.textContent.trim());});});
+      if(!blank)return;
+      var wide=table.closest('.stock-wide');
+      if(wide){var mobile=wide.nextElementSibling;if(mobile&&mobile.matches('.stock-mobile'))mobile.remove();wide.remove();}else table.remove();
+    });
+  }
   function template(question) {
     if(question && question.answerSchema)return question.answerSchema;
     if(question && question.type==='Voorraadtabel' && question.caseTables){
@@ -48,7 +57,7 @@
     return '<div class="stock-scroll" tabindex="0" role="region" aria-label="Voorraadtabel, horizontaal verschuifbaar"><table class="stock-matrix"><caption>'+(readonly?'Jouw ingevulde voorraadtabel':'Vul de voorraadtabel in')+'</caption><thead><tr>'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div>';
   }
   function mount(host,schema,cells,onChange) {
-    host.innerHTML='<p class="stock-scroll-hint">De tabel heeft dezelfde rijen en kolommen als het tentamen. Veeg of schuif naar rechts voor de overige kolommen. Vul de lege vakken in; gebruik Tab om naar het volgende vak te gaan.</p>'+render(schema,cells,false);
+    host.innerHTML='<p class="stock-scroll-hint">Vul de lege vakken in; ga met Tab naar het volgende vak. Schuif op een smal scherm horizontaal voor de overige kolommen.</p>'+render(schema,cells,false);
     host.addEventListener('input',function(event){if(!event.target.matches('[data-stock-cell]'))return;
       var values={};host.querySelectorAll('[data-stock-cell]').forEach(function(input){if(input.value.trim())values[input.dataset.stockCell]=input.value;});onChange(values);
     });
@@ -56,11 +65,10 @@
   function enhance(root) {
     root.querySelectorAll('table').forEach(function(table){
       if(!isStock(table)||table.classList.contains('stock-matrix'))return;
-      table.classList.add('stock-matrix');
+      table.classList.add('stock-matrix','stock-display-matrix');
       var wrap=document.createElement('div');wrap.className='stock-scroll';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','Voorraadtabel, horizontaal verschuifbaar');
       table.parentNode.insertBefore(wrap,table);wrap.appendChild(table);
-      var hint=document.createElement('p');hint.className='stock-scroll-hint';hint.textContent='Veeg of schuif naar rechts om alle kolommen te zien.';wrap.before(hint);
     });
   }
-  window.CafaStockTable={template:template,mount:mount,render:render,enhance:enhance};
+  window.CafaStockTable={template:template,mount:mount,render:render,enhance:enhance,removeBlankTemplate:removeBlankTemplate};
 }());

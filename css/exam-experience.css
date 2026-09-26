@@ -25,7 +25,7 @@
 .exam-running .exam-question-top h2{font-weight:400;color:#55515c}
 .exam-running .exam-source-question,.review-prompt .exam-source-question,.result-expanded .exam-source-question{max-width:none;margin:0;padding:0 0 12px;text-align:left;line-height:1.65;background:transparent}
 .exam-running .exam-source-question > p:first-of-type{font-weight:400}
-.exam-running .exam-source-points{color:inherit}
+.exam-running .exam-question-top>.exam-source-points{color:inherit}
 .exam-source-question ol[type="a" s]>li{margin:12px 0;padding-left:2px}
 .exam-running .exam-question-body{min-height:calc(100vh - 300px);background:#fff}
 /* Keep the exam controls in view while the case and answer scroll independently. */

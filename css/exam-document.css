@@ -12,6 +12,7 @@
 .exam-source-document .exam-source-brand { text-align:center; margin:8px 0 28px; }
 .exam-source-brand img { width:262px; max-width:75%; height:auto; }
 .exam-source-question > p:first-of-type { font-weight:700; }
+.exam-source-document .exam-model-question { font-weight:700; margin-bottom:18px; }
 .exam-source-document table { width:100%; min-width:540px; margin:12px 0 20px; color:#000; background:#fff; border-collapse:collapse; line-height:1.15; font-size:1em; }
 .exam-source-document td,.exam-source-document th { padding:2px 5px; border:1px solid #000; background:#fff; vertical-align:top; text-align:left; color:inherit; }
 .exam-source-document caption { text-align:left; font-weight:700; color:#000; padding:0 0 8px; }
@@ -24,6 +25,15 @@
 .exam-source-document .exam-reconciliation td:nth-last-child(2) { width:90px; }
 .exam-source-document .exam-reconciliation td[colspan="2"] { width:auto; }
 .exam-source-document .exam-table-wrap { border:0; border-radius:0; }
+.exam-source-document .exam-financial-table { table-layout:auto; min-width:480px; width:100%; max-width:720px; margin-left:0; }
+.exam-source-document .exam-financial-table td,.exam-source-document .exam-financial-table th { border:0; padding:1px 4px; }
+.exam-source-document .exam-financial-table td.exam-source-points { width:40px; white-space:nowrap; text-align:left; }
+.exam-source-document .exam-purchase-calculation { max-width:670px; margin-left:0; }
+.exam-source-document .exam-purchase-calculation td:first-child { width:48%; }
+.exam-source-document .exam-purchase-calculation .exam-number { width:23%; }
+.exam-source-document .exam-purchase-calculation .exam-calculation-subtotal .exam-number:not(:empty) { border-top:1px solid currentColor; }
+.exam-source-document .exam-purchase-calculation .exam-calculation-gap td { padding-top:16px; }
+.exam-source-document .exam-calculation-heading td { padding-top:8px; }
 .exam-source-document .stock-matrix { color:#000; }
 .exam-source-document .stock-matrix th,.exam-source-document .stock-matrix td { border-color:#000; background:#fff; }
 .exam-solution { background:#fff; border:1px solid #b5b5b5; white-space:normal; }

@@ -35,7 +35,7 @@
   function attempts() { return store.attempts; }
   function active() { return attempts().find(function (attempt) { return attempt.status === 'active'; }); }
   function running(examId) { return attempts().filter(function(a){return a.status==='active' && (!examId || a.exam.id===examId);}); }
-  function documentHtml(exam,kind,html,plain,sourceExamId) { return window.CafaExamDocument ? window.CafaExamDocument.render(sourceExamId?{id:sourceExamId}:exam,kind,html,plain) : '<div class="exam-document">'+rich(html,plain)+'</div>'; }
+  function documentHtml(exam,kind,html,plain,sourceExamId) { var original=sourceExamId&&catalog.find(function(e){return e.id===sourceExamId;});return window.CafaExamDocument ? window.CafaExamDocument.render(original||exam,kind,html,plain) : '<div class="exam-document">'+rich(html,plain)+'</div>'; }
   function byId(id) { return attempts().find(function (attempt) { return attempt.id === id; }); }
   function examById(id) { return catalog.find(function (exam) { return exam.id === id; }) || (demo && demo.id === id ? demo : null); }
   function loadState(raw) {

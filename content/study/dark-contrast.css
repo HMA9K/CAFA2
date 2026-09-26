@@ -98,3 +98,5 @@ html[data-study-theme=dark] :is(button,a,input,select,textarea,summary,[tabindex
 }
 html[data-study-theme=dark] .cafa-answer-editor .cae-content:focus {border-color:var(--dm-focus);box-shadow:inset 0 0 0 1px var(--dm-focus)}
 html[data-study-theme=dark] .mode-switch label:focus-visible {outline:2px solid var(--dm-focus);outline-offset:2px}
+html[data-study-theme=dark] .exam-source-document .exam-financial-table td,html[data-study-theme=dark] .exam-source-document .exam-financial-table th{border:0}
+html[data-study-theme=dark] .exam-source-document .exam-purchase-calculation .exam-calculation-subtotal .exam-number:not(:empty){border-top:1px solid currentColor}

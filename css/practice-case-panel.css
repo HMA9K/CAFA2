@@ -12,7 +12,14 @@
 .practice-case-layout .exam-case-panel .fact dd{margin-left:0}
 .practice-case-layout .exam-case-panel .intro{line-height:1.6}
 .practice-question-page .task{min-width:0}.practice-question-page .task table{width:100%}
-.practice-question-page .option-content table{min-width:420px}
+.practice-question-page .option-content table{min-width:420px;width:100%;border-collapse:collapse;font:inherit;line-height:1.4}
+.practice-question-page .option-content table th,.practice-question-page .option-content table td{border:1px solid var(--study-line,#d9e2eb);padding:6px 9px;vertical-align:top}
+.practice-question-page .option-content table thead th{background:var(--study-wash,#f2f4f7);text-align:left;font-weight:600;white-space:normal}
+.practice-question-page .option-content table td:not(:first-child){text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.practice-question-page .option-content .stock-scroll .stock-matrix{min-width:680px;border-collapse:separate;font-size:13px;line-height:1.25}
+.practice-question-page .option-content .stock-scroll .stock-matrix th,.practice-question-page .option-content .stock-scroll .stock-matrix td{padding:5px 6px;border:0;border-right:1px solid var(--study-line,#b3b7be);border-bottom:1px solid var(--study-line,#b3b7be)}
+.practice-question-page .option-content .stock-scroll .stock-matrix tr>:last-child{border-right:0}
+.practice-question-page .option-content .stock-scroll .stock-matrix tbody tr:last-child>*{border-bottom:0}
 .practice-question-page .table-wrap{width:100%;max-width:100%;overflow-x:auto}
 .practice-question-page .practice-answer-table{width:100%;border-collapse:collapse;font:inherit;min-width:420px}
 .practice-answer-table caption{text-align:left;font-weight:600;margin:8px 0}

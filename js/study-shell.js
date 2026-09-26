@@ -103,6 +103,10 @@
     var onQuestion=!!cur.question || !!document.querySelector('.question:target');
     var onResults=/^#(?:resultaat-(?:kap|val|nvw|hk)$|onderwerp-(?:resultaat|overzicht)-|resultaten$|inzage\/|mc-inzage\/)/.test(location.hash);
     questionLinks.hidden=!(onQuestion||onResults);
+    var destination=questionLinks.querySelector('a:last-child');
+    var examContext=!!(cur.question&&cur.question.kind==='exam')||/^#(?:inzage\/|dashboard\/|welkom\/cafa2-)/.test(location.hash);
+    destination.textContent=examContext?'Dashboard':'Onderwerpen';
+    destination.href=destination.href.replace(/#.*$/,'')+(examContext?'#dashboard':'#oefenen');
     bar.classList.toggle('has-result-links',onResults);
     back.hidden = onQuestion || !top || same(top,cur);
     originButton.hidden = onQuestion || onResults || !hasOrigin;
