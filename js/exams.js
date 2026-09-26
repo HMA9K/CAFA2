@@ -81,6 +81,31 @@
   }
   function dropEditor() { if (editor) { editor.destroy(); editor = null; } }
   function go(hash) { if (location.hash === '#' + hash) route(); else location.hash = hash; }
+  function restartNotice(attempt) {
+    return attempt?'<p class="notice">Je begint opnieuw. Kies hieronder de instellingen voor je nieuwe poging. Je eerdere antwoorden blijven bewaard bij Voltooid; een lopende poging wordt daar pas bewaard zodra je de nieuwe poging start.</p>':'';
+  }
+  function startAttempt(exam,options,restartId) {
+    var previous=restartId&&byId(restartId);
+    if(restartId&&!previous)throw new Error('De eerdere poging is niet meer beschikbaar. Open het Dashboard en kies de toets opnieuw.');
+    var next=Engine.createAttempt(exam,options),before=store.attempts;
+    store.attempts=before.map(function(a){
+      if(a!==previous||a.status!=='active')return a;
+      var completed=Engine.finishAttempt(a,{reason:'submitted'});completed.finishReason='restarted';return completed;
+    }).concat(next);
+    if(!save()){store.attempts=before;throw new Error('De nieuwe poging kon niet worden opgeslagen. Je eerdere poging is behouden.');}
+    if(restartId&&window.CafaStudy)window.CafaStudy.clearReturn();
+    if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen gestart',window.StudyMeasure.examNames(next.exam));
+    go('tentamen/'+next.id);
+  }
+  function resetAttempts() {
+    if(!confirm('Alle tentamenvoortgang op dit apparaat resetten? Alle lopende en voltooide tentamenpogingen, antwoorden, scores, markeringen en klokken worden verwijderd. Ook tentamenvragen per onderwerp worden gereset. Je MC-oefenvoortgang blijft behouden.'))return;
+    var empty={version:1,attempts:[]};
+    try{localStorage.setItem(KEY,JSON.stringify(empty));}
+    catch(error){announce('Resetten is niet gelukt. Je tentamenvoortgang is behouden.');showModal('Resetten niet mogelijk','<p>Je tentamenvoortgang kon niet worden gereset. Je bestaande pogingen zijn behouden.</p>');return;}
+    dropEditor();store=empty;corrupt=false;saveOK=true;selectedAttempt=null;announcedTen.clear();caseScrollPositions=Object.create(null);
+    if(window.CafaStudy)window.CafaStudy.clearReturn();
+    go('dashboard');announce('Alle tentamenvoortgang op dit apparaat is gereset. Je MC-oefenvoortgang is behouden.');
+  }
   function btn(text,action,primary,extra) { return '<button type="button" class="btn' + (primary?' primary':'') + '" data-exam-action="' + action + '" ' + (extra || '') + '>' + text + '</button>'; }
   function head(title,sub) { return '<div class="exam-page-head"><div><div class="exam-eyebrow">CAFA2 · oefenomgeving</div><h1>' + esc(title) + '</h1>' + (sub?'<p>'+esc(sub)+'</p>':'') + '</div></div>'; }
   function available(exam) { var now = Date.now(); return (!exam.availableFrom || now >= Date.parse(exam.availableFrom)) && (!exam.deadline || now < Date.parse(exam.deadline)); }
@@ -120,7 +145,7 @@
       var soon = catalog.filter(function(exam){return exam.availableFrom && Date.parse(exam.availableFrom)>Date.now() && Date.parse(exam.availableFrom)<=Date.now()+30*86400000;});
       html += '<section class="exam-section"><h2>Volgende 30 dagen</h2>'+(soon.length?table(soon.map(function(exam){return examRow(exam,false);}),'upcoming'):'<div class="exam-empty-row">Geen toetsen</div>')+'</section>';
     }
-    html += '<footer class="exam-dashboard-help"><p class="exam-local-note">Oefenomgeving. Je antwoorden en pogingen blijven in deze browser, op dit apparaat. Bewaar zelf een back-up; je voortgang wordt niet tussen apparaten gesynchroniseerd.</p><div class="actions">'+btn('Back-up downloaden','backup')+'<a class="btn" href="#voortgang">MC-voortgang</a></div></footer></div>';
+    html += '<footer class="exam-dashboard-help"><p class="exam-local-note">Oefenomgeving. Je antwoorden en pogingen blijven in deze browser, op dit apparaat. Bewaar zelf een back-up; je voortgang wordt niet tussen apparaten gesynchroniseerd.</p><div class="actions">'+btn('Back-up downloaden','backup')+'<a class="btn" href="#voortgang">MC-voortgang</a>'+btn('Alle tentamenvoortgang resetten','reset-exams',false,(!attempts().length&&!corrupt?'disabled':'')+' aria-describedby="exam-reset-scope"')+'</div><p class="small" id="exam-reset-scope">Reset alle lopende en voltooide tentamenpogingen op dit apparaat. Je MC-oefenvoortgang blijft behouden.</p></footer></div>';
     host.innerHTML = html;
     if(completed){host.querySelector('[data-completed-type]').value=completedType;host.querySelector('[data-completed-attempts]').value=completedAttempts;}
   }
@@ -152,26 +177,28 @@
     var summary=host.querySelector('[data-opgave-summary]');if(summary)summary.textContent=chosen.length+' tentamen'+(chosen.length===1?'':'s')+' geselecteerd · '+questions+' vragen · zonder tijdslimiet';
     var start=host.querySelector('[data-exam-action="start-opgave"]');if(start)start.disabled=!chosen.length||corrupt;
   }
-  function welcomeOpgave() {
+  function welcomeOpgave(restarting) {
     if(!Opgave)return missing();
     var sources=catalog.filter(function(exam){return [1,2,3,4].some(function(number){return Opgave.available([exam],number).length;});}),live=running().filter(function(a){return a.exam.practiceKind==='opgave';});
     host.innerHTML='<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head('Tentamenvragen per onderwerp','Kies één onderwerp en de tentamens die je achter elkaar wilt oefenen.')+
-      '<div class="exam-paper"><h2>Stel je oefenreeks samen</h2><p class="exam-prose">Kies Opgave 1: kapitaalbelangen, Opgave 2: vreemde valuta, Opgave 3: consolidatie nettovermogenswaarde of Opgave 4: consolidatie verkrijgingsprijs. Daarna selecteer je de tentamens. De oorspronkelijke opgave kan per tentamen een ander nummer hebben. Je krijgt alle vragen over het gekozen onderwerp per tentamen, van nieuw naar oud. Casus en antwoordmodel blijven bij hun eigen tentamen. Tijdens de reeks opent Introductie het oorspronkelijke voorblad van het huidige tentamen, met de algemene uitgangspunten.</p>'+
-      '<fieldset class="opgave-practice-options"><legend>Kies een onderwerp</legend>'+[1,2,3,4].map(function(number){return '<label><input type="radio" name="opgave-number" value="'+number+'"'+(number===1?' checked':'')+'><span><strong>Opgave '+number+'</strong><br><small>'+esc(Opgave.topicTitle(number))+'</small></span></label>';}).join('')+'</fieldset>'+
-      '<fieldset class="opgave-practice-exams"><legend>Kies tentamens</legend>'+sources.map(function(exam){return '<label><input type="checkbox" data-opgave-exam value="'+esc(exam.id)+'" checked><span>'+esc(date(exam.date))+' <strong>('+esc(exam.date.replace(/-/g,''))+')</strong><small data-opgave-exam-count></small></span></label>';}).join('')+'</fieldset>'+
+      '<div class="exam-paper">'+restartNotice(restarting)+'<h2>Stel je oefenreeks samen</h2><p class="exam-prose">Kies Opgave 1: kapitaalbelangen, Opgave 2: vreemde valuta, Opgave 3: consolidatie nettovermogenswaarde of Opgave 4: consolidatie verkrijgingsprijs. Daarna selecteer je de tentamens. De oorspronkelijke opgave kan per tentamen een ander nummer hebben. Je krijgt alle vragen over het gekozen onderwerp per tentamen, van nieuw naar oud. Casus en antwoordmodel blijven bij hun eigen tentamen. Tijdens de reeks opent Introductie het oorspronkelijke voorblad van het huidige tentamen, met de algemene uitgangspunten.</p>'+
+      '<fieldset class="opgave-practice-options"><legend>Kies een onderwerp</legend>'+[1,2,3,4].map(function(number){return '<label><input type="radio" name="opgave-number" value="'+number+'"'+(number===(restarting?restarting.exam.opgaveNumber:1)?' checked':'')+'><span><strong>Opgave '+number+'</strong><br><small>'+esc(Opgave.topicTitle(number))+'</small></span></label>';}).join('')+'</fieldset>'+
+      '<fieldset class="opgave-practice-exams"><legend>Kies tentamens</legend>'+sources.map(function(exam){return '<label><input type="checkbox" data-opgave-exam value="'+esc(exam.id)+'"'+(!restarting||(restarting.exam.sourceExamIds||[]).includes(exam.id)?' checked':'')+'><span>'+esc(date(exam.date))+' <strong>('+esc(exam.date.replace(/-/g,''))+')</strong><small data-opgave-exam-count></small></span></label>';}).join('')+'</fieldset>'+
       '<p class="opgave-practice-summary" data-opgave-summary role="status"></p>'+(live.length?'<div class="exam-banner"><div><strong>Lopende oefenreeksen</strong>'+live.map(function(a){return '<p><a class="btn" href="#tentamen/'+encodeURIComponent(a.id)+'">'+esc(label(a.exam))+' hervatten · '+datetime(a.startedAt)+'</a></p>';}).join('')+'</div></div>':'')+
-      '<div class="exam-start-actions">'+btn('Oefenreeks starten','start-opgave',true)+(corrupt?'<span class="small">Starten is geblokkeerd omdat eerder opgeslagen pogingen niet gelezen konden worden.</span>':'')+'</div></div>';
+      '<div class="exam-start-actions">'+btn('Oefenreeks starten','start-opgave',true,restarting?'data-restart-attempt="'+esc(restarting.id)+'"':'')+(corrupt?'<span class="small">Starten is geblokkeerd omdat eerder opgeslagen pogingen niet gelezen konden worden.</span>':'')+'</div></div>';
     updateOpgaveSelection();
   }
-  function welcome(id) {
+  function welcome(id,restartId) {
+    var restarting=restartId&&byId(restartId);
+    if(restartId&&(!restarting||(id==='opgaven'?restarting.exam.practiceKind!=='opgave':restarting.exam.id!==id)))return missing();
     if (id==='practice') {
       host.innerHTML = '<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head('CAFA2 oefenvragen','Welkom bij de oefenomgeving')+'<div class="exam-paper"><h2>Oefen in je eigen tempo</h2><p class="exam-prose">Je kunt oefenen per deel of kiezen uit 19 onderwerpen. Elk onderwerp bevat minimaal 10 vragen. Je kiest een meerkeuzeantwoord of werkt je antwoord zelf uit met tekst, tabellen en journaalposten. Je oorspronkelijke MC-score blijft bewaard wanneer je een vraag herhaalt.</p><dl class="exam-details"><div><dt>Vragen</dt><dd>'+(window.CAFA2_EXAM_PRACTICE?window.CAFA2_EXAM_PRACTICE.total:247)+', verdeeld over 4 delen en 19 onderwerpen</dd></div><div><dt>Duur</dt><dd>Geen tijdslimiet</dd></div><div><dt>Nakijken</dt><dd>Per vraag of na voltooien</dd></div><div><dt>Voortgang</dt><dd>Op dit apparaat</dd></div></dl><p>MC-oefenvragen hebben geen aftelklok. De extra-tijdoptie is hier niet van toepassing.</p><div class="exam-start-actions"><a class="btn primary" href="#oefenen">Toets starten</a><span class="small">Kies daarna een onderwerp.</span></div></div>';
       return;
     }
-    if(id==='opgaven'){welcomeOpgave();return;}
-    var exam = examById(id); if(!exam) return missing();
+    if(id==='opgaven'){welcomeOpgave(restarting);return;}
+    var exam = examById(id)||(restarting&&restarting.exam); if(!exam) return missing();
     var live=running(id);
-    host.innerHTML='<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head(label(exam),'Welkom. Lees eerst de informatie en kies eventueel extra tijd.')+'<div class="exam-paper">'+(exam.demo?'<p class="exam-warning">Demonstratie van de bediening, geen officieel CAFA2-tentamen.</p>':'<p class="notice">Je oefent met een eerder afgenomen tentamen. Datum, zaalregels en algemene uitgangspunten hieronder komen uit het originele voorblad. De oefenklok begint pas als je nu start.</p>')+introduction(exam)+details(exam,false)+(live.length?'<div class="exam-banner"><div><p>Je hebt '+live.length+' lopende poging(en) van dit tentamen. Hervat een poging of start hieronder een nieuwe.</p>'+live.map(function(a){return '<p><a class="btn" href="#tentamen/'+a.id+'">Hervatten · '+datetime(a.startedAt)+' · '+Engine.formatTime(Engine.remainingSeconds(a))+'</a></p>';}).join('')+'</div></div>':'')+'<label class="exam-extra"><input type="checkbox" data-exam-untimed><span><strong>Oefenen zonder tijdslimiet</strong><small>Geen aftelklok en geen automatische inlevering.</small></span></label><label class="exam-extra"><input type="checkbox" data-exam-extra><span><strong>Extra tijd activeren (+30 minuten)</strong><small>Eenmalig vóór de start. Totale toetstijd: <span data-exam-total>'+exam.durationMinutes+'</span> minuten.</small></span></label><p class="small">Elke poging heeft eigen antwoorden en een eigen klok. Bij oefenen met tijd loopt de klok door bij wisselen, sluiten of verversen. Je kunt de toets pauzeren. Bij nul wordt de poging ingeleverd. Je kunt ook per vraag je antwoord controleren.</p><div class="exam-start-actions">'+btn('Toets starten','start',true,'data-exam-id="'+esc(exam.id)+'" '+(!available(exam)||corrupt?'disabled':''))+(available(exam)?'':'<span class="small">'+(exam.availableFrom&&Date.parse(exam.availableFrom)>Date.now()?'Beschikbaar vanaf '+datetime(exam.availableFrom):'De starttermijn is verstreken.')+'</span>')+'</div>'+'</div>';
+    host.innerHTML='<a class="exam-back" href="#dashboard">‹ Dashboard</a>'+head(label(exam),'Welkom. Lees eerst de informatie en kies eventueel extra tijd.')+'<div class="exam-paper">'+restartNotice(restarting)+(exam.demo?'<p class="exam-warning">Demonstratie van de bediening, geen officieel CAFA2-tentamen.</p>':'<p class="notice">Je oefent met een eerder afgenomen tentamen. Datum, zaalregels en algemene uitgangspunten hieronder komen uit het originele voorblad. De oefenklok begint pas als je nu start.</p>')+introduction(exam)+details(exam,false)+(live.length?'<div class="exam-banner"><div><p>Je hebt '+live.length+' lopende poging(en) van dit tentamen. Hervat een poging of start hieronder een nieuwe.</p>'+live.map(function(a){return '<p><a class="btn" href="#tentamen/'+a.id+'">Hervatten · '+datetime(a.startedAt)+' · '+Engine.formatTime(Engine.remainingSeconds(a))+'</a></p>';}).join('')+'</div></div>':'')+'<label class="exam-extra"><input type="checkbox" data-exam-untimed><span><strong>Oefenen zonder tijdslimiet</strong><small>Geen aftelklok en geen automatische inlevering.</small></span></label><label class="exam-extra"><input type="checkbox" data-exam-extra><span><strong>Extra tijd activeren (+30 minuten)</strong><small>Eenmalig vóór de start. Totale toetstijd: <span data-exam-total>'+exam.durationMinutes+'</span> minuten.</small></span></label><p class="small">Elke poging heeft eigen antwoorden en een eigen klok. Bij oefenen met tijd loopt de klok door bij wisselen, sluiten of verversen. Je kunt de toets pauzeren. Bij nul wordt de poging ingeleverd. Je kunt ook per vraag je antwoord controleren.</p><div class="exam-start-actions">'+btn('Toets starten','start',true,'data-exam-id="'+esc(exam.id)+'" '+(restarting?'data-restart-attempt="'+esc(restarting.id)+'" ':'')+(!available(exam)||corrupt?'disabled':''))+(available(exam)?'':'<span class="small">'+(exam.availableFrom&&Date.parse(exam.availableFrom)>Date.now()?'Beschikbaar vanaf '+datetime(exam.availableFrom):'De starttermijn is verstreken.')+'</span>')+'</div>'+'</div>';
   }
   function answerFor(attempt,q) { return attempt.answers[q.id] || {}; }
   function answered(attempt,q) { return Engine.answeredCount({exam:{questions:[q]},answers:attempt.answers})>0; }
@@ -380,7 +407,7 @@
     host.hidden=!isExam;document.body.classList.toggle('exam-surface',isExam);document.body.classList.toggle('exam-dashboard',kind==='dashboard');document.body.classList.toggle('exam-running',kind==='tentamen');selectedAttempt=kind==='tentamen'?id:null;
     if(!isExam){tick();return;}
     if(kind==='dashboard')dashboard(id==='voltooid');
-    if(kind==='welkom')welcome(id);
+    if(kind==='welkom'){var welcomeParts=id.split('/opnieuw/');welcome(welcomeParts[0],welcomeParts[1]);}
     if(kind==='tentamen')runner(id);
     if(kind==='inzage')review(id);
     if(kind==='mc-inzage')practiceReview(id);
@@ -393,44 +420,36 @@
     if(e.target.matches('[data-completed-type]')){completedType=e.target.value;dashboard(true);host.querySelector('[data-completed-type]').focus();}
     if(e.target.matches('[data-completed-attempts]')){completedAttempts=e.target.value;dashboard(true);host.querySelector('[data-completed-attempts]').focus();}
     if(e.target.matches('[name="opgave-number"],[data-opgave-exam]')){updateOpgaveSelection();return;}
-    if(e.target.matches('[data-exam-untimed]')){var extra=host.querySelector('[data-exam-extra]');extra.disabled=e.target.checked;host.querySelector('[data-exam-detail-duration]').textContent=e.target.checked?'Zonder tijdslimiet':(examById(decodeURIComponent(location.hash.slice(8))).durationMinutes+(extra.checked?30:0))+' minuten';}
-    if(e.target.matches('[data-exam-extra]')){var exam=examById(decodeURIComponent(location.hash.slice(8)));if(exam){var total=exam.durationMinutes+(e.target.checked?30:0);host.querySelector('[data-exam-total]').textContent=total;host.querySelector('[data-exam-detail-duration]').textContent=total+' minuten';}}
+    if(e.target.matches('[data-exam-untimed],[data-exam-extra]')){
+      var start=host.querySelector('[data-exam-action="start"]'),prior=start&&byId(start.dataset.restartAttempt),exam=start&&(examById(start.dataset.examId)||(prior&&prior.exam));
+      if(exam){var extra=host.querySelector('[data-exam-extra]'),untimed=host.querySelector('[data-exam-untimed]').checked,total=exam.durationMinutes+(extra.checked?30:0);extra.disabled=untimed;host.querySelector('[data-exam-total]').textContent=total;host.querySelector('[data-exam-detail-duration]').textContent=untimed?'Zonder tijdslimiet':total+' minuten';}
+    }
     if(e.target.name==='exam-answer'){var a=byId(selectedAttempt);if(a&&a.status==='active'&&a.pausedAt==null&&Engine.remainingSeconds(a)>0){a.answers[a.exam.questions[a.currentIndex].id]={optionId:e.target.value};save();}else tick();}
   });
   host.addEventListener('click',function(e){
     var button=e.target.closest('[data-exam-action]');if(!button)return;var action=button.dataset.examAction;
     if(action==='backup'){downloadBackup();return;}
+    if(action==='reset-exams'){resetAttempts();return;}
     if(action==='start-opgave'){
       if(!Opgave||corrupt)return;
       var numberField=host.querySelector('[name="opgave-number"]:checked');
       var chosen=Array.from(host.querySelectorAll('[data-opgave-exam]:checked:not(:disabled)')).map(function(input){return input.value;});
       try{
         var combined=Opgave.build(catalog,Number(numberField&&numberField.value),chosen);
-        var practiceAttempt=Engine.createAttempt(combined,{untimed:true,id:combined.id+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)});
-        attempts().push(practiceAttempt);save();if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen gestart',window.StudyMeasure.examNames(practiceAttempt.exam));go('tentamen/'+practiceAttempt.id);
+        startAttempt(combined,{untimed:true,id:combined.id+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)},button.dataset.restartAttempt);
       }catch(error){announce(error.message);showModal('Starten niet mogelijk','<p>'+esc(error.message)+'</p>');}
       return;
     }
     if(action==='restart'){
       if(corrupt)return;
       var old=button.dataset.restartAttempt?byId(button.dataset.restartAttempt):attempts().filter(function(a){return a.exam.id===button.dataset.examId;}).sort(function(a,b){return b.startedAt-a.startedAt;})[0];
-      if(!old||!confirm('Opnieuw beginnen bij vraag 1? De huidige antwoorden van deze poging worden bewaard bij Voltooid. De nieuwe poging heeft lege antwoorden en een nieuwe klok met dezelfde tijdinstellingen.'+(legacyOpgave(old.exam)?' De nieuwe oefenreeks gebruikt de huidige indeling op onderwerp.':'')+' Andere toetsen blijven ongewijzigd.'))return;
-      try{
-        var restartExam=examById(old.exam.id)||old.exam;
-        if(legacyOpgave(old.exam)){
-          if(!Opgave)throw new Error('De onderwerpindeling kon niet worden geladen.');
-          restartExam=Opgave.build(catalog,old.exam.opgaveNumber,old.exam.sourceExamIds);
-        }
-        var next=Engine.createAttempt(restartExam,{extraTime:old.extraMinutes===30,untimed:!!old.untimed,id:restartExam.id+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)});
-        if(old.status==='active'){Object.assign(old,Engine.finishAttempt(old,{reason:'submitted'}));old.finishReason='restarted';}
-        if(window.CafaStudy)window.CafaStudy.clearReturn();
-        attempts().push(next);save();if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen gestart',window.StudyMeasure.examNames(next.exam));go('tentamen/'+next.id);
-      }catch(error){announce(error.message);showModal('Opnieuw beginnen niet mogelijk','<p>'+esc(error.message)+'</p>');}
+      if(!old)return;
+      go('welkom/'+(old.exam.practiceKind==='opgave'?'opgaven':encodeURIComponent(old.exam.id))+'/opnieuw/'+encodeURIComponent(old.id));
       return;
     }
     if(action==='start'){
-      var exam=examById(button.dataset.examId);if(!exam||corrupt)return;
-      try{var a=Engine.createAttempt(exam,{extraTime:!!host.querySelector('[data-exam-extra]:checked'),untimed:!!host.querySelector('[data-exam-untimed]:checked'),id:exam.id+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)});attempts().push(a);save();if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen gestart',window.StudyMeasure.examNames(a.exam));go('tentamen/'+a.id);}catch(error){announce(error.message);showModal('Starten niet mogelijk','<p>'+esc(error.message)+'</p>');}return;
+      var prior=button.dataset.restartAttempt&&byId(button.dataset.restartAttempt),exam=examById(button.dataset.examId)||(prior&&prior.exam);if(!exam||corrupt)return;
+      try{startAttempt(exam,{extraTime:!!host.querySelector('[data-exam-extra]:checked'),untimed:!!host.querySelector('[data-exam-untimed]:checked'),id:exam.id+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)},button.dataset.restartAttempt);}catch(error){announce(error.message);showModal('Starten niet mogelijk','<p>'+esc(error.message)+'</p>');}return;
     }
     if(action==='review-tab'){reviewTab=button.dataset.tab;review(button.dataset.attempt);return;}
     if(action==='review-question'){go('inzage/'+button.dataset.attempt+'/vraag/'+button.dataset.index);return;}

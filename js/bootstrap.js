@@ -72,7 +72,7 @@
     if (root.CafaTopics) root.CafaTopics.mount();
     return loadScript('js/practice-case-panel.js?v=20260926-columns1');
   }).then(function () {
-    return loadScript('js/exams.js?v=20260926-complete3');
+    return loadScript('js/exams.js?v=20260926-restart1');
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {

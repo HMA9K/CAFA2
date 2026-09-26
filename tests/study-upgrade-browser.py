@@ -149,9 +149,12 @@ async def run():
           other_before=await page.evaluate('(id)=>JSON.stringify(CafaExams.getAttempts().find(a=>a.id===id))',other_id)
           await hash('dashboard')
           restart=page.locator('[data-exam-action=restart][data-restart-attempt="'+aid+'"]:visible').first
-          page.once('dialog',lambda d:d.dismiss());await restart.click()
+          await restart.click();await page.locator('[data-exam-extra]').wait_for()
           assert (await page.evaluate('CafaExams.getAttempts()'))[0]['id']==aid
-          page.once('dialog',lambda d:d.accept());await restart.click()
+          assert len(await page.evaluate('CafaExams.getAttempts()'))==2
+          assert await page.evaluate('CafaExams.getPosition()') is None
+          await hash('dashboard');await restart.click();await page.locator('[data-exam-extra]').check()
+          await page.locator('[data-exam-action=start]').click()
           current=await page.evaluate('CafaExams.getPosition()')
           assert current['attempt']!=aid and current['index']==0
           all_attempts=await page.evaluate('CafaExams.getAttempts()')
@@ -161,9 +164,10 @@ async def run():
           assert prior['answers']==saved['answers']
           assert await page.evaluate('(id)=>JSON.stringify(CafaExams.getAttempts().find(a=>a.id===id))',other_id)==other_before
           await shot('exam-after-restart')
-          # Untimed restarts preserve the setting too.
-          await hash('dashboard');page.once('dialog',lambda d:d.accept())
+          # The introduction lets the learner choose untimed practice again.
+          await hash('dashboard')
           await page.locator('[data-exam-action=restart][data-restart-attempt="'+other_id+'"]:visible').first.click()
+          await page.locator('[data-exam-untimed]').check();await page.locator('[data-exam-action=start]').click()
           untimed=await page.evaluate('CafaExams.getAttempts().find(a=>a.id===CafaExams.getPosition().attempt)')
           assert untimed['untimed'] is True
           await page.reload(wait_until='networkidle');await page.wait_for_function('!!window.CafaExams')

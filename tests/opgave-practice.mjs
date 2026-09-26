@@ -209,8 +209,9 @@ if (JSDOM) {
     function click(selector) {
       const element = $(selector);
       assert.ok(element, `Verwacht element: ${selector}`);
+      const previousHash = window.location.hash;
       element.click();
-      window.dispatchEvent(new window.HashChangeEvent('hashchange'));
+      if (window.location.hash !== previousHash) window.dispatchEvent(new window.HashChangeEvent('hashchange'));
     }
     function change(selector, checked) {
       const element = $(selector);
@@ -220,7 +221,7 @@ if (JSDOM) {
     }
     return {
       window, document, $, route, click, change, errors,
-      attempts: () => window.CafaExams.getAttempts(),
+      attempts: () => plain(window.CafaExams.getAttempts()),
       saved: () => window.localStorage.getItem(storageKey),
       close: () => window.close()
     };
@@ -339,6 +340,11 @@ if (JSDOM) {
     assert.match(oldRow.textContent, /Oude indeling/);
     assert.match(oldRow.textContent, /OPG2-OUD/);
     legacyUi.click(`.exam-table-upcoming [data-restart-attempt="${legacyAttempt.id}"]`);
+    assert.equal(legacyUi.attempts().length, 1, 'Herstart opent eerst de selectie zonder nieuwe poging.');
+    assert.equal(legacyUi.attempts()[0].status, 'active');
+    assert.equal(legacyUi.$('[name="opgave-number"]:checked').value, '2');
+    assert.deepEqual(Array.from(legacyUi.document.querySelectorAll('[data-opgave-exam]:checked'), input => input.value), ['cafa2-20231009']);
+    legacyUi.click('[data-exam-action="start-opgave"]');
     const [oldSaved, newAttempt] = legacyUi.attempts();
     assert.equal(oldSaved.exam.selectionBasis, undefined);
     assert.equal(oldSaved.exam.sections[0].sourceSectionId, 'opgave-2');
@@ -355,4 +361,70 @@ if (JSDOM) {
     legacyUi.close();
   }
   console.log('Oude opgavepoging geslaagd: zichtbaar onderscheid, historische antwoorden bewaard en herstart op onderwerp.');
+
+  const firstExam = exams.find(e => e.id === 'cafa2-20250924');
+  const old = plain(engine.createAttempt(firstExam, { now, id: 'restart-original' }));
+  const oldQuestion = firstExam.questions[0].id;
+  old.answers[oldQuestion] = { html: '<p>Bewaard tentamenantwoord</p>' };
+  old.scores = { [oldQuestion]: 1 }; old.marked = { [oldQuestion]: true }; old.currentIndex = 2;
+  const other = plain(engine.createAttempt(exams.find(e => e.id === 'cafa2-20240930'), { now, id: 'other-attempt', untimed: true }));
+  const done = plain(engine.finishAttempt(engine.createAttempt(firstExam, { now, id: 'completed-attempt' }), { now: now + 1000 }));
+  const examSaved = JSON.stringify({ version: 1, attempts: [old, other, done] });
+  const restartUi = environment({ saved: examSaved });
+  try {
+    const before = JSON.stringify(restartUi.attempts());
+    restartUi.click('[data-restart-attempt="restart-original"]');
+    assert.match(restartUi.window.location.hash, /^#welkom\/cafa2-20250924\/opnieuw\/restart-original$/);
+    assert.equal(JSON.stringify(restartUi.attempts()), before, 'Introductie verandert geen antwoorden, status, positie of klok.');
+    assert.ok(restartUi.$('[data-exam-extra]')); assert.ok(restartUi.$('[data-exam-untimed]'));
+    assert.equal(restartUi.window.CafaExams.getPosition(), null);
+    const introReload = environment({ saved: restartUi.saved(), hash: restartUi.window.location.hash });
+    try {
+      assert.equal(introReload.attempts().length, 3);assert.ok(introReload.$('[data-exam-extra]'));
+      introReload.change('[data-exam-extra]', true);
+      assert.equal(introReload.$('[data-exam-detail-duration]').textContent, '210 minuten');
+      const originalSet = introReload.window.Storage.prototype.setItem;
+      introReload.window.Storage.prototype.setItem = function(key, value) { if (key === storageKey) throw new Error('Storage unavailable'); return originalSet.call(this, key, value); };
+      introReload.click('[data-exam-action="start"]');assert.equal(JSON.stringify(introReload.attempts()), before, 'Opslagfout bij starten archiveert of vervangt de vorige poging niet.');
+      introReload.window.Storage.prototype.setItem = originalSet;introReload.$('#exam-info-dialog').close();
+      introReload.click('[data-exam-action="start"]');
+      const next = introReload.attempts().at(-1), archived = introReload.attempts()[0];
+      assert.equal(next.extraMinutes, 30);assert.equal(next.untimed, false);assert.equal(next.currentIndex, 0);
+      assert.equal(next.deadlineAt - next.startedAt, 210 * 60000);assert.deepEqual(next.answers, {});
+      assert.equal(archived.status, 'completed');assert.equal(archived.finishReason, 'restarted');
+      assert.deepEqual(archived.answers, old.answers);assert.deepEqual(archived.scores, old.scores);assert.deepEqual(archived.marked, old.marked);
+      assert.deepEqual(introReload.attempts()[1], other);assert.deepEqual(introReload.attempts()[2], done);
+      introReload.route('#dashboard');introReload.click('[data-restart-attempt="other-attempt"]');
+      assert.equal(introReload.$('[data-exam-untimed]').checked, false, 'De instellingen kunnen opnieuw worden gekozen.');
+      introReload.click('[data-exam-action="start"]');assert.equal(introReload.attempts().at(-1).untimed, false);
+      introReload.route('#dashboard/voltooid');introReload.click('[data-restart-attempt="completed-attempt"]');
+      introReload.change('[data-exam-untimed]', true);assert.equal(introReload.$('[data-exam-detail-duration]').textContent, 'Zonder tijdslimiet');
+      introReload.click('[data-exam-action="start"]');assert.equal(introReload.attempts().at(-1).untimed, true);
+      assert.deepEqual(introReload.attempts()[2], done, 'Een voltooid origineel blijft ongewijzigd.');assert.deepEqual(introReload.errors, []);
+    } finally { introReload.close(); }
+    restartUi.route('#dashboard');assert.equal(JSON.stringify(restartUi.attempts()), before, 'Teruggaan zonder starten behoudt de eerdere poging.');
+    assert.deepEqual(restartUi.errors, []);
+  } finally { restartUi.close(); }
+
+  const resetUi = environment({ saved: examSaved, hash: '#dashboard/voltooid' });
+  try {
+    resetUi.window.localStorage.setItem('mc-preserved', 'Bewaarde MC-voortgang');
+    const before = resetUi.saved(); resetUi.window.confirm = () => false;
+    resetUi.click('[data-exam-action="reset-exams"]');assert.equal(resetUi.saved(), before);assert.equal(resetUi.attempts().length, 3);
+    resetUi.window.confirm = () => true;
+    const nativeSet = resetUi.window.Storage.prototype.setItem;
+    resetUi.window.Storage.prototype.setItem = function(key, value) { if (key === storageKey) throw new Error('Storage unavailable'); return nativeSet.call(this, key, value); };
+    resetUi.click('[data-exam-action="reset-exams"]');assert.equal(resetUi.saved(), before);assert.equal(resetUi.attempts().length, 3);
+    resetUi.window.Storage.prototype.setItem = nativeSet;resetUi.$('#exam-info-dialog').close();
+    resetUi.click('[data-exam-action="reset-exams"]');assert.deepEqual(resetUi.attempts(), []);
+    assert.equal(resetUi.window.localStorage.getItem('mc-preserved'), 'Bewaarde MC-voortgang');
+    assert.equal(resetUi.window.location.hash, '#dashboard');assert.equal(resetUi.$('[data-exam-action="reset-exams"]').disabled, true);
+    const resetReload = environment({ saved: resetUi.saved() });try { assert.deepEqual(resetReload.attempts(), []); } finally { resetReload.close(); }
+    const otherTab = environment({ saved: before, hash: '#tentamen/restart-original' });
+    try { otherTab.window.dispatchEvent(new otherTab.window.StorageEvent('storage', { key: storageKey, newValue: resetUi.saved() }));assert.deepEqual(otherTab.attempts(), []);assert.equal(otherTab.window.CafaExams.getPosition(), null); } finally { otherTab.close(); }
+    assert.deepEqual(resetUi.errors, []);
+  } finally { resetUi.close(); }
+  const corruptUi = environment({ saved: '{invalid' });
+  try { corruptUi.window.confirm = () => true;assert.equal(corruptUi.$('[data-exam-action="reset-exams"]').disabled, false);corruptUi.click('[data-exam-action="reset-exams"]');corruptUi.route('#welkom/cafa2-20250924');assert.equal(corruptUi.$('[data-exam-action="start"]').disabled, false);assert.deepEqual(corruptUi.errors, []); } finally { corruptUi.close(); }
+  console.log('Herstart/reset geslaagd: eerst intro, herladen en annuleren zonder mutatie, opnieuw tijd kiezen, bewaren bij expliciete start, globale tentamenreset, annulering, opslagfout, herladen en ander tabblad; MC behouden.');
 }
