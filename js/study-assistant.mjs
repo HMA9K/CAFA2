@@ -1,27 +1,29 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs';
 import {renderMarkdown} from './study-assistant-render.mjs';
+import {createAssistantWindow} from './study-assistant-window.mjs';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
-let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null,reflowing=false;
+let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
 let measuredFooter=null,placementQueued=false;
 let calculator=null,calculatorButton=null,calculatorObserver=null;
 const footerResize=window.ResizeObserver?new ResizeObserver(()=>placeLauncher()):null;
 adapters.set('CAFA2',adapter);
-const doc=document,small=matchMedia('(max-width:760px)');
+const doc=document;
 const button=doc.createElement('button');button.type='button';button.className='study-assistant-launch';
 button.textContent='Vraag over deze vraag';button.hidden=true;button.setAttribute('aria-controls','study-assistant');button.setAttribute('aria-expanded','false');
 const panel=doc.createElement('dialog');panel.id='study-assistant';panel.className='study-assistant';panel.setAttribute('aria-labelledby','study-assistant-title');
-panel.innerHTML=`<header class="study-head"><div><p class="study-eyebrow">HULP BIJ DEZE VRAAG</p><h2 id="study-assistant-title">CAFA2 Assistent</h2></div><button type="button" class="study-icon-button" data-action="close" aria-label="Assistent sluiten">×</button></header>
+panel.innerHTML=`<header class="study-head"><div class="study-window-handle" data-window-move tabindex="0" role="button" aria-label="Assistent verplaatsen. Sleep of gebruik de pijltoetsen." title="Sleep om te verplaatsen"><span aria-hidden="true">⠿</span><div><p class="study-eyebrow">HULP BIJ DEZE VRAAG</p><h2 id="study-assistant-title">CAFA2 Assistent</h2></div></div><div class="study-window-actions"><button type="button" class="study-icon-button" data-window-compact aria-label="Assistent verkleinen" title="Verkleinen">↙</button><button type="button" class="study-icon-button" data-window-minimize aria-label="Assistent inklappen" aria-expanded="true">−</button><button type="button" class="study-icon-button" data-action="close" aria-label="Assistent sluiten">×</button></div></header>
 <div class="study-context"><strong data-context-title></strong><p data-context-question></p><div class="study-context-controls"><label>Stand <select data-mode aria-label="Hulpstand"><option value="hint">Eerst een hint</option><option value="review">Antwoord en uitleg</option></select></label><button type="button" class="study-text-button" data-action="clear">Nieuw gesprek</button></div><small data-mode-note></small></div>
 <div class="study-scroll"><div class="study-banner" data-banner role="status"></div>
 <form data-login hidden><label for="study-code">Toegangscode leeromgeving</label><div class="study-code-row"><input id="study-code" type="password" autocomplete="off" maxlength="256" required><button type="submit">Ontgrendelen</button></div><p class="study-note">Dit is de toegangscode van de beheerder, niet een API-sleutel of ChatGPT-wachtwoord.</p></form>
 <div class="study-consent" data-consent><label><input type="checkbox" data-consent-check><span>Bij verzenden mogen de vraag, casus, mijn antwoord en dit gesprek naar de modeldienst worden gestuurd.</span></label><p>De chat wijzigt je tentamenantwoord of score niet. Typ geen persoonsgegevens. De chatgeschiedenis blijft alleen in dit tabblad; de modeldienst kan eigen bewaartermijnen hanteren.</p></div>
 <div class="study-starters" data-starters><button type="button" data-prompt="Geef één hint voor de eerste stap, zonder het antwoord te verklappen.">Geef een hint</button><button type="button" data-prompt="Leg het begrip uit dat ik voor deze vraag moet begrijpen.">Leg het begrip uit</button><button type="button" data-prompt="Welke gegevens uit deze casus heb ik nodig, en waarom?">Welke gegevens?</button><button type="button" data-prompt="Vergelijk mijn antwoord met de uitwerking en leg uit waar het verschil ontstaat." data-review-prompt>Bespreek mijn antwoord</button><button type="button" data-prompt="Geef het antwoord op deze vraag en licht de berekening of redenering toe." data-answer-prompt>Geef antwoord en uitleg</button></div>
 <div class="study-messages" role="log" aria-live="polite" aria-relevant="additions" data-messages></div></div>
-<footer class="study-compose"><form data-chat-form><label for="study-message" class="study-sr">Je vraag aan de assistent</label><textarea id="study-message" rows="2" maxlength="2500" placeholder="Wat is nog niet duidelijk?" enterkeyhint="enter"></textarea><div class="study-send-row"><span data-counter>0 / 2500</span><button type="button" data-action="stop" hidden>Stop</button><button type="submit" data-send>Versturen</button></div></form><div class="study-bottom"><small data-knowledge></small><button type="button" class="study-text-button" data-action="logout" hidden>Uitloggen</button></div></footer>`;
+<footer class="study-compose"><form data-chat-form><label for="study-message" class="study-sr">Je vraag aan de assistent</label><textarea id="study-message" rows="2" maxlength="2500" placeholder="Wat is nog niet duidelijk?" enterkeyhint="enter"></textarea><div class="study-send-row"><span data-counter>0 / 2500</span><button type="button" data-action="stop" hidden>Stop</button><button type="submit" data-send>Versturen</button></div></form><div class="study-bottom"><small data-knowledge></small><div class="study-window-bottom-actions"><button type="button" class="study-text-button" data-action="logout" hidden>Uitloggen</button><button type="button" data-window-resize aria-label="Assistentformaat wijzigen. Sleep of gebruik de pijltoetsen." title="Sleep om te vergroten of verkleinen">◢</button></div></div></footer>`;
 doc.body.append(button,panel);
 const $=s=>panel.querySelector(s),input=$('#study-message'),log=$('[data-messages]');
+const floating=createAssistantWindow(panel);
 // Teaching-style changes do not discard the same question's conversation.
 function scope(){return currentKey;}
 function contextKey(value){return value?refKey(value.ref)+'|'+value.revision+'|'+value.attempt:'';}
@@ -41,7 +43,6 @@ function syncLaunchers() {
   const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
   button.hidden=!current||calculatorOpen;
   if(calculatorButton){calculatorButton.hidden=!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
-  if(calculatorOpen&&panel.open&&!panel.matches(':modal')){reflowing=true;panel.close();panel.showModal();panel.setAttribute('aria-modal','true');input.focus({preventScroll:true});}
 }
 function placeLauncher() {
   const footer=current?.ref.kind==='exam' && location.hash.startsWith('#tentamen/')
@@ -125,13 +126,12 @@ async function loadStatus() {
 }
 async function open() {
   refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=doc.activeElement;
-  if(!panel.open){(small.matches||(!calculator?.hidden)||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');}
-  input.focus({preventScroll:true});await loadStatus();
+  floating.show();button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');
+  if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});await loadStatus();
 }
 button.addEventListener('click',open);
-panel.addEventListener('close',()=>{if(reflowing){reflowing=false;return;}drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
+panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
 panel.addEventListener('cancel',()=>stop());
-small.addEventListener('change',()=>{if(!panel.open)return;reflowing=true;panel.close();(small.matches||(!calculator?.hidden)||doc.querySelector('dialog[open]:not(#study-assistant)'))?panel.showModal():panel.show();panel.setAttribute('aria-modal',String(panel.matches(':modal')));button.setAttribute('aria-expanded','true');input.focus({preventScroll:true});});
 $('[data-consent-check]').addEventListener('change',e=>{consent=e.target.checked;controls();});
 input.addEventListener('input',()=>{drafts.set(scope(),input.value);controls();});
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('[data-chat-form]').requestSubmit();}});

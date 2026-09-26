@@ -1,6 +1,17 @@
 # CAFA2 Assistent: activering na integratie
 
-Bijgewerkt op 25 september 2026 na de uitdrukkelijke opdracht om het afgeronde werk te publiceren.
+Bijgewerkt op 26 september 2026, inclusief het zwevende assistentvenster.
+
+## Venster bedienen
+
+- Sleep de titelbalk om de assistent te verplaatsen.
+- Sleep de hoek rechtsonder om het venster groter of kleiner te maken.
+- Gebruik ↙ om te verkleinen en ↗ om het gekozen formaat te herstellen.
+- Gebruik − om in te klappen en + om uit te klappen; × sluit het venster.
+- De positie en grootte worden in deze browser onthouden. De chat blijft tijdens verplaatsen en vergroten bij dezelfde vraag.
+- De rekenmachine en de oefenpagina blijven bedienbaar. Verplaats of klap de assistent in als hij een knop bedekt.
+
+Voor deze wijziging is geen nieuwe instelling of secret nodig. Vernieuw de pagina na de publicatie om de nieuwe bediening te laden.
 
 ## Actueel: assistent actief op de gewone site
 

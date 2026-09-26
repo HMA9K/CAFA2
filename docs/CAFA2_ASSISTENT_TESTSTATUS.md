@@ -1,6 +1,18 @@
 # CAFA2 Assistent: teststatus na integratie
 
-Bijgewerkt: 25 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
+Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
+
+## Zwevend en aanpasbaar venster, 26 september 2026
+
+**Lokale controles geslaagd; nieuwe publicatie nog te controleren.**
+
+- Titelbalk slepen, formaatgreep, compacte stand, inklappen/uitklappen en toetsenbordbediening toegevoegd. Positie/formaat blijven behouden bij opnieuw openen en herladen. Tijdelijke viewportbeperking overschrijft het gekozen desktopformaat niet. Alleen venstergeometrie wordt apart opgeslagen.
+- Het paneel is niet modaal en de pagina en rekenmachine blijven bedienbaar. Bij een bestaand modaal tentamenoverzicht wordt het paneel daarin opgenomen en bij sluiten weer teruggezet. De browserproef verplaatst het paneel om de onderliggende sluitknop te bereiken; dat bedekken is het normale gedrag van zwevende vensters.
+- 108 Node-tests geslaagd, waaronder vijf nieuwe geometrieproeven voor viewportgrenzen, keyboard-offsets, behoud van voorkeuren, ingeklapte hoogte en ongeldige opgeslagen invoer. Twee bestaande presentatie-extractietests geslaagd.
+- Integratie-dry-run zonder wijzigingen; build en deploycontrole geslaagd: 247 oefenvragen, 285 tentamenrecords inclusief drie demo's, 135 publieke bestanden en vier Functions. De tien bestaande regressiescripts slagen. De aanvullende JSDOM-route is lokaal overgeslagen omdat JSDOM ontbreekt; echte routes zijn in de browser getest.
+- 137 Chromium- en 137 WebKit-controles geslaagd, zonder JavaScript-runtimefouten. Alle oefenvraagtypen, elf tentamens, eigen antwoorden, journaalposten, voorraadtabellen, historische inzage, antwoordvensters, vertraagde antwoorden en timers blijven gecontroleerd. Nieuwe proeven controleren slepen, vergroten, inklappen, voorkeuren, herladen, Escape en samenwerken met de rekenmachine.
+- Desktop- en mobiele screenshots in beide browsers visueel bekeken, inclusief donkere modus en een korte viewport van 390 × 260. Het ingeklapte paneel blijft ook aan de onderrand bereikbaar. Dit is een toetsenbordsimulatie; een fysieke telefoon met echt toetsenbord is nog niet getest.
+- Automatische antwoorden zijn gesimuleerd, met nul echte API-aanroepen in deze ronde. Deze wijziging betreft vensterbediening en geeft geen nieuw bewijs voor inhoudelijke modelkwaliteit. Bronselectie en bekende koelcellenbeperking blijven zoals hieronder vastgelegd.
 
 ## Actuele productiepublicatie
 

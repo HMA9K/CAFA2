@@ -1,6 +1,14 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-25.8. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-26.1. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+
+## Vervolg: zwevend assistentvenster, 26 september 2026
+
+De assistent heeft dezelfde vensterbediening als de rekenmachine: slepen via de titelbalk, formaat wijzigen met de hoek rechtsonder, verkleinen/herstellen en inklappen/uitklappen. Pijltoetsen bedienen de verplaats- en formaatgrepen; Shift geeft grotere stappen en Home herstelt de standaard. Escape sluit alleen de assistent.
+
+Positie en formaat worden apart opgeslagen onder `cafa2-assistant-window-v1`; dit bevat geen chats, antwoorden of toegangscode. Een smallere viewport begrenst het venster zonder het gekozen desktopformaat te overschrijven. De pagina blijft bedienbaar. Bestaande modale tentamenvensters nemen het zwevende paneel tijdelijk als kind op, zodat beide bruikbaar blijven. Bij sluiten keert het paneel terug naar de pagina. Als vensters elkaar bedekken, kun je de assistent verplaatsen of inklappen.
+
+De vensterlogica staat afzonderlijk in `js/study-assistant-window.mjs`. Vakadapters, vraaginhoud, scores, timers en rekenmachinecode zijn niet gewijzigd. Lokaal slagen 108 Node-tests, twee extractietests, tien regressiescripts en 137 browsercontroles per browser in Chromium en WebKit. De browserantwoorden zijn gesimuleerd; deze ronde voegt geen modelkwaliteitsclaim toe. De build bevat 135 publieke bestanden. Publicatie en bijbehorende Actions-resultaten worden in de teststatus vastgelegd.
 
 ## Actueel: gepubliceerd op de gewone CAFA2-site
 
