@@ -13,9 +13,9 @@ function assets(s,p=''){
   s=s.replace(/css\/exams\.css(?:\?v=[^"]*)?"/g,'css/exams.css?v='+(opgavePage?'20260925-topics1':'20260923-caseleft1')+'"');
   s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260924-scroll1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
-  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/law-book.css?v=20260924-lawbook1"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260923-navrow1">')+'</head>');
+  s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/law-book.css?v=20260924-lawbook1"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260926-hometools1">')+'</head>');
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
-  const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260924-lawbook1"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/law-book.js?v=20260924-lawbook1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
+  const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260926-hometools1"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/law-book.js?v=20260924-lawbook1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
   else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260924-history1"></script>')+'</head>');
   return s;
@@ -41,9 +41,7 @@ for(const id of Object.keys(orientation)){
 }
 summary=summary.replace(/<section class="summary-page" data-view="tentamen"[^>]*>[\s\S]*?<\/section>/,examRoutePage());
 summary=summary.replace('</main>',wrap('pages',capitalFlow(lawLink)+lawPage())+'</main>');
-const toolLinks='<a data-tool-link="kapitaalboom" href="#kapitaalboom">Kapitaalbelangen</a>';
-summary=summary.replace(/(<a [^>]*data-tool-link="summary"[^>]*>[\s\S]*?<\/a>)/,m=>m+wrap('tool-tabs',toolLinks));
-summary=summary.replace('<div class="reader-tools">','<div class="reader-tools">'+wrap('tool-home','<a class="study-button" href="#kapitaalboom">Beslisboom kapitaalbelangen</a><a class="study-button" href="#wetsartikelen">Wetsartikelen</a>'));
+summary=summary.replace('<div class="reader-tools">','<div class="reader-tools">'+wrap('tool-home','<a class="study-button" href="#wetsartikelen">Wetsartikelen</a>'));
 write('samenvatting.html',assets(decorateTables(summary)));
 const readerManifest=JSON.parse(read('docs/summary-reader-manifest.json'));readerManifest.views=14;write('docs/summary-reader-manifest.json',JSON.stringify(readerManifest,null,2)+'\n');
 let practice=0;
@@ -68,7 +66,7 @@ for(const [code,name] of Object.entries(modules)){
 }
 let home=clean(read('fragments/home.html')).replace('12 lessen · stap voor stap','7 hoofdstukken · stap voor stap');
 for(const c of Object.keys(modules))home=home.replace(new RegExp('(<a class="btn primary"[^>]*data-start="'+c+'"[^>]*>[^<]*<\/a>)'),m=>m+wrap('restart-'+c,'<button class="btn compact study-restart" type="button" data-reset="'+c+'" hidden>Opnieuw beginnen</button>'));
-home=home.replace('<p class="cafa-home-help">',wrap('home-quick','<nav class="study-home-links" aria-label="Direct naar studiehulpmiddelen"><a href="samenvatting.html#kapitaalboom">Beslisboom kapitaalbelangen →</a><a href="samenvatting.html#wetsartikelen">Wetsartikelen →</a><a href="samenvatting.html#kernschema">IC-kernschema →</a></nav>')+'<p class="cafa-home-help">');
+home=home.replace('<p class="cafa-home-help">',wrap('home-quick','<nav class="study-home-links" aria-label="Naslag en voortgang"><a href="samenvatting.html#kernschema"><span>IC-kernschema</span><span aria-hidden="true">→</span></a><a href="#voortgang"><span>Voortgang</span><span aria-hidden="true">→</span></a><a href="samenvatting.html#begrippen"><span>Begrippen</span><span aria-hidden="true">→</span></a><a href="samenvatting.html#bronnen"><span>Bronnen</span><span aria-hidden="true">→</span></a></nav>')+'<p class="cafa-home-help">');
 write('fragments/home.html',home);
 write('index.html',assets(clean(read('index.html'))));
 // Notes are looked up at render time, including for previously saved exam attempts.
