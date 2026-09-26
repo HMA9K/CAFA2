@@ -114,7 +114,7 @@
       var today=['<tr><td><a class="exam-name" href="#welkom/practice">CAFA2 oefenvragen</a></td><td data-label="Code">CAFA2-MC</td><td data-label="Beschikbaar">Altijd beschikbaar</td><td data-label="Deadline">Geen deadline</td><td data-label="Duur">Geen tijdslimiet</td><td><a class="btn primary" href="#welkom/practice">Toets starten</a></td></tr>',
         '<tr><td><a class="exam-name" href="#welkom/opgaven">Tentamenvragen per onderwerp</a><span class="exam-sub">Kies kapitaalbelangen, vreemde valuta, consolidatie NVW of consolidatie verkrijgingsprijs en de tentamens die je wilt oefenen.</span></td><td data-label="Code">CAFA2-OPG</td><td data-label="Beschikbaar">Altijd beschikbaar</td><td data-label="Deadline">Geen deadline</td><td data-label="Duur">Geen tijdslimiet</td><td><a class="btn primary" href="#welkom/opgaven">Toets starten</a></td></tr>'];
       var scheduled=live.map(function(a){return {exam:a.exam,resume:a};}).concat(ready.map(function(exam){return {exam:exam,resume:null};}));
-      scheduled.sort(function(a,b){return b.exam.date.localeCompare(a.exam.date)||(b.resume?b.resume.startedAt:0)-(a.resume?a.resume.startedAt:0);});
+      scheduled.sort(function(a,b){return Number(a.exam.practiceKind==='opgave')-Number(b.exam.practiceKind==='opgave')||b.exam.date.localeCompare(a.exam.date)||(b.resume?b.resume.startedAt:0)-(a.resume?a.resume.startedAt:0);});
       today=today.concat(scheduled.map(function(item){return examRow(item.exam,item.resume);}));
       html+='<section class="exam-section"><h2>Vandaag</h2>'+table(today,'upcoming')+'</section>';
       var soon = catalog.filter(function(exam){return exam.availableFrom && Date.parse(exam.availableFrom)>Date.now() && Date.parse(exam.availableFrom)<=Date.now()+30*86400000;});
