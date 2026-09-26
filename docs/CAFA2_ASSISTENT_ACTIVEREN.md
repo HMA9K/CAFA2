@@ -174,8 +174,8 @@ De 11 oude repetitiepresentaties zijn zonder wijziging van de originelen naar 11
 De offline broncontrole is vanaf de repository-root te herhalen met de twee lokale mapvariabelen. Met beide mappen beschikbaar zijn 105 bestanden direct in een ondersteund formaat en 11 via de PDF-conversies klaar, samen 116 van 116 kandidaten. Eén persoonlijke vragen-DOCX is expliciet uitgesloten. De controle meldt 0 ongeclassificeerde bestanden en 0 scanproblemen. Zonder de conversiemap meldt zij 11 nog om te zetten presentaties. Nieuwe bestanden in `Onderwijsmateriaal`, `Tentamens`, `Thieu Mooren` of `Repetitiecursus` worden zichtbaar en blokkeren de controle totdat ze in het manifest zijn opgenomen of gemotiveerd zijn uitgesloten. Geen van deze opdrachten uploadt inhoud:
 
 ```powershell
-$env:CAFA2_SOURCE_ROOT = '%USERPROFILE%\OneDrive\Studie\CAFA2'
-$env:CAFA2_CONVERTED_ROOT = '%USERPROFILE%\Documents\Claude\Projects\CAFA2-assistant-sources\repetitiecursus'
+$env:CAFA2_SOURCE_ROOT = Read-Host 'Lokale CAFA2-bronmap'
+$env:CAFA2_CONVERTED_ROOT = Read-Host 'Lokale map met geconverteerde repetitieslides'
 node scripts/prepare-assistant-sources.mjs --check
 ```
 

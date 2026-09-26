@@ -32,6 +32,9 @@ function coveredBy(relative,root){
   if(!relative.startsWith(root.path+'/'))return false;
   return root.recursive||!relative.slice(root.path.length+1).includes('/');
 }
+function exclusionPattern(pattern){
+  return new RegExp('^'+pattern.split('*').map(part=>part.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('[^/]*')+'$');
+}
 export function validateSourceManifest(manifest){
   if(!plain(manifest)||manifest.version!==1||!plain(manifest.groups)||!plain(manifest.scanRoots))
     throw new Error('Ongeldig bronmanifest of ontbrekende scanRoots.');
@@ -69,6 +72,17 @@ export function validateSourceManifest(manifest){
       if(!seen.has(relative)||!Array.isArray(flags)||flags.some(x=>typeof x!=='string'||!/^[a-z0-9-]+$/.test(x)))
         throw new Error(`Ongeldige broncontrolemarkering: ${relative}`);
   }
+  if(manifest.excludedPatterns!==undefined){
+    const roots=Object.values(manifest.scanRoots).flat().map(scanRoot);
+    if(!Array.isArray(manifest.excludedPatterns))throw new Error('Ongeldige bronuitsluitingspatronen.');
+    for(const rule of manifest.excludedPatterns){
+      if(!plain(rule)||!validRelative(rule.pattern)||rule.pattern.includes('**')||
+         !rule.pattern.includes('*')||typeof rule.reason!=='string'||!rule.reason.trim()||
+         !roots.some(root=>coveredBy(rule.pattern,root))||
+         [...seen].some(relative=>exclusionPattern(rule.pattern).test(relative)))
+        throw new Error('Ongeldig of overlappend bronuitsluitingspatroon.');
+    }
+  }
   return manifest;
 }
 
@@ -91,7 +105,8 @@ function convertedRelative(relative){
   return relative.slice('Repetitiecursus/'.length).replace(/\.ppt$/i,'.pdf');
 }
 async function discoverSources(manifest,sourceRoot){
-  const unclassified=new Map(),scanIssues=new Map();
+  const unclassified=new Map(),scanIssues=new Map(),excludedMatches=new Map();
+  const exclusions=(manifest.excludedPatterns||[]).map(rule=>({...rule,matcher:exclusionPattern(rule.pattern)}));
   const issue=(group,relative,status)=>{
     scanIssues.set(group+':'+relative+':'+status,{group,relative,status});
   };
@@ -101,7 +116,7 @@ async function discoverSources(manifest,sourceRoot){
   catch(error){
     if(error?.code==='ENOENT'){
       issue('all','', 'missing_source_root');
-      return {unclassified:[],scanIssues:[...scanIssues.values()]};
+      return {unclassified:[],scanIssues:[...scanIssues.values()],excludedMatches:[]};
     }
     throw error;
   }
@@ -133,14 +148,17 @@ async function discoverSources(manifest,sourceRoot){
         if(item.isDirectory()){
           if(scan.recursive)await walk(resolved);
         }else if(item.isFile()&&DISCOVERABLE.has(path.extname(item.name).toLowerCase())&&!approved.has(relative)){
-          if(!unclassified.has(relative))unclassified.set(relative,{group:scan.group,relative,status:'unclassified'});
+          const exclusion=exclusions.find(rule=>rule.matcher.test(relative));
+          if(exclusion)excludedMatches.set(relative,{relative,reason:exclusion.reason});
+          else if(!unclassified.has(relative))unclassified.set(relative,{group:scan.group,relative,status:'unclassified'});
         }
       }
     }
     await walk(real);
   }
   return {unclassified:[...unclassified.values()].sort((a,b)=>a.relative.localeCompare(b.relative)),
-    scanIssues:[...scanIssues.values()].sort((a,b)=>a.relative.localeCompare(b.relative))};
+    scanIssues:[...scanIssues.values()].sort((a,b)=>a.relative.localeCompare(b.relative)),
+    excludedMatches:[...excludedMatches.values()].sort((a,b)=>a.relative.localeCompare(b.relative))};
 }
 export async function planSources({manifest,sourceRoot,convertedRoot,groups}={}){
   validateSourceManifest(manifest);
@@ -173,8 +191,8 @@ export async function planSources({manifest,sourceRoot,convertedRoot,groups}={})
       entries.push(entry);
     }
   }
-  const discovery=await discoverSources(manifest,root);
-  const excluded=Object.entries(manifest.excluded||{}).map(([relative,reason])=>({relative,reason}));
+  const {excludedMatches,...discovery}=await discoverSources(manifest,root);
+  const excluded=[...Object.entries(manifest.excluded||{}).map(([relative,reason])=>({relative,reason})),...excludedMatches];
   const counts={selected:entries.length,ready:0,direct:0,converted:0,conversionRequired:0,missing:0,invalid:0,
     excluded:excluded.length,
     unclassified:discovery.unclassified.length,scanIssues:discovery.scanIssues.length};

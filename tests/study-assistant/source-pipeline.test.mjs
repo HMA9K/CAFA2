@@ -27,7 +27,9 @@ test('manifest heeft expliciete originele bronsets, inclusief repetitieslides en
   assert.equal(manifest.groups['syllabus-exercises-2025'].length,12);
   assert.equal(manifest.groups['additional-materials'].length,4);
   assert.equal(manifest.groups['college-exam-pair-2022'].length,2);
-  assert.match(manifest.excluded['Thieu Mooren/persoonlijke vragen.docx'],/Persoonlijke vragen/);
+  assert.deepEqual(manifest.excluded,{});
+  assert.equal(manifest.excludedPatterns[0].pattern,'Thieu Mooren/vragen *.docx');
+  assert.match(manifest.excludedPatterns[0].reason,/Persoonlijke vragen/);
   assert.equal(manifest.groups['repetition-slides'].filter(x=>x.endsWith('.ppt')).length,11);
   assert.equal(manifest.groups['repetition-slides'].filter(x=>x.endsWith('.pptx')).length,10);
   assert.equal(manifest.groups['repetition-slides'].filter(x=>x.endsWith('.pdf')).length,2);
@@ -35,6 +37,22 @@ test('manifest heeft expliciete originele bronsets, inclusief repetitieslides en
   assert.ok(manifest.groups.exams.some(x=>x.includes('20260429 Tentamen')));
   assert.ok(Object.values(manifest.groups).flat().every(x=>!path.isAbsolute(x)&&!x.includes('Overige/')));
 });
+
+test('persoonlijke bronbestanden blijven uitgesloten zonder persoonsnamen in het manifest',async()=>fixture(async folder=>{
+  const source=path.join(folder,'sources');await mkdir(path.join(source,'docs'),{recursive:true});
+  await writeFile(path.join(source,'docs','bekend.pdf'),'%PDF-bekend');
+  await writeFile(path.join(source,'docs','vragen persoonlijk.docx'),'Eigen vragen');
+  await writeFile(path.join(source,'docs','extra.pdf'),'%PDF-extra');
+  const sample={version:1,scanRoots:{course:['docs']},groups:{course:['docs/bekend.pdf']},
+    excludedPatterns:[{pattern:'docs/vragen *.docx',reason:'Persoonlijke vragen'}]};
+  const plan=await planSources({manifest:sample,sourceRoot:source});
+  assert.deepEqual(plan.entries.map(entry=>entry.relative),['docs/bekend.pdf']);
+  assert.deepEqual(plan.excluded,[{relative:'docs/vragen persoonlijk.docx',reason:'Persoonlijke vragen'}]);
+  assert.equal(plan.counts.excluded,1);
+  assert.deepEqual(plan.unclassified.map(entry=>entry.relative),['docs/extra.pdf']);
+  assert.throws(()=>validateSourceManifest({...sample,excludedPatterns:[{pattern:'docs/*',reason:'te breed'}]}),/overlappend/);
+  assert.throws(()=>validateSourceManifest({...sample,excludedPatterns:[{pattern:'docs/../*',reason:'buiten map'}]}),/uitsluitingspatroon/);
+}));
 
 test('ontbrekende en geconverteerde oude slides worden onderscheiden',async()=>fixture(async folder=>{
   const originals=path.join(folder,'originals'),conversions=path.join(folder,'converted');

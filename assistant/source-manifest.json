@@ -165,9 +165,13 @@
       "Repetitiecursus/Antwoorden opgaven repetitiecursus/CAFA2 REP opgave 8 - Obdam-Bobeldijk-Midwoud uitwerking (DS en SSa en USmva).pdf"
     ]
   },
-  "excluded": {
-    "Thieu Mooren/persoonlijke vragen.docx": "Persoonlijke vragen; niet aangemerkt als gedeeld CAFA2-cursusmateriaal."
-  },
+  "excluded": {},
+  "excludedPatterns": [
+    {
+      "pattern": "Thieu Mooren/vragen *.docx",
+      "reason": "Persoonlijke vragen; niet aangemerkt als gedeeld CAFA2-cursusmateriaal."
+    }
+  ],
   "reviewFlags": {
     "Onderwijsmateriaal/Aanvullende literatuur - waarom van belastinglatenties.pdf": ["controleer-rechten"],
     "Onderwijsmateriaal/Overzicht wetboek.docx": ["controleer-rechten"],
