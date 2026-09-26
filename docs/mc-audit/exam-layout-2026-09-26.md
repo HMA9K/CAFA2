@@ -36,4 +36,12 @@ Herbouw: installeer `requirements-practice.txt`, voer `scripts/author-exam-struc
 
 De overeenkomstige SRA-punten blijven openstaand en zijn aan de [SRA-takenlijst](https://github.com/HMA9K/SRA/blob/main/docs/cafa2-mc-vervolgtaken-2026-09-26.md) toegevoegd, commit `f6c7a99c9fc829be6a96fa9e951da888115129cc`.
 
+## Publicatie en live-controle
+
+De volledige revisie staat op `HMA9K/CAFA2:main`. Codecommit `1d81fcfc1e21f4040c14a4448563e659dfce4c44` herstelt ook de geneste basisregelopmaak. Controlecommit `82c2ee738cea9cc19202cd2e7e1ccb60abd4cdd3` wacht op het sluitingssignaal van de assistent en beperkt tentamencasuscontroles tot de tentamenomgeving. Cloudflare-productiedeployment `9a71914b-e97d-4b86-9cea-d2a52109028a` heeft status **success**.
+
+`tests/exam-layout-live.mjs` is op `https://cafa2.pages.dev` geslaagd: 627 vragen, vier echte MC-tabellen bij de voorraadvraag, voorraad- en journaalpostinvoer, behouden toelichting na herladen, vraaggerichte herkenning, invulbare syllabusmatrix, assistent naast de casus en sluiting met behoud van invoer, desktop/mobiel en donkere modus. De donkere tabelkoppen voldoen aan contrast 4,5:1. Het gepubliceerde vraagfragment en de HTML-fallback komen overeen met de gebouwde bestanden; in de fallback is de door Cloudflare toegevoegde analyticscode buiten de vergelijking gehouden.
+
+De [algemene repositorycontrole](https://github.com/HMA9K/CAFA2/actions/runs/36246706890) is geslaagd. Ook de uitgebreide [assistentbrowsercontrole](https://github.com/HMA9K/CAFA2/actions/runs/36246707077) is geslaagd in Chromium én WebKit. Deze gebruikt een nagebootste antwoorddienst voor de schermbediening.
+
 Bronnen: [bestaande tentamendata](https://github.com/HMA9K/CAFA2/tree/main/data), [MC-dekking](https://github.com/HMA9K/CAFA2/blob/main/docs/mc-audit/exam-practice-coverage.json), [CAFA2-oefenomgeving](https://cafa2.pages.dev/index.html#oefenen).
