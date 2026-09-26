@@ -23,3 +23,11 @@ Screenshots staan in `docs/mc-audit/qa-exam-restart-reset/`. Deze tonen het anon
 De twee overeenkomstige [SRA-vervolgtaken](https://github.com/HMA9K/SRA/blob/main/docs/cafa2-mc-vervolgtaken-2026-09-26.md) blijven openstaand voor de latere uitvoering, vastgelegd in commit `d0a55ca`.
 
 Bronnen: de bestaande CAFA2-tentamenbediening in `js/exams.js`, pogingbeheer in `js/exam-engine.js` en de [tentamenomgeving](https://cafa2.pages.dev/#dashboard). Officiële tentameninhoud en oorspronkelijke antwoordmodellen zijn niet gewijzigd.
+
+## Live publicatie
+
+- Codecommit `661d99e` is gepubliceerd met Cloudflare-deployment `7550ce87-96a3-4725-9c97-f225e214d9f0`, status success.
+- Index, bootstrap en tentamenruntime komen op de live website exact overeen met het gecontroleerde publicatiepakket. Bij HTML is uitsluitend de door Cloudflare toegevoegde analyticsbeacon buiten de vergelijking gehouden.
+- De volledige gerichte browsercontrole is op de live website geslaagd: eerst intro, herladen vóór de start, extra tijd kiezen, vorige/andere pogingen behouden, reset annuleren/bevestigen, mobiel en MC-antwoorden behouden na herladen. De drie screenshots tonen de live schermen.
+- [GitHub-validatie](https://github.com/HMA9K/CAFA2/actions/runs/36254176436) is geslaagd. De 109 assistenttests en de publicatiebouw zijn eveneens geslaagd.
+- Vóór publicatie zijn gewijzigde bestanden, screenshotmetadata en commit-identiteit gecontroleerd. De zestien openbare branchtips zijn vergeleken met de voorbereiding; er waren geen onverwachte wijzigingen. De publicatie voegt uitsluitend de gecontroleerde nieuwe commits toe.
