@@ -38,7 +38,7 @@ const loader=chunks.map((_,i)=>`import p${i} from './catalog-parts/part-${i}.mjs
   '\nexport default {...'+JSON.stringify(metadata)+',records:Object.assign(Object.create(null),'+chunks.map((_,i)=>'p'+i).join(',')+')};\n';
 await writeFile(path.join(root,'assistant/server/catalog.generated.mjs'),loader);
 const out=path.join(root,'dist');await rm(out,{recursive:true,force:true});await mkdir(out);
-const excluded=new Set(['dist','node_modules','.git','.github','assistant','functions','scripts','tests','docs','coverage','test-results','playwright-report']);
+const excluded=new Set(['dist','tmp','node_modules','.git','.github','assistant','functions','scripts','tests','docs','coverage','test-results','playwright-report']);
 const forbiddenFile=/^(?:\.env|\.dev\.vars|wrangler\.|package(?:-lock)?\.json|.*\.(?:pem|key|sqlite|db)$)/i;
 async function copyPublic(dir,target) {
   await mkdir(target,{recursive:true});
