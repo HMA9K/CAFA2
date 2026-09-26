@@ -15,6 +15,7 @@
     var bank=window.CAFA2_DATA.modules[question.dataset.code],q=bank.questions[Number(question.dataset.q)-1],body=question.querySelector('.qbody');
     if(!body)return;
     if(window.CafaStockTable){var task=body.querySelector('.task');if(task)CafaStockTable.removeBlankTemplate(task);CafaStockTable.enhance(body);}
+    if(window.CafaJournalTable)CafaJournalTable.enhance(body);
     var panel=document.createElement('aside'),heading='practice-case-heading-'+question.id;panel.id='practice-case-'+question.id;panel.className='exam-case-panel';panel.setAttribute('aria-labelledby',heading);
     if(q.sourceType==='exam'){
       question.dataset.examSource=q.examId;

@@ -70,7 +70,7 @@
     return loadScript('js/practice-upgrades.js?v=20260926-nav3');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
-    return loadScript('js/practice-case-panel.js?v=20260926-complete3');
+    return loadScript('js/practice-case-panel.js?v=20260926-columns1');
   }).then(function () {
     return loadScript('js/exams.js?v=20260926-complete3');
   }).then(function () {

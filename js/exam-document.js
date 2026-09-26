@@ -102,6 +102,7 @@
     }
     if(kind==='solution')purchaseCalculation(root);
     styledText(root,runs,kind==='solution');tables(root,kind==='solution');
+    if(window.CafaJournalTable)window.CafaJournalTable.enhance(root);
     if(kind==='solution')grading(root);
     // All supplied CAFA2 exam covers carry the Nyenrode logo; practice fixtures do not.
     if(/^cafa2-\d{8}$/.test(exam.id) && kind==='exam'){var header=document.createElement('div');header.className='exam-source-brand';var logo=document.createElement('img');logo.src='assets/nyenrode-logo.png';logo.alt='Nyenrode Business Universiteit';logo.width=262;logo.height=59;header.appendChild(logo);root.prepend(header);}
