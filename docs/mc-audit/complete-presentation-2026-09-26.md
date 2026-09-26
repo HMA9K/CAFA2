@@ -31,3 +31,12 @@ Schermen zijn gecontroleerd op 1680 × 1186, 1366 × 900 en 390 × 844. Het lapt
 De overeenkomstige eisen zijn in [SRA als openstaande taken vastgelegd](https://github.com/HMA9K/SRA/blob/main/docs/cafa2-mc-vervolgtaken-2026-09-26.md), commit `48ce102`. De SRA-applicatiecode is voor dit vervolg niet gewijzigd.
 
 Het oorspronkelijke controleverslag blijft beschikbaar in [financial-presentation-2026-09-26.md](https://github.com/HMA9K/CAFA2/blob/main/docs/mc-audit/financial-presentation-2026-09-26.md).
+
+## Publicatiebewijs
+
+- Cloudflare-publicatie `f5166940-b24c-41d0-8190-0009bab36bd9` is succesvol op [CAFA2](https://cafa2.pages.dev/).
+- Achttien live-bestanden komen overeen met het gecontroleerde publicatiepakket: index, runtimecomponenten, casuspresentatie, tabel-/documentstijlen en vier directe HTML-fallbacks. Bij HTML is uitsluitend de door Cloudflare toegevoegde analyticsbeacon buiten de vergelijking gehouden.
+- De volledige gerichte browsercontrole is op de live website geslaagd, inclusief de aanvankelijke laptopweergave van de hele matrix en de controle dat de assistentknop geen cellen bedekt. De elf opgeslagen screenshots tonen de live schermen.
+- [GitHub-validatie](https://github.com/HMA9K/CAFA2/actions/runs/36251362867) is geslaagd. De [algemene assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36251362890) is eveneens geslaagd, inclusief 108 tests, de publicatiebouw, regressietests en echte browsercontroles in Chromium en WebKit.
+- De browsercontrole accepteert zowel de lokale `index.html`-route als de schone Pages-route `/`, met dezelfde Dashboard-bestemming op dezelfde origin.
+- Controleverslag, testbestand en screenshots zijn gecontroleerd op gebruikersgegevens. De screenshots tonen Anoniem en bevatten geen ingesloten persoonlijke metadata. De aanvullende vastlegging gebruikt de bestaande projectidentiteit en het GitHub-noreplyadres.

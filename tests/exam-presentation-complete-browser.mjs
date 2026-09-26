@@ -61,7 +61,7 @@ try{
  assert.ok(await matrix.evaluate(e=>e.getBoundingClientRect().height<280),'De complete invulmatrix is compact');
  await matrix.locator('[data-stock-cell="r1-c1"]').fill('200.000');await matrix.locator('[data-stock-cell="r1-c2"]').fill('20.000');
  await page.screenshot({path:path.join(out,'exam-stock-desktop.png')});
- const dashboard=page.locator('.question-return-links a').last();await page.waitForFunction(()=>document.querySelector('.question-return-links a:last-child')?.textContent==='Dashboard');assert.ok((await dashboard.getAttribute('href')).endsWith('/index.html#dashboard'));
+ const dashboard=page.locator('.question-return-links a').last();await page.waitForFunction(()=>document.querySelector('.question-return-links a:last-child')?.textContent==='Dashboard');const destination=new URL(await dashboard.getAttribute('href'),page.url());assert.equal(destination.hash,'#dashboard');assert.equal(destination.origin,new URL(base).origin);assert.ok(['/','/index.html'].includes(destination.pathname));
  await dashboard.click();await page.waitForURL('**#dashboard');assert.ok(await page.evaluate(pos=>CafaExams.getAttempts().some(a=>a.id===pos.attempt&&a.answers['vraag-15'].stockCells['r1-c2']==='20.000'),pos));
  await page.evaluate(pos=>location.hash='tentamen/'+pos.attempt,pos);await matrix.waitFor();assert.equal(await matrix.locator('[data-stock-cell="r1-c2"]').inputValue(),'20.000');
  await page.setViewportSize({width:1366,height:900});await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));assert.ok(await matrix.evaluate(e=>e.clientWidth<=e.parentElement.clientWidth));await page.screenshot({path:path.join(out,'exam-stock-laptop.png')});
