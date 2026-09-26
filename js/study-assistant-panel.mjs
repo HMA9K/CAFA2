@@ -87,7 +87,7 @@ export function createAssistantPanel(panel){
     if(!layout?.isConnected)return;
     const v=viewport(),casePanel=primary.querySelector('.exam-case-panel:not([hidden])');
     const fraction=casePanel?(parseFloat(primary.style.getPropertyValue('--case-width'))||100/3)/100:false;
-    const metrics=panelMetrics(layout.getBoundingClientRect().width,width,fraction);
+    const metrics=panelMetrics(layout.getBoundingClientRect().width/(win.StudyScale?.get()||1),width,fraction);
     const stacked=metrics.stacked||v.w<900;
     layout.classList.toggle('is-stacked',stacked);separator.hidden=stacked;
     doc.body.classList.toggle('study-assistant-stacked',stacked&&!modal);
@@ -97,9 +97,10 @@ export function createAssistantPanel(panel){
     page?.classList.toggle('study-assistant-short-page',v.h<600);
     const footer=page?.querySelector('.question-nav')||doc.querySelector('#exam-app:not([hidden]) .exam-footer');
     const top=safeTop(v),footerHeight=!short&&!modal?(footer?.getBoundingClientRect().height||0):0;
-    const available=Math.max(100,v.h-top+v.y-footerHeight-12);
+    const scale=win.StudyScale?.get()||1;
+    const available=Math.max(100,(v.h-top+v.y-footerHeight)/scale-12);
     layout.style.setProperty('--sa-pane-height',Math.min(modal?620:680,available)+'px');
-    if(page)page.style.setProperty('--sa-page-height',Math.max(160,v.h-Math.max(top,page.getBoundingClientRect().top)+v.y-12)+'px');
+    if(page)page.style.setProperty('--sa-page-height',Math.max(160,(v.h-Math.max(top,page.getBoundingClientRect().top)+v.y)/scale-12)+'px');
     const renderedHeight=stacked?Math.min(680,available):layout.getBoundingClientRect().height;
     panel.classList.toggle('is-short',renderedHeight<500);panel.classList.toggle('is-tiny',renderedHeight<280);
     if(alignNext){alignNext=false;if(stacked)win.requestAnimationFrame(()=>{

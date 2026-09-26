@@ -33,12 +33,13 @@
   });
   document.getElementById('study-progress').textContent=count+' van '+chapters.length+' hoofdstukken begrepen. Je eerdere onderwerpmarkeringen zijn behouden.';
  }
- var font=16;try{var f=Number(localStorage.getItem('cafa2-reader-font'));if(f>=14&&f<=22)font=f;}catch(e){}
- document.body.style.setProperty('--reader-font',font+'px');
+ var font=16;try{var f=Number(localStorage.getItem('cafa2-reader-font'));if(f>=10&&f<=24)font=f;}catch(e){}
+ function applySize(){document.body.style.setProperty('--reader-font','16px');window.StudyScale.set(font,16,10,24);}
+ applySize();
  document.addEventListener('click',function(e){
   var b=e.target.closest('[data-chapter-understood]');if(b){var c=chapters.find(function(c){return c.id===b.dataset.chapterUnderstood;}),done=c.parts.every(function(id){return progress[id]===true;});c.parts.forEach(function(id){if(done)delete progress[id];else progress[id]=true;});try{localStorage.setItem(KEY,JSON.stringify(progress));}catch(error){}updateProgress();}
   var sections=e.target.closest('[data-sections]');if(sections){var page=sections.closest('[data-view]');page.querySelectorAll('.reader-section').forEach(function(d){d.open=sections.dataset.sections==='open';});}
-  var size=e.target.closest('[data-font]');if(size){font=Math.max(14,Math.min(22,font+Number(size.dataset.font)));document.body.style.setProperty('--reader-font',font+'px');try{localStorage.setItem('cafa2-reader-font',String(font));}catch(error){}}
+  var size=e.target.closest('[data-font]');if(size){font=Number(size.dataset.font)===0?16:Math.max(10,Math.min(24,font+Number(size.dataset.font)));applySize();try{localStorage.setItem('cafa2-reader-font',String(font));}catch(error){}}
   if(e.target.closest('[data-print]')){closeMenu();window.print();}
   var a=e.target.closest('a[href^="#"]');if(a){closeMenu();if(a.getAttribute('href')===location.hash)route();}
   if(menu&&menu.open&&!menu.contains(e.target))closeMenu();

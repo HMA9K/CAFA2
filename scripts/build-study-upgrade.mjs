@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import {guides,laws,examNotes,capitalFlow,lawLink,lawPage,topicAddition,noteHtml,lawRail} from '../content/study/render.mjs';
 import {orientation,orientationHtml,examRoutePage} from '../content/study/learning-route.mjs';
 const read=p=>fs.readFileSync(p,'utf8'),write=(p,s)=>fs.writeFileSync(p,s);
-const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,'').replace(/<!-- study-note:[\s\S]*?<!-- \/study-note -->/g,'');
+const clean=s=>s.replace(/<!-- study-upgrade:[\s\S]*?<!-- \/study-upgrade -->/g,'').replace(/<!-- study-note:[\s\S]*?<!-- \/study-note -->/g,'').replace(/<script src="(?:\.\.\/)?js\/page-scale\.js(?:\?[^\"]*)?"><\/script>/g,'');
 const wrap=(name,s)=>'<!-- study-upgrade:'+name+' -->'+s+'<!-- /study-upgrade -->';
 const block=(name,s)=>'<!-- study-note:'+name+' -->'+s+'<!-- /study-note -->';
 function assets(s,p=''){
@@ -14,7 +14,7 @@ function assets(s,p=''){
   s=s.replace(/css\/exam-experience\.css(?:\?v=[^"]*)?"/g,'css/exam-experience.css?v=20260924-scroll1"');
   s=s.replace(/<meta name="color-scheme" content="[^"]*">/,'<meta name="color-scheme" content="light dark">');
   s=s.replace('</head>',wrap('styles','<link rel="stylesheet" href="'+p+'css/study-ui.css?v=20260924-resultnav1"><link rel="stylesheet" href="'+p+'css/study-dark.css?v='+(opgavePage?'20260924-opgaven1':'20260922-2')+'"><link rel="stylesheet" href="'+p+'css/study-refinement.css?v=20260922-2"><link rel="stylesheet" href="'+p+'css/law-book.css?v=20260924-lawbook1"><link rel="stylesheet" href="'+p+'css/calculator.css?v=20260924-history1"><link rel="stylesheet" href="'+p+'css/study-clarity.css?v=20260926-hometools2">')+'</head>');
-  s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
+  s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/page-scale.js?v=20260926-1"></script><script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
   const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260926-nav3"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/law-book.js?v=20260924-lawbook1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
   else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260924-history1"></script>')+'</head>');

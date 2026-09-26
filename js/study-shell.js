@@ -113,7 +113,7 @@
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
     bar.hidden=false;
-    document.documentElement.style.setProperty('--study-return-h',bar.getBoundingClientRect().height+'px');
+    document.documentElement.style.setProperty('--study-return-h',bar.offsetHeight+'px');
   }
   function scheduleUpdate() {
     if(scheduled)return;scheduled=true;
@@ -149,7 +149,7 @@
         var mainPath=/\/(?:index(?:\.html)?)?$/.test(path)?'':(/\/fallback\//.test(path)?'../':'')+'index.html';
         questionLinks.innerHTML='<a href="'+mainPath+'#start">Home</a><a href="'+mainPath+'#oefenen">Onderwerpen</a>';
         bar.append(back,originButton,questionLinks);header.after(bar);
-        function measure(){document.documentElement.style.setProperty('--study-top-h',header.getBoundingClientRect().height+'px');}
+        function measure(){document.documentElement.style.setProperty('--study-top-h',header.offsetHeight+'px');}
         if(window.ResizeObserver)new ResizeObserver(measure).observe(header);measure();}
     }
     var tabs=document.querySelector('.reader-tabs');

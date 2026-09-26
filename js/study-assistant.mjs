@@ -49,7 +49,7 @@ function placeLauncher() {
     ? doc.querySelector('#exam-app .exam-footer') : null;
   if(footer!==measuredFooter){if(measuredFooter)footerResize?.unobserve(measuredFooter);measuredFooter=footer;if(footer)footerResize?.observe(footer);}
   const top=footer?.getBoundingClientRect().top;
-  const clearance=Number.isFinite(top)?Math.max(0,Math.ceil(innerHeight-top+12)):0;
+  const clearance=Number.isFinite(top)?Math.max(0,Math.ceil((innerHeight-top)/(window.StudyScale?.get()||1)+12)):0;
   button.style.setProperty('--sa-footer-clearance',`${clearance}px`);
 }
 function queuePlacement(){if(placementQueued)return;placementQueued=true;requestAnimationFrame(()=>{placementQueued=false;placeLauncher();});}
