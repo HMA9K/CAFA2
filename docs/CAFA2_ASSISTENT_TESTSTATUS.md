@@ -4,10 +4,10 @@ Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) 
 
 ## Rechter assistentkolom, 26 september 2026
 
-**Lokaal gereed; publicatie en live controle volgen na de codepush.** De eerdere zwevende bediening is op verzoek vervangen door een eigen rechterkolom met verticale schuifrand. Deze statussectie vervangt de vensterbediening hieronder.
+**Gepubliceerd en live gecontroleerd op [cafa2.pages.dev](https://cafa2.pages.dev).** Code [`1c26ad6`](https://github.com/HMA9K/CAFA2/commit/1c26ad6f4b37292bf00cd9dce48d6ffacc2decd5), Cloudflare-deployment `dd614229-2f43-4fdc-a8e9-38c11dd989c7`, geslaagd. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36237658210) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36237658215) zijn geslaagd. De eerdere zwevende bediening is op verzoek vervangen door een eigen rechterkolom met verticale schuifrand. Deze statussectie vervangt de vensterbediening hieronder.
 
 - 108 Node-tests geslaagd, waaronder vijf kolomproeven voor standaardbreedte, minimale vraagruimte, brede casus, tijdelijk klein scherm en ongeldige opgeslagen voorkeuren. Twee presentatie-extractietests geslaagd.
-- Integratie-dry-run zonder wijzigingen, build en deploycontrole geslaagd: 247 oefenvragen, 285 tentamenrecords inclusief drie demo's, 135 publieke bestanden en vier Functions. De tien bestaande regressiescripts slagen, ook na het meenemen van de recente naslagtegelwijziging `9587e9c`. JSDOM blijft lokaal niet geïnstalleerd; echte routes worden in de browser beproefd.
+- Integratie-dry-run zonder wijzigingen, build en deploycontrole geslaagd: 247 oefenvragen, 285 tentamenrecords inclusief drie demo's, 135 publieke bestanden en vier Functions. De tien bestaande regressiescripts slagen, ook na het meenemen van de recente naslagtegelwijzigingen `9587e9c` en `d6b4d97`. JSDOM blijft lokaal niet geïnstalleerd; echte routes worden in de browser beproefd.
 - 150 Chromium- en 150 WebKit-controles geslaagd, zonder JavaScript-runtimefouten. De bestaande routeproeven blijven behouden: alle twaalf oefenvraagtypen, elf tentamens, eigen antwoorden, journaalposten, voorraadtabellen, historische inzage, antwoordvensters, vertraagde antwoorden en timers.
 - Nieuwe browserregressies controleren drie kolommen, een casus op 60%, tabletstapeling, geen overlap met kop/footer, stabiele logininvoer, verborgen launcher bij open chat, slepen en pijltoetsen, sluiten/heropenen, herladen, breedtevoorkeuren en werken met de echte rekenmachineknoppen.
 - Mobiele invoer is met hit-tests gecontroleerd op 320 × 740, 390 × 844, 430 × 932 en 740 × 390. De vaste ondernavigatie bedekte aanvankelijk de invoer; de openingspositie is hersteld. Een afzonderlijke gridrij voor de invoer voorkomt afsnijden wanneer de compacte contextkop wegvalt.
@@ -15,7 +15,16 @@ Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) 
 - De vakadapter, casuscode, rekenmachinecode, vraaginhoud, opslag, scores en timers zijn niet gewijzigd. Alleen de gekozen paneelbreedte wordt apart opgeslagen.
 - Alle chatreacties in deze UI-ronde zijn gesimuleerd; nul echte modelaanroepen. Dit geeft geen nieuw bewijs voor modelkwaliteit. De eerdere bronselectie en koelcellenbeperking blijven van toepassing.
 
-Lokale bewijsbestanden staan buiten Git onder `CAFA2-assistant-sources/qa-20260926-column`, met afzonderlijke rapporten en screenshots per browser. Publicatiebewijs en Actions-links worden na controle toegevoegd.
+Lokale bewijsbestanden staan buiten Git onder `CAFA2-assistant-sources/qa-20260926-column`, met afzonderlijke rapporten en screenshots per browser. Alle assistentjobstappen zijn bekeken en geslaagd, inclusief de beide browserproeven op de uiteindelijke gecombineerde code.
+
+### Live controle van de kolom
+
+- De echte oefenpagina reserveert ruimte rechts: de vraag eindigt op x 835, de assistent begint op x 849. Het paneel begint direct onder de vraagkop (y 264,9) en eindigt boven de ondernavigatie (y 637 versus footer y 638), gemeten bij 1280 × 720.
+- Pijl Links vergroot de kolom van 418 naar 481 pixels; Home herstelt 418. De echte rekenmachineknoppen berekenen 4 + 5 = 9 terwijl de assistent open blijft; de eerdere geschiedenis blijft zichtbaar.
+- Donkere mobiele oefenpagina op 390 × 844 visueel gecontroleerd. Hit-test bevestigt bereikbare chatinvoer. Bij 390 × 260 blijft de composer binnen het scherm (bottom 253,2) en is de invoer bereikbaar. Tijdelijke viewportinstelling daarna hersteld. Dit is geen fysieke telefoonproef.
+- De drie gepubliceerde paneelbestanden geven HTTP 200 en zijn met SHA-256 gelijk aan lokaal: `js/study-assistant-panel.mjs`, `js/study-assistant.mjs`, `css/study-assistant.css`. De HTML laadt cacheversie `20260926-dock1`.
+- Statusroute HTTP 200 met `ready: true` en alle drie kennisvlaggen aan. De gelezen publicatielog bevestigt 135 publieke bestanden, vier Functions, 38 voltooide koppelingen, 115 bronnen, `added: 0`, `failed: 0`, `pending: 0`.
+- Geen nieuwe instelling of secret nodig, geen secrets gelezen of gewijzigd en geen echte modelverzoeken gedaan voor deze UI-controle.
 
 ## Eerder: zwevend en aanpasbaar venster, 26 september 2026
 

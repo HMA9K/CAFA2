@@ -12,7 +12,7 @@ Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
 - Op kleine schermen staan assistent en vraag onder elkaar. De chatinvoer houdt ruimte voor de bovenbalk en de navigatie. Bij een kort scherm wordt de chatbediening compacter en staat de navigatie in de gewone paginastroom.
 - De rekenmachine blijft als apart zwevend venster bruikbaar. Haar eigen verplaatsing en formaatbediening blijven behouden.
 
-Deze indeling vervangt de eerdere zwevende assistent. Er is geen nieuwe instelling of secret nodig. Publicatie en browserbewijs worden vastgelegd in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
+Deze indeling vervangt de eerdere zwevende assistent. De indeling staat live op [cafa2.pages.dev](https://cafa2.pages.dev), code `1c26ad6`, deployment `dd614229-2f43-4fdc-a8e9-38c11dd989c7`. Beide Actions-workflows en de live browsercontrole zijn geslaagd. Er is geen nieuwe instelling of secret nodig. Vernieuw de pagina om de nieuwe indeling te laden. Zie [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor het bewijs.
 
 ## Actueel: assistent actief op de gewone site
 

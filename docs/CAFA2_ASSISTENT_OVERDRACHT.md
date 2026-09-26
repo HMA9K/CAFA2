@@ -12,6 +12,8 @@ De kolomlogica staat afzonderlijk in `js/study-assistant-panel.mjs`. De bestaand
 
 Nieuwe browserregressies bewaken het behoud van de logininvoer bij het monteren, verbergen van de launcher tijdens chatten, drie kolommen met een brede casus, bereikbare mobiele chatinvoer, sluiten en herstel van ruimte, breedtevoorkeuren en rekenmachinegebruik. Antwoorden in deze UI-proeven zijn gesimuleerd. Een fysieke telefoon met werkelijk geopend toetsenbord blijft een aparte controle. Zie [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md) voor uitgevoerde proeven en publicatiebewijs.
 
+De rechterkolom is gepubliceerd op [cafa2.pages.dev](https://cafa2.pages.dev). Code [`1c26ad6`](https://github.com/HMA9K/CAFA2/commit/1c26ad6f4b37292bf00cd9dce48d6ffacc2decd5), Cloudflare-deployment `dd614229-2f43-4fdc-a8e9-38c11dd989c7`, geslaagd. [Assistentcontrole](https://github.com/HMA9K/CAFA2/actions/runs/36237658210) en [bestaande validatie](https://github.com/HMA9K/CAFA2/actions/runs/36237658215) zijn geslaagd. Lokaal en in CI slagen 108 Node-tests, twee extractietests, de bestaande regressies en 150 browsercontroles per browser. De live proef bevestigt de rechterkolom, breedtebediening, rekenmachine en bereikbare mobiele invoer. Voor deze wijziging ontbreekt geen configuratie. De recente naslagtegelwijzigingen zijn behouden.
+
 De volgende venstersectie is historisch; de schuifrand van de rechterkolom vervangt de zwevende bediening.
 
 ## Eerder: zwevend assistentvenster, 26 september 2026
