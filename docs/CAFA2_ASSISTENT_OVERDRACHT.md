@@ -1,12 +1,14 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-26.4. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-26.5. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
 ## Antwoordopmaak
 
 De assistent krijgt expliciet de opdracht om leesbare Markdown te gebruiken: korte kopjes, vet voor kernpunten en uitkomsten, cursief voor toelichting, opsommingen, genummerde stappen en rekentabellen. Korte hints blijven kort. Een langere antwoordcontrole kan relevante onderdelen zoals conclusie, berekening, controle en puntenbeoordeling krijgen; deze onderdelen zijn niet verplicht voor iedere vraag.
 
 De weergave ondersteunt echte lijststructuren met behoud van het beginpunt van de nummering, geneste vet/cursief-opmaak, toelichtingsblokken en codefragmenten. Tabellen en bestaande journaalposten zonder scheidingsregel blijven werken. HTML en afbeeldingen worden als tekst behandeld. De oorspronkelijke antwoordtekst blijft bewaard; de opmaak verandert geen vraaginhoud, opgeslagen antwoord, score of timer. Eerdere antwoorden zonder Markdown-markeringen worden niet automatisch herschreven.
+
+De opmaak staat live op [cafa2.pages.dev](https://cafa2.pages.dev), code `2cdc76a`, geslaagde Cloudflare-deployment `bb04aaa2-cb8b-44e1-963e-3a31a1c992bf`. Live assets zijn gelijk aan lokaal en de statusroute is gereed. 113 Node-tests, dertien regressiescripts, twee extractietests en 322 browsercontroles (161 Chromium, 161 WebKit) slagen in GitHub Actions. Opmaakantwoorden zijn gesimuleerd; er is geen nieuwe echte modelkwaliteitsproef uitgevoerd. Geen aanvullende instelling, secret of bronbestand nodig. Volledige bewijsverwijzingen staan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
 
 ## Aanvulling: knop Kijk mijn antwoord na
 
