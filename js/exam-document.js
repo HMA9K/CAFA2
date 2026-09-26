@@ -55,6 +55,11 @@
     });
   }
   function render(exam,kind,html,plain){
+    if(kind==='case'){
+      var section=(exam.sections||[]).find(function(s){return s.contentHtml===html;});
+      var presentation=section&&(window.CAFA2_CASE_PRESENTATION||{})[exam.id];
+      if(presentation&&presentation[section.id])html=presentation[section.id].html;
+    }
     var root=document.createElement('div');root.className='exam-document exam-source-document exam-source-'+kind;
     root.innerHTML=html?Editor.sanitize(html):'<p>'+escape(plain)+'</p>';
     var formats=(window.CAFA2_SOURCE_FORMAT||{})[exam.id],runs=formats&&(formats[kind==='solution'?'solution':'exam'])||[];

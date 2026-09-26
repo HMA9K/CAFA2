@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parent.parent
 CONFIG=json.loads((ROOT/'content/practice/exam-structure-overrides.json').read_text(encoding='utf-8'))
+for key,entry in json.loads((ROOT/'content/practice/exam-financial-presentation.json').read_text(encoding='utf-8')).items():
+    CONFIG[key]={**CONFIG.get(key,{}),**entry}
 AMOUNT=re.compile(r'(?<![\d.,])(?:[€£$][ \t]*)?[+−-]?[ \t]*(?:\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?|\d+(?:,\d{1,2})?)(?![\d.])')
 
 def table(headers,rows,caption=''):
@@ -114,11 +116,11 @@ def structured_pre(text,journal=False):
             # Stop before any grade printed after the last monetary value.
             trailing=raw[amounts[-1].end():].strip()
             if trailing and re.search(r'[A-Za-z]',trailing):amounts=[]
-        if amounts and re.match(r'^\d{2}-\d{2}-\d{4}|^(?:Toe/?afname|Toename|Afname|Mutatie)',line,re.I) and len(amounts)>=5:
+        if amounts and not journal and re.match(r'^(?:Toe/?afname|Toename|Afname|Mutatie)|^\d{2}-\d{2}-\d{4}',line,re.I) and len(amounts)>=5 and 'intercompany' in text.lower():
             if headers and len(headers)!=6:flush()
             headers=['Datum','Voorraad / actief','Niet-gerealiseerde intercompanywinst','Interne correctie','Eliminatie aandeel derden','Eliminatie geconsolideerd resultaat']
             label=raw[:amounts[-5].start()].strip();rows.append([label]+[m[0].strip() for m in amounts[-5:]]);continue
-        if amounts and (journal or re.search(r'\s{2,}(?:[€£$]|[+−-]?\d)',raw)):
+        if amounts and journal:
             if journal:
                 if headers and len(headers)!=3:flush()
                 headers=['Omschrijving grootboekrekening','Debet','Credit']
@@ -128,18 +130,6 @@ def structured_pre(text,journal=False):
                 credit=bool(re.match(r'^(?:Aan\b|Cr[ -]|C\s|\d+(?:[.]{2,}|[ ]+)[ ]*(?:Aan\b))',label,re.I))
                 label=re.sub(r'^(?:D[ -]|Cr[ -]|[DC]\s+)','',label,flags=re.I).strip()
                 rows.append([label,'' if credit else value,value if credit else ''])
-            else:
-                # Keep the number of financial columns aligned; descriptions may contain calculations.
-                money=[m for m in amounts if m.start()>1]
-                if not money:flush();out.append('<p>'+escape(line)+'</p>');continue
-                last=money[-1];start=last.start();values=[last[0].strip()]
-                for prev in reversed(money[:-1]):
-                    if raw[prev.end():start].strip():break
-                    values.insert(0,prev[0].strip());start=prev.start()
-                label=raw[:start].strip()
-                wanted=['Omschrijving']+(['Bedrag'] if len(values)==1 else ['Bedrag '+str(i+1) for i in range(len(values))])
-                if headers and len(headers)!=len(wanted):flush()
-                headers=wanted;rows.append([label]+values)
             continue
         if journal and re.match(r'^(?:Aan\s+|Cr[ -])',line,re.I) and not amounts:pending=line;continue
         if journal and rows:

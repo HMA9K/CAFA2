@@ -20,6 +20,10 @@
 .practice-answer-table thead th{background:var(--study-wash,#f2f4f7);text-align:left;white-space:normal;line-height:1.45}
 .practice-answer-table td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .practice-answer-table td:first-child{min-width:220px;white-space:normal;line-height:1.5}
+.exam-case-panel .practice-answer-table{min-width:0}
+.exam-case-panel .practice-answer-table td{white-space:normal;text-align:left}
+.exam-case-panel .practice-answer-table td:first-child{min-width:0}
+.exam-case-panel .practice-answer-table td.exam-number{text-align:right;white-space:nowrap}
 .practice-question-page .practice-rich-answer{min-width:0;max-width:100%}
 .practice-question-page .journal-scroll,.practice-question-page .stock-scroll{max-width:100%}
 .practice-question-page .journal-table input{background:var(--study-surface,#fff);color:var(--study-ink,#17374e)}

@@ -1,5 +1,5 @@
 """MC counterparts from the already transcribed exam catalogue. No PDF scanning."""
-import json, re, subprocess, os, shutil
+import json, re, subprocess, os, shutil, hashlib
 from pathlib import Path
 from bs4 import BeautifulSoup
 from html import escape
@@ -110,6 +110,9 @@ records=[];missing=[]
 for exam in exams:
     for q in exam['questions']:
         key=exam['id']+'/'+q['id'];section=next(s for s in exam['sections'] if s['id']==q['sectionId'])
+        expected=CONFIG.get(key,{}).get('sourceSha256')
+        if expected and expected!=hashlib.sha256(q['solutionHtml'].encode()).hexdigest():
+            raise ValueError('Financiële kolomindeling vraagt broncontrole: '+key)
         tasks=prompt_parts(q,key)
         try:solutions=solution_parts(q,key,len(tasks))
         except ValueError as err:missing.append(key);print(err);continue
