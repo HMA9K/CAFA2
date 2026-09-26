@@ -6,7 +6,7 @@ Versie 2026-09-26.4. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.
 
 De startersknop **Kijk mijn antwoord na** vult de chatbalk met een controleverzoek, inclusief puntenbeoordeling. De tekst kan worden aangepast. Alleen **Versturen** verzendt de tekst, met het dan actuele eigen antwoord en de bestaande vraagcontext. Inloggen en toestemming blijven nodig. Er is geen standwissel of inlevering nodig; opgeslagen antwoord en score blijven behouden. De puntenbeoordeling is feedback in de chat en wordt niet als toetsresultaat opgeslagen.
 
-De knop staat live op [cafa2.pages.dev](https://cafa2.pages.dev), met code `cf2cd37` en deployment `4ac20858-1d4c-4639-85f2-dcdd14c20c62`. De bijbehorende controles en de correctie van de bestaande UI-nulmeting staan bovenaan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). Geen aanvullende configuratie nodig.
+Het bewerkbare nakijkconcept staat live op [cafa2.pages.dev](https://cafa2.pages.dev), code `e72f2c3`, deployment `3442ae5e-ac21-4396-83e2-4acc9fb3dc19`. De live browser bevestigt de nieuwe puntenprompt in de invoer. De controles staan bovenaan in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md). Geen aanvullende configuratie nodig.
 
 ## Actueel: assistent in een rechterkolom, 26 september 2026
 
