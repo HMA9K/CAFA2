@@ -1,0 +1,53 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {root} from '../scripts/exam-practice-source.mjs';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.CAFA_PLAYWRIGHT_PATH||'playwright');
+const base=process.env.CAFA_LIVE_URL||'https://cafa2.pages.dev',out=path.join(root,'docs/mc-audit/qa-exam-practice');
+const browser=await chromium.launch({headless:true,...(process.env.CAFA_CHROMIUM_PATH?{executablePath:process.env.CAFA_CHROMIUM_PATH}:{})});
+try{
+ const page=await browser.newPage({viewport:{width:1366,height:950}}),errors=[];page.on('pageerror',e=>errors.push(String(e)));page.setDefaultTimeout(30000);
+ await page.goto(base+'/index.html#oefenen');await page.waitForFunction(()=>window.CafaFeedback&&window.CafaPractice);
+ assert.equal(await page.locator('.question[data-code]').count(),627);
+ const ids=await page.evaluate(()=>{
+  const all=Object.values(CAFA2_DATA.modules).flatMap(b=>b.questions);
+  const uid=q=>q.code+'-'+q.id;
+  const stock=all.find(q=>q.sourceKey==='cafa2-20210419/vraag-19'),journal=all.find(q=>q.sourceKey==='cafa2-20210419/vraag-21'&&q.part==='a');
+  return {stock:uid(stock),journal:uid(journal),correct:journal.correct};
+ });
+ await page.evaluate(id=>location.hash=id,ids.stock);let q=page.locator('.question:target');await q.locator('.practice-case-layout').waitFor();
+ assert.equal(await q.locator('.mc-area .option table').count(),4);assert.equal(await q.locator('.mc-area pre').count(),0);
+ await q.locator('label[for="own-'+ids.stock+'"]').click();await q.locator('[data-stock-cell="r0-c1"]').fill('260.000');
+ await q.locator('[data-stock-cell="r0-c2"]').fill('78.000');
+ await page.evaluate(id=>location.hash=id,ids.journal);q=page.locator('.question:target');
+ await q.locator('label[for="own-'+ids.journal+'"]').click();await q.locator('[data-journal-row="0"][data-journal-col="0"]').fill('Resultaat boekjaar');
+ await q.locator('[data-journal-row="0"][data-journal-col="1"]').fill('80.000');
+ await q.locator('[data-journal-row="0"][data-journal-col="3"]').fill('Jaarlijkse afschrijving goodwill');
+ await page.reload();await page.waitForFunction(()=>window.CafaFeedback);q=page.locator('.question:target');
+ assert.equal(await q.locator('[data-journal-row="0"][data-journal-col="3"]').inputValue(),'Jaarlijkse afschrijving goodwill');
+ await q.locator('label[for="mc-'+ids.journal+'"]').click();await q.locator('.option[data-option="'+ids.correct+'"]').click();
+ await q.locator('.cafa-check-controls button').first().click();await q.locator('.mc-area .feedback-pattern summary').click();
+ const pattern=await q.locator('.mc-area .feedback-pattern').textContent();
+ assert.match(pattern,/Herken de vraag:.*goodwill/s);assert.match(pattern,/cumulatieve balanscorrectie/);assert.match(pattern,/Vorm van het antwoord:.*debet- en creditbedragen/s);assert.match(pattern,/alleen onderdeel a/);
+ await q.locator('.qbody').evaluate(el=>{const pattern=el.querySelector('.mc-area .feedback-pattern');el.scrollTop=pattern.offsetTop-el.offsetTop-30;});
+ await page.screenshot({path:path.join(out,'question-pattern-desktop.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.screenshot({path:path.join(out,'question-pattern-mobile.png'),fullPage:true});
+ await page.evaluate(()=>CafaTheme.setMode('dark'));
+ const contrast=await q.locator('.mc-area .option table th').first().evaluate(el=>{
+  const style=getComputedStyle(el),rgb=s=>s.match(/[\d.]+/g).slice(0,3).map(Number);
+  const lum=c=>c.map(v=>v/255).map(v=>v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[0.2126,0.7152,0.0722][i],0);
+  const a=lum(rgb(style.color)),b=lum(rgb(style.backgroundColor));return (Math.max(a,b)+0.05)/(Math.min(a,b)+0.05);
+ });assert.ok(contrast>=4.5,'Tabelkop heeft leesbaar contrast in donkere modus: '+contrast);
+ await page.screenshot({path:path.join(out,'question-pattern-mobile-dark.png'),fullPage:true});
+ await page.evaluate(id=>location.hash=id,ids.stock);q=page.locator('.question:target');
+ assert.equal(await q.locator('[data-stock-cell="r0-c2"]').inputValue(),'78.000');
+ await page.screenshot({path:path.join(out,'stock-input-mobile-dark.png'),fullPage:true});
+ await page.evaluate(()=>location.hash='nvw-6');q=page.locator('.question:target');await q.locator('label[for="own-nvw-6"]').click();
+ assert.equal(await q.locator('.stock-matrix').count(),1,'Ook de syllabusvoorraadtabel heeft gestructureerde invoer');
+ await q.locator('[data-stock-cell="r1-c2"]').fill('30.000');
+ assert.equal(await page.evaluate(()=>CafaPractice.getAnswer('nvw',6).stockCells['r1-c2']),'30.000');
+ assert.equal(errors.length,0,errors.join('\n'));
+ console.log('Livecontrole geslaagd: 627 vragen, echte MC-tabellen, stock/journal-invoer, toelichting en herladen, vraaggerichte patroonherkenning, syllabusmatrix en mobiel/donker.');
+}finally{await browser.close();}

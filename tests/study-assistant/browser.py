@@ -116,7 +116,8 @@ try:
       for(const [code,bank] of Object.entries(CAFA2_DATA.modules))
         for(const q of bank.questions)if(!seen.has(q.type))seen.set(q.type,{type:q.type,code,id:q.id});
       return [...seen.values()]; }''')
-    check('All twelve named practice question types are present',len(type_samples)==12)
+    expected_types={'Theorie','Rekenvraag','Journaalpost','Berekening','Methodekeuze','Vergelijking','Herkenning','Foutdiagnose','Afweging','Begrip','Controleberekening','Voorraadtabel'}
+    check('All original practice question types remain present alongside new exam types',expected_types <= {sample['type'] for sample in type_samples})
     for sample in type_samples:
       visit('#'+sample['code']+'-'+str(sample['id']))
       current_ref(sample['code'],sample['id'],'practice')
@@ -133,12 +134,12 @@ try:
     page.locator('#kap-1 .cae-content').fill('Mijn eigen berekening: 125.000 euro.')
     send('Vergelijk mijn eigen antwoord.')
     check('Current own text is sent from the practice editor','125.000' in requests[-1]['studentAnswer']['text'])
-    journal_id=page.evaluate('document.querySelector(".question .entry-table")?.closest(".question")?.dataset.q')
+    journal_id=page.evaluate('String(CAFA2_DATA.modules.kap.questions.find(q=>q.type==="Journaalpost").id)')
     check('Real practice journal editor exists',bool(journal_id))
     visit('#kap-'+journal_id);page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag '+journal_id+'")')
     page.locator('label[for="own-kap-'+journal_id+'"]').click()
-    page.locator('#kap-'+journal_id+' .entry-table tbody tr:first-child input').nth(0).fill('Deelneming')
-    page.locator('#kap-'+journal_id+' .entry-table tbody tr:first-child input').nth(1).fill('125000')
+    page.locator('#kap-'+journal_id+' [data-journal-row="0"][data-journal-col="0"]').fill('Deelneming')
+    page.locator('#kap-'+journal_id+' [data-journal-row="0"][data-journal-col="1"]').fill('125000')
     send('Controleer mijn journaalpost.')
     check('Practice journal row and debit amount reach the model',requests[-1]['studentAnswer']['rows'][0][:2]==['Deelneming','125000'])
 
