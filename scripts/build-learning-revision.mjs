@@ -79,12 +79,14 @@ function cases(code,q){
 function renderCases(q){if(!q.caseTables?.length)return '';return '<section class="learning-case" aria-labelledby="case-'+q._code+'-'+q.id+'"><h3 id="case-'+q._code+'-'+q.id+'">Casustabel bij deze vraag</h3>'+q.caseTables.map(t=>(t.note?'<p class="learning-case-note">'+esc(t.note)+'</p>':'')+table(t.headers,t.rows,t.caption||'Casusgegevens')).join('')+'</section>';}
 function renderPanel(q,m,prefix){const g=q.guidance;return '<details class="theory-panel" data-guidance-id="'+q._code+'-'+q.id+'"><summary><span class="theory-icon" aria-hidden="true">i</span><span>Basisregels bij deze vraag</span><span class="theory-chevron" aria-hidden="true"></span></summary><div class="theory-content"><h3>'+esc(g.title)+'</h3><p>'+esc(g.rules)+'</p><details class="theory-sources"><summary>Bronnen bij deze basisregels</summary><p class="theory-source">'+(q.refs||[]).map(r=>esc(m.sources[r]?.label||r)).join('<br>')+'</p></details><a class="theory-link" href="'+prefix+'samenvatting.html#'+esc(g.lesson)+'">Lees de bijbehorende uitleg</a></div></details>';}
 function replaceQuestionChunk(chunk,q,m,prefix){
-  chunk=chunk.replace(/<details class="theory-panel"[\s\S]*?<\/details>/g,'');
   const body=/<div class="qbody(?: has-theory-panel)?">/.exec(chunk);
-  const task=chunk.indexOf('<p class="task">');const end=chunk.indexOf('</p>',task)+4;
-  if(!body||task<0||end<4)throw Error('Onbekend vraagfragment '+q._code+'-'+q.id);
+  const source=chunk.indexOf('<details class="source">');
+  if(!body||source<body.index)throw Error('Onbekend vraagfragment '+q._code+'-'+q.id);
   const before='<div class="qbody has-theory-panel"><h2 class="qtitle">'+esc(q.title)+'</h2><p class="intro">'+esc(q.intro||'Zelfstandige casus voor deze vraag.')+'</p><dl class="facts">'+(q.facts||[]).map(([a,b])=>'<div class="fact"><dt>'+esc(a)+'</dt><dd>'+esc(b)+'</dd></div>').join('')+'</dl>'+renderCases(q)+'<p class="task">'+esc(q.task)+'</p>'+renderPanel(q,m,prefix);
-  chunk=chunk.slice(0,body.index)+before+chunk.slice(end);
+  // Replace the complete introduction up to the source block. The guidance
+  // contains nested details; removing it with a non-nested regex left closing
+  // tags behind and moved the answer controls outside their scrolling body.
+  chunk=chunk.slice(0,body.index)+before+chunk.slice(source);
   let matches=0;chunk=chunk.replace(/<div class="pattern(?: learning-pattern)?"><b>(?:Patroonherkenning|Herken het patroon)<\/b>[\s\S]*?<\/div>/g,()=>{matches++;return '<div class="pattern learning-pattern"><b>Patroonherkenning</b>'+q.guidance.pattern.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div>';});
   if(!matches)throw Error('Patroonherkenning ontbreekt in '+q._code+'-'+q.id);
   return chunk;

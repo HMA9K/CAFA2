@@ -3878,7 +3878,7 @@ window.CAFA2_DATA.modules["val"]={
         "Controle boekwaarde: 80% × (USD 600.000 + USD 96.000 − USD 30.000) × € 0,930 = € 495.504.",
         "Controle via verloop: begin € 432.000 + resultaat € 70.272 + reserve € 15.264 − dividend € 22.032 = € 495.504."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "corona",
         "t24close",
@@ -3900,7 +3900,7 @@ window.CAFA2_DATA.modules["val"]={
         "rules": "Maak een volledig verloop van de deelneming: beginwaarde, winstaandeel, dividend en aandeel in het omrekeningsverschil. Het winstaandeel volgt de resultaatkoers, het dividend de uitkeringskoers en de eindwaarde de slotkoers. Het verschil dat de aansluiting sluit is de reserve-mutatie, niet extra winst. Controleer dit met 80% van het eindvermogen tegen slotkoers.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Let op de beslissende gegevens: Bepaal wie het dividend betaalt en ontvangt, op welk belang het bedrag betrekking heeft en of het dividend al in de boekwaarde of het resultaat is verwerkt. De waarderingsgrondslag bepaalt of dividend de deelneming vermindert of een opbrengst vormt.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },

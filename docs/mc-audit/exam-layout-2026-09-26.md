@@ -30,6 +30,8 @@ De bestaande regressietests en 108 assistenttests zijn geslaagd. De broncontrole
 
 Browsercontrole: echte MC-tabellen; invulbare voorraad en journaalpost met toelichting en extra rij; behoud na herladen; migratie van oude antwoorden en beoordeling; eerdere deeluitkomsten; bronfilter; casus slepen en toetsenbord; desktop/mobiel en donker. Screenshots staan in `docs/mc-audit/qa-exam-practice/`. Publicatie en live-controle worden na uitrol hieronder vastgelegd.
 
+De studieassistent plaatst het volledige casus/vraagpaneel naast zijn eigen bediening. Ook de syllabusvoorraadtabel is daarmee bruikbaar. De leerbouw vervangt de volledige introductie tot het bronblok: een eerdere reguliere expressie verwijderde geneste basisregels onvolledig, waardoor antwoordvelden buiten het vraaglichaam kwamen. Een regressiecontrole verifieert voor alle 120 oorspronkelijke oefeningen, zowel in fragmenten als HTML-fallbacks, dat bronnen en antwoordvelden binnen het vraaglichaam blijven.
+
 Herbouw: installeer `requirements-practice.txt`, voer `scripts/author-exam-structure.py`, `scripts/author-exam-text-options.py` en `scripts/build-exam-practice.py` uit. Daarna `npm run build:practice` en `npm run build:assistant`. `scripts/question-pattern.mjs` verzorgt herkenningsuitleg in de bestaande leerbouw, syllabusaanvullingen en tentamenoefeningen. Wijzigingen aan transcripties en nieuwe onderdeelregels vragen broncontrole.
 
 De overeenkomstige SRA-punten blijven openstaand en zijn aan de [SRA-takenlijst](https://github.com/HMA9K/SRA/blob/main/docs/cafa2-mc-vervolgtaken-2026-09-26.md) toegevoegd, commit `f6c7a99c9fc829be6a96fa9e951da888115129cc`.

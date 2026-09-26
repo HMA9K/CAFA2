@@ -231,7 +231,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De kapitaalverschaffing dient duurzaam de eigen werkzaamheid en geschiedt voor eigen rekening. Een belang onder 20% kan dus een deelneming zijn."
       ],
-      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "qual"
       ],
@@ -248,7 +248,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Bij minder dan 20% bestaat niet het wettelijke vermoeden van een deelneming. Een deelneming kan echter wel aanwezig zijn wanneer de vier kwalitatieve criteria van artikel 2:24c lid 1 BW zijn vervuld. Kijk daarom naar de duurzame samenwerking en de betekenis voor de eigen bedrijfsactiviteiten; het percentage alleen geeft geen afdoende antwoord.",
         "pattern": [
           "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
@@ -293,7 +293,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Zowel duurzame verbondenheid als dienstbaarheid aan de eigen werkzaamheid ontbreekt. De officiële Rosen-uitwerking kwalificeert de vergelijkbare situatie als kortlopende belegging."
       ],
-      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "qual",
         "rosen"
@@ -310,7 +310,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "De bedoeling bij het aanhouden van een belang is relevant voor de kwalificatie. Een belang dat uitsluitend tijdelijk voor verkoopwinst wordt gehouden, voldoet niet zonder meer aan duurzame verbondenheid ten dienste van de eigen werkzaamheid. Onderscheid de kwalificatie belegging van de daaropvolgende keuze van waarderingsgrondslag.",
         "pattern": [
           "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
@@ -475,7 +475,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De uitkomst is precies 50%. De hoofdregel van art. 2:24a lid 1 onder a vereist meer dan 50%. Een andere grond voor een dochterrelatie is niet gegeven."
       ],
-      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de aard van het kapitaalbelang. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de aard van het kapitaalbelang. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "daughter",
         "rosen"
@@ -493,7 +493,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Tel de stemrechten op die de rechtspersoon zelf en via toepasselijke overeenkomsten kan uitoefenen. Voor artikel 2:24a lid 1 onderdeel a BW moet dit meer dan de helft zijn. Precies de helft voldoet niet. Een afzonderlijk recht om de meerderheid van bestuurders of commissarissen te benoemen of ontslaan kan tot een andere beoordeling leiden, maar mag niet zonder casusinformatie worden aangenomen.",
         "pattern": [
           "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de aard van het kapitaalbelang. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
@@ -724,7 +724,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Sluis is een dochter van Merwede. Daardoor worden haar 27% stemrechten in Veer volledig bij Merwedes 28% opgeteld."
       ],
-      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "daughter"
       ],
@@ -741,7 +741,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Stel eerst vast dat Sluis een dochtermaatschappij is. Voor de moeder-dochtertoets worden vervolgens de door Sluis gehouden stemrechten in Veer volledig opgeteld bij de rechtstreeks door Merwede gehouden stemmen. Je vermenigvuldigt deze stemmen niet met het kapitaalbelang van Merwede in Sluis. Een economisch winstaandeel volgt een andere berekening.",
         "pattern": [
           "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
@@ -2680,7 +2680,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "Totaal 600 stemmen; Merwede beschikt over 320 stemmen. Het percentage is 53,33%, dus meer dan 50%."
       ],
-      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
+      "pattern": "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt.",
       "refs": [
         "daughter",
         "flexdiv"
@@ -2722,7 +2722,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Bij een flex-bv kunnen winst- en stemrechten verschillen. Voor de dochtertoets tel je de aandelen met stemrecht, inclusief aandelen met zowel stem- als winstrecht. Aandelen met uitsluitend winstrecht blijven buiten deze stemmenberekening. De toets is meer dan de helft van de uitoefenbare stemmen.",
         "pattern": [
           "Herken de vraag: Dit is een kwalificatievraag: je moet een casusfeit koppelen aan het juiste criterium voor de relatie tussen de ondernemingen.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Geef de conclusie, het beslissende casusfeit en het toepasselijke criterium. Voeg een berekening of bronregel toe wanneer de vraag dat vraagt."
         ]
       },
@@ -3020,7 +3020,7 @@ window.CAFA2_DATA.modules["kap"]={
         "Nominaal kapitaal in bezit: 470 × € 100 = € 47.000. Aandeel in reserves en resultaat: 340/800 × € 200.000 = € 85.000.",
         "Totale boekwaarde: € 132.000. Deze splitsing sluit aan op de officiële Ahorn/Finken-uitwerking."
       ],
-      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "finken",
         "valuation"
@@ -3037,7 +3037,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Volg de rechten van de in de casus onderscheiden aandelen. De kapitaalinbreng hangt samen met het gehouden nominale kapitaal; het aandeel in winstreserves volgt de winstrechten. Eén enkel percentage op het gehele eigen vermogen kan daardoor onjuist zijn. De vraag sluit aan op de afzonderlijke waardering van de aandelensoorten in de genoemde tentamenuitwerking.",
         "pattern": [
           "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over de waardering of boekwaarde. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
-          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
           "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
@@ -3215,7 +3215,7 @@ window.CAFA2_DATA.modules["kap"]={
       "explanation": [
         "De verkrijgingsprijs van de eigen aandelen komt ten laste van het eigen vermogen. Het aandelenkapitaal blijft hier ongewijzigd."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "eigen",
         "rapallo"
@@ -3232,7 +3232,7 @@ window.CAFA2_DATA.modules["kap"]={
         "rules": "Ingekochte eigen aandelen worden niet als actief opgenomen. De verkrijgingsprijs komt ten laste van het eigen vermogen; in deze vraag zijn daarvoor de overige reserves aangewezen. Omdat geen intrekking plaatsvindt, verlaag je het geplaatste kapitaal niet met de nominale waarde. Onderscheid de betaalde prijs van de nominale omvang van de aandelen.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Kijk naar de oorzaak en het tijdvak van de reserve: resultaten sinds de eerste waardering, uitkeringen, uitkeerbaarheid of herwaardering. Een resultaat van één jaar is niet vanzelf het bedrag van de reserve.",
+          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },

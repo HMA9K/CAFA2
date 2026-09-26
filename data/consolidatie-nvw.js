@@ -899,7 +899,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Onderlinge baten en lasten vallen volledig weg. Onderlinge vorderingen en schulden eveneens.",
         "Balansposten en resultaatposten staan in afzonderlijke eliminatieboekingen."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "lok",
         "basis"
@@ -916,7 +916,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "Onderlinge opbrengsten en kosten worden bij integrale consolidatie volledig tegen elkaar geëlimineerd. Hetzelfde geldt voor onderlinge vorderingen en schulden. Gebruik daarvoor aparte boekingen: de eerste bevat uitsluitend resultaatposten, de tweede uitsluitend balansposten. Het kapitaalbelang beperkt deze eliminaties niet tot een evenredig deel.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
@@ -5243,7 +5243,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Aandeel derden in deze eerste post: 30% × € 240.000 + 10% × € 160.000 = € 88.000.",
         "Van Sigma wordt eerst € 233.700 resultaat geëlimineerd. De afzonderlijke goedereneliminatie verwerkt de resterende aansluiting."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "nab",
         "mod",
@@ -5262,7 +5262,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "De syllabus elimineert hier het bedrag dat daadwerkelijk als resultaat deelnemingen bij de moeder is geboekt. Door een interne IC-correctie kan dat afwijken van het gewone aandeel in de dochterresultaten. De eerste eliminatie en de latere goedereneliminatie vormen samen één sluitende set. Het resterende deel van het dochterresultaat wordt daarom niet willekeurig in het aandeel derden ondergebracht.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het resultaat uit deelneming in de geconsolideerde winst-en-verliesrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
@@ -7402,7 +7402,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Boekwaarde bij verkoop: € 120.000 − 4 × € 15.000 = € 60.000.",
         "De interne boekwinst is € 90.000 − € 60.000 = € 30.000. Atlas corrigeert 80% hiervan: € 24.000, met € 6.000 belasting."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Herken een overdracht van een vast actief binnen de groep. Bepaal de interne boekwinst, verkoopdatum, oorspronkelijke boekwaarde en resterende afschrijvingstermijn. Onderscheid eliminatie van de boekwinst van de latere afschrijvingscorrectie en bepaal welke periode wordt gevraagd. Gevraagd tijdstip: 31 december 2024. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mol",
         "mva"
@@ -7419,7 +7419,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "Bepaal de boekwaarde van de machine direct vóór de interne verkoop op basis van oorspronkelijke aanschafprijs en afschrijving. De interne boekwinst is de verkoopprijs minus die boekwaarde. Bij downstream NVW wordt het moederdeel van die boekwinst vóór belasting uitgesteld via overlopende passiva, met een afzonderlijke belastingcorrectie. Consolidatie corrigeert vervolgens ook het resterende deel.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt de waardering of boekwaarde. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Gevraagd tijdstip: 31 december 2024.",
+          "Let op de beslissende gegevens: Herken een overdracht van een vast actief binnen de groep. Bepaal de interne boekwinst, verkoopdatum, oorspronkelijke boekwaarde en resterende afschrijvingstermijn. Onderscheid eliminatie van de boekwinst van de latere afschrijvingscorrectie en bepaal welke periode wordt gevraagd. Gevraagd tijdstip: 31 december 2024.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
@@ -7673,7 +7673,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Delta schrijft € 90.000 / 4 = € 22.500 af. Voor de groep is de afschrijving € 60.000 / 4 = € 15.000.",
         "Het verschil is € 7.500. Intern is 80% × € 7.500 = € 6.000 al gerealiseerd. Aanvullend resteert 20% × € 7.500, gesplitst in € 1.125 resultaat en € 375 belasting."
       ],
-      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
+      "pattern": "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt. Let op de beslissende gegevens: Herken een overdracht van een vast actief binnen de groep. Bepaal de interne boekwinst, verkoopdatum, oorspronkelijke boekwaarde en resterende afschrijvingstermijn. Onderscheid eliminatie van de boekwinst van de latere afschrijvingscorrectie en bepaal welke periode wordt gevraagd. Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten.",
       "refs": [
         "mol",
         "mva"
@@ -7690,7 +7690,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "Vergelijk de afschrijving bij de koper met de afschrijving die de groep zonder interne verkoop zou hebben gehad. Het verschil realiseert gedurende de gebruiksduur een deel van de interne boekwinst. Na de al geboekte interne vrijval blijven de tegenboeking daarvan en het aanvullende meerderheids- en belastingdeel over. Bij downstream wordt deze winst niet aan derden toegerekend.",
         "pattern": [
           "Herken de vraag: De gevraagde journaalpost of eliminatieboeking verwerkt het gevraagde onderwerp in de enkelvoudige jaarrekening. Herken eerst welke gebeurtenis of correctie moet worden geboekt.",
-          "Let op de beslissende gegevens: Bepaal welke rekening toeneemt of afneemt en vanuit welke onderneming wordt geboekt. Zoek de waarderingsgrondslag, het belang en het tijdstip in de casus. Een eliminatie verwijdert een interne post; een enkelvoudige boeking verwerkt de gebeurtenis bij de onderneming zelf.",
+          "Let op de beslissende gegevens: Herken een overdracht van een vast actief binnen de groep. Bepaal de interne boekwinst, verkoopdatum, oorspronkelijke boekwaarde en resterende afschrijvingstermijn. Onderscheid eliminatie van de boekwinst van de latere afschrijvingscorrectie en bepaal welke periode wordt gevraagd.",
           "Vorm van het antwoord: Geef per boeking de rekeningnamen, debet- en creditbedragen en zo nodig een toelichting. Gebruik afzonderlijke boekingen voor afzonderlijke gebeurtenissen; debet en credit moeten per boeking aansluiten."
         ]
       },
@@ -7966,7 +7966,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Aanvullend sidestream afnemend: € 8.000 × 20% × 75% = € 1.200 verlaging.",
         "Upstream en sidestream niet-afnemend vereisen na de interne correctie geen verdere correctie op de winst van de meerderheid. Uitkomst € 477.300."
       ],
-      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "down",
         "up",
@@ -8016,7 +8016,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "Wanneer het resultaat deelnemingen en alle interne NVW-correcties al in het moederresultaat zitten, mogen die niet opnieuw worden afgetrokken. Bereken uitsluitend de aanvullende meerderheidsdelen uit de goederenstromen. In deze casus zijn dat downstream en sidestream afnemend belang. Gebruik de winstmutaties na belasting, niet de eindwinsten.",
         "pattern": [
           "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
-          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt.",
           "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },
@@ -8142,7 +8142,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "Upstreamvrijval: + € 750. Sidestream afnemend: − € 1.200. Sidestream niet-afnemend: − € 900.",
         "Het definitieve aandeel derden is € 102.650. Downstream geeft geen correctie op derden."
       ],
-      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "up",
         "ab",
@@ -8191,7 +8191,7 @@ window.CAFA2_DATA.modules["nvw"]={
         "rules": "Begin bij het minderheidsaandeel in de resultaten van Delta en Sigma. Corrigeer daarna voor de winstmutaties die door een verkopende dochter zijn veroorzaakt. Een toename van ongerealiseerde winst verlaagt haar derdenaandeel; een vrijval verhoogt dat aandeel. Gebruik voor iedere stroom het derdenpercentage in de verkoper en de mutatie na belasting. Downstreamwinst van Atlas raakt derden niet.",
         "pattern": [
           "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het aandeel van derden. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
-          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en bevoegdheid om bestuurders te benoemen of te ontslaan. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
+          "Let op de beslissende gegevens: Tel stemrechten apart van winstrechten. Let op aandelen zonder stemrecht, eigen aandelen, stemrechtovereenkomsten en benoemingsmacht. Controleer ook de rechtsvorm: een natuurlijke persoon is geen moederrechtspersoon; bij een v.o.f. kan volledige aansprakelijkheid beslissend zijn. Pas alleen een criterium toe waarvoor de casus gegevens geeft.",
           "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },

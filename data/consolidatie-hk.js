@@ -3555,7 +3555,7 @@ window.CAFA2_DATA.modules["hk"]={
         "Zonder intercompanycorrectie is het resultaat € 316.000.",
         "Haven krijgt 75% van de netto vrijval van € 9.600, dus € 7.200 erbij. Totaal € 323.200."
       ],
-      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
+      "pattern": "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar. Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt. Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan.",
       "refs": [
         "boit",
         "orvelde"
@@ -3573,7 +3573,7 @@ window.CAFA2_DATA.modules["hk"]={
         "rules": "Maak eerst de HK-aansluiting: moederresultaat plus aandeel in dochterwinst, minus het al geboekte dividend en de jaarafschrijving goodwill. Verwerk daarna het moederdeel van de upstreamwinstmutatie na belasting. De overige vrijval behoort aan derden en wordt niet in de meerderheidswinst opgenomen.",
         "pattern": [
           "Herken de vraag: Dit is een berekenings- of verwerkingsvraag over het geconsolideerde resultaat. Onderscheid de gevraagde eindstand van een mutatie of resultaat over het jaar.",
-          "Let op de beslissende gegevens: Zoek het gevraagde tijdstip en de waarderingsgrondslag. Houd aanschafprijs, aandeel in eigen vermogen, resultaat en uitkering uit elkaar. Neem uitsluitend mutaties mee die bij de gevraagde periode en onderneming horen.",
+          "Let op de beslissende gegevens: Begin met het resultaat van de moeder en herken welke dochterresultaten daarin al via de deelnemingswaardering zitten. Controleer het aandeel van derden, goodwillafschrijving en eventuele intercompany- en belastingcorrecties. Voorkom dat een al verwerkte mutatie nogmaals meetelt.",
           "Vorm van het antwoord: Toon de relevante beginstand of formule, de ingevulde gegevens en de berekening tot de gevraagde uitkomst. Vermeld valuta of eenheid en geef bij een verschil ook het teken en de verwerking aan."
         ]
       },

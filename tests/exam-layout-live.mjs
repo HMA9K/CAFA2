@@ -48,6 +48,16 @@ try{
  assert.equal(await q.locator('.stock-matrix').count(),1,'Ook de syllabusvoorraadtabel heeft gestructureerde invoer');
  await q.locator('[data-stock-cell="r1-c2"]').fill('30.000');
  assert.equal(await page.evaluate(()=>CafaPractice.getAnswer('nvw',6).stockCells['r1-c2']),'30.000');
+ await page.setViewportSize({width:1366,height:950});await page.locator('.study-assistant-launch').click();
+ await q.locator('.study-assistant-layout>.practice-case-layout').waitFor();
+ const close=page.locator('#study-assistant [data-action="close"]');
+ assert.ok(await close.evaluate(el=>{const r=el.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return hit===el||el.contains(hit);}),'De vraag mag de assistentbediening niet overlappen');
+ assert.ok(await page.evaluate(()=>{const a=document.querySelector('.question:target .practice-case-layout').getBoundingClientRect(),b=document.querySelector('#study-assistant').getBoundingClientRect();return a.right<=b.x;}));
+ await page.screenshot({path:path.join(out,'assistant-mc-desktop.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ await page.screenshot({path:path.join(out,'assistant-mc-mobile.png'),fullPage:true});
+ await close.click();assert.equal(await q.locator('.study-assistant-layout').count(),0);
+ assert.equal(await q.locator('[data-stock-cell="r1-c2"]').inputValue(),'30.000');
  assert.equal(errors.length,0,errors.join('\n'));
  console.log('Livecontrole geslaagd: 627 vragen, echte MC-tabellen, stock/journal-invoer, toelichting en herladen, vraaggerichte patroonherkenning, syllabusmatrix en mobiel/donker.');
 }finally{await browser.close();}

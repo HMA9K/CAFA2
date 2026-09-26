@@ -9,4 +9,7 @@ assert.deepEqual(questionPattern({...journal,correct:0,solutionHtml:'Antwoord 10
 assert.match(questionPattern({task:'Kwalificeert Fort als dochtermaatschappij? Motiveer.',topicId:'zeggenschap'}).join(' '),/stemrechten apart van winstrechten/);
 assert.match(questionPattern({task:'Bereken de boekwaarde van machines per 31 december 2022.',topicId:'tijdstip'}).join(' '),/historische.*slotkoers/);
 assert.notDeepEqual(questionPattern(journal),questionPattern({task:'Geef de journaalpost voor dividend.',answerKind:'journal'}),'Goodwill en dividend vragen verschillende herkenning');
+assert.match(questionPattern({task:'Bereken het geconsolideerde resultaat.',code:'nvw'}).join(' '),/welke dochterresultaten daarin al.*Voorkom dat een al verwerkte mutatie/s);
+assert.match(questionPattern({task:'Geef de eliminatieboekingen voor de intern verkochte machine.',code:'hk',answerKind:'journal'}).join(' '),/interne boekwinst.*latere afschrijvingscorrectie/s);
+assert.match(questionPattern({task:'Kwalificeert een natuurlijke persoon als moeder van een v.o.f.?',topicId:'zeggenschap'}).join(' '),/natuurlijke persoon is geen moederrechtspersoon/);
 console.log('Patroonherkenning: vraagsoort, beslissende gegevens, antwoordvorm en onderdeelscope; onafhankelijk van antwoordletter en modelbedrag.');
