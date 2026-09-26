@@ -64,7 +64,10 @@
 .study-message{margin:0 0 14px;padding:12px;border:1px solid var(--sa-line);border-radius:12px;overflow-wrap:anywhere;font-size:14px}
 .study-message.is-user{background:var(--sa-user);margin-left:26px}.study-message.is-assistant{background:var(--sa-bg);margin-right:8px}
 .study-message-who{font-size:11px;color:var(--sa-muted);display:block;margin-bottom:6px}
-.study-message p{margin:6px 0}.study-message h4{font-size:14px;margin:12px 0 5px}.study-message pre{white-space:pre-wrap;font-size:12px;overflow:auto}
+.study-message p{margin:6px 0}.study-message :is(h3,h4){font-weight:700;line-height:1.35;color:inherit;margin:16px 0 7px}.study-message h3{font-size:17px}.study-message h4{font-size:15px}.study-message pre{white-space:pre-wrap;font-size:12px;overflow:auto}
+.study-message :is(ul,ol){margin:8px 0 12px;padding-inline-start:24px}.study-message li{margin:5px 0;padding-inline-start:3px}.study-message strong{font-weight:700}.study-message em{font-style:italic}
+.study-message blockquote{margin:12px 0;padding:5px 12px;border-inline-start:3px solid var(--sa-accent);background:var(--sa-panel)}.study-message hr{margin:14px 0;border:0;border-top:1px solid var(--sa-line)}
+.study-message code{font-family:ui-monospace,monospace;font-size:.92em;background:var(--sa-panel);padding:1px 4px;border-radius:4px}.study-message pre{padding:10px;background:var(--sa-panel);border-radius:6px}
 .study-message details{font-size:11px;margin-top:10px;border-top:1px solid var(--sa-line);padding-top:8px;color:var(--sa-muted)}
 .study-message details strong{display:block;margin-top:7px}.study-message summary{cursor:pointer}
 .study-table-scroll{overflow:auto;max-width:100%;margin:10px 0}.study-table-scroll table{border-collapse:collapse;width:100%;font-size:12px;min-width:260px}

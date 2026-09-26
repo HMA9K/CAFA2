@@ -51,6 +51,8 @@ try:
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
       if state['delay_once']:
         state['delay_once']=False;r.continue_();return
+      if data['message']=='Test leesbare opmaak':
+        r.fulfill(json=mock_reply(data,'## Conclusie\n**Uitkomst: *juist***\n\n### Berekening\n| Stap | Berekening | Uitkomst |\n| --- | --- | --- |\n| 1 | 100 × 80% | **€ 80** |\n\n## Controle\n- **Correct:** het percentage.\n- *Verbetering:* vermeld de grondslag.\n\n3. Bepaal de grondslag.\n4. Bereken het aandeel.\n\n> Dit is een toelichting.\n\n`100 × 80%`\n<img src=x onerror="alert(1)">'));return
       if data['message']=='Proeftabel zonder scheidingsregel':
         r.fulfill(json=mock_reply(data,'Rekening | Debet | Credit\nDeelneming | 540.000 |\nAgio | | 280.000\n\nStap | Berekening | Uitkomst\n1 | 2 × 3 | 6\n\nGewone tekst | blijft tekst'));return
       r.fulfill(json=mock_reply(data,'Berekening: '+ 'stap '*1500+'Goodwill = 99.000.') if data['message']=='Test lange uitwerking' else mock_reply(data))
@@ -106,6 +108,13 @@ try:
     last=page.locator('.study-message').last
     check('Real-model table shape without separators renders as accessible tables',last.locator('table').count()==2 and last.locator('th[scope=col]').count()==6)
     check('Empty debit/credit cells keep their columns and pipe prose stays text',last.locator('table').first.locator('tbody tr').first.locator('td').all_text_contents()==['Deelneming','540.000',''] and last.locator('p').last.inner_text()=='Gewone tekst | blijft tekst')
+    send('Test leesbare opmaak')
+    formatted=page.locator('.study-message').last.locator('.study-message-body')
+    check('Formatted response has readable headings and nested bold italic text',formatted.locator('h4').count()==3 and formatted.locator('strong').first.inner_text()=='Uitkomst: juist' and formatted.locator('strong em').count()==1)
+    check('Formatted lists use semantic items and preserve step numbering',formatted.locator('ul li').count()==2 and formatted.locator('ol li').count()==2 and formatted.locator('ol').get_attribute('start')=='3')
+    check('Formatted calculation table keeps amounts and formula visible',formatted.locator('table').count()==1 and formatted.locator('td').all_text_contents()==['1','100 × 80%','€ 80'])
+    check('Formatted notes and code stay safe without executable images',formatted.locator('blockquote').count()==1 and formatted.locator('code').inner_text()=='100 × 80%' and formatted.locator('img').count()==0)
+    page.screenshot(path=str(OUT/f'formatted-answer-{engine}.png'))
     page.evaluate("location.hash='kap-2'");page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 2")')
     check('Question navigation isolates chat history',page.locator('.study-message').count()==0)
     send('Geef het antwoord.');check('New question uses its own context',requests[-1]['ref']['questionId']=='2' and requests[-1]['history']==[])

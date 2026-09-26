@@ -1,6 +1,6 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs';
-import {renderMarkdown} from './study-assistant-render.mjs';
+import {renderMarkdown} from './study-assistant-render.mjs?v=20260926-format1';
 import {createAssistantPanel} from './study-assistant-panel.mjs';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
@@ -77,7 +77,7 @@ function renderConversation() {
   for(const msg of conversation()) {
     const article=doc.createElement('article');article.className=`study-message is-${msg.role}`;
     const who=doc.createElement('strong');who.className='study-message-who';who.textContent=msg.role==='user'?'Jij':`${current.ref.course} Assistent`;
-    const body=doc.createElement('div');renderMarkdown(body,msg.content);article.append(who,body);
+    const body=doc.createElement('div');body.className='study-message-body';renderMarkdown(body,msg.content);article.append(who,body);
     if(msg.failed){const p=doc.createElement('p');p.className='study-message-error';p.textContent='Niet beantwoord. Je vraag staat weer in het invoerveld.';article.append(p);}
     if(msg.incomplete){const p=doc.createElement('p');p.className='study-message-error';p.textContent='Dit antwoord is afgebroken door de uitvoerlimiet. Vraag om uitleg van één stap.';article.append(p);}
     if(msg.role==='assistant'&&(msg.citations?.length||msg.references?.length)){

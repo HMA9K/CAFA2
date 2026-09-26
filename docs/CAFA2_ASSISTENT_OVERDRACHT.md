@@ -2,6 +2,12 @@
 
 Versie 2026-09-26.4. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
+## Antwoordopmaak
+
+De assistent krijgt expliciet de opdracht om leesbare Markdown te gebruiken: korte kopjes, vet voor kernpunten en uitkomsten, cursief voor toelichting, opsommingen, genummerde stappen en rekentabellen. Korte hints blijven kort. Een langere antwoordcontrole kan relevante onderdelen zoals conclusie, berekening, controle en puntenbeoordeling krijgen; deze onderdelen zijn niet verplicht voor iedere vraag.
+
+De weergave ondersteunt echte lijststructuren met behoud van het beginpunt van de nummering, geneste vet/cursief-opmaak, toelichtingsblokken en codefragmenten. Tabellen en bestaande journaalposten zonder scheidingsregel blijven werken. HTML en afbeeldingen worden als tekst behandeld. De oorspronkelijke antwoordtekst blijft bewaard; de opmaak verandert geen vraaginhoud, opgeslagen antwoord, score of timer. Eerdere antwoorden zonder Markdown-markeringen worden niet automatisch herschreven.
+
 ## Aanvulling: knop Kijk mijn antwoord na
 
 De startersknop **Kijk mijn antwoord na** vult de chatbalk met een controleverzoek, inclusief puntenbeoordeling. De tekst kan worden aangepast. Alleen **Versturen** verzendt de tekst, met het dan actuele eigen antwoord en de bestaande vraagcontext. Inloggen en toestemming blijven nodig. Er is geen standwissel of inlevering nodig; opgeslagen antwoord en score blijven behouden. De puntenbeoordeling is feedback in de chat en wordt niet als toetsresultaat opgeslagen.

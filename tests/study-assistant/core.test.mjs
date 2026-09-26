@@ -52,6 +52,13 @@ test('HTML-tabellen behouden rij- en kolomscheiding; scripts verdwijnen',()=>{as
 test('Opties verliezen ook geneste correctheidsinformatie',()=>assert.deepEqual(publicOption({text:'A',why:'secret',nested:{isCorrect:true,rows:[['1','2']]}}),{text:'A',nested:{rows:[['1','2']]}}));
 test('Ook begeleidende hulp krijgt het canonieke antwoordmodel mee',()=>{const value=makeModelRequest({record,mode:'hint',history:[],answer:{},message:'x'},environment());assert.ok(JSON.stringify(value).includes('SECRET_MODEL'));assert.equal(value.store,false);assert.equal(value.max_output_tokens,1800);assert.ok(!value.tools);});
 test('Nakijken bevat uitwerking en uitleg',()=>{const value=makeModelRequest({record,mode:'review',history:[],answer:{},message:'x'},environment());assert.ok(JSON.stringify(value).includes('SECRET_MODEL'));});
+test('Antwoordopmaak is ingeschakeld in beide stijlen zonder verplichte volledige uitwerking',()=>{
+  for(const mode of ['hint','review']){
+    const value=makeModelRequest({record,mode,history:[],answer:{},message:'x'},environment());
+    assert.ok(value.instructions.startsWith('Formatting re-enabled\n'));
+    for(const part of ['leesbare Markdown-opmaak','**vet**','*cursief*','witregels','Markdown-tabel','Een korte hint mag kort blijven','geen HTML'])assert.ok(value.instructions.includes(part),part);
+  }
+});
 test('Promptcontract vraagt controle van antwoordletter en herleiding van bedrag',()=>{
   const exam=catalog.records['CAFA2:exam:cafa2-test:vraag-4'];
   for(const [current,message] of [[record,'Waarom is B goed?'],[exam,'Waar komt dit bedrag uit de uitwerking vandaan?']]){

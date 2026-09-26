@@ -2,6 +2,14 @@
 
 Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
+## Actueel: opmaak in assistentantwoorden
+
+- Markdown-opmaak expliciet ingeschakeld in de antwoordinstructie. Kopjes, vet, cursief, echte opsommingen en genummerde stappen, toelichtingsblokken en tabellen worden leesbaar weergegeven. Korte hints hoeven geen volledige controlestructuur te krijgen.
+- Nieuwe Node-regressies bewaken de opmaakinstructie in beide stijlen, geneste nadruk, lijstnummering, bedragen, lege journaalpostcellen, escaped pipes en veilige tekstweergave van HTML. Nieuwe browserproeven controleren dezelfde opmaak in het echte paneel.
+- Lokaal geslaagd: 113 Node-tests, alle dertien bestaande regressiescripts, integratie-dry-run zonder wijzigingen, build en deploycontrole: 627 oefenvragen, 285 tentamenrecords, 183 publieke bestanden en vier Functions.
+- FORMAT_STATUS_PENDING
+- Automatische antwoorden zijn gesimuleerd; er is nog geen nieuwe echte modelproef gedaan. Het tonen van opmaak en de verzonden instructie worden afzonderlijk getest. Geen secrets, bronbestanden of overige instellingen nodig. Oude onopgemaakte antwoorden worden niet herschreven; scores en antwoorden blijven behouden.
+
 ## Actueel: nakijkverzoek als bewerkbaar concept
 
 De knop **Kijk mijn antwoord na** zet het controleverzoek in de chatbalk klaar en verstuurt niets. Dit geldt ook na ontgrendeling en toestemming. De instructie vraagt om vergelijking met de uitwerking, uitleg over wat klopt en wat ontbreekt, verbeteringen en een puntenbeoordeling. De tekst kan worden aangepast; alleen **Versturen** stuurt het verzoek met het dan actuele antwoord. De puntenbeoordeling is chatfeedback en verandert de opgeslagen toetsscore niet.

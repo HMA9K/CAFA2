@@ -2,6 +2,10 @@
 
 Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
 
+## Leesbare antwoorden
+
+Nieuwe antwoorden kunnen kopjes, vet, cursief, opsommingen, genummerde stappen en rekentabellen gebruiken. De assistent krijgt daarvoor een expliciete opmaakinstructie. Oude antwoorden zonder opmaakmarkeringen blijven hun oorspronkelijke tekst behouden. Vernieuw de pagina om de bijgewerkte weergave te laden. Er is geen aanvullende instelling nodig.
+
 ## Paneel rechts bedienen
 
 - Open de assistent met **Vraag over deze vraag**.
