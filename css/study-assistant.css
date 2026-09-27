@@ -22,7 +22,7 @@
 .study-intro-consent input{width:17px;height:17px;flex:none;margin:3px 0 0;accent-color:var(--sa-accent)}
 .study-intro-consent p{font-size:11px;line-height:1.6;color:var(--sa-muted);margin:8px 0 0}
 .study-intro-code-row button:disabled{opacity:.5;cursor:not-allowed}
-.exam-answer-actions .study-inline-launch{display:inline-block;margin:0}
+body.exam-running .exam-answer-actions .study-inline-launch{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:36px;min-height:36px;margin:0;padding:7px 10px;font:inherit;font-size:.88rem;line-height:1.4;font-weight:700;border-color:#91869b;border-radius:10px}
 .study-assistant-intro :is(button,input):focus-visible{outline:3px solid #b17524;outline-offset:3px}
 @media(max-width:500px){.study-intro-head,.study-intro-body,.study-intro-form{padding-inline:16px}.study-intro-head h2{font-size:20px}.study-assistant-launch.is-first-use{max-width:calc(100vw - 24px);font-size:15px;min-height:70px}}
 @media(max-height:500px){.study-intro-head{padding-block:9px}.study-intro-head h2{font-size:17px}.study-intro-body{padding-block:10px;font-size:13px}.study-intro-form{padding-block:9px}.study-intro-form p{margin-top:4px}}
@@ -116,7 +116,7 @@
 .study-assistant-launch-hide:hover{background:#ffffff26}
 .study-assistant-launch-hide:focus-visible{outline:2px solid white;outline-offset:1px}
 #calculator-dialog .calculator-float-head .study-calculator-launch{font:bold 18px/1 Arial,sans-serif;border:1px solid #ffffff80;border-radius:5px;color:#fff}
-.study-inline-launch{display:block;border:1px solid #746780;border-radius:8px;background:#504363;color:#fff;padding:10px 13px;margin:12px 0;cursor:pointer}
+.study-inline-launch{display:block;border:1px solid #91869b;border-radius:10px;background:#504363;color:#fff;padding:10px 13px;margin:12px 0;font-weight:700;cursor:pointer}
 .study-sr{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 @media(max-width:760px){.study-context{padding:10px 12px}.study-scroll{padding:12px}.study-assistant-launch-wrap{right:12px;bottom:max(calc(82px + env(safe-area-inset-bottom,0px)),var(--sa-footer-clearance,0px));font-size:13px}.study-message{font-size:14px}.study-compose{padding-inline:10px}}
 .study-assistant.is-short .study-context>p,.study-assistant.is-short .study-context small,.study-assistant.is-short .study-context-controls,.study-assistant.is-short .study-eyebrow{display:none}
@@ -137,6 +137,6 @@ html[data-study-theme="dark"] :is(.study-assistant,.study-assistant-intro),html[
 
 body.original-pdf-open .study-assistant-launch-wrap{display:none!important}
 
-.study-tools-menu>nav>button[data-assistant-menu]{align-self:stretch;box-sizing:border-box;width:100%;margin:0;padding:12px 20px;border:0;border-radius:0;background:#504363;color:#fff;text-align:center}
+.study-tools-menu>nav>button[data-assistant-menu]{align-self:stretch;box-sizing:border-box;width:100%;margin:0;padding:12px 20px;border:0;border-radius:10px;box-shadow:inset 0 0 0 1px #91869b;background:#504363;color:#fff;font-weight:700;text-align:center}
 .study-tools-menu>nav>button[data-assistant-menu]:hover{background:#504363;color:#fff}
 .study-tools-menu>nav>button[data-assistant-menu][hidden]{display:none}
