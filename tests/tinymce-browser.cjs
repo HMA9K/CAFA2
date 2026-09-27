@@ -14,7 +14,13 @@ const sra=process.env.COURSE==='sra',base=process.env.EDITOR_URL||`http://127.0.
   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized && tinymce.activeEditor.getBody()?.isContentEditable && tinymce.activeEditor.getBody().dataset.editorTheme);
   const native=page.locator('#exam-app .tox-tinymce').first();assert.equal(await native.locator('.tox-menubar').count(),0);assert.equal(await native.locator('.tox-statusbar__path').count(),0);
   assert.equal(await page.locator('#exam-app .cae-toolbar').first().isVisible(),false);
-  const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');await body.fill('Bestaand antwoord met opmaak');
+  const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');
+  await body.click();const formula='Afwaardering voorraad: 5.000 * 25 * 0.93 ';
+  await page.keyboard.type(formula);await page.keyboard.press('Enter');
+  assert.ok((await body.innerText()).includes(formula.trim()));assert.equal(await body.locator('em,i').count(),0);
+  await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody().firstChild,true);e.execCommand('Italic');});
+  assert.ok(await body.locator('em,i').count());
+  await body.fill('Bestaand antwoord met opmaak');
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody().firstChild);e.execCommand('Bold');});
   assert.ok(await body.locator('strong').count());
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody(),true);e.selection.collapse(false);e.execCommand('mceInsertTable',false,{rows:2,columns:2});});

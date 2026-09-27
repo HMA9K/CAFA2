@@ -69,7 +69,7 @@
       var width = availableWidth();
       return tiny.init({
         target: target, base_url: base.href.replace(/\/$/, ''), suffix: '.min', license_key: 'gpl',
-        menubar: false, elementpath: false, promotion: false, resize: 'both', height: size && Number.isFinite(size.height) ? Math.max(220, Math.min(900, size.height)) : 360,
+        text_patterns: false, menubar: false, elementpath: false, promotion: false, resize: 'both', height: size && Number.isFinite(size.height) ? Math.max(220, Math.min(900, size.height)) : 360,
         width: widthRatio >= 0.995 ? '100%' : Math.max(Math.min(260, width), width * widthRatio), min_height: 220, min_width: Math.min(260, width), max_width: width,
         language: 'nl', language_url: new URL('langs/nl.js', base).href,
         plugins: 'table lists charmap fullscreen',
