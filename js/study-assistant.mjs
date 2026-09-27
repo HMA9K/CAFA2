@@ -1,8 +1,8 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro1';
-import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro1';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro1';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-intro1';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro2';
+import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro2';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro2';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-intro2';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
@@ -128,7 +128,7 @@ async function loadStatus() {
   }catch(error){status=null;banner(error.name==='AbortError'?'De server reageert niet. Probeer het opnieuw.':error.message,true);$('[data-login]').hidden=true;}
   finally{clearTimeout(timer);controls();}
 }
-const intro=createAssistantIntro({document:doc,onChange:syncLaunchers,onContinue:open});
+const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open});
 function start({cancel=()=>{}}={}){if(adapter.read())intro.show(doc.activeElement,cancel);}
 async function open({code='',launcher=doc.activeElement}={}) {
   refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
