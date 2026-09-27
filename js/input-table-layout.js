@@ -59,13 +59,14 @@
     function commit() { apply(); persist(key,{widths,height}); }
     if (editor) editor.closest('.cafa-answer-editor').insertBefore(settings,editor);
     else table.parentNode.insertBefore(settings,table);
-    settings.inputTableReference=table;mounted.set(table,{settings,apply}); apply();
+    settings.inputTableReference=table;mounted.set(table,{settings,apply,count}); apply();
   }
   function scan() {
     document.querySelectorAll('table:has(input:not([readonly]),textarea:not([readonly]),[contenteditable="true"]),.cae-content[contenteditable="true"] table').forEach(table => {
       const state=mounted.get(table);
       if (state) {
-        if (!table.rows.length) {state.settings.remove();mounted.delete(table);}
+        if (!table.rows.length || table.rows[0].cells.length!==state.count) {state.settings.remove();mounted.delete(table);mount(table);}
+        else state.apply();
       } else mount(table);
     });
     document.querySelectorAll('.input-table-settings').forEach(settings => {
@@ -73,6 +74,12 @@
     });
   }
   let queued=false;
-  new MutationObserver(() => { if (!queued) { queued=true;requestAnimationFrame(()=>{queued=false;scan();}); } }).observe(document.body,{childList:true,subtree:true});
+  function queue(){if (!queued) { queued=true;requestAnimationFrame(()=>{queued=false;scan();}); }}
+  new MutationObserver(records => {
+    if(records.some(record => record.target.closest?.('table') || Array.from(record.addedNodes).concat(Array.from(record.removedNodes)).some(node => node.nodeType===1 && (node.tagName==='TABLE' || node.querySelector('table'))))) queue();
+  }).observe(document.body,{childList:true,subtree:true});
+  window.addEventListener('hashchange',queue);
+  window.addEventListener('resize',queue);
+  document.addEventListener('change',queue);
   scan();
 })();
