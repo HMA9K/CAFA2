@@ -282,12 +282,14 @@ try:
       m.history.push({at:new Date().toISOString(),attempt:1,finished:true,finishedAt:new Date().toISOString(),
         questionCount:CAFA2_DATA.modules.kap.questions.length,answers:{1:{choice:1,mode:'mc',text:'Oude poging'}}});
       m.attempt=2;localStorage.setItem(s.id,JSON.stringify(s)); }''')
-    page.reload();page.wait_for_function('window.CafaExams && window.StudyAssistant')
+    page.reload();page.wait_for_function('window.CafaExams && window.StudyAssistant && !document.querySelector(".study-assistant-launch").hidden')
     visit('#mc-inzage/practice-kap-1')
     page.wait_for_function('document.querySelectorAll("#exam-app .study-inline-launch").length > 1')
     historic_title=page.locator('[data-context-title]').text_content();historic_chat=page.locator('[data-messages]').text_content();historic_requests=len(requests)
     page.locator('#exam-app .study-inline-launch').nth(0).click();page.locator('#study-assistant-intro').wait_for(state='visible')
     page.get_by_role('button',name='Introductie sluiten',exact=True).click();page.locator('#study-assistant-intro').wait_for(state='hidden')
+    page.wait_for_function('''([title,chat])=>document.querySelector('[data-context-title]').textContent===title
+      && document.querySelector('[data-messages]').textContent===chat''',arg=[historic_title,historic_chat])
     check('Cancelling historical introduction keeps conversation and question context unchanged',len(requests)==historic_requests and page.locator('[data-context-title]').text_content()==historic_title and page.locator('[data-messages]').text_content()==historic_chat and not page.locator('#study-assistant').evaluate('e=>e.open'))
     page.locator('#exam-app .study-inline-launch').nth(0).click();continue_intro()
     page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 1")')

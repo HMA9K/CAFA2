@@ -65,7 +65,7 @@ try:
                     r.continue_()
             page.route('**/*', route)
             page.goto(base + '/index.html#kap-1')
-            page.wait_for_function('window.CafaFeedback && document.querySelector("#kap-1[data-feedback-bound]")')
+            page.wait_for_function('()=>window.CafaFeedback && document.querySelector("#kap-1[data-feedback-bound]")')
             question = page.locator('#kap-1')
             question.locator('.option[data-option="0"]').click()
             button = question.locator('.cafa-check-controls button').first
@@ -109,7 +109,7 @@ try:
             button = page.locator('[data-exam-action="check"]')
             feedback = page.locator('#cafa-exam-feedback')
             button.wait_for(state='visible')
-            page.wait_for_function('document.querySelector("#cirrus-tools-menu [data-assistant-menu]")')
+            page.wait_for_function('()=>document.querySelector("#cirrus-tools-menu [data-assistant-menu]")')
             for theme in ('light', 'dark'):
                 page.evaluate('(theme)=>document.documentElement.dataset.studyTheme=theme', theme)
                 menu = page.locator('#cirrus-tools-menu')
