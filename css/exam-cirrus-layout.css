@@ -50,7 +50,7 @@ body.exam-running .exam-footer .btn{font:12px/1.3 Arial,sans-serif;min-height:30
 body.exam-running .exam-footer .actions,body.exam-running .exam-cirrus-actions{gap:8px}
 body.exam-running .cafa-answer-editor .cae-toolbar{gap:1px;padding:3px;background:#fafafa;border-color:#c4c6c9}
 body.exam-running .cafa-answer-editor .cae-group{gap:1px;padding-right:6px;margin-right:4px}
-body.exam-running .cafa-answer-editor .cae-button,body.exam-running .cafa-answer-editor .cae-select{font-size:12px;min-height:26px;height:26px;padding:3px 5px;border-radius:0;color:#333;background:transparent;border-color:transparent}
+body.exam-running .cafa-answer-editor .cae-button,body.exam-running .cafa-answer-editor .cae-select{font-size:12px;min-height:28px;height:28px;padding:3px 6px;border-radius:0;color:#333;background:transparent;border-color:transparent}
 body.exam-running .cafa-answer-editor .cae-content{min-height:160px;height:180px;font:13px/1.5 Arial,sans-serif;border-color:#c4c6c9}
 body.exam-running .cafa-answer-editor.is-expanded .cae-content{height:auto;min-height:0}
 body.exam-running .cafa-answer-editor .cae-toolbar .cae-button:disabled{display:none}
@@ -180,3 +180,11 @@ html[data-study-theme=dark] .learning-page-title{color:#e7e2f3!important}
 .sra-home .study-home-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}
 .sra-home .study-home-links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--study-line,#d9e2eb);background:var(--study-surface,#fff);color:var(--study-ink,#17364e);text-decoration:none;font:600 13px/1.4 Arial,sans-serif}
 @media(max-width:760px){.sra-home .study-home-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Slightly larger symbols; textual table controls retain their compact labels. */
+.cafa-answer-editor .cae-toolbar .cae-button{font-size:14px}
+.cafa-answer-editor .cae-toolbar .cae-button[data-table-action]{font-size:12px}
+body.exam-running .cafa-answer-editor .cae-toolbar .cae-button{font-size:14px}
+body.exam-running .cafa-answer-editor .cae-toolbar .cae-button[data-table-action]{font-size:12px}
+body.learning-page-layout #study-returnbar.has-study-origin{display:flex!important}
+body.learning-page-layout.study-inline-reader #study-returnbar.has-study-origin .study-origin{display:inline-flex!important}

@@ -47,7 +47,7 @@
   }
   function rememberDestination(target) {
     var current = snapshot(); push(current); suppress = true;
-    if (current.question && /samenvatting\.html|kapitaalbelangen\.html/.test(target.pathname)) nav.origin = current;
+    if (current.question && /\/(?:samenvatting|kapitaalbelangen)(?:\.html)?$/.test(target.pathname)) nav.origin = current;
     nav.pending = null; persist(); previous = current;
   }
   function restore(target) {
@@ -110,6 +110,7 @@
     bar.classList.toggle('has-result-links',onResults);
     back.hidden = onQuestion || !top || same(top,cur);
     originButton.hidden = onQuestion || onResults || !hasOrigin;
+    bar.classList.toggle('has-study-origin', !!hasOrigin && !onQuestion && !onResults);
     if(hasOrigin){originButton.textContent='← Terug naar '+nav.origin.label;originButton.title='Hervat precies waar je was gebleven. Je antwoorden blijven bewaard.';}
     if(top)back.title='Terug naar '+top.label;
     bar.hidden=false;

@@ -13,3 +13,7 @@ Voorraadtabellen openen met gelijke kolommen van circa 135 pixels en passen zich
 Smalle schermen behouden horizontaal scrollen. De sleepgrepen volgen de tabel bij scrollen, pagina-zoom en wijzigingen van de schermbreedte.
 
 De zwevende CAFA2-assistentknop staat rechtsonder. Het kruisje verbergt de hele knop voor het huidige tabblad, ook na herladen. De bestaande toegang via de rekenmachine en de assistentlinks blijft beschikbaar.
+
+Bij het toevoegen of verwijderen van een kolom worden de breedtes direct opnieuw verdeeld. De verhouding tussen de bestaande kolommen blijft behouden. Nieuwe kolommen krijgen meteen zichtbare ruimte; aangepaste tabelbreedte en rijhoogte blijven behouden. De werkbalksymbolen zijn vergroot van 12 naar 14 pixels.
+
+Browsercontrole: `tests/editor-columns-browser.cjs` controleert toevoegen na verslepen, verwijderen, bewaren na herladen, behoud van tekst en de knopvolgorde. De CAFA2-controle verifieert ook de terugkeer vanuit de samenvatting naar dezelfde tentamenvraag.

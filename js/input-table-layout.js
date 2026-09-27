@@ -25,10 +25,11 @@
     const initial=Array.from(row.cells,c=>c.getBoundingClientRect().width),sum=initial.reduce((a,b)=>a+b,0);
     const stock=table.classList.contains('stock-matrix');
     const defaults=stock?Array(count).fill(100/count):initial.map(n=>sum?n*100/sum:100/count);
-    const defaultTableWidth=stock?Math.min(count*135,Math.max(count*110,table.parentElement.clientWidth)):null;
+    const defaultTableWidth=stock?Math.min(count*135,Math.max(count*110,table.parentElement.clientWidth)):editor&&table.style.width.endsWith('px')?Number.parseFloat(table.style.width):null;
     const prior=saved[key];
     let widths=prior&&Array.isArray(prior.widths)&&prior.widths.length===count&&prior.widths.every(n=>Number.isFinite(n)&&n>0&&n<100)&&Math.abs(prior.widths.reduce((a,b)=>a+b,0)-100)<1?prior.widths.slice():defaults.slice();
-    let height=prior&&Number.isFinite(prior.height)&&prior.height>=28&&prior.height<=120?prior.height:36;
+    const inlineHeight=Number.parseFloat(table.style.getPropertyValue('--input-table-row-height'));
+    let height=prior&&Number.isFinite(prior.height)&&prior.height>=28&&prior.height<=120?prior.height:Number.isFinite(inlineHeight)?Math.max(28,Math.min(120,inlineHeight)):36;
     let tableWidth=prior&&Number.isFinite(prior.tableWidth)&&prior.tableWidth>=280&&prior.tableWidth<=2400?prior.tableWidth:defaultTableWidth;
     const overlay=document.createElement('div');overlay.className='input-table-handles';overlay.setAttribute('role','group');overlay.setAttribute('aria-label','Sleepgrepen van de invoertabel');
     const grips=[];
@@ -102,7 +103,7 @@
       const header=table.rows[0].getBoundingClientRect();
       grips.forEach((grip,i)=>Object.assign(grip.style,{left:((i===count-1?rect.right-3*s:table.rows[0].cells[i].getBoundingClientRect().right)-rect.left)/s+'px',top:(header.top-rect.top)/s+'px',height:(rect.bottom-header.top)/s+'px'}));
     }
-    const state={table,overlay,count,apply,place};states.add(state);mounted.set(table,state);resizeObserver?.observe(table);apply();place();
+    const state={table,overlay,count,key,apply,place};states.add(state);mounted.set(table,state);resizeObserver?.observe(table);apply();place();
   }
   function remove(state){resizeObserver?.unobserve(state.table);state.overlay.remove();mounted.delete(state.table);states.delete(state);}
   function scan(){
@@ -119,6 +120,11 @@
   new MutationObserver(records=>{
     if(records.some(record=>record.target.closest?.('table')||Array.from(record.addedNodes).concat(Array.from(record.removedNodes)).some(node=>node.nodeType===1&&(node.tagName==='TABLE'||node.querySelector('table')))))queue();
   }).observe(document.body,{childList:true,subtree:true});
+  document.addEventListener('learning:table-structure',event=>{
+    const table=event.detail?.table,state=mounted.get(table);if(!table)return;
+    if(state){delete saved[state.key];remove(state);}
+    mount(table);
+  });
   window.addEventListener('hashchange',queue);window.addEventListener('resize',queue);document.addEventListener('change',queue);document.addEventListener('scroll',queuePlace,true);
   scan();
 })();

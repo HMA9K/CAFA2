@@ -104,7 +104,7 @@ function mount(){
   }currentKey=ctx.key;
   if(left&&(!left.panel.isConnected||!ctx.host?.contains(left.panel)))openLeft(left.id,left.opener,true);
   placeLeft();if(right?.open)dock.refresh();
-  const target=ctx.host?.querySelector('.exam-cirrus-actions,.question-nav .nav-right,.question-nav,.exam-welcome-actions,.exam-paper .actions');
+  const target=ctx.host?.querySelector('.exam-footer .actions,.question-nav .nav-left')||ctx.host?.querySelector('.question-nav,.exam-welcome-actions,.exam-paper .actions');
   if(target&&originalPdfs[ctx.id]&&!target.querySelector('.original-pdf-actions'))target.append(actions(ctx.id));
   const welcome=ctx.host?.querySelector('.exam-paper');
   if(location.hash.startsWith('#welkom/')&&welcome&&originalPdfs[ctx.id]&&!welcome.querySelector('.original-pdf-actions'))welcome.append(actions(ctx.id));

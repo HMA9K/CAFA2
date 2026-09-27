@@ -53,6 +53,8 @@
       const primary=question?.querySelector('.cirrus-main-instruction');
       if(primary){const start=primary.textContent.search(/\s+(?=(?:Als (?:je|u)\b|Let op\b|NB\s*:))/i);if(start>=0){const walker=document.createTreeWalker(primary,NodeFilter.SHOW_TEXT);let node,offset=0;while((node=walker.nextNode())){if(offset+node.length>start){const range=document.createRange();range.setStart(node,start-offset);range.setEnd(primary,primary.childNodes.length);const note=document.createElement('span');note.className='cirrus-supplemental';note.append(range.extractContents());primary.append(note);break;}offset+=node.length;}}}
     }
+    const footerActions=host.querySelector('.exam-cirrus-actions'),submit=footerActions?.querySelector('[data-exam-action="submit"]');
+    if(submit&&footerActions.lastElementChild!==submit)footerActions.append(submit);
     const marked=head.closest('.frame').querySelector('[data-exam-action="mark"]')?.getAttribute('aria-pressed')==='true';let marker=head.querySelector('.cirrus-question-flag');
     if(!marker){marker=document.createElement('span');marker.className='cirrus-question-flag';marker.innerHTML=flag;marker.setAttribute('aria-label','Gemarkeerde vraag');head.querySelector('.exam-question-identity').prepend(marker);}marker.hidden=!marked;
     host.querySelectorAll('.cae-toolbar button').forEach(button=>{if(button.dataset.cirrusIcon)return;const labels={'• Lijst':'☷','1. Lijst':'≡','Links':'≡','Midden':'☰','Rechts':'≡','Tabel':'▦','Opmaak wissen':'Tx','Vergroten':'⛶'};if(labels[button.textContent]){button.dataset.cirrusIcon=button.textContent;button.textContent=labels[button.textContent];}});
