@@ -2,6 +2,8 @@
 
 De toestemming voor het delen van vraag, casus, eigen antwoord en gesprek staat in het bestaande introductievenster met de toegangscode en **Doorgaan**. Doorgaan is pas beschikbaar na aanvinken. De toestemming wordt alleen in het actieve tabblad bijgehouden, niet in de voortgangsopslag. Herladen en uitloggen vragen opnieuw om toestemming.
 
+Een bestaande toegangsessie wordt voor het openen van de introductie gecontroleerd. Zolang die geldig is, blijven codeveld en code-instructies verborgen, ook na herladen en via Privacy. De toegangscode wordt niet in browseropslag bewaard en wordt bij heropenen niet opnieuw verzonden. Na uitloggen of verlopen van de bestaande sessie (acht uur) verschijnt het codeveld opnieuw.
+
 Het assistentpaneel bevat geen toestemmingsblok. Bij opnieuw openen binnen dezelfde sessie blijft ook het blok in de introductie verborgen. **Privacy** maakt de keuze opnieuw zichtbaar; intrekken stopt een lopend verzoek en blokkeert nieuwe berichten. Een al verzonden verzoek kan bij de modeldienst al zijn verwerkt.
 
 **Meer** biedt de assistent tijdens MC-oefenvragen en tentamens. Gekopieerde menu's krijgen dezelfde opmaak als het oorspronkelijke menu, met afzonderlijke regels voor de hulpmiddelen. Een extra assistentknop staat bij de antwoordbediening van tentamens. Alle ingangen gebruiken het bestaande introductievenster en de actuele vraagcontext.

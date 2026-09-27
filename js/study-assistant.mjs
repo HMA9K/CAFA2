@@ -1,7 +1,7 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-consent1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-consent1';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-access1';
 import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-modal2';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
@@ -135,10 +135,16 @@ async function loadStatus() {
   }catch(error){status=null;banner(error.name==='AbortError'?'De server reageert niet. Probeer het opnieuw.':error.message,true);$('[data-login]').hidden=true;}
   finally{clearTimeout(timer);controls();}
 }
-const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open,getConsent:()=>consent,onConsentChange:value=>{consent=value;if(!consent)stop();controls();}});
+const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open,getConsent:()=>consent,getAuthenticated:()=>!!status?.authenticated,onConsentChange:value=>{consent=value;if(!consent)stop();controls();}});
 const privacy=doc.createElement('button');privacy.type='button';privacy.className='study-text-button';privacy.textContent='Privacy';privacy.addEventListener('click',()=>intro.show(doc.activeElement,()=>{},true));$('[data-action="logout"]').before(privacy);
 doc.addEventListener('click',event=>{const item=event.target.closest('[data-assistant-menu]');if(item){item.closest('details').open=false;start();}});
-function start({cancel=()=>{}}={}){if(current||adapter.read())intro.show(doc.activeElement,cancel);}
+let introLoading=false;
+async function start({cancel=()=>{}}={}){
+  if(introLoading||intro.open)return;
+  refresh();if(!current)return;
+  const launcher=doc.activeElement;introLoading=true;
+  try{await loadStatus();if(adapter.read())intro.show(launcher,cancel);}finally{introLoading=false;}
+}
 async function open({code='',launcher=doc.activeElement}={}) {
   const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
   await Promise.all(waiting);refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
