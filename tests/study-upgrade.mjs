@@ -49,10 +49,13 @@ for(const file of ['js/law-focus.js','js/law-popover.js','js/study-lessons.js','
 const paths=['samenvatting.html','index.html','data/study-support.js','docs/study-upgrade-manifest.json','fragments/home.html',...['kapitaalbelangen','vreemde-valuta','consolidatie-nvw','consolidatie-hk'].flatMap(x=>['fragments/'+x+'.html','fallback/'+x+'.html'])];
 const digest=()=>paths.map(p=>crypto.createHash('sha256').update(read(p)).digest('hex')).join();
 const cirrusBefore=read('index.html').match(/<script defer src="js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>/)?.[0];
+const cirrusStyleBefore=read('index.html').match(/<link rel="stylesheet" href="css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">/)?.[0];
 const before=digest();child.execFileSync(process.execPath,['scripts/build-study-upgrade.mjs']);assert.equal(digest(),before,'Study build is idempotent');
 assert.ok(cirrusBefore,'Cirrus script is present');
 assert.equal(read('index.html').match(/<script defer src="js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>/g)?.length,1,'Study build keeps one Cirrus script');
 assert.ok(read('index.html').includes(cirrusBefore),'Study build preserves the Cirrus cache version');
+assert.equal(read('index.html').match(/<link rel="stylesheet" href="css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">/g)?.length,1,'Study build keeps one Cirrus stylesheet');
+assert.ok(read('index.html').includes(cirrusStyleBefore),'Study build preserves the Cirrus stylesheet cache version');
 console.log('Study upgrade verified: 40 topic rationales, 120 exercise links, 131 exam explanations, 74 statutes, source pages, default automatic theme and reproducible output.');
 
 // Cloudflare serves clean URLs. Both canonical and local HTML paths must restore.
