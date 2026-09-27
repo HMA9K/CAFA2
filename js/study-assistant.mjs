@@ -37,7 +37,7 @@ function banner(message,isError=false){$('[data-banner]').textContent=message;$(
 function syncLaunchers() {
   for(const menu of doc.querySelectorAll('.study-tools-menu>nav')){
     if(!menu.querySelector('[data-assistant-menu]')){const item=doc.createElement('button');item.type='button';item.dataset.assistantMenu='';item.textContent='CAFA2 Assistent';item.setAttribute('aria-controls',panel.id);menu.append(item);}
-    const item=menu.querySelector('[data-assistant-menu]');if(menu.lastElementChild!==item)menu.append(item);item.hidden=!current||current.ref.kind!=='exam';item.setAttribute('aria-expanded',String(panel.open));
+    const item=menu.querySelector('[data-assistant-menu]');if(menu.lastElementChild!==item)menu.append(item);item.hidden=!current;item.setAttribute('aria-expanded',String(panel.open));
   }
   const ready=!doc.documentElement.classList.contains('cafa-starting')&&!doc.documentElement.classList.contains('cafa-start-failed');
   button.textContent=intro.label;button.classList.toggle('is-first-use',!intro.seen);

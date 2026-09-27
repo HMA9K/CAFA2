@@ -68,7 +68,7 @@ try:
         return menu
       page.wait_for_function('document.querySelector("#learning-tools-menu [data-assistant-menu]")')
       menu=open_menu('#learning-tools-menu')
-      check(f'{width}: practice menu hides the exam-only assistant row',not menu.locator('[data-assistant-menu]').is_visible())
+      check(f'{width}: practice assistant row is the last menu entry',menu.locator('[data-assistant-menu]').is_visible() and menu.locator('[data-assistant-menu]').evaluate('e=>e===e.parentElement.lastElementChild'))
       page.screenshot(path=str(OUT/f'practice-menu-{width}.png'))
       menu.locator('summary').click();page.locator('.study-assistant-launch').click();intro.wait_for(state='visible')
       check(f'{width}: practice launcher opens the code popup with revoked consent',intro.locator('[data-consent]').is_visible() and not intro.locator('[data-consent-check]').is_checked())

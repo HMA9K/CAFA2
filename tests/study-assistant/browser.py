@@ -545,7 +545,7 @@ try:
     check('Calculator history works before opening assistant',page.locator('.calc-history-list li').count()>=1)
     check('Open calculator hides the floating assistant launcher',not page.locator('.study-assistant-launch').is_visible())
     def open_from_tools():
-      # Close the calculator to reveal the practice launcher; the menu row is exam-only.
+      # Close the calculator to reveal the practice launcher.
       page.locator('#calculator-dialog [data-calc-close]').click()
       page.locator('.study-assistant-launch').click();continue_intro()
       page.locator('[data-calc]').click()

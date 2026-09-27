@@ -42,11 +42,8 @@ def menu_over_pdf(page, selector, width):
     })'''), 'PDF covers an open menu item'
     assert page.locator('#exam-original-solutions[open]').count() == 1
     assistant = menu.locator('[data-assistant-menu]')
-    if selector == '#cirrus-tools-menu':
-        expect(assistant).to_be_visible()
-        assert assistant.evaluate('e=>e===e.parentElement.lastElementChild')
-    else:
-        expect(assistant).to_be_hidden()
+    expect(assistant).to_be_visible()
+    assert assistant.evaluate('e=>e===e.parentElement.lastElementChild')
     menu.locator('a').first.hover()
     if OUT:
         page.screenshot(path=str(OUT / f'pdf-menu-{selector[1:]}-{width}.png'))
@@ -94,7 +91,10 @@ try:
                 menu = page.locator('#learning-tools-menu')
                 menu.locator('summary').click()
                 assert menu.locator('a[href*="afdrukken=alles"]').count() == 0
-                expect(menu.locator('[data-assistant-menu]')).to_be_hidden()
+                assistant = menu.locator('[data-assistant-menu]')
+                expect(assistant).to_be_visible()
+                assert assistant.evaluate('e=>e===e.parentElement.lastElementChild')
+                assert assistant.evaluate('e=>{const s=getComputedStyle(e);return s.backgroundColor==="rgb(80, 67, 99)" && s.textAlign==="center" && Math.abs(e.offsetWidth-e.previousElementSibling.offsetWidth)<2;}')
                 if OUT:
                     menu.locator('nav').screenshot(path=str(OUT / f'menu-{theme}-{width}.png'))
                 menu.locator('summary').click()
