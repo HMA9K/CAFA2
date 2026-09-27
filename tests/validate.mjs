@@ -68,7 +68,9 @@ for (const relativePath of listFiles(root)) {
   const size = fs.statSync(path.join(root, relativePath)).size;
   // Original source documents retain their figures and scoring; do not rasterize them to meet a script-size limit.
   const sourcePdf=/^(?:dist[\\/])?assets[\\/]tentamens[\\/]\d{8}[\\/](opgaven|uitwerking)\.pdf$/.test(relativePath);
-  assert.ok(size < (sourcePdf ? 2_000_000 : 900_000), `${relativePath} is te groot voor betrouwbare publicatie (${size} bytes).`);
+  // The bundled PDF.js runtime and worker are preserved vendor files.
+  const pdfRuntime=/^(?:dist[\\/])?pdf-reader[\\/]build[\\/]pdf(?:\.worker)?\.mjs$/.test(relativePath);
+  assert.ok(size < (pdfRuntime ? 3_000_000 : sourcePdf ? 2_000_000 : 900_000), `${relativePath} is te groot voor betrouwbare publicatie (${size} bytes).`);
 }
 
 const sandbox = { window: {} };
