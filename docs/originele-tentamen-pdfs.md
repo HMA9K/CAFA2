@@ -4,9 +4,19 @@ De knoppen **Tentamen PDF** en **Uitwerking PDF** openen de bronstukken zonder e
 
 Tijdens het maken van een vraag vervangt Tentamen PDF de linker casusweergave. Terug naar casus herstelt de bestaande inhoud. Uitwerking PDF gebruikt het rechterpaneel van de assistent; de assistent wordt gesloten met behoud van diens concept. Terug naar assistent heropent deze. Vraag, antwoord, markering en poging blijven staan. Op het Dashboard verschijnt de opgave links naast de lijst en de uitwerking rechts. Beide documenten hebben een link om het originele document in een nieuw tabblad te bekijken, ook voor browsers zonder ingebouwde PDF-weergave.
 
-De PDF-vensters blijven binnen dezelfde geopende leeromgeving per brontentamen bestaan. Wisselen van vraag uit hetzelfde tentamen houdt beide panelen open. Sluiten en later opnieuw openen gebruikt hetzelfde documentvenster, zodat de gekozen pagina en zoom behouden blijven. Het openen van de rechter PDF verplaatst of herlaadt de linker PDF niet. Terug naar assistent schakelt direct terug zonder introductievenster. Een volledige paginavernieuwing start een nieuwe documentweergave.
+De PDF-vensters blijven binnen dezelfde geopende leeromgeving per brontentamen bestaan. Wisselen van vraag uit hetzelfde tentamen houdt beide panelen open. Sluiten en later opnieuw openen gebruikt hetzelfde documentvenster, zodat de gekozen pagina en zoom behouden blijven. Het openen van de rechter PDF verplaatst of herlaadt de linker PDF niet. Terug naar assistent schakelt direct terug zonder introductievenster. Ook na een volledige paginavernieuwing wordt bij opnieuw openen de bewaarde pagina en zoom hersteld.
 
 De documenten zijn geen HTML-transcriptie of nieuwe uitwerking. De oorspronkelijke pagina's, figuren, kleuren en normering blijven behouden. Documentmetadata en persoonlijke annotaties zijn verwijderd uit de publicatiekopieën; de lokale bronnen blijven intact. Alle 22 beschikbare PDF's zijn vergeleken met de lokale bronnen: gelijk aantal pagina's, gelijke paginagrootte, gelijke uitgepakte pagina-inhoud en gelijke tekst. De beschikbaarheid en SHA-256-controlegetallen staan in `data/exam-original-pdfs.mjs`; de resultaten per document staan in `docs/original-pdfs-validation.json`.
+
+## Arceren in de PDF
+
+De ingebouwde browserlezer is vervangen door een lokaal meegeleverde PDF.js-lezer. Kies **Arceren** en selecteer de tekst met de muis. Met **Kleur** kies je geel, groen, blauw, roze of rood. Klik op een bestaande arcering om de kleur te wijzigen of gebruik **Verwijderen**. De oorspronkelijke pagina's, figuren en rode normering blijven behouden.
+
+Een persoonlijke PDF-kopie met arceringen wordt automatisch in IndexedDB in dezelfde browser bewaard. De status onder het document meldt wanneer de arceringen lokaal zijn opgeslagen. Pagina, zoom en positie worden per bronstuk in localStorage bewaard. De opslag is gescheiden per tentamen, vragen/uitwerking en SHA-256 van het bronbestand. Het wijzigen van een bronbestand hergebruikt daardoor geen oude annotaties bij een andere bronversie. De originele PDF op de website blijft ongewijzigd; de link boven de lezer blijft naar dat originele bestand verwijzen. De downloadknop in de lezer levert de persoonlijke kopie op.
+
+Arceringen worden niet naar een server verstuurd en synchroniseren niet tussen browsers of apparaten. Het verwijderen van websitegegevens verwijdert ook deze lokale kopieën. Bij een opslagfout blijft de PDF bruikbaar en meldt de status dat de gebruiker de persoonlijke kopie moet downloaden om markeringen te bewaren. Wacht op de melding van succesvolle opslag voordat je de pagina sluit.
+
+De toetsvoortgang staat los van de PDF-opslag. Het resetten van een toets wist dus geen arceringen. Tijdens vraagwissels en sluiten/heropenen blijven dezelfde documentvensters bestaan; het openen van de uitwerking herlaadt de vragen-PDF niet.
 
 ## Volledige beschikbaarheid
 

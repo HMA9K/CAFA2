@@ -31,7 +31,7 @@ function viewer(id,kind){
   const box=document.createElement('section');box.className='original-pdf-viewer';box.dataset.pdfExam=id;
   box.innerHTML='<header class="original-pdf-head"><strong>'+label+' · '+htmlEscape(source.date.split('-').reverse().join('-'))+'</strong><button type="button" class="btn" data-pdf-close="'+kind+'">'+(kind==='questions'?'Terug naar casus':'Sluiten')+'</button></header>'+
     '<p class="original-pdf-link"><a target="_blank" rel="noopener" href="'+file.url+'">Open PDF in een nieuw tabblad</a></p>'+
-    '<iframe title="'+htmlEscape(label+' '+file.title)+'" src="'+file.url+'#view=FitH" loading="eager"></iframe>';
+    '<iframe title="'+htmlEscape(label+' '+file.title)+'" src="pdf-reader/web/viewer.html?file='+encodeURIComponent(new URL(file.url,document.baseURI).href)+'&amp;key='+encodeURIComponent(key+':'+file.sha256)+'" loading="eager"></iframe>';
   viewers.set(key,box);return box;
 }
 function placeLeft(){

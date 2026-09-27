@@ -5,7 +5,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
  const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH});
  try{
   const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],pdfLoads=new Map();
-  page.on('request',request=>{if(request.isNavigationRequest()&&request.url().includes('/assets/tentamens/')&&request.url().includes('.pdf'))pdfLoads.set(request.url(),(pdfLoads.get(request.url())||0)+1);});
+  page.on('request',request=>{if(request.url().includes('/assets/tentamens/')&&request.url().includes('.pdf'))pdfLoads.set(request.url(),(pdfLoads.get(request.url())||0)+1);});
   page.setDefaultTimeout(120000);page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   await page.goto(base+'index.html#dashboard',{waitUntil:'domcontentloaded'});
@@ -17,7 +17,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   assert.equal(await button('questions','cafa2-20210419').isDisabled(),false);
   console.log('Dashboard loaded'); const initial=await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey));
   await button('questions').click();await page.locator('.original-pdf-left-viewer iframe').waitFor();
-  await button('solutions').click();await page.locator('#exam-original-solutions[open] iframe').waitFor();
+  await button('solutions').click();await page.locator('#exam-original-solutions[open] iframe').waitFor();await page.waitForFunction(()=>[...document.querySelectorAll('.original-pdf-viewer iframe')].every(f=>f.contentWindow.CafaPdfReader?.ready));
   assert.equal(await page.locator('.study-assistant-launch').isVisible(),false);
   assert.equal(await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey)),initial);
   await page.locator('[data-pdf-close="questions"]').click();assert.equal(await page.locator('#exam-original-solutions[open]').count(),1);
@@ -53,7 +53,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   await page.evaluate(id=>location.hash=id,ids[0]);await page.locator('#'+ids[0]+' [data-original-pdf]').first().waitFor();
   assert.equal(await page.locator('#'+ids[0]+' [data-original-pdf]').count(),2);
   await button('questions').click();await button('solutions').click();await page.locator('#exam-original-solutions[open] iframe').waitFor();
-  assert.match(await page.locator('.original-pdf-left-viewer:visible iframe').getAttribute('src'),/20240422\/opgaven\.pdf/);
+  assert.match(decodeURIComponent(await page.locator('.original-pdf-left-viewer:visible iframe').getAttribute('src')),/20240422\/opgaven\.pdf/);
   console.log('MC panes open'); await page.setViewportSize({width:390,height:844});
   await page.waitForTimeout(400);assert.ok(await page.locator('#exam-original-solutions a[target="_blank"]').isVisible());
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));
@@ -62,7 +62,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   console.log('Mobile and route cleanup passed'); for(const id of await page.evaluate(()=>CafaExams.catalog.map(e=>e.id))){
    await page.evaluate(id=>location.hash='welkom/'+id,id);await page.locator('.exam-paper [data-pdf-exam="'+id+'"]').first().waitFor();
   }
-  assert.ok([...pdfLoads.values()].every(n=>n===1),'Native PDF documents are not reloaded on layout or route changes');
-  assert.deepEqual(errors,[]);console.log('Dashboard, eleven introductions, exam, MC, desktop/mobile, original source, answers, marking, assistant draft and native PDF load retention: passed.');
+  assert.ok([...pdfLoads.values()].every(n=>n===1),'PDF documents are not reloaded on layout or route changes');
+  assert.deepEqual(errors,[]);console.log('Dashboard, eleven introductions, exam, MC, desktop/mobile, original source, answers, marking, assistant draft and PDF load retention: passed.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
