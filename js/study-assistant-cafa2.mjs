@@ -65,6 +65,8 @@ export function createCafa2Adapter(win=window) {
   function decorate(open) {
     const host=win.document.getElementById('exam-app');if(!host)return;
     const parts=win.location.hash.slice(1).split('/').map(x=>{try{return decodeURIComponent(x);}catch{return x;}});
+    const actions=host.querySelector('.exam-answer-actions');
+    if(parts[0]==='tentamen'&&actions)attach(actions,()=>exam(parts[1]),open,'CAFA2 Assistent');
     const feedback=host.querySelector('#cafa-exam-feedback');
     if(parts[0]==='tentamen' && feedback && !feedback.hidden)
       attach(feedback,()=>exam(parts[1]),open);
@@ -86,10 +88,10 @@ export function createCafa2Adapter(win=window) {
       });
     }
   }
-  function attach(el,get,open) {
+  function attach(el,get,open,label='Vraag over dit antwoord') {
     if(el.querySelector('.study-inline-launch'))return;
     const button=win.document.createElement('button');button.type='button';button.className='study-inline-launch';
-    button.textContent='Vraag over dit antwoord';button.addEventListener('click',e=>{e.preventDefault();const previous=pinned,route=win.location.hash;pinned=get;open({cancel:()=>{if(win.location.hash===route)pinned=previous;}});});el.appendChild(button);
+    button.textContent=label;button.addEventListener('click',e=>{e.preventDefault();const previous=pinned,route=win.location.hash;pinned=get;open({cancel:()=>{if(win.location.hash===route)pinned=previous;}});});el.appendChild(button);
   }
   return {course:'CAFA2',read,markChecked,decorate,resetPin:()=>{pinned=null;},answerValue};
 }

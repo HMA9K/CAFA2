@@ -1,7 +1,7 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro4';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-consent1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro4';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-consent1';
 import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-persistent1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
@@ -23,7 +23,6 @@ panel.innerHTML=`<header class="study-head"><div><p class="study-eyebrow">HULP B
 <div class="study-context"><strong data-context-title></strong><p data-context-question></p><div class="study-context-controls"><label>Stand <select data-mode aria-label="Hulpstand"><option value="hint">Eerst een hint</option><option value="review">Antwoord en uitleg</option></select></label><button type="button" class="study-text-button" data-action="clear">Nieuw gesprek</button></div><small data-mode-note></small></div>
 <div class="study-scroll"><div class="study-banner" data-banner role="status"></div>
 <form data-login hidden><label for="study-code">Toegangscode leeromgeving</label><div class="study-code-row"><input id="study-code" type="password" autocomplete="off" maxlength="256" required><button type="submit">Ontgrendelen</button></div><p class="study-note">Dit is de toegangscode van de beheerder, niet een API-sleutel of ChatGPT-wachtwoord.</p></form>
-<div class="study-consent" data-consent><label><input type="checkbox" data-consent-check><span>Bij verzenden mogen de vraag, casus, mijn antwoord en dit gesprek naar de modeldienst worden gestuurd.</span></label><p>De chat wijzigt je tentamenantwoord of score niet. Typ geen persoonsgegevens. De chatgeschiedenis blijft alleen in dit tabblad; de modeldienst kan eigen bewaartermijnen hanteren.</p></div>
 <div class="study-starters" data-starters><button type="button" data-prompt="Geef één hint voor de eerste stap, zonder het antwoord te verklappen.">Geef een hint</button><button type="button" data-prompt="Leg het begrip uit dat ik voor deze vraag moet begrijpen.">Leg het begrip uit</button><button type="button" data-prompt="Welke gegevens uit deze casus heb ik nodig, en waarom?">Welke gegevens?</button><button type="button" data-prompt="Kijk mijn ingevulde antwoord na aan de hand van de uitwerking. Geef aan wat klopt, welke fouten of ontbrekende stappen er zijn en hoe ik die kan verbeteren. Geef ook aan hoeveel punten mijn antwoord verdient." data-review-prompt>Kijk mijn antwoord na</button><button type="button" data-prompt="Geef het antwoord op deze vraag en licht de berekening of redenering toe." data-answer-prompt>Geef antwoord en uitleg</button></div>
 <div class="study-messages" role="log" aria-live="polite" aria-relevant="additions" data-messages></div></div>
 <footer class="study-compose"><form data-chat-form><label for="study-message" class="study-sr">Je vraag aan de assistent</label><textarea id="study-message" rows="2" maxlength="2500" placeholder="Wat is nog niet duidelijk?" enterkeyhint="enter"></textarea><div class="study-send-row"><span data-counter>0 / 2500</span><button type="button" data-action="stop" hidden>Stop</button><button type="submit" data-send>Versturen</button></div></form><div class="study-bottom"><small data-knowledge></small><button type="button" class="study-text-button" data-action="logout" hidden>Uitloggen</button></div></footer>`;
@@ -36,6 +35,10 @@ function contextKey(value){return value?refKey(value.ref)+'|'+value.revision+'|'
 function conversation(){const k=scope();if(!conversations.has(k)){if(conversations.size>=40)conversations.delete(conversations.keys().next().value);conversations.set(k,[]);}return conversations.get(k);}
 function banner(message,isError=false){$('[data-banner]').textContent=message;$('[data-banner]').classList.toggle('is-error',isError);$('[data-banner]').hidden=!message;}
 function syncLaunchers() {
+  for(const menu of doc.querySelectorAll('.study-tools-menu>nav')){
+    if(!menu.querySelector('[data-assistant-menu]')){const item=doc.createElement('button');item.type='button';item.dataset.assistantMenu='';item.textContent='CAFA2 Assistent';item.setAttribute('aria-controls',panel.id);menu.prepend(item);}
+    const item=menu.querySelector('[data-assistant-menu]');item.hidden=!current;item.setAttribute('aria-expanded',String(panel.open));
+  }
   const ready=!doc.documentElement.classList.contains('cafa-starting')&&!doc.documentElement.classList.contains('cafa-start-failed');
   button.textContent=intro.label;button.classList.toggle('is-first-use',!intro.seen);
   if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorButton=null;calculatorObserver=null;
@@ -64,9 +67,6 @@ function placeLauncher() {
 function queuePlacement(){if(placementQueued)return;placementQueued=true;requestAnimationFrame(()=>{placementQueued=false;placeLauncher();});}
 function controls() {
   const permitted=!!current&&status?.ready&&status?.authenticated&&consent;
-  $('[data-consent]').classList.toggle('is-confirmed',consent);
-  $('[data-consent] span').textContent=consent?'Vraagcontext delen toegestaan voor dit tabblad.':'Bij verzenden mogen de vraag, casus, mijn antwoord en dit gesprek naar de modeldienst worden gestuurd.';
-  $('[data-consent] p').hidden=consent;
   $('[data-send]').disabled=!permitted||running||!input.value.trim();
   $('[data-action="stop"]').hidden=!running;
   $('[data-mode]').disabled=running;// Both teaching styles are always available in this practice environment.
@@ -135,7 +135,9 @@ async function loadStatus() {
   }catch(error){status=null;banner(error.name==='AbortError'?'De server reageert niet. Probeer het opnieuw.':error.message,true);$('[data-login]').hidden=true;}
   finally{clearTimeout(timer);controls();}
 }
-const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open});
+const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open,getConsent:()=>consent,onConsentChange:value=>{consent=value;if(!consent)stop();controls();}});
+const privacy=doc.createElement('button');privacy.type='button';privacy.className='study-text-button';privacy.textContent='Privacy';privacy.addEventListener('click',()=>intro.show(doc.activeElement,()=>{},true));$('[data-action="logout"]').before(privacy);
+doc.addEventListener('click',event=>{const item=event.target.closest('[data-assistant-menu]');if(item){item.closest('details').open=false;start();}});
 function start({cancel=()=>{}}={}){if(current||adapter.read())intro.show(doc.activeElement,cancel);}
 async function open({code='',launcher=doc.activeElement}={}) {
   const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
@@ -151,7 +153,6 @@ async function open({code='',launcher=doc.activeElement}={}) {
 button.addEventListener('click',start);
 panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
 panel.addEventListener('cancel',()=>stop());
-$('[data-consent-check]').addEventListener('change',e=>{consent=e.target.checked;controls();});
 input.addEventListener('input',()=>{drafts.set(scope(),input.value);controls();});
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('[data-chat-form]').requestSubmit();}});
 $('[data-mode]').addEventListener('change',e=>{drafts.set(scope(),input.value);mode=e.target.value;input.value=drafts.get(scope())||'';renderConversation();refresh();loadStatus();});
@@ -161,7 +162,7 @@ panel.addEventListener('click',async e=>{
   if(action==='close')panel.close();
   if(action==='stop'){stop();banner('Het verzoek is gestopt. Het kan al API-verbruik hebben veroorzaakt.');}
   if(action==='clear'){stop();conversations.delete(scope());drafts.delete(scope());input.value='';renderConversation();banner('Nieuw gesprek voor deze vraag.');controls();}
-  if(action==='logout'){stop();try{await api('logout',{});status.authenticated=false;consent=false;$('[data-consent-check]').checked=false;conversations.clear();drafts.clear();input.value='';renderConversation();await loadStatus();}catch(error){banner(error.message,true);}}
+  if(action==='logout'){stop();try{await api('logout',{});status.authenticated=false;consent=false;conversations.clear();drafts.clear();input.value='';renderConversation();await loadStatus();intro.show(doc.activeElement);}catch(error){banner(error.message,true);}}
 });
 $('[data-login]').addEventListener('submit',async e=>{
   e.preventDefault();const code=$('#study-code'),submit=e.target.querySelector('button');submit.disabled=true;
