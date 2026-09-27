@@ -311,7 +311,7 @@ try:
     check('Current full-exam rich answer reaches the model','123.456' in requests[-1]['studentAnswer']['text'])
     check('Assistant does not change saved full-exam answers or scores',page.evaluate('localStorage.getItem(CafaExams.storageKey)')==saved_exam)
     pdf_conversation=page.locator('.study-message').count();pdf_requests=len(requests)
-    close_panel();page.locator('.exam-cirrus-actions [data-original-pdf="solutions"]').click()
+    close_panel();page.locator('.exam-footer [data-original-pdf="solutions"]').click()
     source_pdf=page.locator('#exam-original-solutions');source_pdf.wait_for(state='visible')
     source_url=source_pdf.locator('iframe').get_attribute('src')
     page.evaluate('StudyAssistant.open()');page.locator('#study-assistant-intro').wait_for(state='visible')
