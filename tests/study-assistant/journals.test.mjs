@@ -26,6 +26,8 @@ test('2026 opgave 3 vraag 5B houdt zes debetregels en één creditregel',()=>{
 });
 test('de gemelde debet-creditverwisseling kan niet via vrije tekst worden weergegeven',()=>{
   assert.throws(()=>validatedJournalAnswer(typed([{type:'text',text:wrong}]),contract),e=>e.code==='unstructured_journal');
+  for(const text of ['- Aan Belastinglast € 2.400','Creditzijde: Belastinglast € 2.400','0.. Aan Bank € 20'])
+    assert.throws(()=>validatedJournalAnswer(typed([{type:'text',text}]),contract),e=>e.code==='unstructured_journal');
 });
 test('een brononderdeel kan rekening, bedrag of boekingszijde niet overschrijven',()=>{
   for(const extra of [{rows:[]},{debit:0,credit:48000},{title:'Anders'}])assert.throws(()=>validatedJournalAnswer(typed([{...sourcePart,...extra}]),contract),JournalValidationError);
