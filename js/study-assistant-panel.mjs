@@ -33,7 +33,9 @@ export function createAssistantPanel(panel,options={}){
     // already docked the answer body. Preserve that new wrapper before removal.
     if(primary&&layout.contains(primary)){
       let content=primary;while(content.parentElement!==layout)content=content.parentElement;
-      move(layout.parentElement,content,layout);
+      // A rendered exam route may already have removed the old layout.
+      // Restore content only into a parent that still exists.
+      if(layout.parentElement)move(layout.parentElement,content,layout);
     }
     primary?.classList.remove('study-assistant-primary');
     page?.classList.remove('study-assistant-page','study-assistant-short-page');page?.style.removeProperty('--sa-page-height');

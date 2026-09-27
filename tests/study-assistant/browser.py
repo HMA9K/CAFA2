@@ -457,6 +457,7 @@ try:
     check('Individual review navigation updates question and keeps its own history',
           requests[-1]['ref']['questionId']=='vraag-2' and
           any(m['content']=='Vraag 2 krijgt eigen uitleg.' for m in requests[-1]['history']))
+    check('Replaced historical layout is released without an exception and the new panel stays connected',not errors and page.locator('#study-assistant').evaluate('e=>e.isConnected && e.parentElement.classList.contains("study-assistant-layout")'))
     close_panel()
 
     # An opgave series stores compound IDs, while the assistant must use the
@@ -530,7 +531,7 @@ try:
             not overlap['conflicts'] and overlap['launcher']['y']>=0 and
             overlap['launcher']['y']+overlap['launcher']['height']<=height+1)
       ensure_open();page.wait_for_timeout(200);rect=page.locator('#study-assistant').bounding_box()
-      check(f'Mobile pane fits {width}x{height}',rect['x']>=-1 and rect['x']+rect['width']<=width+1 and rect['y']+rect['height']<=height+1)
+      check(f'Mobile pane fits {width}x{height}: {rect}',rect['x']>=-1 and rect['x']+rect['width']<=width+1 and rect['y']+rect['height']<=height+1)
       check(f'Mobile input avoids headers and sticky navigation at {width}x{height}',page.locator('#study-message').evaluate('''e=>{const r=e.getBoundingClientRect(),top=document.querySelector('#study-returnbar').getBoundingClientRect();return r.y>=top.bottom && document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===e;}'''))
     page.set_viewport_size({'width':390,'height':400});page.locator('#study-message').focus();page.wait_for_timeout(150)
     compose=page.locator('.study-compose').bounding_box()
