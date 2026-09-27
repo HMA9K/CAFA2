@@ -39,6 +39,11 @@ test('toelichting op één regel toont een bronfragment zonder valse balansclaim
   const result=validatedJournalAnswer(typed([{type:'text',text:'De uitwerking gebruikt hier dezelfde zijde als bij de overige correcties.'},{...sourcePart,rowIndices:[3]}]),contract);
   assert.match(result.answer,/bronfragment/);assert.match(result.answer,/\| Belastinglast \| € 2\.400 \|  \|/);assert.doesNotMatch(result.answer,/totaal credit|23\.040/);
 });
+test('alle expliciete regelnummers vormen een volledige bronboeking in bronvolgorde',()=>{
+  const result=validatedJournalAnswer(typed([{...sourcePart,rowIndices:[6,5,4,3,2,1,0]}]),contract);
+  assert.match(result.answer,/volgens de uitwerking/);assert.match(result.answer,/totaal debet/);
+  assert.ok(result.answer.indexOf('Resultaat na belastingen')<result.answer.indexOf('Aan Kostprijs van de omzet'));
+});
 test('alleen een hint blijft mogelijk zonder bronboekingen of volledig antwoord',()=>{
   const result=validatedJournalAnswer(typed([{type:'text',text:'Begin met de nog niet gerealiseerde winst in de voorraad.'}]),contract);
   assert.equal(result.validation.sourceJournals,0);assert.doesNotMatch(result.answer,/48\.000|Rekening/);

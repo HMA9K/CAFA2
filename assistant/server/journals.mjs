@@ -91,7 +91,8 @@ export function validatedJournalAnswer(text,contract){
       if(Object.keys(part).sort().join()!=='rowIndices,sourceId,type')fail('invalid_source_part');
       const source=contract.sources.find(s=>s.id===part.sourceId);
       if(!source||!Array.isArray(part.rowIndices)||part.rowIndices.some(i=>!Number.isInteger(i)||i<0||i>=source.rows.length)||new Set(part.rowIndices).size!==part.rowIndices.length)fail('unknown_source_row');
-      const fragment=part.rowIndices.length>0,rows=fragment?part.rowIndices.map(i=>source.rows[i]):source.rows;
+      const fragment=part.rowIndices.length>0&&part.rowIndices.length<source.rows.length;
+      const rows=fragment?source.rows.filter((_,i)=>part.rowIndices.includes(i)):source.rows;
       chunks.push('### '+cell(source.title)+(fragment?' · bronfragment':' · volgens de uitwerking')+'\n\n'+table(rows)+(fragment?'':'\n\n'+balanceText(source.totals)));
       validation.sourceJournals++;
     }else if(part.type==='derived_journal'){
