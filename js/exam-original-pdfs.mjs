@@ -96,13 +96,17 @@ function mount(){
 }
 function schedule(){if(!queued){queued=true;requestAnimationFrame(mount);}}
 document.addEventListener('click',event=>{
-  if(event.target.closest('.study-assistant-launch,.study-inline-launch'))closeRight();
   if(event.target.closest('[data-cirrus-float],[data-exam-action="section"],[data-practice-case]')&&left)closeLeft();
   const close=event.target.closest('[data-pdf-close]');if(close){if(close.dataset.pdfClose==='questions')closeLeft();else closeRight();return;}
-  if(event.target.closest('[data-pdf-assistant]')){closeRight();window.StudyAssistant?.open();return;}
+  if(event.target.closest('[data-pdf-assistant]')){window.StudyAssistant?.open();return;}
   const button=event.target.closest('[data-original-pdf]');if(!button||button.disabled)return;
   if(button.dataset.originalPdf==='questions')openLeft(button.dataset.pdfExam,button);else openRight(button.dataset.pdfExam,button);
 },true);
+// Keep the source PDF visible until the introductory Continue action is accepted.
+window.addEventListener('cafa:assistant-start',event=>{
+  const closed=right?.open?new Promise(resolve=>right.addEventListener('close',resolve,{once:true})):null;
+  closeRight();if(closed)event.detail?.waitUntil?.(closed);
+});
 window.addEventListener('hashchange',()=>{closeLeft();closeRight();schedule();});
 window.addEventListener('cafa:ready',schedule);
 new MutationObserver(records=>{if(records.some(r=>r.type==='childList'||r.target.matches?.('.question')))schedule();}).observe(document.getElementById('app-content'),{childList:true,subtree:true});

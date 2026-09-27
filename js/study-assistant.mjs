@@ -1,8 +1,8 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro2';
-import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro2';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro2';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-intro2';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro3';
+import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro3';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro3';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-intro3';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
@@ -131,7 +131,8 @@ async function loadStatus() {
 const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open});
 function start({cancel=()=>{}}={}){if(adapter.read())intro.show(doc.activeElement,cancel);}
 async function open({code='',launcher=doc.activeElement}={}) {
-  refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
+  const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
+  await Promise.all(waiting);refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
   dock.show(opener);syncLaunchers();button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');
   if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});
   if(code){
