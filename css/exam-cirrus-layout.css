@@ -133,3 +133,49 @@ body #calculator .calc-keys [data-key="="]{background:#f60;border-color:#f60}
 body .cirrus-calc-small .calc-history,body .cirrus-calc-small .calc-history-list li{box-sizing:border-box}
 
 body #calculator-dialog.calc-collapsed,body #calculator.calc-collapsed{min-height:0!important}
+
+
+/* Global page navigation shares the approved exam heading and control order. */
+body .top-controls>.study-theme-control,body .reader-top-tools>.study-theme-control{order:-4!important}
+body .top-controls>.exam-clock,body .reader-top-tools>.exam-clock{order:-3!important}
+body .top-controls>[data-calc],body .reader-top-tools>[data-calc]{order:-2!important}
+body .top-controls>.font-group,body .reader-top-tools>.font-group{order:-1!important}
+.learning-page-head{display:flex;align-items:center;gap:16px;padding:10px 12px;min-height:58px;position:relative;z-index:30;background:var(--study-surface,#fafafa);color:var(--study-ink,#17364e);border-bottom:1px solid var(--study-line,#e2e6ec);box-sizing:border-box}
+.learning-page-head[hidden]{display:none!important}
+.learning-page-head .cirrus-page-nav{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.learning-page-head .btn{font:12px/1.3 Arial,sans-serif;padding:7px 9px;min-height:31px;box-sizing:border-box;border:1px solid var(--study-line,#d8e0eb);color:var(--study-ink,#17364e);background:var(--study-surface,#fff);text-decoration:none;white-space:nowrap}
+.learning-page-title{font:700 26px/1.3 Arial,sans-serif!important;color:#444159!important;margin:0!important;min-width:0}
+.learning-page-head details:last-child{margin-left:auto;flex:0 0 auto}
+.learning-page-head #learning-tools-menu>summary{font:12px/1.4 Arial,sans-serif;cursor:pointer;padding:8px;list-style:none}
+#learning-tools-menu{position:relative;color:var(--study-ink,#17364e)}
+#learning-tools-menu>nav,#learning-tools-menu>.sra-tools-panel{position:absolute;right:0;top:100%;min-width:220px;background:var(--study-surface,#fff);border:1px solid var(--study-line,#d8e0eb);box-shadow:0 8px 22px #39334724;z-index:60;padding:6px;display:grid}
+#learning-tools-menu:not([open])>nav,#learning-tools-menu:not([open])>.sra-tools-panel{display:none}
+#learning-tools-menu a{font:13px/1.4 Arial,sans-serif;padding:9px;text-decoration:none;color:inherit}
+body.learning-page-layout .study-page-name,body.learning-page-layout .sra-breadcrumb,body.learning-page-layout .exam-breadcrumb,body.learning-page-layout .study-position-bar,body.learning-page-layout .learning-original-title{display:none!important}
+body.learning-page-layout:not(.study-inline-reader) #study-returnbar,body.learning-page-layout .study-navigation-row{display:none!important}
+body.learning-page-layout.study-inline-reader #study-returnbar .study-back,body.learning-page-layout.study-inline-reader #study-returnbar .study-origin,body.learning-page-layout.study-inline-reader #study-returnbar .question-return-links,body.learning-page-layout.study-inline-reader #study-tools-menu{display:none!important}
+body.learning-page-layout .practice-question-page{padding-top:10px!important}
+body.learning-page-layout .practice-question-frame{margin-top:0!important}
+body.learning-page-layout .practice-case-layout>.qbody{padding:26px 32px!important;min-width:0;font:13px/1.5 Arial,sans-serif}
+body.learning-page-layout .practice-case-layout>.exam-case-panel{padding:18px 20px!important;font:13px/1.48 Arial,sans-serif}
+body.learning-page-layout .qbody>.question-header{padding:0!important;margin:0 0 24px!important;border:0!important;min-height:28px}
+body.learning-page-layout .qbody>.topic-question-context{margin:0 0 18px;font:12px/1.4 Arial,sans-serif}
+body.learning-page-layout .qbody>.question-header .qidentity{font:11px/1.3 Arial,sans-serif}
+body.learning-page-layout .qbody>.question-header .qnum{min-width:17px;height:17px;line-height:17px;font-size:12px;background:#f60}
+body.learning-page-layout .qbody>.question-header .question-count{font:11px/1.3 Arial,sans-serif}
+body.learning-page-layout .mc-question-body>.sra-runner-head{padding:0!important;margin:0 0 24px!important;border:0!important;font:11px/1.3 Arial,sans-serif}
+body.learning-page-layout .mc-question-body{padding:26px 32px!important;font:13px/1.5 Arial,sans-serif}
+body.learning-page-layout .mc-prompt{font-weight:700}
+body.learning-page-layout #mc-introduction{display:none}
+body[data-theme="dark"] .learning-page-title,html[data-theme="dark"] .learning-page-title{color:#e7e2f3!important}
+@media(max-width:760px){.learning-page-head{flex-wrap:wrap;gap:8px;padding:8px 10px}.learning-page-title{font-size:20px!important;order:3;flex-basis:100%}.learning-page-head details:last-child{order:2}.learning-page-head .cirrus-page-nav{order:1}body.learning-page-layout .practice-case-layout>.qbody,body.learning-page-layout .mc-question-body{padding:18px 14px!important}}
+
+body.study-inline-reader .learning-page-head{position:sticky;top:var(--study-top-h,64px);z-index:35}
+.learning-page-head #menu-toggle[hidden]{display:none!important}
+html[data-study-theme=dark] .learning-page-title{color:#e7e2f3!important}
+
+@media(min-width:761px){body.learning-page-layout.practice-surface main{height:calc(100dvh - var(--cirrus-top-height,64px) - var(--learning-head-height,58px))!important}}
+
+.sra-home .study-home-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}
+.sra-home .study-home-links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--study-line,#d9e2eb);background:var(--study-surface,#fff);color:var(--study-ink,#17364e);text-decoration:none;font:600 13px/1.4 Arial,sans-serif}
+@media(max-width:760px){.sra-home .study-home-links{grid-template-columns:repeat(2,minmax(0,1fr))}}

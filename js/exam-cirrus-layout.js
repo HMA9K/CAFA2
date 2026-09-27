@@ -32,12 +32,8 @@
     floating.onkeydown=e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closeFloat();}};
   }
   function layout(){
-    observeSizes();const host=document.querySelector('#exam-app');if(!host)return;
+    observeSizes();learningLayout();orderStudyLinks();const host=document.querySelector('#exam-app');if(!host)return;
     if(!document.body.classList.contains('exam-running')){closeFloat(false);return;}
-    const tools=document.querySelector('.top-controls'),theme=tools?.querySelector('.study-theme-control'),clock=tools?.querySelector('.exam-clock'),calculator=tools?.querySelector('[data-calc]'),fonts=tools?.querySelector('.font-group');
-    if(theme&&clock&&theme.nextElementSibling!==clock)clock.before(theme);
-    if(clock&&calculator&&clock.nextElementSibling!==calculator)clock.after(calculator);
-    if(calculator&&fonts&&calculator.nextElementSibling!==fonts)calculator.after(fonts);
     const body=host.querySelector('.exam-question-body'),head=host.querySelector('.exam-work-head');if(!body||!head)return;
     if(!head.dataset.cirrusLayout){
       closeFloat(false);const top=host.querySelector('.exam-question-top,.voorbeeld-opgave'),points=top?.querySelector('.exam-source-points');
@@ -62,9 +58,65 @@
     host.querySelectorAll('.cae-toolbar button').forEach(button=>{if(button.dataset.cirrusIcon)return;const labels={'• Lijst':'☷','1. Lijst':'≡','Links':'≡','Midden':'☰','Rechts':'≡','Tabel':'▦','Opmaak wissen':'Tx','Vergroten':'⛶'};if(labels[button.textContent]){button.dataset.cirrusIcon=button.textContent;button.textContent=labels[button.textContent];}});
     document.querySelectorAll('.compact-overview-item.is-marked').forEach(row=>{const state=row.querySelector('.compact-overview-state');if(state&&state.textContent!=='Gemarkeerd')state.textContent='Gemarkeerd';const label=row.querySelector('.compact-overview-flag');if(label&&!label.dataset.cirrusIcon){label.innerHTML=tag;label.dataset.cirrusIcon='true';}});
   }
+
+
+  function orderStudyLinks(){
+    document.querySelectorAll('#study-tools-menu nav,#tools-menu .sra-tools-panel,#cirrus-tools-menu nav,#cirrus-tools-menu .sra-tools-panel,#learning-tools-menu nav,#learning-tools-menu .sra-tools-panel,.study-home-links').forEach(parent=>{
+      const links=Array.from(parent.querySelectorAll(':scope > a')),label=a=>(a.querySelector('span:not([aria-hidden])')?.textContent||a.textContent).trim(),glossary=links.find(a=>label(a)==='Begrippen'),progress=links.find(a=>label(a)==='Voortgang');
+      if(glossary&&progress&&glossary.nextElementSibling!==progress)glossary.after(progress);
+    });
+    const entry=isSra?document.querySelector('.sra-home .sra-formula-entry'):null;
+    if(entry){const nav=document.createElement('nav');nav.className='study-home-links';nav.setAttribute('aria-label','Naslag en voortgang');nav.innerHTML='<a href="#formules"><span>Formuleoverzicht</span><span aria-hidden="true">→</span></a><a href="#begrippen"><span>Begrippen</span><span aria-hidden="true">→</span></a><a href="#voortgang"><span>Voortgang</span><span aria-hidden="true">→</span></a><a href="#bronnen"><span>Bronnen</span><span aria-hidden="true">→</span></a>';entry.replaceWith(nav);}
+  }
+
+  // One navigation strip for every route; controllers retain their own state and tracking.
+  let pageStrip=null;
+  function learningLayout(){
+    const tools=document.querySelector('.top-controls,.reader-top-tools');
+    if(tools){
+      const ordered=[tools.querySelector('.study-theme-control'),tools.querySelector('.exam-clock'),tools.querySelector('[data-calc]'),tools.querySelector('.font-group')].filter(Boolean);
+      ordered.forEach((node,i)=>{const previous=ordered[i-1];if(previous){if(previous.nextElementSibling!==node)previous.after(node);}else if(tools.firstElementChild!==node)tools.prepend(node);});
+    }
+    const running=document.body.classList.contains('exam-running');
+    document.body.classList.toggle('learning-page-layout',!running);
+    if(pageStrip)pageStrip.hidden=running;
+    if(running)return;
+    let route;try{route=decodeURIComponent(location.hash.slice(1));}catch(_){route='';}const reader=document.querySelector('#reader-main');
+    const target=document.getElementById(route);
+    const host=isSra?document.querySelector('#main'):document.body.classList.contains('exam-surface')?document.querySelector('#exam-app'):reader?(target?.closest('[data-view]')||reader.querySelector('[data-view]:not([hidden])')):(target?.closest('.screen')||document.querySelector('#start'));
+    if(!host)return;
+    if(!pageStrip){
+      pageStrip=document.createElement('div');pageStrip.className='learning-page-head';
+      pageStrip.innerHTML='<nav class="cirrus-page-nav" aria-label="Paginanavigatie"><a class="btn learning-home">Home</a><a class="btn learning-context"></a></nav><h1 class="learning-page-title"></h1>';
+      const originalMenu=document.querySelector(isSra?'#tools-menu':'#study-tools-menu');
+      if(originalMenu){const menu=originalMenu.cloneNode(true);menu.id='learning-tools-menu';menu.open=false;menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.open=false));pageStrip.append(menu);}
+      const top=document.querySelector('.topbar,.reader-topbar');top?.after(pageStrip);new ResizeObserver(()=>document.documentElement.style.setProperty('--learning-head-height',pageStrip.offsetHeight+'px')).observe(pageStrip);
+      const lessonToggle=document.querySelector('#menu-toggle');if(lessonToggle)pageStrip.querySelector('nav').append(lessonToggle);
+    }
+    if(!pageStrip.querySelector('#learning-tools-menu')){const original=document.querySelector(isSra?'#tools-menu':'#study-tools-menu');if(original){const menu=original.cloneNode(true);menu.id='learning-tools-menu';menu.open=false;menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.open=false));pageStrip.append(menu);}}
+    const base=isSra?'':reader?'index.html':/\/fallback\//.test(location.pathname)?'../index.html':'';
+    const home=isSra?'#home':'#start',mc=!!host.querySelector('.mc-page,.sra-practice-runner')||host.matches('.practice-question-page')||/^(?:oefenen|onderwerp-|kap-\d|val-\d|nvw-\d|hk-\d)/.test(route);
+    const context=pageStrip.querySelector('.learning-context');context.textContent=mc?'Onderwerpen':'Dashboard';context.href=base+(mc?(isSra?'#tentamen/mc':'#oefenen'):(isSra?'#tentamen':'#dashboard'));
+    pageStrip.querySelector('.learning-home').href=base+home;
+    const title=host.querySelector('h1:not(.learning-page-title)');
+    const atHome=(!route||route==='start'||route==='home')&&!reader&&!/\/fallback\//.test(location.pathname)&&!document.body.classList.contains('exam-surface');
+    const text=atHome?'':title?.textContent.trim().replace(/^(?:CAFA2|SRA) oefenvragen · /,'')||host.querySelector('h2')?.textContent.trim()||'Leren';
+    const display=pageStrip.querySelector('.learning-page-title');if(display.textContent!==text)display.textContent=text;display.hidden=!text;
+    if(title&&!atHome&&!title.classList.contains('learning-original-title'))title.classList.add('learning-original-title');
+    const question=host.matches('.practice-question-page')?host:null;
+    if(question){
+      const body=question.querySelector('.qbody'),head=question.querySelector('.question-header');
+      if(body&&head&&head.parentElement!==body)body.prepend(head);
+      const overview=question.querySelector('.topic-question-context');
+      if(overview&&body&&overview.parentElement!==body)head.after(overview);
+    }
+    const mcBody=host.querySelector('.mc-question-body'),mcHead=host.querySelector('.sra-runner-head');
+    if(mcBody&&mcHead&&mcHead.parentElement!==mcBody)mcBody.prepend(mcHead);
+  }
+
   let pending=false;const schedule=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;layout();});};new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});
-  document.addEventListener('click',e=>{const menu=document.querySelector('#cirrus-tools-menu');if(menu&&!e.target.closest('#cirrus-tools-menu'))menu.open=false;});
-  document.addEventListener('keydown',e=>{const menu=document.querySelector('#cirrus-tools-menu');if(e.key==='Escape'&&menu?.open){menu.open=false;menu.querySelector('summary').focus();}});
+  document.addEventListener('click',e=>{document.querySelectorAll('#cirrus-tools-menu,#learning-tools-menu').forEach(menu=>{if(!menu.contains(e.target))menu.open=false;});});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('#cirrus-tools-menu,#learning-tools-menu').forEach(menu=>{if(menu.open){menu.open=false;menu.querySelector('summary').focus();}});});
   function updateCalculator(calculator,width,height){
     const small=width<300||height<560,changed=calculator.classList.contains('cirrus-calc-small')!==small;
     const history=calculator.querySelector('.calc-history'),row=history?.querySelector('li'),atEnd=history&&history.scrollHeight-history.clientHeight-history.scrollTop<2,first=row?.offsetHeight?Math.round(history.scrollTop/row.offsetHeight):0;
@@ -80,6 +132,7 @@
     if(calculator&&!observed.has(calculator)){observed.add(calculator);new ResizeObserver(entries=>{const r=entries[0].contentRect;updateCalculator(calculator,r.width,r.height);}).observe(calculator);}
   }
   document.addEventListener('DOMContentLoaded',()=>{observeSizes();schedule();},{once:true});
+  window.addEventListener('hashchange',schedule);
   window.addEventListener('cafa:ready',()=>{observeSizes();schedule();});
   observeSizes();schedule();
 })();

@@ -4,7 +4,7 @@ De tentamenpagina gebruikt de goedgekeurde compacte indeling: navigatie naast de
 
 De titel en bovenbalk gebruiken #444159. De headerbediening staat in de volgorde Lichtmodus, tijd met opslagindicatie, rekenmachine en lettergrootte. De rekenmachine behoudt de begrensde parser, geschiedenis en geheugen. Duizendtallen met punten, decimalen met punt of komma en doorgaan met het laatste antwoord via *0.8 worden ondersteund. Compact formaat: 240 bij 500 pixels.
 
-Het gedeelde bestand js/exam-cirrus-layout.js past uitsluitend de presentatie aan. Het maakt geen poging aan, overschrijft geen voortgang en kiest geen route bij het starten van de app. De bestaande cursuscontroller blijft verantwoordelijk voor antwoorden, tijd, navigatie en opslag. Het Meer-menu heeft een eigen zichtbare kopie; de oorspronkelijke navigatiebediening blijft beschikbaar voor de controller.
+Het gedeelde bestand js/exam-cirrus-layout.js past de presentatie aan. Sinds 27 september geldt de paginakop ook voor de overige routes; zie [gelijkloop en open taken](gelijkloop-en-open-taken-2026-09-27.md). Het maakt geen poging aan, overschrijft geen voortgang en kiest geen route bij het starten van de app. De bestaande cursuscontroller blijft verantwoordelijk voor antwoorden, tijd, navigatie en opslag. Het Meer-menu heeft een eigen zichtbare kopie; de oorspronkelijke navigatiebediening blijft beschikbaar voor de controller.
 
 ## Controle
 

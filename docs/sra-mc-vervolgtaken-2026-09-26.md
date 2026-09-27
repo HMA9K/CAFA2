@@ -1,5 +1,7 @@
 # Openstaande SRA-taken: MC-tentamenvragen, casus en bronfilter
 
+Actuele vergelijking: [gelijkloop en open taken, 27 september 2026](gelijkloop-en-open-taken-2026-09-27.md). De onderstaande lijst is de historische opdracht; gebruik de actuele matrix voor de uitvoeringsstatus.
+
 Datum: 26 september 2026. Status: **openstaand, later uitvoeren in SRA**.
 
 SRA moet voor onderstaande punten dezelfde bediening krijgen als CAFA2. De gebruiker heeft gevraagd dit nu vast te leggen en naar de SRA-repository te pushen. Dit document geeft geen voltooiingsstatus voor SRA.
