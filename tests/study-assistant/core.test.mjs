@@ -207,3 +207,13 @@ test('Voorkeur voor één cursusstore gaat voor oudere configuratievelden',()=>{
   const env=environment({OPENAI_COURSE_VECTOR_STORE_ID:'vs_course',OPENAI_REVIEW_VECTOR_STORE_ID:'vs_review'});
   for(const mode of ['hint','review'])assert.equal(makeModelRequest({record,mode,history:[],answer:{},message:'x'},env).tools[0].vector_store_ids[0],'vs_course');
 });
+
+test('GPT-6 Sol Medium wordt expliciet verzonden met ruimte voor nadenken en antwoord',()=>{
+  const value=makeModelRequest({record,mode:'hint',history:[],answer:{},message:'Geef een journaalpost.'},environment({OPENAI_MODEL:'gpt-6-sol',OPENAI_REASONING_EFFORT:'medium',OPENAI_COURSE_VECTOR_STORE_ID:'vs_course'}));
+  assert.equal(value.model,'gpt-6-sol');assert.deepEqual(value.reasoning,{effort:'medium'});assert.equal(value.max_output_tokens,8000);assert.ok(value.text.format.schema);assert.ok(value.tools);assert.equal(value.store,false);
+});
+test('ongeldige redeneerinstelling wordt geweigerd; bestaande standaard blijft ongewijzigd',()=>{
+  const data={record,mode:'hint',history:[],answer:{},message:'x'};
+  assert.throws(()=>makeModelRequest(data,environment({OPENAI_REASONING_EFFORT:'unknown'})),e=>e.code==='configuration');
+  const value=makeModelRequest(data,environment());assert.equal(value.reasoning,undefined);assert.equal(value.max_output_tokens,1800);
+});
