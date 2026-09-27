@@ -39,8 +39,4 @@
 .exam-running .exam-question-body:has([data-exam-answer] .stock-matrix) .stock-scroll-hint { margin:4px 0; }
 .exam-running .exam-question-body:has([data-exam-answer] .stock-matrix) .stock-scroll { margin:4px 0; }
 @media(max-width:760px) { .stock-scroll .stock-matrix input { font-size:16px; } }
-@media(min-width:761px) {
- .exam-running:has([data-exam-answer] .stock-matrix) .study-assistant-launch,
- .practice-surface:has(.question:target .stock-matrix) .study-assistant-launch { top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 2px); bottom:auto; padding:6px 12px; font-size:13px; }
-}
 @media print { .stock-scroll { overflow:visible; } .stock-scroll .stock-matrix { min-width:0; font-size:10px; } .stock-scroll-hint { display:none; } }

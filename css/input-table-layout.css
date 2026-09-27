@@ -1,0 +1,10 @@
+.input-table-settings{margin:5px 0 8px;font:13px/1.4 Arial,sans-serif;color:var(--study-ink,#17364e);text-align:left}
+.input-table-settings>summary{cursor:pointer;padding:4px 6px;width:fit-content}
+.input-table-settings-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:10px;background:var(--study-surface,#f4f4f7);border:1px solid #aeb3bb}
+.input-table-settings-fields label{display:flex;flex-direction:column;gap:4px}
+.input-table-settings-fields input{width:100%;max-width:120px;box-sizing:border-box;padding:5px;border:1px solid #929ba7;border-radius:2px;background:var(--study-surface,#fff);color:inherit;font:inherit}
+.input-table-settings-fields button{align-self:end;justify-self:start;min-height:30px;padding:5px 8px;border:1px solid #929ba7;background:var(--study-surface,#fff);color:inherit;cursor:pointer;font:inherit}
+table.input-table-adjustable tbody>tr>td,table.input-table-adjustable tbody>tr>th{height:var(--input-table-row-height,36px)!important;box-sizing:border-box;vertical-align:middle}
+.input-table-adjustable :is(input,textarea){box-sizing:border-box;min-width:0;max-width:100%}
+@media(max-width:760px){.input-table-settings-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{.input-table-settings{display:none}}

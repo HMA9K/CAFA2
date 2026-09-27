@@ -12,6 +12,11 @@ const footerResize=window.ResizeObserver?new ResizeObserver(()=>placeLauncher())
 adapters.set('CAFA2',adapter);
 const doc=document;
 const button=doc.createElement('button');button.type='button';button.className='study-assistant-launch';
+const launchWrap=doc.createElement('div');launchWrap.className='study-assistant-launch-wrap';launchWrap.hidden=true;
+const hideLaunch=doc.createElement('button');hideLaunch.type='button';hideLaunch.className='study-assistant-launch-hide';hideLaunch.textContent='×';hideLaunch.setAttribute('aria-label','Assistentknop verbergen');hideLaunch.title='Assistentknop verbergen';
+let launchDismissed=false;try{launchDismissed=sessionStorage.getItem('cafa2-assistant-launch-hidden')==='true';}catch{}
+hideLaunch.addEventListener('click',()=>{launchDismissed=true;try{sessionStorage.setItem('cafa2-assistant-launch-hidden','true');}catch{}syncLaunchers();});
+launchWrap.append(button,hideLaunch);
 button.textContent='Stel een vraag of kijk je antwoord na met de CAFA2 Assistent';button.hidden=true;button.setAttribute('aria-controls','study-assistant');button.setAttribute('aria-expanded','false');
 const panel=doc.createElement('dialog');panel.id='study-assistant';panel.className='study-assistant';panel.setAttribute('aria-labelledby','study-assistant-title');
 panel.innerHTML=`<header class="study-head"><div><p class="study-eyebrow">HULP BIJ DEZE VRAAG</p><h2 id="study-assistant-title">CAFA2 Assistent</h2></div><button type="button" class="study-icon-button" data-action="close" aria-label="Assistent verbergen" title="Assistent verbergen">×</button></header>
@@ -22,7 +27,7 @@ panel.innerHTML=`<header class="study-head"><div><p class="study-eyebrow">HULP B
 <div class="study-starters" data-starters><button type="button" data-prompt="Geef één hint voor de eerste stap, zonder het antwoord te verklappen.">Geef een hint</button><button type="button" data-prompt="Leg het begrip uit dat ik voor deze vraag moet begrijpen.">Leg het begrip uit</button><button type="button" data-prompt="Welke gegevens uit deze casus heb ik nodig, en waarom?">Welke gegevens?</button><button type="button" data-prompt="Kijk mijn ingevulde antwoord na aan de hand van de uitwerking. Geef aan wat klopt, welke fouten of ontbrekende stappen er zijn en hoe ik die kan verbeteren. Geef ook aan hoeveel punten mijn antwoord verdient." data-review-prompt>Kijk mijn antwoord na</button><button type="button" data-prompt="Geef het antwoord op deze vraag en licht de berekening of redenering toe." data-answer-prompt>Geef antwoord en uitleg</button></div>
 <div class="study-messages" role="log" aria-live="polite" aria-relevant="additions" data-messages></div></div>
 <footer class="study-compose"><form data-chat-form><label for="study-message" class="study-sr">Je vraag aan de assistent</label><textarea id="study-message" rows="2" maxlength="2500" placeholder="Wat is nog niet duidelijk?" enterkeyhint="enter"></textarea><div class="study-send-row"><span data-counter>0 / 2500</span><button type="button" data-action="stop" hidden>Stop</button><button type="submit" data-send>Versturen</button></div></form><div class="study-bottom"><small data-knowledge></small><button type="button" class="study-text-button" data-action="logout" hidden>Uitloggen</button></div></footer>`;
-doc.body.append(button,panel);
+doc.body.append(launchWrap,panel);
 const $=s=>panel.querySelector(s),input=$('#study-message'),log=$('[data-messages]');
 const dock=createAssistantPanel(panel);
 // Teaching-style changes do not discard the same question's conversation.
@@ -44,7 +49,8 @@ function syncLaunchers() {
       calculatorObserver.observe(calculator,{attributes:true,attributeFilter:['hidden']});}
   }
   const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
-  button.hidden=!ready||!current||calculatorOpen||panel.open||intro.open;
+  button.hidden=!ready||!current||calculatorOpen||panel.open||intro.open||launchDismissed;
+  launchWrap.hidden=button.hidden;
   if(calculatorButton){calculatorButton.hidden=!ready||!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
 }
 function placeLauncher() {
@@ -52,8 +58,8 @@ function placeLauncher() {
     ? doc.querySelector('#exam-app .exam-footer') : null;
   if(footer!==measuredFooter){if(measuredFooter)footerResize?.unobserve(measuredFooter);measuredFooter=footer;if(footer)footerResize?.observe(footer);}
   const top=footer?.getBoundingClientRect().top;
-  const clearance=Number.isFinite(top)?Math.max(0,Math.ceil((innerHeight-top)/(window.StudyScale?.get()||1)+12)):0;
-  button.style.setProperty('--sa-footer-clearance',`${clearance}px`);
+  const clearance=Number.isFinite(top)&&top>=innerHeight/2&&top<innerHeight?Math.ceil((innerHeight-top)/(window.StudyScale?.get()||1)+12):0;
+  launchWrap.style.setProperty('--sa-footer-clearance',`${clearance}px`);
 }
 function queuePlacement(){if(placementQueued)return;placementQueued=true;requestAnimationFrame(()=>{placementQueued=false;placeLauncher();});}
 function controls() {

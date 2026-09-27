@@ -20,10 +20,4 @@
 .exam-source-document table.journal-display-table td.exam-source-points {
   width:auto; white-space:normal; overflow-wrap:anywhere; text-align:left;
 }
-@media(min-width:761px) {
-  .practice-surface:has(.question:target :is(.journal-display-table,.journal-table)) .study-assistant-launch,
-  .exam-running:has(.exam-question-body :is(.journal-display-table,.journal-table)) .study-assistant-launch {
-    top:calc(var(--study-top-h,64px) + var(--study-return-h,46px) + 2px); bottom:auto; padding:6px 12px; font-size:13px;
-  }
-}
 @media print { .journal-display-scroll { overflow:visible; } :is(.option-content,.exam-source-document) table.journal-display-table { min-width:0; } }
