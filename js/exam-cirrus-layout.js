@@ -99,10 +99,12 @@
     const context=pageStrip.querySelector('.learning-context');context.textContent=mc?'Onderwerpen':'Dashboard';context.href=base+(mc?(isSra?'#tentamen/mc':'#oefenen'):(isSra?'#tentamen':'#dashboard'));
     pageStrip.querySelector('.learning-home').href=base+home;
     const title=host.querySelector('h1:not(.learning-page-title)');
+    const homeHeading=title?.matches('.cafa-home-intro h1,.sra-home-intro h1');
     const atHome=(!route||route==='start'||route==='home')&&!reader&&!/\/fallback\//.test(location.pathname)&&!document.body.classList.contains('exam-surface');
-    const text=atHome?'':title?.textContent.trim().replace(/^(?:CAFA2|SRA) oefenvragen · /,'')||host.querySelector('h2')?.textContent.trim()||'Leren';
+    const text=atHome||homeHeading?'':title?.textContent.trim().replace(/^(?:CAFA2|SRA) oefenvragen · /,'')||host.querySelector('h2')?.textContent.trim()||'Leren';
     const display=pageStrip.querySelector('.learning-page-title');if(display.textContent!==text)display.textContent=text;display.hidden=!text;
-    if(title&&!atHome&&!title.classList.contains('learning-original-title'))title.classList.add('learning-original-title');
+    if(title&&(atHome||homeHeading))title.classList.remove('learning-original-title');
+    else if(title&&!title.classList.contains('learning-original-title'))title.classList.add('learning-original-title');
     const question=host.matches('.practice-question-page')?host:null;
     if(question){
       const body=question.querySelector('.qbody'),head=question.querySelector('.question-header');
