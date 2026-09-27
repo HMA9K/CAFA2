@@ -65,7 +65,8 @@
     activeEditor = { id: question.id, editor: editor, textarea: textarea, host: host };
   }
 
-  Array.prototype.forEach.call(document.querySelectorAll('.question[data-code][data-q]'), function (question) {
+  function mountQuestion(question) {
+    if(question.dataset.upgradesBound)return;question.dataset.upgradesBound='true';
     var code = question.dataset.code, id = Number(question.dataset.q);
     var topic = window.CAFA2_DATA.modules[code];
     var previous=api.getPreviousAnswer(code,id);
@@ -123,7 +124,8 @@
     if (oldFinish) oldFinish.replaceWith(finish);
     else actions.appendChild(finish);
     syncMark(question);
-  });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.question[data-code][data-q]'),mountQuestion);
 
   Array.prototype.forEach.call(document.querySelectorAll('.overview-frame'), function (overview) {
     overview.classList.add('practice-overview-frame');
@@ -159,6 +161,8 @@
     if (event.target.matches('.mode-radio')) updateCurrent();
   });
   window.addEventListener('hashchange', updateCurrent);
+  window.addEventListener('cafa:question-unmount',releaseEditor);
+  window.CafaPracticeUpgrades={mountQuestion:mountQuestion};
   window.addEventListener('cafa:practice-change', function () { syncMark(currentQuestion()); });
   updateCurrent();
 })();

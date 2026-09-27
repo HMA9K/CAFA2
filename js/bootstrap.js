@@ -48,13 +48,19 @@
       document.body.appendChild(script);
     });
   }
-  Promise.all(fragmentPaths.concat('fragments/dialogs.html').map(getText)).then(function (parts) {
+  var printAll=new URLSearchParams(location.search).get('afdrukken')==='alles';
+  var screens=printAll?fragmentPaths:['fragments/exams.html','fragments/home.html','fragments/practice-shell.html','fragments/shared.html'];
+  Promise.all(screens.concat('fragments/dialogs.html').map(getText)).then(function (parts) {
     var data = root.CAFA2_DATA;
     if (!data || !data.modules || Object.keys(data.modules).length !== 4) {
       throw new Error('Niet alle vier vraagmodules zijn geladen.');
     }
     document.getElementById('app-content').innerHTML = parts.slice(0, -1).join('');
     document.getElementById('dialog-content').innerHTML = parts[parts.length - 1];
+    // The calculator is already initialized by index.html. Discard its legacy
+    // fragment without downloading and executing the same script a second time.
+    if(root.CafaCalculator)document.querySelectorAll('dialog#calculator-dialog').forEach(function(legacy){legacy.remove();});
+    var loading=document.createElement('p');loading.id='practice-loading';loading.className='notice';loading.hidden=true;loading.setAttribute('role','status');document.getElementById('app-content').append(loading);
     var brand = document.querySelector('.brand');
     brand.href = '#start';
     brand.classList.add('cafa-wordmark');
@@ -63,11 +69,9 @@
     var profile=document.createElement('div');profile.className='cafa-profile';
     profile.innerHTML='<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#f4f4f5"/><circle cx="20" cy="15" r="7" fill="#444159"/><path d="M8 31c1-10 23-10 24 0a17 17 0 0 1-24 0Z" fill="#444159"/></svg><span>Anoniem</span>';
     document.querySelector('.top-controls').appendChild(profile);
-    return loadScript('js/app.js?v=20260927-percent1');
+    return loadScript('js/app.js?v=20260927-ondemand1');
   }).then(function () {
-    return loadScript('js/calculator.js?v=20260922-3');
-  }).then(function () {
-    return loadScript('js/practice-upgrades.js?v=20260926-nav3');
+    return loadScript('js/practice-upgrades.js?v=20260927-ondemand1');
   }).then(function () {
     if (root.CafaTopics) root.CafaTopics.mount();
     return loadScript('js/practice-case-panel.js?v=20260926-columns1');
@@ -76,14 +80,19 @@
   }).then(function () {
     return loadStyle('css/exam-original-pdfs.css?v=20260927-persistent1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-footer3');});
   }).then(function () {
-    return loadScript('js/theory-panels.js?v=20260924-sources1');
+    return loadScript('js/theory-panels.js?v=20260927-ondemand1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
-    return loadScript('js/answer-feedback.js?v=20260927-model-open1');
+    return loadScript('js/answer-feedback.js?v=20260927-ondemand1');
+  }).then(function () {
+    if(!printAll)return loadScript('js/practice-screens.js?v=20260927-ondemand1');
+  }).then(function () {
+    if(!printAll)return root.CafaScreens.start();
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
+    if(!printAll)document.querySelectorAll('.study-tools-menu nav').forEach(function(tools){var printLink=document.createElement('a');printLink.href='index.html?afdrukken=alles';printLink.target='_blank';printLink.rel='noopener';printLink.textContent='Alle oefenvragen afdrukken';tools.append(printLink);});
     window.dispatchEvent(new CustomEvent('cafa:ready'));
     // Restore an existing question deep link after asynchronous fragments exist.
     // Replace the URL without adding a second navigation-history entry.

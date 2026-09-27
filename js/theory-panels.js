@@ -25,5 +25,6 @@
       previousQuestionId=currentId;
     }
   }
+  window.CafaTheoryPanels={mount:mount};
   mount();window.addEventListener('hashchange',mount);
 }());

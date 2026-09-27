@@ -11,3 +11,4 @@ assistant/server/catalog-parts/
 .study-source-results*.json
 .study-assistant-backup/
 __pycache__/
+fragments/questions/

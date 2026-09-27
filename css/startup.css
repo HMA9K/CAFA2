@@ -8,3 +8,4 @@
 .cafa-startup p { color:#62616b; }
 .cafa-startup ul { padding-left:20px; }
 .cafa-startup li { margin:10px 0; }
+.practice-screen-loading #app-content > .screen{display:none!important}

@@ -84,6 +84,7 @@
     });
   }
   function preparePractice(question) {
+    if(question.dataset.feedbackBound)return;question.dataset.feedbackBound='true';
     each('.review-content', question, prepareExplanations);
     each('details', question, function(d, index) { if (!d.id) d.id = 'cafa-detail-' + question.id + '-' + index; });
     var mcRecord = null;
@@ -275,5 +276,6 @@
     new MutationObserver(prepareExam).observe(examHost, {childList:true, subtree:true});
     prepareExam();
   }
-  window.CafaFeedback = {storageKey:KEY};
+  window.addEventListener('cafa:question-unmount',function(event){practice=practice.filter(function(record){return record.question!==event.detail;});});
+  window.CafaFeedback = {storageKey:KEY,mountQuestion:preparePractice};
 }());
