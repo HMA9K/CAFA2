@@ -14,7 +14,7 @@ const sra=process.env.COURSE==='sra';
    const a=CafaExamEngine.createAttempt(exam,{id:'qa-editor-columns',untimed:true});a.currentIndex=sra?0:2;
    const value=JSON.stringify({version:1,attempts:[a]});localStorage.setItem(app.storageKey,value);dispatchEvent(new StorageEvent('storage',{key:app.storageKey,newValue:value}));location.hash=(sra?'toets/':'tentamen/')+a.id;
   },sra);
-  await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+  await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized && tinymce.activeEditor.getBody()?.isContentEditable);
   const editor=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.setContent('<table style="width:620px"><tbody><tr><td>Omschrijving</td><td>Bedrag</td></tr><tr><td>Voorraad</td><td>456</td></tr></tbody></table>');e.dispatch('change');});
   const table=editor.locator('table');await table.locator('td').first().click();
@@ -22,7 +22,7 @@ const sra=process.env.COURSE==='sra';
   assert.equal(await table.locator('tr').first().locator('td').count(),3);
   assert.ok((await editor.innerText()).includes('456'));
   assert.equal(await page.locator('[data-exam-action="submit"]').evaluate(e=>e===e.parentElement.lastElementChild),true);
-  await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+  await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized && tinymce.activeEditor.getBody()?.isContentEditable);
   assert.equal(await table.locator('tr').first().locator('td').count(),3);
   await table.locator('tr').first().locator('td').nth(1).click();await page.evaluate(()=>tinymce.activeEditor.execCommand('mceTableDeleteCol'));
   assert.equal(await table.locator('tr').first().locator('td').count(),2);assert.ok((await editor.innerText()).includes('456'));
@@ -33,7 +33,7 @@ const sra=process.env.COURSE==='sra';
    await page.getByRole('link',{name:'Uitleg bij deze vraag in de samenvatting'}).click();
    const back=page.locator('[data-study-origin]');await back.waitFor();assert.ok(await back.isVisible());
    await page.setViewportSize({width:390,height:850});assert.ok(await back.isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-   await back.click();await page.waitForURL('**'+hash);await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);assert.ok((await editor.innerText()).includes('456'));
+   await back.click();await page.waitForURL('**'+hash);await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized && tinymce.activeEditor.getBody()?.isContentEditable);assert.ok((await editor.innerText()).includes('456'));
   }
   console.log('OK: visible columns immediately after resize/add, deletion, saved answer, larger icons, footer order and explanation return ('+(sra?'SRA':'CAFA2')+').');
  }finally{await browser.close();}
