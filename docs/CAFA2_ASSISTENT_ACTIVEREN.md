@@ -2,6 +2,12 @@
 
 Bijgewerkt op 27 september 2026, inclusief introductie en toegangscode.
 
+## Journaalposten controleren
+
+Geen aanvullende instelling, secret of bronbestand nodig. Nieuwe antwoorden bouwen herkende officiële journaalposten rechtstreeks uit de bronkolommen op en tonen een berekende aansluitcontrole. Een afgeleide boeking krijgt het label afleiding en wordt op aansluiting gecontroleerd. Oude chatberichten blijven hun oorspronkelijke tekst houden: begin een nieuw gesprek bij de betrokken vraag om een oude fout opnieuw te laten behandelen.
+
+De server kan één extra modelaanroep gebruiken om afgekeurde uitvoer te herstellen. Na een tweede afkeuring verschijnt een foutmelding en blijft het eigen tentamenantwoord behouden. Een bronfragment is slechts een selectie van regels en krijgt daarom geen volledige aansluitcontrole. Een aansluitende afleiding is nog geen bewijs van inhoudelijke juistheid.
+
 ## Starten via de introductie
 
 - Klik op de grotere knop Stel een vraag of kijk je antwoord na met de CAFA2 Assistent. Na de eerste klik heet deze Start de CAFA2 Assistent en wordt de knop kleiner; dit wordt per browser onthouden.

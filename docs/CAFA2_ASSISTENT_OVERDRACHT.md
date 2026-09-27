@@ -2,6 +2,12 @@
 
 Versie 2026-09-27.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
+## Vaste debet- en creditkolommen
+
+assistant/server/journals.mjs leest expliciete bronkolommen en de canonieke juiste MC-journaalpost. Bij boekhoudkundige vragen vraagt handler.mjs om gestructureerde antwoordonderdelen. Voor bronboekingen kiest het model alleen bron- en regelnummers; de server vult vaste rekening-, debet- en creditvelden in. De zeven regels van 2026-04-29, opgave 3, vraag 5B vormen een gerichte regressie. Een bronfragment krijgt geen volledige balansclaim. Bronuitdrukkingen en eventuele aansluitverschillen blijven zichtbaar.
+
+Afleidingen zijn apart gelabeld, moeten aansluiten en kunnen geen numerieke bedragen in ongecontroleerde vrije boekingsregels plaatsen. Oude teksten zonder expliciete tabelcellen worden niet op veronderstelde spatieposities ingelezen. Een aansluitende afleiding kan inhoudelijk nog onjuist zijn; de controle garandeert geen algemene modelkwaliteit. Afgekeurde uitvoer krijgt één begrensde herstelpoging; daarna een foutmelding, zonder de afgekeurde inhoud te tonen. Vraag-ID, revisie, antwoord, historie en quota blijven in de bestaande route. Geen wijziging van vakadapters, SRA/BELRE3, opgeslagen antwoorden, scores of timers. Actueel bewijs staat in [teststatus](CAFA2_ASSISTENT_TESTSTATUS.md).
+
 ## Introductie en starten
 
 De eerste knop noemt vragen stellen en antwoorden nakijken en is groter. Na de eerste klik wordt hij Start de CAFA2 Assistent; deze voorkeur wordt per browser bewaard. Klikken opent steeds een introductie met drie lagen: de actuele vraag/casus en eigen invoer, de bijbehorende uitwerking en het gesprek, en gekoppelde originele vakbronnen. Syllabi, opgaven, uitwerkingen, tentamens, repetitieslides en aanvullende literatuur worden als broncategorieën genoemd zonder een vast aantal in de interface.

@@ -23,7 +23,7 @@ test('twee bronvragen krijgen onafhankelijk passages en echte bronlabels in éé
     {now:()=>now,fetch:async(url,options)=>{
       const body=JSON.parse(options.body);
       if(url.endsWith('/search')){queries.push(body.query);return Response.json({data:[{filename:body.query+'.pdf',file_id:'file-test',content:[{type:'text',text:body.query.startsWith('Niedorp')?'Slotkoers 0,94':'Deelneming 540.000'}]}]});}
-      model=body;return fetchOK();
+      model=body;return Response.json({...modelResponse,output:[{type:'message',content:[{type:'output_text',text:JSON.stringify({parts:[{type:'text',text:'TESTANTWOORD, geen vakinhoudelijke beoordeling.'}]}),annotations:[{type:'file_citation',filename:'testbron.txt'}]}]}]});
     }});
   assert.equal(r.status,200);assert.deepEqual(queries,['Niedorp koers?','Zeevang journaalpost?']);
   assert.match(model.input.at(-2).content,/Slotkoers 0,94/);assert.match(model.input.at(-2).content,/Deelneming 540.000/);

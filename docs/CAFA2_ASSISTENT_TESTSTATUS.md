@@ -2,6 +2,17 @@
 
 Bijgewerkt: 27 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
 
+## Journaalpostcontrole, 27 september 2026
+
+- Officiële journaalposten uit expliciete tabelkolommen en de juiste MC-optie worden servermatig opgebouwd. Het model kiest de relevante bronboeking of bronregels; rekening, bedrag en debet/credit komen rechtstreeks uit de vraagcatalogus. De reviewbron blijft ongewijzigd. Een strikt uitvoerschema voorkomt dat het model deze velden opnieuw invult.
+- Regressievoorbeeld: tentamen 29 april 2026, opgave 3, vraag 5B. Zes debetregels, inclusief belastinglast 2.400, resultaat na belastingen 5.760 en belastinglast 1.440, tegenover kostprijs van de omzet 48.000 credit. Beide totalen zijn 48.000. De gemelde verwisseling wordt geweigerd.
+- Catalogusinventaris: 391 vaste boekingen in 277 vraagrecords. Vier boekingen bevatten niet-numerieke bronuitdrukkingen; daar verschijnt geen verzonnen balansbevestiging. De overige herkende boekingen sluiten aan. Dit is een kolom- en aansluitcontrole, geen nieuwe volledige inhoudsaudit van de oorspronkelijke PDFs.
+- Nieuwe/alternatieve boekingen en oude uitwerkingen zonder expliciete tabelcellen blijven mogelijk als duidelijk gelabelde afleiding. De server vereist één zijde per regel, geldige bedragen en gelijke totalen. Dat bewijst aansluiting, niet de inhoudelijke juistheid van een afleiding. Kolomposities in teksten met alleen spaties worden niet geraden. Gewone hints hoeven geen boeking te tonen.
+- Onjuiste of onvolledige uitvoer krijgt maximaal één herstelpoging binnen dezelfde tijdslimiet. Daarna verschijnt een veilige foutmelding. Afgekeurde journaalposten worden niet getoond of gelogd. Deze herstelpoging kan één extra modelaanroep kosten; zoekacties worden niet herhaald. API-fouten en weigeringen krijgen geen herstelronde.
+- Lokaal geslaagd: 135 Node-tests, alle opdrachten uit het huidige npm-testscript (zestien regressietests plus schermgeneratie), twee presentatie-extractietests, integratie-dry-run zonder wijzigingen, build en deploycontrole. Catalogus: 627 oefenvragen en 285 tentamenrecords; 1.165 publieke bestanden en vier Functions. npm ontbreekt lokaal; de exacte opdrachten uit package.json zijn met Node uitgevoerd. GitHub Actions voert npm test uit.
+- Chromium: 191 interfacecontroles plus 42 popup-/menucontroles geslaagd, zonder JavaScript-runtimefouten. Nieuwe proeven controleren alle zeven bronregels in het echte vraagvenster, dezelfde kolommen op mobiel in donker, bereikbare invoer in een korte toetsenbordviewport en onveranderde tentamenantwoorden/scores. De nieuwe bronproef herstelt expliciet vraagpositie 1 voordat de bestaande rich-text-proeven doorgaan. Geen fysieke toetsenbordproef.
+- De automatische modelreacties zijn gesimuleerd. Live publicatie, Actions/WebKit en echte modelantwoorden worden na publicatie afzonderlijk gecontroleerd en hieronder aangevuld. Geen aanvullende secret, instelling of bronbestand nodig voor deze wijziging.
+
 ## Actueel: introductie en toegangscode
 
 - De eerste zwevende knop is groter en noemt zowel vragen stellen als antwoorden nakijken. Na de eerste klik wordt hij compacter met Start de CAFA2 Assistent; alleen deze voorkeur wordt per browser bewaard.

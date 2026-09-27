@@ -1,5 +1,5 @@
 """Real CAFA2 interface with a mocked service. Run after prepare --apply and build."""
-import functools, http.server, json, os, threading, time
+import functools, http.server, json, os, subprocess, threading, time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2]/'dist'
@@ -8,6 +8,16 @@ REVIEW_PROMPT='Kijk mijn ingevulde antwoord na aan de hand van de uitwerking. Ge
 checks=[];requests=[];errors=[];auth_requests=[];service_calls=[]
 state={'ready':True,'authenticated':False,'fail':False,'delay_once':False}
 delayed_release=threading.Event()
+# Render a real source journal through the same deterministic validator as the backend.
+# The provider is mocked; this verifies source columns survive the browser renderer.
+journal_answer=subprocess.run([os.environ.get('NODE_EXE','node'),'--input-type=module','-e',"""
+import catalog from './assistant/server/catalog.generated.mjs';
+import {journalContract,validatedJournalAnswer} from './assistant/server/journals.mjs';
+const record=catalog.records['CAFA2:exam:cafa2-20260429:vraag-18'];
+const contract=journalContract(record,'Geef de boeking voor 5B.');
+const source=contract.sources.find(s=>s.rows.length===7);
+console.log(validatedJournalAnswer(JSON.stringify({parts:[{type:'source_journal',sourceId:source.id,rowIndices:[]}]}),contract).answer);
+"""],check=True,capture_output=True,text=True,encoding='utf-8').stdout.strip()
 
 def mock_reply(data, answer='**Technische testreactie, geen modelantwoord.**\n\n| Kolom | Bedrag |\n| --- | --- |\n| Test | 100 |\n<img src=x onerror="alert(1)">'):
     return {'questionKey':':'.join(data['ref'][k] for k in ['course','kind','bankId','questionId']),
@@ -57,6 +67,9 @@ try:
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
       if state['delay_once']:
         state['delay_once']=False;r.continue_();return
+      if data['message']=='Test vaste bronboeking 5B':
+        assert data['ref']=={'course':'CAFA2','kind':'exam','bankId':'cafa2-20260429','questionId':'vraag-18'}
+        r.fulfill(json=mock_reply(data,journal_answer));return
       if data['message']=='Test gekleurde feedback':
         r.fulfill(json=mock_reply(data,'## Controle\n- **Goed:** het percentage van 80% klopt.\n- **Fout:** 8% geeft een te laag bedrag; gebruik 80%.\n- **Ontbreekt:** vermeld de grondslag van € 100.\n\n| Onderdeel | Beoordeling |\n| --- | --- |\n| Methode | Goed: juiste formule |\n| Uitkomst | Fout: € 8; dit moet € 80 zijn |\n| Toelichting | Ontbreekt: onderbouw de grondslag |\n\nDit is gewone uitleg zonder beoordeling.'));return
       if data['message']=='Test leesbare opmaak':
@@ -301,8 +314,31 @@ try:
       current_ref(item['id'],item['first'],'exam')
       check(f'Full exam {item["id"]} retains its question count',len(attempt['exam']['questions'])==item['count'])
       close_panel()
+    source_attempt=exam_attempts['cafa2-20260429']
+    visit('#tentamen/'+source_attempt)
+    page.evaluate('id=>CafaExams.restorePosition(id,17)',source_attempt)
+    page.wait_for_function('CafaExams.getPosition()?.index===17')
+    ensure_open();page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.endsWith("Vraag 5")')
+    source_saved=page.evaluate('localStorage.getItem(CafaExams.storageKey)')
+    send('Test vaste bronboeking 5B')
+    journal=page.locator('.study-message.is-assistant').last
+    expected=[['Resultaat na belastingen','€ 23.040',''],['Belastinglast','€ 5.760',''],['Aandeel derden','€ 9.600',''],['Belastinglast','€ 2.400',''],['Resultaat na belastingen','€ 5.760',''],['Belastinglast','€ 1.440',''],['Aan Kostprijs van de omzet','','€ 48.000']]
+    def source_columns():return [row.locator('td').all_text_contents() for row in journal.locator('tbody tr').all()]
+    check('Official 5B journal displays six debit rows and one credit row',source_columns()==expected)
+    check('Official source journal shows matching totals from the server', '48.000,00 = totaal credit 48.000,00' in journal.inner_text())
+    page.screenshot(path=str(OUT/f'journal-source-desktop-{engine}.png'))
+    page.set_viewport_size({'width':390,'height':844});page.evaluate("CafaTheme.setMode('dark')");page.wait_for_timeout(150)
+    check('Source debit-credit columns survive mobile dark rendering',source_columns()==expected and journal.locator('table').is_visible())
+    page.screenshot(path=str(OUT/f'journal-source-mobile-dark-{engine}.png'))
+    page.set_viewport_size({'width':390,'height':400});page.locator('#study-message').focus();page.wait_for_timeout(150)
+    check('Journal feedback keeps the composer reachable in a short keyboard viewport',page.locator('#study-message').evaluate('e=>{const r=e.getBoundingClientRect();return r.y>=0&&r.bottom<=innerHeight+1;}'))
+    check('Source journal feedback leaves exam answers and scores unchanged',page.evaluate('localStorage.getItem(CafaExams.storageKey)')==source_saved)
+    page.set_viewport_size({'width':1366,'height':950});page.evaluate("CafaTheme.setMode('light')");close_panel()
     first=catalog[0]['id'];attempt_id=exam_attempts[first]
     visit('#tentamen/'+attempt_id)
+    page.evaluate('id=>CafaExams.restorePosition(id,0)',attempt_id)
+    page.wait_for_function('CafaExams.getPosition()?.index===0')
+    page.locator('[data-exam-answer] .tox-edit-area iframe').wait_for(state='visible')
     page.wait_for_function('window.tinymce?.activeEditor?.initialized')
     page.frame_locator('[data-exam-answer] .tox-edit-area iframe').locator('body').fill('Mijn tentamenantwoord: 123.456 euro.')
     page.wait_for_function('CafaExams.getAttempts().find(a=>a.id===location.hash.slice(10))?.answers["vraag-1"]?.html?.includes("123.456")')
