@@ -270,6 +270,8 @@
         return;
       }
       var index = cell.cellIndex, nextCell = cell;
+      // Fixed-layout tables need explicit space for a newly inserted column.
+      var columnWidths = Array.from(table.rows[0].cells, function (c) { return c.getBoundingClientRect().width; });
       if (action === 'row-add') {
         if (table.rows.length >= 10) { announce('Een tabel kan maximaal 10 rijen bevatten.'); return; }
         var newRow = make('tr');
@@ -292,6 +294,15 @@
         nextCell = cell.nextElementSibling || cell.previousElementSibling;
         Array.from(table.rows).forEach(function (r) { if (r.cells[index]) r.cells[index].remove(); });
         if (!row.cells.length) table.remove();
+      }
+      if ((action === 'col-add' || action === 'col-delete') && table.isConnected) {
+        if (action === 'col-add') columnWidths.splice(index + 1, 0, columnWidths.reduce(function (a, b) { return a + b; }, 0) / columnWidths.length);
+        else columnWidths.splice(index, 1);
+        var totalWidth = columnWidths.reduce(function (a, b) { return a + b; }, 0);
+        Array.from(table.rows[0].cells).forEach(function (c, i) {
+          c.style.setProperty('width', (totalWidth ? columnWidths[i] / totalWidth * 100 : 100 / columnWidths.length) + '%', 'important');
+        });
+        document.dispatchEvent(new CustomEvent('learning:table-structure', { detail: { table: table } }));
       }
       range = document.createRange();
       range.selectNodeContents(nextCell && editor.contains(nextCell) ? nextCell : editor);
@@ -383,7 +394,7 @@
       button('Tabel invoegen annuleren', 'Annuleren', function () { hidePanels(); restore(); }, tablePanel.element);
       [['Rij toevoegen', '+ Rij', 'row-add'], ['Kolom toevoegen', '+ Kolom', 'col-add'], ['Rij verwijderen', '− Rij', 'row-delete'], ['Kolom verwijderen', '− Kolom', 'col-delete']].forEach(function (item) {
         var control = button(item[0], item[1], function () { tableAction(item[2]); }, inserts);
-        control.disabled = true; tableButtons.push(control);
+        control.dataset.tableAction = item[2]; control.disabled = true; tableButtons.push(control);
       });
 
       var symbolsPanel = { element: make('div', 'cae-panel cae-symbols') };

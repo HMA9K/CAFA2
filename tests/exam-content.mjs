@@ -50,8 +50,9 @@ for(const exam of exams){
 }
 for(const file of ['js/answer-editor.js','js/practice-upgrades.js','js/exams.js'])new vm.Script(read(file),{filename:file});
 const html=read('index.html');
-for(const file of ['data/exams.js',...examFiles,'js/answer-editor.js','js/exam-engine.js'])assert.ok(html.includes('src="'+file+'"'));
+const scripts=[...html.matchAll(/<script\b[^>]*src="([^"]+)"/g)].map(match=>match[1].split('?')[0]);
+for(const file of ['data/exams.js',...examFiles,'js/answer-editor.js','js/exam-engine.js'])assert.ok(scripts.includes(file));
 const styles=[...html.matchAll(/<link\b[^>]*href="([^"]+)"/g)].map(match=>match[1].split('?')[0]);
 for(const file of ['css/answer-editor.css','css/exams.css','css/practice-upgrades.css'])assert.ok(styles.includes(file),'Required stylesheet: '+file);
-assert.ok(html.indexOf('src="js/answer-editor.js"')<html.search(/src="js\/bootstrap\.js(?:\?v=[\w-]+)?"/));
+assert.ok(scripts.indexOf('js/answer-editor.js')<scripts.indexOf('js/bootstrap.js'));
 console.log('Tentameninhoud gevalideerd: 11 tentamens, 282 vragen, 44 casussecties, 1100 punten.');

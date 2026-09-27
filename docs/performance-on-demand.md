@@ -82,6 +82,10 @@ en terugnavigatie vanuit de samenvatting. `index.html` en `js/bootstrap.js`
 overlappen met deze optimalisatie. Die bestanden moeten inhoudelijk worden
 samengevoegd; één versie volledig over de andere kopiëren verliest wijzigingen.
 
+De editor- en navigatiewijziging `7a6400f` is opgenomen in deze beoordelingsbranch.
+Beide scriptversies in `index.html` en de nieuwe PDF-import in de bootstrap
+zijn gecombineerd met de nieuwe paginaopbouw.
+
 Voor publicatie de nieuwste `main` ophalen, de goedgekeurde wijzigingen samenvoegen,
 vraagfragmenten en `dist` opnieuw bouwen en de editor-, PDF-, terugnavigatie- en
 prestatiecontroles op de gecombineerde versie uitvoeren. Controleer direct vóór

@@ -29,7 +29,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
    const value=JSON.stringify({version:1,attempts:[a]});localStorage.setItem(CafaExams.storageKey,value);
    dispatchEvent(new StorageEvent('storage',{key:CafaExams.storageKey,newValue:value}));location.hash='tentamen/'+a.id;
   });
-  await page.locator('.exam-cirrus-actions [data-original-pdf]').first().waitFor();
+  await page.locator('.exam-footer .actions [data-original-pdf]').first().waitFor();
   const editor=page.locator('#exam-app [contenteditable="true"]').first();await editor.fill('Controleantwoord blijft bewaard.');
   await page.locator('[data-exam-action="mark"]').click();
   await page.waitForTimeout(600);
