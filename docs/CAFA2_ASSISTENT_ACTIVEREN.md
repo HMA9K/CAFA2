@@ -1,6 +1,14 @@
 # CAFA2 Assistent: activering na integratie
 
-Bijgewerkt op 26 september 2026, inclusief het rechter assistentpaneel.
+Bijgewerkt op 27 september 2026, inclusief introductie en toegangscode.
+
+## Starten via de introductie
+
+- Klik op de grotere knop Stel een vraag of kijk je antwoord na met de CAFA2 Assistent. Na de eerste klik heet deze Start de CAFA2 Assistent en wordt de knop kleiner; dit wordt per browser onthouden.
+- Lees in de introductie wat de assistent kan, welke drie contextlagen hij gebruikt en welke broncategorieën zijn gekoppeld. Er staat ook dat de assistent beperkt beschikbaar is en tijdelijk gratis een code kan worden gevraagd bij de beheerder.
+- Vul eventueel de toegangscode in en kies Doorgaan. Met een geldige code wordt de assistent direct ontgrendeld. Zonder code kun je deze in het gewone paneel invullen; een onjuiste code geeft daar een foutmelding.
+- Sluiten met × of Escape start de assistent niet en wist de ingevoerde code. Toestemming voor delen van de vraaggegevens blijft nodig voordat een chatbericht kan worden verstuurd.
+- Voor deze introductie is geen aanvullende serverinstelling of secret nodig.
 
 ## Kleuren bij nakijkfeedback
 
@@ -12,7 +20,7 @@ Nieuwe antwoorden kunnen kopjes, vet, cursief, opsommingen, genummerde stappen e
 
 ## Paneel rechts bedienen
 
-- Open de assistent met **Vraag over deze vraag**.
+- Open de assistent via de introductieknop en kies **Doorgaan**.
 - Met **Kijk mijn antwoord na** zet je een controleverzoek in de chatbalk klaar, inclusief een vraag naar de verdiende punten. Je kunt de tekst aanpassen en verstuurt hem zelf met **Versturen**. Inloggen en toestemming voor delen blijven nodig. De puntenbeoordeling verschijnt in de chat; je opgeslagen antwoord of score verandert niet.
 - De assistent krijgt een eigen kolom rechts. Bij tentamens staat de casus links en de vraag in het midden; de kop en navigatie blijven erbuiten.
 - Sleep de verticale schuifrand naar links voor een bredere assistent en naar rechts voor een smallere assistent. De schuifrand werkt ook met pijltoetsen; Home herstelt een derde van de ruimte.

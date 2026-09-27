@@ -1,6 +1,12 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-26.6. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-27.1. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+
+## Introductie en starten
+
+De eerste knop noemt vragen stellen en antwoorden nakijken en is groter. Na de eerste klik wordt hij Start de CAFA2 Assistent; deze voorkeur wordt per browser bewaard. Klikken opent steeds een introductie met drie lagen: de actuele vraag/casus en eigen invoer, de bijbehorende uitwerking en het gesprek, en gekoppelde originele vakbronnen. Syllabi, opgaven, uitwerkingen, tentamens, repetitieslides en aanvullende literatuur worden als broncategorieën genoemd zonder een vast aantal in de interface.
+
+De introductie meldt beperkte beschikbaarheid en een tijdelijk gratis bij de beheerder opvraagbare code. Doorgaan met code opent en ontgrendelt het paneel in dezelfde handeling. Zonder code opent het bestaande loginformulier. Kruisje of Escape sluiten alleen de introductie; er wordt niets aangemeld of verstuurd. Een onjuiste code wordt in het bestaande paneel gemeld. De code wordt niet opgeslagen als browservoorkeur. Delen van de vraagcontext houdt de bestaande afzonderlijke toestemming. Hetzelfde gedrag geldt bij historische inzage, antwoordvensters en de rekenmachine. De introductie staat afzonderlijk in js/study-assistant-intro.mjs.
 
 ## Kleuren bij nakijkfeedback
 

@@ -1,7 +1,8 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs';
-import {renderMarkdown} from './study-assistant-render.mjs?v=20260926-feedback1';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260926-feedback1';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro1';
+import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro1';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro1';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-intro1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
@@ -11,7 +12,7 @@ const footerResize=window.ResizeObserver?new ResizeObserver(()=>placeLauncher())
 adapters.set('CAFA2',adapter);
 const doc=document;
 const button=doc.createElement('button');button.type='button';button.className='study-assistant-launch';
-button.textContent='Vraag over deze vraag';button.hidden=true;button.setAttribute('aria-controls','study-assistant');button.setAttribute('aria-expanded','false');
+button.textContent='Stel een vraag of kijk je antwoord na met de CAFA2 Assistent';button.hidden=true;button.setAttribute('aria-controls','study-assistant');button.setAttribute('aria-expanded','false');
 const panel=doc.createElement('dialog');panel.id='study-assistant';panel.className='study-assistant';panel.setAttribute('aria-labelledby','study-assistant-title');
 panel.innerHTML=`<header class="study-head"><div><p class="study-eyebrow">HULP BIJ DEZE VRAAG</p><h2 id="study-assistant-title">CAFA2 Assistent</h2></div><button type="button" class="study-icon-button" data-action="close" aria-label="Assistent verbergen" title="Assistent verbergen">×</button></header>
 <div class="study-context"><strong data-context-title></strong><p data-context-question></p><div class="study-context-controls"><label>Stand <select data-mode aria-label="Hulpstand"><option value="hint">Eerst een hint</option><option value="review">Antwoord en uitleg</option></select></label><button type="button" class="study-text-button" data-action="clear">Nieuw gesprek</button></div><small data-mode-note></small></div>
@@ -30,18 +31,19 @@ function contextKey(value){return value?refKey(value.ref)+'|'+value.revision+'|'
 function conversation(){const k=scope();if(!conversations.has(k)){if(conversations.size>=40)conversations.delete(conversations.keys().next().value);conversations.set(k,[]);}return conversations.get(k);}
 function banner(message,isError=false){$('[data-banner]').textContent=message;$('[data-banner]').classList.toggle('is-error',isError);$('[data-banner]').hidden=!message;}
 function syncLaunchers() {
+  button.textContent=intro.label;button.classList.toggle('is-first-use',!intro.seen);
   if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorButton=null;calculatorObserver=null;
     const found=doc.querySelector('#calculator-dialog .calculator-float-head');
     if(found){calculator=found.closest('#calculator-dialog');calculatorButton=doc.createElement('button');
       calculatorButton.type='button';calculatorButton.className='study-calculator-launch';calculatorButton.textContent='?';
-      calculatorButton.title='Vraag over deze vraag';calculatorButton.setAttribute('aria-label','Assistent openen voor deze vraag');
+      calculatorButton.title='Start de CAFA2 Assistent';calculatorButton.setAttribute('aria-label','Assistent openen voor deze vraag');
       calculatorButton.setAttribute('aria-controls','study-assistant');calculatorButton.setAttribute('aria-expanded','false');
-      calculatorButton.addEventListener('click',open);found.insertBefore(calculatorButton,found.querySelector('[data-calc-compact]'));
+      calculatorButton.addEventListener('click',start);found.insertBefore(calculatorButton,found.querySelector('[data-calc-compact]'));
       calculatorObserver=new MutationObserver(syncLaunchers);
       calculatorObserver.observe(calculator,{attributes:true,attributeFilter:['hidden']});}
   }
   const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
-  button.hidden=!current||calculatorOpen||panel.open;
+  button.hidden=!current||calculatorOpen||panel.open||intro.open;
   if(calculatorButton){calculatorButton.hidden=!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
 }
 function placeLauncher() {
@@ -90,11 +92,12 @@ function renderConversation() {
   }
 }
 function refresh() {
+  if(intro.open)return;
   let next=null;try{next=adapter.read();}catch{banner('De actuele vraag kon niet worden gelezen. Ververs de leeromgeving.',true);}
   const k=contextKey(next);
   if(k!==currentKey){if(currentKey)drafts.set(scope(),input.value);stop();current=next;currentKey=k;mode=next?.defaultReview?'review':'hint';input.value=drafts.get(scope())||'';if(next)renderConversation();else log.replaceChildren();}
   else current=next;
-  syncLaunchers();button.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Vraag over deze vraag');
+  syncLaunchers();button.setAttribute('aria-label',intro.label);
   placeLauncher();
   if(!current){if(panel.open)panel.close();return;}
   
@@ -105,7 +108,7 @@ function refresh() {
   dock.refresh();
 }
 function schedule(){clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>{refresh();decorate();},80);}
-function decorate(){adapter.decorate?.(open);const host=doc.getElementById('exam-app');if(host&&host!==observedHost){observer?.disconnect();observer=new MutationObserver(records=>{if(records.some(record=>!panel.contains(record.target)))schedule();});observer.observe(host,{subtree:true,childList:true});observedHost=host;}}
+function decorate(){adapter.decorate?.(start);const host=doc.getElementById('exam-app');if(host&&host!==observedHost){observer?.disconnect();observer=new MutationObserver(records=>{if(records.some(record=>!panel.contains(record.target)))schedule();});observer.observe(host,{subtree:true,childList:true});observedHost=host;}}
 async function api(action,body,signal) {
   const url=new URL(`api/study-${action}`,doc.baseURI);
   if(url.origin!==location.origin)throw new Error('De assistent moet op dezelfde website worden gehost.');
@@ -125,12 +128,19 @@ async function loadStatus() {
   }catch(error){status=null;banner(error.name==='AbortError'?'De server reageert niet. Probeer het opnieuw.':error.message,true);$('[data-login]').hidden=true;}
   finally{clearTimeout(timer);controls();}
 }
-async function open() {
-  refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=doc.activeElement;
+const intro=createAssistantIntro({document:doc,onChange:syncLaunchers,onContinue:open});
+function start({cancel=()=>{}}={}){if(adapter.read())intro.show(doc.activeElement,cancel);}
+async function open({code='',launcher=doc.activeElement}={}) {
+  refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
   dock.show(opener);syncLaunchers();button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');
-  if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});await loadStatus();
+  if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});
+  if(code){
+    banner('Toegangscode controleren…');
+    try{await api('auth',{code});$('#study-code').value='';await loadStatus();}
+    catch(error){await loadStatus();$('#study-code').value=code;banner(error.message,true);}
+  }else await loadStatus();
 }
-button.addEventListener('click',open);
+button.addEventListener('click',start);
 panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
 panel.addEventListener('cancel',()=>stop());
 $('[data-consent-check]').addEventListener('change',e=>{consent=e.target.checked;controls();});
@@ -178,7 +188,7 @@ window.addEventListener('resize',queuePlacement);
 doc.addEventListener('scroll',queuePlacement,true);
 for(const event of ['cafa:ready','cafa:exam-route','cafa:practice-change'])window.addEventListener(event,schedule);
 window.addEventListener('pagehide',()=>stop());
-window.StudyAssistant={version:VERSION,open,refresh:schedule,
+window.StudyAssistant={version:VERSION,open:start,refresh:schedule,
   registerAdapter(course,value){if(!value||typeof value.read!=='function')throw new Error('Adapter.read ontbreekt.');adapters.set(course,value);},
   useCourse(course){if(!adapters.has(course))throw new Error('Dit vak is nog niet aangesloten.');stop();adapter=adapters.get(course);currentKey='';status=null;schedule();}};
 schedule();

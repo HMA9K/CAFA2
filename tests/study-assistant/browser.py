@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[2]/'dist'
 OUT=Path(os.environ.get('ASSISTANT_QA_OUT','/tmp/cafa2-assistant-browser'));OUT.mkdir(parents=True,exist_ok=True)
 REVIEW_PROMPT='Kijk mijn ingevulde antwoord na aan de hand van de uitwerking. Geef aan wat klopt, welke fouten of ontbrekende stappen er zijn en hoe ik die kan verbeteren. Geef ook aan hoeveel punten mijn antwoord verdient.'
-checks=[];requests=[];errors=[]
+checks=[];requests=[];errors=[];auth_requests=[];service_calls=[]
 state={'ready':True,'authenticated':False,'fail':False,'delay_once':False}
 delayed_release=threading.Event()
 
@@ -30,6 +30,9 @@ base=f'http://127.0.0.1:{server.server_port}'
 def check(label,value):
     assert value,label
     checks.append(label);print('PASS',label,flush=True)
+def separate_rectangles(a,b):
+    return a['right']<=b['x']+1 or b['right']<=a['x']+1 or a['bottom']<=b['y']+1 or b['bottom']<=a['y']+1
+
 try:
   with sync_playwright() as p:
     executable=os.environ.get('CHROMIUM_PATH')
@@ -43,9 +46,12 @@ try:
     def route(r):
       if not r.request.url.startswith(base): r.abort();return
       if '/api/study-' not in r.request.url: r.continue_();return
-      action=r.request.url.split('/')[-1]
+      action=r.request.url.split('/')[-1];service_calls.append(action)
       if action=='study-status':r.fulfill(json={'ready':state['ready'],'authenticated':state['authenticated'],'course':'CAFA2','knowledge':{'theoryFiles':False,'reviewFiles':False}});return
-      if action=='study-auth':state['authenticated']=True;r.fulfill(json={'ok':True});return
+      if action=='study-auth':
+        auth_requests.append(r.request.post_data_json)
+        if auth_requests[-1]['code']=='invalid-test-code':r.fulfill(status=401,json={'error':'Deze testcode is ongeldig.'});return
+        state['authenticated']=True;r.fulfill(json={'ok':True});return
       if action=='study-logout':state['authenticated']=False;r.fulfill(json={'ok':True});return
       data=r.request.post_data_json;requests.append(data)
       if state['fail']:r.fulfill(status=503,json={'error':'Gesimuleerde serverfout.'});return
@@ -59,9 +65,45 @@ try:
         r.fulfill(json=mock_reply(data,'Rekening | Debet | Credit\nDeelneming | 540.000 |\nAgio | | 280.000\n\nStap | Berekening | Uitkomst\n1 | 2 × 3 | 6\n\nGewone tekst | blijft tekst'));return
       r.fulfill(json=mock_reply(data,'Berekening: '+ 'stap '*1500+'Goodwill = 99.000.') if data['message']=='Test lange uitwerking' else mock_reply(data))
     page.route('**/*',route)
+    def continue_intro():
+      page.locator('#study-assistant-intro').wait_for(state='visible')
+      page.locator('#study-assistant-intro button[type=submit]').click()
+      page.locator('#study-assistant-intro').wait_for(state='hidden')
     page.goto(base+'/index.html#kap-1')
     page.wait_for_function('window.CafaExams && window.StudyAssistant && !document.querySelector(".study-assistant-launch").hidden')
-    page.locator('.study-assistant-launch').click();page.locator('[data-login]').wait_for(state='visible')
+    launcher=page.locator('.study-assistant-launch');first_size=launcher.bounding_box()
+    check('First launcher is prominent and explains questions and answer checking',launcher.inner_text()=='Stel een vraag of kijk je antwoord na met de CAFA2 Assistent' and 'is-first-use' in launcher.get_attribute('class') and first_size['height']>=70)
+    original_study=page.evaluate('localStorage.getItem(CAFA2_DATA.id)')
+    page.screenshot(path=str(OUT/f'first-launcher-{engine}.png'))
+    launcher.click();intro=page.locator('#study-assistant-intro');intro.wait_for(state='visible')
+    check('Introduction explains three context layers original sources and temporary free access',intro.locator('ol li').count()==3 and all(part in intro.inner_text() for part in ['Originele vakbronnen','repetitiecursus met slides','Beperkt beschikbaar','tijdelijk gratis','beheerder']) and intro.locator('button[type=submit]').inner_text()=='Doorgaan')
+    check('Opening introduction does not open or authenticate the assistant',not page.locator('#study-assistant').evaluate('e=>e.open') and not service_calls)
+    page.screenshot(path=str(OUT/f'introduction-desktop-{engine}.png'))
+    page.set_viewport_size({'width':390,'height':844});page.evaluate("CafaTheme.setMode('dark')");page.wait_for_timeout(100)
+    check('Mobile introduction fits in dark mode with visible code and Continue',intro.evaluate('e=>{const r=e.getBoundingClientRect();return r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1&&getComputedStyle(e).getPropertyValue("--sa-bg").trim()==="#201d2b";}') and page.locator('#study-intro-code').is_visible())
+    page.screenshot(path=str(OUT/f'introduction-mobile-dark-{engine}.png'))
+    page.set_viewport_size({'width':390,'height':400});page.locator('#study-intro-code').focus();page.wait_for_timeout(100)
+    check('Introduction code and Continue remain reachable in a short keyboard viewport',intro.locator('form').evaluate('e=>{const r=e.getBoundingClientRect(),b=e.querySelector("button").getBoundingClientRect();return r.y>=0&&r.bottom<=innerHeight+1&&document.elementFromPoint(b.x+b.width/2,b.y+b.height/2)===e.querySelector("button");}'))
+    page.screenshot(path=str(OUT/f'introduction-short-keyboard-{engine}.png'))
+    page.set_viewport_size({'width':1366,'height':950});page.evaluate("CafaTheme.setMode('light')")
+    page.locator('#study-intro-code').fill('cancelled-test-code');page.get_by_role('button',name='Introductie sluiten',exact=True).click()
+    check('Closing introduction clears its code and leaves study data and service unchanged',not service_calls and not page.locator('#study-assistant').evaluate('e=>e.open') and page.locator('#study-intro-code').input_value()=='' and page.evaluate('localStorage.getItem(CAFA2_DATA.id)')==original_study)
+    check('Launcher becomes smaller immediately after first click',launcher.inner_text()=='Start de CAFA2 Assistent' and 'is-first-use' not in launcher.get_attribute('class') and launcher.bounding_box()['height']<first_size['height'])
+    launcher.click();intro.wait_for(state='visible');page.locator('#study-intro-code').fill('escaped-test-code');page.locator('#study-intro-code').press('Escape');intro.wait_for(state='hidden')
+    check('Escape cancels introduction without starting or saving a code',not service_calls and page.locator('#study-intro-code').input_value()=='' and 'escaped-test-code' not in page.evaluate('JSON.stringify({...localStorage})'))
+    page.reload();page.wait_for_function('window.StudyAssistant && !document.querySelector(".study-assistant-launch").hidden')
+    check('Compact launcher preference survives reloading',launcher.inner_text()=='Start de CAFA2 Assistent' and 'is-first-use' not in launcher.get_attribute('class'))
+    launcher.click();page.locator('#study-intro-code').fill('invalid-test-code');continue_intro()
+    page.wait_for_function('document.querySelector("[data-banner]").textContent.includes("Deze testcode is ongeldig")')
+    check('Invalid introductory code opens the normal login with one useful error',len(auth_requests)==1 and page.locator('[data-login]').is_visible() and not requests and page.locator('#study-code').input_value()=='invalid-test-code')
+    page.locator('#study-assistant [data-action=close]').click()
+    launcher.click();page.locator('#study-intro-code').fill(' mock-test-code ');page.locator('#study-intro-code').press('Enter')
+    page.wait_for_function('!document.querySelector("[data-action=logout]").hidden')
+    check('Continue with code authenticates once and starts the assistant without a chat request',len(auth_requests)==2 and auth_requests[-1]['code']=='mock-test-code' and page.locator('#study-assistant').evaluate('e=>e.open') and not requests)
+    check('Introductory code is cleared and does not bypass sharing consent',page.locator('#study-intro-code').input_value()=='' and not page.locator('[data-consent-check]').is_checked() and page.locator('[data-send]').is_disabled() and 'mock-test-code' not in page.evaluate('JSON.stringify({...localStorage})'))
+    page.locator('[data-action=logout]').click();page.locator('[data-login]').wait_for(state='visible');page.locator('#study-assistant [data-action=close]').click()
+    before_auth=len(auth_requests);launcher.click();continue_intro();page.locator('[data-login]').wait_for(state='visible')
+    check('Continue without code starts the existing login without authentication',len(auth_requests)==before_auth and not requests and page.locator('#study-code').input_value()=='')
     check('No request before consent and login',page.locator('[data-send]').is_disabled() and not requests)
     page.get_by_role('button',name='Kijk mijn antwoord na',exact=True).click()
     check('Review button does not send before login and consent',not requests and page.locator('#study-message').input_value()==REVIEW_PROMPT)
@@ -79,7 +121,7 @@ try:
       page.wait_for_function('(route) => location.hash===route',arg=route)
     def ensure_open():
       if not page.locator('#study-assistant').evaluate('(e)=>e.open'):
-        page.locator('.study-assistant-launch').click()
+        page.locator('.study-assistant-launch').click();continue_intro()
         page.locator('#study-assistant').wait_for(state='visible')
     def close_panel():
       if page.locator('#study-assistant').evaluate('(e)=>e.open'):
@@ -215,15 +257,19 @@ try:
     page.reload();page.wait_for_function('window.CafaExams && window.StudyAssistant')
     visit('#mc-inzage/practice-kap-1')
     page.wait_for_function('document.querySelectorAll("#exam-app .study-inline-launch").length > 1')
-    page.locator('#exam-app .study-inline-launch').nth(0).click()
+    historic_title=page.locator('[data-context-title]').text_content();historic_chat=page.locator('[data-messages]').text_content();historic_requests=len(requests)
+    page.locator('#exam-app .study-inline-launch').nth(0).click();page.locator('#study-assistant-intro').wait_for(state='visible')
+    page.get_by_role('button',name='Introductie sluiten',exact=True).click();page.locator('#study-assistant-intro').wait_for(state='hidden')
+    check('Cancelling historical introduction keeps conversation and question context unchanged',len(requests)==historic_requests and page.locator('[data-context-title]').text_content()==historic_title and page.locator('[data-messages]').text_content()==historic_chat and not page.locator('#study-assistant').evaluate('e=>e.open'))
+    page.locator('#exam-app .study-inline-launch').nth(0).click();continue_intro()
     page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 1")')
     page.locator('[data-consent-check]').check()
     send('Leg mijn eerdere keuze uit.')
     check('Historical MC inline action uses archived answer',requests[-1]['studentAnswer']['choice']==1 and requests[-1]['ref']['questionId']=='1')
-    close_panel();page.locator('#exam-app .study-inline-launch').nth(1).click()
+    close_panel();page.locator('#exam-app .study-inline-launch').nth(1).click();continue_intro()
     page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 2")')
     check('Reopening from another historic question changes context and conversation',page.locator('.study-message').count()==0)
-    close_panel();page.locator('#exam-app .study-inline-launch').nth(0).click()
+    close_panel();page.locator('#exam-app .study-inline-launch').nth(0).click();continue_intro()
     page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 1")')
     check('Reopening the same historic question restores its conversation',page.locator('.study-message.is-assistant').count()==1)
     close_panel()
@@ -252,7 +298,8 @@ try:
     page.wait_for_timeout(100)
     case_boxes=page.evaluate('''()=>Object.fromEntries([['case','#exam-case-panel'],['question','.exam-question-body'],['assistant','#study-assistant'],['footer','.exam-footer'],['head','.exam-work-head']].map(([key,selector])=>[key,document.querySelector(selector).getBoundingClientRect().toJSON()]))''')
     check('Full exam has case left, question middle and assistant right',case_boxes['case']['right']<=case_boxes['question']['x'] and case_boxes['question']['right']<=case_boxes['assistant']['x'] and case_boxes['question']['width']>=300)
-    check('Full-exam dock avoids the heading and all footer controls',case_boxes['assistant']['y']>=case_boxes['head']['bottom']-1 and case_boxes['assistant']['bottom']<=case_boxes['footer']['y']+1)
+    check('Full-exam dock avoids the heading and all footer controls',separate_rectangles(case_boxes['assistant'],case_boxes['head']) and separate_rectangles(case_boxes['assistant'],case_boxes['footer']))
+    page.screenshot(path=str(OUT/f'cirrus-assistant-desktop-{engine}.png'))
     case_scroll=page.locator('#exam-case-panel').evaluate('e=>{e.scrollTop=90;return e.scrollTop}')
     case_settings=page.evaluate('sessionStorage.getItem("cafa2-case-panel-v1")')
     page.locator('.study-assistant-resizer').press('ArrowLeft');page.locator('.study-assistant-resizer').press('Home')
@@ -281,7 +328,7 @@ try:
     check('Inline answer feedback remains available beside assistant',page.locator('#cafa-exam-feedback').is_visible() and page.locator('#study-assistant').evaluate('(e)=>e.open'))
     close_panel()
     page.locator('#cafa-exam-feedback .study-inline-launch').wait_for(state='visible')
-    page.locator('#cafa-exam-feedback .study-inline-launch').click()
+    page.locator('#cafa-exam-feedback .study-inline-launch').click();continue_intro()
     check('Inline answer window opens the same full-exam conversation',
           page.locator('.study-message.is-assistant').count()>=1 and
           page.locator('[data-context-title]').inner_text().endswith('Vraag 1'))
@@ -334,7 +381,7 @@ try:
     page.wait_for_function('(id)=>location.hash==="#inzage/"+id',arg=attempt_id)
     page.wait_for_function('document.querySelectorAll("#exam-app .study-inline-launch").length>0')
     page.locator('#exam-app details[data-result-id]').first.locator('summary').click()
-    page.locator('#exam-app details[open] .study-inline-launch').first.click()
+    page.locator('#exam-app details[open] .study-inline-launch').first.click();continue_intro()
     page.wait_for_function('document.querySelector("[data-context-title]")?.textContent?.includes("Vraag 1")')
     send('Waar komt het bedrag uit het antwoordmodel vandaan?')
     check('Completed exam overview inline action pins first result question',requests[-1]['ref']['questionId']=='vraag-1')
@@ -382,7 +429,7 @@ try:
           requests[-1]['ref']['questionId']==other_source['sourceQuestionId'])
     close_panel();visit('#inzage/'+opgave_id)
     page.locator('#exam-app details[data-result-id="'+other_source['id']+'"]').locator('summary').click()
-    page.locator('#exam-app details[data-result-id="'+other_source['id']+'"] .study-inline-launch').click()
+    page.locator('#exam-app details[data-result-id="'+other_source['id']+'"] .study-inline-launch').click();continue_intro()
     send('Licht deze oorspronkelijke uitwerking toe.')
     check('Opgave summary inline action uses the selected original source',
           requests[-1]['ref']['bankId']==other_source['sourceExamId'] and
@@ -437,14 +484,14 @@ try:
     check('Calculator history works before opening assistant',page.locator('.calc-history-list li').count()>=1)
     page.locator('#calculator-dialog .study-calculator-launch').wait_for(state='visible')
     check('Open calculator exposes a dedicated assistant button',not page.locator('.study-assistant-launch').is_visible())
-    page.locator('#calculator-dialog .study-calculator-launch').click()
+    page.locator('#calculator-dialog .study-calculator-launch').click();continue_intro()
     page.wait_for_function('document.querySelector("#study-assistant").open')
     page.locator('#calculator-dialog [data-calc-close]').click()
     check('Assistant composer is reachable after closing the floating calculator',page.locator('#study-message').evaluate('''e=>{const r=e.getBoundingClientRect();return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===e;}'''))
     close_panel()
     check('Calculator history survives assistant open and close',page.locator('.calc-history-list li').count()>=1)
     page.set_viewport_size({'width':1366,'height':950});page.locator('[data-calc]').click()
-    page.locator('#calculator-dialog .study-calculator-launch').click()
+    page.locator('#calculator-dialog .study-calculator-launch').click();continue_intro()
     check('Desktop assistant docks without making the page inert',page.locator('#study-assistant').evaluate('(e)=>e.open && !e.matches(":modal") && e.getAttribute("aria-modal")==="false"'))
     panel=page.locator('#study-assistant');separator=page.locator('.study-assistant-resizer')
     draft='Dit concept blijft staan tijdens het aanpassen van de breedte.'
@@ -457,7 +504,7 @@ try:
           footer:rect(document.querySelector('#exam-app .exam-footer')),head:rect(document.querySelector('#exam-app .exam-work-head'))};}''')
     boxes=dock_boxes()
     check('Assistant has a reserved column to the right of the question',boxes['primary']['right']<=boxes['separator']['x']+1 and boxes['separator']['right']<=boxes['panel']['x']+1)
-    check('Question heading and navigation remain outside the assistant column',boxes['panel']['y']>=boxes['head']['bottom']-1 and boxes['panel']['bottom']<=boxes['footer']['y']+1)
+    check('Question heading and navigation remain outside the assistant column',separate_rectangles(boxes['panel'],boxes['head']) and separate_rectangles(boxes['panel'],boxes['footer']))
     start=panel.bounding_box();grip=separator.bounding_box()
     page.mouse.move(grip['x']+7,grip['y']+grip['height']/2);page.mouse.down()
     page.mouse.move(grip['x']-83,grip['y']+grip['height']/2,steps=12);page.mouse.up()
@@ -495,7 +542,7 @@ try:
     ensure_open();page.wait_for_timeout(100);after_reload=panel.bounding_box()
     check('Column width persists across a page reload',abs(after_reload['width']-saved_geometry['width'])<2)
     check('Only width is stored in the panel preference',set(page.evaluate('JSON.parse(localStorage.getItem("cafa2-assistant-panel-v1"))'))=={'width'})
-    close_panel();page.locator('[data-calc]').click();page.locator('#calculator-dialog .study-calculator-launch').click()
+    close_panel();page.locator('[data-calc]').click();page.locator('#calculator-dialog .study-calculator-launch').click();continue_intro()
     page.locator('#study-message').press('Escape');page.wait_for_function('!document.querySelector(".study-assistant-layout")')
     page.locator('#calculator-dialog [data-calc-close]').click()
     check('Closing calculator restores the floating assistant launcher',page.locator('.study-assistant-launch').is_visible())

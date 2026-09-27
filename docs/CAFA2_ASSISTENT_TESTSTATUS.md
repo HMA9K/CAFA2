@@ -1,6 +1,16 @@
 # CAFA2 Assistent: teststatus na integratie
 
-Bijgewerkt: 26 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
+Bijgewerkt: 27 september 2026. PR [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek gepubliceerd via `main`.
+
+## Actueel: introductie en toegangscode
+
+- De eerste zwevende knop is groter en noemt zowel vragen stellen als antwoorden nakijken. Na de eerste klik wordt hij compacter met Start de CAFA2 Assistent; alleen deze voorkeur wordt per browser bewaard.
+- Elk startpunt opent een introductie met drie contextlagen, de gekoppelde broncategorieën en beperkte beschikbaarheid met een tijdelijk gratis opvraagbare beheerderscode. Doorgaan met code opent het paneel en doet één authenticatiepoging. Zonder code verschijnt het bestaande loginformulier. Sluiten met kruisje of Escape opent of authenticeert niets; code-invoer wordt gewist. Een onjuiste code geeft een fout in het bestaande paneel. Toestemming om vraaggegevens te delen blijft afzonderlijk vereist.
+- Gerichte browserproeven slagen: eerste/compacte knop, voorkeur na herladen, kruisje en Escape, geen serviceaanroep bij sluiten, juiste/onjuiste/lege code, Enter-bediening, geen automatische chat, geen opgeslagen code en bereikbare mobiele invoer in donker en een kort toetsenbordscherm. Desktop-, mobiele en korte screenshots visueel bekeken. Er is geen fysieke toetsenbordproef uitgevoerd.
+- Lokaal geslaagd: 116 Node-tests, dertien regressiescripts, integratie-dry-run zonder wijzigingen, build en deploycontrole: 627 oefenvragen, 285 tentamenrecords, 189 publieke bestanden en vier Functions.
+- De recente goedgekeurde Cirrus-indeling en rekenmachinewijzigingen zijn meegenomen. Kop en navigatie staan nu in de vraagkolom. Twee oudere assistentproeven vereisten uitsluitend verticale scheiding; zij controleren nu rechthoekige scheiding, zodat ook de goedgekeurde plaatsing naast de assistent wordt gecontroleerd. De bestaande controles op bereikbare knoppen, minimale vraagruimte en onveranderde antwoorden blijven behouden.
+- Uitgebreide browserproef en controles na publicatie worden nog uitgevoerd; de resultaten volgen in deze sectie.
+- Antwoorden en aanmeldingen in de automatische proeven zijn gesimuleerd. Geen nieuwe claim over echte modelkwaliteit of authenticatiekwaliteit. Geen nieuwe secret, instelling of bronbestand nodig. Introductie en knopvoorkeur veranderen geen opgeslagen antwoord, score, timer of rekenmachinevoorkeur.
 
 ## Actueel: kleuren bij nakijkfeedback
 

@@ -89,7 +89,7 @@ export function createCafa2Adapter(win=window) {
   function attach(el,get,open) {
     if(el.querySelector('.study-inline-launch'))return;
     const button=win.document.createElement('button');button.type='button';button.className='study-inline-launch';
-    button.textContent='Vraag over dit antwoord';button.addEventListener('click',e=>{e.preventDefault();pinned=get;open();});el.appendChild(button);
+    button.textContent='Vraag over dit antwoord';button.addEventListener('click',e=>{e.preventDefault();const previous=pinned,route=win.location.hash;pinned=get;open({cancel:()=>{if(win.location.hash===route)pinned=previous;}});});el.appendChild(button);
   }
   return {course:'CAFA2',read,markChecked,decorate,resetPin:()=>{pinned=null;},answerValue};
 }
