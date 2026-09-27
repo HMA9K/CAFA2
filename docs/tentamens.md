@@ -2,7 +2,7 @@
 
 ## Opgenomen bronbestanden
 
-- `2021-04 CAFA2 - Tentamen.docx` en `2021-04 CAFA2 - Uitwerking tentamen.pdf`
+- `2021-04 CAFA2 - Tentamen.pdf` en `2021-04 CAFA2 - Uitwerking tentamen.pdf` (het oorspronkelijke Word-bestand is eveneens lokaal beschikbaar)
 - `2021-10 CAFA2 - Tentamen.pdf` en `2021-10 CAFA2 - Uitwerking tentamen.pdf`
 - `2022-04 CAFA2 - Tentamen.pdf` en `2022-04 CAFA2 - Uitwerking tentamen.pdf`
 - `2022-10 CAFA2 - Tentamen.pdf` en `2022-10 CAFA2 - Uitwerking tentamen.pdf`

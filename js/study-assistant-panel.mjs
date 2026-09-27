@@ -9,7 +9,7 @@ export function panelMetrics(width,preference=DEFAULT_WIDTH,hasCase=false){
   return {stacked,width:stacked?Math.max(0,width):Math.round(clamp(width*clamp(preference,20,50)/100,320,max))};
 }
 
-export function createAssistantPanel(panel){
+export function createAssistantPanel(panel,options={}){
   const doc=panel.ownerDocument,win=doc.defaultView;
   let width=DEFAULT_WIDTH,layout=null,primary=null,separator=null,page=null,modal=null,anchor=null,hash='',drag=null,queued=false,returnScroll=null,alignNext=false;
   try{width=panelPreference(JSON.parse(win.localStorage.getItem(KEY)||'null'));}catch{}
@@ -46,7 +46,8 @@ export function createAssistantPanel(panel){
     const question=doc.getElementById(win.location.hash.slice(1));
     if(question?.matches('.question'))return {element:question.querySelector('.practice-case-layout')||question.querySelector('.qbody'),page:question};
     const host=doc.getElementById('exam-app');if(!host||host.hidden)return null;
-    return {element:host.querySelector('.exam-case-layout,.exam-question-body,.review-detail-layout,.exam-results-panel')};
+    return {element:host.querySelector('.exam-case-layout,.exam-question-body,.review-detail-layout,.exam-results-panel')||
+      (options.fallbackSelector?host.querySelector(options.fallbackSelector):null)};
   }
   function attach(destination){
     if(!destination?.element)return;
@@ -128,11 +129,12 @@ export function createAssistantPanel(panel){
   }
   panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();panel.close();}});
   panel.addEventListener('close',()=>{
+    if(panel.open)return; // A queued close event must not detach a newly reopened pane.
     const wasStacked=layout?.classList.contains('is-stacked');save();detach();doc.body.classList.remove('study-assistant-short','study-assistant-stacked');
     if(wasStacked&&returnScroll?.hash===win.location.hash)win.scrollTo(returnScroll.x,returnScroll.y);returnScroll=null;anchor=null;
   });
   const resized=()=>{alignNext=true;queue();};
   win.addEventListener('resize',resized);win.visualViewport?.addEventListener('resize',resized);win.visualViewport?.addEventListener('scroll',queue);
   win.addEventListener('pagehide',save);
-  return {show,refresh:queue};
+  return {show,refresh:queue,hide(){if(panel.open)panel.close();detach();}};
 }

@@ -74,6 +74,8 @@
   }).then(function () {
     return loadScript('js/exams.js?v=20260926-restart1');
   }).then(function () {
+    return loadStyle('css/exam-original-pdfs.css?v=20260927-1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-1');});
+  }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');

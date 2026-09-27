@@ -24,6 +24,7 @@ De bestanden `js/exam-cirrus-layout.js`, `css/exam-cirrus-layout.css` en `tests/
 | Onderdeel | CAFA2 | SRA | Nog nodig |
 |---|---|---|---|
 | Algemene paginakop, Home, Meer, thema en knopvolgorde | Uitgevoerd in deze wijziging | Uitgevoerd in deze wijziging | Gezamenlijk onderhouden en beide browsercontroles uitvoeren bij een wijziging |
+| Originele tentamen- en uitwerking-PDF in linker en rechter paneel | 22 oorspronkelijke PDF-bronnen gekoppeld; alle elf tentamens volledig beschikbaar | Geparkeerd op verzoek | SRA dezelfde bronknoppen, paneelwissels, herstelbediening en controles geven; zie [specificatie](https://github.com/HMA9K/CAFA2/blob/main/docs/originele-tentamen-pdfs.md) |
 | Cirrus-tentamenindeling, zwevende casus, markeringen, compacte rekenmachine | Aanwezig | Aanwezig | Geen afzonderlijke open implementatietaak |
 | MC-koppeling van iedere tentamendeelvraag | 282 bronnen gekoppeld; 380 tentamenoefeningen, waarvan 65 samengestelde vragen gesplitst | 134 bestaande MC-vragen; geen volledige deelvraagkoppeling | SRA-dekkingsmatrix maken en ontbrekende tegenhangers uit bestaande tentamenrecords toevoegen |
 | MC-casus, eerdere uitkomsten, gedeelde voortgang per onderwerp | Aanwezig voor de ingevoerde tentamenoefeningen | Niet overgenomen voor alle tentamendeelvragen | SRA-bronvragen zelfstandig oefenbaar maken met echte casus en benodigde eerdere uitkomsten |
