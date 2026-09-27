@@ -73,9 +73,9 @@ function balanceText(totals){
 }
 function plainJournal(text){
   // No unchecked journal may bypass the typed journal parts through prose/code/Markdown.
-  const clean=text.replace(/[*_`]/g,'');
+  const clean=text.replace(/[*_`]/g,'').replace(/\b\d{1,2}\.\./g,'').replace(/\b(?:vraag|opgave|stap|regel)\s+\d+[a-z]?\b/gi,'').replace(/\d+(?:[.,]\d+)?\s*%/g,'');
   return /\|[^\n]*\bdebet\b[^\n]*\bcredit\b/i.test(clean)||clean.split('\n').some(line=>
-    /\b(?:debet|credit|debiteren|crediteren|debit|crédit)\b/i.test(line)&&/(?:[€£$]\s*[−-]?\d|\d[\d. ]*(?:,\d{1,2})?)/.test(line));
+    /\b(?:debet(?:zijde|kant|boeking|saldo)?|credit(?:zijde|kant|boeking|saldo)?|debiteren|crediteren|debit|crédit)\b/i.test(line)&&/(?:[€£$]\s*[−-]?\d|\d[\d. ]*(?:,\d{1,2})?)/.test(line));
 }
 export function validatedJournalAnswer(text,contract){
   let data;try{data=JSON.parse(text);}catch{fail('invalid_json');}

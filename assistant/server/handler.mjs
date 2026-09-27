@@ -240,9 +240,12 @@ export async function handle(context,catalog,dependencies={}) {
           return json(result);
         }catch(error){
           if(!(error instanceof JournalValidationError))throw error;
-          if(attempt===1)throw new HttpError(502,'Het antwoord kwam niet door de controle op journaalposten. Probeer de vraag korter te stellen. Je ingevulde antwoord is niet gewijzigd.','journal_validation');
+          if(attempt===1){
+            const reason=error.code==='unstructured_journal'?'Er stonden boekingsregels buiten de gecontroleerde tabel. ':error.code==='incomplete_journal'?'De boeking kwam onvolledig terug. ':error.code==='unbalanced_derived_journal'?'De afgeleide boeking sloot niet aan. ':'';
+            throw new HttpError(502,reason+'Het antwoord kwam niet door de controle op journaalposten. Probeer de vraag korter te stellen. Je ingevulde antwoord is niet gewijzigd.','journal_validation');
+          }
           // One repair within the same deadline. Never echo the rejected answer or log private data.
-          modelBody.instructions+='\nHerstel de uitvoer: de vorige poging faalde op '+error.code+'. Gebruik uitsluitend het gevraagde parts-schema. Bronregels via source_journal; afleidingen moeten aansluiten. Behoud de oorspronkelijke leervraag, inclusief een verzoek om alleen een hint.';
+          modelBody.instructions+='\nHerstel de uitvoer: de vorige poging faalde op '+error.code+'. Gebruik uitsluitend het gevraagde parts-schema. Bronregels via source_journal; afleidingen moeten aansluiten. Houd text-onderdelen bij een korte uitleg in woorden: daarin geen cijfermatige bedragen en geen woorden debet of credit. De bron- of afleidingstabel toont de benodigde bedragen en zijden. Behoud de oorspronkelijke leervraag, inclusief een verzoek om alleen een hint; toon bij alleen een hint geen ongevraagde boeking.';
           // Retrieval already ran; prevent a repair from multiplying search calls or cost.
           delete modelBody.tools;delete modelBody.max_tool_calls;
         }

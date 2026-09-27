@@ -43,6 +43,11 @@ test('alleen een hint blijft mogelijk zonder bronboekingen of volledig antwoord'
   const result=validatedJournalAnswer(typed([{type:'text',text:'Begin met de nog niet gerealiseerde winst in de voorraad.'}]),contract);
   assert.equal(result.validation.sourceJournals,0);assert.doesNotMatch(result.answer,/48\.000|Rekening/);
 });
+test('rekeningcodes, vraagverwijzingen en percentages zonder boekingsbedrag zijn gewone uitleg',()=>{
+  const result=validatedJournalAnswer(typed([{type:'text',text:'Bij vraag 5 staat rekening 0.. Goodwill aan de debetkant. Het aandeel is 70%.'}]),contract);
+  assert.match(result.answer,/debetkant/);
+  assert.doesNotThrow(()=>validatedJournalAnswer(typed([{type:'text',text:'Rekening 0.. Goodwill staat debet; het aandeel is 70%.'}]),contract));
+});
 test('geldbedragen gebruiken Nederlandse decimalen zonder tekens te verbergen',()=>{
   assert.equal(cents('€ 23.040'),2304000);assert.equal(cents('−1.234,50'),-123450);assert.equal(cents(1.01),101);
   for(const value of ['120 × 25%',Infinity,0.001,'unknown'])assert.equal(cents(value),null);
