@@ -7,7 +7,7 @@ const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
 let measuredFooter=null,placementQueued=false;
-let calculator=null,calculatorButton=null,calculatorObserver=null;
+let calculator=null,calculatorObserver=null;
 const footerResize=window.ResizeObserver?new ResizeObserver(()=>placeLauncher()):null;
 adapters.set('CAFA2',adapter);
 const doc=document;
@@ -41,20 +41,15 @@ function syncLaunchers() {
   }
   const ready=!doc.documentElement.classList.contains('cafa-starting')&&!doc.documentElement.classList.contains('cafa-start-failed');
   button.textContent=intro.label;button.classList.toggle('is-first-use',!intro.seen);
-  if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorButton=null;calculatorObserver=null;
+  if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorObserver=null;
     const found=doc.querySelector('#calculator-dialog .calculator-float-head');
-    if(found){calculator=found.closest('#calculator-dialog');calculatorButton=doc.createElement('button');
-      calculatorButton.type='button';calculatorButton.className='study-calculator-launch';calculatorButton.textContent='?';
-      calculatorButton.title='Start de CAFA2 Assistent';calculatorButton.setAttribute('aria-label','Assistent openen voor deze vraag');
-      calculatorButton.setAttribute('aria-controls','study-assistant');calculatorButton.setAttribute('aria-expanded','false');
-      calculatorButton.addEventListener('click',start);found.insertBefore(calculatorButton,found.querySelector('[data-calc-compact]'));
+    if(found){calculator=found.closest('#calculator-dialog');
       calculatorObserver=new MutationObserver(syncLaunchers);
       calculatorObserver.observe(calculator,{attributes:true,attributeFilter:['hidden']});}
   }
-  const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
+  const calculatorOpen=!!calculator&&!calculator.hidden;
   button.hidden=!ready||!current||calculatorOpen||panel.open||intro.open||launchDismissed;
   launchWrap.hidden=button.hidden;
-  if(calculatorButton){calculatorButton.hidden=!ready||!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
 }
 function placeLauncher() {
   const footer=current?.ref.kind==='exam' && location.hash.startsWith('#tentamen/')
@@ -148,7 +143,7 @@ async function start({cancel=()=>{}}={}){
 async function open({code='',launcher=doc.activeElement}={}) {
   const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
   await Promise.all(waiting);refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;
-  dock.show(opener);syncLaunchers();button.setAttribute('aria-expanded','true');calculatorButton?.setAttribute('aria-expanded','true');
+  dock.show(opener);syncLaunchers();button.setAttribute('aria-expanded','true');
   if(matchMedia('(pointer:fine)').matches)input.focus({preventScroll:true});
   if(code){
     banner('Toegangscode controleren…');
@@ -157,7 +152,7 @@ async function open({code='',launcher=doc.activeElement}={}) {
   }else await loadStatus();
 }
 button.addEventListener('click',start);
-panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');calculatorButton?.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
+panel.addEventListener('close',()=>{drafts.set(scope(),input.value);stop();adapter.resetPin?.();refresh();button.setAttribute('aria-expanded','false');if(opener?.isConnected)opener.focus({preventScroll:true});});
 panel.addEventListener('cancel',()=>stop());
 input.addEventListener('input',()=>{drafts.set(scope(),input.value);controls();});
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('[data-chat-form]').requestSubmit();}});
