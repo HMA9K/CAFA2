@@ -9,7 +9,8 @@ defaults:
   run:
     shell: bash
 concurrency:
-  group: assistant-handoff-${{ github.ref }}
+  # Keep validation evidence for each commit when another change is published.
+  group: assistant-handoff-${{ github.ref }}-${{ github.sha }}
   cancel-in-progress: true
 jobs:
   validate:
