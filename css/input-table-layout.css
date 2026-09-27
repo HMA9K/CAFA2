@@ -1,10 +1,11 @@
-.input-table-settings{margin:5px 0 8px;font:13px/1.4 Arial,sans-serif;color:var(--study-ink,#17364e);text-align:left}
-.input-table-settings>summary{cursor:pointer;padding:4px 6px;width:fit-content}
-.input-table-settings-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:10px;background:var(--study-surface,#f4f4f7);border:1px solid #aeb3bb}
-.input-table-settings-fields label{display:flex;flex-direction:column;gap:4px}
-.input-table-settings-fields input{width:100%;max-width:120px;box-sizing:border-box;padding:5px;border:1px solid #929ba7;border-radius:2px;background:var(--study-surface,#fff);color:inherit;font:inherit}
-.input-table-settings-fields button{align-self:end;justify-self:start;min-height:30px;padding:5px 8px;border:1px solid #929ba7;background:var(--study-surface,#fff);color:inherit;cursor:pointer;font:inherit}
+.input-table-handles{position:fixed;z-index:92;pointer-events:none;box-sizing:border-box}
+.input-table-handles[hidden]{display:none!important}
+.input-table-handles button{position:absolute;pointer-events:auto;touch-action:none;appearance:none;box-sizing:border-box;margin:0;padding:0;border:0;background:transparent;color:var(--study-ink,#526271)}
+.input-table-handles .input-table-column-grip{width:10px;transform:translateX(-50%);cursor:col-resize;border-radius:0}
+.input-table-column-grip:hover,.input-table-column-grip:focus-visible{background:#2786da30!important;outline:1px solid #2786da;outline-offset:-1px}
+.input-table-handles .input-table-corner-grip{right:0;bottom:0;width:18px;height:18px;cursor:nwse-resize;background:linear-gradient(135deg,transparent 45%,#778697 46%,#778697 51%,transparent 52%,transparent 63%,#778697 64%,#778697 69%,transparent 70%,transparent 81%,#778697 82%,#778697 87%,transparent 88%)}
+.input-table-corner-grip:hover,.input-table-corner-grip:focus-visible{outline:2px solid #2786da;outline-offset:-2px}
+.input-table-dragging,.input-table-dragging *{user-select:none!important}
 table.input-table-adjustable tbody>tr>td,table.input-table-adjustable tbody>tr>th{height:var(--input-table-row-height,36px)!important;box-sizing:border-box;vertical-align:middle}
 .input-table-adjustable :is(input,textarea){box-sizing:border-box;min-width:0;max-width:100%}
-@media(max-width:760px){.input-table-settings-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media print{.input-table-settings{display:none}}
+@media print{.input-table-handles{display:none!important}}

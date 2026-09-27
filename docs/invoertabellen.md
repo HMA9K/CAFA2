@@ -1,9 +1,13 @@
 # Invoertabellen
 
-Bij voorraadtabellen, journaalpostentabellen en tabellen in de antwoordeditor staat **Tabel aanpassen**. De kolombreedtes zijn percentages van de tabelbreedte. Bij het wijzigen van een kolom worden de overige kolommen evenredig verdeeld. De rijhoogte is instelbaar tussen 28 en 120 pixels. **Standaard herstellen** herstelt de oorspronkelijke verdeling en een rijhoogte van 36 pixels.
+De breedte van een kolom verandert door de scheiding tussen twee kolommen te verslepen. De muiscursor verandert bij de scheiding in een horizontale sleepcursor. De twee aangrenzende kolommen verdelen hun gezamenlijke ruimte opnieuw.
 
-De instellingen worden op dit apparaat per vraag en tabel bewaard, onafhankelijk van het antwoord. De opgeslagen instellingen bevatten geen antwoordtekst. Smalle schermen behouden de horizontale schuifmogelijkheid. Bron- en antwoordmodeltabellen worden niet gewijzigd. Tabellen met samengevoegde cellen behouden hun bestaande indeling.
+Rechtsonder in de tabel staat een diagonale sleepgreep. Hiermee verandert de breedte van de hele tabel en, bij verticaal slepen, de rijhoogte. Dubbelklikken op deze greep herstelt de standaardindeling. Er is geen instellingenmenu boven de tabel.
 
-De tabelinstellingen zijn gelijk in CAFA2 en SRA. SRA ondersteunt deze instellingen ook in de zelfstandige HTML-versie.
+De grepen ondersteunen ook toetsenbordbediening: links/rechts voor een kolomscheiding en de vier pijltjestoetsen voor de tabelhoek. Home op de tabelhoek herstelt de standaardindeling.
+
+Dit geldt voor voorraadtabellen, journaalpostentabellen en tabellen in de antwoordeditor in CAFA2 en SRA, inclusief de zelfstandige SRA-versie. Instellingen blijven lokaal per vraag en tabel bewaard, onafhankelijk van het antwoord. Grepen staan buiten het opgeslagen antwoord. Bron- en antwoordmodeltabellen behouden hun opmaak. Tabellen met samengevoegde cellen behouden hun bestaande indeling.
+
+Smalle schermen behouden horizontaal scrollen. De sleepgrepen volgen de tabel bij scrollen, pagina-zoom en wijzigingen van de schermbreedte.
 
 De zwevende CAFA2-assistentknop staat rechtsonder. Het kruisje verbergt de hele knop voor het huidige tabblad, ook na herladen. De bestaande toegang via de rekenmachine en de assistentlinks blijft beschikbaar.
