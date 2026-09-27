@@ -37,6 +37,7 @@ export function createAssistantPanel(panel,options={}){
   function target(){
     const activeModal=Array.from(doc.querySelectorAll('dialog[open]')).filter(el=>el!==panel&&el.matches(':modal')).at(-1);
     if(activeModal){
+      if(!options.preserveContent)return null;
       const body=activeModal.querySelector('.exam-modal-body,.dialog-body');
       if(body&&!body.contains(panel))return {element:body,modal:activeModal};
       if(body&&modal===activeModal)return {element:primary,modal:activeModal};
@@ -92,6 +93,10 @@ export function createAssistantPanel(panel,options={}){
   }
   function place(){
     if(!panel.open)return;
+    // Exam information dialogs never host or reveal the question assistant.
+    const blocked=!options.preserveContent&&Array.from(doc.querySelectorAll('dialog[open]')).some(el=>el!==panel&&el.matches(':modal'));
+    panel.style.visibility=blocked?'hidden':'';panel.inert=blocked;
+    if(blocked)return;
     const destination=target();if(destination)attach(destination);
     if(!layout?.isConnected)return;
     const v=viewport(),casePanel=primary.querySelector('.exam-case-panel:not([hidden])');
