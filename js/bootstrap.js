@@ -63,7 +63,7 @@
     var profile=document.createElement('div');profile.className='cafa-profile';
     profile.innerHTML='<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#f4f4f5"/><circle cx="20" cy="15" r="7" fill="#444159"/><path d="M8 31c1-10 23-10 24 0a17 17 0 0 1-24 0Z" fill="#444159"/></svg><span>Anoniem</span>';
     document.querySelector('.top-controls').appendChild(profile);
-    return loadScript('js/app.js');
+    return loadScript('js/app.js?v=20260927-percent1');
   }).then(function () {
     return loadScript('js/calculator.js?v=20260922-3');
   }).then(function () {

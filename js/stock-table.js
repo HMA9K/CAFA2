@@ -54,6 +54,13 @@
         return '<td>'+(editable?field('r'+r+'-c'+c,label,percentage?'…%':''):esc(value))+'</td>';
       }).join('')+'</tr>';
     }).join('');
+    // Some MC schemas omit the percentage row. Separate keys keep all saved
+    // amount cells attached to their original date rows.
+    if(schema.headers.length===6&&!schema.rows.some(function(row){return row.some(function(value){return /%/.test(value);});})){
+      rows='<tr class="stock-percentage-row"><th scope="row"><span class="stock-sr-only">Percentages</span></th><td></td><td>100%</td>'+[3,4,5].map(function(c){
+        return '<td>'+field('p-c'+c,'Percentage, '+schema.headers[c],'…%')+'</td>';
+      }).join('')+'</tr>'+rows;
+    }
     return '<div class="stock-scroll" tabindex="0" role="region" aria-label="Voorraadtabel, horizontaal verschuifbaar"><table class="stock-matrix"><caption>'+(readonly?'Jouw ingevulde voorraadtabel':'Vul de voorraadtabel in')+'</caption><thead><tr>'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div>';
   }
   function mount(host,schema,cells,onChange) {
