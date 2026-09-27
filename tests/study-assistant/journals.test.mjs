@@ -55,6 +55,11 @@ test('alleen een hint blijft mogelijk zonder bronboekingen of volledig antwoord'
   const result=validatedJournalAnswer(typed([{type:'text',text:'Begin met de nog niet gerealiseerde winst in de voorraad.'}]),contract);
   assert.equal(result.validation.sourceJournals,0);assert.doesNotMatch(result.answer,/48\.000|Rekening/);
 });
+test('derdenbelang is gekoppeld aan de juiste vennootschap in de echte casus',()=>{
+  assert.deepEqual(contract.ownership,[{company:'Power4You',share:75,minority:25},{company:'ChargeIT',share:60,minority:40}]);
+  assert.throws(()=>validatedJournalAnswer(typed([{type:'text',text:'Bij Power4You is het belang van derden 40%.'}]),contract),e=>e.code==='ownership_mismatch');
+  assert.doesNotThrow(()=>validatedJournalAnswer(typed([{type:'text',text:'Bij Power4You is het belang van derden 25%. Bij ChargeIT is het belang van derden 40%.'}]),contract));
+});
 test('rekeningcodes, vraagverwijzingen en percentages zonder boekingsbedrag zijn gewone uitleg',()=>{
   const result=validatedJournalAnswer(typed([{type:'text',text:'Bij vraag 5 staat rekening 0.. Goodwill aan de debetkant. Het aandeel is 70%.'}]),contract);
   assert.match(result.answer,/debetkant/);

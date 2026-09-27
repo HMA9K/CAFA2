@@ -116,7 +116,7 @@ export function makeModelRequest(payload,env) {
   // This is a practice site: always ground explanations in the canonical answer model.
   // 'hint' controls the teaching style, never the user's permission to see an answer.
   const contract=journalContract(record,message);
-  const context={...record.context,studentAnswer:answer,review:record.review,...(contract?{sourceJournals:contract.sources}:{})};
+  const context={...record.context,studentAnswer:answer,review:record.review,...(contract?{sourceJournals:contract.sources,ownershipFacts:contract.ownership}:{})};
   if(JSON.stringify(context).length>90000)throw new HttpError(413,'De casus is te groot. De beheerder moet deze vraag anders structureren.');
   const instructions=`Formatting re-enabled
 Je bent de studieassistent voor ${record.ref.course}. Antwoord uitsluitend in het Nederlands.
@@ -245,7 +245,7 @@ export async function handle(context,catalog,dependencies={}) {
             throw new HttpError(502,reason+'Het antwoord kwam niet door de controle op journaalposten. Probeer de vraag korter te stellen. Je ingevulde antwoord is niet gewijzigd.','journal_validation');
           }
           // One repair within the same deadline. Never echo the rejected answer or log private data.
-          modelBody.instructions+='\nHerstel de uitvoer: de vorige poging faalde op '+error.code+'. Gebruik uitsluitend het gevraagde parts-schema. Bronregels via source_journal; afleidingen moeten aansluiten. Houd text-onderdelen bij een korte uitleg in woorden: daarin geen cijfermatige bedragen en geen woorden debet of credit. De bron- of afleidingstabel toont de benodigde bedragen en zijden. Behoud de oorspronkelijke leervraag, inclusief een verzoek om alleen een hint; toon bij alleen een hint geen ongevraagde boeking.';
+          modelBody.instructions+='\nHerstel de uitvoer: de vorige poging faalde op '+error.code+'. Gebruik uitsluitend het gevraagde parts-schema. Controleer de vennootschap en het derdenbelang tegen ownershipFacts. Bronregels via source_journal; afleidingen moeten aansluiten. Houd text-onderdelen bij een korte uitleg in woorden: daarin geen cijfermatige bedragen en geen woorden debet of credit. De bron- of afleidingstabel toont de benodigde bedragen en zijden. Behoud de oorspronkelijke leervraag, inclusief een verzoek om alleen een hint; toon bij alleen een hint geen ongevraagde boeking.';
           // Retrieval already ran; prevent a repair from multiplying search calls or cost.
           delete modelBody.tools;delete modelBody.max_tool_calls;
         }

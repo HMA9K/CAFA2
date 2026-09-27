@@ -35,6 +35,23 @@ export function canonicalJournals(solution){
 }
 const object=properties=>({type:'object',properties,required:Object.keys(properties),additionalProperties:false});
 const string={type:'string'},nullableNumber={type:['number','null']};
+export function ownershipFacts(caseText){
+  // Read only explicitly named capital interests; never infer a party from an unrelated percentage.
+  return [...String(caseText||'').matchAll(/(\d+(?:[.,]\d+)?)%\s+(?:kapitaal)?belang\s+in\s+([\p{L}\p{N}][\p{L}\p{N}._'-]*)/giu)]
+    .map(([,percentage,company])=>({company,share:Number(percentage.replace(',','.'))}))
+    .filter(f=>f.share>=0&&f.share<=100&&!/^(?:de|het|een)$/i.test(f.company))
+    .map(f=>({...f,minority:Math.round((100-f.share)*10000)/10000}));
+}
+function checkOwnership(text,facts){
+  for(const sentence of text.split(/[.!?\n]/)){
+    if(/\b(?:niet|onjuist|fout)\b/i.test(sentence))continue;
+    for(const fact of facts){
+      const name=fact.company.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+      const match=sentence.match(new RegExp('\\b'+name+'\\s+(?:is\\s+|heeft\\s+|bedraagt\\s+)?(?:het\\s+)?(?:aandeel|belang|percentage)\\s+(?:van\\s+)?derden\\s+(?:is\\s+|bedraagt\\s+|van\\s+)?(\\d+(?:,\\d+)?)%','i'));
+      if(match&&Number(match[1].replace(',','.'))!==fact.minority)fail('ownership_mismatch');
+    }
+  }
+}
 export function journalContract(record,message){
   const sources=canonicalJournals(record.review.solution);
   // MC journal choices already have typed source columns. Only the correct option is authoritative.
@@ -49,13 +66,14 @@ export function journalContract(record,message){
   const types=[object({type:{type:'string',enum:['text']},text:string})];
   if(sources.length)types.push(object({type:{type:'string',enum:['source_journal']},sourceId:{type:'string',enum:sources.map(s=>s.id)},rowIndices:{type:'array',items:{type:'integer'}}}));
   if(derivedAllowed)types.push(object({type:{type:'string',enum:['derived_journal']},title:string,reason:string,rows:{type:'array',items:object({account:string,debit:nullableNumber,credit:nullableNumber})}}));
-  return {sources,derivedAllowed,format:{type:'json_schema',name:'study_journal_answer',strict:true,
+  return {sources,ownership:ownershipFacts(record.context.caseText),derivedAllowed,format:{type:'json_schema',name:'study_journal_answer',strict:true,
     schema:object({parts:{type:'array',items:{anyOf:types}}})}};
 }
 export const journalInstructions=`
 Boekhoudkundige uitvoercontrole: lever je antwoord als het gevraagde JSON-object met parts, in leesvolgorde.
 Een text-onderdeel bevat gewone Nederlandse Markdown-uitleg, hints of feedback. Zet geen journaalpost, debet/credit-tabel of boekingsregel met rekening, zijde en bedrag in vrije tekst. Noem een bedrag bij een boekingszijde uitsluitend via een journaalpostonderdeel. Je mag debet en credit als begrippen uitleggen zonder bedragen. Bespreek een fout eigen antwoord in tekst en toon de juiste regel als een bronfragment.
 De meegeleverde sourceJournals hebben vaste rekening-, debet- en creditvelden. Voor de officiële boeking gebruik je uitsluitend source_journal met het betreffende sourceId en rowIndices: [] voor alle regels. Voor één gevraagde regel gebruik je de nulgebaseerde regelnummers in rowIndices. Deze nummers en IDs zijn intern; noem ze niet in je uitleg. De toepassing vult de tabel en balanscontrole in. Verander nooit de zijde, het bedrag of de rekening uit deze bronregels. Noem een boeking met totals.balanced=false tegenstrijdig; corrigeer de bron niet stilzwijgend.
+De ownershipFacts bevatten uitsluitend expliciet genoemde kapitaalbelangen en het daaruit volgende derdenbelang per vennootschap. Controleer bij ieder percentage eerst de betreffende vennootschap. Een leveranciersbelang en een afnemersbelang zijn verschillende gegevens; verwissel hun derdenpercentages niet. Een hint moet dezelfde casusfeiten gebruiken als een volledig antwoord.
 derived_journal is uitsluitend beschikbaar voor een expliciet gevraagde alternatieve/nieuwe boeking of wanneer geen gestructureerde bronboeking beschikbaar is. Geef een reden met de gebruikte casusgegevens en de valuta/eenheid, numerieke bedragen met maximaal twee decimalen en null voor de lege zijde. Oude uitwerkingen zonder expliciete tabelcellen zijn niet automatisch bronboekingen: leid ze zorgvuldig uit de meegeleverde tekst af en presenteer ze als afleiding. Gebruik geen negatieve bedragen om onjuiste zijden te verbergen. Een afleiding moet debet=credit zijn, inclusief eventuele opgesplitste belasting- en derdenregels. Deze boeking wordt zichtbaar als afleiding aangeduid, nooit als letterlijk officiële uitwerking.
 Respecteer de leervraag: een hint hoeft geen boeking te tonen. Een verzoek om de volledige journaalpost geef je direct met alle relevante bronboekingen. Toon bij een gevraagde toelichting alleen relevante regels. Gebruik bij een betwiste boekingszijde de vaste bronregel en controleer de aanname tegen die regel. Houd vervolgvragen bij de actuele casus. Houd de tekst kort; dupliceer de bronregels niet in vrije tekst.`;
 export class JournalValidationError extends Error{
@@ -85,6 +103,7 @@ export function validatedJournalAnswer(text,contract){
     if(!part||typeof part!=='object'||Array.isArray(part))fail('invalid_part');
     if(part.type==='text'){
       if(Object.keys(part).sort().join()!=='text,type'||typeof part.text!=='string'||part.text.length>18000)fail('invalid_text');
+      checkOwnership(part.text,contract.ownership||[]);
       let explanation=part.text.trim();
       if(plainJournal(explanation)){
         validation.normalizedTextParts++;
