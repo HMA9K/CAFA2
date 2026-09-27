@@ -1,5 +1,5 @@
 import {originalPdfs} from '../data/exam-original-pdfs.mjs';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-modal2';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-editor-frame1';
 
 // Original source documents only. No attempt, answer or assistant conversation is written here.
 let left=null,right=null,dock=null,queued=false,currentKey='',rightRequest=0;

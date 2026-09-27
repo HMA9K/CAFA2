@@ -12,7 +12,7 @@ const sra=process.env.COURSE==='sra',base=process.env.EDITOR_URL||`http://127.0.
    const value=JSON.stringify({version:1,attempts:[attempt]});localStorage.setItem(app.storageKey,value);dispatchEvent(new StorageEvent('storage',{key:app.storageKey,newValue:value}));location.hash=(sra?'toets/':'tentamen/')+attempt.id;
   },sra);
   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized && tinymce.activeEditor.getBody()?.isContentEditable && tinymce.activeEditor.getBody().dataset.editorTheme);
-  const native=page.locator('#exam-app .tox-tinymce').first();assert.equal(await native.locator('.tox-menubar').count(),0);
+  const native=page.locator('#exam-app .tox-tinymce').first();assert.equal(await native.locator('.tox-menubar').count(),0);assert.equal(await native.locator('.tox-statusbar__path').count(),0);
   assert.equal(await page.locator('#exam-app .cae-toolbar').first().isVisible(),false);
   const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');await body.fill('Bestaand antwoord met opmaak');
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody().firstChild);e.execCommand('Bold');});

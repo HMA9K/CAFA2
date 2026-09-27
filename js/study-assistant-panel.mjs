@@ -1,6 +1,12 @@
 /** Layout only: reserve a right column without reading or changing study data. */
 const DEFAULT_WIDTH=100/3,KEY='cafa2-assistant-panel-v1',DIVIDER=14;
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+function move(parent,node,before=null){
+  const editor=parent.ownerDocument.defaultView?.CafaAnswerEditor;
+  if(editor?.moveNode)editor.moveNode(parent,node,before);
+  else if(typeof parent.moveBefore==='function'&&node.isConnected&&parent.isConnected)parent.moveBefore(node,before);
+  else parent.insertBefore(node,before);
+}
 export function panelPreference(value){return Number.isFinite(value?.width)&&value.width>=20&&value.width<=50?value.width:DEFAULT_WIDTH;}
 export function panelMetrics(width,preference=DEFAULT_WIDTH,hasCase=false){
   const fraction=typeof hasCase==='number'?clamp(hasCase,.25,.6):hasCase?1/3:0;
@@ -22,12 +28,12 @@ export function createAssistantPanel(panel,options={}){
     if(!layout)return;
     drag=null;
     resizeObserver?.unobserve(layout);
-    if(layout.contains(panel))doc.body.append(panel);
+    if(layout.contains(panel))move(doc.body,panel);
     // A question route can mount its case wrapper after a queued resize has
     // already docked the answer body. Preserve that new wrapper before removal.
     if(primary&&layout.contains(primary)){
       let content=primary;while(content.parentElement!==layout)content=content.parentElement;
-      layout.before(content);
+      move(layout.parentElement,content,layout);
     }
     primary?.classList.remove('study-assistant-primary');
     page?.classList.remove('study-assistant-page','study-assistant-short-page');page?.style.removeProperty('--sa-page-height');
@@ -66,7 +72,7 @@ export function createAssistantPanel(panel,options={}){
     separator.setAttribute('aria-valuemin','20');separator.setAttribute('aria-valuemax','50');
     separator.title='Sleep naar links voor een bredere assistent of naar rechts voor een smallere assistent. Gebruik ook de pijltoetsen, Home en End.';
     separator.innerHTML='<span aria-hidden="true">⋮</span>';
-    primary.before(layout);primary.classList.add('study-assistant-primary');layout.append(primary,separator,slot);
+    primary.before(layout);primary.classList.add('study-assistant-primary');move(layout,primary);layout.append(separator);move(layout,slot);
     alignNext=true;
     page?.classList.add('study-assistant-page');modal?.classList.add('study-assistant-modal-host');
     separator.addEventListener('pointerdown',event=>{if(event.button!==0)return;event.preventDefault();
