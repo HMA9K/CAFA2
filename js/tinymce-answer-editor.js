@@ -22,7 +22,9 @@
     var fallback = original.mount(container, options);
     if (options.readOnly) return fallback;
     var target = container.querySelector('.cae-content'), wrapper = target.closest('.cafa-answer-editor');
-    var editor = null, disposed = false, initialized = false, last = fallback.getHTML(), observer;
+    var editor = null, disposed = false, initialized = false, last = fallback.getHTML(), observer, widthObserver, applyingBounds = false, previousWidth = 0;
+    var sizeKey = "learning-answer-editor-size-v2:" + location.hash;
+    var widthRatio = 1;
     function sync() {
       if (!initialized || disposed || !editor) return;
       var value = original.sanitize(editor.getContent());
@@ -37,16 +39,27 @@
     }
     function availableWidth() { return Math.max(220, Math.floor(container.getBoundingClientRect().width || 600)); }
     function savedSize() {
-      try { return JSON.parse(sessionStorage.getItem('learning-answer-editor-size-v1') || 'null'); } catch (_) { return null; }
+      try { return JSON.parse(sessionStorage.getItem(sizeKey) || 'null'); } catch (_) { return null; }
     }
     var size = savedSize();
+    if (size && Number.isFinite(size.widthRatio)) widthRatio = Math.max(0.1, Math.min(1, size.widthRatio));
+    function fullScreen() { return editor && editor.plugins.fullscreen && editor.plugins.fullscreen.isFullscreen(); }
+    function resizeBounds() {
+      if (!initialized || disposed || fullScreen()) return;
+      var width = availableWidth();
+      editor.options.set('max_width', width); editor.options.set('min_width', Math.min(260, width));
+      if (width === previousWidth) return;
+      previousWidth = width; applyingBounds = true;
+      editor.getContainer().style.width = widthRatio >= 0.995 ? '100%' : Math.max(Math.min(260, width), width * widthRatio) + 'px';
+      editor.dispatch('ResizeEditor'); applyingBounds = false;
+    }
     load().then(function (tiny) {
       if (disposed || !target.isConnected) return;
       var width = availableWidth();
       return tiny.init({
         target: target, base_url: base.href.replace(/\/$/, ''), suffix: '.min', license_key: 'gpl',
-        menubar: false, promotion: false, resize: 'both', height: size ? Math.max(220, Math.min(900, size.height)) : 360,
-        width: size ? Math.min(width, Math.max(220, size.width)) : '100%', min_height: 220, min_width: Math.min(260, width), max_width: width,
+        menubar: false, promotion: false, resize: 'both', height: size && Number.isFinite(size.height) ? Math.max(220, Math.min(900, size.height)) : 360,
+        width: widthRatio >= 0.995 ? '100%' : Math.max(Math.min(260, width), width * widthRatio), min_height: 220, min_width: Math.min(260, width), max_width: width,
         language: 'nl', language_url: new URL('langs/nl.js', base).href,
         plugins: 'table lists charmap fullscreen',
         toolbar: 'undo redo | blocks | bold italic underline subscript superscript | bullist numlist | alignleft aligncenter alignright | table charmap | removeformat fullscreen',
@@ -65,13 +78,21 @@
             instance.setContent(fallback.getHTML());
             last = original.sanitize(instance.getContent()); initialized = true;
             wrapper.classList.add('has-tinymce'); theme();
+            var count = wrapper.querySelector('.cae-count'), statusbar = instance.getContainer().querySelector('.tox-statusbar__right-container') || instance.getContainer().querySelector('.tox-statusbar');
+            if (count && statusbar) statusbar.prepend(count);
             instance.getBody().setAttribute('aria-label', options.label || 'Vul je antwoord in');
             observer = new MutationObserver(theme); observer.observe(document.documentElement, {attributes: true, attributeFilter: ['data-study-theme']});
+            resizeBounds();
+            if (window.ResizeObserver) { widthObserver = new ResizeObserver(resizeBounds); widthObserver.observe(container); }
+            window.addEventListener('resize', resizeBounds);
           });
           instance.on('input change Undo Redo blur', sync);
+          instance.on('FullscreenStateChanged', function () { previousWidth = 0; resizeBounds(); });
           instance.on('ResizeEditor', function () {
+            if (!initialized || applyingBounds || fullScreen()) return;
             var rect = instance.getContainer().getBoundingClientRect();
-            try { sessionStorage.setItem('learning-answer-editor-size-v1', JSON.stringify({width: rect.width, height: rect.height})); } catch (_) {}
+            widthRatio = Math.max(0.1, Math.min(1, rect.width / availableWidth()));
+            try { sessionStorage.setItem(sizeKey, JSON.stringify({widthRatio: widthRatio, height: rect.height})); } catch (_) {}
           });
         }
       });
@@ -82,7 +103,7 @@
       getHTML: function () { return initialized && editor ? original.sanitize(editor.getContent()) : fallback.getHTML(); },
       setHTML: function (value) { last = original.sanitize(value); fallback.setHTML(last); if (initialized && editor) editor.setContent(last); },
       focus: function () { if (initialized && editor) editor.focus(); else fallback.focus(); },
-      destroy: function () { if (disposed) return; sync(); disposed = true; if (observer) observer.disconnect(); if (editor) editor.remove(); fallback.destroy(); }
+      destroy: function () { if (disposed) return; sync(); disposed = true; if (observer) observer.disconnect(); if (widthObserver) widthObserver.disconnect(); window.removeEventListener('resize', resizeBounds); if (editor) editor.remove(); fallback.destroy(); }
     };
   }
   window.CafaAnswerEditor = {mount: mount, sanitize: original.sanitize};
