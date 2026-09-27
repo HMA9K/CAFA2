@@ -174,12 +174,12 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   }
   function applySize(){
     const v=viewport();panel.style.maxWidth=Math.max(1,v.w-16)+'px';panel.style.maxHeight=Math.max(44,v.h-16)+'px';
-    if(size){panel.style.width=Math.min(Math.max(220,size.w),Math.max(1,v.w-16))+'px';panel.style.height=body.hidden?'auto':Math.min(Math.max(460,size.h),Math.max(44,v.h-16))+'px';}
+    if(size){panel.style.width=Math.min(Math.max(220,size.w),Math.max(1,v.w-16))+'px';panel.style.height=body.hidden?'auto':Math.min(Math.max(380,size.h),Math.max(44,v.h-16))+'px';}
     else{panel.style.width='';panel.style.height='';}
   }
   function place(next=position){
     if(panel.hidden)return;
-    applySize();window.ExamCirrusLayout?.updateCalculator(panel,panel.offsetWidth,panel.offsetHeight);const v=viewport(),r=bounds();
+    const atHistoryEnd=historyBox.scrollHeight-historyBox.clientHeight-historyBox.scrollTop<2;applySize();panel.classList.toggle('calc-small',!body.hidden&&panel.offsetHeight<=480);panel.style['--calc-history-height']=(Math.max(1,Math.min(4,Math.floor((panel.offsetHeight-350)/26)))*26+2)+'px';window.ExamCirrusLayout?.updateCalculator(panel,panel.offsetWidth,panel.offsetHeight);if(atHistoryEnd)historyBox.scrollTop=historyBox.scrollHeight;const v=viewport(),r=bounds();
     const maxX=Math.max(v.x+8,v.x+v.w-r.width-8),maxY=Math.max(v.y+8,v.y+v.h-r.height-8);
     if(!next){const header=document.querySelector('.topbar,.reader-topbar,.study-header');next={x:maxX,y:Math.max(v.y+8,header?header.getBoundingClientRect().bottom/scale()+12:v.y+104)};}
     position={x:Math.max(v.x+8,Math.min(maxX,next.x)),y:Math.max(v.y+8,Math.min(maxY,next.y))};
@@ -189,7 +189,7 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   function open(from=opener){returnFocus=from;panel.hidden=false;expand(true);opener.setAttribute('aria-expanded','true');place();renderHistory(true);if(window.matchMedia('(pointer: fine)').matches)input.focus({preventScroll:true});else panel.focus({preventScroll:true});}
   function close(){const hadFocus=panel.contains(document.activeElement);if(drag&&handle.hasPointerCapture(drag.id))handle.releasePointerCapture(drag.id);if(sizing&&resizer.hasPointerCapture(sizing.id))resizer.releasePointerCapture(sizing.id);drag=null;sizing=null;panel.hidden=true;opener.setAttribute('aria-expanded','false');save();if(hadFocus)(returnFocus?.isConnected?returnFocus:opener).focus({preventScroll:true});}
   find('[data-calc-close]').onclick=close;minimize.onclick=()=>expand(body.hidden);
-  compact.onclick=()=>{if(!expandedSize){const r=bounds();expandedSize={w:r.width,h:r.height};size={w:240,h:570};compact.setAttribute('aria-label','Rekenmachine normale grootte');compact.title='Normale grootte';}else{size=expandedSize;expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';}expand(true);place();save();};
+  compact.onclick=()=>{if(!expandedSize){const r=bounds();expandedSize={w:r.width,h:r.height};size={w:240,h:380};compact.setAttribute('aria-label','Rekenmachine normale grootte');compact.title='Normale grootte';}else{size=expandedSize;expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';}expand(true);place();save();};
   panel.querySelectorAll('[data-calc-key],[data-key]').forEach(button=>{button.addEventListener('pointerdown',e=>{if(e.button===0)e.preventDefault();});button.onclick=()=>perform(button.dataset.calcKey??button.dataset.key);});
   input.oninput=()=>{clearError();save();};
   panel.addEventListener('keydown',event=>{
@@ -203,7 +203,7 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   handle.addEventListener('pointermove',event=>{if(drag?.id===event.pointerId)place({x:event.clientX/scale()-drag.x,y:event.clientY/scale()-drag.y});});
   const endDrag=event=>{if(drag?.id!==event.pointerId)return;drag=null;if(handle.hasPointerCapture(event.pointerId))handle.releasePointerCapture(event.pointerId);};handle.addEventListener('pointerup',endDrag);handle.addEventListener('pointercancel',endDrag);handle.addEventListener('lostpointercapture',endDrag);
   handle.addEventListener('keydown',event=>{const delta={ArrowLeft:[-10,0],ArrowRight:[10,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[event.key];if(event.key==='Home'){event.preventDefault();position=null;place();}else if(delta){event.preventDefault();const r=bounds();place({x:r.left+delta[0]*(event.shiftKey?4:1),y:r.top+delta[1]*(event.shiftKey?4:1)});}});
-  function resize(w,h){const v=viewport();size={w:Math.min(Math.max(220,w),Math.max(1,v.w-16)),h:Math.min(Math.max(460,h),Math.max(44,v.h-16))};expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';place();save();}
+  function resize(w,h){const v=viewport();size={w:Math.min(Math.max(220,w),Math.max(1,v.w-16)),h:Math.min(Math.max(380,h),Math.max(44,v.h-16))};expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';place();save();}
   resizer.addEventListener('pointerdown',event=>{if(event.button!==0)return;const r=bounds();sizing={id:event.pointerId,x:event.clientX/scale(),y:event.clientY/scale(),w:r.width,h:r.height};resizer.setPointerCapture(event.pointerId);event.preventDefault();});
   resizer.addEventListener('pointermove',event=>{if(sizing?.id===event.pointerId)resize(sizing.w+event.clientX/scale()-sizing.x,sizing.h+event.clientY/scale()-sizing.y);});
   const endResize=event=>{if(sizing?.id!==event.pointerId)return;sizing=null;if(resizer.hasPointerCapture(event.pointerId))resizer.releasePointerCapture(event.pointerId);};resizer.addEventListener('pointerup',endResize);resizer.addEventListener('pointercancel',endResize);resizer.addEventListener('lostpointercapture',endResize);

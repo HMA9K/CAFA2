@@ -79,3 +79,14 @@ html[data-study-theme=dark] #calculator-dialog [data-calc-output]{color:#ffb4bc}
 #calculator-dialog .calc-history-remove{grid-column:2;grid-row:1 / span 2}
 #calculator-dialog .calc-copy{flex-shrink:0;justify-content:flex-end;margin:3px 0}
 #calculator-dialog .calc-copy-result{flex:1;min-width:0}
+
+/* Keep the basic keypad and one history row reachable at the smallest size. */
+#calculator-dialog.calc-small [data-calc-body]{padding:5px 8px 0}
+#calculator-dialog.calc-small .calc-history{height:50px;min-height:50px;flex:1 0 50px}
+#calculator-dialog.calc-small .calc-history-heading{margin-bottom:3px;gap:4px}
+#calculator-dialog.calc-small .calc-history-help,#calculator-dialog.calc-small .calc-input-label,#calculator-dialog.calc-small .calc-help,#calculator-dialog.calc-small .calc-memory-row,#calculator-dialog.calc-small .calc-extra-help,#calculator-dialog.calc-small .calc-storage-note{display:none}
+#calculator-dialog.calc-small [data-calc-input]{height:36px;min-height:36px;flex-basis:36px;margin-top:4px;padding:6px}
+#calculator-dialog.calc-small .calc-controls{flex:0 1 auto;margin-top:6px;padding-bottom:3px}
+#calculator-dialog.calc-small .calc-keys button{height:28px;min-height:28px;padding:2px;font-size:14px}
+#calculator-dialog.calc-small .calc-extra{margin-top:4px;padding-top:3px}
+#calculator-dialog.calc-small .calc-window-footer{justify-content:flex-end}
