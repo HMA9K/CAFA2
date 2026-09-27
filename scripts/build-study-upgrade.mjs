@@ -20,7 +20,7 @@ function assets(s,p=''){
   else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260927-history2"></script>')+'</head>');
   // Load the common calculator input on every entry point, including static fallback pages.
   const cirrusScript=s.match(/<script defer src="(?:\.\.\/)?js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>/)?.[0]||'<script defer src="'+p+'js/exam-cirrus-layout.js?v=20260927-editor3"></script>';
-  const cirrusStyle=s.match(/<link rel="stylesheet" href="(?:\.\.\/)?css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">/)?.[0]||'<link rel="stylesheet" href="'+p+'css/exam-cirrus-layout.css?v=20260927-editor3">';
+  const cirrusStyle=s.match(/<link rel="stylesheet" href="(?:\.\.\/)?css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">/)?.[0]||'<link rel="stylesheet" href="'+p+'css/exam-cirrus-layout.css?v=20260927-return-center1">';
   s=s.replace(/<script src="(?:\.\.\/)?js\/calculator-input\.js"><\/script>/g,'').replace(/<script defer src="(?:\.\.\/)?js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>\s*/g,'').replace(/<link rel="stylesheet" href="(?:\.\.\/)?css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">\s*/g,'');
   s=s.replace('<head>','<head><script src="'+p+'js/calculator-input.js"></script>');
   s=s.replace('</head>',cirrusStyle+cirrusScript+'</head>');
