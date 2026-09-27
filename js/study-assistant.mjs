@@ -1,7 +1,7 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro3';
-import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro3';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro3';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-intro4';
+import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-intro4';
 import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-persistent1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
@@ -31,6 +31,7 @@ function contextKey(value){return value?refKey(value.ref)+'|'+value.revision+'|'
 function conversation(){const k=scope();if(!conversations.has(k)){if(conversations.size>=40)conversations.delete(conversations.keys().next().value);conversations.set(k,[]);}return conversations.get(k);}
 function banner(message,isError=false){$('[data-banner]').textContent=message;$('[data-banner]').classList.toggle('is-error',isError);$('[data-banner]').hidden=!message;}
 function syncLaunchers() {
+  const ready=!doc.documentElement.classList.contains('cafa-starting')&&!doc.documentElement.classList.contains('cafa-start-failed');
   button.textContent=intro.label;button.classList.toggle('is-first-use',!intro.seen);
   if(!calculator?.isConnected){calculatorObserver?.disconnect();calculator=null;calculatorButton=null;calculatorObserver=null;
     const found=doc.querySelector('#calculator-dialog .calculator-float-head');
@@ -43,8 +44,8 @@ function syncLaunchers() {
       calculatorObserver.observe(calculator,{attributes:true,attributeFilter:['hidden']});}
   }
   const calculatorOpen=!!calculator&&!calculator.hidden&&!!calculatorButton?.isConnected;
-  button.hidden=!current||calculatorOpen||panel.open||intro.open;
-  if(calculatorButton){calculatorButton.hidden=!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
+  button.hidden=!ready||!current||calculatorOpen||panel.open||intro.open;
+  if(calculatorButton){calculatorButton.hidden=!ready||!current;calculatorButton.setAttribute('aria-label',current?`Stel een vraag over ${current.title}`:'Assistent openen voor deze vraag');}
 }
 function placeLauncher() {
   const footer=current?.ref.kind==='exam' && location.hash.startsWith('#tentamen/')
@@ -129,7 +130,7 @@ async function loadStatus() {
   finally{clearTimeout(timer);controls();}
 }
 const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(!intro.open)schedule();},onContinue:open});
-function start({cancel=()=>{}}={}){if(adapter.read())intro.show(doc.activeElement,cancel);}
+function start({cancel=()=>{}}={}){if(current||adapter.read())intro.show(doc.activeElement,cancel);}
 async function open({code='',launcher=doc.activeElement}={}) {
   const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
   await Promise.all(waiting);refresh();if(!current)return;if(current.defaultReview){mode='review';refresh();}opener=launcher;

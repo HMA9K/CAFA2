@@ -66,7 +66,11 @@ try:
       r.fulfill(json=mock_reply(data,'Berekening: '+ 'stap '*1500+'Goodwill = 99.000.') if data['message']=='Test lange uitwerking' else mock_reply(data))
     page.route('**/*',route)
     def continue_intro():
-      page.locator('#study-assistant-intro').wait_for(state='visible')
+      try:page.locator('#study-assistant-intro').wait_for(state='visible')
+      except Exception:
+        print('INTRO_DIAGNOSTIC',json.dumps(page.evaluate('''()=>{const id=location.hash.split('/')[1],a=window.CafaExams?.getAttempts?.()?.find(a=>a.id===id);return {hash:location.hash,startup:document.documentElement.className,attemptStatus:a?.status,currentIndex:a?.currentIndex,openDialogs:[...document.querySelectorAll('dialog[open]')].map(e=>e.id),launcherHidden:document.querySelector('.study-assistant-launch')?.hidden};}'''),ensure_ascii=False),flush=True)
+        page.screenshot(path=str(OUT/f'introduction-failure-{engine}.png'))
+        raise
       page.locator('#study-assistant-intro button[type=submit]').click()
       page.locator('#study-assistant-intro').wait_for(state='hidden')
     page.goto(base+'/index.html#kap-1')
@@ -91,6 +95,11 @@ try:
     check('Launcher becomes smaller immediately after first click',launcher.inner_text()=='Start de CAFA2 Assistent' and 'is-first-use' not in launcher.get_attribute('class') and launcher.bounding_box()['height']<first_size['height'])
     launcher.click();intro.wait_for(state='visible');page.locator('#study-intro-code').fill('escaped-test-code');page.locator('#study-intro-code').press('Escape');intro.wait_for(state='hidden')
     check('Escape cancels introduction without starting or saving a code',not service_calls and page.locator('#study-intro-code').input_value()=='' and 'escaped-test-code' not in page.evaluate('JSON.stringify({...localStorage})'))
+    page.evaluate("document.documentElement.classList.add('cafa-starting');StudyAssistant.refresh()")
+    page.wait_for_function('document.querySelector(".study-assistant-launch").hidden')
+    page.evaluate("document.documentElement.classList.remove('cafa-starting');dispatchEvent(new CustomEvent('cafa:ready'))")
+    page.wait_for_function('!document.querySelector(".study-assistant-launch").hidden')
+    check('Launcher waits for interactive startup and returns without sending a service request',not service_calls and not page.locator('#study-assistant').evaluate('e=>e.open'))
     launcher.click();page.evaluate("location.hash='#home'");page.wait_for_timeout(150)
     page.get_by_role('button',name='Introductie sluiten',exact=True).click()
     page.wait_for_function('document.querySelector(".study-assistant-launch").hidden')
