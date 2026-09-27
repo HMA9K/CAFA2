@@ -151,5 +151,12 @@ export function createAssistantPanel(panel,options={}){
   const resized=()=>{alignNext=true;queue();};
   win.addEventListener('resize',resized);win.visualViewport?.addEventListener('resize',resized);win.visualViewport?.addEventListener('scroll',queue);
   win.addEventListener('pagehide',save);
+  win.addEventListener('cafa:question-unmount',event=>{
+    if(page!==event.detail&&!event.detail.contains(primary))return;
+    detach();
+    if(/^#(?:kap|val|nvw|hk)-\d+$/.test(win.location.hash))panel.hidden=true;
+    else if(panel.open)panel.close();
+  });
+  win.addEventListener('cafa:question-mounted',()=>{panel.hidden=false;queue();});
   return {show,refresh:queue,hide(){if(panel.open)panel.close();detach();}};
 }

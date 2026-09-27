@@ -7,7 +7,7 @@ import {fileURLToPath} from 'node:url';
 const require=createRequire(import.meta.url),{chromium}=require(process.env.CAFA_PLAYWRIGHT_PATH||'playwright');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const out=path.join(root,'docs/mc-audit/qa');fs.mkdirSync(out,{recursive:true});
-const server=http.createServer((req,res)=>{const p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}if(!fs.existsSync(p)||!fs.statSync(p).isFile()){res.writeHead(404);res.end();return;}res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'})[path.extname(p)]||'application/octet-stream');fs.createReadStream(p).pipe(res);});
+const server=http.createServer((req,res)=>{const p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}if(!fs.existsSync(p)||!fs.statSync(p).isFile()){res.writeHead(404);res.end();return;}res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.mjs':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'})[path.extname(p)]||'application/octet-stream');fs.createReadStream(p).pipe(res);});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const base='http://127.0.0.1:'+server.address().port;
 let browser;
@@ -37,10 +37,10 @@ try{
  assert.equal(await q.locator('.correct-model .feedback-pattern').first().evaluate(e=>e.open),false);
  assert.equal(await q.locator('.correct-model').first().evaluate(e=>!!(e.querySelector('.model-caption').compareDocumentPosition(e.querySelector('.feedback-pattern'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
  assert.equal(await q.locator('.cafa-inline-feedback:not([hidden])').first().evaluate(e=>e.previousElementSibling.matches('.option[data-option="1"]')),true);
- await page.reload();await page.locator('#'+next+' .practice-page-title').waitFor();assert.equal(await page.evaluate(uid=>{const[c,i]=uid.split('-');return CafaPractice.getAnswer(c,+i).choice;},next),1);
+ await page.reload();await page.locator('#'+next+'[data-feedback-bound]').waitFor();assert.equal(await page.evaluate(uid=>{const[c,i]=uid.split('-');return CafaPractice.getAnswer(c,+i).choice;},next),1);
  await q.locator('[data-overview]').click();await page.waitForURL('**#onderwerp-overzicht-zeggenschap');assert.equal(await page.locator('#onderwerp-overzicht-zeggenschap .result-row').count(),topics[0].questions.length);
  await page.locator('#onderwerp-overzicht-zeggenschap a[href="#oefenen"]').click();await page.locator('#practice-topic-cards').waitFor();
- await page.locator('[data-start="kap"]').click();await page.locator('.question:target .practice-page-title').waitFor();assert.equal(await page.evaluate(()=>CafaTopics.getState().active),null);
+ await page.locator('[data-start="kap"]').click();await page.locator('.question:target[data-feedback-bound]').waitFor();assert.equal(await page.evaluate(()=>CafaTopics.getState().active),null);
  // Exam mode on an independent topic must hide feedback and finish only that topic.
  await page.evaluate(()=>location.hash='oefenen');await page.locator('select[data-study-mode]').selectOption('exam');
  await page.locator('a[href="#onderwerp-waardering"]').click();await page.locator('.question:target').waitFor();q=page.locator('.question:target');

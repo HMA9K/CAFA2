@@ -1,0 +1,25 @@
+name: Practice performance regression
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.57.0 jsdom@26.1.0
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm test
+      - run: npm run test:assistant
+      - run: npm run build:assistant
+      - run: node scripts/verify-study-assistant-build.mjs
+      - run: npm run test:performance-browser
+      - run: npm run test:performance-browser
+        env:
+          CAFA_BROWSER: webkit

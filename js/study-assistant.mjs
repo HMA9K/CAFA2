@@ -2,7 +2,7 @@ import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-consent1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
 import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-access1';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-modal2';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-ondemand1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;
@@ -196,7 +196,8 @@ doc.addEventListener('click',e=>{if(e.target.closest('[data-exam-action="check"]
 window.addEventListener('hashchange',()=>{adapter.resetPin?.();schedule();});
 window.addEventListener('resize',queuePlacement);
 doc.addEventListener('scroll',queuePlacement,true);
-for(const event of ['cafa:ready','cafa:exam-route','cafa:practice-change'])window.addEventListener(event,schedule);
+for(const event of ['cafa:ready','cafa:exam-route','cafa:practice-change','cafa:question-mounted'])window.addEventListener(event,schedule);
+window.addEventListener('cafa:question-unmount',()=>{adapter.resetPin?.();stop();schedule();});
 window.addEventListener('pagehide',()=>stop());
 window.StudyAssistant={version:VERSION,open:start,resume:open,refresh:schedule,
   registerAdapter(course,value){if(!value||typeof value.read!=='function')throw new Error('Adapter.read ontbreekt.');adapters.set(course,value);},

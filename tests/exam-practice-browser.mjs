@@ -13,7 +13,7 @@ try{
  browser=await chromium.launch({headless:true,...(process.env.CAFA_CHROMIUM_PATH?{executablePath:process.env.CAFA_CHROMIUM_PATH}:{})});
  const page=await browser.newPage({viewport:{width:1366,height:950}}),errors=[];page.on('pageerror',e=>errors.push(String(e)));page.setDefaultTimeout(30000);
  await page.goto(base+'/index.html#oefenen');await page.waitForFunction(()=>window.CafaFeedback&&window.CafaExams);
- assert.equal(await page.locator('.question[data-code]').count(),627);
+ assert.equal(await page.locator('.question[data-code]').count(),0); assert.equal(await page.evaluate(()=>Object.values(CAFA2_DATA.modules).reduce((n,b)=>n+b.questions.length,0)),627); await page.waitForFunction(()=>window.CafaScreens);
  assert.ok((await page.locator('#oefenen .home-sub').textContent()).includes('627'));
  await page.evaluate(()=>location.hash='kap-64');await page.locator('.question:target .practice-case-layout').waitFor();
  assert.equal(await page.locator('.question:target .nav-left a').last().getAttribute('href'),'#kap-65');
