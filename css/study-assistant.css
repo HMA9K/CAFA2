@@ -136,3 +136,7 @@ html[data-study-theme="dark"] :is(.study-assistant,.study-assistant-intro),html[
 .study-consent.is-confirmed{padding:7px 10px}.study-consent.is-confirmed label{font-size:11px}
 
 body.original-pdf-open .study-assistant-launch-wrap{display:none!important}
+
+.study-tools-menu>nav>button[data-assistant-menu]{align-self:stretch;box-sizing:border-box;width:100%;margin:0;padding:12px 20px;border:0;border-radius:0;background:#504363;color:#fff;text-align:center}
+.study-tools-menu>nav>button[data-assistant-menu]:hover{background:#504363;color:#fff}
+.study-tools-menu>nav>button[data-assistant-menu][hidden]{display:none}

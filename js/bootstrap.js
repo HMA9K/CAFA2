@@ -78,13 +78,13 @@
   }).then(function () {
     return loadScript('js/exams.js?v=20260927-model-open1');
   }).then(function () {
-    return loadStyle('css/exam-original-pdfs.css?v=20260927-persistent1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-footer3');});
+    return loadStyle('css/exam-original-pdfs.css?v=20260927-menu2').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-footer3');});
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260927-ondemand1');
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
-    return loadScript('js/answer-feedback.js?v=20260927-ondemand1');
+    return loadScript('js/answer-feedback.js?v=20260927-toggle2');
   }).then(function () {
     if(!printAll)return loadScript('js/practice-screens.js?v=20260927-ondemand1');
   }).then(function () {
@@ -92,7 +92,6 @@
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();
-    if(!printAll)document.querySelectorAll('.study-tools-menu nav').forEach(function(tools){var printLink=document.createElement('a');printLink.href='index.html?afdrukken=alles';printLink.target='_blank';printLink.rel='noopener';printLink.textContent='Alle oefenvragen afdrukken';tools.append(printLink);});
     window.dispatchEvent(new CustomEvent('cafa:ready'));
     // Restore an existing question deep link after asynchronous fragments exist.
     // Replace the URL without adding a second navigation-history entry.

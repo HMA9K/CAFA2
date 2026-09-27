@@ -545,12 +545,9 @@ try:
     check('Calculator history works before opening assistant',page.locator('.calc-history-list li').count()>=1)
     check('Open calculator hides the floating assistant launcher',not page.locator('.study-assistant-launch').is_visible())
     def open_from_tools():
-      # The published tools menu replaces the former calculator assistant button.
-      # On mobile the floating calculator can cover this menu, so close and reopen it.
+      # Close the calculator to reveal the practice launcher; the menu row is exam-only.
       page.locator('#calculator-dialog [data-calc-close]').click()
-      menu=page.locator('.study-tools-menu:visible').last
-      menu.locator('summary').click()
-      menu.locator('[data-assistant-menu]').click();continue_intro()
+      page.locator('.study-assistant-launch').click();continue_intro()
       page.locator('[data-calc]').click()
     open_from_tools()
     page.wait_for_function('document.querySelector("#study-assistant").open')

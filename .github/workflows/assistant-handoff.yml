@@ -48,6 +48,7 @@ jobs:
         run: |
           python tests/study-assistant/browser.py 2>&1 | tee /tmp/assistant-qa/browser-chromium.log
           python tests/study-assistant/popup-menu-browser.py 2>&1 | tee /tmp/assistant-qa/popup-menu-chromium.log
+          python tests/answer-feedback-toggle-browser.py 2>&1 | tee /tmp/assistant-qa/feedback-toggle-chromium.log
       - name: Real interface with mocked answer service in WebKit
         env:
           ASSISTANT_BROWSER: webkit

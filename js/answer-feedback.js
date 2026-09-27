@@ -106,7 +106,10 @@
       source.hidden = true;
       var record = {question:question, source:source, feedback:feedback, controls:controls, button:button, mc:mc};
       practice.push(record); if (mc) mcRecord = record;
-      button.addEventListener('click', function () { checkPractice(record); });
+      button.addEventListener('click', function () {
+        if (!record.feedback.hidden) { record.source.open = false; hide(record); }
+        else checkPractice(record);
+      });
       source.addEventListener('toggle', function () { showPractice(record); });
       controls.hidden = !allowed(question);
     });
@@ -254,7 +257,9 @@
     examHost.addEventListener('click', function (event) {
       var button = event.target.closest('[data-exam-action="check"]');
       if (!button || !examHost.querySelector('[data-exam-answer]') || !examContext()) return;
-      event.preventDefault(); event.stopPropagation(); checkExam();
+      event.preventDefault(); event.stopPropagation();
+      if (examUI && examUI.answer.isConnected && !examUI.feedback.hidden) hide(examUI);
+      else checkExam();
     }, true);
     examHost.addEventListener('change', function (event) {
       if (event.target.name !== 'exam-answer') return;
