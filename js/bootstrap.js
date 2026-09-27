@@ -72,7 +72,7 @@
     if (root.CafaTopics) root.CafaTopics.mount();
     return loadScript('js/practice-case-panel.js?v=20260926-columns1');
   }).then(function () {
-    return loadScript('js/exams.js?v=20260926-restart1');
+    return loadScript('js/exams.js?v=20260927-model-open1');
   }).then(function () {
     return loadStyle('css/exam-original-pdfs.css?v=20260927-1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-2');});
   }).then(function () {
@@ -80,7 +80,7 @@
   }).then(function () {
     return loadStyle('css/answer-feedback.css?v=20260924-disclosures1');
   }).then(function () {
-    return loadScript('js/answer-feedback.js?v=20260924-opgaven1');
+    return loadScript('js/answer-feedback.js?v=20260927-model-open1');
   }).then(function () {
     if (!root.CafaExams) throw new Error('Het dashboard kon niet worden gestart.');
     if (root.CafaStartup) root.CafaStartup.finish();

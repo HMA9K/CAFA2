@@ -329,7 +329,15 @@
     }).join('')+'</ol></div>';
     showModal('Vraagoverzicht',html,total);
   }
-  function invalidateScore(a,q){if(a.scores)delete a.scores[q.id];}
+  function invalidateScore(a,q){
+    if(a.scores)delete a.scores[q.id];
+    // Editing invalidates the assessment, not the revealed source model.
+    host.querySelectorAll('[data-self-score]').forEach(function(input){
+      if(input.dataset.attempt!==a.id||input.dataset.question!==q.id)return;
+      input.value='';input.setCustomValidity('');
+      var status=input.parentElement.querySelector('[data-score-saved]');if(status)status.textContent='';
+    });
+  }
   function scoreFor(a,q){
     if(q.type==='mc'&&q.correctOptionId)return answerFor(a,q).optionId===q.correctOptionId?(q.points||0):0;
     var v=a.scores&&a.scores[q.id];return typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=(q.points||0)?v:null;

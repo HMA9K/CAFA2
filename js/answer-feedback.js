@@ -262,7 +262,7 @@
       if (direct) checkExam();
     });
     examHost.addEventListener('input', function (event) {
-      if (examUI && event.target.closest('[data-exam-answer]')) hide(examUI);
+      if (examUI && event.target.name === 'exam-answer') hide(examUI);
     });
     examHost.addEventListener('click', function (event) {
       if (direct && event.target.name === 'exam-answer') {
@@ -271,7 +271,6 @@
           if (direct && input.isConnected && input.checked && examUI && examUI.feedback.hidden) checkExam();
         }, 0);
       }
-      if (examUI && event.target.closest('[data-exam-answer] button')) hide(examUI);
     });
     new MutationObserver(prepareExam).observe(examHost, {childList:true, subtree:true});
     prepareExam();
