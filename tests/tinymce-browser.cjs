@@ -1,0 +1,50 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
+const sra=process.env.COURSE==='sra',base=process.env.EDITOR_URL||`http://127.0.0.1:8870/${sra?'sra':'cafa2'}/`;
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH});
+ try{for(const width of [1440,390]){
+  const context=await browser.newContext({viewport:{width,height:900}}),page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')console.log(m.text());});await page.goto(base+'index.html#'+(sra?'tentamen':'dashboard'));
+  await page.waitForFunction(()=>window.CafaExams||window.SRACirrus);
+  await page.evaluate(sra=>{
+   const app=sra?SRACirrus:CafaExams,exam=(sra?SRA_CIRRUS_EXAMS:CAFA2_EXAMS).find(e=>e.id===(sra?'20241028':'cafa2-20240422'));
+   const attempt=CafaExamEngine.createAttempt(exam,{id:'qa-tinymce',untimed:true});attempt.currentIndex=sra?0:2;
+   const value=JSON.stringify({version:1,attempts:[attempt]});localStorage.setItem(app.storageKey,value);dispatchEvent(new StorageEvent('storage',{key:app.storageKey,newValue:value}));location.hash=(sra?'toets/':'tentamen/')+attempt.id;
+  },sra);
+  await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+  const native=page.locator('#exam-app .tox-tinymce').first();assert.equal(await native.locator('.tox-menubar').count(),0);
+  const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');await body.fill('Bestaand antwoord met opmaak');
+  await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody().firstChild);e.execCommand('Bold');});
+  assert.ok(await body.locator('strong').count());
+  await page.evaluate(()=>{const e=tinymce.activeEditor;e.selection.select(e.getBody(),true);e.selection.collapse(false);e.execCommand('mceInsertTable',false,{rows:2,columns:2});});
+  await body.locator('td').first().click();await page.evaluate(()=>tinymce.activeEditor.execCommand('mceTableInsertColAfter'));
+  assert.equal(await body.locator('tr').first().locator('td').count(),3);
+  await body.locator('td').first().fill('Voorraad 456');
+  await native.locator('.tox-statusbar__resize-handle').hover();const before=await native.boundingBox(),grip=await native.locator('.tox-statusbar__resize-handle').boundingBox();
+  await page.mouse.move(grip.x+grip.width/2,grip.y+grip.height/2);await page.mouse.down();await page.mouse.move(grip.x+grip.width/2-60,grip.y+grip.height/2+70,{steps:12});await page.mouse.up();
+  const after=await native.boundingBox();assert.ok(after.height>before.height+30);if(width===1440)assert.ok(after.width<before.width-30);
+  assert.ok((await body.innerText()).includes('Voorraad 456'));
+  await page.evaluate(()=>document.documentElement.setAttribute('data-study-theme','dark'));await page.waitForFunction(()=>tinymce.activeEditor.getBody().dataset.editorTheme==='dark');
+  assert.equal(await body.evaluate(b=>getComputedStyle(b).backgroundColor),'rgb(21, 33, 41)');
+  assert.ok((await body.innerText()).includes('Voorraad 456'));
+  await page.evaluate(()=>document.documentElement.setAttribute('data-study-theme','light'));await page.waitForFunction(()=>tinymce.activeEditor.getBody().dataset.editorTheme==='light');
+  await page.locator('[data-exam-action="next"]').first().click();await page.locator('[data-exam-action="previous"]').first().click();
+  await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);assert.ok((await body.innerText()).includes('Voorraad 456'));assert.equal(await body.locator('tr').first().locator('td').count(),3);
+  await page.reload();await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);assert.ok((await body.innerText()).includes('Voorraad 456'));assert.equal(await body.locator('tr').first().locator('td').count(),3);
+  assert.ok(await body.locator('strong').count());assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  if(!sra){
+   await page.locator('[data-exam-action="check"]').click();
+   const model=page.locator('#cafa-exam-feedback');await model.waitFor({state:'visible'});
+   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+   await body.fill('Voorraad 456 verder oefenen');assert.ok(await model.isVisible());
+   await page.goto(base+'index.html#kap-1');await page.locator('label[for="own-kap-1"]').click();
+   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+   const own=page.frameLocator('#kap-1 .tox-edit-area iframe').locator('body');await own.fill('Eigen oefenantwoord 125.000');
+   await page.waitForFunction(()=>CafaPractice.getAnswer('kap',1).text.includes('125.000'));
+   await page.reload();await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);assert.ok((await own.innerText()).includes('125.000'));
+  }
+  assert.deepEqual(errors,[]);
+  if(process.env.QA_OUTPUT){fs.mkdirSync(process.env.QA_OUTPUT,{recursive:true});await page.screenshot({path:process.env.QA_OUTPUT+`/tinymce-${sra?'sra':'cafa2'}-${width}.png`});}
+  console.log(sra?'SRA':'CAFA2',width,'menubalk afwezig, opmaak, tabelkolom, resize, thema, vraagwissel en herladen geslaagd');await context.close();
+ }}finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

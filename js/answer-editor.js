@@ -2,7 +2,7 @@
   'use strict';
 
   var sequence = 0;
-  var allowed = new Set(('P DIV BR STRONG B EM I U S STRIKE SUB SUP H2 H3 H4 UL OL LI BLOCKQUOTE PRE CODE TABLE THEAD TBODY TFOOT TR TH TD CAPTION SPAN').split(' '));
+  var allowed = new Set(('P DIV BR STRONG B EM I U S STRIKE SUB SUP H2 H3 H4 UL OL LI BLOCKQUOTE PRE CODE TABLE COLGROUP COL THEAD TBODY TFOOT TR TH TD CAPTION SPAN').split(' '));
   var discarded = new Set(('SCRIPT STYLE SVG MATH IFRAME OBJECT TEMPLATE EMBED LINK META BASE INPUT FORM BUTTON SELECT TEXTAREA VIDEO AUDIO IMG PICTURE SOURCE NOSCRIPT').split(' '));
   var block = new Set(('P DIV H2 H3 H4 UL OL LI BLOCKQUOTE PRE TABLE TR').split(' '));
 
@@ -28,6 +28,12 @@
         // Browser-normalized colors contain no URLs or executable expressions.
         if (/^(#[0-9a-f]{3,8}|[a-z]+|rgba?\([\d\s.,%]+\))$/i.test(styles.color)) target.style.color = styles.color;
         if (/^(12|14|16|18|20|24)px$/.test(styles.fontSize)) target.style.fontSize = styles.fontSize;
+        if (/^(TABLE|COL|TD|TH)$/.test(node.tagName)) {
+          ['width', 'height'].forEach(function (property) {
+            var value = styles[property];
+            if (/^(?:\d{1,4}(?:\.\d{1,4})?px|(?:100|\d{1,2})(?:\.\d{1,6})?%)$/.test(value)) target.style[property] = value;
+          });
+        }
         if (node.tagName === 'OL' && /^(a|A|i|I|1)$/.test(node.getAttribute('type') || '')) target.setAttribute('type', node.getAttribute('type'));
         if (node.tagName === 'OL' && /^\d{1,4}$/.test(node.getAttribute('start') || '')) target.setAttribute('start', node.getAttribute('start'));
         if (node.tagName === 'TD' || node.tagName === 'TH') {
