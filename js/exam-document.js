@@ -26,7 +26,7 @@
     var walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],node;
     while((node=walker.nextNode()))if(!node.parentElement.closest('.exam-source-points'))nodes.push(node);
     nodes.forEach(function(n){
-      var pattern=/\((?:\d{1,2}(?:[.,]\d+)?|½|¼|¾|[1-3]\/[24])(?:\s+punten?)?\)/g,match,offset=0,fragment=document.createDocumentFragment();
+      var pattern=/\((?:(?:\d{1,2}(?:[.,]\d+)?|½|¼|¾|[1-3]\/[24])(?:\s+punt(?:en)?)?(?:\s*g\s*\/\s*f)?|g\s*\/\s*f)\)|\b\d{1,2}(?:[.,]\d+)?\s+punt(?:en)?\s+g\s*\/\s*f\b/gi,match,offset=0,fragment=document.createDocumentFragment();
       while((match=pattern.exec(n.data))){fragment.appendChild(document.createTextNode(n.data.slice(offset,match.index)));var mark=document.createElement('span');mark.className='exam-source-points';mark.textContent=match[0];fragment.appendChild(mark);offset=pattern.lastIndex;}
       if(offset){fragment.appendChild(document.createTextNode(n.data.slice(offset)));n.replaceWith(fragment);}
     });
