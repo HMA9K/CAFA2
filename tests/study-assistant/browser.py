@@ -116,7 +116,7 @@ try:
     page.wait_for_function('!document.querySelector("[data-action=logout]").hidden')
     check('Continue with code authenticates once and starts the assistant without a chat request',len(auth_requests)==2 and auth_requests[-1]['code']=='mock-test-code' and page.locator('#study-assistant').evaluate('e=>e.open') and not requests)
     check('Introductory code is cleared and sharing consent stays in the popup',page.locator('#study-intro-code').input_value()=='' and page.locator('[data-consent-check]').is_checked() and page.locator('#study-assistant [data-consent]').count()==0 and page.locator('[data-send]').is_disabled() and 'mock-test-code' not in page.evaluate('JSON.stringify({...localStorage})'))
-    page.locator('[data-action=logout]').click();page.locator('[data-login]').wait_for(state='visible');page.get_by_role('button',name='Introductie sluiten',exact=True).click();page.locator('#study-assistant [data-action=close]').click()
+    page.locator('[data-action=logout]').click();page.get_by_role('button',name='Introductie sluiten',exact=True).click();page.locator('[data-login]').wait_for(state='visible');page.locator('#study-assistant [data-action=close]').click()
     before_auth=len(auth_requests);launcher.click();continue_intro();page.locator('[data-login]').wait_for(state='visible')
     check('Continue without code starts the existing login without authentication',len(auth_requests)==before_auth and not requests and page.locator('#study-code').input_value()=='')
     check('No request before consent and login',page.locator('[data-send]').is_disabled() and not requests)
