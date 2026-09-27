@@ -7,10 +7,10 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   const page=await browser.newPage({viewport:{width:1440,height:900}}),loads=new Map(),errors=[];
   page.setDefaultTimeout(120000);page.on('pageerror',e=>errors.push(e.message));
   // A same-origin viewer fixture exposes browsing-context state. The separate
-  // original-PDF test checks the actual source assets and native viewer layout.
+  // original-PDF test checks the actual source assets and PDF.js viewer layout.
   await page.route('**/*',async route=>{
    const url=route.request().url();if(!url.startsWith(base))return route.abort();
-   if(url.includes('/assets/tentamens/')&&url.includes('.pdf')){
+   if(url.includes('/pdf-reader/web/viewer.html?')){
     loads.set(url,(loads.get(url)||0)+1);
     return route.fulfill({contentType:'text/html',body:'<label>Pagina <input id="page" value="1"></label><label>Zoom <input id="zoom" value="100"></label><div style="height:3000px">Document</div>'});
    }

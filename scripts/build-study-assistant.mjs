@@ -46,7 +46,7 @@ async function copyPublic(dir,target) {
     if(item.isSymbolicLink() || item.name.startsWith('.') || excluded.has(item.name) || forbiddenFile.test(item.name))continue;
     const src=path.join(dir,item.name),dst=path.join(target,item.name);
     if(item.isDirectory())await copyPublic(src,dst);
-    else if(/\.(?:html|css|js|mjs|json|svg|png|jpe?g|gif|webp|ico|woff2?|ttf|otf|txt|pdf)$/i.test(item.name) || ['_headers','_redirects','_routes.json'].includes(item.name))await cp(src,dst);
+    else if(/\.(?:html|css|js|mjs|json|svg|png|jpe?g|gif|webp|ico|woff2?|ttf|otf|txt|pdf|ftl|bcmap|wasm|bin|pfb|icc)$/i.test(item.name) || item.name.startsWith('LICENSE') || ['_headers','_redirects','_routes.json'].includes(item.name))await cp(src,dst);
   }
 }
 await copyPublic(root,out);
