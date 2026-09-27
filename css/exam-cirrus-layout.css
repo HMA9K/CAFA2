@@ -197,3 +197,6 @@ body.learning-page-layout #study-returnbar.has-study-origin{display:grid!importa
  #study-returnbar.has-study-origin .study-origin{grid-column:1 / -1}
  #study-returnbar.has-study-origin .reader-tabs{grid-column:1 / -1;grid-row:2;min-height:38px}
 }
+
+body .cirrus-calc-small .calc-history-list li{grid-template-rows:13px 13px!important}
+body .cirrus-calc-small .calc-history-reuse{height:13px!important;min-height:13px!important}

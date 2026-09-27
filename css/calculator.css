@@ -9,7 +9,7 @@
 .calculator-toolbar-trigger .calc-icon { display: block; width: 19px; height: 23px; }
 .reader-top-tools .calculator-toolbar-trigger { border: 0; color: inherit; }
 .calculator-standalone-tools { display: flex; justify-content: flex-end; padding: 8px 16px; }
-#calculator-dialog{--calc-surface:#fff;--calc-ink:#353247;--calc-muted:#777180;--calc-line:#d5d5e2;--calc-key:#f5f6f8;--calc-head:#444159;--calc-accent:#008859;position:fixed;z-index:10010;display:flex;flex-direction:column;box-sizing:border-box;width:342px;height:752px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);margin:0;padding:0;border:1px solid #aaa9bb;border-radius:8px;background:var(--calc-surface);color:var(--calc-ink);box-shadow:0 8px 30px #2824382e;overflow:hidden;font:13px/1.45 Arial,sans-serif;text-align:left}
+#calculator-dialog{--calc-surface:#fff;--calc-ink:#353247;--calc-muted:#777180;--calc-line:#d5d5e2;--calc-key:#f5f6f8;--calc-head:#444159;--calc-accent:#008859;position:fixed;z-index:10010;display:flex;flex-direction:column;box-sizing:border-box;width:342px;height:792px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);margin:0;padding:0;border:1px solid #aaa9bb;border-radius:8px;background:var(--calc-surface);color:var(--calc-ink);box-shadow:0 8px 30px #2824382e;overflow:hidden;font:13px/1.45 Arial,sans-serif;text-align:left}
 #calculator-dialog[hidden],#calculator-dialog [hidden]{display:none!important}
 #calculator-dialog *,#calculator-dialog *::before,#calculator-dialog *::after{box-sizing:border-box}
 #calculator-dialog:focus{outline:none}
@@ -71,3 +71,11 @@ html[data-study-theme=dark] #calculator-dialog [data-calc-output]{color:#ffb4bc}
 #calculator-dialog .calc-history-count{margin-left:auto}
 #calculator-dialog [data-calc-clear-history]{padding:3px 6px;border:1px solid var(--calc-line);border-radius:4px;background:var(--calc-key);color:var(--calc-ink);font:10px/1.4 Arial,sans-serif;cursor:pointer}
 #calculator-dialog [data-calc-clear-history]:disabled{opacity:.5;cursor:default}
+
+/* Uitkomsten blijven afzonderlijk selecteerbaar en kopieerbaar. */
+#calculator-dialog .calc-history-list li{grid-template-rows:23px 23px}
+#calculator-dialog .calc-history-reuse{grid-column:1;grid-row:1;height:23px;min-height:23px}
+#calculator-dialog .calc-history-value{grid-column:1;grid-row:2;min-width:0;user-select:text!important;-webkit-user-select:text;cursor:text}
+#calculator-dialog .calc-history-remove{grid-column:2;grid-row:1 / span 2}
+#calculator-dialog .calc-copy{flex-shrink:0;justify-content:flex-end;margin:3px 0}
+#calculator-dialog .calc-copy-result{flex:1;min-width:0}
