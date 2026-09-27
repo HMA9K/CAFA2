@@ -17,6 +17,12 @@
 .study-intro-code-row{display:flex;align-items:stretch;gap:8px}.study-intro-code-row input{min-width:0;width:100%;font:inherit;font-size:16px;padding:10px;border:1px solid var(--sa-line);border-radius:8px;color:var(--sa-text);background:var(--sa-bg)}
 .study-intro-code-row button{flex:none;font:inherit;font-weight:700;min-height:44px;padding:10px 16px;color:#fff;background:var(--sa-accent);border:1px solid var(--sa-accent);border-radius:8px;cursor:pointer}
 .study-intro-form p{font-size:11px;color:var(--sa-muted);margin:7px 0 0}
+.study-intro-consent{background:var(--sa-panel);padding:12px;border-radius:9px;margin-top:16px}
+.study-intro-consent label{display:flex;align-items:flex-start;gap:9px;font-size:13px}
+.study-intro-consent input{width:17px;height:17px;flex:none;margin:3px 0 0;accent-color:var(--sa-accent)}
+.study-intro-consent p{font-size:11px;line-height:1.6;color:var(--sa-muted);margin:8px 0 0}
+.study-intro-code-row button:disabled{opacity:.5;cursor:not-allowed}
+.exam-answer-actions .study-inline-launch{display:inline-block;margin:0}
 .study-assistant-intro :is(button,input):focus-visible{outline:3px solid #b17524;outline-offset:3px}
 @media(max-width:500px){.study-intro-head,.study-intro-body,.study-intro-form{padding-inline:16px}.study-intro-head h2{font-size:20px}.study-assistant-launch.is-first-use{max-width:calc(100vw - 24px);font-size:15px;min-height:70px}}
 @media(max-height:500px){.study-intro-head{padding-block:9px}.study-intro-head h2{font-size:17px}.study-intro-body{padding-block:10px;font-size:13px}.study-intro-form{padding-block:9px}.study-intro-form p{margin-top:4px}}
