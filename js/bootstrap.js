@@ -74,7 +74,7 @@
   }).then(function () {
     return loadScript('js/exams.js?v=20260927-model-open1');
   }).then(function () {
-    return loadStyle('css/exam-original-pdfs.css?v=20260927-1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-2');});
+    return loadStyle('css/exam-original-pdfs.css?v=20260927-persistent1').then(function(){return import('./exam-original-pdfs.mjs?v=20260927-persistent1');});
   }).then(function () {
     return loadScript('js/theory-panels.js?v=20260924-sources1');
   }).then(function () {

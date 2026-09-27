@@ -11,6 +11,9 @@ export function panelMetrics(width,preference=DEFAULT_WIDTH,hasCase=false){
 
 export function createAssistantPanel(panel,options={}){
   const doc=panel.ownerDocument,win=doc.defaultView;
+  // PDF browsing contexts stay under body; only their empty layout slot moves.
+  const slot=options.preserveContent?doc.createElement('div'):panel;
+  if(slot!==panel){slot.className='study-assistant study-assistant-persistent-slot';slot.setAttribute('aria-hidden','true');}
   let width=DEFAULT_WIDTH,layout=null,primary=null,separator=null,page=null,modal=null,anchor=null,hash='',drag=null,queued=false,returnScroll=null,alignNext=false;
   try{width=panelPreference(JSON.parse(win.localStorage.getItem(KEY)||'null'));}catch{}
   const viewport=()=>{const v=win.visualViewport;return {y:v?.offsetTop||0,w:v?.width||doc.documentElement.clientWidth,h:v?.height||win.innerHeight};};
@@ -62,7 +65,7 @@ export function createAssistantPanel(panel,options={}){
     separator.setAttribute('aria-valuemin','20');separator.setAttribute('aria-valuemax','50');
     separator.title='Sleep naar links voor een bredere assistent of naar rechts voor een smallere assistent. Gebruik ook de pijltoetsen, Home en End.';
     separator.innerHTML='<span aria-hidden="true">⋮</span>';
-    primary.before(layout);primary.classList.add('study-assistant-primary');layout.append(primary,separator,panel);
+    primary.before(layout);primary.classList.add('study-assistant-primary');layout.append(primary,separator,slot);
     alignNext=true;
     page?.classList.add('study-assistant-page');modal?.classList.add('study-assistant-modal-host');
     separator.addEventListener('pointerdown',event=>{if(event.button!==0)return;event.preventDefault();
@@ -108,6 +111,13 @@ export function createAssistantPanel(panel,options={}){
     layout.style.setProperty('--sa-pane-height',Math.min(modal?620:680,available)+'px');
     if(page)page.style.setProperty('--sa-page-height',Math.max(160,(v.h-Math.max(top,page.getBoundingClientRect().top)+v.y)/scale-12)+'px');
     const renderedHeight=stacked?Math.min(680,available):layout.getBoundingClientRect().height;
+    if(slot!==panel){
+      const height=stacked?Math.min(680,available)+'px':'100%';if(slot.style.height!==height)slot.style.height=height;
+      const rect=slot.getBoundingClientRect();
+      for(const [key,value] of Object.entries({position:'fixed',left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',margin:'0px',zIndex:'90'})){
+        if(panel.style[key]!==value)panel.style[key]=value;
+      }
+    }
     panel.classList.toggle('is-short',renderedHeight<500);panel.classList.toggle('is-tiny',renderedHeight<280);
     if(alignNext){alignNext=false;if(stacked)win.requestAnimationFrame(()=>{
       if(!panel.open)return;

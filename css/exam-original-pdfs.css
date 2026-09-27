@@ -7,6 +7,8 @@
 .original-pdf-head .btn{font-size:12px;min-height:30px;padding:5px 8px}
 .original-pdf-link{padding:6px 10px;margin:0;font-size:12px}
 .original-pdf-viewer iframe{display:block;width:100%;flex:1;min-height:240px;border:0;background:#eee}
+.original-pdf-left-viewer{position:fixed;z-index:80}
+.original-pdf-right>.original-pdf-viewer{position:absolute;inset:0}
 .original-pdf-left{padding:0!important;overflow:hidden!important;min-height:350px}
 .original-pdf-left>[hidden]{display:none!important}
 .original-pdf-dashboard-layout{display:grid;grid-template-columns:minmax(280px,33.333%) minmax(0,1fr);gap:14px;align-items:start;min-width:0}
