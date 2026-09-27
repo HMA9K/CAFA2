@@ -8,6 +8,7 @@ Bijgewerkt op 27 september 2026, inclusief introductie en toegangscode.
 - Lees in de introductie wat de assistent kan, welke drie contextlagen hij gebruikt en welke broncategorieën zijn gekoppeld. Er staat ook dat de assistent beperkt beschikbaar is en tijdelijk gratis een code kan worden gevraagd bij de beheerder.
 - Vul eventueel de toegangscode in en kies Doorgaan. Met een geldige code wordt de assistent direct ontgrendeld. Zonder code kun je deze in het gewone paneel invullen; een onjuiste code geeft daar een foutmelding.
 - Sluiten met × of Escape start de assistent niet en wist de ingevoerde code. Toestemming voor delen van de vraaggegevens blijft nodig voordat een chatbericht kan worden verstuurd.
+- Een geopende Uitwerking PDF blijft staan bij annuleren van een introductie. Pas Doorgaan maakt plaats voor het assistentpaneel met het bestaande gesprek en antwoord. Terug naar assistent in de PDF hervat direct het bestaande paneel.
 - Voor deze introductie is geen aanvullende serverinstelling of secret nodig.
 
 ## Kleuren bij nakijkfeedback

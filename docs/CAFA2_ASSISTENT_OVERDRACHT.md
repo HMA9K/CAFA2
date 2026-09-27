@@ -1,12 +1,16 @@
 # CAFA2 Assistent: integratie en overdracht
 
-Versie 2026-09-27.1. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
+Versie 2026-09-27.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
 ## Introductie en starten
 
 De eerste knop noemt vragen stellen en antwoorden nakijken en is groter. Na de eerste klik wordt hij Start de CAFA2 Assistent; deze voorkeur wordt per browser bewaard. Klikken opent steeds een introductie met drie lagen: de actuele vraag/casus en eigen invoer, de bijbehorende uitwerking en het gesprek, en gekoppelde originele vakbronnen. Syllabi, opgaven, uitwerkingen, tentamens, repetitieslides en aanvullende literatuur worden als broncategorieën genoemd zonder een vast aantal in de interface.
 
 De introductie meldt beperkte beschikbaarheid en een tijdelijk gratis bij de beheerder opvraagbare code. Doorgaan met code opent en ontgrendelt het paneel in dezelfde handeling. Zonder code opent het bestaande loginformulier. Kruisje of Escape sluiten alleen de introductie; er wordt niets aangemeld of verstuurd. Een onjuiste code wordt in het bestaande paneel gemeld. De code wordt niet opgeslagen als browservoorkeur. Delen van de vraagcontext houdt de bestaande afzonderlijke toestemming. Hetzelfde gedrag geldt bij historische inzage, antwoordvensters en de rekenmachine. De introductie staat afzonderlijk in js/study-assistant-intro.mjs.
+
+Een geopende originele uitwerkings-PDF blijft staan bij annuleren van de introductie. Alleen Doorgaan start de paneeloverdracht via cafa:assistant-start. De PDF wacht op zijn close-event voordat de assistent wordt geplaatst. Terug naar assistent in de PDF gebruikt resume om direct het bestaande paneel te hervatten. Vraag, eigen antwoord en gesprek blijven behouden.
+
+De startknop verschijnt pas na interactieve opstart. De introductie mag de reeds bekende context gebruiken; Doorgaan leest de dan actuele vraag opnieuw. Sluiten plant een routecontrole, zodat terugnavigeren naar de homepage geen oude startknop laat staan. De Actions-controle gebruikt een concurrencygroep per commit, zodat een volgende publicatie een lopende controle op een eerdere commit niet afbreekt. De presentatiebuild behoudt de bestaande Cirrus-cacheversie en plaatst dit script precies één keer.
 
 ## Kleuren bij nakijkfeedback
 
