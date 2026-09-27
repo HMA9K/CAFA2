@@ -8,6 +8,8 @@ Geen aanvullende instelling, secret of bronbestand nodig. Nieuwe antwoorden bouw
 
 De server kan één extra modelaanroep gebruiken om afgekeurde uitvoer te herstellen. Na een tweede afkeuring verschijnt een foutmelding en blijft het eigen tentamenantwoord behouden. Een bronfragment is slechts een selectie van regels en krijgt daarom geen volledige aansluitcontrole. Een aansluitende afleiding is nog geen bewijs van inhoudelijke juistheid.
 
+Op expliciet verzoek is productie ingesteld op OPENAI_MODEL=gpt-6-sol en OPENAI_REASONING_EFFORT=medium. De aanvraag verzendt Medium expliciet. Het budget van 8.000 uitvoertokens omvat zowel nadenken als uitleg; de totale tijdslimiet is 60 seconden inclusief een eventuele herstelpoging. De broncontrole blijft actief. Geen verdere modelvergelijking uitgevoerd. Voor de huidige bronreparatie is geen andere sleutel of nieuw bronbestand nodig.
+
 ## Starten via de introductie
 
 - Klik op de grotere knop Stel een vraag of kijk je antwoord na met de CAFA2 Assistent. Na de eerste klik heet deze Start de CAFA2 Assistent en wordt de knop kleiner; dit wordt per browser onthouden.
@@ -57,7 +59,7 @@ De statusroute geeft HTTP 200 met `ready: true`. De publicatielog bevestigt 38 g
 - Node.js 22, repository-root, uitvoermap `dist`; `exit 0` is vervangen.
 - D1 `cafa2-assistent-production`, EU-jurisdictie, ID `2012e335-1fce-4e7f-8d37-89d0d5ed96f6`, binding `STUDY_DB`; tabel en index uit `assistant/server/schema.sql` bevestigd.
 - `STUDY_ACCESS_CODE` en een afzonderlijk willekeurig `STUDY_SESSION_SECRET` als secrets opgeslagen. Geen waarden in de repository.
-- `OPENAI_MODEL=gpt-5.4-mini`, `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`, `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20`.
+- `OPENAI_MODEL=gpt-6-sol`, `OPENAI_REASONING_EFFORT=medium`, `OPENAI_COURSE_VECTOR_STORE_ID=vs_6ab636fd5e9481919a1535a662158ed4`, `STUDY_DAILY_LIMIT=30`, `STUDY_IP_DAILY_LIMIT=20`.
 - `OPENAI_API_KEY` als secret en `STUDY_ASSISTANT_ENABLED=true`. Previews blijven uitgeschakeld voor modelaanroepen.
 
 De build controleert de publieke bestanden en canonieke vragen altijd. Online broncontrole vindt plaats zodra de assistent bewust is ingeschakeld:
@@ -150,7 +152,8 @@ Maak een aparte testdatabase; voer `assistant/server/schema.sql` uit en verbind 
 | Naam | Soort | Inhoud |
 | --- | --- | --- |
 | OPENAI_API_KEY | Secret | Geldige sleutel voor het gekozen OpenAI API-project. |
-| OPENAI_MODEL | Variabele | Beschikbaar Responses-model; zelf kiezen en inhoudelijk testen. Er staat geen productiemodel hardcoded. |
+| OPENAI_MODEL | Variabele | Productie: gpt-6-sol. Er staat geen productiemodel hardcoded. |
+| OPENAI_REASONING_EFFORT | Variabele | Productie: medium. Expliciete API-instelling; toegestaan: none, low, medium, high, xhigh, max. Afstemmen op het gekozen model. |
 | STUDY_ACCESS_CODE | Secret | Willekeurige toegangscode van minimaal 16 tekens voor de beoogde gebruikers. Geen API-sleutel. |
 | STUDY_SESSION_SECRET | Secret | Apart willekeurig geheim van minimaal 32 tekens voor sessieondertekening. Niet met gebruikers delen. |
 | STUDY_ASSISTANT_ENABLED | Variabele | Eerst false; pas na inrichting en controle true. |
