@@ -80,13 +80,18 @@ function plainJournal(text){
 export function validatedJournalAnswer(text,contract){
   let data;try{data=JSON.parse(text);}catch{fail('invalid_json');}
   if(!data||typeof data!=='object'||Array.isArray(data)||Object.keys(data).join()!=='parts'||!Array.isArray(data.parts)||!data.parts.length||data.parts.length>24)fail('invalid_parts');
-  const chunks=[],validation={sourceJournals:0,derivedJournals:0};
+  const chunks=[],validation={sourceJournals:0,derivedJournals:0,normalizedTextParts:0};
   for(const part of data.parts){
     if(!part||typeof part!=='object'||Array.isArray(part))fail('invalid_part');
     if(part.type==='text'){
       if(Object.keys(part).sort().join()!=='text,type'||typeof part.text!=='string'||part.text.length>18000)fail('invalid_text');
-      if(plainJournal(part.text))fail('unstructured_journal');
-      if(part.text.trim())chunks.push(part.text.trim());
+      let explanation=part.text.trim();
+      if(plainJournal(explanation)){
+        validation.normalizedTextParts++;
+        // Retain explanatory paragraphs, but never display unchecked booking directions.
+        explanation=explanation.split(/\n\s*\n/).filter(p=>!plainJournal(p)).join('\n\n');
+      }
+      if(explanation)chunks.push(explanation);
     }else if(part.type==='source_journal'){
       if(Object.keys(part).sort().join()!=='rowIndices,sourceId,type')fail('invalid_source_part');
       const source=contract.sources.find(s=>s.id===part.sourceId);
@@ -107,6 +112,11 @@ export function validatedJournalAnswer(text,contract){
       chunks.push('### '+cell(part.title)+' · afleiding\n\n'+part.reason+'\n\n'+table(rows)+'\n\n'+balanceText(totals));
       validation.derivedJournals++;
     }else fail('unknown_part');
+  }
+  if(validation.normalizedTextParts){
+    // A trusted table must be present. Hints or derived journals never get a fabricated fallback.
+    if(!validation.sourceJournals||contract.derivedAllowed)fail('unstructured_journal');
+    chunks.unshift('De boekingszijden en bedragen volgen hieronder rechtstreeks de uitwerking.');
   }
   if(!chunks.length)fail('empty_answer');
   return {answer:chunks.join('\n\n'),validation};

@@ -1,7 +1,7 @@
 /** Introduction and access-code handoff; no authentication or study-data writes here. */
 const SEEN_KEY='cafa2-assistant-intro-seen-v1';
 export function createAssistantIntro({document:doc=document,onContinue,onChange=()=>{},getConsent=()=>false,getAuthenticated=()=>false,onConsentChange=()=>{}}){
-  const win=doc.defaultView;let seen=false,launcher=null,dismiss=()=>{};
+  const win=doc.defaultView;let seen=false,launcher=null,dismiss=()=>{},activate=()=>{};
   try{seen=win.localStorage.getItem(SEEN_KEY)==='true';}catch{}
   const dialog=doc.createElement('dialog');dialog.id='study-assistant-intro';dialog.className='study-assistant-intro';
   dialog.setAttribute('aria-labelledby','study-intro-title');
@@ -25,10 +25,10 @@ export function createAssistantIntro({document:doc=document,onContinue,onChange=
   dialog.addEventListener('close',()=>{code.value='';onChange();if(!continuing){dismiss();if(launcher?.isConnected)launcher.focus({preventScroll:true});}});
   dialog.querySelector('form').addEventListener('submit',async event=>{
     event.preventDefault();if(submit.disabled||!getConsent())return;
-    const value=getAuthenticated()?'':code.value.trim(),source=launcher;continuing=true;submit.disabled=true;close();
+    const value=getAuthenticated()?'':code.value.trim(),source=launcher;activate();continuing=true;submit.disabled=true;close();
     try{await onContinue({code:value,launcher:source});}finally{continuing=false;submit.disabled=!getConsent();}
   });
-  function show(source=doc.activeElement,onDismiss=()=>{},privacy=false){
+  function show(source=doc.activeElement,onDismiss=()=>{},privacy=false,onActivate=()=>{}){
     if(dialog.open)return;
     const authenticated=getAuthenticated();
     code.hidden=authenticated;code.disabled=authenticated;code.value='';
@@ -37,7 +37,7 @@ export function createAssistantIntro({document:doc=document,onContinue,onChange=
     dialog.querySelector('[data-access-ready]').hidden=!authenticated;
     dialog.querySelector('.study-intro-access').hidden=authenticated;
     consentCheck.checked=getConsent();dialog.querySelector('[data-consent]').hidden=getConsent()&&!privacy;submit.disabled=!getConsent();
-    launcher=source;dismiss=onDismiss;seen=true;try{win.localStorage.setItem(SEEN_KEY,'true');}catch{}
+    launcher=source;dismiss=onDismiss;activate=onActivate;seen=true;try{win.localStorage.setItem(SEEN_KEY,'true');}catch{}
     dialog.showModal();dialog.querySelector('h2').focus({preventScroll:true});onChange();
   }
   return {show,get seen(){return seen;},get open(){return dialog.open;},

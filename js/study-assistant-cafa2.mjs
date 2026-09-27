@@ -91,7 +91,10 @@ export function createCafa2Adapter(win=window) {
   function attach(el,get,open,label='Vraag over dit antwoord') {
     if(el.querySelector('.study-inline-launch'))return;
     const button=win.document.createElement('button');button.type='button';button.className='study-inline-launch';
-    button.textContent=label;button.addEventListener('click',e=>{e.preventDefault();const previous=pinned,route=win.location.hash;pinned=get;open({cancel:()=>{if(win.location.hash===route)pinned=previous;}});});el.appendChild(button);
+    button.textContent=label;button.addEventListener('click',e=>{e.preventDefault();const route=win.location.hash;
+      // Reading a candidate for the introduction must not change the active conversation.
+      open({getContext:get,activate:()=>{if(win.location.hash===route)pinned=get;}});
+    });el.appendChild(button);
   }
   return {course:'CAFA2',read,markChecked,decorate,resetPin:()=>{pinned=null;},answerValue};
 }

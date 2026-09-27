@@ -33,6 +33,11 @@ test('een brononderdeel kan rekening, bedrag of boekingszijde niet overschrijven
   for(const extra of [{rows:[]},{debit:0,credit:48000},{title:'Anders'}])assert.throws(()=>validatedJournalAnswer(typed([{...sourcePart,...extra}]),contract),JournalValidationError);
   assert.throws(()=>validatedJournalAnswer(typed([{type:'derived_journal',title:'Officieel',reason:'Test',rows:[]}]),contract),JournalValidationError);
 });
+test('losse verkeerde boekingsregels verdwijnen als een gecontroleerde brontabel aanwezig is',()=>{
+  const result=validatedJournalAnswer(typed([{type:'text',text:'De winstcorrectie hangt samen met de voorraad.\n\n'+wrong},sourcePart]),contract);
+  assert.match(result.answer,/winstcorrectie hangt samen/);assert.doesNotMatch(result.answer,/Credit: Belastinglast/);
+  assert.match(result.answer,/\| Belastinglast \| € 2\.400 \|  \|/);assert.equal(result.validation.normalizedTextParts,1);
+});
 test('onbekende, dubbele en verkeerde vraagregels worden geweigerd',()=>{
   for(const p of [{...sourcePart,sourceId:'other-question'},{...sourcePart,rowIndices:[99]},{...sourcePart,rowIndices:[-1]},{...sourcePart,rowIndices:[1,1]}])
     assert.throws(()=>validatedJournalAnswer(typed([p]),contract),JournalValidationError);

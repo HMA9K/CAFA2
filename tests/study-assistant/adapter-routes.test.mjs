@@ -78,7 +78,7 @@ test('Historische MC-inzage gebruikt nooit een antwoord uit de actuele poging',(
   });
   win.document=doc;win.location={hash:'#mc-inzage/practice-kap-1'};
   win.CafaPractice.getCompleted=()=>[archived];
-  let opened=0;adapter.decorate(()=>opened++);
+  let opened=0;adapter.decorate(options=>{options.activate();opened++;});
   row.children[0].listeners.click({preventDefault(){}});
   assert.equal(opened,1);
   assert.equal(adapter.read().studentAnswer.choice,null);
@@ -151,7 +151,7 @@ test('Historische opgave-inzage gebruikt bronverwijzing en het antwoord van de g
   win.CafaExams={getAttempts:()=>[attempt]};
   win.document=fakeDocument({'exam-app':host});win.location={hash:'#inzage/opgave-attempt-1'};
   const adapter=createCafa2Adapter(win);let opened=0;
-  adapter.decorate(()=>opened++);
+  adapter.decorate(options=>{options.activate();opened++;});
   expanded.children[0].listeners.click({preventDefault(){}});
   assert.equal(opened,1);
   const pinned=adapter.read();
@@ -172,12 +172,24 @@ test('Historisch tentamenresultaat opent de bij de rij behorende vraag',()=>{
   win.CafaExams={getAttempts:()=>[attempt]};
   win.document=fakeDocument({'exam-app':host});win.location={hash:'#inzage/attempt-1'};
   const adapter=createCafa2Adapter(win);let opened=0;
-  adapter.decorate(()=>opened++);
+  adapter.decorate(options=>{options.activate();opened++;});
   expanded.children[0].listeners.click({preventDefault(){}});
   assert.equal(opened,1);
   assert.equal(adapter.read().ref.questionId,'vraag-3');
   adapter.resetPin();
   assert.equal(adapter.read(),null);
+});
+test('introductie leest historische context zonder vastzetten; Doorgaan zet alleen dezelfde route vast',()=>{
+  const win=fixtureWindow(),attempt=examAttempt(win),host=fakeElement(),expanded=fakeElement(),row=fakeElement();
+  row.dataset.resultId='vraag-3';row.querySelector=selector=>selector==='.result-expanded'?expanded:null;
+  host.querySelectorAll=selector=>selector==='[data-result-id]'?[row]:[];
+  win.CafaExams={getAttempts:()=>[attempt]};win.document=fakeDocument({'exam-app':host});win.location={hash:'#inzage/attempt-1'};
+  const adapter=createCafa2Adapter(win);let introduction;
+  adapter.decorate(options=>{introduction=options;});expanded.children[0].listeners.click({preventDefault(){}});
+  assert.equal(adapter.read(),null);assert.equal(introduction.getContext().ref.questionId,'vraag-3');
+  win.location.hash='#tentamen/attempt-1';introduction.activate();assert.equal(adapter.read().ref.questionId,'vraag-1');
+  win.location.hash='#inzage/attempt-1';expanded.children[0].listeners.click({preventDefault(){}});
+  assert.equal(adapter.read(),null);introduction.activate();assert.equal(adapter.read().ref.questionId,'vraag-3');
 });
 
 test('Een expliciete verwijzing bevat alleen de eerdere uitwerking uit dezelfde casus',()=>{
@@ -206,10 +218,10 @@ test('Het werkelijke inline antwoordvenster biedt een vraagknop voor de huidige 
   win.document=fakeDocument({'exam-app':host});
   win.location={hash:'#tentamen/attempt-1'};
   const adapter=createCafa2Adapter(win);let opened=0;
-  feedback.hidden=true;adapter.decorate(()=>opened++);
+  feedback.hidden=true;adapter.decorate(options=>{options.activate();opened++;});
   assert.equal(feedback.children.length,0);
   feedback.hidden=false;
-  adapter.decorate(()=>opened++);adapter.decorate(()=>opened++);
+  adapter.decorate(options=>{options.activate();opened++;});adapter.decorate(options=>{options.activate();opened++;});
   assert.equal(feedback.children.length,1);
   feedback.children[0].listeners.click({preventDefault(){}});
   assert.equal(opened,1);

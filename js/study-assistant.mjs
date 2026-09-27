@@ -1,7 +1,7 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-consent1';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-activate1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
-import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-access1';
+import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-activate1';
 import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-editor-frame1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
@@ -120,10 +120,10 @@ async function api(action,body,signal) {
   const data=await response.json();
   if(!response.ok){const error=new Error(data.error||'Het verzoek kon niet worden verwerkt.');error.status=response.status;throw error;}return data;
 }
-async function loadStatus() {
+async function loadStatus(expectedCourse=current?.ref.course||adapter.course) {
   banner('Verbinding controleren…');const timeout=new AbortController(),timer=setTimeout(()=>timeout.abort(),10000);
   try {status=await api('status',undefined,timeout.signal);
-    if(status.course!==current?.ref.course)throw new Error('De server en leeromgeving zijn voor verschillende vakken ingesteld.');
+    if(status.course!==expectedCourse)throw new Error('De server en leeromgeving zijn voor verschillende vakken ingesteld.');
     $('[data-login]').hidden=!status.ready||status.authenticated;
     banner(!status.ready?'Nog niet geactiveerd. De beheerder moet de server, toegangscode en API-verbinding instellen.':!status.authenticated?'Vul de toegangscode in om de assistent te gebruiken.':'');
     $('[data-knowledge]').textContent=(mode==='review'?status.knowledge?.reviewFiles:status.knowledge?.theoryFiles)?'Vraagcontext en gekoppelde documenten beschikbaar.':'Vraagcontext beschikbaar. Nog geen aanvullende documenten gekoppeld.';
@@ -134,11 +134,11 @@ const intro=createAssistantIntro({document:doc,onChange:()=>{syncLaunchers();if(
 const privacy=doc.createElement('button');privacy.type='button';privacy.className='study-text-button';privacy.textContent='Privacy';privacy.addEventListener('click',()=>intro.show(doc.activeElement,()=>{},true));$('[data-action="logout"]').before(privacy);
 doc.addEventListener('click',event=>{const item=event.target.closest('[data-assistant-menu]');if(item){item.closest('details').open=false;start();}});
 let introLoading=false;
-async function start({cancel=()=>{}}={}){
+async function start({cancel=()=>{},getContext=()=>adapter.read(),activate=()=>{}}={}){
   if(introLoading||intro.open)return;
-  refresh();if(!current)return;
+  const candidate=getContext();if(!candidate)return;
   const launcher=doc.activeElement;introLoading=true;
-  try{await loadStatus();if(adapter.read())intro.show(launcher,cancel);}finally{introLoading=false;}
+  try{await loadStatus(candidate.ref.course);if(getContext())intro.show(launcher,cancel,false,activate);}finally{introLoading=false;}
 }
 async function open({code='',launcher=doc.activeElement}={}) {
   const waiting=[];window.dispatchEvent(new CustomEvent('cafa:assistant-start',{detail:{waitUntil:task=>waiting.push(Promise.resolve(task))}}));
