@@ -46,15 +46,25 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
    await answer.frameLocator('.tox-edit-area iframe').locator('body').fill('Berekening blijft bewaard.');
    await page.waitForFunction(()=>CafaExams.getAttempts()[0].answers['vraag-1']?.html?.includes('Berekening blijft bewaard.'));
    const caseContent=await page.locator('#exam-case-panel').innerHTML();
-   await download(page.locator('.exam-footer [data-pdf-download="questions"]'),'questions');
+   const saved=await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey));let unexpectedDownloads=0;
+   page.on('download',()=>unexpectedDownloads++);
+   const readerButton=page.locator('.exam-footer [data-original-pdf="questions"]');
+   assert.equal(await readerButton.innerText(),'Tentamen PDF');await readerButton.click();
+   const reader=page.locator('.original-pdf-left-viewer:visible iframe');await reader.waitFor();
+   assert.ok(decodeURIComponent(await reader.getAttribute('src')).includes(source.questions.url));
+   assert.equal(await page.locator('.exam-footer [data-pdf-download="questions"]').count(),0);
+   assert.equal(await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey)),saved);
+   await page.locator('.original-pdf-left-viewer [data-pdf-close="questions"]').click();
    assert.equal(await page.locator('#exam-case-panel').innerHTML(),caseContent);
    assert.equal(await answer.frameLocator('iframe').locator('body').innerText(),'Berekening blijft bewaard.');
    const uid=await page.evaluate(id=>{for(const [code,bank] of Object.entries(CAFA2_DATA.modules)){const i=bank.questions.findIndex(q=>q.examId===id);if(i>=0)return code+'-'+(i+1);}},id);
    assert.ok(uid);await page.evaluate(uid=>location.hash=uid,uid);
-   await download(page.locator('#'+uid+' [data-pdf-download="questions"]'),'questions');
+   await page.locator('#'+uid+' [data-original-pdf="questions"]').click();await reader.waitFor();
+   assert.ok(decodeURIComponent(await reader.getAttribute('src')).includes(source.questions.url));
+   assert.equal(unexpectedDownloads,0,'De tentamen- en oefenknoppen openen de reader, zonder download');
    assert.equal(await page.locator('#'+uid+' [data-original-pdf="solutions"]').count(),1);
    assert.deepEqual(errors,[]);await page.close();
-   console.log(width+': dashboard, eleven introductions, exam and practice downloads; source hashes, answers and layout preserved.');
+   console.log(width+': dashboard and introduction downloads; exam and practice PDF readers; sources and answers preserved.');
   }
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

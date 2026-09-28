@@ -60,10 +60,10 @@ function context(){
 function actions(id,download=false){
   const source=originalPdfs[id];if(!source)return null;
   const group=document.createElement('span');group.className='original-pdf-actions';group.dataset.pdfExam=id;
-  for(const [kind,label] of [['questions','Tentamen PDF downloaden'],['solutions','Uitwerking PDF']]){
-    const directDownload=download||kind==='questions';
+  for(const [kind,label] of [['questions','Tentamen PDF'],['solutions','Uitwerking PDF']]){
+    const directDownload=download||(kind==='questions'&&location.hash.startsWith('#welkom/'));
     const button=document.createElement(directDownload&&source[kind].url?'a':'button');button.className='btn';
-    button.dataset.pdfExam=id;button.textContent=label;
+    button.dataset.pdfExam=id;button.textContent=label+(kind==='questions'&&directDownload?' downloaden':'');
     if(directDownload&&source[kind].url){
       button.href=source[kind].url;button.download='CAFA2-'+source.date+'-'+(kind==='questions'?'tentamen':'uitwerking')+'.pdf';
       button.dataset.pdfDownload=kind;button.title=kind==='questions'?'Download het originele tentamen als PDF':'Download de officiële uitwerking als PDF';
