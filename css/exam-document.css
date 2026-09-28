@@ -19,6 +19,11 @@
 .exam-source-document .exam-number { text-align:right; white-space:nowrap; }
 .exam-source-points,.exam-source-document .exam-source-points { color:#e00; font-weight:400; }
 .exam-source-document .exam-source-total { font-weight:700; }
+.exam-source-case .exam-case-balance .exam-balance-group th { padding:9px 7px 6px; background:#eef2f6; border-top:2px solid #526675; font-weight:700; }
+.exam-source-case .exam-case-balance .exam-balance-divider { border-left:2px solid #526675; }
+.exam-source-case .exam-case-balance .exam-source-total :is(td,th) { border-top:2px solid #526675; }
+.exam-source-case .exam-case-table-scroll { max-width:100%; overflow-x:auto; margin:12px 0 20px; }
+.exam-source-case .exam-case-table-scroll table { margin:0; }
 .exam-source-document .exam-source-total .exam-source-points { font-weight:400; }
 .exam-source-document .exam-accessible-head { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 .exam-source-document .exam-reconciliation td:last-child { width:32px; text-align:center; }

@@ -91,6 +91,26 @@
       }
     });
   }
+  function caseTables(root){
+    root.querySelectorAll('table').forEach(function(table){
+      var title=table.caption?table.caption.textContent.trim():'Casustabel';
+      if(/balans/i.test(title)){
+        table.classList.add('exam-case-balance');
+        table.querySelectorAll('tr').forEach(function(row){
+          var cells=Array.from(row.cells),label=cells[0]&&cells[0].textContent.trim();
+          if(cells.length===1&&/^(Activa \(debet\)|Passiva \(credit\))$/.test(label)){
+            row.classList.add('exam-balance-group');cells[0].setAttribute('scope','colgroup');
+          }
+          if(/^Totaal\b/.test(label||''))row.classList.add('exam-source-total');
+          cells.forEach(function(cell){if(cell.textContent.trim()==='Passiva (credit)'&&cells.length>1)cell.classList.add('exam-balance-divider');});
+        });
+        var header=Array.from(table.rows).find(function(row){var labels=Array.from(row.cells,function(cell){return cell.textContent.trim();});return labels.includes('Activa (debet)')&&labels.includes('Passiva (credit)');});
+        if(header){var split=header.cells.length/2;Array.from(table.rows).forEach(function(row){if(row.cells.length===header.cells.length)row.cells[split].classList.add('exam-balance-divider');});}
+      }
+      var wrap=document.createElement('div');wrap.className='exam-case-table-scroll';wrap.tabIndex=0;
+      wrap.setAttribute('aria-label',title+', horizontaal schuifbaar');table.before(wrap);wrap.appendChild(table);
+    });
+  }
   function render(exam,kind,html,plain){
     if(kind==='solution'&&/^<pre>/.test(html||'')){
       var current=(window.CAFA2_EXAMS||[]).find(function(e){return e.id===exam.id;});
@@ -121,6 +141,7 @@
     }
     if(kind==='solution')purchaseCalculation(root);
     styledText(root,runs,kind==='solution');tables(root,kind==='solution');
+    if(kind==='case')caseTables(root);
     if(window.CafaJournalTable)window.CafaJournalTable.enhance(root);
     if(kind==='solution')grading(root);
     // All supplied CAFA2 exam covers carry the Nyenrode logo; practice fixtures do not.

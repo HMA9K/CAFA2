@@ -174,17 +174,112 @@ def native(section):
             elif len(text)<160:p.name='h4'
     return str(soup)
 
+def readable_tables(html):
+    """Preserve source values while making the accounting sides explicit."""
+    soup=BeautifulSoup(html,'html.parser')
+    # A few older transcriptions left blank source templates inside paragraphs.
+    for p in list(soup.select('p')):
+        text=p.get_text(' ',strip=True)
+        if 'Datum' in text and 'correctie' in text and re.search(r'31-12-20\d\d',text):
+            start=text.index('Datum');template=text[start:]
+            dates=re.findall(r'31-12-20\d\d',template)
+            if not dates:continue
+            subject='Machine' if 'Machine' in template else 'Voorraad'
+            headers=['Datum',subject+' bij ….', 'Niet-gerealiseerde intercompany winst in '+subject.lower()+' bij….',
+                     'Interne correctie bij…','Eliminatie t.l.v. '+('aandeel derden' if 'aandeel' in template else 'derden'),
+                     'Eliminatie t.l.v. geconsolideerd resultaat']
+            rows=[[d,'','','','',''] for d in dates]
+            if 'Toe/afname' in template:rows.append(['Toe/afname','','','','',''])
+            replacement=BeautifulSoup((('<p>'+escape(text[:start].strip())+'</p>') if start else '')+
+                table(subject+'tabel',headers,rows),'html.parser')
+            p.replace_with(replacement)
+        elif 'grootboekrekeningen:' in text and re.search(r'\b050\s+',text):
+            start=re.search(r'\b050\s+',text).start()
+            entries=re.findall(r'(\d{3})\s+(.+?)(?=\s+\d{3}\s+|$)',text[start:])
+            p.replace_with(BeautifulSoup('<p>'+escape(text[:start].strip())+'</p>'+
+                table('Grootboekrekeningen',['Nummer','Rekening'],entries),'html.parser'))
+    rate_rows=[];rate_nodes=[]
+    for p in soup.select('p'):
+        m=re.fullmatch(r'(.+?)\s+\$ 1 = (€ .+)',p.get_text(' ',strip=True))
+        if m and '\t' in p.get_text():rate_rows.append([m[1],'$ 1 = '+m[2]]);rate_nodes.append(p)
+    if rate_nodes:
+        rate_nodes[0].replace_with(BeautifulSoup(table('Koersverloop Amerikaanse dollar',['Periode','Koers'],rate_rows),'html.parser'))
+        for p in rate_nodes[1:]:p.decompose()
+    for t in soup.select('table'):
+        rows=t.select('tr')
+        if not rows:continue
+        first=rows[0].find_all(['th','td'],recursive=False)
+        if len(first)==1 and int(first[0].get('colspan',1))>1:
+            caption=soup.new_tag('caption');caption.string=first[0].get_text(' ',strip=True);t.insert(0,caption);rows[0].decompose()
+        title=t.caption.get_text(' ',strip=True) if t.caption else ''
+        # Two partial balances only contain the source's credit-side equity.
+        rows=t.select('tr');first=rows[0].find_all(['th','td'],recursive=False)
+        if len(first)==3 and first[0].get_text(strip=True)=='Debet' and 'Gedeeltelijke balans' in first[1].get_text():
+            title=first[1].get_text(' ',strip=True)
+            values=[[r.find_all(['td','th'],recursive=False)[-2].get_text(' ',strip=True),
+                     r.find_all(['td','th'],recursive=False)[-1].get_text(' ',strip=True)] for r in rows[1:]]
+            replacement=BeautifulSoup(table(title,['Passiva (credit)','Bedrag'],values),'html.parser').table
+            t.replace_with(replacement);t=replacement
+        if not re.search(r'balans',title,re.I):continue
+        t['class']=list(t.get('class',[]))+['exam-case-balance']
+        rows=t.select('tr');first=rows[0].find_all(['th','td'],recursive=False)
+        if t.caption and any('€' in c.get_text() for c in first) and '€' not in title:
+            t.caption.string=title+' (in €)'
+        # Side-by-side source layout, including older tables without headings.
+        if len(first) in (4,6) and re.fullmatch(r'(?:|Passiva|Credit(?: in €)?)',first[len(first)//2].get_text(strip=True)):
+            split=len(first)//2
+            for i,label in [(0,'Activa (debet)'),(split,'Passiva (credit)')]:
+                if first[i].get_text(strip=True) in ('','Activa','Passiva') or re.fullmatch(r'(Debet|Credit)( in €)?',first[i].get_text(strip=True)):
+                    first[i].name='th';first[i]['scope']='col';first[i].string=label
+            if first[0].get_text(strip=True)=='Activa (debet)':
+                first[split]['class']=['exam-balance-divider']
+                for row in rows[1:]:
+                    cells=row.find_all(['td','th'],recursive=False)
+                    if len(cells)==len(first):cells[split]['class']=['exam-balance-divider']
+        else:
+            # Stacked layout, as with Pienza, Bora, Store, TCC and Genser.
+            if first[0].get_text(strip=True) in ('','Post'):first[0].string='Passiva (credit)' if re.search(r'creditzijde',title,re.I) else 'Post'
+            elif re.fullmatch(r'Debet(?: in €)?',first[0].get_text(strip=True)):first[0].string='Activa (debet)'
+            elif re.fullmatch(r'Credit(?: in €)?',first[0].get_text(strip=True)):first[0].string='Passiva (credit)'
+            width=max(len(r.find_all(['td','th'],recursive=False)) for r in rows)
+            def group(before,label):
+                row=soup.new_tag('tr');row['class']=['exam-balance-group']
+                cell=soup.new_tag('th',colspan=str(width),scope='colgroup');cell.string=label;row.append(cell);before.insert_before(row)
+            asset=False;liability=False
+            for row in rows[1:]:
+                cells=row.find_all(['td','th'],recursive=False)
+                if not cells:continue
+                label=cells[0].get_text(' ',strip=True)
+                if label.startswith('Activa') and not asset:
+                    group(row,'Activa (debet)');asset=True
+                    if label=='Activa' and all(not c.get_text(strip=True) for c in cells[1:]):row.decompose();continue
+                    if label.startswith('Activa: '):cells[0].string=label[8:]
+                if (label=='Passiva' or label.startswith('Passiva: ') or (asset and label=='Geplaatst aandelenkapitaal')) and not liability:
+                    group(row,'Passiva (credit)');liability=True
+                    if label=='Passiva':row.decompose();continue
+                    if label.startswith('Passiva: '):cells[0].string=label[9:]
+        for row in t.select('tr'):
+            cells=row.find_all(['td','th'],recursive=False)
+            if cells and re.match(r'^Totaal\b',cells[0].get_text(strip=True)):
+                row['class']=list(row.get('class',[]))+['exam-source-total']
+        # Separator dashes in the PDF convey totals, not additional data rows.
+        for row in list(t.select('tr')):
+            text=row.get_text('',strip=True)
+            if text and re.fullmatch(r'[-\s]+',text):row.decompose()
+    return str(soup)
+
 for e in exams:
     result[e['id']]={}
     for s in e['sections']:
         if e['id'] in ['cafa2-20230411','cafa2-20231009']:
             output=present(e,s)['html'] if s['id']=='opgave-1' else legacy(e,s)
         else:output=native(s)
+        output=readable_tables(output)
         original=set(re.findall(r'\d+(?:[.,]\d+)*(?:%)?',BeautifulSoup(s['contentHtml'],'html.parser').get_text(' ',strip=True)))
         shown=set(re.findall(r'\d+(?:[.,]\d+)*(?:%)?',BeautifulSoup(output,'html.parser').get_text(' ',strip=True)))
         if not original<=shown:raise ValueError(e['id']+'/'+s['id']+' Casuswaarde verloren: '+str(original-shown))
         if '<pre' in output:raise ValueError('Vaste tekstbreedte bleef behouden')
         result[e['id']][s['id']]={'sourceSha256':hashlib.sha256(s['contentHtml'].encode()).hexdigest(),'html':output}
-ROOT.joinpath('content/practice/exam-case-presentation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-ROOT.joinpath('data/exam-case-presentation.js').write_text('window.CAFA2_CASE_PRESENTATION='+json.dumps(result,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
+ROOT.joinpath('content/practice/exam-case-presentation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+ROOT.joinpath('data/exam-case-presentation.js').write_text('window.CAFA2_CASE_PRESENTATION='+json.dumps(result,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8',newline='\n')
 print('Casuspresentatie:',sum(len(s) for s in result.values()),'casussen met brongebonden alinea’s, opsommingen en tabellen')

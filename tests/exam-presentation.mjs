@@ -47,4 +47,17 @@ assert.ok(m.indexOf('Van Moneglia')<m.indexOf('Organisatieschema'));
 assert.ok(m.indexOf('Eind 2021 heeft Moneglia')<m.indexOf('Eigen vermogen Cavola'));
 assert.ok(m.includes('3 van de 5 bestuurders')&&m.includes('volledig aansprakelijk'));
 assert.ok(m.includes('<p>De financiering van')&&m.includes('<p>Begin 2023 koopt'),'Nieuwe casusgegevens blijven afzonderlijke alinea\'s');
+const pienza=cases['cafa2-20240930']['opgave-1'].html;
+assert.ok(pienza.indexOf('Activa (debet)')<pienza.indexOf('Totaal debetzijde'));
+assert.ok(pienza.indexOf('Totaal debetzijde')<pienza.indexOf('Passiva (credit)'));
+assert.ok(pienza.indexOf('Passiva (credit)')<pienza.indexOf('Geplaatst aandelenkapitaal'));
+assert.ok(pienza.indexOf('Geplaatst aandelenkapitaal')<pienza.indexOf('Totaal creditzijde'));
+assert.ok(pienza.includes('1.100.000')&&pienza.includes('2.000.000')&&pienza.includes('2.300.000'));
+const molina=cases['cafa2-20221006']['opgave-2'].html;
+assert.ok(molina.includes('<caption>Grootboekrekeningen</caption>'));
+assert.equal((molina.match(/<caption>Machinetabel<\/caption>/g)||[]).length,2);
+assert.ok(molina.includes('<caption>Voorraadtabel</caption>'));
+for(const sections of Object.values(cases))for(const p of Object.values(sections)){
+ assert.ok(!/<p>[^<]*Datum[^<]*correctie[^<]*31-12/.test(p.html),'Een bronmatrix blijft een tabel');
+}
 console.log('Financiële presentatie: 25 brongebonden uitwerkingen, echte percentage-/valutakolommen, Toren-aansluiting en 44 leesbaar opgemaakte casussecties.');
