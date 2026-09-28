@@ -9,6 +9,9 @@
   function questionKey(host){
     const question=host.closest('.question');if(question)return 'practice:'+question.id;
     const app=window.CafaExams||window.SRACirrus,attemptId=location.hash.match(/^#(?:toets|tentamen)\/([^/]+)/)?.[1];
+    if(app?.getQuestionContext){const ctx=attemptId&&app.getQuestionContext(attemptId),q=ctx?.question;
+      return q?'exam:'+(q.sourceExamId||ctx.exam.id)+':'+(q.sourceQuestionId||q.id):location.pathname+location.hash;
+    }
     const attempts=app?.getAttempts?.()||[],current=attempts.find(a=>a.id===attemptId);
     const position=app?.getPosition?.()||(current?{attempt:current.id,index:current.currentIndex}:null);
     if(position){const attempt=attempts.find(a=>a.id===position.attempt),q=attempt?.exam.questions[position.index];

@@ -34,13 +34,13 @@
     if (!api) return null;
     var kind = route[0], isRunner = kind === (course === 'CAFA2' ? 'tentamen' : 'toets');
     if (!['welkom', 'tentamen', 'toets', 'inzage'].includes(kind) || !route[1]) return null;
-    var attempts = api.getAttempts ? api.getAttempts() : [];
-    var attempt = attempts.find(function (a) { return a.id === route[1]; });
+    var context = api.getQuestionContext ? api.getQuestionContext(route[1]) : null;
+    var attempt = api.getQuestionContext ? context : (api.getAttempts ? api.getAttempts().find(function (a) { return a.id === route[1]; }) : null);
     var exam = attempt ? attempt.exam : (api.catalog || []).find(function (e) { return e.id === route[1]; });
     if (!exam) return null;
     var result = { host: host, names: ['Tentamens', examName(exam)] };
     if (isRunner && attempt) {
-      var q = exam.questions[attempt.currentIndex || 0], section = q && (exam.sections || []).find(function (s) { return s.id === q.sectionId; });
+      var q = context ? context.question : exam.questions[attempt.currentIndex || 0], section = context ? context.section : q && (exam.sections || []).find(function (s) { return s.id === q.sectionId; });
       if (section) result.names.push(clean(section.title));
       result.names.push('Vraag ' + (q ? (q.displayNumber || q.number || attempt.currentIndex + 1) : 1));
     } else if (kind === 'inzage') {

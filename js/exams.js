@@ -4,6 +4,7 @@
   var host = document.getElementById('exam-app');
   if (!Engine || !Editor || !host) throw new Error('De tentamenomgeving kon niet worden geladen.');
   var KEY = 'cafa2-full-exams-v1', store = {version:1, attempts:[]};
+  var storageRefs = Object.create(null), splitStorage = false, migrationBlocked = false;
   var editor = null, saveOK = true, corrupt = false, selectedAttempt = null;
   var submitDialog = document.getElementById('exam-submit-dialog');
   var announcedTen = new Set(), catalogErrors = [];
@@ -40,6 +41,16 @@
   function examById(id) { return catalog.find(function (exam) { return exam.id === id; }) || (demo && demo.id === id ? demo : null); }
   function loadState(raw) {
     var parsed = JSON.parse(raw);
+    var refs = Object.create(null), partitioned = parsed && parsed.version === 2;
+    if(partitioned){
+      if(!Array.isArray(parsed.attempts))throw new Error('Onbekend formaat');
+      parsed={version:1,attempts:parsed.attempts.map(function(ref){
+        if(!ref || !/^[\w.-]+$/.test(ref.id) || typeof ref.key!=='string' || !ref.key.startsWith(KEY+':attempt:'+ref.id+':') || refs[ref.id])throw new Error('Ongeldige opslagverwijzing');
+        var attempt=JSON.parse(localStorage.getItem(ref.key));
+        if(!attempt || attempt.id!==ref.id)throw new Error('Ontbrekende poging');
+        refs[ref.id]=ref.key;return attempt;
+      })};
+    }
     if (!parsed || parsed.version !== 1 || !Array.isArray(parsed.attempts)) throw new Error('Onbekend formaat');
     parsed.attempts.forEach(function (attempt) {
       if (!attempt || !Engine.validateExam(attempt.exam).valid || !/^[\w.-]+$/.test(attempt.id) ||
@@ -54,14 +65,35 @@
         if (answer && typeof answer.html === 'string') answer.html = Editor.sanitize(answer.html);
       });
     });
-    return parsed;
+    storageRefs=refs;splitStorage=partitioned;migrationBlocked=false;return parsed;
   }
   try { var saved = localStorage.getItem(KEY); if (saved) store = loadState(saved); }
   catch (error) { corrupt = true; saveOK = false; }
   function save() {
     if (corrupt) { updateSaveStatus(); return false; }
-    try { localStorage.setItem(KEY,JSON.stringify(store)); saveOK = true; }
-    catch (error) { saveOK = false; }
+    var changed=splitStorage?Array.from(arguments).filter(Boolean):attempts(), minted=[],oldRefs=storageRefs;
+    try {
+      if(migrationBlocked){localStorage.setItem(KEY,JSON.stringify(store));}
+      else {
+        if(splitStorage&&!changed.length)changed=attempts();
+        var refs=Object.assign(Object.create(null),storageRefs);
+        changed.forEach(function(a){
+          var key=KEY+':attempt:'+a.id+':'+Date.now()+'-'+Math.random().toString(36).slice(2);
+          minted.push(key);localStorage.setItem(key,JSON.stringify(a));refs[a.id]=key;
+        });
+        var manifest={version:2,attempts:attempts().map(function(a){if(!refs[a.id])throw new Error('Ontbrekende poging');return {id:a.id,key:refs[a.id]};})};
+        // Publish references only after every new snapshot has been written.
+        localStorage.setItem(KEY,JSON.stringify(manifest));
+        storageRefs=Object.fromEntries(manifest.attempts.map(function(ref){return [ref.id,ref.key];}));splitStorage=true;
+        Object.values(oldRefs).forEach(function(key){if(!Object.values(storageRefs).includes(key))try{localStorage.removeItem(key);}catch(_){}});
+      }
+      saveOK=true;
+    } catch (error) {
+      minted.forEach(function(key){try{localStorage.removeItem(key);}catch(_){}});saveOK=false;
+      // A full legacy store may not have room for a second copy during migration.
+      // Keep its existing format usable rather than discarding any old attempt.
+      if(!splitStorage)try{localStorage.setItem(KEY,JSON.stringify(store));migrationBlocked=true;saveOK=true;}catch(_){}
+    }
     updateSaveStatus();
     return saveOK;
   }
@@ -92,7 +124,7 @@
       if(a!==previous||a.status!=='active')return a;
       var completed=Engine.finishAttempt(a,{reason:'submitted'});completed.finishReason='restarted';return completed;
     }).concat(next);
-    if(!save()){store.attempts=before;throw new Error('De nieuwe poging kon niet worden opgeslagen. Je eerdere poging is behouden.');}
+    if(!save(next,restartId&&byId(restartId))){store.attempts=before;throw new Error('De nieuwe poging kon niet worden opgeslagen. Je eerdere poging is behouden.');}
     if(restartId&&window.CafaStudy)window.CafaStudy.clearReturn();
     if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen gestart',window.StudyMeasure.examNames(next.exam));
     go('tentamen/'+next.id);
@@ -100,8 +132,10 @@
   function resetAttempts() {
     if(!confirm('Alle tentamenvoortgang op dit apparaat resetten? Alle lopende en voltooide tentamenpogingen, antwoorden, scores, markeringen en klokken worden verwijderd. Ook tentamenvragen per onderwerp worden gereset. Je MC-oefenvoortgang blijft behouden.'))return;
     var empty={version:1,attempts:[]};
-    try{localStorage.setItem(KEY,JSON.stringify(empty));}
+    try{localStorage.setItem(KEY,JSON.stringify({version:2,attempts:[]}));}
     catch(error){announce('Resetten is niet gelukt. Je tentamenvoortgang is behouden.');showModal('Resetten niet mogelijk','<p>Je tentamenvoortgang kon niet worden gereset. Je bestaande pogingen zijn behouden.</p>');return;}
+    var oldRefs=storageRefs;storageRefs={};splitStorage=true;migrationBlocked=false;
+    Object.values(oldRefs).forEach(function(key){try{localStorage.removeItem(key);}catch(_){}});
     dropEditor();store=empty;corrupt=false;saveOK=true;selectedAttempt=null;announcedTen.clear();caseScrollPositions=Object.create(null);
     if(window.CafaStudy)window.CafaStudy.clearReturn();
     go('dashboard');announce('Alle tentamenvoortgang op dit apparaat is gereset. Je MC-oefenvoortgang is behouden.');
@@ -220,7 +254,7 @@
       button.title=caseOpen?'Casus verbergen':'Casus tonen';
     });
   }
-  function mountCasePanel(attempt,section) {
+  function mountCasePanel(attempt,section,previousPanel) {
     if(!section)return;
     var body=host.querySelector('.exam-question-body'),layout=document.createElement('div');
     layout.className='exam-case-layout';body.before(layout);
@@ -230,11 +264,13 @@
     handle.setAttribute('aria-valuemin','25');handle.setAttribute('aria-valuemax','60');
     handle.title='Sleep naar rechts voor een bredere casus of naar links voor een smallere casus. Gebruik ook de pijltjestoetsen, Home en End.';
     handle.innerHTML='<span aria-hidden="true">⋮</span>';
-    var panel=document.createElement('aside');panel.id='exam-case-panel';panel.className='exam-case-panel';
+    var reuse=previousPanel&&previousPanel.dataset.caseKey===attempt.id+':'+section.id;
+    var panel=reuse?previousPanel:document.createElement('aside');panel.id='exam-case-panel';
+    if(!reuse)panel.className='exam-case-panel';
     panel.dataset.caseKey=attempt.id+':'+section.id;
     panel.setAttribute('aria-labelledby','exam-case-heading');
-    panel.innerHTML='<h2 id="exam-case-heading">'+esc(section.title)+'</h2>'+documentHtml(attempt.exam,'case',section.contentHtml,null,section.sourceExamId);
-    panel.querySelectorAll('table').forEach(function(table){var wrap=document.createElement('div');wrap.className='exam-case-table-scroll';table.before(wrap);wrap.append(table);});
+    if(!reuse){panel.innerHTML='<h2 id="exam-case-heading">'+esc(section.title)+'</h2>'+documentHtml(attempt.exam,'case',section.contentHtml,null,section.sourceExamId);
+      panel.querySelectorAll('table').forEach(function(table){var wrap=document.createElement('div');wrap.className='exam-case-table-scroll';table.before(wrap);wrap.append(table);});}
     layout.append(panel,handle,body);updateCasePanel();
     panel.scrollTop=caseScrollPositions[panel.dataset.caseKey]||0;
     handle.addEventListener('pointerdown',function(e){
@@ -262,17 +298,17 @@
   function runner(id) {
     var attempt=byId(id); if(!attempt)return missing(); if(attempt.status==='completed'){go('inzage/'+id);return;}
     if(attempt.pausedAt!=null){host.innerHTML=head(label(attempt.exam),'Toets gepauzeerd')+'<div class="exam-paper exam-paused"><h2>Je toets is gepauzeerd</h2><p>Je antwoorden zijn bewaard. De resterende tijd verandert niet tijdens de pauze.</p><p>'+esc(Engine.formatTime(Engine.remainingSeconds(attempt)))+'</p>'+btn('Toets hervatten','resume',true)+' <a class="btn" href="#dashboard">Dashboard</a></div>';return;}
-    var i=attempt.currentIndex,q=attempt.exam.questions[i],section=sectionFor(attempt,q);
+    var i=attempt.currentIndex,q=attempt.exam.questions[i],section=sectionFor(attempt,q),previousPanel=host.querySelector('#exam-case-panel');
     host.innerHTML='<h1 class="exam-runner-title">'+esc(label(attempt.exam))+'</h1><div class="frame"><div class="exam-work-head"><div class="exam-question-identity"><span>VRAAG</span><span class="qnum">'+(i+1)+'</span>'+(section?btn('Casus','section',false,'aria-haspopup="dialog"'):'')+'</div><div class="exam-position">VRAAG <strong>'+(i+1)+'</strong> VAN <strong>'+attempt.exam.questions.length+'</strong></div></div><div class="exam-question-body"><div class="exam-question-top"><h2>'+esc(section?section.title:'Volledig tentamen')+'</h2><span class="exam-source-points">'+(q.points!==undefined?'('+q.points+' punten)':'')+'</span></div>'+documentHtml(attempt.exam,'question',q.promptHtml,q.prompt,q.sourceExamId)+(window.CafaStudy?window.CafaStudy.examLink(q.sourceExamId||attempt.exam.id,q.sourceQuestionId||q.id):'')+'<span class="exam-answer-label">Vul het antwoord in</span><div data-exam-answer></div><div class="exam-answer-actions">'+btn('Antwoord controleren','check')+btn('Pauzeren','pause')+'</div><p class="exam-save-status" data-exam-save></p></div><div class="exam-footer"><div class="actions">'+btn('‹ Vorige','previous',false,i===0?'disabled':'')+btn('Volgende ›','next',false,i===attempt.exam.questions.length-1?'disabled':'')+'</div><div class="exam-cirrus-actions">'+btn('Overzicht','overview')+(section?btn('Casus','section'):'')+btn('Introductie','introduction')+btn(attempt.marked[q.id]?'Gemarkeerd':'Markeren','mark',false,'aria-pressed="'+!!attempt.marked[q.id]+'"')+btn('Toets voltooien','submit')+'</div></div></div>';
 
-    mountCasePanel(attempt,section);
+    mountCasePanel(attempt,section,previousPanel);
     var answerHost=host.querySelector('[data-exam-answer]');
     if(q.type==='open') {
       if(window.CafaJournalTable&&window.CafaJournalTable.supports(q)){
         var journalHost=document.createElement('div');answerHost.appendChild(journalHost);
         window.CafaJournalTable.mount(journalHost,answerFor(attempt,q).journalRows,function(rows){
           if(attempt.status!=='active'||attempt.pausedAt!=null||Engine.remainingSeconds(attempt)===0){tick();return;}
-          attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{journalRows:rows});invalidateScore(attempt,q);save();
+          attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{journalRows:rows});invalidateScore(attempt,q);save(attempt);
         });
         var journalNotes=document.createElement('details');journalNotes.className='stock-notes';journalNotes.open=!!answerFor(attempt,q).html;
         journalNotes.innerHTML='<summary>Toelichting of berekening toevoegen</summary><div></div>';answerHost.appendChild(journalNotes);answerHost=journalNotes.querySelector('div');
@@ -282,14 +318,14 @@
         var stockHost=document.createElement('div');answerHost.appendChild(stockHost);
         window.CafaStockTable.mount(stockHost,stock,answerFor(attempt,q).stockCells,function(cells){
           if(attempt.status!=='active'||Engine.remainingSeconds(attempt)===0){tick();return;}
-          attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{stockCells:cells});invalidateScore(attempt,q);save();
+          attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{stockCells:cells});invalidateScore(attempt,q);save(attempt);
         });
         var notes=document.createElement('details');notes.className='stock-notes';notes.open=!!answerFor(attempt,q).html;
         notes.innerHTML='<summary>Toelichting of berekening toevoegen</summary><div data-stock-notes></div>';answerHost.appendChild(notes);answerHost=notes.querySelector('[data-stock-notes]');
       }
       editor=Editor.mount(answerHost,{html:answerFor(attempt,q).html||'',label:'Antwoord op vraag '+(i+1),onChange:function(html){
         if(attempt.status!=='active'||Engine.remainingSeconds(attempt)===0){tick();return;}
-        attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{html:html});invalidateScore(attempt,q);save();
+        attempt.answers[q.id]=Object.assign({},answerFor(attempt,q),{html:html});invalidateScore(attempt,q);save(attempt);
       }});
     } else {
       answerHost.innerHTML='<fieldset class="exam-options"><legend>Kies één antwoord</legend>'+q.options.map(function(option){return '<label><input type="radio" name="exam-answer" value="'+esc(option.id)+'" '+(answerFor(attempt,q).optionId===option.id?'checked':'')+'><span>'+esc(option.text)+'</span></label>';}).join('')+'</fieldset>';
@@ -304,7 +340,7 @@
     document.body.appendChild(dialog);
     if(window.CafaStockTable)window.CafaStockTable.enhance(dialog);
     dialog.querySelectorAll('[data-close-info]').forEach(function(button){button.addEventListener('click',function(){dialog.close();});});
-    dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=byId(selectedAttempt);if(attempt&&attempt.status==='active'){attempt.currentIndex=Number(target.dataset.examIndex);save();dialog.close();route();}}});
+    dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=byId(selectedAttempt);if(attempt&&attempt.status==='active'){attempt.currentIndex=Number(target.dataset.examIndex);save(attempt);dialog.close();route();}}});
     dialog.addEventListener('close',function(){dialog.remove();});
     if(dialog.showModal)dialog.showModal();else{dialog.setAttribute('open','');}
   }
@@ -391,7 +427,7 @@
   function complete(attempt,reason) {
     if(!attempt||attempt.status!=='active')return;
     var finished=Engine.finishAttempt(attempt,{reason:reason});
-    attempt.exam.questions.forEach(function(q){measureExamAnswer(attempt,q,false);});if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen afgerond',window.StudyMeasure.examNames(attempt.exam));Object.assign(attempt,finished); save();
+    attempt.exam.questions.forEach(function(q){measureExamAnswer(attempt,q,false);});if(window.StudyMeasure)window.StudyMeasure.activity('Tentamen afgerond',window.StudyMeasure.examNames(attempt.exam));Object.assign(attempt,finished); save(attempt);
     var current=location.hash==='#tentamen/'+attempt.id;
     if(current){
       if(submitDialog.open)submitDialog.close();
@@ -404,7 +440,7 @@
     running().filter(function(a){return Engine.remainingSeconds(a)===0;}).forEach(function(a){complete(a,'timeout');});
     var attempt=byId(selectedAttempt);
     clock.hidden=!(attempt&&attempt.status==='active');
-    if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);clock.querySelector('strong').textContent=attempt.pausedAt!=null?'Gepauzeerd':Engine.formatTime(seconds).replace(/ min$/,' minuten');clock.querySelector('.exam-time-badge > span').textContent=attempt.untimed?'Oefenmodus:':'Totaal resterende tijd:';clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
+    if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);var label=attempt.pausedAt!=null?'Gepauzeerd':Engine.formatTime(seconds).replace(/ min$/,' minuten'),title=attempt.untimed?'Oefenmodus:':'Totaal resterende tijd:',valueNode=clock.querySelector('strong'),titleNode=clock.querySelector('.exam-time-badge > span');if(valueNode.textContent!==label)valueNode.textContent=label;if(titleNode.textContent!==title)titleNode.textContent=title;clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
   }
   function route() {
     var oldPanel=host.querySelector('#exam-case-panel');
@@ -432,7 +468,7 @@
       var start=host.querySelector('[data-exam-action="start"]'),prior=start&&byId(start.dataset.restartAttempt),exam=start&&(examById(start.dataset.examId)||(prior&&prior.exam));
       if(exam){var extra=host.querySelector('[data-exam-extra]'),untimed=host.querySelector('[data-exam-untimed]').checked,total=exam.durationMinutes+(extra.checked?30:0);extra.disabled=untimed;host.querySelector('[data-exam-total]').textContent=total;host.querySelector('[data-exam-detail-duration]').textContent=untimed?'Zonder tijdslimiet':total+' minuten';}
     }
-    if(e.target.name==='exam-answer'){var a=byId(selectedAttempt);if(a&&a.status==='active'&&a.pausedAt==null&&Engine.remainingSeconds(a)>0){a.answers[a.exam.questions[a.currentIndex].id]={optionId:e.target.value};save();}else tick();}
+    if(e.target.name==='exam-answer'){var a=byId(selectedAttempt);if(a&&a.status==='active'&&a.pausedAt==null&&Engine.remainingSeconds(a)>0){a.answers[a.exam.questions[a.currentIndex].id]={optionId:e.target.value};save(a);}else tick();}
   });
   host.addEventListener('click',function(e){
     var button=e.target.closest('[data-exam-action]');if(!button)return;var action=button.dataset.examAction;
@@ -463,19 +499,19 @@
     if(action==='review-question'){go('inzage/'+button.dataset.attempt+'/vraag/'+button.dataset.index);return;}
     if(action==='print-report'){window.print();return;}
     var attempt=byId(selectedAttempt);if(!attempt||attempt.status!=='active')return;if(Engine.remainingSeconds(attempt)===0){tick();return;}
-    if(action==='resume'){Engine.resumeAttempt(attempt);save();route();return;}
+    if(action==='resume'){Engine.resumeAttempt(attempt);save(attempt);route();return;}
     if(attempt.pausedAt!=null)return;
     var q=attempt.exam.questions[attempt.currentIndex];
-    if(action==='pause'){Engine.pauseAttempt(attempt);save();route();return;}
+    if(action==='pause'){Engine.pauseAttempt(attempt);save(attempt);route();return;}
     if(action==='check'){checkAnswer(attempt,q);return;}
-    if(action==='previous'||action==='next'){attempt.currentIndex=Math.max(0,Math.min(attempt.exam.questions.length-1,attempt.currentIndex+(action==='next'?1:-1)));save();route();}
+    if(action==='previous'||action==='next'){attempt.currentIndex=Math.max(0,Math.min(attempt.exam.questions.length-1,attempt.currentIndex+(action==='next'?1:-1)));save(attempt);route();}
     if(action==='overview')overview(attempt);
     if(action==='section'&&host.querySelector('#exam-case-panel')){caseOpen=!caseOpen;updateCasePanel();saveCaseSettings();}
     if(action==='introduction'){
       var sourceIntro=attempt.exam.practiceKind==='opgave'&&(attempt.exam.sourceIntroductions||[]).find(function(item){return item.id===q.sourceExamId;});
       showModal(sourceIntro?'Introductie · Examen '+sourceIntro.code:'Introductie · '+label(attempt.exam),introduction(sourceIntro||attempt.exam));
     }
-    if(action==='mark'){attempt.marked[q.id]=!attempt.marked[q.id];button.textContent=attempt.marked[q.id]?'Gemarkeerd':'Markeren';button.setAttribute('aria-pressed',String(!!attempt.marked[q.id]));save();}
+    if(action==='mark'){attempt.marked[q.id]=!attempt.marked[q.id];button.textContent=attempt.marked[q.id]?'Gemarkeerd':'Markeren';button.setAttribute('aria-pressed',String(!!attempt.marked[q.id]));save(attempt);}
     if(action==='submit'){document.querySelector('[data-exam-submit-summary]').textContent=Engine.answeredCount(attempt)+' van '+attempt.exam.questions.length+' vragen beantwoord. '+Object.values(attempt.marked).filter(Boolean).length+' vragen gemarkeerd.';if(submitDialog.showModal)submitDialog.showModal();else if(confirm('Je tentamen definitief inleveren?'))complete(attempt,'submitted');}
   });
   function resizeReview(handle,value){reviewWidth=Math.max(25,Math.min(65,value));handle.closest('.review-split').style.setProperty('--review-width',reviewWidth+'%');handle.setAttribute('aria-valuenow',Math.round(reviewWidth));}
@@ -490,7 +526,7 @@
     var a=byId(e.target.dataset.attempt),q=a&&a.exam.questions.find(function(q){return q.id===e.target.dataset.question;});if(!q)return;
     var raw=e.target.value.trim(),score=raw===''?null:Number(raw.replace(',','.'));
     if(score!==null&&(!Number.isFinite(score)||score<0||score>(q.points||0))){e.target.setCustomValidity('Vul een score tussen 0 en '+(q.points||0)+' in.');e.target.reportValidity();return;}
-    e.target.setCustomValidity('');a.scores=a.scores||{};if(score===null)delete a.scores[q.id];else a.scores[q.id]=score;save();
+    e.target.setCustomValidity('');a.scores=a.scores||{};if(score===null)delete a.scores[q.id];else a.scores[q.id]=score;save(a);
     var status=e.target.parentElement.querySelector('[data-score-saved]');if(status)status.textContent='Opgeslagen';
     if(a.status==='completed'){var openIds=Array.from(host.querySelectorAll('details[open][data-result-id]')).map(function(d){return d.dataset.resultId;});review(location.hash.slice(8));host.querySelectorAll('[data-review-panel="score"]').forEach(function(tab){tab.click();});openIds.forEach(function(id){var row=Array.from(host.querySelectorAll('[data-result-id]')).find(function(d){return d.dataset.resultId===id;});if(row)row.open=true;});}
   });
@@ -499,12 +535,18 @@
   window.addEventListener('hashchange',route);
   window.addEventListener('cafa:practice-change',function(){if(location.hash.indexOf('#dashboard')===0)dashboard(location.hash==='#dashboard/voltooid');});
   document.addEventListener('visibilitychange',tick);
-  window.addEventListener('storage',function(e){if(e.key!==KEY||!e.newValue)return;try{store=loadState(e.newValue);route();announce('Tentamenpoging bijgewerkt vanuit een ander tabblad.');}catch(error){announce('Voortgang uit het andere tabblad kon niet worden gelezen.');}});
+  window.addEventListener('storage',function(e){if(e.key!==KEY||!e.newValue)return;try{store=loadState(localStorage.getItem(KEY)||e.newValue);route();announce('Tentamenpoging bijgewerkt vanuit een ander tabblad.');}catch(error){announce('Voortgang uit het andere tabblad kon niet worden gelezen.');}});
   window.addEventListener('beforeunload',function(e){if(!saveOK&&active()){e.preventDefault();e.returnValue='';}});
   // Expired attempts are completed even when the learner reopens the dashboard later.
-  attempts().filter(function(a){return a.status==='active'&&Engine.remainingSeconds(a)===0;}).forEach(function(a){Object.assign(a,Engine.finishAttempt(a,{reason:'timeout'}));});
-  if(!corrupt)save();
+  var expired=attempts().filter(function(a){return a.status==='active'&&Engine.remainingSeconds(a)===0;});
+  expired.forEach(function(a){Object.assign(a,Engine.finishAttempt(a,{reason:'timeout'}));});
+  if(!corrupt&&(!splitStorage||expired.length))save.apply(null,expired);
   if(!location.hash)history.replaceState(null,'','#start');
   route();setInterval(tick,1000);
-  window.CafaExams={catalog:catalog,getAttempts:function(){return JSON.parse(JSON.stringify(attempts()));},storageKey:KEY,getPosition:function(){var a=byId(selectedAttempt);return a&&a.status==='active'?{attempt:a.id,index:a.currentIndex,examId:a.exam.id}:null;},restorePosition:function(id,index){var a=byId(id);if(!a||a.status!=='active'||!Number.isInteger(index)||index<0||index>=a.exam.questions.length)return false;a.currentIndex=index;save();route();return true;}};
+  function getQuestionContext(id,index){
+    var a=byId(id);if(!a)return null;var i=index==null?a.currentIndex:index,q=a.exam.questions[i];if(!q)return null;
+    var section=sectionFor(a,q);
+    return JSON.parse(JSON.stringify({attemptId:a.id,currentIndex:i,exam:{id:a.exam.id,title:a.exam.title,date:a.exam.date,demo:a.exam.demo,practiceKind:a.exam.practiceKind},question:q,section:section?{id:section.id,title:section.title}:null}));
+  }
+  window.CafaExams={catalog:catalog,getQuestionContext:getQuestionContext,getAttempt:function(id){var a=byId(id);return a?JSON.parse(JSON.stringify(a)):null;},getAttempts:function(){return JSON.parse(JSON.stringify(attempts()));},storageKey:KEY,getPosition:function(){var a=byId(selectedAttempt);return a&&a.status==='active'?{attempt:a.id,index:a.currentIndex,examId:a.exam.id}:null;},restorePosition:function(id,index){var a=byId(id);if(!a||a.status!=='active'||!Number.isInteger(index)||index<0||index>=a.exam.questions.length)return false;a.currentIndex=index;save(a);route();return true;}};
 }());

@@ -35,10 +35,16 @@ const server=http.createServer((req,res)=>{
    await page.waitForFunction(()=>[...document.querySelectorAll('.original-pdf-viewer:not([inert]) iframe')].every(f=>f.contentWindow.CafaPdfReader?.ready));
    await page.waitForTimeout(400);
    if(i===0){
+    assert.equal(await page.evaluate(()=>window.tinymce?.get().length||0),0,'Closed notes do not initialize the rich editor');
+    await page.locator('#exam-app .stock-notes > summary').click();
+    await page.waitForFunction(()=>window.tinymce?.get().some(e=>e.initialized));
+    await page.frameLocator('#exam-app .tox-edit-area iframe').locator('body').fill('Bewaarde toelichting');
+    await page.locator('#exam-app .stock-notes > summary').click();
     await page.locator('[data-journal-row="0"][data-journal-col="0"]').fill('Netto omzet');
     await page.locator('[data-journal-row="0"][data-journal-col="1"]').fill('1250000');
     await page.locator('[data-exam-action="next"]').click();await page.locator('[data-exam-action="previous"]').click();
     assert.equal(await page.locator('[data-journal-row="0"][data-journal-col="0"]').inputValue(),'Netto omzet');
+    await page.waitForFunction(()=>window.tinymce?.get().some(e=>e.initialized&&e.getContent().includes('Bewaarde toelichting')));
     const frame=page.frameLocator('.original-pdf-left-viewer:not([inert]) iframe');
     await frame.locator('body').evaluate(()=>PDFViewerApplication.page=10);
     const text=frame.locator('.page[data-page-number="10"] .textLayer span[role="presentation"]').filter({hasText:/[A-Za-z]{4}/}).first();
@@ -90,6 +96,18 @@ const server=http.createServer((req,res)=>{
   await fixture.evaluate(()=>qaOldReader.contentWindow.qaPending=false);await open('cafa2-20240930','solutions');
   await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===2);
   assert.equal(await fixture.evaluate(()=>qaOldReader.isConnected),false,'Successful saving makes the older reader releasable');
+  await fixture.clock.install();
+  await fixture.evaluate(()=>{qaIdle=document.querySelector('.original-pdf-left-viewer iframe');qaIdle.contentWindow.qaPending=true;});
+  await fixture.locator('.original-pdf-left-viewer [data-pdf-close="questions"]').evaluate(e=>e.click());
+  await fixture.locator('#exam-original-solutions [data-pdf-close="solutions"]:visible').click();
+  await fixture.clock.fastForward(60001);
+  await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===1);
+  assert.equal(await fixture.evaluate(()=>qaIdle.isConnected),true,'Idle eviction keeps unsaved annotations accessible');
+  await fixture.evaluate(()=>qaIdle.contentWindow.qaPending=false);
+  await fixture.clock.fastForward(60001);
+  await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===0);
+  await open('cafa2-20240930','questions');
+  await fixture.waitForFunction(()=>document.querySelector('.original-pdf-left-viewer iframe')?.contentWindow.CafaPdfReader?.ready);
   await fixture.close();
   console.log(JSON.stringify({home,practice,samples,annotationsPreserved:true,answerPreserved:true,errors}));
  }finally{await browser?.close();server.close();}

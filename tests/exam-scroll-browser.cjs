@@ -14,6 +14,8 @@ const server = http.createServer((request, response) => {
   response.setHeader('Content-Type', ({
     '.html': 'text/html; charset=utf-8',
     '.js': 'application/javascript; charset=utf-8',
+    '.mjs': 'application/javascript; charset=utf-8',
+    '.json': 'application/json; charset=utf-8',
     '.css': 'text/css; charset=utf-8'
   })[path.extname(file)] || 'application/octet-stream');
   fs.createReadStream(file).pipe(response);
@@ -23,7 +25,7 @@ async function scrollState(page) {
   return page.evaluate(() => {
     const panel = document.querySelector('#exam-case-panel');
     const footer = document.querySelector('.exam-running .exam-footer');
-    const question = document.querySelector('.exam-case-layout > .exam-question-body');
+    const question = document.querySelector('.exam-case-layout .exam-question-body');
     const layout = document.querySelector('.exam-case-layout');
     const workHead = document.querySelector('.exam-work-head');
     const returnBar = document.querySelector('#study-returnbar');
@@ -52,14 +54,14 @@ async function scrollState(page) {
 }
 
 function assertDesktopFrame(state, width) {
-  assert.ok(state.workHeadRect.top >= state.headerBottom - 3,
-    `${width}px: vraagkop blijft onder de bovenbalk`);
-  assert.ok(state.layoutRect.top >= state.workHeadRect.bottom - 3,
-    `${width}px: beide kolommen beginnen onder de vraagkop`);
-  assert.ok(state.panelRect.top >= state.layoutRect.top - 3 && state.panelRect.bottom <= state.footerRect.top + 4,
-    `${width}px: casus blijft tussen vraagkop en navigatiebalk`);
+  assert.ok(state.questionRect.top >= state.headerBottom - 3,
+    `${width}px: antwoordkolom blijft onder de bovenbalk`);
+  assert.ok(state.layoutRect.top >= state.headerBottom - 3,
+    `${width}px: beide kolommen beginnen onder de bovenbalk`);
+  assert.ok(state.panelRect.top >= state.layoutRect.top - 3 && state.panelRect.bottom <= state.layoutRect.bottom + 4,
+    `${width}px: casus blijft binnen de eigen kolom`);
   assert.ok(state.questionRect.top >= state.layoutRect.top - 3 && state.questionRect.bottom <= state.footerRect.top + 4,
-    `${width}px: antwoordkolom blijft tussen vraagkop en navigatiebalk`);
+    `${width}px: antwoordkolom blijft binnen de eigen kolom boven de navigatiebalk`);
   assert.ok(state.footerRect.top > state.headerBottom && state.footerRect.bottom <= state.viewportHeight + 4,
     `${width}px: navigatiebalk blijft zichtbaar onder beide kolommen`);
 }
@@ -86,6 +88,11 @@ function assertDesktopFrame(state, width) {
       await page.locator('[data-exam-action="overview"]').click();
       await page.locator('#exam-info-dialog [data-exam-index="6"]').click();
       assert.match(await page.locator('.exam-position').innerText(), /VRAAG\s*7\s*VAN/);
+      // The notes editor is now lazy. Open and enlarge it to exercise right-column
+      // scrolling even when the question itself fits in a tall desktop viewport.
+      await page.locator('#exam-app .stock-notes').evaluateAll(details=>details.forEach(d=>d.open=true));
+      await page.waitForFunction(()=>window.tinymce?.get().some(e=>e.initialized));
+      await page.locator('#exam-app .tox-tinymce').first().evaluate(editor=>editor.style.height='900px');
       const panel = page.locator('#exam-case-panel');
       await panel.waitFor();
       await page.waitForFunction(() => {
@@ -108,7 +115,7 @@ function assertDesktopFrame(state, width) {
         const beforeRight = await scrollState(page);
         await page.mouse.move(initial.questionRect.left + 100, Math.min(500, initial.questionRect.top + 160));
         await page.mouse.wheel(0, 180);
-        await page.waitForFunction(() => document.querySelector('.exam-case-layout > .exam-question-body').scrollTop > 5);
+        await page.waitForFunction(() => document.querySelector('.exam-case-layout .exam-question-body').scrollTop > 5);
         const afterRight = await scrollState(page);
         assert.ok(afterRight.questionY > beforeRight.questionY + 5,
           `${width}px: muiswiel rechts scrolt de vraag- en antwoordkolom`);
@@ -171,7 +178,7 @@ function assertDesktopFrame(state, width) {
       }
 
       if (width > 760) {
-        await page.locator('.exam-case-layout > .exam-question-body').evaluate(element => {
+        await page.locator('.exam-case-layout .exam-question-body').evaluate(element => {
           element.scrollTop = element.scrollHeight;
         });
         const rightEnd = await scrollState(page);
@@ -184,7 +191,7 @@ function assertDesktopFrame(state, width) {
 
       await panel.evaluate(element => { element.scrollTop = 220; });
       const beforeNext = await scrollState(page);
-      const answer = page.locator('#exam-app [contenteditable="true"]').first();
+      const answer = page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');
       await answer.fill(`Proefantwoord bij ${width}px`);
       await page.locator('[data-exam-action="next"]').click();
       assert.match(await page.locator('.exam-position').innerText(), /VRAAG\s*8\s*VAN/);
