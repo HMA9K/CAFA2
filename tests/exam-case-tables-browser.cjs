@@ -8,7 +8,7 @@ const base=process.env.CASE_URL||'http://127.0.0.1:8870/';
    const page=await browser.newPage({viewport:{width,height:900}});
    await page.addInitScript(()=>sessionStorage.setItem('cafa2-assistant-launch-hidden','true'));
    await page.goto(base+'index.html#dashboard');
-   await page.waitForFunction(()=>window.CafaExamDocument&&window.CAFA2_CASE_PRESENTATION);
+   await page.waitForFunction(()=>window.CafaExamDocument&&window.CAFA2_CASE_PRESENTATION&&window.CafaExams);
    const checked=await page.evaluate(width=>{
     const host=document.createElement('div');host.style.cssText='width:'+Math.min(680,width-40)+'px;position:absolute;left:10px;top:10px;background:white;z-index:9999';document.body.append(host);
     let sections=0,tables=0;
