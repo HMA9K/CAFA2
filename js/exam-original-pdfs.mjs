@@ -1,5 +1,5 @@
 import {originalPdfs} from '../data/exam-original-pdfs.mjs';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-editor-frame1';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260928-scale1';
 
 // Original source documents only. No attempt, answer or assistant conversation is written here.
 let left=null,right=null,dock=null,queued=false,currentKey='',rightRequest=0;
@@ -37,7 +37,8 @@ function viewer(id,kind){
 function placeLeft(){
   if(!left)return;
   const rect=left.panel.getBoundingClientRect(),box=left.viewer;
-  for(const [key,value] of Object.entries({left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'})){
+  const scale=window.StudyScale?.get()||1;
+  for(const [key,value] of Object.entries({left:rect.left/scale+'px',top:rect.top/scale+'px',width:rect.width/scale+'px',height:rect.height/scale+'px'})){
     if(box.style[key]!==value)box.style[key]=value;
   }
   box.style.visibility=left.panel.isConnected&&rect.width&&rect.height?'visible':'hidden';

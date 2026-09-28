@@ -3,6 +3,7 @@
   'use strict';
   if (window.StudyScale) return;
   var root = document.documentElement, factor = 1, sheets = new WeakSet();
+  function compactHeader(){root.classList.toggle('study-scale-compact',window.innerWidth/factor<1100);}
   function adaptRules(rules) {
     Array.from(rules || []).forEach(function (rule) {
       if (rule.style) Array.from(rule.style).forEach(function (property) {
@@ -37,6 +38,7 @@
     adaptSheets();
     root.style.setProperty('--study-page-scale', String(factor));
     root.style.zoom = String(factor);
+    compactHeader();
     controls(size, base, min, max);
     window.dispatchEvent(new CustomEvent('study:scale', {detail:{factor:factor}}));
     // Recalculate sticky headers and floating tools in their existing controllers.
@@ -47,5 +49,6 @@
   printStyle.textContent = '@media print{html{zoom:1!important;--study-page-scale:1!important}}';
   document.head.appendChild(printStyle);
   window.StudyScale = {set:set, get:function () { return factor; }};
+  window.addEventListener('resize',compactHeader);
   document.addEventListener('DOMContentLoaded', adaptSheets, {once:true});
 })();
