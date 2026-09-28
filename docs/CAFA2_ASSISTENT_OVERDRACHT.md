@@ -2,6 +2,12 @@
 
 Versie 2026-09-27.2. Repository: HMA9K/CAFA2. Pull-request [#13](https://github.com/HMA9K/CAFA2/pull/13) is op uitdrukkelijk verzoek van de eigenaar samengevoegd naar `main`.
 
+## Assistentcontrole bij relevante wijzigingen, 28 september 2026
+
+De workflow `assistant-handoff.yml` gebruikt een bestandsfilter op de bestaande publicatiebranches. Wijzigingen aan de assistent, bronregistraties, vraaginhoud, casussen, uitwerkingen, oorspronkelijke bronbestanden in Git en relevante gedeelde invoer- en paneelcode starten de controle. Een wijziging aan uitsluitend de rekenmachine, analytics of algemene documentatie doet dat niet. Handmatig starten blijft beschikbaar.
+
+Lokale brondocumenten buiten Git zijn niet zichtbaar voor deze bestandsfilter. De bestaande broncontrole vergelijkt hun inhoud met `assistant/source-snapshot.json`. Een bewust bijgewerkte en vastgelegde bronmomentopname start de workflow via `assistant/**`. De filter bevestigt geen inhoudelijke juistheid, upload of actuele indexering van die documenten. De algemene projectvalidatie blijft afzonderlijk actief. De eerder gevonden fout in de browsercontrole van journaalinvoer is met deze wijziging niet hersteld.
+
 ## Vaste debet- en creditkolommen
 
 assistant/server/journals.mjs leest expliciete bronkolommen en de canonieke juiste MC-journaalpost. Bij boekhoudkundige vragen vraagt handler.mjs om gestructureerde antwoordonderdelen. Voor bronboekingen kiest het model alleen bron- en regelnummers; de server vult vaste rekening-, debet- en creditvelden in. De zeven regels van 2026-04-29, opgave 3, vraag 5B vormen een gerichte regressie. Een bronfragment krijgt geen volledige balansclaim. Bronuitdrukkingen en eventuele aansluitverschillen blijven zichtbaar.
