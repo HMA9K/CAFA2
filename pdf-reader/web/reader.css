@@ -18,3 +18,8 @@
 #toolbarViewer .toolbarButton:disabled::before{opacity:.4}
 #toolbarViewer .toolbarField,#toolbarViewer .dropdownToolbarButton{border-radius:6px}
 #toolbarViewer .toolbarField:focus{border-color:#786191}
+/* Use the document's white surface rather than a second frame around the paper. */
+:root{--body-bg-color:#fff}
+#viewerContainer{background:#fff}
+.pdfViewer{padding:0!important}
+.pdfViewer .page{border:0!important;margin:0 auto 8px!important;box-shadow:none!important}

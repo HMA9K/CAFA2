@@ -27,9 +27,19 @@ const server=http.createServer((req,res)=>{
   await page.locator('#d').press('ArrowLeft');assert.equal(await page.evaluate(()=>document.activeElement.id),'c');
   await page.locator('#c').press('ArrowUp');assert.equal(await page.evaluate(()=>document.activeElement.id),'a');
   await page.locator('#a').evaluate(e=>e.setSelectionRange(2,2));await page.locator('#a').press('ArrowRight');assert.equal(await page.evaluate(()=>document.activeElement.id),'a');
-  const toggle=page.locator('.answer-thousands-toggle input').first();await toggle.uncheck();await page.locator('#a').fill('5000');assert.equal(await page.locator('#a').inputValue(),'5000');
-  await page.locator('#notes').fill('Berekening 7000,25 op 31-12-2024.');assert.equal(await page.locator('#notes').inputValue(),'Berekening 7.000,25 op 31-12-2024.');
+  const toggle=page.locator('.answer-thousands-toggle input[data-answer-thousands]').first();await page.locator('[data-answer-thousands-all]').first().uncheck();await toggle.uncheck();await page.locator('#a').fill('5000');assert.equal(await page.locator('#a').inputValue(),'5000');
+  await page.locator('#notes').fill('Berekening 7000,25 op 31-12-2024.');assert.equal(await page.locator('#notes').inputValue(),'Berekening 7000,25 op 31-12-2024.');
   await page.reload();await toggle.waitFor();assert.equal(await toggle.isChecked(),false);await toggle.check();
+  // A global default applies to future questions; overrides apply to every input in one question.
+  const all=page.locator('[data-answer-thousands-all]').first();await all.check();await toggle.uncheck();
+  assert.equal(await page.locator('[data-answer-thousands]').nth(1).isChecked(),false);
+  await page.goto('http://127.0.0.1:'+server.address().port+'/__input-fixture#q2');await page.reload();await toggle.waitFor();
+  assert.equal(await toggle.isChecked(),false,'Global choice survives a different question');
+  await all.uncheck();await toggle.check();await page.locator('#notes').fill('7000');assert.equal(await page.locator('#notes').inputValue(),'7.000');
+  await page.reload();await toggle.waitFor();assert.equal(await toggle.isChecked(),true);assert.equal(await all.isChecked(),false,'Question override survives reload');
+  await page.goto('http://127.0.0.1:'+server.address().port+'/__input-fixture');await toggle.waitFor();assert.equal(await toggle.isChecked(),false,'Question override does not change global default');
+  await toggle.check();assert.equal(await all.isChecked(),true);await page.goto('http://127.0.0.1:'+server.address().port+'/__input-fixture#q2');await page.reload();await toggle.waitFor();assert.equal(await all.isChecked(),true,'Apply to all clears question overrides');
+
   await page.goto(base+'/index.html#'+(sra?'tentamen':'dashboard'));
   await page.waitForFunction(()=>window.StudyAnswerInput&&(window.CafaExams||window.SRACirrus));
   await page.evaluate(sra=>{
@@ -40,7 +50,7 @@ const server=http.createServer((req,res)=>{
   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
   const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');await body.fill('5000');assert.equal(await body.innerText(),'5.000');
   await page.waitForFunction(sra=>{const app=sra?SRACirrus:CafaExams;return app.getAttempts().find(a=>a.id==='qa-answer-input').answers[sra?'vraag-1':'vraag-3']?.html?.includes('5.000');},sra);
-  const richToggle=page.locator('.cafa-answer-editor + .answer-thousands-toggle input');await richToggle.uncheck();await body.fill('5000');assert.equal(await body.innerText(),'5000');await richToggle.check();assert.equal(await body.innerText(),'5.000');
+  const richToggle=page.locator('.cafa-answer-editor + .answer-thousands-toggle input[data-answer-thousands]');await richToggle.uncheck();await body.fill('5000');assert.equal(await body.innerText(),'5000');await richToggle.check();assert.equal(await body.innerText(),'5.000');
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.setContent('<table><tbody><tr><td>alpha</td><td>beta</td></tr><tr><td>gamma</td><td>delta</td></tr></tbody></table>');e.dispatch('change');});
   const caret=async(i,end)=>page.evaluate(({i,end})=>{const e=tinymce.activeEditor,cell=e.getBody().querySelectorAll('td')[i];e.focus();const r=e.getDoc().createRange();r.selectNodeContents(cell);r.collapse(!end);e.selection.setRng(r);},{i,end});
   const currentCell=()=>page.evaluate(()=>{const n=tinymce.activeEditor.selection.getNode();return n.closest('td')?.textContent;});
@@ -53,11 +63,11 @@ const server=http.createServer((req,res)=>{
    const journalIndex=await page.evaluate(()=>CafaExams.getAttempts().find(a=>a.id==='qa-answer-input').exam.questions.findIndex(q=>CafaJournalTable.supports(q)));
    await page.evaluate(i=>CafaExams.restorePosition('qa-answer-input',i),journalIndex);
    const debit=page.locator('.journal-table input[data-journal-col="1"]').first();await debit.fill('5000');assert.equal(await debit.inputValue(),'5.000');
-   await page.locator('.journal-scroll + .answer-thousands-toggle input').uncheck();await debit.fill('7000');assert.equal(await debit.inputValue(),'7000');
+   await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands-all]').uncheck();await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands]').uncheck();await debit.fill('7000');assert.equal(await debit.inputValue(),'7000');
    await page.evaluate(()=>CafaExams.restorePosition('qa-answer-input',13));await page.locator('.stock-matrix input').first().waitFor();
    const amount=page.locator('.stock-matrix input[data-stock-cell^="r"]').first();await amount.fill('5000');assert.equal(await amount.inputValue(),'5.000');
    await page.locator('.stock-notes').evaluate(e=>e.open=true);await page.locator('.stock-notes .tox-edit-area iframe').waitFor();
-   assert.equal(await page.locator('.exam-question-body .answer-thousands-toggle input').count(),2);
+   assert.equal(await page.locator('.exam-question-body .answer-thousands-toggle input[data-answer-thousands]').count(),2);
    await page.locator('.exam-footer [data-original-pdf="questions"]').click();await page.locator('.original-pdf-left-viewer').waitFor();
    await page.locator('.exam-footer [data-original-pdf="solutions"]').click();await page.locator('#exam-original-solutions[open]').waitFor();
   }
