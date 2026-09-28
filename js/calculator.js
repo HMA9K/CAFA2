@@ -74,7 +74,7 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   const fmt=value=>Number(value.toPrecision(13)).toLocaleString('nl-NL',{maximumFractionDigits:12});
   const raw=value=>String(Number(value.toPrecision(13))).replace('.',',');
   let entries=[], memory=0, lastValue=0, position=null, size=null, expandedSize=null, drag=null, sizing=null, returnFocus=opener;
-  let errorShown=false, storageOK=true, continueFromResult=false;
+  let errorShown=false, storageOK=true, continueFromResult=false, firstOpen=true;
   const baseEvaluate=evaluate; evaluate=value=>baseEvaluate(window.CirrusCalcInput.normalize(value,lastValue,continueFromResult));
   const scale=()=>window.StudyScale?.get()||1;
   const bounds=()=>{const r=panel.getBoundingClientRect(),z=scale();return {left:r.left/z,top:r.top/z,width:r.width/z,height:r.height/z};};
@@ -193,7 +193,7 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
     panel.style.left=position.x+'px';panel.style.top=position.y+'px';panel.style.right='auto';panel.style.bottom='auto';
   }
   function expand(value){panel.classList.toggle('calc-collapsed',!value);body.hidden=!value;find('.calc-window-footer').hidden=!value;minimize.textContent=value?'−':'+';minimize.setAttribute('aria-expanded',String(value));minimize.setAttribute('aria-label',value?'Rekenmachine inklappen':'Rekenmachine uitklappen');place();}
-  function open(from=opener){returnFocus=from;panel.hidden=false;expand(true);opener.setAttribute('aria-expanded','true');place();renderHistory(true);if(window.matchMedia('(pointer: fine)').matches)input.focus({preventScroll:true});else panel.focus({preventScroll:true});}
+  function open(from=opener){returnFocus=from;panel.hidden=false;expand(true);opener.setAttribute('aria-expanded','true');place();renderHistory(true);if(window.matchMedia('(pointer: fine)').matches)input.focus({preventScroll:true});else panel.focus({preventScroll:true});if(firstOpen){input.setSelectionRange(input.value.length,input.value.length);firstOpen=false;}}
   function close(){const hadFocus=panel.contains(document.activeElement);if(drag&&handle.hasPointerCapture(drag.id))handle.releasePointerCapture(drag.id);if(sizing&&resizer.hasPointerCapture(sizing.id))resizer.releasePointerCapture(sizing.id);drag=null;sizing=null;panel.hidden=true;opener.setAttribute('aria-expanded','false');save();if(hadFocus)(returnFocus?.isConnected?returnFocus:opener).focus({preventScroll:true});}
   find('[data-calc-close]').onclick=close;minimize.onclick=()=>expand(body.hidden);
   compact.onclick=()=>{if(!expandedSize){const r=bounds();expandedSize={w:r.width,h:r.height};size={w:240,h:380};compact.setAttribute('aria-label','Rekenmachine normale grootte');compact.title='Normale grootte';}else{size=expandedSize;expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';}expand(true);place();save();};
