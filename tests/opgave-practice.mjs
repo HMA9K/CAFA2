@@ -230,6 +230,33 @@ if (JSDOM) {
     };
   }
 
+  const scoped=environment();
+  try {
+    scoped.route('#welkom/cafa2-20240422');scoped.click('[data-exam-action="start"]');
+    const firstId=scoped.attempts()[0].id;
+    scoped.route('#welkom/cafa2-20250924');scoped.click('[data-exam-action="start"]');
+    const secondId=scoped.attempts()[1].id;
+    scoped.route('#tentamen/'+firstId);scoped.click('[data-exam-action="overview"]');
+    const staleQuestion=scoped.$('#exam-info-dialog [data-exam-index="2"]');
+    scoped.route('#tentamen/'+secondId);
+    assert.equal(scoped.$('#exam-info-dialog'),null,'Een overzicht sluit zodra zijn tentamen wordt verlaten.');
+    staleQuestion.click();
+    assert.equal(scoped.window.CafaExams.getPosition().index,0,'Een oude overzichtsknop mag geen vraag uit een ander tentamen kiezen.');
+    assert.equal(scoped.window.CafaExams.restorePosition(firstId,2),false,'Positieherstel blijft binnen de huidige poging.');
+    scoped.click('[data-exam-action="submit"]');assert.equal(scoped.$('#exam-submit-dialog').open,true);
+    scoped.route('#tentamen/'+firstId);
+    assert.equal(scoped.$('#exam-submit-dialog').open,false,'Het inlevervenster sluit bij wisseling van tentamen.');
+    scoped.click('[data-exam-confirm-submit]');
+    assert.ok(scoped.attempts().every(a=>a.status==='active'),'Een oude bevestiging levert geen andere poging in.');
+    // Between the URL change and hashchange, the previous rendered attempt is stale.
+    scoped.window.history.replaceState(null,'','#tentamen/'+secondId);
+    assert.equal(scoped.window.CafaExams.getPosition(),null);
+    scoped.click('[data-exam-action="next"]');
+    assert.ok(scoped.attempts().every(a=>a.currentIndex===0));
+    assert.deepEqual(scoped.errors,[]);
+    console.log('Tentamennavigatie geslaagd: overzicht, oude knoppen, positieherstel en inlevervenster blijven bij hun eigen poging.');
+  } finally { scoped.close(); }
+
   const ui = environment();
   try {
     assert.ok(ui.$('.exam-table-upcoming a[href="#welkom/opgaven"]'),

@@ -76,7 +76,7 @@
     if (root.CafaTopics) root.CafaTopics.mount();
     return loadScript('js/practice-case-panel.js?v=20260926-columns1');
   }).then(function () {
-    return loadScript('js/exams.js?v=20260928-download1');
+    return loadScript('js/exams.js?v=20260928-navigation1');
   }).then(function () {
     return loadStyle('css/exam-original-pdfs.css?v=20260927-menu2').then(function(){return import('./exam-original-pdfs.mjs?v=20260928-download1');});
   }).then(function () {

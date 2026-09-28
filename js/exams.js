@@ -5,7 +5,7 @@
   if (!Engine || !Editor || !host) throw new Error('De tentamenomgeving kon niet worden geladen.');
   var KEY = 'cafa2-full-exams-v1', store = {version:1, attempts:[]};
   var storageRefs = Object.create(null), splitStorage = false, migrationBlocked = false;
-  var editor = null, saveOK = true, corrupt = false, selectedAttempt = null;
+  var editor = null, saveOK = true, corrupt = false, selectedAttempt = null, renderedHash = null;
   var submitDialog = document.getElementById('exam-submit-dialog');
   var announcedTen = new Set(), catalogErrors = [];
   var reviewTab = 'results', reviewWidth = 38;
@@ -38,6 +38,7 @@
   function running(examId) { return attempts().filter(function(a){return a.status==='active' && (!examId || a.exam.id===examId);}); }
   function documentHtml(exam,kind,html,plain,sourceExamId) { var original=sourceExamId&&catalog.find(function(e){return e.id===sourceExamId;});return window.CafaExamDocument ? window.CafaExamDocument.render(original||exam,kind,html,plain) : '<div class="exam-document">'+rich(html,plain)+'</div>'; }
   function byId(id) { return attempts().find(function (attempt) { return attempt.id === id; }); }
+  function selectedRunner() { return selectedAttempt && location.hash === '#tentamen/'+encodeURIComponent(selectedAttempt) ? byId(selectedAttempt) : null; }
   function examById(id) { return catalog.find(function (exam) { return exam.id === id; }) || (demo && demo.id === id ? demo : null); }
   function loadState(raw) {
     var parsed = JSON.parse(raw);
@@ -335,12 +336,13 @@
   function showModal(title,html,overviewSize) {
     var old=document.getElementById('exam-info-dialog'); if(old)old.remove();
     var dialog=document.createElement('dialog');dialog.id='exam-info-dialog';dialog.className='exam-dialog exam-info-dialog';dialog.setAttribute('aria-labelledby','exam-info-title');
+    var owner=selectedRunner();dialog.dataset.attempt=owner?owner.id:'';
     dialog.innerHTML='<div class="exam-modal-head"><h2 id="exam-info-title">'+esc(title)+'</h2><button type="button" class="btn" data-close-info aria-label="Venster sluiten">Sluiten ×</button></div><div class="exam-modal-body">'+html+'</div>';
     if(overviewSize){dialog.classList.add('compact-overview-dialog');dialog.querySelector('[data-close-info]').textContent='×';dialog.insertAdjacentHTML('beforeend','<div class="compact-overview-footer"><span class="compact-overview-range">1-'+overviewSize+'</span><button type="button" class="btn primary" data-close-info>Sluiten</button></div>');}
     document.body.appendChild(dialog);
     if(window.CafaStockTable)window.CafaStockTable.enhance(dialog);
     dialog.querySelectorAll('[data-close-info]').forEach(function(button){button.addEventListener('click',function(){dialog.close();});});
-    dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=byId(selectedAttempt);if(attempt&&attempt.status==='active'){attempt.currentIndex=Number(target.dataset.examIndex);save(attempt);dialog.close();route();}}});
+    dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();var target=e.target.closest('[data-exam-index]');if(target){var attempt=selectedRunner(),index=Number(target.dataset.examIndex);if(attempt&&attempt.id===dialog.dataset.attempt&&attempt.status==='active'&&Number.isInteger(index)&&index>=0&&index<attempt.exam.questions.length){attempt.currentIndex=index;save(attempt);dialog.close();route();}}});
     dialog.addEventListener('close',function(){dialog.remove();});
     if(dialog.showModal)dialog.showModal();else{dialog.setAttribute('open','');}
   }
@@ -443,6 +445,11 @@
     if(!clock.hidden){var seconds=Engine.remainingSeconds(attempt);var label=attempt.pausedAt!=null?'Gepauzeerd':Engine.formatTime(seconds).replace(/ min$/,' minuten'),title=attempt.untimed?'Oefenmodus:':'Totaal resterende tijd:',valueNode=clock.querySelector('strong'),titleNode=clock.querySelector('.exam-time-badge > span');if(valueNode.textContent!==label)valueNode.textContent=label;if(titleNode.textContent!==title)titleNode.textContent=title;clock.classList.toggle('is-urgent',seconds<=600);if(seconds<=600&&!announcedTen.has(attempt.id)){announcedTen.add(attempt.id);announce('Nog tien minuten of minder. De klok toont nu minuten en seconden.');}}
   }
   function route() {
+    if(renderedHash!==location.hash){
+      var info=document.getElementById('exam-info-dialog');if(info){if(info.open)info.close();info.remove();}
+      if(submitDialog.open)submitDialog.close();
+      renderedHash=location.hash;
+    }
     var oldPanel=host.querySelector('#exam-case-panel');
     if(oldPanel&&oldPanel.dataset.caseKey)caseScrollPositions[oldPanel.dataset.caseKey]=oldPanel.scrollTop;
     dropEditor(); var parts=location.hash.slice(1).split('/'),kind=parts[0],id;
@@ -468,7 +475,7 @@
       var start=host.querySelector('[data-exam-action="start"]'),prior=start&&byId(start.dataset.restartAttempt),exam=start&&(examById(start.dataset.examId)||(prior&&prior.exam));
       if(exam){var extra=host.querySelector('[data-exam-extra]'),untimed=host.querySelector('[data-exam-untimed]').checked,total=exam.durationMinutes+(extra.checked?30:0);extra.disabled=untimed;host.querySelector('[data-exam-total]').textContent=total;host.querySelector('[data-exam-detail-duration]').textContent=untimed?'Zonder tijdslimiet':total+' minuten';}
     }
-    if(e.target.name==='exam-answer'){var a=byId(selectedAttempt);if(a&&a.status==='active'&&a.pausedAt==null&&Engine.remainingSeconds(a)>0){a.answers[a.exam.questions[a.currentIndex].id]={optionId:e.target.value};save(a);}else tick();}
+    if(e.target.name==='exam-answer'){var a=selectedRunner();if(a&&a.status==='active'&&a.pausedAt==null&&Engine.remainingSeconds(a)>0){a.answers[a.exam.questions[a.currentIndex].id]={optionId:e.target.value};save(a);}else tick();}
   });
   host.addEventListener('click',function(e){
     var button=e.target.closest('[data-exam-action]');if(!button)return;var action=button.dataset.examAction;
@@ -498,7 +505,7 @@
     if(action==='review-tab'){reviewTab=button.dataset.tab;review(button.dataset.attempt);return;}
     if(action==='review-question'){go('inzage/'+button.dataset.attempt+'/vraag/'+button.dataset.index);return;}
     if(action==='print-report'){window.print();return;}
-    var attempt=byId(selectedAttempt);if(!attempt||attempt.status!=='active')return;if(Engine.remainingSeconds(attempt)===0){tick();return;}
+    var attempt=selectedRunner();if(!attempt||attempt.status!=='active')return;if(Engine.remainingSeconds(attempt)===0){tick();return;}
     if(action==='resume'){Engine.resumeAttempt(attempt);save(attempt);route();return;}
     if(attempt.pausedAt!=null)return;
     var q=attempt.exam.questions[attempt.currentIndex];
@@ -531,7 +538,7 @@
     if(a.status==='completed'){var openIds=Array.from(host.querySelectorAll('details[open][data-result-id]')).map(function(d){return d.dataset.resultId;});review(location.hash.slice(8));host.querySelectorAll('[data-review-panel="score"]').forEach(function(tab){tab.click();});openIds.forEach(function(id){var row=Array.from(host.querySelectorAll('[data-result-id]')).find(function(d){return d.dataset.resultId===id;});if(row)row.open=true;});}
   });
   document.querySelector('[data-exam-cancel-submit]').addEventListener('click',function(){submitDialog.close();});
-  document.querySelector('[data-exam-confirm-submit]').addEventListener('click',function(){complete(byId(selectedAttempt),'submitted');});
+  document.querySelector('[data-exam-confirm-submit]').addEventListener('click',function(){if(submitDialog.open)complete(selectedRunner(),'submitted');});
   window.addEventListener('hashchange',route);
   window.addEventListener('cafa:practice-change',function(){if(location.hash.indexOf('#dashboard')===0)dashboard(location.hash==='#dashboard/voltooid');});
   document.addEventListener('visibilitychange',tick);
@@ -548,5 +555,5 @@
     var section=sectionFor(a,q);
     return JSON.parse(JSON.stringify({attemptId:a.id,currentIndex:i,exam:{id:a.exam.id,title:a.exam.title,date:a.exam.date,demo:a.exam.demo,practiceKind:a.exam.practiceKind},question:q,section:section?{id:section.id,title:section.title}:null}));
   }
-  window.CafaExams={catalog:catalog,getQuestionContext:getQuestionContext,getAttempt:function(id){var a=byId(id);return a?JSON.parse(JSON.stringify(a)):null;},getAttempts:function(){return JSON.parse(JSON.stringify(attempts()));},storageKey:KEY,getPosition:function(){var a=byId(selectedAttempt);return a&&a.status==='active'?{attempt:a.id,index:a.currentIndex,examId:a.exam.id}:null;},restorePosition:function(id,index){var a=byId(id);if(!a||a.status!=='active'||!Number.isInteger(index)||index<0||index>=a.exam.questions.length)return false;a.currentIndex=index;save(a);route();return true;}};
+  window.CafaExams={catalog:catalog,getQuestionContext:getQuestionContext,getAttempt:function(id){var a=byId(id);return a?JSON.parse(JSON.stringify(a)):null;},getAttempts:function(){return JSON.parse(JSON.stringify(attempts()));},storageKey:KEY,getPosition:function(){var a=selectedRunner();return a&&a.status==='active'?{attempt:a.id,index:a.currentIndex,examId:a.exam.id}:null;},restorePosition:function(id,index){var a=selectedRunner();if(!a||a.id!==id||a.status!=='active'||!Number.isInteger(index)||index<0||index>=a.exam.questions.length)return false;a.currentIndex=index;save(a);route();return true;}};
 }());
