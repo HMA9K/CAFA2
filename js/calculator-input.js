@@ -9,6 +9,8 @@
     if((token.match(/\./g)||[]).length>1)throw Error('Gebruik punten voor duizendtallen en een komma voor decimalen.');
     return token;
   });
-  const continuation=(s,continueFromResult=false)=>/^[*×x÷/:^%]/.test(s.trim())||(continueFromResult&&/^[+\-−]/.test(s.trim()))?'Ans'+s.trim():s;
+  // A leading minus is a unary sign for a new calculation, even after a result.
+  // Subtraction from the previous result remains available as explicit Ans-….
+  const continuation=(s,continueFromResult=false)=>/^[*×x÷/:^%]/.test(s.trim())||(continueFromResult&&/^\+/.test(s.trim()))?'Ans'+s.trim():s;
   window.CirrusCalcInput={numbers,normalize:(s,last,continueFromResult)=>numbers(continuation(String(s),continueFromResult)).replace(/\bAns\b/gi,'('+String(last)+')'),history:(s,last,continueFromResult)=>continuation(String(s),continueFromResult).replace(/\bAns\b/gi,'('+String(last).replace('.',',')+')'),label:continuation};
 })();

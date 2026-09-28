@@ -25,7 +25,7 @@ const server=http.createServer((req,res)=>{
     const type=async text=>{await input.fill(text);await input.press('Enter');};
     const seed=async value=>{await key('C');await type(String(value));};
     await key('C');await type('-2^2');await result(-4);
-    for(const [op,rhs,expected] of [['+',5,-21595],['-',5,-21605],['*',8,-172800],['/',8,-2700],['^',2,466560000],['%',null,-216]]){
+    for(const [op,rhs,expected] of [['+',5,-21595],['*',8,-172800],['/',8,-2700],['^',2,466560000],['%',null,-216]]){
       await seed(-21600);await key(op);assert.equal(await input.inputValue(),'Ans'+op);
       if(rhs!==null)for(const digit of String(rhs))await key(digit);
       await key('=');await result(expected);
@@ -38,9 +38,20 @@ const server=http.createServer((req,res)=>{
     for(const [k,expected] of [['reciprocal',0.125],['sign',-8]]){await seed(8);await key(k);await key('=');await result(expected);}
     await seed(8);await type('sqrt(Ans^2)+ln(exp(Ans))');await result(16);
     await seed(0);await type('-5');await result(-5);await type('+5');await result(0);
-    await seed(100);await type('+5');await result(105);await type('-2');await result(103);
+    await seed(100);await type('+5');await result(105);await type('Ans-2');await result(103);
+    for(const previous of [100,-21600,0]){
+      await seed(previous);await type('-5');await result(-5);
+      assert.equal((await state()).history.at(-1).displayExpression,'-5');
+      await seed(previous);await key('-');assert.equal(await input.inputValue(),'-');await key('5');await key('=');await result(-5);
+      await seed(previous);await type('−5');await result(-5);
+    }
+    const negativeCalculation='-1.600.000+1.350.000+2.850.000-2.000.000';
+    await seed(-350000);await type(negativeCalculation);await result(600000);
+    assert.equal((await state()).history.at(-1).displayExpression,negativeCalculation);
+    await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
+    await type('-2^2');await result(-4);
     // Een historische Ans-regel moet het toenmalige antwoord blijven gebruiken.
-    await seed(10);await type('-2');const entry=(await state()).history.at(-1);
+    await seed(10);await type('Ans-2');const entry=(await state()).history.at(-1);
     await type('200');await panel.locator(`[data-calc-history-id="${entry.id}"] .calc-history-reuse`).click();
     await input.press('Enter');await result(8);
     await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
