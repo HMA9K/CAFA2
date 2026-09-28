@@ -96,6 +96,18 @@ const server=http.createServer((req,res)=>{
   await fixture.evaluate(()=>qaOldReader.contentWindow.qaPending=false);await open('cafa2-20240930','solutions');
   await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===2);
   assert.equal(await fixture.evaluate(()=>qaOldReader.isConnected),false,'Successful saving makes the older reader releasable');
+  await fixture.clock.install();
+  await fixture.evaluate(()=>{qaIdle=document.querySelector('.original-pdf-left-viewer iframe');qaIdle.contentWindow.qaPending=true;});
+  await fixture.locator('.original-pdf-left-viewer [data-pdf-close="questions"]').evaluate(e=>e.click());
+  await fixture.locator('#exam-original-solutions [data-pdf-close="solutions"]:visible').click();
+  await fixture.clock.fastForward(60001);
+  await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===1);
+  assert.equal(await fixture.evaluate(()=>qaIdle.isConnected),true,'Idle eviction keeps unsaved annotations accessible');
+  await fixture.evaluate(()=>qaIdle.contentWindow.qaPending=false);
+  await fixture.clock.fastForward(60001);
+  await fixture.waitForFunction(()=>document.querySelectorAll('.original-pdf-viewer iframe').length===0);
+  await open('cafa2-20240930','questions');
+  await fixture.waitForFunction(()=>document.querySelector('.original-pdf-left-viewer iframe')?.contentWindow.CafaPdfReader?.ready);
   await fixture.close();
   console.log(JSON.stringify({home,practice,samples,annotationsPreserved:true,answerPreserved:true,errors}));
  }finally{await browser?.close();server.close();}

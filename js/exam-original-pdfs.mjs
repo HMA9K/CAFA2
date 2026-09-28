@@ -4,6 +4,24 @@ import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260928-scale
 // Original source documents only. No attempt, answer or assistant conversation is written here.
 let left=null,right=null,dock=null,queued=false,currentKey='',rightRequest=0;
 const viewers=new Map();
+const idleReaders=new Map(),IDLE_READER_MS=60000;
+function forgetViewer(key,box){clearTimeout(idleReaders.get(key));idleReaders.delete(key);box.remove();viewers.delete(key);}
+function scheduleIdleReaders(){
+  for(const [key,box] of viewers){
+    if(activeViewer(box)){clearTimeout(idleReaders.get(key));idleReaders.delete(key);continue;}
+    if(idleReaders.has(key))continue;
+    idleReaders.set(key,setTimeout(async()=>{
+      idleReaders.delete(key);
+      if(activeViewer(box)||viewers.get(key)!==box)return;
+      try{const reader=box.querySelector('iframe')?.contentWindow?.CafaPdfReader;
+        if(!reader?.ready){scheduleIdleReaders();return;}
+        await reader.flush();
+        if(!reader.pending&&!activeViewer(box)&&viewers.get(key)===box)forgetViewer(key,box);
+      }catch{}
+      scheduleIdleReaders();
+    },IDLE_READER_MS));
+  }
+}
 let pruning=false;
 const activeViewer=box=>box===left?.viewer||(right?.open&&box.parentElement===right&&!box.inert);
 async function pruneViewers(){
@@ -23,9 +41,9 @@ async function pruneViewers(){
       }catch{failed.add(key);continue;}
       // The user may have reopened this document while saving was in progress.
       if(activeViewer(box)||viewers.get(key)!==box)continue;
-      box.remove();viewers.delete(key);
+      forgetViewer(key,box);
     }
-  }finally{pruning=false;}
+  }finally{pruning=false;scheduleIdleReaders();}
 }
 const htmlEscape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function context(){
@@ -52,6 +70,7 @@ function actions(id){
 }
 function viewer(id,kind){
   const key=id+':'+kind;if(viewers.has(key)){
+    clearTimeout(idleReaders.get(key));idleReaders.delete(key);
     const box=viewers.get(key);viewers.delete(key);viewers.set(key,box);return box;
   }
   const source=originalPdfs[id],file=source[kind],label=kind==='questions'?'Origineel tentamen':'Officiële uitwerking';
@@ -78,9 +97,9 @@ function closeLeft(){
   left.panel.classList.remove('original-pdf-left');
   if(left.wrapper){let content=left.primary;while(content.parentElement&&content.parentElement!==left.wrapper)content=content.parentElement;
     left.wrapper.before(content);left.wrapper.remove();}
-  left=null;updatePressed();
+  left=null;updatePressed();scheduleIdleReaders();
 }
-function closeRight(){rightRequest++;if(right?.open)dock.hide();document.body.classList.remove('original-pdf-open');}
+function closeRight(){rightRequest++;if(right?.open)dock.hide();document.body.classList.remove('original-pdf-open');scheduleIdleReaders();}
 function updatePressed(){
   document.querySelectorAll('[data-original-pdf]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.originalPdf==='questions'?left?.id===b.dataset.pdfExam:right?.open&&right.dataset.pdfExam===b.dataset.pdfExam)));
 }
@@ -111,7 +130,7 @@ async function openRight(id,opener){
   if(!right){
     right=document.createElement('dialog');right.id='exam-original-solutions';right.className='study-assistant original-pdf-right';right.setAttribute('aria-label','Officiële uitwerking PDF');document.body.append(right);
     dock=createAssistantPanel(right,{fallbackSelector:'.exam-dashboard-content,.exam-paper',preserveContent:true});
-    right.addEventListener('close',()=>{if(right.open)return;document.body.classList.remove('original-pdf-open');updatePressed();});
+    right.addEventListener('close',()=>{if(right.open)return;document.body.classList.remove('original-pdf-open');updatePressed();scheduleIdleReaders();});
   }
   const assistant=document.getElementById('study-assistant'),key=context().key;
   if(assistant?.open)await new Promise(resolve=>{assistant.addEventListener('close',resolve,{once:true});assistant.close();});
