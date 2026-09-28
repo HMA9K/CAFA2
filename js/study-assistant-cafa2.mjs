@@ -34,7 +34,7 @@ export function createCafa2Adapter(win=window) {
       defaultReview:!!archived || !!study.finished || !!a.checked || checked.has(key(ref,attempt)),studentAnswer};
   }
   function exam(attemptId,index) {
-    const a=win.CafaExams?.getAttempts().find(x=>x.id===attemptId);
+    const api=win.CafaExams,a=api?.getAttempt?api.getAttempt(attemptId):api?.getAttempts().find(x=>x.id===attemptId);
     if(!a)return null;const q=a.exam.questions[index ?? a.currentIndex];if(!q)return null;
     // An opgave practice attempt has compound IDs for its saved answers. Its model
     // stays in the original exam, where the server catalog records are keyed.
@@ -74,7 +74,7 @@ export function createCafa2Adapter(win=window) {
     if(parts[0]==='tentamen' && dialog?.querySelector('#exam-info-title')?.textContent?.startsWith('Antwoord controleren'))
       attach(dialog.querySelector('.exam-modal-body')||dialog,()=>exam(parts[1]),open);
     if(parts[0]==='inzage'&&parts.length===2){
-      const a=win.CafaExams?.getAttempts().find(x=>x.id===parts[1]);if(!a)return;
+      const api=win.CafaExams,a=api?.getAttempt?api.getAttempt(parts[1]):api?.getAttempts().find(x=>x.id===parts[1]);if(!a)return;
       for(const el of host.querySelectorAll('[data-result-id]')) {
         const index=a.exam.questions.findIndex(q=>q.id===el.dataset.resultId);if(index<0)continue;
         attach(el.querySelector('.result-expanded')||el,()=>exam(a.id,index),open);

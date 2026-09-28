@@ -50,6 +50,11 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
  await page.reload();await page.waitForFunction(()=>window.CafaPdfReader?.ready);console.log('reader ready');await page.waitForFunction(()=>PDFViewerApplication.isInitialViewSet);await page.waitForTimeout(300);
  await page.waitForFunction(v=>PDFViewerApplication.page===v.page,view);
  assert.equal(await page.locator('#cafa-content-width').getAttribute('aria-pressed'),'true','Reopening defaults to content width after manual zoom');
+ // With a smaller page buffer, navigate to the annotated page before selecting
+ // its editor. Off-screen annotation editor elements may have been released.
+ await page.evaluate(()=>PDFViewerApplication.page=2);
+ await page.locator('.page[data-page-number="2"]').scrollIntoViewIfNeeded();
+ await page.waitForFunction(()=>PDFViewerApplication.pdfViewer.getPageView(1).renderingState===3);
  await page.waitForFunction(()=>document.getElementById('scaleSelect').value==='content-width'&&PDFViewerApplication.pdfViewer.getPageView(1).annotationEditorLayer?.div?.isConnected);
  const annotations=await page.evaluate(async()=>Array.from(await (await PDFViewerApplication.pdfDocument.getPage(2)).getAnnotations()).filter(a=>a.subtype==='Highlight').map(a=>({color:Array.from(a.color),id:a.id})));
  assert.equal(annotations.length,1);assert.deepEqual(annotations[0].color,[83,255,188]);

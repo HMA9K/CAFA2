@@ -19794,7 +19794,8 @@ class PDFPageView extends BasePDFPageView {
 
 
 
-const DEFAULT_CACHE_SIZE = 10;
+// Keep a few pages warm; annotations live in annotationStorage, independently.
+const DEFAULT_CACHE_SIZE = 3;
 const PagesCountLimit = {
   FORCE_SCROLL_MODE_PAGE: 10000,
   FORCE_LAZY_PAGE_INIT: 5000,

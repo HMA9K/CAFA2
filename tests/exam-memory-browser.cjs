@@ -35,10 +35,16 @@ const server=http.createServer((req,res)=>{
    await page.waitForFunction(()=>[...document.querySelectorAll('.original-pdf-viewer:not([inert]) iframe')].every(f=>f.contentWindow.CafaPdfReader?.ready));
    await page.waitForTimeout(400);
    if(i===0){
+    assert.equal(await page.evaluate(()=>window.tinymce?.get().length||0),0,'Closed notes do not initialize the rich editor');
+    await page.locator('#exam-app .stock-notes > summary').click();
+    await page.waitForFunction(()=>window.tinymce?.get().some(e=>e.initialized));
+    await page.frameLocator('#exam-app .tox-edit-area iframe').locator('body').fill('Bewaarde toelichting');
+    await page.locator('#exam-app .stock-notes > summary').click();
     await page.locator('[data-journal-row="0"][data-journal-col="0"]').fill('Netto omzet');
     await page.locator('[data-journal-row="0"][data-journal-col="1"]').fill('1250000');
     await page.locator('[data-exam-action="next"]').click();await page.locator('[data-exam-action="previous"]').click();
     assert.equal(await page.locator('[data-journal-row="0"][data-journal-col="0"]').inputValue(),'Netto omzet');
+    await page.waitForFunction(()=>window.tinymce?.get().some(e=>e.initialized&&e.getContent().includes('Bewaarde toelichting')));
     const frame=page.frameLocator('.original-pdf-left-viewer:not([inert]) iframe');
     await frame.locator('body').evaluate(()=>PDFViewerApplication.page=10);
     const text=frame.locator('.page[data-page-number="10"] .textLayer span[role="presentation"]').filter({hasText:/[A-Za-z]{4}/}).first();

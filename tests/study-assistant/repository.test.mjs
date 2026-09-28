@@ -12,7 +12,7 @@ const files=[...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["']/gi)].map(m=>
 for(const f of files)new vm.Script(fs.readFileSync(f,'utf8')).runInContext(box,{timeout:5000});
 const catalog=buildCatalog(win),allExams=[...win.CAFA2_EXAMS,...(win.CAFA2_EXAM_DEMO?[win.CAFA2_EXAM_DEMO]:[])];
 win.CafaPractice={getModule:()=>({attempt:1,exam:true}),getAnswer:()=>({text:'Eigen uitwerking',choice:1})};
-let attempts=[];win.CafaExams={getAttempts:()=>attempts};
+let attempts=[];win.CafaExams={getAttempt:id=>attempts.find(a=>a.id===id),getAttempts:()=>{throw new Error('Gerichte assistentlezing hoort niet alle pogingen te kopiëren');}};
 const adapter=createCafa2Adapter(win);
 test('Every real practice record matches its server revision and offers answer help',()=>{
   let count=0;for(const [code,bank] of Object.entries(win.CAFA2_DATA.modules))for(const q of bank.questions){

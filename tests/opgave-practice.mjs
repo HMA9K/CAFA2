@@ -180,7 +180,7 @@ if (JSDOM) {
     'data/exam-20250924.js', 'data/exam-20260429.js', 'js/opgave-practice.js', 'js/exams.js'
   ];
 
-  function environment({ hash = '#dashboard', saved } = {}) {
+  function environment({ hash = '#dashboard', saved, snapshots = {}, failWrite } = {}) {
     const errors = [], virtualConsole = new VirtualConsole();
     virtualConsole.on('jsdomError', error => errors.push(error));
     const dom = new JSDOM('<!doctype html><html lang="nl"><body><header><div class="top-controls"></div></header><main>' +
@@ -199,7 +199,9 @@ if (JSDOM) {
       this.dispatchEvent(new window.Event('close'));
     };
     window.CafaPractice = { getCompleted: () => [] };
+    for(const [key,value] of Object.entries(snapshots))window.localStorage.setItem(key,value);
     if (saved) window.localStorage.setItem(storageKey, saved);
+    if(failWrite){const write=window.Storage.prototype.setItem;window.Storage.prototype.setItem=function(key,value){if(failWrite(key,value))throw new window.DOMException('Storage full','QuotaExceededError');return write.call(this,key,value);};}
     for (const file of scripts) window.eval(read(file));
     const $ = selector => document.querySelector(selector);
     function route(value) {
@@ -223,6 +225,7 @@ if (JSDOM) {
       window, document, $, route, click, change, errors,
       attempts: () => plain(window.CafaExams.getAttempts()),
       saved: () => window.localStorage.getItem(storageKey),
+      snapshots: () => Object.fromEntries(Object.keys(window.localStorage).filter(key=>key.startsWith(storageKey+':attempt:')).map(key=>[key,window.localStorage.getItem(key)])),
       close: () => window.close()
     };
   }
@@ -293,7 +296,7 @@ if (JSDOM) {
     answer.dispatchEvent(new ui.window.InputEvent('input', { bubbles: true, inputType: 'insertText' }));
     assert.match(ui.attempts()[0].answers[attempt.exam.questions[7].id].html, /Bewaard antwoord/);
     const saved = ui.saved();
-    const reopened = environment({ hash: '#tentamen/' + attempt.id, saved });
+    const reopened = environment({ hash: '#tentamen/' + attempt.id, saved, snapshots:ui.snapshots() });
     try {
       assert.equal(reopened.attempts()[0].currentIndex, 7);
       assert.match(reopened.$('#exam-app [contenteditable="true"]').innerHTML, /Bewaard antwoord/);
@@ -370,6 +373,41 @@ if (JSDOM) {
   const other = plain(engine.createAttempt(exams.find(e => e.id === 'cafa2-20240930'), { now, id: 'other-attempt', untimed: true }));
   const done = plain(engine.finishAttempt(engine.createAttempt(firstExam, { now, id: 'completed-attempt' }), { now: now + 1000 }));
   const examSaved = JSON.stringify({ version: 1, attempts: [old, other, done] });
+  const storageUi=environment({saved:examSaved,hash:'#tentamen/restart-original'});
+  try{
+    assert.equal(JSON.parse(storageUi.saved()).version,2);
+    assert.deepEqual(storageUi.attempts(),[old,other,done],'Migratie behoudt volledige historische inhoud en antwoorden.');
+    const context=storageUi.window.CafaExams.getQuestionContext(old.id);
+    context.question.prompt='Gewijzigde testkopie';context.exam.title='Gewijzigde titel';
+    const single=storageUi.window.CafaExams.getAttempt(old.id);single.answers[oldQuestion].html='Gewijzigde kopie';
+    assert.deepEqual(storageUi.attempts(),[old,other,done],'Gerichte leesfuncties geven zelfstandige kopieën.');
+    const panel=storageUi.$('#exam-case-panel'),before=JSON.parse(storageUi.saved()),snapshots=storageUi.snapshots();
+    storageUi.click('[data-exam-action="next"]');
+    assert.equal(storageUi.$('#exam-case-panel'),panel,'Vraagwisseling binnen dezelfde casus behoudt het bestaande paneel.');
+    const after=JSON.parse(storageUi.saved());
+    assert.notEqual(after.attempts[0].key,before.attempts[0].key);
+    assert.deepEqual(after.attempts.slice(1),before.attempts.slice(1),'Alleen de gewijzigde poging krijgt een nieuw opslagrecord.');
+    for(const ref of after.attempts.slice(1))assert.equal(storageUi.snapshots()[ref.key],snapshots[ref.key]);
+    assert.equal(Object.keys(storageUi.snapshots()).length,3,'Verouderde opslagrecords worden verwijderd.');
+    const durable=storageUi.saved(),durableSnapshots=storageUi.snapshots(),write=storageUi.window.Storage.prototype.setItem;
+    storageUi.window.Storage.prototype.setItem=function(key,value){if(key===storageKey)throw new Error('Manifest unavailable');return write.call(this,key,value);};
+    storageUi.click('[data-exam-action="mark"]');
+    assert.equal(storageUi.saved(),durable);assert.deepEqual(storageUi.snapshots(),durableSnapshots,'Mislukte publicatie van verwijzingen laat de vorige records intact.');
+    storageUi.window.Storage.prototype.setItem=write;
+    const reload=environment({saved:durable,snapshots:durableSnapshots,hash:'#tentamen/restart-original'});
+    try{assert.equal(reload.attempts()[0].currentIndex,old.currentIndex+1);assert.deepEqual(reload.attempts()[0].answers,old.answers);}finally{reload.close();}
+    const missing={...durableSnapshots};delete missing[JSON.parse(durable).attempts[0].key];
+    const broken=environment({saved:durable,snapshots:missing});
+    try{assert.equal(broken.saved(),durable,'Ontbrekend record overschrijft de opgeslagen manifest niet.');assert.deepEqual(broken.attempts(),[]);}finally{broken.close();}
+  }finally{storageUi.close();}
+  const fallback=environment({saved:examSaved,hash:'#tentamen/restart-original',failWrite:key=>key.startsWith(storageKey+':attempt:')});
+  try{
+    assert.equal(JSON.parse(fallback.saved()).version,1,'Bij onvoldoende migratieruimte blijft de oude opslag bruikbaar.');
+    assert.deepEqual(fallback.attempts(),[old,other,done]);fallback.click('[data-exam-action="next"]');
+    const reopened=environment({saved:fallback.saved(),hash:'#tentamen/restart-original'});
+    try{assert.equal(reopened.attempts()[0].currentIndex,old.currentIndex+1);assert.deepEqual(reopened.attempts()[0].answers,old.answers);}finally{reopened.close();}
+  }finally{fallback.close();}
+  console.log('Opslag/context geslaagd: migratie, gerichte kopieën, casusbehoud, afzonderlijke writes, herladen, rollback, ontbrekend record en volle opslag.');
   const restartUi = environment({ saved: examSaved });
   try {
     const before = JSON.stringify(restartUi.attempts());
@@ -378,7 +416,7 @@ if (JSDOM) {
     assert.equal(JSON.stringify(restartUi.attempts()), before, 'Introductie verandert geen antwoorden, status, positie of klok.');
     assert.ok(restartUi.$('[data-exam-extra]')); assert.ok(restartUi.$('[data-exam-untimed]'));
     assert.equal(restartUi.window.CafaExams.getPosition(), null);
-    const introReload = environment({ saved: restartUi.saved(), hash: restartUi.window.location.hash });
+    const introReload = environment({ saved: restartUi.saved(), snapshots:restartUi.snapshots(), hash: restartUi.window.location.hash });
     try {
       assert.equal(introReload.attempts().length, 3);assert.ok(introReload.$('[data-exam-extra]'));
       introReload.change('[data-exam-extra]', true);
@@ -409,7 +447,7 @@ if (JSDOM) {
   const resetUi = environment({ saved: examSaved, hash: '#dashboard/voltooid' });
   try {
     resetUi.window.localStorage.setItem('mc-preserved', 'Bewaarde MC-voortgang');
-    const before = resetUi.saved(); resetUi.window.confirm = () => false;
+    const before = resetUi.saved(),beforeSnapshots=resetUi.snapshots(); resetUi.window.confirm = () => false;
     resetUi.click('[data-exam-action="reset-exams"]');assert.equal(resetUi.saved(), before);assert.equal(resetUi.attempts().length, 3);
     resetUi.window.confirm = () => true;
     const nativeSet = resetUi.window.Storage.prototype.setItem;
@@ -419,9 +457,9 @@ if (JSDOM) {
     resetUi.click('[data-exam-action="reset-exams"]');assert.deepEqual(resetUi.attempts(), []);
     assert.equal(resetUi.window.localStorage.getItem('mc-preserved'), 'Bewaarde MC-voortgang');
     assert.equal(resetUi.window.location.hash, '#dashboard');assert.equal(resetUi.$('[data-exam-action="reset-exams"]').disabled, true);
-    const resetReload = environment({ saved: resetUi.saved() });try { assert.deepEqual(resetReload.attempts(), []); } finally { resetReload.close(); }
-    const otherTab = environment({ saved: before, hash: '#tentamen/restart-original' });
-    try { otherTab.window.dispatchEvent(new otherTab.window.StorageEvent('storage', { key: storageKey, newValue: resetUi.saved() }));assert.deepEqual(otherTab.attempts(), []);assert.equal(otherTab.window.CafaExams.getPosition(), null); } finally { otherTab.close(); }
+    const resetReload = environment({ saved: resetUi.saved(), snapshots:resetUi.snapshots() });try { assert.deepEqual(resetReload.attempts(), []); } finally { resetReload.close(); }
+    const otherTab = environment({ saved: before, snapshots:beforeSnapshots, hash: '#tentamen/restart-original' });
+    try { otherTab.window.localStorage.setItem(storageKey,resetUi.saved());otherTab.window.dispatchEvent(new otherTab.window.StorageEvent('storage', { key: storageKey, newValue: resetUi.saved() }));assert.deepEqual(otherTab.attempts(), []);assert.equal(otherTab.window.CafaExams.getPosition(), null); } finally { otherTab.close(); }
     assert.deepEqual(resetUi.errors, []);
   } finally { resetUi.close(); }
   const corruptUi = environment({ saved: '{invalid' });

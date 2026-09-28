@@ -30,7 +30,16 @@
     var fallback = original.mount(container, options);
     if (options.readOnly) return fallback;
     var target = container.querySelector('.cae-content'), wrapper = target.closest('.cafa-answer-editor');
-    var editor = null, disposed = false, initialized = false, last = fallback.getHTML(), observer, widthObserver, applyingBounds = false, previousWidth = 0, initialization = 0;
+    var editor = null, disposed = false, initialized = false, starting = false, last = fallback.getHTML(), observer, widthObserver, applyingBounds = false, previousWidth = 0, initialization = 0;
+    var visibilityObserver=window.ResizeObserver?new ResizeObserver(ensureVisible):null;
+    var details=[];for(var parent=container.parentElement;parent;parent=parent.parentElement)if(parent.matches('details'))details.push(parent);
+    details.forEach(function(detail){detail.addEventListener('toggle',ensureVisible);});
+    function ensureVisible(){
+      if(disposed||initialized||starting||!target.isConnected||!container.getClientRects().length||details.some(function(d){return !d.open;}))return;
+      starting=true;var generation=initialization;
+      load().then(function(tiny){if(disposed||generation!==initialization||details.some(function(d){return !d.open;}))return;return initialize(tiny);}).catch(unavailable).finally(function(){starting=false;if(generation!==initialization)ensureVisible();});
+    }
+    if(visibilityObserver)visibilityObserver.observe(container);
     var sizeKey = "learning-answer-editor-size-v2:" + location.hash;
     var widthRatio = 1;
     function sync() {
@@ -121,15 +130,15 @@
         initialized = false; wrapper.classList.remove('has-tinymce');
         if (editor) editor.remove(); editor = null;
       },
-      resume: function () { if (!disposed) load().then(initialize).catch(unavailable); }
+      resume: function () { if (!disposed) ensureVisible(); }
     };
     instances.set(wrapper, record);
-    load().then(initialize).catch(unavailable);
+    ensureVisible();
     return {
       getHTML: function () { return initialized && editor ? original.sanitize(editor.getContent()) : fallback.getHTML(); },
       setHTML: function (value) { last = original.sanitize(value); fallback.setHTML(last); if (initialized && editor) editor.setContent(last); },
       focus: function () { if (initialized && editor) editor.focus(); else fallback.focus(); },
-      destroy: function () { if (disposed) return; sync(); disposed = true; instances.delete(wrapper); if (observer) observer.disconnect(); if (widthObserver) widthObserver.disconnect(); window.removeEventListener('resize', resizeBounds); if (editor) editor.remove(); fallback.destroy(); }
+      destroy: function () { if (disposed) return; sync(); disposed = true; instances.delete(wrapper); if(visibilityObserver)visibilityObserver.disconnect();details.forEach(function(detail){detail.removeEventListener('toggle',ensureVisible);});if (observer) observer.disconnect(); if (widthObserver) widthObserver.disconnect(); window.removeEventListener('resize', resizeBounds); if (editor) editor.remove(); fallback.destroy(); }
     };
   }
   window.CafaAnswerEditor = {mount: mount, sanitize: original.sanitize, moveNode: moveNode};

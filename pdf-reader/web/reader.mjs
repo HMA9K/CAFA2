@@ -1,4 +1,4 @@
-import {PDFViewerApplication as app,PDFViewerApplicationOptions as options} from './viewer.mjs';
+import {PDFViewerApplication as app,PDFViewerApplicationOptions as options} from './viewer.mjs?v=20260928-cache3';
 import {AnnotationEditorType,AnnotationEditorParamsType} from '../build/pdf.mjs';
 import {originalPdfs} from '../../data/exam-original-pdfs.mjs';
 import {installContentView} from './content-view.mjs?v=20260928-navigation1';

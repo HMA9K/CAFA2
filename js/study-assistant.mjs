@@ -1,5 +1,5 @@
 import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
-import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-activate1';
+import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260928-efficient1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
 import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-activate1';
 import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260928-scale1';

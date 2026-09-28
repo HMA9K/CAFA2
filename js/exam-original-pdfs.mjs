@@ -34,8 +34,8 @@ function context(){
   // A practice route briefly has no question while its screen is being loaded.
   if(/^#(?:kap|val|nvw|hk)-\d+$/.test(location.hash))return {loading:true};
   const position=window.CafaExams?.getPosition();
-  if(position){const a=CafaExams.getAttempts().find(a=>a.id===position.attempt),q=a?.exam.questions[position.index];
-    return {id:q?.sourceExamId||a?.exam.id,host:document.getElementById('exam-app'),key:position.attempt+':'+position.index};}
+  if(position){const ctx=CafaExams.getQuestionContext(position.attempt,position.index);
+    return {id:ctx?.question.sourceExamId||ctx?.exam.id,host:document.getElementById('exam-app'),key:position.attempt+':'+position.index};}
   const match=location.hash.match(/^#welkom\/([^/]+)/);
   return {id:match?.[1],host:document.getElementById('exam-app'),key:location.hash};
 }
@@ -142,7 +142,7 @@ function mount(){
   if(location.hash.startsWith('#welkom/')&&welcome&&originalPdfs[ctx.id]&&!welcome.querySelector('.original-pdf-actions'))welcome.append(actions(ctx.id));
   document.querySelectorAll('#exam-app a.exam-name').forEach(link=>{
     const href=link.getAttribute('href'),m=href?.match(/^#(welkom|tentamen|inzage)\/([^/]+)/);if(!m)return;
-    const id=m[1]==='welkom'?m[2]:CafaExams.getAttempts().find(a=>a.id===m[2])?.exam.id;
+    const id=m[1]==='welkom'?m[2]:CafaExams.getQuestionContext(m[2])?.exam.id;
     if(originalPdfs[id]&&!link.parentElement.querySelector('.original-pdf-actions'))link.parentElement.append(actions(id));
   });
   if(document.querySelector('[data-original-pdf]:disabled')&&!document.getElementById('original-pdf-missing')){
