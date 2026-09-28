@@ -16,10 +16,19 @@ export function installPageLayout(app,onLayoutChange){
       apply();
     });
   }
+  const navigation=document.createElement('div');navigation.className='cafa-page-nav';navigation.setAttribute('role','group');navigation.setAttribute('aria-label','Bladeren door PDF-pagina’s');
+  const previous=document.createElement('button'),next=document.createElement('button');
+  for(const [button,id,label,text,step] of [[previous,'cafa-previous-page','Vorige pagina','‹',-1],[next,'cafa-next-page','Volgende pagina','›',1]]){
+    button.type='button';button.id=id;button.title=label;button.setAttribute('aria-label',label);button.textContent=text;
+    button.addEventListener('click',()=>{app.page=Math.min(viewer.pagesCount,Math.max(1,viewer.currentPageNumber+step));});navigation.append(button);
+  }
+  toolbar.append(navigation);
+  function updateNavigation(){previous.disabled=viewer.currentPageNumber<=1;next.disabled=!viewer.pagesCount||viewer.currentPageNumber>=viewer.pagesCount;}
   function apply(){
     viewer.viewer.classList.toggle('showPageEnds',layout.pageEnds);
     viewer.viewer.classList.toggle('singlePage',layout.singlePage);
     for(const name of Object.keys(controls))controls[name].setAttribute('aria-pressed',String(layout[name]));
+    navigation.hidden=!layout.singlePage;updateNavigation();
     if(viewer.pagesCount){
       const {ScrollMode,SpreadMode}=window.PDFViewerApplicationConstants;
       const mode=layout.singlePage?ScrollMode.PAGE:ScrollMode.VERTICAL,changed=viewer.scrollMode!==mode;
@@ -33,5 +42,6 @@ export function installPageLayout(app,onLayoutChange){
   }).observe(toolbar);
   app.eventBus.on('pagesinit',apply);
   app.eventBus.on('documentinit',apply);
+  app.eventBus.on('pagechanging',updateNavigation);
   apply();
 }
