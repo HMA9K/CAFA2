@@ -9,27 +9,34 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   page.setDefaultTimeout(120000);page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
   await page.goto(base+'index.html#dashboard',{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>window.CafaExams&&document.querySelector('[data-original-pdf]'));
+  await page.waitForFunction(()=>window.CafaExams&&document.querySelector('[data-pdf-download]'));
   const button=(kind,id='cafa2-20240422')=>page.locator('[data-original-pdf="'+kind+'"][data-pdf-exam="'+id+'"]:visible');
   const resumeAssistant=async()=>{await page.locator('[data-pdf-assistant]').click();
    await page.locator('#study-assistant[open]').waitFor();assert.equal(await page.locator('#study-assistant-intro[open]').count(),0);};
-  assert.equal(await page.locator('[data-original-pdf]').count(),22);
-  assert.equal(await button('questions','cafa2-20210419').isDisabled(),false);
-  console.log('Dashboard loaded'); const initial=await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey));
-  await button('questions').click();await page.locator('.original-pdf-left-viewer iframe').waitFor();
-  await button('solutions').click();await page.locator('#exam-original-solutions[open] iframe').waitFor();await page.waitForFunction(()=>[...document.querySelectorAll('.original-pdf-viewer iframe')].every(f=>f.contentWindow.CafaPdfReader?.ready));
-  assert.equal(await page.locator('.study-assistant-launch').isVisible(),false);
+  assert.equal(await page.locator('[data-pdf-download]').count(),22);
+  const initial=await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey));
+  for(const kind of ['questions','solutions']){
+   const link=page.locator('[data-pdf-download="'+kind+'"][data-pdf-exam="cafa2-20240422"]');
+   const [download]=await Promise.all([page.waitForEvent('download'),link.click()]);
+   assert.equal(await download.failure(),null);
+   assert.equal(download.suggestedFilename(),'CAFA2-2024-04-22-'+(kind==='questions'?'tentamen':'uitwerking')+'.pdf');
+   assert.equal(require('node:fs').readFileSync(await download.path()).subarray(0,5).toString(),'%PDF-');
+  }
+  assert.equal(await page.locator('.original-pdf-viewer iframe').count(),0,'Dashboard downloads do not initialize PDF readers');
   assert.equal(await page.evaluate(()=>localStorage.getItem(CafaExams.storageKey)),initial);
-  await page.locator('[data-pdf-close="questions"]').click();assert.equal(await page.locator('#exam-original-solutions[open]').count(),1);
-  await page.locator('[data-pdf-close="solutions"]').click();
-  assert.equal(await page.locator('body.original-pdf-open').count(),0);
-  assert.equal(await page.locator('.original-pdf-dashboard-layout').count(),0);
-  console.log('Dashboard previews passed'); await page.evaluate(()=>{
+  pdfLoads.clear();
+  console.log('Dashboard downloads passed');await page.evaluate(()=>{
    const exam=CAFA2_EXAMS.find(e=>e.id==='cafa2-20240422'),a=CafaExamEngine.createAttempt(exam,{id:'qa-original-pdfs',untimed:true});
    const value=JSON.stringify({version:1,attempts:[a]});localStorage.setItem(CafaExams.storageKey,value);
-   dispatchEvent(new StorageEvent('storage',{key:CafaExams.storageKey,newValue:value}));location.hash='tentamen/'+a.id;
+   dispatchEvent(new StorageEvent('storage',{key:CafaExams.storageKey,newValue:value}));
   });
+  await page.waitForFunction(()=>[...document.querySelectorAll('a.exam-name')].some(e=>e.getAttribute('href')==='#tentamen/qa-original-pdfs'));
+  const row=page.locator('tr').filter({has:page.locator('a.exam-name[href="#tentamen/qa-original-pdfs"]')});
+  assert.equal(await page.locator('a.exam-name').filter({hasText:'CAFA2 · 22-04-2024'}).count(),1);
+  assert.equal(await row.locator('a.btn[href="#welkom/cafa2-20240422"]').innerText(),'Nieuwe poging');
+  await row.locator('a.btn.primary').click();
   await page.locator('.exam-footer .actions [data-original-pdf]').first().waitFor();
+  if(process.env.PDF_DASHBOARD_ONLY){assert.deepEqual(errors,[]);console.log('Downloads, one exam row, new attempt and resume passed.');return;}
   const editor=page.locator('#exam-app [contenteditable="true"]').first();await editor.fill('Controleantwoord blijft bewaard.');
   await page.locator('[data-exam-action="mark"]').click();
   await page.waitForTimeout(600);
