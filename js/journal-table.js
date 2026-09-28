@@ -31,6 +31,23 @@
     });
   }
   function render(rows,readonly){rows=normalize(rows);return '<div class="journal-scroll" tabindex="0" aria-label="Journaalpostentabel, horizontaal schuifbaar"><table class="journal-table"><thead><tr>'+columns.map(function(c){return '<th scope="col">'+c+'</th>';}).join('')+'</tr></thead><tbody>'+rows.map(function(row,i){return '<tr>'+row.map(function(cell,j){return '<td>'+(readonly?'<span>'+esc(cell)+'</span>':'<input type="text" '+(j===1||j===2?'inputmode="decimal" ':'')+'aria-label="Rij '+(i+1)+', '+columns[j]+'" data-journal-row="'+i+'" data-journal-col="'+j+'" value="'+esc(cell)+'">')+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>'+(readonly?'':'<button type="button" class="btn journal-add">+ Rij toevoegen</button>');}
-  function mount(host,rows,onChange){var current=normalize(rows);host.innerHTML=render(current,false);host.addEventListener('input',function(e){if(!e.target.matches('[data-journal-row]'))return;current[Number(e.target.dataset.journalRow)][Number(e.target.dataset.journalCol)]=e.target.value;onChange(current.map(function(r){return r.slice();}));});host.addEventListener('click',function(e){if(!e.target.closest('.journal-add')||current.length>=100)return;current.push(['','','','']);host.innerHTML=render(current,false);onChange(current.map(function(r){return r.slice();}));host.querySelector('[data-journal-row="'+(current.length-1)+'"]').focus();});}
+  function mount(host,rows,onChange){
+    var current=normalize(rows),selected=null;host.innerHTML=render(current,false);
+    host.addEventListener('focusin',function(e){
+      if(e.target.matches('[data-journal-row]'))selected={row:Number(e.target.dataset.journalRow),col:Number(e.target.dataset.journalCol)};
+      else if(!e.target.closest('.journal-add'))selected=null;
+    });
+    host.addEventListener('focusout',function(e){
+      if(!e.relatedTarget||!host.contains(e.relatedTarget)||!e.relatedTarget.matches('[data-journal-row],.journal-add'))selected=null;
+    });
+    host.addEventListener('input',function(e){if(!e.target.matches('[data-journal-row]'))return;current[Number(e.target.dataset.journalRow)][Number(e.target.dataset.journalCol)]=e.target.value;onChange(current.map(function(r){return r.slice();}));});
+    host.addEventListener('click',function(e){
+      if(!e.target.closest('.journal-add')||current.length>=100)return;
+      var index=selected?selected.row+1:current.length,col=selected?selected.col:0;
+      current.splice(index,0,['','','','']);host.innerHTML=render(current,false);
+      onChange(current.map(function(r){return r.slice();}));
+      host.querySelector('[data-journal-row="'+index+'"][data-journal-col="'+col+'"]').focus();
+    });
+  }
   window.CafaJournalTable={supports:supports,normalize:normalize,render:render,mount:mount,enhance:enhance};
 }());

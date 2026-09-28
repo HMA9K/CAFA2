@@ -6,13 +6,18 @@
   if(!saved||Array.isArray(saved)||typeof saved!=='object')saved={};
   const scale=()=>window.StudyScale?.get?.()||Number.parseFloat(getComputedStyle(document.documentElement).zoom)||1;
   const resizeObserver=window.ResizeObserver?new ResizeObserver(queuePlace):null;
+  const waiting=new Set(),visibilityObserver=window.IntersectionObserver?new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting)mount(entry.target);});
+  }):null;
   function persist(key,value){
     delete saved[key];saved[key]=value;
     Object.keys(saved).slice(0,Math.max(0,Object.keys(saved).length-100)).forEach(k=>delete saved[k]);
     try{localStorage.setItem(storageKey,JSON.stringify(saved));}catch{}
   }
   function mount(table){
-    if(mounted.has(table)||!table.rows.length||!table.getClientRects().length)return;
+    if(mounted.has(table)||!table.rows.length)return;
+    if(!table.getClientRects().length){if(visibilityObserver&&!waiting.has(table)){waiting.add(table);visibilityObserver.observe(table);}return;}
+    if(waiting.delete(table))visibilityObserver.unobserve(table);
     const editor=table.closest('.cae-content[contenteditable="true"]');
     if(!editor&&!table.querySelector('input:not([readonly]),textarea:not([readonly]),[contenteditable="true"]'))return;
     const row=table.rows[0],count=row.cells.length;
@@ -29,7 +34,8 @@
     const prior=saved[key];
     let widths=prior&&Array.isArray(prior.widths)&&prior.widths.length===count&&prior.widths.every(n=>Number.isFinite(n)&&n>0&&n<100)&&Math.abs(prior.widths.reduce((a,b)=>a+b,0)-100)<1?prior.widths.slice():defaults.slice();
     const inlineHeight=Number.parseFloat(table.style.getPropertyValue('--input-table-row-height'));
-    let height=prior&&Number.isFinite(prior.height)&&prior.height>=28&&prior.height<=120?prior.height:Number.isFinite(inlineHeight)?Math.max(28,Math.min(120,inlineHeight)):36;
+    const defaultHeight=Math.max(36,Math.min(120,table.rows[Math.min(1,table.rows.length-1)].getBoundingClientRect().height/scale()));
+    let height=prior&&Number.isFinite(prior.height)&&prior.height>=28&&prior.height<=120?prior.height:Number.isFinite(inlineHeight)?Math.max(28,Math.min(120,inlineHeight)):defaultHeight;
     let tableWidth=prior&&Number.isFinite(prior.tableWidth)&&prior.tableWidth>=280&&prior.tableWidth<=2400?prior.tableWidth:defaultTableWidth;
     const overlay=document.createElement('div');overlay.className='input-table-handles';overlay.setAttribute('role','group');overlay.setAttribute('aria-label','Sleepgrepen van de invoertabel');
     const grips=[];
@@ -82,10 +88,10 @@
       height=Math.max(28,Math.min(120,start.height+dy/start.scale/Math.max(1,table.rows.length-1)));
     }
     drag(corner,cornerSize);
-    corner.addEventListener('dblclick',()=>{widths=defaults.slice();height=36;tableWidth=defaultTableWidth;commit();});
+    corner.addEventListener('dblclick',()=>{widths=defaults.slice();height=defaultHeight;tableWidth=defaultTableWidth;commit();});
     corner.addEventListener('keydown',event=>{
       const direction={ArrowLeft:[-10,0],ArrowRight:[10,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[event.key];
-      if(event.key==='Home'){event.preventDefault();widths=defaults.slice();height=36;tableWidth=defaultTableWidth;commit();}
+      if(event.key==='Home'){event.preventDefault();widths=defaults.slice();height=defaultHeight;tableWidth=defaultTableWidth;commit();}
       else if(direction){event.preventDefault();cornerSize({width:table.getBoundingClientRect().width,height:Math.max(height,table.rows[Math.min(1,table.rows.length-1)].getBoundingClientRect().height/scale()),scale:scale()},...direction);commit();}
     });
     overlay.append(corner);document.body.append(overlay);
@@ -107,6 +113,7 @@
   }
   function remove(state){resizeObserver?.unobserve(state.table);state.overlay.remove();mounted.delete(state.table);states.delete(state);}
   function scan(){
+    waiting.forEach(table=>{if(!table.isConnected){visibilityObserver.unobserve(table);waiting.delete(table);}});
     states.forEach(state=>{if(!state.table.isConnected)remove(state);});
     document.querySelectorAll('table:has(input:not([readonly]),textarea:not([readonly]),[contenteditable="true"]),.cae-content[contenteditable="true"] table').forEach(table=>{
       const state=mounted.get(table);
