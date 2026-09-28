@@ -1,5 +1,5 @@
 // Focus the viewport on text without changing the PDF page or annotation coordinates.
-import {installPageLayout} from './page-layout.mjs';
+import {installPageLayout} from './page-layout.mjs?v=20260928-navigation1';
 export function installContentView(app,{key,restored=false}){
   const viewer=app.pdfViewer,container=viewer.container,select=document.getElementById('scaleSelect');
   const choice=document.createElement('option');choice.value='content-width';choice.textContent='Inhoudsbreedte';
