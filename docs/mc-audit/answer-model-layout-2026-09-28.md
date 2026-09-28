@@ -10,6 +10,7 @@ De gedeelde weergave van antwoordmodellen heeft zichtbare kolomkoppen, subtiele 
 - De bestaande journaalcontrole controleert daarnaast 1.282 tabelinstanties uit MC-opties, uitwerkingen en oorspronkelijke modellen. Inhoud, invoerbehoud, vergroten, versmald casuspaneel en mobiele bediening zijn geslaagd.
 - Het Reiter-antwoordmodel is ook via de echte tentamenbediening geopend en nagekeken. Alle vier tabellen hebben zichtbare koppen; de creditkolommen zijn op mobiel bereikbaar.
 - De volledige bestaande testopdracht, publicatiebuild en buildverificatie zijn geslaagd.
+- De bestaande prestatietest wacht nu op opgeslagen eerste beoordeling en gebruikt de actuele TinyMCE-invoer. De verouderde test las de beoordeling vóór de details-toggle en vulde de inmiddels vervangen fallback-editor in. De antwoordmodelcontrole draait voortaan ook in deze GitHub-workflow.
 
 Gerichte controle: `node tests/answer-model-layout-browser.mjs`. Omgevingsvariabelen `CAFA_PLAYWRIGHT_PATH` en `CAFA_CHROMIUM_PATH` kunnen een lokaal beschikbare testruntime instellen. De controle gebruikt de openbare bestanden als `CAFA_LIVE_URL` is ingesteld.
 

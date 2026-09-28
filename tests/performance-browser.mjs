@@ -28,10 +28,16 @@ try{
  async function route(id){await page.evaluate(id=>location.hash=id,id);await page.locator('#'+id+'[data-feedback-bound]').waitFor({state:'visible'});assert.equal(await page.locator('.question').count(),1);}
  await route('kap-1');const q=page.locator('#kap-1');await q.locator('.option[data-option="1"]').click();await q.locator('.practice-mark').click();
  await q.locator('.cafa-check-controls button').first().click();await q.locator('.cafa-inline-feedback:not([hidden])').first().waitFor();
+ await page.waitForFunction(()=>CafaPractice.getAnswer('kap',1)?.firstMC);
  const answer=await page.evaluate(()=>CafaPractice.getAnswer('kap',1));assert.equal(answer.choice,1);assert.equal(answer.marked,true);assert.ok(answer.firstMC);
  await route('kap-2');await route('kap-1');assert.equal(await q.locator('.answer-radio:checked').getAttribute('value'),'1');assert.equal(await q.locator('.practice-mark').getAttribute('aria-pressed'),'true');await q.locator('.cafa-inline-feedback:not([hidden])').first().waitFor();
- await q.locator('label[for="own-kap-1"]').click();const editor=q.locator('.cae-content[contenteditable="true"]');await editor.fill('Controleberekening 25 + 75 = 100');await route('kap-2');await route('kap-1');assert.equal(await editor.innerText(),'Controleberekening 25 + 75 = 100');
- await page.reload();await page.waitForFunction(()=>window.performanceReady!==null);assert.equal(await editor.innerText(),'Controleberekening 25 + 75 = 100');
+ await q.locator('label[for="own-kap-1"]').click();
+ const editor=q.frameLocator('.tox-edit-area iframe').locator('body');await editor.waitFor();
+ await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
+ await editor.fill('Controleberekening 25 + 75 = 100');
+ await page.waitForFunction(()=>CafaPractice.getAnswer('kap',1)?.text==='Controleberekening 25 + 75 = 100');
+ await route('kap-2');await route('kap-1');await editor.waitFor();assert.equal(await editor.innerText(),'Controleberekening 25 + 75 = 100');
+ await page.reload();await page.waitForFunction(()=>window.performanceReady!==null);await editor.waitFor();assert.equal(await editor.innerText(),'Controleberekening 25 + 75 = 100');
  await page.evaluate(()=>location.hash='oefenen');await page.locator('#oefenen').waitFor({state:'visible'});assert.equal(await page.locator('.question').count(),0);
  const sample=await page.evaluate(()=>Object.entries(CAFA2_DATA.modules).flatMap(([c,b])=>b.questions.filter(q=>q.sourceType==='exam').slice(0,1).map(q=>c+'-'+q.id)));
  for(const id of sample){await route(id);assert.ok(await page.locator('#'+id+' .exam-case-panel').count());await page.locator('#'+id+' [data-original-pdf]').first().waitFor({state:'attached'});assert.equal(await page.locator('#'+id+' [data-original-pdf]').count(),2);}
