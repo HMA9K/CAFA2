@@ -74,8 +74,8 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   const fmt=value=>Number(value.toPrecision(13)).toLocaleString('nl-NL',{maximumFractionDigits:12});
   const raw=value=>String(Number(value.toPrecision(13))).replace('.',',');
   let entries=[], memory=0, lastValue=0, position=null, size=null, expandedSize=null, drag=null, sizing=null, returnFocus=opener;
-  let errorShown=false, storageOK=true;
-  const baseEvaluate=evaluate; evaluate=value=>baseEvaluate(window.CirrusCalcInput.normalize(value,lastValue));
+  let errorShown=false, storageOK=true, continueFromResult=false;
+  const baseEvaluate=evaluate; evaluate=value=>baseEvaluate(window.CirrusCalcInput.normalize(value,lastValue,continueFromResult));
   const scale=()=>window.StudyScale?.get()||1;
   const bounds=()=>{const r=panel.getBoundingClientRect(),z=scale();return {left:r.left/z,top:r.top/z,width:r.width/z,height:r.height/z};};
   const viewport=()=>{const v=window.visualViewport,z=scale();return {x:(v?.offsetLeft||0)/z,y:(v?.offsetTop||0)/z,w:(v?.width||document.documentElement.clientWidth)/z,h:(v?.height||innerHeight)/z};};
@@ -95,17 +95,18 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
       entries=Array.isArray(saved.entries)?saved.entries.filter(e=>e&&typeof e.id==='string'&&typeof e.expression==='string'&&e.expression.length<=180&&Number.isFinite(e.value)):[];
       memory=Number.isFinite(saved.memory)?saved.memory:0;
       lastValue=Number.isFinite(saved.lastValue)?saved.lastValue:0;
+      continueFromResult=typeof saved.continueFromResult==='boolean'?saved.continueFromResult:entries.length>0||lastValue!==0;
       input.value=typeof saved.formula==='string'?saved.formula.slice(0,180):'';
       if(saved.size&&Number.isFinite(saved.size.w)&&Number.isFinite(saved.size.h))size={w:saved.size.w,h:saved.size.h};
     } else if(options.legacyKey){
       const old=JSON.parse(sessionStorage.getItem(options.legacyKey)||'{}');
       input.value=typeof old.formula==='string'?old.formula.slice(0,180):'';
       memory=Number.isFinite(old.memory)?old.memory:0;
-      if(old.justResult&&input.value)lastValue=evaluate(input.value);
+      if(old.justResult&&input.value){lastValue=evaluate(input.value);continueFromResult=true;}
     }
   } catch (_) {storageOK=false;}
   function save(){
-    try{localStorage.setItem(options.storageKey,JSON.stringify({version:1,entries,memory,lastValue,formula:input.value,size}));storageOK=true;}
+    try{localStorage.setItem(options.storageKey,JSON.stringify({version:1,entries,memory,lastValue,continueFromResult,formula:input.value,size}));storageOK=true;}
     catch(_){storageOK=false;}
     find('.calc-storage-note').textContent=storageOK?'Bewaard in deze browser':'Browseropslag niet beschikbaar';
   }
@@ -144,21 +145,22 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   }
   function insert(text){
     let start=input.selectionStart??input.value.length,end=input.selectionEnd??start;
-    if(!input.value&&/^[+*/^%]$/.test(text)){input.value='Ans';start=end=input.value.length;}
+    if(!input.value&&continueFromResult&&/^(?:sqrt|ln|exp)\($/.test(text))text+='Ans)';
+    if(!input.value){const prefix=window.CirrusCalcInput.label(text,continueFromResult);if(prefix!==text){input.value='Ans';start=end=input.value.length;}}
     if(input.value.length-(end-start)+text.length>180)throw Error('Berekening te lang');
     input.setRangeText(text,start,end,'end');
   }
   function calculate(){
     if(!input.value.trim())return;
-    const typed=input.value,expression=window.CirrusCalcInput.history(typed,lastValue),value=evaluate(typed),displayExpression=window.CirrusCalcInput.label(typed);
+    const typed=input.value,expression=window.CirrusCalcInput.history(typed,lastValue,continueFromResult),value=evaluate(typed),displayExpression=window.CirrusCalcInput.label(typed,continueFromResult);
     entries.push({id:typeof crypto.randomUUID==='function'?crypto.randomUUID():Date.now()+'-'+Math.random(),expression,displayExpression,value});
-    lastValue=value;input.value='';renderHistory(true);
+    lastValue=value;continueFromResult=true;input.value='';renderHistory(true);
   }
   function perform(key){
     clearError();const copy=find('.calc-copy-result');if(copy)copy.textContent='';
     try{
       if(key==='=')calculate();
-      else if(key==='C'){input.value='';lastValue=0;}
+      else if(key==='C'){input.value='';lastValue=0;continueFromResult=false;}
       else if(key==='CE')input.value=input.value.replace(/(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?%?$/,'');
       else if(key==='back'||key==='⌫'){let start=input.selectionStart??input.value.length,end=input.selectionEnd??start;if(start===end)start=Math.max(0,start-1);input.setRangeText('',start,end,'end');}
       else if(key==='MC')memory=0;
@@ -167,7 +169,7 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
       else if(key==='M+'||key==='M-'){const next=memory+(key==='M+'?1:-1)*currentValue();if(!Number.isFinite(next))throw Error('Geheugen buiten bereik');memory=next;}
       else if(['sqrt','square','reciprocal','sign'].includes(key)){
         let value=currentValue();if(key==='sqrt'){if(value<0)throw Error('Geen reële wortel');value=Math.sqrt(value);}else if(key==='square')value*=value;else if(key==='reciprocal'){if(value===0)throw Error('Delen door nul');value=1/value;}else value=-value;
-        if(!Number.isFinite(value))throw Error('Ongeldige berekening');input.value=raw(value);lastValue=value;
+        if(!Number.isFinite(value))throw Error('Ongeldige berekening');input.value=raw(value);lastValue=value;continueFromResult=false;
       }else if(/^(?:[0-9.,()+\-*/%^]|sqrt\(|ln\(|exp\()$/.test(key))insert(key);
     }catch(error){showError(error.message);}
     paint();save();

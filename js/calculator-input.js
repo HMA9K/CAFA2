@@ -9,6 +9,6 @@
     if((token.match(/\./g)||[]).length>1)throw Error('Gebruik punten voor duizendtallen en een komma voor decimalen.');
     return token;
   });
-  const continuation=s=>/^[*×x÷/:^%]/.test(s.trim())?'Ans'+s.trim():s;
-  window.CirrusCalcInput={numbers,normalize:(s,last)=>numbers(continuation(String(s))).replace(/\bAns\b/gi,'('+String(last)+')'),history:(s,last)=>continuation(String(s)).replace(/\bAns\b/gi,'('+String(last).replace('.',',')+')'),label:continuation};
+  const continuation=(s,continueFromResult=false)=>/^[*×x÷/:^%]/.test(s.trim())||(continueFromResult&&/^[+\-−]/.test(s.trim()))?'Ans'+s.trim():s;
+  window.CirrusCalcInput={numbers,normalize:(s,last,continueFromResult)=>numbers(continuation(String(s),continueFromResult)).replace(/\bAns\b/gi,'('+String(last)+')'),history:(s,last,continueFromResult)=>continuation(String(s),continueFromResult).replace(/\bAns\b/gi,'('+String(last).replace('.',',')+')'),label:continuation};
 })();
