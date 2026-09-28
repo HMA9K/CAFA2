@@ -61,6 +61,14 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
  await page.locator('#cafa-single-page').click();await page.waitForFunction(()=>PDFViewerApplication.pdfViewer.scrollMode===3);assert.ok(await page.locator('#cafa-next-page').isVisible());assert.ok(await page.locator('#cafa-previous-page').isVisible());
  const toolbar=await page.locator('.cafa-mark-toolbar').evaluate(e=>({height:e.getBoundingClientRect().height,bottom:e.getBoundingClientRect().bottom,top:document.getElementById('mainContainer').getBoundingClientRect().top,width:document.documentElement.scrollWidth}));
  assert.ok(toolbar.height>36,'Narrow toolbar wraps');assert.ok(toolbar.top>=toolbar.bottom-1,'Toolbar does not overlap reader');assert.equal(toolbar.width,350);
+ await page.evaluate(()=>PDFViewerApplication.page=10);await page.waitForTimeout(400);
+ await page.locator('#cafa-single-page').click();await page.waitForFunction(()=>PDFViewerApplication.pdfViewer.scrollMode===0);await page.waitForTimeout(400);
+ for(const id of ['cafa-previous-page','cafa-next-page']){
+  assert.ok(await page.locator('#'+id).isVisible(),'Page buttons remain visible in continuous mode');
+  assert.equal(await page.locator('#'+id).evaluate(e=>e.getBoundingClientRect().height),await page.locator('#cafa-single-page').evaluate(e=>e.getBoundingClientRect().height),'Page buttons have the same height as other controls');
+ }
+ await page.locator('#cafa-next-page').click();await page.waitForFunction(()=>PDFViewerApplication.page===11);await page.waitForTimeout(300);
+ await page.locator('#cafa-previous-page').click();await page.waitForFunction(()=>PDFViewerApplication.page===10);
  if(process.env.PDF_LAYOUT_SCREENSHOT)await page.screenshot({path:process.env.PDF_LAYOUT_SCREENSHOT});
  assert.deepEqual(errors,[]);console.log('Real mouse highlighting, colour, saved annotations, page/zoom reload, deletion and narrow toolbar passed.');
  await browser.close();
