@@ -53,7 +53,7 @@ async def run():
                 header = await page.locator('.reader-topbar').bounding_box()
                 assert rect['y'] >= header['y'] + header['height'] - 1
                 assert rect['y'] < 140, rect
-                assert await page.locator('.calc-keys button').all_text_contents() == ['7','8','9','÷','4','5','6','×','1','2','3','−','0','.','(',')','√','ln','exp','^','C','⌫','=','+']
+                assert await page.locator('.calc-keys button').all_text_contents() == ['7','8','9','÷','4','5','6','×','1','2','3','−','0','.','(',')','√','Ans','(−)','^','C','⌫','=','+']
                 data = [['2+3*4',14], ['(2+3)*4',20], ['1,5+2.5',4], ['3740*(636-97185/165)',175780],
                         ['8^2',64], ['2^3^2',512], ['-2^2',-4], ['(-2)^2',4], ['2^-2',0.25],
                         ['sqrt(81)',9], ['ln(exp(2))',2], ['exp(0)',1], ['200*25%',50], ['1e3+2',1002], ['10×2÷4',5]]

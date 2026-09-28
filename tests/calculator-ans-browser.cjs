@@ -25,31 +25,40 @@ const server=http.createServer((req,res)=>{
     const type=async text=>{await input.fill(text);await input.press('Enter');};
     const seed=async value=>{await key('C');await type(String(value));};
     await key('C');await type('-2^2');await result(-4);
-    for(const [op,rhs,expected] of [['+',5,-21595],['*',8,-172800],['/',8,-2700],['^',2,466560000],['%',null,-216]]){
+    assert.equal(await panel.locator('[data-calc-key="sign"]').count(),0);
+    for(const k of ['Ans','negative'])assert.ok(await panel.locator('.calc-keys').locator(`[data-calc-key="${k}"]`).isVisible());
+    for(const [op,rhs,expected] of [['+',5,-21595],['-',5,-21605],['*',8,-172800],['/',8,-2700],['^',2,466560000],['%',null,-216]]){
       await seed(-21600);await key(op);assert.equal(await input.inputValue(),'Ans'+op);
       if(rhs!==null)for(const digit of String(rhs))await key(digit);
       await key('=');await result(expected);
       assert.equal((await state()).history.at(-1).displayExpression,'Ans'+op+(rhs??''));
-      await seed(-21600);await type(op+(rhs??''));await result(expected);
+      await seed(-21600);await input.pressSequentially(op+(rhs??''));assert.equal(await input.inputValue(),'Ans'+op+(rhs??''));await input.press('Enter');await result(expected);
     }
     for(const [value,k,expected] of [[81,'sqrt(',9],[Math.E,'ln(',1],[2,'exp(',Math.exp(2)]]){
       await seed(value);await key(k);assert.equal(await input.inputValue(),k+'Ans)');await key('=');await result(expected);
     }
-    for(const [k,expected] of [['reciprocal',0.125],['sign',-8]]){await seed(8);await key(k);await key('=');await result(expected);}
+    await seed(8);await key('reciprocal');await key('=');await result(0.125);
+    await seed(8);await key('Ans');assert.equal(await input.inputValue(),'Ans');await key('*');await key('2');await key('=');await result(16);
+    await seed(8);await key('*');await key('negative');await key('5');assert.equal(await input.inputValue(),'Ans*(-5)');await key('=');await result(-40);
     await seed(8);await type('sqrt(Ans^2)+ln(exp(Ans))');await result(16);
     await seed(0);await type('-5');await result(-5);await type('+5');await result(0);
     await seed(100);await type('+5');await result(105);await type('Ans-2');await result(103);
     for(const previous of [100,-21600,0]){
-      await seed(previous);await type('-5');await result(-5);
+      await seed(previous);await key('negative');assert.equal(await input.inputValue(),'-');await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
       assert.equal((await state()).history.at(-1).displayExpression,'-5');
-      await seed(previous);await key('-');assert.equal(await input.inputValue(),'-');await key('5');await key('=');await result(-5);
-      await seed(previous);await type('−5');await result(-5);
+      await seed(previous);await key('-');assert.equal(await input.inputValue(),'Ans-');await key('5');await key('=');await result(previous-5);
+      await seed(previous);await type('−5');assert.equal((await state()).history.at(-1).displayExpression,'Ans−5');await result(previous-5);
+      await seed(previous);await type('(-5)+1');await result(-4);
     }
     const negativeCalculation='-1.600.000+1.350.000+2.850.000-2.000.000';
-    await seed(-350000);await type(negativeCalculation);await result(600000);
+    await seed(-350000);await key('negative');await type(negativeCalculation);await result(600000);
     assert.equal((await state()).history.at(-1).displayExpression,negativeCalculation);
     await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
-    await type('-2^2');await result(-4);
+    await key('negative');await type('-2^2');await result(-4);
+    await seed(250);await key('negative');await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
+    await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
+    await seed(250);await input.pressSequentially('+500');assert.equal(await input.inputValue(),'Ans+500');await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
+    assert.equal(await input.inputValue(),'Ans+500');await input.press('Enter');await result(750);
     // Een historische Ans-regel moet het toenmalige antwoord blijven gebruiken.
     await seed(10);await type('Ans-2');const entry=(await state()).history.at(-1);
     await type('200');await panel.locator(`[data-calc-history-id="${entry.id}"] .calc-history-reuse`).click();
