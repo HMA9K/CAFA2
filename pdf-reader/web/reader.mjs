@@ -1,7 +1,7 @@
 import {PDFViewerApplication as app,PDFViewerApplicationOptions as options} from './viewer.mjs';
 import {AnnotationEditorType,AnnotationEditorParamsType} from '../build/pdf.mjs';
 import {originalPdfs} from '../../data/exam-original-pdfs.mjs';
-import {installContentView} from './content-view.mjs?v=20260928-navigation1';
+import {installContentView} from './content-view.mjs?v=20260928-navigation2';
 
 // All annotations stay in this browser. Published source files are never written.
 const root=new URL('../../',import.meta.url),source=new URL(new URLSearchParams(location.search).get('file')||'',location.href);
