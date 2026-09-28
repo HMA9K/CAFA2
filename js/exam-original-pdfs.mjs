@@ -57,12 +57,16 @@ function context(){
   const match=location.hash.match(/^#welkom\/([^/]+)/);
   return {id:match?.[1],host:document.getElementById('exam-app'),key:location.hash};
 }
-function actions(id){
+function actions(id,download=false){
   const source=originalPdfs[id];if(!source)return null;
   const group=document.createElement('span');group.className='original-pdf-actions';group.dataset.pdfExam=id;
   for(const [kind,label] of [['questions','Tentamen PDF'],['solutions','Uitwerking PDF']]){
-    const button=document.createElement('button');button.type='button';button.className='btn';
-    button.dataset.originalPdf=kind;button.dataset.pdfExam=id;button.textContent=label;button.setAttribute('aria-pressed','false');
+    const button=document.createElement(download&&source[kind].url?'a':'button');button.className='btn';
+    button.dataset.pdfExam=id;button.textContent=label;
+    if(download&&source[kind].url){
+      button.href=source[kind].url;button.download='CAFA2-'+source.date+'-'+(kind==='questions'?'tentamen':'uitwerking')+'.pdf';
+      button.dataset.pdfDownload=kind;button.title='Download '+label.toLowerCase();
+    }else{button.type='button';button.dataset.originalPdf=kind;button.setAttribute('aria-pressed','false');}
     if(!source[kind].url){button.disabled=true;button.title=source[kind].reason;button.setAttribute('aria-describedby','original-pdf-missing');}
     group.append(button);
   }
@@ -162,7 +166,7 @@ function mount(){
   document.querySelectorAll('#exam-app a.exam-name').forEach(link=>{
     const href=link.getAttribute('href'),m=href?.match(/^#(welkom|tentamen|inzage)\/([^/]+)/);if(!m)return;
     const id=m[1]==='welkom'?m[2]:CafaExams.getQuestionContext(m[2])?.exam.id;
-    if(originalPdfs[id]&&!link.parentElement.querySelector('.original-pdf-actions'))link.parentElement.append(actions(id));
+    if(originalPdfs[id]&&!link.parentElement.querySelector('.original-pdf-actions'))link.parentElement.append(actions(id,true));
   });
   if(document.querySelector('[data-original-pdf]:disabled')&&!document.getElementById('original-pdf-missing')){
     const notice=document.createElement('p');notice.id='original-pdf-missing';notice.className='original-pdf-missing';notice.textContent='19-04-2021: de originele opgaven-PDF ontbreekt; alleen het oorspronkelijke Word-bestand is beschikbaar. De officiële uitwerking is wel beschikbaar.';

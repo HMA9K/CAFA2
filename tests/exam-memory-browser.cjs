@@ -80,8 +80,8 @@ const server=http.createServer((req,res)=>{
    if(r.request().url().includes('/pdf-reader/web/viewer.html?'))return r.fulfill({contentType:'text/html',body:'<p>Testdocument</p><script>window.qaPending=false;window.qaBlock=false;window.CafaPdfReader={ready:true,get pending(){return qaPending;},flush(){return qaBlock?new Promise(resolve=>window.qaRelease=resolve):Promise.resolve();}};</script>'});
    return r.continue();
   });
-  await fixture.goto(base+'/#dashboard');await fixture.waitForFunction(()=>window.CafaExams&&document.querySelector('[data-original-pdf]'));
-  const open=async(id,kind)=>{await fixture.locator('[data-pdf-exam="'+id+'"][data-original-pdf="'+kind+'"]:visible').first().click();};
+  await fixture.goto(base+'/#dashboard');await fixture.waitForFunction(()=>window.CafaExams&&document.querySelector('[data-pdf-download]'));
+  const open=async(id,kind)=>{await fixture.evaluate(id=>location.hash='welkom/'+id,id);await fixture.locator('[data-pdf-exam="'+id+'"][data-original-pdf="'+kind+'"]:visible').first().click();};
   await open('cafa2-20240422','questions');await open('cafa2-20240422','solutions');
   await fixture.waitForFunction(()=>document.querySelector('.original-pdf-left-viewer iframe')?.contentWindow.CafaPdfReader);
   await fixture.evaluate(()=>{qaOldReader=document.querySelector('.original-pdf-left-viewer iframe');qaOldReader.contentWindow.qaBlock=true;qaOldReader.contentWindow.qaPending=true;});
