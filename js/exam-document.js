@@ -56,14 +56,27 @@
       table.querySelectorAll('tbody tr').forEach(function(row){
         Array.from(row.cells).forEach(function(cell,i){
           if(i===pointIndex){cell.classList.add('exam-source-points');if(/^(?:\d+(?:[.,]\d+)?|½|¼|¾)$/.test(cell.textContent.trim()))cell.textContent='('+cell.textContent.trim()+')';}
-          else if(/^[€£$+−–\-\d\s.,%()/×x]+$/.test(cell.textContent.trim())&&cell.textContent.trim())cell.classList.add('exam-number');
+          else if(/^[€£$+−–\-\d\s.,%()/×x]+$/.test(cell.textContent.trim())&&cell.textContent.trim()){
+            cell.classList.add('exam-number');
+            if(cell.textContent.trim().length>14&&/[()×/x]/.test(cell.textContent))cell.classList.add('exam-model-expression');
+          }
         });
       });
-      // The transcription added explanatory column headers that do not occur in
-      // the financial workings. Keep them accessible, but restore the paper layout.
+      // Keep financial headings visible and reserve enough space for amounts.
       if(solution&&/^(Berekening|Rekening \/ toelichting|Rekening|Omschrijving|Post)$/.test(labels[0]||'')){
         table.classList.add('exam-financial-table');
-        if(table.tHead&&!labels.some(function(t){return /debet|credit/i.test(t);}))table.tHead.classList.add('exam-accessible-head');
+        table.style.minWidth=Math.max(480,Math.ceil((labels.length-1)*110/0.56))+'px';
+        if(table.tHead)table.tHead.classList.remove('exam-accessible-head');
+        if(!table.querySelector('colgroup')&&labels.length>1){
+          var cols=document.createElement('colgroup');
+          labels.forEach(function(_,i){var col=document.createElement('col');col.style.width=(i===0?44:56/(labels.length-1))+'%';cols.appendChild(col);});
+          if(table.caption)table.caption.after(cols);else table.prepend(cols);
+        }
+      }
+      if(solution){
+        var wrap=table.parentElement;
+        if(!wrap.matches('.exam-table-wrap,.table-wrap,.journal-display-scroll')){wrap=document.createElement('div');table.before(wrap);wrap.appendChild(table);}
+        wrap.classList.add('exam-model-table-scroll');wrap.tabIndex=0;wrap.setAttribute('aria-label','Antwoordmodeltabel, horizontaal schuifbaar');
       }
       // Four-column reconciliation tables use a wide description, an internal
       // correction column, a total and grading marks, as on the source paper.

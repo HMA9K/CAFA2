@@ -19,6 +19,7 @@ jobs:
       - run: npm run test:assistant
       - run: npm run build:assistant
       - run: node scripts/verify-study-assistant-build.mjs
+      - run: node tests/answer-model-layout-browser.mjs
       - run: npm run test:performance-browser
       - run: npm run test:performance-browser
         env:

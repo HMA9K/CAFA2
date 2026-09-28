@@ -9,6 +9,11 @@
 .journal-display-with-points .journal-account-column { width:48%; }
 .journal-display-with-points .journal-debit-column,.journal-display-with-points .journal-credit-column { width:18%; }
 .journal-display-with-points .journal-points-column { width:16%; }
+.journal-display-with-currency .journal-account-column { width:38%; }
+.journal-display-with-currency .journal-currency-column { width:17%; }
+.journal-display-with-currency .journal-rate-column { width:11%; }
+.journal-display-with-currency .journal-debit-column,.journal-display-with-currency .journal-credit-column { width:17%; }
+.journal-display-with-currency :is(th,td):nth-child(n+2) { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 :is(.option-content,.exam-source-document) table.journal-display-table :is(th,td):first-child {
   min-width:0; width:auto; white-space:normal; overflow-wrap:anywhere; text-align:left;
 }
