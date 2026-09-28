@@ -27,15 +27,15 @@ const server=http.createServer((req,res)=>{
     // Deleting Ans leaves an editable unary minus, including after reload.
     for(const deleteKey of ['Backspace','Delete','button']){
       await seed(100);await key('-');
-      await input.evaluate(e=>e.setSelectionRange(0,3));
+      await input.focus();await input.evaluate(e=>e.setSelectionRange(0,3));
       if(deleteKey==='button')await key('back');else await input.press(deleteKey);
       assert.equal(await input.inputValue(),'-','Ans can be removed with '+deleteKey);
-      await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
+      await input.focus();await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
     }
-    await seed(100);await key('-');await input.evaluate(e=>e.setSelectionRange(3,3));
+    await seed(100);await key('-');await input.focus();await input.evaluate(e=>e.setSelectionRange(3,3));
     for(const expected of ['An-','A-','-']){await input.press('Backspace');assert.equal(await input.inputValue(),expected);}
     await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
-    await input.focus();assert.equal(await input.inputValue(),'-');await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
+    await input.focus();assert.equal(await input.inputValue(),'-');await input.focus();await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
     await key('C');await type('-2^2');await result(-4);
     assert.equal(await panel.locator('[data-calc-key="sign"]').count(),0);
     for(const k of ['Ans','negative'])assert.ok(await panel.locator('.calc-keys').locator(`[data-calc-key="${k}"]`).isVisible());
@@ -44,7 +44,7 @@ const server=http.createServer((req,res)=>{
       if(rhs!==null)for(const digit of String(rhs))await key(digit);
       await key('=');await result(expected);
       assert.equal((await state()).history.at(-1).displayExpression,'Ans'+op+(rhs??''));
-      await seed(-21600);await input.pressSequentially(op+(rhs??''));assert.equal(await input.inputValue(),'Ans'+op+(rhs??''));await input.press('Enter');await result(expected);
+      await seed(-21600);await input.focus();await input.pressSequentially(op+(rhs??''));assert.equal(await input.inputValue(),'Ans'+op+(rhs??''));await input.press('Enter');await result(expected);
     }
     for(const [value,k,expected] of [[81,'sqrt(',9],[Math.E,'ln(',1],[2,'exp(',Math.exp(2)]]){
       await seed(value);await key(k);assert.equal(await input.inputValue(),k+'Ans)');await key('=');await result(expected);
@@ -56,7 +56,7 @@ const server=http.createServer((req,res)=>{
     await seed(0);await type('-5');await result(-5);await type('+5');await result(0);
     await seed(100);await type('+5');await result(105);await type('Ans-2');await result(103);
     for(const previous of [100,-21600,0]){
-      await seed(previous);await key('negative');assert.equal(await input.inputValue(),'-');await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
+      await seed(previous);await key('negative');assert.equal(await input.inputValue(),'-');await input.focus();await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
       assert.equal((await state()).history.at(-1).displayExpression,'-5');
       await seed(previous);await key('-');assert.equal(await input.inputValue(),'Ans-');await key('5');await key('=');await result(previous-5);
       await seed(previous);await type('−5');assert.equal((await state()).history.at(-1).displayExpression,'Ans−5');await result(previous-5);
@@ -68,8 +68,8 @@ const server=http.createServer((req,res)=>{
     await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
     await key('negative');await type('-2^2');await result(-4);
     await seed(250);await key('negative');await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
-    await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
-    await seed(250);await input.pressSequentially('+500');assert.equal(await input.inputValue(),'Ans+500');await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
+    await input.focus();await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
+    await seed(250);await input.focus();await input.pressSequentially('+500');assert.equal(await input.inputValue(),'Ans+500');await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
     assert.equal(await input.inputValue(),'Ans+500');await input.press('Enter');await result(750);
     // Een historische Ans-regel moet het toenmalige antwoord blijven gebruiken.
     await seed(10);await type('Ans-2');const entry=(await state()).history.at(-1);
