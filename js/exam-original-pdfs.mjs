@@ -60,12 +60,13 @@ function context(){
 function actions(id,download=false){
   const source=originalPdfs[id];if(!source)return null;
   const group=document.createElement('span');group.className='original-pdf-actions';group.dataset.pdfExam=id;
-  for(const [kind,label] of [['questions','Tentamen PDF'],['solutions','Uitwerking PDF']]){
-    const button=document.createElement(download&&source[kind].url?'a':'button');button.className='btn';
+  for(const [kind,label] of [['questions','Tentamen PDF downloaden'],['solutions','Uitwerking PDF']]){
+    const directDownload=download||kind==='questions';
+    const button=document.createElement(directDownload&&source[kind].url?'a':'button');button.className='btn';
     button.dataset.pdfExam=id;button.textContent=label;
-    if(download&&source[kind].url){
+    if(directDownload&&source[kind].url){
       button.href=source[kind].url;button.download='CAFA2-'+source.date+'-'+(kind==='questions'?'tentamen':'uitwerking')+'.pdf';
-      button.dataset.pdfDownload=kind;button.title='Download '+label.toLowerCase();
+      button.dataset.pdfDownload=kind;button.title=kind==='questions'?'Download het originele tentamen als PDF':'Download de officiële uitwerking als PDF';
     }else{button.type='button';button.dataset.originalPdf=kind;button.setAttribute('aria-pressed','false');}
     if(!source[kind].url){button.disabled=true;button.title=source[kind].reason;button.setAttribute('aria-describedby','original-pdf-missing');}
     group.append(button);

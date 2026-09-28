@@ -82,7 +82,7 @@ const server=http.createServer((req,res)=>{
    const amount=page.locator('.stock-matrix input[data-stock-cell^="r"]').first();await amount.fill('5000');assert.equal(await amount.inputValue(),'5.000');
    await page.locator('.stock-notes').evaluate(e=>e.open=true);await page.locator('.stock-notes .tox-edit-area iframe').waitFor();
    assert.equal(await page.locator('.exam-question-body .answer-thousands-toggle input[data-answer-thousands]').count(),2);
-   await page.locator('.exam-footer [data-original-pdf="questions"]').click();await page.locator('.original-pdf-left-viewer').waitFor();
+   const [pdf]=await Promise.all([page.waitForEvent('download'),page.locator('.exam-footer [data-pdf-download="questions"]').click()]);assert.equal(await pdf.failure(),null);
    await page.locator('.exam-footer [data-original-pdf="solutions"]').click();await page.locator('#exam-original-solutions[open]').waitFor();
   }
   for(const size of [10,14,20,24,14]){
@@ -91,8 +91,7 @@ const server=http.createServer((req,res)=>{
    assert.ok(overflow.scroll<=overflow.width+2,'Geen pagina-overloop bij schaal '+size+' '+JSON.stringify(overflow));
    if(process.env.INPUT_SCREENSHOT&&size===24)await page.screenshot({path:process.env.INPUT_SCREENSHOT});
    if(!sra){
-    const geometry=await page.evaluate(()=>{const p=document.querySelector('#exam-case-panel').getBoundingClientRect(),v=document.querySelector('.original-pdf-left-viewer').getBoundingClientRect(),slot=document.querySelector('.original-pdf-right').closest('body').querySelector('.sa-panel-slot');return {p:[p.x,p.y,p.width,p.height],v:[v.x,v.y,v.width,v.height]};});
-    geometry.p.forEach((n,i)=>assert.ok(Math.abs(n-geometry.v[i])<2,'PDF blijft binnen de casus bij schaal '+size));
+    assert.equal(await page.locator('.original-pdf-left-viewer').count(),0,'Downloaden opent geen extra casuspaneel');
    }
   }
   if(!sra){await page.evaluate(()=>StudyAssistant.resume());await page.locator('#study-assistant[open]').waitFor();await page.evaluate(()=>StudyScale.set(24,14,10,24));await page.waitForTimeout(250);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Assistent blijft binnen de pagina');}
