@@ -49,6 +49,22 @@
 
 .exam-source-solution h4 { font-weight:400; }
 
+/* Answer models share a readable grid, including currency journals and calculations. */
+.exam-source-solution { line-height:1.45; }
+.exam-source-solution :is(h2,h3,h4) { line-height:1.4; margin:20px 0 8px; }
+.exam-model-table-scroll { max-width:100%; overflow-x:auto; margin:8px 0 12px; }
+.exam-source-solution .exam-model-table-scroll table { margin:0; line-height:1.4; }
+.exam-source-solution .exam-financial-table { table-layout:fixed; }
+.exam-source-solution .exam-model-table-scroll :is(td,th) { padding:7px 10px; border:1px solid #ccd4dc; }
+.exam-source-solution .exam-model-table-scroll th { background:#eef2f6; font-weight:700; overflow-wrap:anywhere; }
+.exam-source-solution .exam-model-table-scroll td:first-child { overflow-wrap:anywhere; }
+.exam-source-document.exam-source-solution .exam-model-table-scroll td:is(.exam-source-points,.exam-model-expression) { white-space:normal; overflow-wrap:anywhere; }
+.exam-source-solution .exam-number { font-variant-numeric:tabular-nums; }
+.exam-source-solution .exam-model-table-scroll + p { margin-bottom:18px; font-size:.93em; }
+html[data-study-theme=dark] .exam-source-document.exam-source-solution .exam-model-table-scroll :is(td,th) { border:1px solid #435463; }
+html[data-study-theme=dark] .exam-source-solution .exam-model-table-scroll th { background:#243542; }
+@media print { .exam-model-table-scroll { overflow:visible; } }
+
 /* Header controls match the supplied Cirrus reference. */
 .top-controls { gap:14px; }
 .exam-clock { order:-1; gap:15px; margin:0 22px 0 0; padding:0; border:0; color:#171717; font:14px Arial,sans-serif; }

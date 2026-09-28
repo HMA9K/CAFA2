@@ -10,18 +10,23 @@
     root.querySelectorAll('table:not(.journal-table)').forEach(function(table){
       var heads=table.tHead&&table.tHead.rows[0];if(!heads)return;
       var labels=Array.from(heads.cells,function(c){return c.textContent.trim();});
-      if((labels.length!==3&&labels.length!==4)||!/^(Omschrijving(?: grootboekrekening)?|Rekening(?: \/ toelichting)?|Grootboekrekening|Post)$/i.test(labels[0])||!/^Debet(?:\s*\(€\))?$/i.test(labels[1])||!/^Credit(?:\s*\(€\))?$/i.test(labels[2]))return;
-      if(labels.length===4&&!/^(Punten|Puntentoekenning|Score|Normering)$/i.test(labels[3]))return;
+      var currency=labels.length===5&&/^(USD|GBP|CHF|JPY|Valuta)$/i.test(labels[1])&&/^Koers$/i.test(labels[2]);
+      var debit=currency?3:1,credit=currency?4:2;
+      if(!currency&&labels.length!==3&&labels.length!==4)return;
+      if(!/^(Omschrijving(?: grootboekrekening)?|Rekening(?: \/ toelichting)?|Grootboekrekening|Post)$/i.test(labels[0])||!/^Debet(?:\s*\(€\))?$/i.test(labels[debit])||!/^Credit(?:\s*\(€\))?$/i.test(labels[credit]))return;
+      if(!currency&&labels.length===4&&!/^(Punten|Puntentoekenning|Score|Normering)$/i.test(labels[3]))return;
       if(table.classList.contains('journal-display-table'))return;
       table.classList.add('journal-display-table');
       if(labels.length===4)table.classList.add('journal-display-with-points');
-      var cols=document.createElement('colgroup');labels.forEach(function(_,i){var col=document.createElement('col');col.className=['journal-account-column','journal-debit-column','journal-credit-column','journal-points-column'][i];cols.appendChild(col);});
+      if(currency)table.classList.add('journal-display-with-currency');
+      var classes=currency?['journal-account-column','journal-currency-column','journal-rate-column','journal-debit-column','journal-credit-column']:['journal-account-column','journal-debit-column','journal-credit-column','journal-points-column'];
+      var cols=document.createElement('colgroup');labels.forEach(function(_,i){var col=document.createElement('col');col.className=classes[i];cols.appendChild(col);});
       Array.from(table.children).filter(function(c){return c.tagName==='COLGROUP';}).forEach(function(c){c.remove();});
       if(table.caption)table.caption.after(cols);else table.prepend(cols);
       // Older transcriptions hid these headers as if this were a calculation.
       table.tHead.classList.remove('exam-accessible-head');
       var wrap=table.parentElement;
-      if(!wrap.classList.contains('table-wrap')&&!wrap.classList.contains('journal-display-scroll')){wrap=document.createElement('div');table.before(wrap);wrap.appendChild(table);}
+      if(!wrap.matches('.table-wrap,.journal-display-scroll,.exam-model-table-scroll')){wrap=document.createElement('div');table.before(wrap);wrap.appendChild(table);}
       wrap.classList.add('journal-display-scroll');wrap.tabIndex=0;wrap.setAttribute('aria-label','Journaalpost, horizontaal schuifbaar');
     });
   }
