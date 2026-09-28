@@ -4,10 +4,35 @@ import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260928-scale
 // Original source documents only. No attempt, answer or assistant conversation is written here.
 let left=null,right=null,dock=null,queued=false,currentKey='',rightRequest=0;
 const viewers=new Map();
+let pruning=false;
+const activeViewer=box=>box===left?.viewer||(right?.open&&box.parentElement===right&&!box.inert);
+async function pruneViewers(){
+  if(pruning)return;pruning=true;
+  const failed=new Set();
+  try{
+    while(viewers.size>2){
+      const candidate=[...viewers].find(([key,box])=>!activeViewer(box)&&!failed.has(key));
+      if(!candidate)break;
+      const [key,box]=candidate;
+      try{
+        const reader=box.querySelector('iframe')?.contentWindow?.CafaPdfReader;
+        // Finish the IndexedDB transaction before releasing the browsing context.
+        // Keep unsaved annotations accessible if local storage fails.
+        await reader?.flush();
+        if(reader?.pending){failed.add(key);continue;}
+      }catch{failed.add(key);continue;}
+      // The user may have reopened this document while saving was in progress.
+      if(activeViewer(box)||viewers.get(key)!==box)continue;
+      box.remove();viewers.delete(key);
+    }
+  }finally{pruning=false;}
+}
 const htmlEscape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function context(){
   const question=document.getElementById(location.hash.slice(1));
   if(question?.matches('.question'))return {id:question.dataset.examSource,host:question,key:location.hash};
+  // A practice route briefly has no question while its screen is being loaded.
+  if(/^#(?:kap|val|nvw|hk)-\d+$/.test(location.hash))return {loading:true};
   const position=window.CafaExams?.getPosition();
   if(position){const a=CafaExams.getAttempts().find(a=>a.id===position.attempt),q=a?.exam.questions[position.index];
     return {id:q?.sourceExamId||a?.exam.id,host:document.getElementById('exam-app'),key:position.attempt+':'+position.index};}
@@ -26,7 +51,9 @@ function actions(id){
   return group;
 }
 function viewer(id,kind){
-  const key=id+':'+kind;if(viewers.has(key))return viewers.get(key);
+  const key=id+':'+kind;if(viewers.has(key)){
+    const box=viewers.get(key);viewers.delete(key);viewers.set(key,box);return box;
+  }
   const source=originalPdfs[id],file=source[kind],label=kind==='questions'?'Origineel tentamen':'Officiële uitwerking';
   const box=document.createElement('section');box.className='original-pdf-viewer';box.dataset.pdfExam=id;
   box.innerHTML='<header class="original-pdf-head"><strong>'+label+' · '+htmlEscape(source.date.split('-').reverse().join('-'))+'</strong><button type="button" class="btn" data-pdf-close="'+kind+'">'+(kind==='questions'?'Terug naar casus':'Sluiten')+'</button></header>'+
@@ -76,6 +103,7 @@ function openLeft(id,opener,restore=false){
   if(!box.isConnected)document.body.append(box);
   left={id,panel,children,viewer:box,wrapper,primary,opener};updatePressed();
   leftObserver.observe(panel);placeLeft();
+  void pruneViewers();
 }
 async function openRight(id,opener){
   if(right?.open&&right.dataset.pdfExam===id){closeRight();return;}
@@ -92,13 +120,16 @@ async function openRight(id,opener){
   if(window.StudyAssistant&&!box.querySelector('[data-pdf-assistant]')){
     const restore=document.createElement('button');restore.type='button';restore.className='btn';restore.dataset.pdfAssistant='';restore.textContent='Terug naar assistent';box.querySelector('header').append(restore);
   }
-  // Never detach an existing iframe, even when selecting a different exam.
+  // Keep the current documents attached across question changes and toggles.
+  // Older, inactive readers are released after saving their annotations.
   for(const item of right.children){item.style.visibility='hidden';item.inert=true;}
   if(!box.isConnected)right.append(box);
   box.style.visibility='visible';box.inert=false;dock.show(opener);document.body.classList.add('original-pdf-open');updatePressed();
+  void pruneViewers();
 }
 function mount(){
   queued=false;const ctx=context();
+  if(ctx.loading){placeLeft();return;}
   if(currentKey&&currentKey!==ctx.key){
     if(left&&left.id!==ctx.id)closeLeft();
     if(right?.open&&right.dataset.pdfExam!==ctx.id)closeRight();

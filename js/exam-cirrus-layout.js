@@ -98,7 +98,10 @@
     if(!pageStrip.querySelector('#learning-tools-menu')){const original=document.querySelector(isSra?'#tools-menu':'#study-tools-menu');if(original){const menu=original.cloneNode(true);menu.id='learning-tools-menu';menu.open=false;menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.open=false));pageStrip.append(menu);}}
     const base=isSra?'':reader?'index.html':/\/fallback\//.test(location.pathname)?'../index.html':'';
     const home=isSra?'#home':'#start',mc=!!host.querySelector('.mc-page,.sra-practice-runner')||host.matches('.practice-question-page')||/^(?:oefenen|onderwerp-|kap-\d|val-\d|nvw-\d|hk-\d)/.test(route);
-    const context=pageStrip.querySelector('.learning-context');context.textContent=mc?'Onderwerpen':'Dashboard';context.href=base+(mc?(isSra?'#tentamen/mc':'#oefenen'):(isSra?'#tentamen':'#dashboard'));
+    const context=pageStrip.querySelector('.learning-context'),contextLabel=mc?'Onderwerpen':'Dashboard';
+    // Replacing identical text retriggers our body observer on every frame.
+    if(context.textContent!==contextLabel)context.textContent=contextLabel;
+    context.href=base+(mc?(isSra?'#tentamen/mc':'#oefenen'):(isSra?'#tentamen':'#dashboard'));
     pageStrip.querySelector('.learning-home').href=base+home;
     const title=host.querySelector('h1:not(.learning-page-title)');
     const homeHeading=title?.matches('.cafa-home-intro h1,.sra-home-intro h1');

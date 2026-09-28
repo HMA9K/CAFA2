@@ -24,7 +24,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
    const value=JSON.stringify({version:1,attempts:[a]});localStorage.setItem(CafaExams.storageKey,value);
    dispatchEvent(new StorageEvent('storage',{key:CafaExams.storageKey,newValue:value}));location.hash='tentamen/'+a.id;
   });
-  const button=kind=>page.locator('.exam-cirrus-actions [data-original-pdf="'+kind+'"]');
+  const button=kind=>page.locator('.exam-footer [data-original-pdf="'+kind+'"]');
   const left=page.frameLocator('.original-pdf-left-viewer:visible iframe');
   const right=page.frameLocator('#exam-original-solutions .original-pdf-viewer:not([inert]) iframe');
   await button('questions').click();await left.locator('#page').fill('7');await left.locator('#zoom').fill('125');
@@ -59,7 +59,7 @@ const base=process.env.PDF_URL||'http://127.0.0.1:8870/cafa2/';
   assert.equal(await left.locator('#zoom').inputValue(),'125');
   await page.evaluate(()=>location.hash='dashboard');await page.locator('a.exam-name').first().waitFor();
   assert.equal(await page.locator('#exam-original-solutions[open]').count(),0);
-  const questions=await page.evaluate(()=>Object.entries(CAFA2_DATA.modules).flatMap(([code,bank])=>bank.questions.flatMap((q,i)=>q.examId==='cafa2-20240422'?[code+'-'+(i+1)]:[])));
+  const questions=await page.evaluate(()=>Object.entries(CAFA2_DATA.modules).flatMap(([code,bank])=>bank.questions.flatMap(q=>q.examId==='cafa2-20240422'?[code+'-'+q.id]:[])));
   for(const id of questions.slice(0,2)){
    await page.evaluate(id=>location.hash=id,id);await page.locator('#'+id+' [data-original-pdf]').first().waitFor();
    if(id===questions[0]){
