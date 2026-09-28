@@ -508,8 +508,9 @@ try:
     # The demonstration exam supplies the multiple-choice option-id editor.
     visit('#welkom/demo-omgeving')
     page.locator('[data-exam-action="start"]').click()
-    demo_id=page.evaluate('CafaExams.getAttempts().at(-1).id')
-    page.evaluate('([id,i])=>CafaExams.restorePosition(id,i)',[demo_id,2])
+    page.wait_for_function('CafaExams.getPosition()?.examId==="demo-omgeving"')
+    demo_id=page.evaluate('CafaExams.getPosition().attempt')
+    check('Demo navigation restores the active demonstration attempt',page.evaluate('([id,i])=>CafaExams.restorePosition(id,i)',[demo_id,2]))
     page.locator('input[name="exam-answer"]').first.check()
     timer_before=page.evaluate('''id=>{const a=CafaExams.getAttempts().find(x=>x.id===id);
       return JSON.stringify({startedAt:a.startedAt,deadlineAt:a.deadlineAt,pausedAt:a.pausedAt,
