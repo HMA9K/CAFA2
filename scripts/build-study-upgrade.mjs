@@ -24,7 +24,7 @@ function assets(s,p=''){
   s=s.replace(/<script src="(?:\.\.\/)?js\/calculator-input\.js(?:\?[^"<>]*)?"><\/script>/g,'').replace(/<script defer src="(?:\.\.\/)?js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>\s*/g,'').replace(/<link rel="stylesheet" href="(?:\.\.\/)?css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">\s*/g,'');
   s=s.replace('<head>','<head><script src="'+p+'js/calculator-input.js?v=20260928-anskeys1"></script>');
   s=s.replace(/<link rel="stylesheet" href="(?:\.\.\/)?css\/calculator-cirrus\.css(?:\?[^"<>]*)?">/g,'');
-  s=s.replace('</head>',cirrusStyle+cirrusScript+'<link rel="stylesheet" href="'+p+'css/calculator-cirrus.css?v=20260928-shared1"></head>');
+  s=s.replace('</head>',cirrusStyle+cirrusScript+'<link rel="stylesheet" href="'+p+'css/calculator-cirrus.css?v=20260928-shared2"></head>');
   return s;
 }
 const context={window:{CAFA2_DATA:{modules:{}}}};vm.createContext(context);
