@@ -20,6 +20,7 @@ jobs:
       - run: npm run build:assistant
       - run: node scripts/verify-study-assistant-build.mjs
       - run: node tests/answer-model-layout-browser.mjs
+      - run: node tests/answer-input-tools-browser.cjs
       - run: npm run test:performance-browser
       - run: npm run test:performance-browser
         env:

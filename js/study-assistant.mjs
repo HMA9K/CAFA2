@@ -2,7 +2,7 @@ import {VERSION,refKey,conversationHistory} from './study-assistant-schema.mjs';
 import {createCafa2Adapter} from './study-assistant-cafa2.mjs?v=20260927-activate1';
 import {renderMarkdown} from './study-assistant-render.mjs?v=20260927-intro4';
 import {createAssistantIntro} from './study-assistant-intro.mjs?v=20260927-activate1';
-import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260927-detach1';
+import {createAssistantPanel} from './study-assistant-panel.mjs?v=20260928-scale1';
 const adapters=new Map(),conversations=new Map(),drafts=new Map();
 let adapter=createCafa2Adapter(),current=null,currentKey='',mode='hint',status=null,consent=false;
 let controller=null,running=false,refreshTimer=null,observedHost=null,observer=null,opener=null,generation=0,pendingTurn=null;

@@ -127,7 +127,7 @@ export function createAssistantPanel(panel,options={}){
     if(slot!==panel){
       const height=stacked?Math.min(680,available)+'px':'100%';if(slot.style.height!==height)slot.style.height=height;
       const rect=slot.getBoundingClientRect();
-      for(const [key,value] of Object.entries({position:'fixed',left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',margin:'0px',zIndex:'90'})){
+      for(const [key,value] of Object.entries({position:'fixed',left:rect.left/scale+'px',top:rect.top/scale+'px',width:rect.width/scale+'px',height:rect.height/scale+'px',margin:'0px',zIndex:'90'})){
         if(panel.style[key]!==value)panel.style[key]=value;
       }
     }

@@ -45,7 +45,7 @@
       wrapper.dataset.editorTheme = dark ? 'dark' : 'light';
       if (editor && initialized) editor.getBody().dataset.editorTheme = dark ? 'dark' : 'light';
     }
-    function availableWidth() { return Math.max(220, Math.floor(container.getBoundingClientRect().width || 600)); }
+    function availableWidth() { return Math.max(120, Math.floor(container.getBoundingClientRect().width / (window.StudyScale?.get() || 1) || 600)); }
     function savedSize() {
       try { return JSON.parse(sessionStorage.getItem(sizeKey) || 'null'); } catch (_) { return null; }
     }
@@ -93,6 +93,7 @@
             if (count && statusbar) statusbar.prepend(count);
             instance.getBody().setAttribute('aria-label', options.label || 'Vul je antwoord in');
             observer = new MutationObserver(theme); observer.observe(document.documentElement, {attributes: true, attributeFilter: ['data-study-theme']});
+            if (window.StudyAnswerInput) window.StudyAnswerInput.attachEditor(instance, wrapper);
             resizeBounds();
             if (window.ResizeObserver) { widthObserver = new ResizeObserver(resizeBounds); widthObserver.observe(container); }
             window.addEventListener('resize', resizeBounds);
@@ -102,8 +103,8 @@
           instance.on('ResizeEditor', function () {
             if (!initialized || applyingBounds || fullScreen()) return;
             var rect = instance.getContainer().getBoundingClientRect();
-            widthRatio = Math.max(0.1, Math.min(1, rect.width / availableWidth()));
-            try { sessionStorage.setItem(sizeKey, JSON.stringify({widthRatio: widthRatio, height: rect.height})); } catch (_) {}
+            widthRatio = Math.max(0.1, Math.min(1, rect.width / (window.StudyScale?.get() || 1) / availableWidth()));
+            try { sessionStorage.setItem(sizeKey, JSON.stringify({widthRatio: widthRatio, height: rect.height / (window.StudyScale?.get() || 1)})); } catch (_) {}
           });
         }
       });
