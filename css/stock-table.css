@@ -24,7 +24,7 @@
 .stock-scroll .stock-matrix input:focus { outline:2px solid #2786da; outline-offset:1px; }
 .stock-scroll .stock-matrix input::placeholder { color:#767b84; }
 .stock-notes { margin-top:20px; }
-.stock-notes > summary { cursor:pointer; color:#51495c; padding:10px 0; }
+.stock-notes > summary { width:fit-content; max-width:100%; box-sizing:border-box; cursor:pointer; color:#51495c; padding:6px 0; }
 .stock-value { white-space:pre-wrap; overflow-wrap:anywhere; }
 .exam-document:has(.stock-scroll) { overflow-x:visible; min-width:0; }
 .stock-scroll .stock-display-matrix td { height:auto; padding:5px 6px; white-space:nowrap; }

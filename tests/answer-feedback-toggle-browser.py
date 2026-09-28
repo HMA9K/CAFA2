@@ -125,7 +125,7 @@ try:
             score = feedback.locator('[data-self-score]')
             if score.count():
                 score.fill('1')
-                score.dispatch_event('change')
+                score.blur()
                 state = page.evaluate('localStorage.getItem(CafaExams.storageKey)')
                 button.click()
                 expect(feedback).to_be_hidden()

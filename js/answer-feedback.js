@@ -165,8 +165,8 @@
     button.textContent = 'Nakijken'; button.setAttribute('aria-expanded', 'false');
     button.setAttribute('aria-controls', 'cafa-exam-feedback');
     if (answer.querySelector('input[name="exam-answer"]')) controls.appendChild(checkbox());
-    var feedback = region('cafa-exam-feedback'); answer.insertAdjacentElement('afterend', feedback);
-    examUI = {answer:answer, feedback:feedback, button:button, controls:controls};
+    var feedback = region('cafa-exam-feedback'); actions.insertAdjacentElement('afterend', feedback);
+    examUI = {answer:answer, feedback:feedback, button:button, controls:controls, actions:actions};
   }
   function textLine(box, text, className) {
     var p = document.createElement('p'); p.textContent = text;
@@ -209,13 +209,12 @@
     if (!context || !examUI || !examUI.answer.isConnected) return;
     var q = context.question, answer = context.answer, box = examUI.feedback;if(window.StudyMeasure){if(window.CafaExamEngine.answeredCount({exam:{questions:[q]},answers:context.attempt.answers}))window.StudyMeasure.answer('exam:'+context.attempt.id+':'+q.id,answer,window.StudyMeasure.examNames(context.attempt.exam,q),true);window.StudyMeasure.activity('Uitwerking bekeken',window.StudyMeasure.examNames(context.attempt.exam,q));}
     box.replaceChildren();
-    examUI.answer.insertAdjacentElement('afterend', box);
+    examUI.actions.insertAdjacentElement('afterend', box);
     if (q.type === 'mc') {
       var selected = examUI.answer.querySelector('input[name="exam-answer"]:checked');
       if (!selected || !answer.optionId) {
         textLine(box, 'Kies eerst een antwoord. De uitwerking verschijnt daarna.', 'no-choice');
       } else {
-        var label = selected.closest('label'); if (label) label.insertAdjacentElement('afterend', box);
         var correct = (q.options || []).find(function (option) { return option.id === q.correctOptionId; });
         if (correct) {
           var good = answer.optionId === q.correctOptionId;

@@ -37,7 +37,7 @@
     function ensureVisible(){
       if(disposed||initialized||starting||!target.isConnected||!container.getClientRects().length||details.some(function(d){return !d.open;}))return;
       starting=true;var generation=initialization;
-      load().then(function(tiny){if(disposed||generation!==initialization||details.some(function(d){return !d.open;}))return;return initialize(tiny);}).catch(unavailable).finally(function(){starting=false;if(generation!==initialization)ensureVisible();});
+      load().then(function(tiny){if(disposed||generation!==initialization||details.some(function(d){return !d.open;}))return;return initialize(tiny);}).catch(unavailable).finally(function(){if(generation===initialization)starting=false;else ensureVisible();});
     }
     if(visibilityObserver)visibilityObserver.observe(container);
     var sizeKey = "learning-answer-editor-size-v2:" + location.hash;
@@ -123,7 +123,7 @@
     }
     var record = {
       suspend: function () {
-        sync(); initialization++;
+        sync(); initialization++; starting=false;
         if (observer) observer.disconnect(); if (widthObserver) widthObserver.disconnect();
         window.removeEventListener('resize', resizeBounds);
         var count = wrapper.querySelector('.cae-count'); if (count) wrapper.querySelector('.cae-footer').append(count);

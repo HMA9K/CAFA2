@@ -92,6 +92,12 @@
     });
   }
   function render(exam,kind,html,plain){
+    if(kind==='solution'&&/^<pre>/.test(html||'')){
+      var current=(window.CAFA2_EXAMS||[]).find(function(e){return e.id===exam.id;});
+      var source=current&&(current.questions||[]).find(function(q){return q.solutionHtml===html;});
+      var model=source&&(window.CAFA2_MODEL_PRESENTATION||{})[exam.id+'/'+source.id];
+      if(model&&model.sourceHtml===html)html=model.html;
+    }
     if(kind==='case'){
       var section=(exam.sections||[]).find(function(s){return s.contentHtml===html;});
       var presentation=section&&(window.CAFA2_CASE_PRESENTATION||{})[exam.id];

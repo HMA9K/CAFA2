@@ -187,7 +187,15 @@
   function mountLawSearch(){var input=document.getElementById('study-law-search');if(!input||input.dataset.bound)return;input.dataset.bound='true';input.addEventListener('input',function(){var term=input.value.toLocaleLowerCase('nl').trim(),count=0;document.querySelectorAll('[data-law-entry]').forEach(function(d){d.hidden=!d.textContent.toLocaleLowerCase('nl').includes(term);if(!d.hidden)count++;});document.getElementById('law-search-count').textContent=count+' artikelen gevonden';});}
   window.CafaStudy={
     examNote:function(exam,id){return data.notes[exam]&&data.notes[exam][id]?data.notes[exam][id].html:'';},
-    examLink:function(exam,id){var n=data.notes[exam]&&data.notes[exam][id];return n?'<a class="study-exam-link" href="samenvatting.html#'+escape(n.lesson)+'">Uitleg bij deze vraag in de samenvatting →</a>':'';},
+    examLink:function(exam,id){
+      var n=data.notes[exam]&&data.notes[exam][id],lesson=n&&n.lesson;
+      if(!lesson){
+        var modules=window.CAFA2_DATA&&window.CAFA2_DATA.modules||{};
+        var aliases={reserves:'wettelijke-reserve',consolidatiekader:'consolidatieplicht','vaste-activa':'mva','downstream-vp':'downstream-hk',basisconsolidatie:'proces',tijdstip:'tijdstipmethode',slotkoers:'slotkoersmethode',zeggenschap:'dochter','sidestream-afnemend':'sidestream-ab','upstream-vp':'upstream-hk','sidestream-niet-afnemend':'sidestream-nab'};
+        Object.keys(modules).some(function(code){var q=modules[code].questions.find(function(q){return q.examId===exam&&q.questionId===id;});if(!q)return false;lesson=aliases[q.topicId]||q.topicId;return !!data.guides[lesson];});
+      }
+      return lesson&&data.guides[lesson]?'<a class="study-exam-link" href="samenvatting.html#'+escape(lesson)+'">Uitleg bij deze vraag in de samenvatting →</a>':'';
+    },
     clearReturn:function(code){nav.origin=null;nav.pending=null;nav.stack=nav.stack.filter(function(s){return !s.question||s.question.code!==code;});persist();},
     refresh:function(){mountControls();enrichRules();scheduleUpdate();},
     lawRail:lawRail

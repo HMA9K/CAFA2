@@ -39,7 +39,7 @@
       closeFloat(false);const top=host.querySelector('.exam-question-top,.voorbeeld-opgave'),points=top?.querySelector('.exam-source-points');
       if(points){points.classList.add('cirrus-question-points');head.querySelector('.qnum').after(points);}top?.remove();head.dataset.cirrusLayout='true';body.prepend(head);
       const split=host.querySelector('.exam-case-layout'),footer=host.querySelector('.exam-footer');
-      if(split&&footer){const work=document.createElement('div');work.className='cirrus-work-pane';body.before(work);work.append(body,footer);}
+      if(split&&footer){const work=document.createElement('div');work.className='cirrus-work-pane';body.before(work);if(window.CafaAnswerEditor?.moveNode)CafaAnswerEditor.moveNode(work,body);else work.append(body);work.append(footer);}
       const title=host.querySelector('.exam-runner-title'),pageHead=document.createElement('div');pageHead.className='cirrus-page-head';
       const nav=document.createElement('nav');nav.className='cirrus-page-nav';nav.setAttribute('aria-label','Tentamennavigatie');nav.innerHTML='<a class="btn" href="'+(isSra?'#home':'#start')+'">Home</a><a class="btn" href="'+(isSra?'#tentamen':'#dashboard')+'">Dashboard</a>';
       title.before(pageHead);pageHead.append(nav,title);const menu=document.querySelector(isSra?'#tools-menu':'#study-tools-menu');if(menu){const visibleMenu=menu.cloneNode(true);visibleMenu.id='cirrus-tools-menu';visibleMenu.open=false;visibleMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>visibleMenu.open=false));pageHead.append(visibleMenu);}
@@ -55,6 +55,8 @@
       const primary=question?.querySelector('.cirrus-main-instruction');
       if(primary){const start=primary.textContent.search(/\s+(?=(?:Als (?:je|u)\b|Let op\b|NB\s*:))/i);if(start>=0){const walker=document.createTreeWalker(primary,NodeFilter.SHOW_TEXT);let node,offset=0;while((node=walker.nextNode())){if(offset+node.length>start){const range=document.createRange();range.setStart(node,start-offset);range.setEnd(primary,primary.childNodes.length);const note=document.createElement('span');note.className='cirrus-supplemental';note.append(range.extractContents());primary.append(note);break;}offset+=node.length;}}}
     }
+    const actions=body.querySelector('.exam-answer-actions'),help=body.querySelector('.study-exam-link,.cirrus-summary-link'),pause=actions?.querySelector('[data-exam-action="pause"]');
+    if(help&&pause&&pause.nextElementSibling!==help){help.classList.add('cirrus-summary-link');pause.after(help);}
     const footerActions=host.querySelector('.exam-cirrus-actions'),submit=footerActions?.querySelector('[data-exam-action="submit"]');
     if(submit&&footerActions.lastElementChild!==submit)footerActions.append(submit);
     const marked=head.closest('.frame').querySelector('[data-exam-action="mark"]')?.getAttribute('aria-pressed')==='true';let marker=head.querySelector('.cirrus-question-flag');

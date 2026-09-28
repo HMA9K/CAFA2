@@ -52,7 +52,7 @@ try:
     browser=browser_type.launch(headless=True,**({'executable_path':executable} if executable and engine=='chromium' else {}),
                                 **({'args':['--no-sandbox']} if engine=='chromium' else {}))
     page=browser.new_page(viewport={'width':1366,'height':950});page.set_default_timeout(int(os.environ.get('ASSISTANT_QA_TIMEOUT_MS','12000')))
-    page.on('pageerror',lambda e:errors.append(str(e)))
+    page.on('pageerror',lambda e:(errors.append(str(e)),print('BROWSER_ERROR',str(e),flush=True)))
     def route(r):
       if not r.request.url.startswith(base): r.abort();return
       if '/api/study-' not in r.request.url: r.continue_();return
@@ -254,7 +254,8 @@ try:
     page.locator('#kap-'+journal_id+' [data-journal-row="0"][data-journal-col="0"]').fill('Deelneming')
     page.locator('#kap-'+journal_id+' [data-journal-row="0"][data-journal-col="1"]').fill('125000')
     send('Controleer mijn journaalpost.')
-    check('Practice journal row and debit amount reach the model',requests[-1]['studentAnswer']['rows'][0][:2]==['Deelneming','125000'])
+    journal_row=requests[-1]['studentAnswer']['rows'][0]
+    check('Practice journal row and debit amount reach the model',journal_row[:2]==['Deelneming','125.000'])
 
     # Topic selection reuses a real question but keeps a distinct conversation.
     topic=page.evaluate('''() => CafaTopics.topics.find(t=>t.questions.includes('kap-1'))''')
@@ -341,7 +342,8 @@ try:
     page.evaluate('id=>CafaExams.restorePosition(id,0)',attempt_id)
     page.wait_for_function('CafaExams.getPosition()?.index===0')
     page.locator('[data-exam-answer] .tox-edit-area iframe').wait_for(state='visible')
-    page.wait_for_function('window.tinymce?.activeEditor?.initialized')
+    page.locator('#exam-app [data-exam-answer]').scroll_into_view_if_needed()
+    page.frame_locator('[data-exam-answer] .tox-edit-area iframe').locator('body[contenteditable="true"]').wait_for(state='visible')
     page.frame_locator('[data-exam-answer] .tox-edit-area iframe').locator('body').fill('Mijn tentamenantwoord: 123.456 euro.')
     page.wait_for_function('CafaExams.getAttempts().find(a=>a.id===location.hash.slice(10))?.answers["vraag-1"]?.html?.includes("123.456")')
     saved_exam=page.evaluate('localStorage.getItem(CafaExams.storageKey)')
@@ -386,6 +388,7 @@ try:
     check('Modal close controls remain usable',page.locator('#exam-info-dialog [data-close-info]').first.is_visible())
     page.locator('#exam-info-dialog [data-close-info]').first.click()
     page.wait_for_function('document.querySelector("#study-assistant").closest(".study-assistant-layout.is-exam")')
+    page.locator('#study-assistant').wait_for(state='visible')
     check('Assistant returns to the page when the exam modal closes',page.locator('#study-assistant').is_visible())
     page.locator('[data-exam-action="check"]').click()
     check('Inline answer feedback remains available beside assistant',page.locator('#cafa-exam-feedback').is_visible() and page.locator('#study-assistant').evaluate('(e)=>e.open'))
@@ -413,7 +416,7 @@ try:
     page.locator('[data-journal-row="0"][data-journal-col="0"]').fill('Deelnemingen')
     page.locator('[data-journal-row="0"][data-journal-col="1"]').fill('84000')
     ensure_open();send('Controleer deze journaalpost.')
-    check('Full-exam journal columns are sent in order',requests[-1]['studentAnswer']['rows'][0][:2]==['Deelnemingen','84000'])
+    check('Full-exam journal columns are sent in order',requests[-1]['studentAnswer']['rows'][0][:2]==['Deelnemingen','84.000'])
     close_panel();move_exam(stock_q)
     stock_cell=page.locator('[data-stock-cell]').first
     stock_key=stock_cell.get_attribute('data-stock-cell');stock_cell.fill('37,5%')
@@ -457,6 +460,8 @@ try:
     check('Individual review navigation updates question and keeps its own history',
           requests[-1]['ref']['questionId']=='vraag-2' and
           any(m['content']=='Vraag 2 krijgt eigen uitleg.' for m in requests[-1]['history']))
+    if errors:
+      print('HISTORIC_LAYOUT_ERRORS',json.dumps(errors),flush=True)
     check('Replaced historical layout is released without an exception and the new panel stays connected',not errors and page.locator('#study-assistant').evaluate('e=>e.isConnected && e.parentElement.classList.contains("study-assistant-layout")'))
     close_panel()
 
