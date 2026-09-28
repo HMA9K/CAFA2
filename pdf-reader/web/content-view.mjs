@@ -1,5 +1,5 @@
 // Focus the viewport on text without changing the PDF page or annotation coordinates.
-import {installPageLayout} from './page-layout.mjs?v=20260928-navigation1';
+import {installPageLayout} from './page-layout.mjs?v=20260928-navigation2';
 export function installContentView(app,{key,restored=false}){
   const viewer=app.pdfViewer,container=viewer.container,select=document.getElementById('scaleSelect');
   const choice=document.createElement('option');choice.value='content-width';choice.textContent='Inhoudsbreedte';
@@ -52,7 +52,7 @@ export function installContentView(app,{key,restored=false}){
   app.eventBus.on('pagesinit',()=>{void focus({fit:active,top:active&&!restored});});
   app.eventBus.on('documentinit',()=>{if(active)void focus({fit:true,top:!restored});});
   app.eventBus.on('pagesloaded',()=>{if(active)void focus({fit:true,top:!restored});});
-  app.eventBus.on('pagechanging',()=>{if(active)void focus({fit:true});});
+  app.eventBus.on('pagechanging',()=>{if(active&&!applying)void focus({fit:true});});
   app.eventBus.on('rotationchanging',()=>{void focus({fit:active});});
   new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(active)void focus({fit:true});},80);}).observe(container);
   window.CafaPdfContentView={focus,get active(){return active;}};

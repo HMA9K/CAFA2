@@ -23,7 +23,10 @@ export function installPageLayout(app,onLayoutChange){
     const arrow=document.createElement('span'),caption=document.createElement('span');
     arrow.className='cafa-page-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent=text;caption.textContent=label;
     button.append(...(step<0?[arrow,caption]:[caption,arrow]));
-    button.addEventListener('click',()=>{app.page=Math.min(viewer.pagesCount,Math.max(1,viewer.currentPageNumber+step));});navigation.append(button);
+    button.addEventListener('click',()=>{
+      app.page=Math.min(viewer.pagesCount,Math.max(1,viewer.currentPageNumber+step));
+      onLayoutChange({top:true});
+    });navigation.append(button);
   }
   toolbar.append(navigation);
   function updateNavigation(){previous.disabled=viewer.currentPageNumber<=1;next.disabled=!viewer.pagesCount||viewer.currentPageNumber>=viewer.pagesCount;}
@@ -31,7 +34,7 @@ export function installPageLayout(app,onLayoutChange){
     viewer.viewer.classList.toggle('showPageEnds',layout.pageEnds);
     viewer.viewer.classList.toggle('singlePage',layout.singlePage);
     for(const name of Object.keys(controls))controls[name].setAttribute('aria-pressed',String(layout[name]));
-    navigation.hidden=!layout.singlePage;updateNavigation();
+    updateNavigation();
     if(viewer.pagesCount){
       const {ScrollMode,SpreadMode}=window.PDFViewerApplicationConstants;
       const mode=layout.singlePage?ScrollMode.PAGE:ScrollMode.VERTICAL,changed=viewer.scrollMode!==mode;
