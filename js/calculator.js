@@ -156,6 +156,10 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
     entries.push({id:typeof crypto.randomUUID==='function'?crypto.randomUUID():Date.now()+'-'+Math.random(),expression,displayExpression,value});
     lastValue=value;continueFromResult=true;input.value='';renderHistory(true);
   }
+  function finishDeletion(){
+    continueFromResult=false;
+    if(/^[−-]$/.test(input.value))input.setSelectionRange(1,1);
+  }
   function perform(key){
     clearError();const copy=find('.calc-copy-result');if(copy)copy.textContent='';
     try{
@@ -166,8 +170,8 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
         if(!input.value.trim()){input.value='-';continueFromResult=false;input.setSelectionRange(1,1);}
         else{insert('(-)');const caret=input.selectionStart-1;input.setSelectionRange(caret,caret);}
       }
-      else if(key==='CE')input.value=input.value.replace(/(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?%?$/,'');
-      else if(key==='back'||key==='⌫'){let start=input.selectionStart??input.value.length,end=input.selectionEnd??start;if(start===end)start=Math.max(0,start-1);input.setRangeText('',start,end,'end');}
+      else if(key==='CE'){input.value=input.value.replace(/(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?%?$/,'');finishDeletion();}
+      else if(key==='back'||key==='⌫'){let start=input.selectionStart??input.value.length,end=input.selectionEnd??start;if(start===end)start=Math.max(0,start-1);input.setRangeText('',start,end,'end');finishDeletion();}
       else if(key==='MC')memory=0;
       else if(key==='MR')insert(memory<0?'('+raw(memory)+')':raw(memory));
       else if(key==='MS')memory=currentValue();
@@ -198,8 +202,11 @@ function setupHistoryCalculator(panel, opener, evaluate, options) {
   find('[data-calc-close]').onclick=close;minimize.onclick=()=>expand(body.hidden);
   compact.onclick=()=>{if(!expandedSize){const r=bounds();expandedSize={w:r.width,h:r.height};size={w:240,h:380};compact.setAttribute('aria-label','Rekenmachine normale grootte');compact.title='Normale grootte';}else{size=expandedSize;expandedSize=null;compact.setAttribute('aria-label','Rekenmachine verkleinen');compact.title='Verkleinen';}expand(true);place();save();};
   panel.querySelectorAll('[data-calc-key],[data-key]').forEach(button=>{button.addEventListener('pointerdown',e=>{if(e.button===0)e.preventDefault();});button.onclick=()=>perform(button.dataset.calcKey??button.dataset.key);});
-  input.oninput=()=>{
+  // Editing existing input is explicit: never reinsert Ans while it is being erased.
+  input.onbeforeinput=event=>{if(input.value.trim()||/^delete/.test(event.inputType||''))continueFromResult=false;};
+  input.oninput=event=>{
     clearError();
+    if(/^delete/.test(event.inputType||'')){finishDeletion();save();return;}
     const value=input.value,prefixed=window.CirrusCalcInput.label(value,continueFromResult);
     if(prefixed!==value&&prefixed.length<=180){
       const start=input.selectionStart,end=input.selectionEnd,shift=prefixed.length-value.length;

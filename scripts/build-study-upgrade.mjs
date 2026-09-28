@@ -17,7 +17,7 @@ function assets(s,p=''){
   s=s.replace('<head>','<head>'+wrap('early-theme','<script src="'+p+'js/page-scale.js?v=20260928-1"></script><script src="'+p+'js/study-theme.js?v=20260922-2"></script>'));
   const scripts='<script defer src="'+p+'js/study-lessons.js?v=20260922-clarity1"></script><script defer src="'+p+'js/law-focus.js?v=20260922-2"></script><script defer src="'+p+'js/law-popover.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'data/study-support.js?v=20260922-2"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/study-shell.js?v=20260927-editor3"></script><script '+(s.includes('js/bootstrap.js')?'':'defer ')+'src="'+p+'js/law-book.js?v=20260924-lawbook1"></script><script defer src="'+p+'js/study-wizard.js?v=20260922-clarity1"></script>';
   if(s.includes('<script src="js/bootstrap.js">'))s=s.replace('<script src="js/bootstrap.js">',wrap('scripts',scripts)+'<script src="js/bootstrap.js">');
-  else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260928-shared1"></script>')+'</head>');
+  else s=s.replace('</head>',wrap('scripts',scripts+'<script defer src="'+p+'js/calculator.js?v=20260928-eraseans1"></script>')+'</head>');
   // Load the common calculator input on every entry point, including static fallback pages.
   const cirrusScript=s.match(/<script defer src="(?:\.\.\/)?js\/exam-cirrus-layout\.js(?:\?[^"<>]*)?"><\/script>/)?.[0]||'<script defer src="'+p+'js/exam-cirrus-layout.js?v=20260928-efficient1"></script>';
   const cirrusStyle=s.match(/<link rel="stylesheet" href="(?:\.\.\/)?css\/exam-cirrus-layout\.css(?:\?[^"<>]*)?">/)?.[0]||'<link rel="stylesheet" href="'+p+'css/exam-cirrus-layout.css?v=20260927-return-center1">';

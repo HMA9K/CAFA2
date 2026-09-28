@@ -24,6 +24,18 @@ const server=http.createServer((req,res)=>{
     const result=async expected=>{const s=await state();assert.equal(s.errorShown,false);assert.ok(Math.abs(s.lastValue-expected)<1e-10,JSON.stringify({expected,actual:s.lastValue}));checks++;};
     const type=async text=>{await input.fill(text);await input.press('Enter');};
     const seed=async value=>{await key('C');await type(String(value));};
+    // Deleting Ans leaves an editable unary minus, including after reload.
+    for(const deleteKey of ['Backspace','Delete','button']){
+      await seed(100);await key('-');
+      await input.evaluate(e=>e.setSelectionRange(0,3));
+      if(deleteKey==='button')await key('back');else await input.press(deleteKey);
+      assert.equal(await input.inputValue(),'-','Ans can be removed with '+deleteKey);
+      await input.pressSequentially('550');assert.equal(await input.inputValue(),'-550');await input.press('Enter');await result(-550);
+    }
+    await seed(100);await key('-');await input.evaluate(e=>e.setSelectionRange(3,3));
+    for(const expected of ['An-','A-','-']){await input.press('Backspace');assert.equal(await input.inputValue(),expected);}
+    await page.reload();await page.waitForFunction(()=>!!window.CafaCalculator);await page.locator('[data-calc]').first().click();
+    await input.focus();assert.equal(await input.inputValue(),'-');await input.pressSequentially('5');assert.equal(await input.inputValue(),'-5');await input.press('Enter');await result(-5);
     await key('C');await type('-2^2');await result(-4);
     assert.equal(await panel.locator('[data-calc-key="sign"]').count(),0);
     for(const k of ['Ans','negative'])assert.ok(await panel.locator('.calc-keys').locator(`[data-calc-key="${k}"]`).isVisible());
