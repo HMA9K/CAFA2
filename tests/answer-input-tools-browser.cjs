@@ -68,6 +68,16 @@ const server=http.createServer((req,res)=>{
    await page.evaluate(i=>CafaExams.restorePosition('qa-answer-input',i),journalIndex);
    const debit=page.locator('.journal-table input[data-journal-col="1"]').first();await debit.fill('2024');assert.equal(await debit.inputValue(),'2024');await debit.fill('5000');assert.equal(await debit.inputValue(),'5.000');
    await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands-all]').uncheck();await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands]').uncheck();await debit.fill('7000');assert.equal(await debit.inputValue(),'7000');
+   const journal=page.locator('.journal-table');await journal.locator('[data-journal-row="0"][data-journal-col="0"]').fill('Voorraad');await journal.locator('[data-journal-row="1"][data-journal-col="0"]').fill('Kostprijs');
+   await debit.focus();await page.locator('.journal-add').click();assert.equal(await journal.locator('[data-journal-row="2"][data-journal-col="0"]').inputValue(),'Kostprijs');assert.equal(await journal.locator('[data-journal-row="1"][data-journal-col="0"]').inputValue(),'');
+   await journal.locator('tbody tr').last().scrollIntoViewIfNeeded();await page.waitForTimeout(100);
+   const beforeHeight=(await journal.locator('tbody tr').first().boundingBox()).height,grip=page.locator('.input-table-corner-grip').first(),r=await grip.boundingBox();
+   await page.mouse.move(r.x+r.width/2,r.y+r.height/2);await page.mouse.down();await page.mouse.move(r.x+r.width/2,r.y+r.height/2-180,{steps:12});await page.mouse.up();
+   assert.ok((await journal.locator('tbody tr').first().boundingBox()).height<beforeHeight-10,'Real exam journal becomes compact');
+   const compactHeight=await journal.evaluate(t=>t.style.getPropertyValue('--input-table-row-height'));
+   if(process.env.TABLE_SCREENSHOT)await page.locator('.journal-scroll').screenshot({path:process.env.TABLE_SCREENSHOT});
+   await page.reload();await page.locator('.journal-table.input-table-adjustable').waitFor();
+   assert.equal(await journal.locator('[data-journal-row="2"][data-journal-col="0"]').inputValue(),'Kostprijs');assert.equal(await debit.inputValue(),'7000');assert.equal(await journal.evaluate(t=>t.style.getPropertyValue('--input-table-row-height')),compactHeight,'Compact layout and answers survive reload');
    await page.evaluate(()=>CafaExams.restorePosition('qa-answer-input',13));await page.locator('.stock-matrix input').first().waitFor();
    const amount=page.locator('.stock-matrix input[data-stock-cell^="r"]').first();await amount.fill('5000');assert.equal(await amount.inputValue(),'5.000');
    await page.locator('.stock-notes').evaluate(e=>e.open=true);await page.locator('.stock-notes .tox-edit-area iframe').waitFor();

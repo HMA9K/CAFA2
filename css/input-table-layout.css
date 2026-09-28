@@ -8,8 +8,9 @@
 .input-table-handles .input-table-corner-grip{right:0;bottom:0;width:14px;height:14px;cursor:nwse-resize;background:linear-gradient(135deg,transparent 45%,#778697 46%,#778697 51%,transparent 52%,transparent 63%,#778697 64%,#778697 69%,transparent 70%,transparent 81%,#778697 82%,#778697 87%,transparent 88%)}
 .input-table-corner-grip:hover,.input-table-corner-grip:focus-visible{outline:2px solid #2786da;outline-offset:-2px}
 .input-table-dragging,.input-table-dragging *{user-select:none!important}
-table.input-table-adjustable tbody>tr>td,table.input-table-adjustable tbody>tr>th{height:var(--input-table-row-height,36px)!important;box-sizing:border-box;vertical-align:middle}
+table.input-table-adjustable tbody>tr>td,table.input-table-adjustable tbody>tr>th{height:var(--input-table-row-height,36px)!important;box-sizing:border-box;vertical-align:middle;padding-block:clamp(2px,calc((var(--input-table-row-height,36px) - 28px)/4),10px)!important}
 .input-table-adjustable :is(input,textarea){box-sizing:border-box;min-width:0;max-width:100%}
+.input-table-adjustable tbody :is(input,textarea){min-height:0!important;padding-block:clamp(2px,calc((var(--input-table-row-height,36px) - 28px)/4),8px)!important}
 @media print{.input-table-handles{display:none!important}}
 
 :is(.stock-scroll,.journal-scroll):has(>.input-table-adjustable){border:0!important;box-shadow:none;background:transparent}
