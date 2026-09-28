@@ -16,8 +16,11 @@ const server=http.createServer((req,res)=>{
   const page=await browser.newPage({viewport:{width:1800,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(45000);
   // A local fixture isolates native input behavior from scoring and content.
   await page.goto('http://127.0.0.1:'+server.address().port+'/__input-fixture');await page.waitForFunction(()=>StudyAnswerInput);
-  const cases={'5000':'5.000','1234567,89':'1.234.567,89','-5000':'-5.000','5000/100 = 50':'5.000/100 = 50','5000-2500':'5.000-2.500','Bedrag 5000.':'Bedrag 5.000.','31-12-2024':'31-12-2024','2024-12-31':'2024-12-31','5000.25':'5000.25','12345%':'12345%','jaar 2024':'jaar 2024','H0 β1 = 0':'H0 β1 = 0','5000 + 6000,50':'5.000 + 6.000,50'};
+  const cases={'5000':'5.000','1234567,89':'1.234.567,89','-5000':'-5.000','5000/100 = 50':'5.000/100 = 50','5000-2500':'5.000-2.500','Bedrag 5000.':'Bedrag 5.000.','31-12-2024':'31-12-2024','2024-12-31':'2024-12-31','5000.25':'5000.25','12345%':'12345%','jaar 2024':'jaar 2024','september 2024':'september 2024','Boekaar 2024':'Boekaar 2024','2024':'2024','2.024':'2024','2014':'2.014','2031':'2.031','2015':'2015','2030':'2030','2024,50':'2.024,50','-2024':'-2.024','jaar 2014':'jaar 2.014','H0 β1 = 0':'H0 β1 = 0','5000 + 6000,50':'5.000 + 6.000,50'};
   for(const [value,expected] of Object.entries(cases))assert.equal(await page.evaluate(v=>StudyAnswerInput.formatted(v).value,value),expected,value);
+  for(let year=2015;year<=2030;year++){await page.locator('#a').fill(String(year));assert.equal(await page.locator('#a').inputValue(),String(year));}
+  await page.locator('#a').fill('20240');await page.locator('#a').press('End');await page.locator('#a').press('Backspace');assert.equal(await page.locator('#a').inputValue(),'2024');assert.equal(await page.locator('#a').evaluate(e=>e.selectionStart),4);
+  await page.locator('#notes').pressSequentially('september 2024, Boekaar 2024, 2024-12-31, 5000');assert.equal(await page.locator('#notes').inputValue(),'september 2024, Boekaar 2024, 2024-12-31, 5.000');
   await page.locator('#a').fill('5000');assert.equal(await page.locator('#a').inputValue(),'5.000');
   await page.locator('#a').press('End');await page.locator('#a').press('0');assert.equal(await page.locator('#a').inputValue(),'50.000');
   await page.locator('#a').press('Backspace');assert.equal(await page.locator('#a').inputValue(),'5.000');
@@ -49,6 +52,7 @@ const server=http.createServer((req,res)=>{
   },sra);
   await page.waitForFunction(()=>window.tinymce?.activeEditor?.initialized);
   const body=page.frameLocator('#exam-app .tox-edit-area iframe').locator('body');await body.fill('5000');assert.equal(await body.innerText(),'5.000');
+  await body.fill('');await body.pressSequentially('september 2024 / Boekaar 2024 / 2024-12-31 / 5000');assert.equal(await body.innerText(),'september 2024 / Boekaar 2024 / 2024-12-31 / 5.000');
   await page.waitForFunction(sra=>{const app=sra?SRACirrus:CafaExams;return app.getAttempts().find(a=>a.id==='qa-answer-input').answers[sra?'vraag-1':'vraag-3']?.html?.includes('5.000');},sra);
   const richToggle=page.locator('.cafa-answer-editor + .answer-thousands-toggle input[data-answer-thousands]');await richToggle.uncheck();await body.fill('5000');assert.equal(await body.innerText(),'5000');await richToggle.check();assert.equal(await body.innerText(),'5.000');
   await page.evaluate(()=>{const e=tinymce.activeEditor;e.setContent('<table><tbody><tr><td>alpha</td><td>beta</td></tr><tr><td>gamma</td><td>delta</td></tr></tbody></table>');e.dispatch('change');});
@@ -62,7 +66,7 @@ const server=http.createServer((req,res)=>{
   if(!sra){
    const journalIndex=await page.evaluate(()=>CafaExams.getAttempts().find(a=>a.id==='qa-answer-input').exam.questions.findIndex(q=>CafaJournalTable.supports(q)));
    await page.evaluate(i=>CafaExams.restorePosition('qa-answer-input',i),journalIndex);
-   const debit=page.locator('.journal-table input[data-journal-col="1"]').first();await debit.fill('5000');assert.equal(await debit.inputValue(),'5.000');
+   const debit=page.locator('.journal-table input[data-journal-col="1"]').first();await debit.fill('2024');assert.equal(await debit.inputValue(),'2024');await debit.fill('5000');assert.equal(await debit.inputValue(),'5.000');
    await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands-all]').uncheck();await page.locator('.journal-scroll + .answer-thousands-toggle input[data-answer-thousands]').uncheck();await debit.fill('7000');assert.equal(await debit.inputValue(),'7000');
    await page.evaluate(()=>CafaExams.restorePosition('qa-answer-input',13));await page.locator('.stock-matrix input').first().waitFor();
    const amount=page.locator('.stock-matrix input[data-stock-cell^="r"]').first();await amount.fill('5000');assert.equal(await amount.inputValue(),'5.000');

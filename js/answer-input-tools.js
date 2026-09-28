@@ -30,10 +30,17 @@
     let position=caret;
     const dates=Array.from(text.matchAll(/\b(?:\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{4}[-/]\d{1,2}[-/]\d{1,2})\b/g),m=>({start:m.index,end:m.index+m[0].length}));
     const value=text.replace(/(?<![\p{L}\p{N}_.,])[-+−]?\d(?:[\d.]*\d)?(?:,\d*)?(?![\p{L}\p{N}_,]|\.\d)/gu,(token,start)=>{
-      const after=text.slice(start+token.length),before=text.slice(0,start);
+      const after=text.slice(start+token.length);
       // Dates, scientific notation, percentages and decimal points are not amounts.
       if(/^\s*%/.test(after)||dates.some(d=>start>=d.start&&start<d.end))return token;
-      if(/\b(?:jaar|jaartal)\s*$/i.test(before)&&/^\d{4}$/.test(token))return token;
+      const year=token.replaceAll('.','');
+      const yearToken=token.replace(/,$/,'');
+      const groupedYear=!yearToken.includes('.')||(partial?/^\+?\d{1,3}(?:\.\d{1,3})+$/:/^\+?\d{1,3}(?:\.\d{3})+$/).test(yearToken);
+      if(groupedYear&&/^\+?(?:201[5-9]|202\d|2030),?$/.test(year)){
+        if(start+token.length<=caret)position+=year.length-token.length;
+        else if(start<caret)position-=token.slice(0,caret-start).split('.').length-1;
+        return year;
+      }
       const parts=token.split(','),integer=parts[0],digits=integer.replace(/\D/g,'');
       if(digits.length<4||integer.includes('.')&&!(partial?/^[+−-]?\d{1,4}(?:\.\d{1,4})+$/:/^[+−-]?\d{1,4}(?:\.\d{3,4})+$/).test(integer))return token;
       const sign=integer.match(/^[+−-]/)?.[0]||'';
