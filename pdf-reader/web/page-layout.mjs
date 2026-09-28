@@ -19,7 +19,10 @@ export function installPageLayout(app,onLayoutChange){
   const navigation=document.createElement('div');navigation.className='cafa-page-nav';navigation.setAttribute('role','group');navigation.setAttribute('aria-label','Bladeren door PDF-pagina’s');
   const previous=document.createElement('button'),next=document.createElement('button');
   for(const [button,id,label,text,step] of [[previous,'cafa-previous-page','Vorige pagina','‹',-1],[next,'cafa-next-page','Volgende pagina','›',1]]){
-    button.type='button';button.id=id;button.title=label;button.setAttribute('aria-label',label);button.textContent=text;
+    button.type='button';button.id=id;button.title=label;button.setAttribute('aria-label',label);
+    const arrow=document.createElement('span'),caption=document.createElement('span');
+    arrow.className='cafa-page-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent=text;caption.textContent=label;
+    button.append(...(step<0?[arrow,caption]:[caption,arrow]));
     button.addEventListener('click',()=>{app.page=Math.min(viewer.pagesCount,Math.max(1,viewer.currentPageNumber+step));});navigation.append(button);
   }
   toolbar.append(navigation);
