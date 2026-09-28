@@ -2,9 +2,30 @@
 (function () {
   'use strict';
   if (window.StudyAnswerInput) return;
-  const groups=new WeakMap(),previous=new WeakMap(),registrations=new Set(), storage='learning-answer-thousands-v1';
+  const groups=new WeakMap(),previous=new WeakMap(),registrations=new Set(), storage='learning-answer-thousands-v2';
   let preferences={};try{preferences=JSON.parse(localStorage.getItem(storage)||'{}');}catch{}
   if(!preferences||typeof preferences!=='object'||Array.isArray(preferences))preferences={};
+  preferences={default:preferences.default!==false,questions:preferences.questions&&typeof preferences.questions==='object'&&!Array.isArray(preferences.questions)?preferences.questions:{}};
+  function questionKey(host){
+    const question=host.closest('.question');if(question)return 'practice:'+question.id;
+    const app=window.CafaExams||window.SRACirrus,attemptId=location.hash.match(/^#(?:toets|tentamen)\/([^/]+)/)?.[1];
+    const attempts=app?.getAttempts?.()||[],current=attempts.find(a=>a.id===attemptId);
+    const position=app?.getPosition?.()||(current?{attempt:current.id,index:current.currentIndex}:null);
+    if(position){const attempt=attempts.find(a=>a.id===position.attempt),q=attempt?.exam.questions[position.index];
+      if(q)return 'exam:'+(q.sourceExamId||attempt.exam.id)+':'+(q.sourceQuestionId||q.id);
+    }
+    return location.pathname+location.hash+':'+(document.querySelector('.exam-question-identity .qnum')?.textContent.trim()||'');
+  }
+  const save=()=>{try{localStorage.setItem(storage,JSON.stringify(preferences));}catch{}};
+  function refresh(g,format=false){
+    const override=Object.hasOwn(preferences.questions,g.key);
+    g.check.checked=override?preferences.questions[g.key]:preferences.default;g.all.checked=!override;
+    if(!format||!g.check.checked)return;
+    if(g.editor){g.editor.undoManager.transact(()=>formatRich(g.editor.getBody()));g.editor.dispatch('change');}
+    else if(g.kind==='editor'){const content=g.host.querySelector('.cae-content');if(content&&formatRich(content))content.dispatchEvent(new Event('input',{bubbles:true}));}
+    else (g.kind==='table'?g.host.querySelectorAll('input,textarea'):[g.host]).forEach(f=>formatField(f,true));
+  }
+  function updateAll(format=true){for(const g of registrations)if(g.host.isConnected)refresh(g,format);}
   function formatted(text,caret=text.length,partial=false){
     let position=caret;
     const dates=Array.from(text.matchAll(/\b(?:\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\d{4}[-/]\d{1,2}[-/]\d{1,2})\b/g),m=>({start:m.index,end:m.index+m[0].length}));
@@ -54,24 +75,27 @@
   }
   function group(host,kind){
     if(groups.has(host))return groups.get(host);
-    const scope=host.closest('.question,.exam-question-body,.sra-exam-answer,#main')||document.body;
-    const index=Array.from(scope.querySelectorAll(kind==='editor'?'.cafa-answer-editor':kind==='table'?'table':'textarea')).indexOf(host);
-    const question=host.closest('.question')?.id||document.querySelector('#exam-app .qnum')?.textContent.trim()||'';
-    const key=location.pathname+location.hash+':'+question+':'+kind+':'+index;
-    const label=document.createElement('label');label.className='answer-thousands-toggle';
-    const check=document.createElement('input');check.type='checkbox';check.checked=preferences[key]!==false;
-    check.dataset.answerThousands='';label.append(check,document.createTextNode('Duizendtallen met punt (5.000)'));
+    const key=questionKey(host),label=document.createElement('div');label.className='answer-thousands-toggle';
+    const amountLabel=document.createElement('label'),allLabel=document.createElement('label');
+    const check=document.createElement('input');check.type='checkbox';check.dataset.answerThousands='';
+    const all=document.createElement('input');all.type='checkbox';all.dataset.answerThousandsAll='';
+    all.title='Aangevinkt: onthouden voor alle vragen. Uitgevinkt: alleen deze vraag, voor alle invoervelden.';
+    amountLabel.append(check,document.createTextNode('Duizendtallen met punt (5.000)'));
+    allLabel.append(all,document.createTextNode('Voor alle vragen'));label.append(amountLabel,allLabel);
     if(kind==='table'){
       const wrap=host.closest('.journal-scroll,.stock-scroll,.table-scroll,.table-wrap');(wrap||host).after(label);
     }else host.after(label);
-    const g={host,check,label,kind,editor:null};groups.set(host,g);registrations.add(g);
+    const g={host,check,all,label,key,kind,editor:null};groups.set(host,g);registrations.add(g);refresh(g);
     host.querySelectorAll('input,textarea').forEach(f=>previous.set(f,f.value));
     check.addEventListener('change',()=>{
-      preferences[key]=check.checked;try{localStorage.setItem(storage,JSON.stringify(preferences));}catch{}
-      if(!check.checked)return;
-      if(g.editor){g.editor.undoManager.transact(()=>formatRich(g.editor.getBody()));g.editor.dispatch('change');}
-      else if(kind==='editor'){const content=host.querySelector('.cae-content');if(content&&formatRich(content))content.dispatchEvent(new Event('input',{bubbles:true}));}
-      else (kind==='table'?host.querySelectorAll('input,textarea'):[host]).forEach(f=>formatField(f,true));
+      if(all.checked){preferences.default=check.checked;preferences.questions={};}
+      else preferences.questions[key]=check.checked;
+      save();updateAll();
+    });
+    all.addEventListener('change',()=>{
+      if(all.checked){preferences.default=check.checked;preferences.questions={};}
+      else preferences.questions[key]=check.checked;
+      save();updateAll();
     });
     return g;
   }
@@ -137,6 +161,9 @@
     else if(event.target.matches('.cae-content')&&!g.editor)formatRich(event.target,editing);
   },true);
   document.addEventListener('keydown',e=>navigate(e,e.target.closest?.('.cae-content[contenteditable="true"]')),true);
+  window.addEventListener('storage',event=>{if(event.key!==storage)return;
+    try{const p=JSON.parse(event.newValue||'{}');preferences={default:p.default!==false,questions:p.questions||{}};updateAll(false);}catch{}
+  });
   function attachEditor(editor,host){
     const g=group(host,'editor');g.editor=editor;
     const doc=editor.getDoc(),body=editor.getBody();
