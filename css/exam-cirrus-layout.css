@@ -171,7 +171,9 @@ body.learning-page-layout #mc-introduction{display:none}
 body[data-theme="dark"] .learning-page-title,html[data-theme="dark"] .learning-page-title{color:#e7e2f3!important}
 @media(max-width:760px){.learning-page-head{flex-wrap:wrap;gap:8px;padding:8px 10px}.learning-page-title{font-size:20px!important;order:3;flex-basis:100%}.learning-page-head details:last-child{order:2}.learning-page-head .cirrus-page-nav{order:1}body.learning-page-layout .practice-case-layout>.qbody,body.learning-page-layout .mc-question-body{padding:18px 14px!important}}
 
-body.study-inline-reader .learning-page-head{position:sticky;top:var(--study-top-h,64px);z-index:35}
+/* Keep Meer above the reading tabs, and below the top bar and its theme menu. */
+body.study-inline-reader .learning-page-head{position:sticky;top:var(--study-top-h,64px);z-index:43}
+body.learning-page-layout.study-inline-reader #study-returnbar{z-index:42}
 .learning-page-head #menu-toggle[hidden]{display:none!important}
 html[data-study-theme=dark] .learning-page-title{color:#e7e2f3!important}
 
